@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en-US"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- application -->
+    <script async="" src="./Epilogue_files/jquery-1.11.3.min.js.download"></script>
+    
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"1b930da09b","applicationID":"65900267","transactionName":"cFkNREpaWA9dF0pBVlRTEB9LQVsRQQ==","queueTime":0,"applicationTime":5,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"1b930da09b",applicationID:"65900267"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>The Homestuck Epilogues</title>
+    <meta name="description" content="Tales of dubious authenticity.">
+    <script>
+//<![CDATA[
+var getGAEventLabel = function(){ return "The Homestuck Epilogues"; };
+//]]>
+</script>
+      <link rel="canonical" href="Candy 10.html">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.homestuck.com/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.homestuck.com/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.homestuck.com/favicon/favicon-16x16.png">
+<link rel="manifest" href="https://www.homestuck.com/favicon/manifest.json">
+<link rel="mask-icon" href="https://www.homestuck.com/favicon/safari-pinned-tab.svg" color="#6bbe4a">
+<meta name="theme-color" content="#ffffff">
+
+        <link rel="stylesheet" media="all" href="./Epilogue_files/manifest-epilogue-1694f2c1abc80cf72e84324f6d6486e6f04b02358ed667dee36c88974eef388f.css">
+      <link rel="stylesheet" href="./Epilogue_files/kek1uwn.css">
+    <link rel="stylesheet" media="all" href="./Epilogue_files/manifest-ui-e03365bbb17dde0f1fd5463dd7b56d096a27cae55aa131b72684e36c1f0c80f6.css">
+    <script src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE=(1)"></script>
+    <script src="./Epilogue_files/manifest-ads-story-1885683d55d6f631dc202ac5db87250ca938be96a613e85bb93739ecc057540e.js.download"></script>
+
+
+    <!-- //Connect Container: Homestuck-->
+<script src="./Epilogue_files/tag.min.js.download" async="" defer=""></script>
+  <script src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE="></script></head>
+  
+  <body class="epilogue">
+
+    
+    <header id="site-header" role="banner">
+  <div id="header-container" class="o_story-page-header row flex pad-t-0 ">
+    <a href="javascript:void(0)" data-nav-open="" class="nav-btn nav-btn--center color-white" style="overflow-wrap:normal;text-decoration:none;"><i class="icon-menu"></i><span>Menu</span></a>
+    <nav id="nav-container" data-nav-state="closed" role="navigation" class="o_nav-container">
+      <a href="javascript:void(0)" data-nav-close="" class="nav-btn color-white pad-y-rg type-rg" style="overflow-wrap:normal;text-decoration:none;"><i class="icon-close"></i><span>Dismiss</span></a>
+      <ul id="primary-nav" class="o_primary-nav style-caps weight-bold disp-ib color-white type-rg">
+     <li class="o_primary-nav-item slide-candycorn pipe"><a class="o_primary-nav-link" style="color:#39d5f6" href="Read.html">READ</a></li><!--
+     --><li class="o_primary-nav-item"><a class="o_primary-nav-link" style="color:#39d5f6" href="Credits.html">INFO</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+    
+
+    <div class="row bg-white bg-light-gray--md pad-t-md--md pos-r">
+  <div id="content_container" class="mar-x-auto disp-bl bg-white" style="max-width:650px;">
+    <div class="pos-r pad-t-sm pad-x-lg--md type-center" style="overflow:visible; height:72px;">
+      <img class="hsep_bullet" alt="Chapter" src="./Epilogue_files/candy_60x60-6b955ce39772ffce9994587a951f12b804ebf2202ebe8ed230483e25072db855.png">
+      <h3 class="disp-ib type-hsep-header line-tight type-lg pad-t-sm">
+        10
+      </h3>
+    </div>
+  </div>
+</div>
+
+<div class="row bg-white bg-light-gray--md pad-b-md pad-b-lg--md pos-r pad-t-md pad-t-0--md">
+  <div class="mar-x-auto disp-bl bg-white pad-t-lg" style="max-width:650px;">
+      <div class="o-story_text o_epilogue type-rg type-sm--md line-caption line-copy--md pad-x-0 pad-x-lg--md pad-b-lg"><div class="chat type-rg type-hs-small--md" style="margin-top:0">  
+  <p class="terezi">TEREZI: WH3R3 3V3N 4R3 YOU</p>
+  
+  <p class="terezi">TEREZI: 4ND WHY H4V3N’T YOU SL1C3D M4K4R4 1N H4LF Y3T</p>
+  
+  <p class="john">JOHN: he smells too bad.</p>
+  
+  <p class="john">JOHN: i don’t think i want to risk getting that close to him, until he takes a bath.</p>
+  
+  <p class="john">JOHN: even then i’d rather not.</p>
+  
+  <p class="john">JOHN: as for WHERE i am... i’m not sure you would believe me if i told you.</p>
+  
+  <p class="terezi">TEREZI: 1 B3T 1 WOULD</p>
+  
+  <p class="john">JOHN: ok. i’m, uh...  </p>
+  
+  <p class="john">JOHN: i’m on a date.</p>
+  
+  <p class="terezi">TEREZI: LOL</p>
+  
+  <p class="john">JOHN: don’t lol at me.</p>
+  
+  <p class="terezi">TEREZI: 1 C4NT H3LP 1T, 1TS H1L4R1OUS</p>
+  
+  <p class="terezi">TEREZI: WHO 4R3 YOU OUT ON 4 D4T3 W1TH? &gt;:]</p>
+  
+  <p class="john">JOHN: why don’t you take a guess?</p>
+  
+  <p class="terezi">TEREZI: OK</p>
+  
+  <p class="terezi">TEREZI: 1TS OBV1OUSLY ROXY</p>
+  
+  <p class="john">JOHN: oh... </p>
+  
+  <p class="terezi">TEREZI: WH4TS WRONG NOW</p>
+  
+  <p class="terezi">TEREZI: YOU 4SK3D M3 TO GU3SS SO 1 GU3SS3D</p>
+  
+  <p class="john">JOHN: i’m just wondering if i was really that obvious.</p>
+  
+  <p class="terezi">TEREZI: UM, Y34H JOHN</p>
+  
+  <p class="terezi">TEREZI: W3 4R3 NOT 1D1OTS. W3 C4N 4LL DO TH3 M4TH ON TH1S</p>
+  
+  <p class="terezi">TEREZI: 1TS NOT L1K3 YOU W3R3 GO1NG TO FUCK YOUR HUM4N MOM OR HUM4N S1ST3R</p>
+  
+  <p class="terezi">TEREZI: 4ND YOU 4R3 “NOT 4 HOMOS3XU4L,” WH1CH T4K3S STR1D3R D1CK OUT OFF TH3 3QU4T1ON </p>
+  
+  <p class="terezi">TEREZI: 4ND K4N4Y4 1S TH3 ONLY G1RL TROLL L3FT, 4ND SH3 L3SB14N M4RR13D ON3 OF TH3 TWO R3M41N1NG 3L1G1BL3 HUM4N F3M4L3S</p>
+  
+  <p class="terezi">TEREZI: OH, 4ND J4K3 1S 4 DOUBL3 THR34T. 4 HUM4N D4D W1TH 4 HUM4N D1CK!</p>
+  
+  <p class="terezi">TEREZI: SO BY PROC3SS OF 3L1M1N4T1ON, OF *COURS3* YOU W3R3 GO1NG TO “F4LL 1N LOV3” W1TH ROXY</p>
+  
+  <p class="john">JOHN: wait... </p>
+</div>
+  <p class="no-indent">Love? Is that how John feels about Roxy? He glances around at this beautiful restaurant she’s taken him to. Marble walls, a domed ceiling, alien plants growing up the scaffolding to the second floor... it’s lit by a cobweb of ultrathin clear wire strung with lights so that it looks like there are fireflies suspended above in the fake night sky. It’s a good place to fall in love, probably. </p>
+  <p>He turns his head to see that Gamzee has stepped outside, and now monitors the date with his face pressed against the window. He’s smearing his disgusting makeup against the glass without the slightest concern for propriety. John accidentally makes eye contact with him, and Gamzee gives him a thumbs-up. A chill runs down John’s spine, so he goes back to his conversation with Terezi.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="terezi">TEREZI: 1M W41T1NG</p>
+  
+  <p class="terezi">TEREZI: ... </p>
+  
+  <p class="terezi">TEREZI: ... </p>
+  
+  <p class="terezi">TEREZI: ST1LL W41T1NG</p>
+  
+  <p class="terezi">TEREZI: ... </p>
+  
+  <p class="terezi">TEREZI: 3GB3RT 4R3 YOU TH3R3 OR C4N 1 GO NOW</p>
+  
+  <p class="john">JOHN: yeah, i just had to think about that for a second.</p>
+  
+  <p class="john">JOHN: do you really think i’m in love with her?</p>
+  
+  <p class="terezi">TEREZI: HOW TH3 H3LL WOULD 1 KNOW TH4T, 1M NOT 4 M1ND R34D3R</p>
+  
+  <p class="john">JOHN: oh, aren’t you?</p>
+  
+  <p class="john">JOHN: i thought that’s what your mind... thingy... powers did.</p>
+  
+  <p class="terezi">TEREZI: H4H4H4H4H4H4</p>
+  
+  <p class="terezi">TEREZI: NO 1M JUST 4N 3XC3PT1ON4LLY GOOD R34D OF P3OPL3</p>
+  
+  <p class="terezi">TEREZI: NOT TH4T 1 WOULD H4V3 TO B3 TO T3LL TH4T YOUV3 B33N FLUSH3D FOR ROXY S1NC3 YOU M3T H3R</p>
+  
+  <p class="john">JOHN: yeah i guess that’s true.</p>
+  
+  <p class="john">JOHN: how do you think she feels about me?</p>
+  
+  <p class="terezi">TEREZI: 1F YOUR3 OUT ON 4 D4T3 W1TH H3R, 1 DONT TH1NK TH4T 1M TH3 ON3 YOU SHOULD B3 4SK1NG TH4T QU3ST1ON</p>
+  
+  <p class="john">JOHN: i mean... would that be an okay thing to ask her?</p>
+  
+  <p class="john">JOHN: that seems kinda... i dunno, dopey?</p>
+  
+  <p class="terezi">TEREZI: JOHN 1 H4T3 TO T3LL YOU TH1S, BUT TH3R3S NOT MUCH YOU COULD DO 4T TH1S PO1NT TO 1NCR34S3 YOUR DOP1N3SS 4TTR1BUT3</p>
+  
+  <p class="terezi">TEREZI: YOUV3 4LR34DY PR3TTY MUCH M4X3D OUT TH3 DORK ST4T 4ND 1 C4N ONLY 1M4G1N3 TH4T TH3 POS1T1V3 CORR3L4T1ON B3TW33N YOUR CONT1NU3D 3X1T3NC3 4ND TH3 4MOUNT OF SH33R DW33B1N3SS YOU 3M1T H4S R3T41N3D 3XP3CT3D 3QU1L1BR1UM 1N TH3 T1M3 TH4T 1V3 B33N GON3</p>
+  
+  <p class="john">JOHN: geeze. you always know what to say to people in their hour of need, terezi. </p>
+  
+  <p class="john">JOHN: i’m so glad that i decided to talk to you!</p>
+  
+  <p class="terezi">TEREZI: YOU SHOULD B3 GL4D</p>
+  
+  <p class="terezi">TEREZI: 1M DO1NG YOU 4 B1G F4VOR 4S USU4L</p>
+  
+  <p class="terezi">TEREZI: TH3 S33R M4GN4M1NOUSLY D3CS3ND1NG FROM H3R MOUNT41N 4ND D31GN1NG TO G1V3 TH3 H4PL3SS HUM4N P33RL3SS 4DV1C3</p>
+  
+  <p class="john">JOHN: imagine me rolling my eyes super hard right now. because that’s what i’m doing.</p>
+  
+  <p class="terezi">TEREZI: NOT3D</p>
+  
+  <p class="terezi">TEREZI: BUT TRUST M3, TH3 WORST TH1NG YOU C4N DO WH3N 4TT3MPT1NG TO 1N1T14T3 4 FLUSH3D R3L4T1ONSH1P 1S TO B3 3V4S1V3</p>
+  
+  <p class="terezi">TEREZI: ROXY 1S 4CTU4LLY 1NCR3D1BLY D1FF1CULT TO R34D BUT 1 TH1NK SH3S TH3 L4ST P3RSON WHO WOULD 3V3R TRY TO J3RK YOU 4ROUND</p>
+  
+  <p class="terezi">TEREZI: SH3LL 4PPR3C14T3 YOU B31NG UP FRONT</p>
+  
+  <p class="terezi">TEREZI: TH3 ONLY TH1NG 1 WOND3R 1S WH4T H4PP3N3D W1TH C4LL1OP3</p>
+  
+  <p class="terezi">TEREZI: TH3Y S33M3D SO H4PPY</p>
+  
+  <p class="john">JOHN: yeah that’s, uh...  </p>
+  
+  <p class="john">JOHN: been bothering me too.</p>
+  
+  <p class="john">JOHN: callie was actually the one who convinced me to stay. roxy was all over me the moment i said i wasn’t going.</p>
+  
+  <p class="terezi">TEREZI: GO1NG WH3R3</p>
+  
+  <p class="john">JOHN: oh, to fight lord english.</p>
+  
+  <p class="terezi">TEREZI: YOU W3R3 SUPPOS3D TO F1GHT LORD 3NGL1SH?</p>
+  
+  <p class="john">JOHN: um, yeah. i guess.</p>
+  
+  <p class="terezi">TEREZI: BUT YOU JUST D3C1D3D... NOT TO?</p>
+  
+  <p class="john">JOHN: look it’s a long story.</p>
+  
+  <p class="john">JOHN: actually, it’s not, but that’s not why i texted you. i’ll tell you some other time.</p>
+  
+  <p class="john">JOHN: right now, what i think i need to figure out is how i feel about the whole... calliope thing.</p>
+  
+  <p class="john">JOHN: i’m not afraid to ask roxy how she feels about me, i guess. but i think that i am afraid to ask about...</p>
+</div>
+  <p class="no-indent">Roxy finally comes back from the restroom. He hears her heels click-clacking on the floor, and shoves his phone into his pocket in a panic, before he can follow up on the last line of his message. He doesn’t know why he does it in a panic. It’s not like he’s doing anything wrong. In fact, tapping away on the phone when someone leaves you alone at a table is completely and totally normal. Maybe it’s just that it’s kind of weird to be talking to a girl under the table while on a date with a completely different girl, no matter what his respective relationships with those two girls might be.</p>
+  <p>His internal Rose-voice tsks at him for having such a gender-essentialist thought. He wonders if he’d feel quite as guilty if he were talking to Rose under the table instead of Terezi. Probably not, which is a whole tangle of stuff he doesn’t even want to think about. He shoots Roxy a big, bright grin when she slips into her seat. She grins back.</p>
+  <p>He is genuinely glad to be here. Roxy is beautiful. The restaurant is beautiful. He feels like he’s fumbling at something existentially beautiful here. There’s something about the way she’s looking at him that makes him glad he got out of bed today. It makes him, for the first time in years, excited about the idea that the future is a thing that exists.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="roxy">ROXY: sorry for takin so long had to reapply the face u kno how it is</p>
+  
+  <p class="roxy">ROXY: actually u probably dont but let me tell u makeups a BITCH</p>
+  
+  <p class="john">JOHN: roxy, you don’t have to do all that for me!</p>
+  
+  <p class="john">JOHN: i’m basically a schlub these days. i don’t care if you wear makeup or not.</p>
+  
+  <p class="john">JOHN: you... you’re pretty either way, you know that right?</p>
+  
+  <p class="roxy">ROXY: oh dont worry its not for you lol</p>
+  
+  <p class="roxy">ROXY: but thats sweet as hell i appreciate the sentiment</p>
+  
+  <p class="john">JOHN: oh. um, that’s cool. why do you need it, then?</p>
+  
+  <p class="roxy">ROXY: john...</p>
+  
+  <p class="roxy">ROXY: do u ever think about like</p>
+  
+  <p class="roxy">ROXY: gender???</p>
+  
+  <p class="john">JOHN: ???</p>
+  
+  <p class="john">JOHN: uh. not really, i guess?</p>
+  
+  <p class="john">JOHN: but i don’t think girls should feel like they HAVE to wear makeup just because they’re girls. </p>
+  
+  <p class="roxy">ROXY: lol</p>
+  
+  <p class="roxy">ROXY: thats not what im getting at </p>
+  
+  <p class="john">JOHN: what do you mean then?</p>
+  
+  <p class="john">JOHN: are you, like...</p>
+  
+  <p class="roxy">ROXY: like what</p>
+  
+  <p class="john">JOHN: i don’t know. i don’t really know what we’re talking about.</p>
+  
+  <p class="roxy">ROXY: lol idrk either i guess</p>
+  
+  <p class="roxy">ROXY: neway we dont gotta get super into it now this isnt really the setting</p>
+  
+  <p class="roxy">ROXY: i dunno if u noticed but this place is way too fancy for me lmfao</p>
+  
+  <p class="roxy">ROXY: i was all tryin to impress you with how im classy as fuk but now i feel like were gonna have to skip out on the check</p>
+  
+  <p class="john">JOHN: even though we’ve got infinite money?</p>
+  
+  <p class="roxy">ROXY: yea!!</p>
+  
+  <p class="roxy">ROXY: just a feelin i get </p>
+  
+  <p class="roxy">ROXY: like this fancy dress is a costume</p>
+  
+  <p class="roxy">ROXY: like im just playacting at being a grown-up woman</p>
+  
+  <p class="john">JOHN: yeah, i know that feeling. what even are adults?</p>
+  
+  <p class="roxy">ROXY: good question!</p>
+  
+  <p class="john">JOHN: when i was a kid i just thought adulthood was something that happened to you automatically, i think.</p>
+  
+  <p class="john">JOHN: like the moment i turned eighteen a briefcase would appear in my hand and i’d have it all figured out, just like my dad seemed to.</p>
+  
+  <p class="john">JOHN: i can’t believe i’m twenty-three and still a huge loser! i wonder if my dad ever thought that way about himself, like he was just some big dumb kid totally messing everything up but trying to keep up appearances anyway.</p>
+  
+  <p class="roxy">ROXY: dont say that about urself dummy!</p>
+  
+  <p class="john">JOHN: so... i’m a dummy, but i shouldn’t call myself dumb?</p>
+  
+  <p class="roxy">ROXY: omg you KNOW what i meant</p>
+  
+  <p class="roxy">ROXY: hmm</p>
+</div>
+  <p class="no-indent">Roxy runs one of her thin fingers around the inside rim of her water glass. It makes a very quiet squeaking noise that he can hear over the mumbled conversation around him because they’re sitting so very close. Her lashes look about twice as long in the low, pale light. They shadow her eyes so that he can’t read her expression.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="roxy">ROXY: ya know i didnt even know any adults when i was a kid </p>
+  
+  <p class="roxy">ROXY: so i got nothin except the legends of how my universes rose and dave died i guess</p>
+  
+  <p class="roxy">ROXY: but thats not exactly a useful example in this situation</p>
+  
+  <p class="john">JOHN: i dunno. i think sacrificing yourself to take down a brutal clown dictatorship is a pretty good life lesson to internalize in any situation.</p>
+  
+  <p class="roxy">ROXY: lol yeah god forbid</p>
+  
+  <p class="roxy">ROXY: but</p>
+  
+  <p class="roxy">ROXY: i mean my idea of a date for the longest time was drinkin a whole bottle of wine alone while cryin in front of my laptop screen</p>
+  
+  <p class="john">JOHN: oh same, actually. minus the wine, and the computer screen, ha ha.</p>
+  
+  <p class="roxy">ROXY: just u and ur brain contemplating the infinite loneliness of singular consciousness in a vast cold universe</p>
+  
+  <p class="john">JOHN: something like that.</p>
+  
+  <p class="john">JOHN: so... i guess neither of us are very good at this, huh?</p>
+  
+  <p class="roxy">ROXY: thats cool with me</p>
+  
+  <p class="roxy">ROXY: zero expectations means we got nowhere to go but up</p>
+  
+  <p class="john">JOHN: i’ll toast to that!</p>
+</div>
+  <p class="no-indent">John lifts his glass as a cute and cliché thing to do, expecting no reciprocation. But she laughs and actually humors him. The glasses clink together clumsily, and water gets all over the complimentary breadsticks. She starts laughing harder.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="roxy">ROXY: oh john</p>
+  
+  <p class="roxy">ROXY: why didnt we do this SOONER</p>
+  
+  <p class="roxy">ROXY: i love spendin time with you</p>
+  
+  <p class="roxy">ROXY: youuu knooooow</p>
+  
+  <p class="roxy">ROXY: its weird to say but</p>
+  
+  <p class="roxy">ROXY: no one else has ever made me feel like this</p>
+</div>
+  <p class="no-indent">For some reason, those words make the pit in his stomach grow. He lets out a nervous giggle. His arm starts to shake, so violently that he gets even more water on the free breadsticks. Hoo boy—he’s sweating under the collar. It’s a panic, like what he felt when Roxy almost caught him texting Terezi under the table, except in reverse. What about Calliope, he thinks. John can’t tell what Roxy is thinking. She’s so warm and open and inviting, but when John looks into her eyes... it’s almost like staring into a voi—</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="roxy">ROXY: oh</p>
+  
+  <p class="roxy">ROXY: wtf look behind you</p>
+</div>
+  <p class="no-indent">He whips his head around to see... Dave? He’s running down the street, looking back and forth like a hunted man. He spots John and freezes for a moment, obviously trying to compose himself. No one goes still quite like a Strider. He brushes past Gamzee, who is still glued to the window to spy on the date, and swaggers into the restaurant. The look on his face seems to suggest he’s about to throw up, but he keeps it together. His entrance is so smooth that all the dining carapacians in the vicinity immediately stop talking and stare at him as he glides to the table.</p>
+  <p>Dave sets his hand just in front of the free breadsticks and angles a look at John through the panels of his shades. It looks like he hasn’t slept, but it’s hard to tell with Dave. He’s out of breath.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="dave">DAVE: hey dude </p>
+  
+  <p class="dave">DAVE: and roxy</p>
+  
+  <p class="dave">DAVE: uh rather...  </p>
+  
+  <p class="dave">DAVE: hey dudes</p>
+  
+  <p class="dave">DAVE: sorry to imply that dude wasnt a gender neutral term because it totally is</p>
+  
+  <p class="dave">DAVE: anyone can be a dude if they really want thats part of the beauty of living in this brand new world with none of the baggage our old world had like gender and sexuality and relationships only involving a very specific number of people</p>
+  
+  <p class="roxy">ROXY: dave u ok</p>
+  
+  <p class="dave">DAVE: yeah totally when am i not ok</p>
+  
+  <p class="roxy">ROXY: p often actually</p>
+  
+  <p class="dave">DAVE: nah im fine theres absolutely nothing strange or awkward going on in my life at all</p>
+  
+  <p class="dave">DAVE: unrelated to anything i just said john i gotta talk to you for a sec</p>
+  
+  <p class="john">JOHN: ok. go ahead!</p>
+  
+  <p class="dave">DAVE: no i mean like outside</p>
+  
+  <p class="dave">DAVE: in private</p>
+  
+  <p class="dave">DAVE: with no one else around</p>
+  
+  <p class="roxy">ROXY: u SURE youre ok??</p>
+  
+  <p class="dave">DAVE: yeah mom im fine</p>
+  
+  <p class="dave">DAVE: sorry that was me being sarcastic about how youre all worried over me when im just ice fucking cold levels of cool at the moment</p>
+  
+  <p class="dave">DAVE: not referencing that youre my literal mom which i know is all kinds of awkward every single time i do it</p>
+  
+  <p class="dave">DAVE: which is a lot i guess</p>
+  
+  <p class="roxy">ROXY: lmao i dont think its awkward at all</p>
+  
+  <p class="dave">DAVE: oh cool </p>
+  
+  <p class="dave">DAVE: me neither</p>
+  
+  <p class="dave">DAVE: mom</p>
+  
+  <p class="john">JOHN: um, roxy’s right. you seem kind of off right now.</p>
+  
+  <p class="dave">DAVE: nah i just had a sudden need for a bro down</p>
+  
+  <p class="dave">DAVE: just an unquenchable thirst to be showered in a flashstorm of righteous bro juice</p>
+  
+  <p class="john">JOHN: yikes.</p>
+  
+  <p class="dave">DAVE: gotta guzzle the shit out of it like gatorade after a sports match</p>
+  
+  <p class="dave">DAVE: help me out here my brolectrolytes are low</p>
+  
+  <p class="john">JOHN: ...  </p>
+  
+  <p class="dave">DAVE: john just come on its important</p>
+  
+  <p class="john">JOHN: yeah, sure.... roxy, are you fine waiting here by yourself for a while?</p>
+  
+  <p class="roxy">ROXY: yea ill just be here eatin breadsticks since we didnt actually order dinner</p>
+  
+  <p class="john">JOHN: cool! i’ll be right back!</p>
+</div>
+  <p class="no-indent">Dave shoves his hands in his pockets and leads John out into the cool evening air. Gamzee offers a double thumbs-up as they walk past him, which John fiercely ignores.</p>
+  <p>John does, however, check his phone. Subtly, but a little desperately. He left Terezi hanging in the middle of a sentence and he’s gotta admit, as much fun as he’s been having with Roxy, there’s an annoying little voice screaming at him underneath everything else he’s done and said tonight that desperately needs to know what else Terezi had to say. Behind Dave’s back as he leads the way, John swipes the screen to catch up with her answers, smiling conspiratorially. </p></div>
+      <div class="o_story-nav type-hs-copy line-tight pad-x-0 pad-x-lg--md pad-b-lg">
+        <div>
+          <span>&gt;</span>
+          <a href="Candy 11.html">==&gt; </a><br>
+        </div>
+      </div>
+  
+<footer id="story-footer" role="banner">
+  <div id="story_footer_container" class="o_story-page-footer flex pad-t-0 pad-x-0
+     flex-justify 
+    ">
+      <div class="pad-l-lg--md mar-b-md type-hs-small type-hs-bottom--md type-center type-left--md">
+        <ul class="o_game-nav">
+          <li class="o_game-nav-item">
+            <a id="o_start-over" href="The Homestuck Epilogues.html">Start Over</a>
+          </li>
+            <li class="o_game-nav-item">
+              <a href="Candy 9.html">Go Back</a>
+            </li>
+        </ul>
+      </div>
+      <script>
+//<![CDATA[
+$(document).ready(function() { Gamenav.checkAutosave(); });
+//]]>
+</script>
+
+    <a href="javascript:void(0)" data-gamenav-open="" class="nav-btn nav-btn--center type-hs-small mar-b-md" style="text-decoration:none; text-transform: none; font-size:14px; line-height:14px;"><span>Options</span> <i class="icon-menu" style="margin:0;"></i></a>
+  </div>
+</footer>
+
+
+  </div>
+</div><iframe name="__tcfapiLocator" src="./Epilogue_files/saved_resource(2).html" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe>
+
+
+    
+<div class="o_site-footer row pos-r pad-t-rg pad-b-xl pad-b-0--md bg-dark-gray">
+  <div class="float-l"><img src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif" alt="Footer logo"><br></div>
+  <div class="float-r disp-n disp-bl--sm"><img src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif" alt="Footer logo"><br></div>
+  <div class="type-center pad-t-md--md">
+    <ul>
+      <li><a href="https://www.homestuck.com/contacts">Contacts</a></li>
+      <li><a href="https://www.homestuck.com/privacy">Privacy Policy</a></li>
+    </ul>
+    <div><span style="white-space:nowrap;">© 2018 Homestuck</span> <span style="white-space:nowrap;">and VIZ Media</span></div>
+  </div>
+</div>
+
+
+
+    <div id="overlay" data-overlay-state="off" class="o_overlay"></div>
+    <div id="game_overlay" data-game-overlay-state="off" class="o_game-overlay"></div>
+    <div id="overlay_wait" data-overlay-state="off" class="o_overlay-wait"></div>
+
+
+
+  
+
+<iframe name="googlefcPresent" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;" src="./Epilogue_files/saved_resource(6).html" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe></body></html>

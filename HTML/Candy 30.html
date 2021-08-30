@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en-US"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- application -->
+    <script async="" src="./Epilogue_files/jquery-1.11.3.min.js.download"></script>
+    
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"1b930da09b","applicationID":"65900267","transactionName":"cFkNREpaWA9dF0pBVlRTEB9LQVsRQQ==","queueTime":0,"applicationTime":5,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"1b930da09b",applicationID:"65900267"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>The Homestuck Epilogues</title>
+    <meta name="description" content="Tales of dubious authenticity.">
+    <script>
+//<![CDATA[
+var getGAEventLabel = function(){ return "The Homestuck Epilogues"; };
+//]]>
+</script>
+      <link rel="canonical" href="Candy 30.html">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.homestuck.com/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.homestuck.com/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.homestuck.com/favicon/favicon-16x16.png">
+<link rel="manifest" href="https://www.homestuck.com/favicon/manifest.json">
+<link rel="mask-icon" href="https://www.homestuck.com/favicon/safari-pinned-tab.svg" color="#6bbe4a">
+<meta name="theme-color" content="#ffffff">
+
+        <link rel="stylesheet" media="all" href="./Epilogue_files/manifest-epilogue-1694f2c1abc80cf72e84324f6d6486e6f04b02358ed667dee36c88974eef388f.css">
+      <link rel="stylesheet" href="./Epilogue_files/kek1uwn.css">
+    <link rel="stylesheet" media="all" href="./Epilogue_files/manifest-ui-e03365bbb17dde0f1fd5463dd7b56d096a27cae55aa131b72684e36c1f0c80f6.css">
+    <script src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE=(1)"></script>
+    <script src="./Epilogue_files/manifest-ads-story-1885683d55d6f631dc202ac5db87250ca938be96a613e85bb93739ecc057540e.js.download"></script>
+
+
+    <!-- //Connect Container: Homestuck-->
+<script src="./Epilogue_files/tag.min.js.download" async="" defer=""></script>
+  <script src="./Epilogue_files/saved_resource"></script></head>
+  
+  <body class="epilogue vsc-initialized">
+
+    
+    <header id="site-header" role="banner">
+  <div id="header-container" class="o_story-page-header row flex pad-t-0 ">
+    <a href="javascript:void(0)" data-nav-open="" class="nav-btn nav-btn--center color-white" style="overflow-wrap:normal;text-decoration:none;"><i class="icon-menu"></i><span>Menu</span></a>
+    <nav id="nav-container" data-nav-state="closed" role="navigation" class="o_nav-container">
+      <a href="javascript:void(0)" data-nav-close="" class="nav-btn color-white pad-y-rg type-rg" style="overflow-wrap:normal;text-decoration:none;"><i class="icon-close"></i><span>Dismiss</span></a>
+      <ul id="primary-nav" class="o_primary-nav style-caps weight-bold disp-ib color-white type-rg">
+     <li class="o_primary-nav-item slide-candycorn pipe"><a class="o_primary-nav-link" style="color:#39d5f6" href="Read.html">READ</a></li><!--
+     --><li class="o_primary-nav-item"><a class="o_primary-nav-link" style="color:#39d5f6" href="Credits.html">INFO</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+    
+
+    <div class="row bg-white bg-light-gray--md pad-t-md--md pos-r">
+  <div id="content_container" class="mar-x-auto disp-bl bg-white" style="max-width:650px;">
+    <div class="pos-r pad-t-sm pad-x-lg--md type-center" style="overflow:visible; height:72px;">
+      <img class="hsep_bullet" alt="Chapter" src="./Epilogue_files/candy_60x60-6b955ce39772ffce9994587a951f12b804ebf2202ebe8ed230483e25072db855.png">
+      <h3 class="disp-ib type-hsep-header line-tight type-lg pad-t-sm">
+        30
+      </h3>
+    </div>
+  </div>
+</div>
+
+<div class="row bg-white bg-light-gray--md pad-b-md pad-b-lg--md pos-r pad-t-md pad-t-0--md">
+  <div class="mar-x-auto disp-bl bg-white pad-t-lg" style="max-width:650px;">
+      <div class="o-story_text o_epilogue type-rg type-sm--md line-caption line-copy--md pad-x-0 pad-x-lg--md pad-b-lg">  <p class="no-indent"><span class="opener type-hs-opener-rg type-hs-opener-sm--md">A</span>s Jake traverses the length of Jane’s ship, he suspects he has never carried more dread in his heart than he does in this moment.</p>
+  <p>The burden of the call he just received weighs so heavily upon him that it’s a struggle to propel himself each step forward. He wishes that someone else had gotten the news, but there’s nothing that can be done. He has to be there for his wife, even if he knows saying what he needs to say will be hard for both of them.</p>
+  <p>The doors to the ship’s bridge slide open to permit him entry when he approaches. Jane is standing by the navigational stations, engaged in some sort of confabulation of doubtlessly critical importance with her eternal shadow, Gamzee Makara. Jake’s already miserable mood drops further at the sight of him—no matter how long this arrangement carries on, it never seems to get easier to stomach.</p>
+  <p>Jane is dressed to the nines in her signature blazing-red power suit, her freshly polished designer pumps glinting in the varied lights of the Crockercorp ship command controls. The full entourage of the Crocker conglomerate is fast en route to a business conference that Jane insists is of the “utmost importance” to the impending negotiation of an array of paramilitary contracts with the government, and she would be the first to tell you that looking your best is one of the most critical parts of arbitration. </p>
+  <p>She doesn’t immediately acknowledge Jake’s presence when he approaches. He has to conspicuously clear his throat before Jane turns her attention away from Gamzee, and even then she only dignifies Jake’s appearance with a fleeting glance. </p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="jane">JANE: Do you need something?</p>
+  
+  <p class="jake">JAKE: Well... i have some terrible news i’m afraid. </p>
+  
+  <p class="jane">JANE: What is it, Jake? I’m rather occupied at the moment. </p>
+  
+  <p class="jake">JAKE: Im awfully sorry to bother you but its very important dear.</p>
+  
+  <p class="jane">JANE: Is something the matter with Tavros? </p>
+  
+  <p class="jake">JAKE: No... eh heh you might want to come with me to our quarters for this one.</p>
+  
+  <p class="jane">JANE: ...As I said, I’m a bit busy right now.</p>
+  
+  <p class="jake">JAKE: W-well I just thought. Maybe its best if you s-sit down for this one. My dear. </p>
+  
+  <p class="jake">JAKE: My delectable honey bunches of oats.</p>
+  
+  <p class="jake">JAKE: The jolly ole capn of my crunch.</p>
+  
+  <p class="jake">JAKE: M-m-my lovely wife whom i love so much.</p>
+</div>
+  <p class="no-indent">Jane’s face twists in annoyance. She is quite a bit shorter than Jake now, but the way she looks down on him makes her seem like she towers ten feet above him.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="jane">JANE: My <em>goodness</em>, Jake! What do you want? Can’t you see I’m right in the middle of something?! Just spit it out already!</p>
+</div>
+  <p class="no-indent">The whole bridge goes quiet at Jane’s outburst. Everyone has stopped in the midst of their tasks to stare nervously at the altercation. The only other sound that penetrates the silence is Gamzee noisily slurping on the rubber nipple of his baby bottle. </p>
+  <p>Jake swallows like he’s in a cartoon. It’s a big, loud gulp. A sound that instantly rachets up Jane’s annoyance—like most of Jake’s actions seem to, these days. </p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="jake">JAKE: I... </p>
+  
+  <p class="jake">JAKE: Well you see...  </p>
+  
+  <p class="jake">JAKE: I guess ill come right out and say it then.</p>
+  
+  <p class="jake">JAKE: I just got news that your father has passed jane. Im so sorry.</p>
+</div>
+  <p class="no-indent">At first the words don’t quite register. Jane expected this, like all interactions with Jake, to be a meaningless waste of her time. Initially she gives a dismissive nod, like she’s taking in some trivial piece of information. And then the weight of the statement strikes her, sending a jolt of shock through her chest.</p>
+  <p>It passes quickly, though. She’d almost forgotten.</p>
+<div class="chat type-rg type-hs-small--md">
+  <p class="jane">JANE: An unfortunate incident, but it’s no matter.</p>
+
+  <p class="jane">JANE: I’ll simply revive him, and then make sure he’s assigned a security detail.</p>
+
+  <p class="jane">JANE: Have his body brought here as quickly as possible. </p>
+
+  <p class="jake">JAKE: I...</p>
+
+  <p class="jake">JAKE: Im afraid that wont be possible honey.</p>
+
+  <p class="jake">JAKE: Theres no body for you to revive at all.</p>
+</div>
+  <p class="no-indent">Jane’s eyes widen in disbelief.</p>
+<div class="chat type-rg type-hs-small--md">
+  <p class="jane">JANE: What?</p>
+
+  <p class="jane">JANE: What... what happened?</p>
+
+  <p class="jake">JAKE: It... word from the secret service is that it was one of karkats assassins.</p>
+
+  <p class="jake">JAKE: The target was the human president.</p>
+
+  <p class="jake">JAKE: He uhhh. Your father that is... </p>
+
+  <p class="jake">JAKE: He jumped in the way and took the shot.</p>
+
+  <p class="jake">JAKE: The president is safe.</p>
+
+  <p class="jake">JAKE: Your dad saved his life.</p>
+
+  <p class="jane">JANE: I...</p>
+
+  <p class="jane">JANE: I don’t understand.</p>
+
+  <p class="jane">JANE: What happened to his body?</p>
+
+  <p class="jane">JANE: Did Karkat’s rebels abduct him?</p>
+
+  <p class="jake">JAKE: Er... no.</p>
+
+  <p class="jake">JAKE: The shot he took was from the barrel of a rocket launcher.</p>
+
+  <p class="jake">JAKE: Im afraid the assault blew him straight to bits. Theres hardly anything left...</p>
+
+  <p class="jane">JANE: W... what...</p>
+
+  <p class="jake">JAKE: Luckily the president was barely harmed as your old man took the full brunt.</p>
+
+  <p class="jake">JAKE: As far as i know the only harm to him was having his full lustrous mustache burned clean off his face.</p>
+
+  <p class="jake">JAKE: Its... its a friggin tragedy... :’(</p>
+
+  <p class="jake">JAKE: (Sniffle.)</p>
+</div>
+  <p class="no-indent">Jake’s gaze falls to the floor. Jane’s hand clutches at the front of her suit in an unsteady fist.</p>
+<div class="chat type-rg type-hs-small--md">
+  <p class="jane">JANE: P... please tell me you’re joking.</p>
+
+  <p class="jane">JANE: Jake, tell me this is just a prank.</p>
+
+  <p class="jake">JAKE: Im... im afraid not jane.</p>
+
+  <p class="jake">JAKE: Im so sorry.</p>
+</div>
+  <p class="no-indent">Jane whips around, tears in her eyes. The whole bridge is holding its breath. She feels every eye on her then, the pressure to hold it together. She can’t show weakness now. She’s come so far. </p>
+  <p>Jane sniffles and swipes at her eyes with the back of her hand. She won’t cry. But she can be angry instead.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="jane">JANE: UGH!</p>
+  
+  <p class="jane">JANE: That... that fool!!</p>
+  
+  <p class="jane">JANE: I can’t believe that he would do this!</p>
+  
+  <p class="jane">JANE: How could he do this to me!?!</p>
+  
+  <p class="jake">JAKE: Janey...</p>
+  
+  <p class="jane">JANE: The human president could be anyone! </p>
+  
+  <p class="jane">JANE: My dad can’t be anyone but him!</p>
+</div>
+  <p class="no-indent">Jake isn’t sure this is the right or smart thing to do, but he chances it: he steps forward to place a comforting hand on Jane’s shoulder. When she doesn’t immediately tear herself away, he tentatively—and slowly, like he’s approaching a wounded animal—pulls her into a hug.</p>
+  <p>Jane is too dazed to protest. She limply stares past Jake, eyes unfocused.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="jane">JANE: I don’t... no... </p>
+  
+  <p class="jake">JAKE: Shhhh. Shhhh. Everythings going to be ok.</p>
+  
+  <p class="jane">JANE: God. I can’t believe he... </p>
+  
+  <p class="jane">JANE: Oh, but of course I can.</p>
+  
+  <p class="jane">JANE: He’s always been...  </p>
+  
+  <p class="jane">JANE: Always been so infuriatingly good.</p>
+  
+  <p class="jane">JANE: God, how stupid.</p>
+  
+  <p class="jane">JANE: This is so stupid. I’m so stupid. How could I put him in such a dangerous position?</p>
+  
+  <p class="jane">JANE: Chief of staff?! Anyone could have done that job! Why did I tell him to... my own father... I—</p>
+  
+  <p class="jake">JAKE: Shhh. Janey. You did nothing wrong.</p>
+  
+  <p class="jake">JAKE: Nothing wrong at all.</p>
+  
+  <p class="jake">JAKE: You never have.</p>
+  
+  <p class="jake">JAKE: I love you jane. We all do.</p>
+  
+  <p class="jake">JAKE: I-isnt that right gamzee?</p>
+  
+  <p class="gamzee">GAMZEE: yEaH mAnG :o)</p>
+  
+  <p class="gamzee">GAMZEE: We AlL aNd GoT pLeNtY oF lOvE uP iN tHiS bItCh FoR tHe BiG jUiCy j-C!</p>
+</div>
+  <p class="no-indent">Gamzee turns to the bridge crew and gestures magnificently with his arms. Rivulets of milk are running down his chin.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="gamzee">GAMZEE: hOnK iF yOu LoVe ThIs BiG tItTy BiZzNaTcH!</p>
+  
+  <p class="gamzee">GAMZEE: WhOoP wHoOp!</p>
+</div>
+  <p class="no-indent">A petrified pall falls across the bridge as the crew tries to figure out whether they’re supposed to take this seriously or not. The comms officer shares a look with the engineer. The conning officer looks like she’s about to shit her pants. And then they turn to the most pitiable stooge of them all for answers.</p>
+  <p>Jake’s eyebrows shoot up to his hairline and he nods urgently over Jane’s shoulder to indicate that, yes, they should definitely do it. At once, the bridge crew gives a unanimous honk.</p>
+  <p>Jane sniffs and pulls away out of Jake’s embrace. She turns back to the bridge and takes a forward step, stumbling slightly in her heels. But she catches her balance, fixes her posture, and slips back on a stony mask. </p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="jane">JANE: All right.</p>
+  
+  <p class="jane">JANE: Jake! Get the president on the phone.</p>
+  
+  <p class="jane">JANE: It’s clear to me now that it’s past time for the military to strike, and I’ll be giving that man a real piece of my mind until an appropriate counterattack is in motion.</p>
+  
+  <p class="jane">JANE: Obviously, the government’s attempts to be gracious with the troll ilk have been naive and foolish.</p>
+  
+  <p class="jane">JANE: These rats cannot be negotiated with. They cannot be swayed by reason or appeals to peace and civility.</p>
+  
+  <p class="jane">JANE: The only thing that they want—the only thing that they have ever wanted since the ungodly inception of their disgusting, verminous species—is bloodshed.</p>
+  
+  <p class="jane">JANE: And if that is what they truly desire... </p>
+  
+  <p class="jane">JANE: Well, far be it from us to deny them.</p>
+  
+  <p class="jake">JAKE: J-ja—</p>
+  
+  <p class="jane">JANE: Not another word!!!</p>
+  
+  <p class="jake">JAKE: Are you sure this isnt a mis—</p>
+  
+  <p class="jane">JANE: NO!!!!!!!!!!!!!!!!!!!</p>
+  
+  <p class="jane">JANE: THE TIME TO ACT IS NOW!</p>
+  
+  <p class="jane">JANE: THEY WILL PAY FOR WHAT THEY’VE DONE!</p>
+  
+  <p class="jane">JANE: EVERY LAST FUCKING ONE OF THEM!</p>
+  
+  <p class="jane">JANE: I HAVE HAD ENOUGH! THIS IS THE END OF THE LINE!</p>
+</div>
+  <p class="no-indent">Jane is blazing with fury. She marches to the center of the bridge.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="jane">JANE: ALL OF YOU, RETURN TO YOUR STATIONS! WE ARE CHANGING COURSE!</p>
+  
+  <p class="jane">JANE: WE WILL BE GOING DIRECTLY TO MEET WITH THE PRESIDENT, AND I WILL NOT REST UNTIL HE GIVES THE COMMAND TO CRUSH THIS FUCKING REBELLION AND DESTROY ANY CHANCE THAT THEY MIGHT EVER RESIST AGAIN!</p>
+</div>
+  <p class="no-indent">The bridge crew doesn’t even think to defy Jane’s orders. They return to their stations, dutiful. The navigator adjusts the ship’s destination coordinates, and the comms officer opens a line with the government’s seat of command. Only one man in the room is brave enough to take a stand.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="gamzee">GAMZEE: hEy.</p>
+  
+  <p class="gamzee">GAMZEE: Do YoU tHiNk ThAt MiGhT bE a BiT mOtHeRfUcKinG xEnOpHoBiC?</p>
+</div>
+  <p class="no-indent">Jane spins on her heel like a whirlwind, her face twisted into a hideous snarl. She rounds on Gamzee with all the hatred she can muster.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="jane">JANE: XENOPHOBIC?</p>
+  
+  <p class="jane">JANE: I am not fucking xenophobic!</p>
+  
+  <p class="gamzee">GAMZEE: i’M jUsT sAyInG mY mOsT bOdAcIoUs Of BaBeS.</p>
+  
+  <p class="gamzee">GAMZEE: WhAt YoU’rE lAyInG dOwN hErE iS sOuNdInG wIcKeD bItCh GeNoCiDaL.</p>
+  
+  <p class="jane">JANE: What the fuck are you talking about?!?!</p>
+  
+  <p class="jane">JANE: I am not, and have never been, a fucking xenophobe!</p>
+  
+  <p class="gamzee">GAMZEE: yEa BuT lIsTeN.</p>
+  
+  <p class="gamzee">GAMZEE: KiLlInG aLl ThE tRoLlS... </p>
+  
+  <p class="gamzee">GAMZEE: tHaT wOuLd Be BaD yOu FeEl Me?</p>
+  
+  <p class="gamzee">GAMZEE: I’m A tRoLl ReMeMbEr.</p>
+  
+  <p class="gamzee">GAMZEE: mAyBe YoU sHoUlD tAkE a MiN aNd ChIlL a BiT, lIl MiNt ChOcO cHiP. hOnK.</p>
+  
+  <p class="jane">JANE: Shut the fuck up!!!!!</p>
+  
+  <p class="jane">JANE: You fucking insects just assassinated my father!!!!!</p>
+  
+  <p class="gamzee">GAMZEE: HeH hEh. YoU’rE cUtE wHeN yOu’Re MaD, mY tAsTy LiTtLe SnAcCuCcInO :o)</p>
+</div>
+  <p class="no-indent">And then Gamzee seals his fate. He reaches out with his finger and boops Jane right on her little nose. Honk!</p>
+  <p>Jake audibly gasps at the sight—but Jane does not have any sort of violent outburst of anger. Instead, she goes completely, icily silent.</p>
+  <p>Gamzee smiles vacantly down at Jane, unaware of his misstep. When Jane next speaks, it is in a controlled, steady voice.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="jane">JANE: Security.</p>
+  
+  <p class="jane">JANE: Escort this troll off of my ship. Now.</p>
+</div>
+  <p class="no-indent">The security personnel aboard the bridge do not hesitate to follow the command. They descend on Gamzee in a swarm, grabbing him by his arms. The baby bottle tumbles out of his grasp, busting open when it falls. The remaining milk spills out, pooling in the recessed lighting of the floor.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="gamzee">GAMZEE: wHoA wHoA wHoA, hOlD uP!</p>
+  
+  <p class="gamzee">GAMZEE: YoU cAn’T jUsT gO aNd ThRoW mE oFf BoArD, mY mIlKy MaMi.</p>
+  
+  <p class="jane">JANE: Oh, but I can!</p>
+  
+  <p class="jane">JANE: Just watch me.</p>
+</div>
+  <p class="no-indent">The security officers begin to pull Gamzee away, but he makes one final desperate play.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="gamzee">GAMZEE: wAiT!! jUsT hEaR mE oUt!!</p>
+  
+  <p class="jane">JANE: What?</p>
+  
+  <p class="gamzee">GAMZEE: iF yOu ThRoW mE oUt I’lL bE aLl LoSt AnD sHiT, bAbE. yOu KnOw I bE nEeDiNg YoU.</p>
+  
+  <p class="jane">JANE: What? You think appealing to me with your disgusting little addiction is going to sway me?</p>
+  
+  <p class="jane">JANE: That’s the funniest joke you’ve ever told, clown.</p>
+  
+  <p class="gamzee">GAMZEE: iT’s NoT aBoUt ThE mIlK, bOo.</p>
+  
+  <p class="gamzee">GAMZEE: It’S aBoUt YoU.</p>
+</div>
+  <p class="no-indent">Jane stops.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="jane">JANE: What...?</p>
+  
+  <p class="gamzee">GAMZEE: i NeEd YoU...</p>
+  
+  <p class="jane">JANE: Are you saying that y—</p>
+  
+  <p class="gamzee">GAMZEE: I’vE gOnE aNd ToLd YoU AlL aBoUt My PaSt StRuGgLeS wItH tHe WiCkEd GrEeN sUbStAnCeS.</p>
+  
+  <p class="gamzee">GAMZEE: i DoNe GoNe AnD mAdE sO mUcH pRoGgReSs, FiNdInG nEw HeAlThY wAyS tO cOpE wItH tHe VoIcEs AnD rEdEeM mYsElF.</p>
+  
+  <p class="gamzee">GAMZEE: AnD yOu’Ve BeEn MoRe Of A hElP tO mE tHaN aNyBoDy. MoRe ThAn AnYtHiNg.</p>
+  
+  <p class="gamzee">GAMZEE: yOu KnOw WiTh ThE NiGhTmArEs I cAn’T sLeEp WiThOuT hOlDiNg On To A mOtHeRfUcKeR!</p>
+</div>
+  <p class="no-indent">Jane sneers. She has no idea why she thought for even a moment that he might have meant anything else.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="jane">JANE: I am so...</p>
+  
+  <p class="jane">JANE: Ugh. Forget it.</p>
+  
+  <p class="jane">JANE: You are despicable.</p>
+  
+  <p class="gamzee">GAMZEE: yOu CaN’t JuSt Go AnD cUt A bRoThEr OfF!</p>
+  
+  <p class="gamzee">GAMZEE: LeT’s AlL uP aNd ThInK tHiS tHrOuGh AlL rEaSoNaBlY aNd ShIt.</p>
+  
+  <p class="gamzee">GAMZEE: i’Ll Do MoThErFuCkInG aNyThInG!</p>
+</div>
+  <p class="no-indent">Jane’s eyes rake up and down Gamzee’s body, like she’s carefully considering her response. Her face is expressionless when she answers.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="jane">JANE: Begone, clown.</p>
+</div>
+  <p class="no-indent">Jane turns, and waves the security away. The uniformed men drag Gamzee from the bridge. The sound of honks reverberate hauntingly through the halls as the wretched jester is removed from his seat of power at last.</p>
+  <p>In spite of everything, Jake can’t help but be relieved.</p>
+  <p>With Gamzee finally disposed of, Jane is invigorated with the strength of her own conviction. She spins on her heel and confidently strides to the captain’s chair. She engages her interface, sits down, and assumes her seat of command.</p>
+  <p>The time for mercy is long past. Karkat Vantas must die.</p></div>
+      <div class="o_story-nav type-hs-copy line-tight pad-x-0 pad-x-lg--md pad-b-lg">
+        <div>
+          <span>&gt;</span>
+          <a href="Candy 31.html">==&gt; </a><br>
+        </div>
+      </div>
+  
+<footer id="story-footer" role="banner">
+  <div id="story_footer_container" class="o_story-page-footer flex pad-t-0 pad-x-0
+     flex-justify 
+    ">
+      <div class="pad-l-lg--md mar-b-md type-hs-small type-hs-bottom--md type-center type-left--md">
+        <ul class="o_game-nav">
+          <li class="o_game-nav-item">
+            <a id="o_start-over" href="The Homestuck Epilogues.html">Start Over</a>
+          </li>
+            <li class="o_game-nav-item">
+              <a href="Candy 29.html">Go Back</a>
+            </li>
+        </ul>
+      </div>
+      <script>
+//<![CDATA[
+$(document).ready(function() { Gamenav.checkAutosave(); });
+//]]>
+</script>
+
+    <a href="javascript:void(0)" data-gamenav-open="" class="nav-btn nav-btn--center type-hs-small mar-b-md" style="text-decoration:none; text-transform: none; font-size:14px; line-height:14px;"><span>Options</span> <i class="icon-menu" style="margin:0;"></i></a>
+  </div>
+</footer>
+
+
+  </div>
+</div><iframe name="__tcfapiLocator" src="./Epilogue_files/saved_resource(2).html" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe>
+
+
+    
+<div class="o_site-footer row pos-r pad-t-rg pad-b-xl pad-b-0--md bg-dark-gray">
+  <div class="float-l"><img src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif" alt="Footer logo"><br></div>
+  <div class="float-r disp-n disp-bl--sm"><img src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif" alt="Footer logo"><br></div>
+  <div class="type-center pad-t-md--md">
+    <ul>
+      <li><a href="https://www.homestuck.com/contacts">Contacts</a></li>
+      <li><a href="https://www.homestuck.com/privacy">Privacy Policy</a></li>
+    </ul>
+    <div><span style="white-space:nowrap;">© 2018 Homestuck</span> <span style="white-space:nowrap;">and VIZ Media</span></div>
+  </div>
+</div>
+
+
+
+    <div id="overlay" data-overlay-state="off" class="o_overlay"></div>
+    <div id="game_overlay" data-game-overlay-state="off" class="o_game-overlay"></div>
+    <div id="overlay_wait" data-overlay-state="off" class="o_overlay-wait"></div>
+
+
+
+  
+
+<iframe name="googlefcPresent" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;" src="./Epilogue_files/saved_resource(6).html" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe></body></html>

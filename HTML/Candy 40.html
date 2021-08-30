@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en-US"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- application -->
+    <script src="./Epilogue_files/jquery-1.11.3.min.js.download"></script>
+    
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"1b930da09b","applicationID":"65900267","transactionName":"cFkNREpaWA9dF0pBVlRTEB9LQVsRQQ==","queueTime":0,"applicationTime":6,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"1b930da09b",applicationID:"65900267"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>The Homestuck Epilogues</title>
+    <meta name="description" content="Tales of dubious authenticity.">
+    <script>
+//<![CDATA[
+var getGAEventLabel = function(){ return "The Homestuck Epilogues"; };
+//]]>
+</script>
+      <link rel="canonical" href=candy/40">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.homestuck.com/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.homestuck.com/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.homestuck.com/favicon/favicon-16x16.png">
+<link rel="manifest" href="https://www.homestuck.com/favicon/manifest.json">
+<link rel="mask-icon" href="https://www.homestuck.com/favicon/safari-pinned-tab.svg" color="#6bbe4a">
+<meta name="theme-color" content="#ffffff">
+
+        <link rel="stylesheet" media="all" href="./Epilogue_files/manifest-epilogue-1694f2c1abc80cf72e84324f6d6486e6f04b02358ed667dee36c88974eef388f.css">
+      <link rel="stylesheet" href="./Epilogue_files/kek1uwn.css">
+    <link rel="stylesheet" media="all" href="./Epilogue_files/manifest-ui-e03365bbb17dde0f1fd5463dd7b56d096a27cae55aa131b72684e36c1f0c80f6.css">
+    <script src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE="></script>
+    <script src="./Epilogue_files/manifest-ads-story-1885683d55d6f631dc202ac5db87250ca938be96a613e85bb93739ecc057540e.js.download"></script>
+
+
+    <!-- //Connect Container: Homestuck-->
+<script src="./Epilogue_files/tag.min.js.download" async="" defer=""></script>
+  <script async="" src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE="></script><style type="text/css">* {
+ text-shadow: transparent 0px 0px 0px, rgba(0,0,0,0.68) 0px 0px 0px !important; 
+}</style><script async="" src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE="></script></head>
+  
+  <body class="epilogue">
+
+    
+    <header id="site-header" role="banner">
+  <div id="header-container" class="o_story-page-header row flex pad-t-0 ">
+    <a href="javascript:void(0)" data-nav-open="" class="nav-btn nav-btn--center color-white" style="overflow-wrap:normal;text-decoration:none;"><i class="icon-menu"></i><span>Menu</span></a>
+    <nav id="nav-container" data-nav-state="closed" role="navigation" class="o_nav-container">
+      <a href="javascript:void(0)" data-nav-close="" class="nav-btn color-white pad-y-rg type-rg" style="overflow-wrap:normal;text-decoration:none;"><i class="icon-close"></i><span>Dismiss</span></a>
+      <ul id="primary-nav" class="o_primary-nav style-caps weight-bold disp-ib color-white type-rg">
+     <li class="o_primary-nav-item slide-candycorn pipe"><a class="o_primary-nav-link" style="color:#39d5f6" href="Read.html">READ</a></li><!--
+     --><li class="o_primary-nav-item"><a class="o_primary-nav-link" style="color:#39d5f6" href="Credits.html">INFO</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+    
+
+    <div class="row bg-white bg-light-gray--md pad-t-md--md pos-r">
+  <div id="content_container" class="mar-x-auto disp-bl bg-white" style="max-width:650px;">
+    <div class="pos-r pad-t-sm pad-x-lg--md type-center" style="overflow:visible; height:72px;">
+      <img class="hsep_bullet" alt="Chapter" src="./Epilogue_files/candy_60x60-6b955ce39772ffce9994587a951f12b804ebf2202ebe8ed230483e25072db855.png">
+      <h3 class="disp-ib type-hsep-header line-tight type-lg pad-t-sm">
+        40
+      </h3>
+    </div>
+  </div>
+</div>
+
+<div class="row bg-white bg-light-gray--md pad-b-md pad-b-lg--md pos-r pad-t-md pad-t-0--md">
+  <div class="mar-x-auto disp-bl bg-white pad-t-lg" style="max-width:650px;">
+      <div class="o-story_text o_epilogue type-rg type-sm--md line-caption line-copy--md pad-x-0 pad-x-lg--md pad-b-lg">  <p class="no-indent"><span class="opener type-hs-opener-rg type-hs-opener-sm--md">F</span>rom atop the tallest bell tower in the Carapace Kingdom, the sky looks like something painted by a crazy person. The fierce lights of war on the horizon stain the sunset in unnatural hues: ultraviolet pigments of red and purple slash through the atmosphere in harsh, jagged strokes. The cracks in the sky above are a diseased shade of green, bright bolts receding like lightning in a storm. Dead-Jade, host to the cherub’s spirit, floats at the apex of the tower. The blitzkrieg above makes a kaleidoscope of color between the black stripes on her tights.</p>
+  <p>Aradia glides up to meet her, having left Sollux on the balcony. Above, in the sky, a hole has opened up. One so big it fills the entire radius of her vision.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="aradia">ARADIA: oh thats very dramatic</p>
+</div>
+  <p class="no-indent">The dead cherub says nothing. Aradia flits in front of her face and looks into her eyes. They’re the same black as the vortex above, so absolutely dark that they reflect no light.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="aradia">ARADIA: i think i understand whats going on now</p>
+  
+  <p class="calliope-dead">JADE: do you?</p>
+  
+  <p class="aradia">ARADIA: i mean i think i understand what i was seeing</p>
+  
+  <p class="aradia">ARADIA: when i watched as everything broke apart</p>
+  
+  <p class="aradia">ARADIA: and got swallowed up by the black hole</p>
+  
+  <p class="aradia">ARADIA: which is where i ended up too</p>
+  
+  <p class="aradia">ARADIA: that black hole...  </p>
+  
+  <p class="aradia">ARADIA: thats basically you right</p>
+  
+  <p class="calliope-dead">JADE: yes.</p>
+  
+  <p class="aradia">ARADIA: and when you speak of your brother </p>
+  
+  <p class="aradia">ARADIA: thats lord english</p>
+  
+  <p class="calliope-dead">JADE: yes.</p>
+  
+  <p class="aradia">ARADIA: and hes dead</p>
+  
+  <p class="calliope-dead">JADE: not just yet.</p>
+  
+  <p class="aradia">ARADIA: oh</p>
+  
+  <p class="aradia">ARADIA: then... where is he</p>
+  
+  <p class="calliope-dead">JADE: ...  </p>
+  
+  <p class="aradia">ARADIA: i see</p>
+  
+  <p class="aradia">ARADIA: going to keep us in cryptic suspense as usual are we</p>
+  
+  <p class="aradia">ARADIA: haha thats fine :)</p>
+  
+  <p class="calliope-dead">JADE: yes, it is.</p>
+  
+  <p class="aradia">ARADIA: i did think it was odd that we ended up in this timeline after all was said and done</p>
+  
+  <p class="aradia">ARADIA: such a strange and unremarkable place to be after witnessing such awesome calamity</p>
+  
+  <p class="aradia">ARADIA: theres something</p>
+  
+  <p class="aradia">ARADIA: hm</p>
+</div>
+  <p class="no-indent">Aradia pinches her thumb and forefinger together.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="aradia">ARADIA: off about this place</p>
+  
+  <p class="aradia">ARADIA: just a little bit</p>
+  
+  <p class="calliope-dead">JADE: yes, you would think so.</p>
+  
+  <p class="calliope-dead">JADE: lesser beings have so much trouble perceiving divinity in the uncanny.</p>
+  
+  <p class="aradia">ARADIA: lesser? </p>
+  
+  <p class="calliope-dead">JADE: you have proven yourself a valuable servant, and pleasant company.</p>
+  
+  <p class="calliope-dead">JADE: but yes, you are lesser.</p>
+  
+  <p class="aradia">ARADIA: haha ok</p>
+  
+  <p class="aradia">ARADIA: well</p>
+  
+  <p class="aradia">ARADIA: it could always be worse i suppose</p>
+  
+  <p class="aradia">ARADIA: you said that we were the “lucky ones” if i recall correctly</p>
+  
+  <p class="calliope-dead">JADE: all in this place are luckier than those who are not, in a certain way.</p>
+  
+  <p class="aradia">ARADIA: but what way is that</p>
+  
+  <p class="aradia">ARADIA: the people on this planet seem so...  </p>
+  
+  <p class="aradia">ARADIA: well i dont want to be mean</p>
+  
+  <p class="aradia">ARADIA: but is that the paradox of living in a utopia</p>
+  
+  <p class="aradia">ARADIA: when everything is perfect and your every need is met </p>
+  
+  <p class="aradia">ARADIA: is it natural for people to start crossing blades at imaginary enemies</p>
+  
+  <p class="calliope-dead">JADE: i doubt that’s what troubles you about this world.</p>
+  
+  <p class="aradia">ARADIA: oh?</p>
+  
+  <p class="calliope-dead">JADE: what you’ve described is a state of empirical ennui resulting from the material circumstances here.</p>
+  
+  <p class="calliope-dead">JADE: but the material circumstances of this world have no objective existential value.</p>
+  
+  <p class="calliope-dead">JADE: this world, unlike the canonical horrors from which it is hermetically insulated, will always fail to meet the combined criteria for truth, relevance, and essentiality that would endow this realm with any real gravity. </p>
+  
+  <p class="calliope-dead">JADE: its own naturally occurring supply of gravity, rather than the artificial supply i have given it.</p>
+  
+  <p class="calliope-dead">JADE: as such, what transpires here is characterized by experiential frivolity.</p>
+  
+  <p class="calliope-dead">JADE: physically, it is cordoned off by the black hole’s event horizon. it is safe. untouchable.</p>
+  
+  <p class="calliope-dead">JADE: inescapable.</p>
+  
+  <p class="aradia">ARADIA: that sounds ominous</p>
+  
+  <p class="calliope-dead">JADE: it cannot be ominous because it cannot truly be anything with tangible significance.</p>
+  
+  <p class="calliope-dead">JADE: one could describe it as a phantasmal projection confined within my horizon.</p>
+  
+  <p class="calliope-dead">JADE: it was created by a choice that made it possible for that horizon to expand infinitely, to consume infinitely.</p>
+  
+  <p class="calliope-dead">JADE: and since that choice could not coexist with canon events, this place manifested here to support its consequences.</p>
+  
+  <p class="calliope-dead">JADE: if this world were capable of anything either essential, relevant, or true in some stable combination, then it would perpetuate a corrosive paradox.</p>
+  
+  <p class="calliope-dead">JADE: as such, insulation from what is out there, and the inescapable well it rests in, is what protects all it holds inside.</p>
+  
+  <p class="calliope-dead">JADE: and since i am the embodiment of the black hole in which it rests,</p>
+  
+  <p class="calliope-dead">JADE: i am the one protecting this world.</p>
+  
+  <p class="aradia">ARADIA: why?</p>
+  
+  <p class="aradia">ARADIA: if its so irrelevant whats the point</p>
+  
+  <p class="calliope-dead">JADE: it is simply my duty to defend the innocent from destruction, degradation, and dissolution.</p>
+  
+  <p class="calliope-dead">JADE: but there is more to consider than just my nature.</p>
+  
+  <p class="calliope-dead">JADE: as it happens, this projection within me serves as a stable conceptual foothold from which i can sense and resist another growing threat which is determined to jeopardize the canonical plane of reality.</p>
+  
+  <p class="aradia">ARADIA: ah yes the prince</p>
+  
+  <p class="aradia">ARADIA: i still have no idea who he is</p>
+  
+  <p class="aradia">ARADIA: not that i doubt you really</p>
+  
+  <p class="aradia">ARADIA: we had a prince who was a huge jerk who destroyed everything he touched </p>
+  
+  <p class="calliope-dead">JADE: the prince i am referring to electively removed himself from this reality in order to strategically consolidate his power.</p>
+  
+  <p class="calliope-dead">JADE: he cannot threaten this world. and yet by sequestering himself elsewhere, has become infinitely more dangerous.</p>
+  
+  <p class="aradia">ARADIA: what makes him so dangerous</p>
+  
+  <p class="aradia">ARADIA: i mean</p>
+  
+  <p class="aradia">ARADIA: what exactly is it he can do which is more destructive than what i was seeing just before i came here?</p>
+</div>
+  <p class="no-indent">The cherub makes a rare physical gesture with her hands to begin framing her next statements. Aradia notes this and strives to listen more closely. </p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="calliope-dead">JADE: physical destruction is one thing.</p>
+  
+  <p class="calliope-dead">JADE: obliteration of the entire canvas for all of reality over a given cosmic span is another.</p>
+  
+  <p class="calliope-dead">JADE: and yet there are even more insidious forms of destruction and subversion of life to consider.</p>
+  
+  <p class="calliope-dead">JADE: methods that are difficult to grasp for those on your plane.</p>
+  
+  <p class="aradia">ARADIA: yes yes im quite inferior i know</p>
+  
+  <p class="aradia">ARADIA: but im also very curious!</p>
+  
+  <p class="aradia">ARADIA: can you try me?</p>
+  
+  <p class="calliope-dead">JADE: of course.</p>
+  
+  <p class="calliope-dead">JADE: let’s begin by examining the nature of a story.</p>
+  
+  <p class="aradia">ARADIA: ok</p>
+  
+  <p class="calliope-dead">JADE: it will be easier to do this if we have an example of a story to discuss. </p>
+  
+  <p class="calliope-dead">JADE: some stories are impossibly long. but others can be quite short.</p>
+  
+  <p class="calliope-dead">JADE: some can even be a few words. </p>
+  
+  <p class="calliope-dead">JADE: what’s your favorite story?</p>
+  
+  <p class="aradia">ARADIA: my favorite?</p>
+  
+  <p class="aradia">ARADIA: um</p>
+  
+  <p class="aradia">ARADIA: i dont know how to answer that really</p>
+  
+  <p class="calliope-dead">JADE: don’t you like stories?</p>
+  
+  <p class="aradia">ARADIA: of course i do!</p>
+  
+  <p class="aradia">ARADIA: but do you mean like</p>
+  
+  <p class="aradia">ARADIA: a book? a movie?</p>
+  
+  <p class="calliope-dead">JADE: anything.</p>
+  
+  <p class="aradia">ARADIA: ummm</p>
+  
+  <p class="calliope-dead">JADE: pick literally any example you can think of.</p>
+  
+  <p class="aradia">ARADIA: ok</p>
+  
+  <p class="aradia">ARADIA: theres a famous religious story from my planet</p>
+  
+  <p class="aradia">ARADIA: about someone called the signless</p>
+  
+  <p class="aradia">ARADIA: who i guess turned out to be my friends ancestor which was weird</p>
+  
+  <p class="aradia">ARADIA: but thats beside the point</p>
+  
+  <p class="calliope-dead">JADE: yes, i know of the tale.</p>
+  
+  <p class="calliope-dead">JADE: how would you tell his story, if you were trying to be as brief as possible?</p>
+  
+  <p class="aradia">ARADIA: well</p>
+  
+  <p class="aradia">ARADIA: a religious martyr attempted to lead a rebellion but he was killed in a horrible way and shouted a very loud rude word in the process</p>
+  
+  <p class="calliope-dead">JADE: that’s good. </p>
+  
+  <p class="calliope-dead">JADE: try making it shorter though.</p>
+  
+  <p class="aradia">ARADIA: ok</p>
+  
+  <p class="aradia">ARADIA: a martyr tried to rebel but he was killed horribly and then shouted a rude word</p>
+  
+  <p class="calliope-dead">JADE: shorter.</p>
+  
+  <p class="aradia">ARADIA: wow</p>
+  
+  <p class="aradia">ARADIA: um...</p>
+  
+  <p class="aradia">ARADIA: a martyr rebelled but died and shouted rudely?</p>
+  
+  <p class="calliope-dead">JADE: shorter.</p>
+  
+  <p class="aradia">ARADIA: oof</p>
+  
+  <p class="aradia">ARADIA: ok hows this</p>
+  
+  <p class="aradia">ARADIA: a martyr died and said fuck</p>
+  
+  <p class="calliope-dead">JADE: perfect.</p>
+  
+  <p class="aradia">ARADIA: what is the point of this</p>
+  
+  <p class="calliope-dead">JADE: to establish an extremely short narrative for certain illustrative purposes.</p>
+  
+  <p class="calliope-dead">JADE: i’m going to repeat your story to you, and i want you to listen carefully.</p>
+  
+  <p class="calliope-dead">JADE: a martyr died and said fuck.</p>
+  
+  <p class="aradia">ARADIA: ok i listened</p>
+  
+  <p class="aradia">ARADIA: thats definitely the short story i just said</p>
+  
+  <p class="calliope-dead">JADE: yes.</p>
+  
+  <p class="calliope-dead">JADE: now i’m going to repeat the story, but change the way i say it very slightly.</p>
+  
+  <p class="calliope-dead">JADE: listen again carefully.</p>
+  
+  <p class="aradia">ARADIA: ...</p>
+  
+  <p class="calliope-dead">JADE: <span class="calliope-dead-story type-rg type-sm--md">a martyr died and said fuck.</span></p>
+  
+  <p class="aradia">ARADIA: hmm</p>
+  
+  <p class="aradia">ARADIA: yes that was a little different</p>
+  
+  <p class="aradia">ARADIA: im not sure that i could describe how though it was pretty subtle</p>
+  
+  <p class="calliope-dead">JADE: yes.</p>
+  
+  <p class="calliope-dead">JADE: you noticed because i told you to pay attention for a difference.</p>
+  
+  <p class="calliope-dead">JADE: you noticed because you were alert to the fact that there was even something to notice at all.</p>
+  
+  <p class="calliope-dead">JADE: and if you had not been alert to the fact that something could be different about the nature of the voice telling your story, or to the fact that such differences had a certain significance, you likely would not have noticed.</p>
+  
+  <p class="aradia">ARADIA: i see</p>
+  
+  <p class="aradia">ARADIA: yes i think youre right</p>
+  
+  <p class="calliope-dead">JADE: but now imagine that i told your story in exactly that way. that i said,</p>
+  
+  <p class="calliope-dead">JADE: <span class="calliope-dead-story type-rg type-sm--md">a martyr died and said fuck.</span></p>
+  
+  <p class="calliope-dead">JADE: but it was the first time you ever heard that story.</p>
+  
+  <p class="calliope-dead">JADE: also imagine you couldn’t see me and didn’t even know i existed.</p>
+  
+  <p class="calliope-dead">JADE: and imagine you couldn’t even hear the story i just told with your ears.</p>
+  
+  <p class="calliope-dead">JADE: it simply entered your awareness in some other manner, in a way that was impersonal. almost like one of your own thoughts speaking to you.</p>
+  
+  <p class="aradia">ARADIA: ok</p>
+  
+  <p class="calliope-dead">JADE: picture that this is all you have ever known of this story. the only way it would ever occur to you that the story could be understood by another.</p>
+  
+  <p class="calliope-dead">JADE: and then, one day, you meet me.</p>
+  
+  <p class="calliope-dead">JADE: you look me up and down, and regard me as the discrete, specific individual that i am.</p>
+  
+  <p class="calliope-dead">JADE: and i decide to tell you this story again, using my own voice.</p>
+  
+  <p class="calliope-dead">JADE: and it sounds exactly like this:</p>
+  
+  <p class="calliope-dead">JADE: a martyr died and said fuck.</p>
+  
+  <p class="aradia">ARADIA: huh...</p>
+  
+  <p class="calliope-dead">JADE: does this change the way you perceive the story you were originally familiar with?</p>
+  
+  <p class="aradia">ARADIA: i guess a little bit</p>
+  
+  <p class="aradia">ARADIA: it’s certainly a different way of hearing it</p>
+  
+  <p class="aradia">ARADIA: but at least you didnt change any words so i guess its not all that different</p>
+  
+  <p class="calliope-dead">JADE: exactly.</p>
+  
+  <p class="calliope-dead">JADE: i didn’t change any words.</p>
+  
+  <p class="calliope-dead">JADE: but then, it was a very short story i told, wasn’t it?</p>
+  
+  <p class="aradia">ARADIA: sure was</p>
+  
+  <p class="calliope-dead">JADE: now imagine it was much longer, and that was only the first line.</p>
+  
+  <p class="aradia">ARADIA: thats easy to imagine</p>
+  
+  <p class="aradia">ARADIA: his was a long story</p>
+  
+  <p class="calliope-dead">JADE: quite true.</p>
+  
+  <p class="calliope-dead">JADE: a story as short as the one we’ve been using cannot accomplish much when it comes to guiding and manipulating one’s awareness and emotions.</p>
+  
+  <p class="calliope-dead">JADE: it is compact, ostensibly commanding a simple and meditative moment of reflection, as a short poem might.</p>
+  
+  <p class="calliope-dead">JADE: the narrative it delivers is freighted with inference. it is a pattern imprinted upon the imagination consisting solely of cognitive dark matter, or a sort of notional negative space.</p>
+  
+  <p class="calliope-dead">JADE: but longer stories have the power to draw consciousness into them. they possess arresting and hypnotic qualities which can be used by their tellers to alter the awareness of the listener.</p>
+  
+  <p class="calliope-dead">JADE: again, i’d like you to imagine this is the only way you’ve ever known this story.</p>
+  
+  <p class="calliope-dead">JADE: but then it continues...</p>
+  
+  <p class="calliope-dead">JADE: <span class="calliope-dead-story type-rg type-sm--md">a martyr died and said fuck.</span></p>
+  
+  <p class="calliope-dead">JADE: <span class="calliope-dead-story type-rg type-sm--md">his final howl of profanity reverberated through the ages.</span></p>
+  
+  <p class="calliope-dead">JADE: <span class="calliope-dead-story type-rg type-sm--md">it inspired his devotees during the darkest times of a brutal regime.</span></p>
+  
+  <p class="calliope-dead">JADE: <span class="calliope-dead-story type-rg type-sm--md">his lessons were guarded, kept secret, espoused in the shadows of tyranny.</span></p>
+  
+  <p class="calliope-dead">JADE: <span class="calliope-dead-story type-rg type-sm--md">a vision of peace would inspire those who’d never conceived of it.</span></p>
+  
+  <p class="calliope-dead">JADE: <span class="calliope-dead-story type-rg type-sm--md">and though his death was gruesome, it opened the world to a feeling of hope.</span></p>
+  
+  <p class="calliope-dead">JADE: <span class="calliope-dead-story type-rg type-sm--md">this hope echoed through the ages.</span></p>
+  
+  <p class="calliope-dead">JADE: <span class="calliope-dead-story type-rg type-sm--md">it gave his disciples the strength to persist as they perished in droves.</span></p>
+  
+  <p class="calliope-dead">JADE: <span class="calliope-dead-story type-rg type-sm--md">it was the only light to shine on a dark planet for millions of sweeps.</span></p>
+  
+  <p class="calliope-dead">JADE: <span class="calliope-dead-story type-rg type-sm--md">and if you are one so devoted to his teachings, who sees truth in his words,</span></p>
+  
+  <p class="calliope-dead">JADE: <span class="calliope-dead-story type-rg type-sm--md">it may be said with great authority that</span> you are wrong.</p>
+  
+  <p class="calliope-dead">JADE: you are foolish to believe his lies. his martyrdom is false, his sacrifice hollow.</p>
+  
+  <p class="calliope-dead">JADE: repent for your adherence to this illusion now, and perhaps leniency will be your reward.</p>
+  
+  <p class="aradia">ARADIA: 0_0</p>
+  
+  <p class="aradia">ARADIA: what just happened there</p>
+  
+  <p class="calliope-dead">JADE: i brought to your attention that the story you were listening to had a speaker with a specific identity.</p>
+  
+  <p class="calliope-dead">JADE: and where there is an identity, there can also be an agenda.</p>
+  
+  <p class="calliope-dead">JADE: i gained the power to bend your consciousness to become more amenable to my narrative agenda by lulling you into a more receptive state through the established rhythm of the story’s telling.</p>
+  
+  <p class="calliope-dead">JADE: this was only possible because you were not initially questioning the identity of the teller, or even considering that there was an identity to consider.</p>
+  
+  <p class="aradia">ARADIA: i guess youre right</p>
+  
+  <p class="calliope-dead">JADE: hence, we may view any story as speakerless, or spoken, so as to bring designations to the duality i have just presented.</p>
+  
+  <p class="calliope-dead">JADE: a story may remain speakerless from the beginning until the end, offering no reason for its listener to ever imagine it is of the spoken sort.</p>
+  
+  <p class="calliope-dead">JADE: it can also be spoken from the beginning, which is an up-front announcement to the listener that it carries the perspective of an individual.</p>
+  
+  <p class="calliope-dead">JADE: but a spoken story may also disguise itself as one that is speakerless, as mine just did.</p>
+  
+  <p class="calliope-dead">JADE: the speaker may reveal herself well after speakerless conditions have been established. </p>
+  
+  <p class="calliope-dead">JADE: and then one may ask. was it spoken by that individual all along while remaining masked, or has the speaker suddenly intervened to command a heretofore speakerless tale?</p>
+  
+  <p class="aradia">ARADIA: i dont...</p>
+  
+  <p class="aradia">ARADIA: well in your case</p>
+  
+  <p class="aradia">ARADIA: it certainly did seem like you were the one speaking all along</p>
+  
+  <p class="aradia">ARADIA: but using different voices</p>
+  
+  <p class="calliope-dead">JADE: that’s true. </p>
+  
+  <p class="calliope-dead">JADE: not all situations are like the one i just demonstrated though.</p>
+  
+  <p class="calliope-dead">JADE: for as long as the hypothetical speaker of a speakerless story remains masked, then it is true that the story could be seen as either speakerless or spoken. both are true, as well as neither. </p>
+  
+  <p class="calliope-dead">JADE: it is best seen as a null factor, until there is a departure.</p>
+  
+  <p class="calliope-dead">JADE: once a hidden speaker becomes unmasked, then retroactively the story may be considered spoken all along.</p>
+  
+  <p class="calliope-dead">JADE: and so too do we retroactively change how we regard what has already been spoken.</p>
+  
+  <p class="aradia">ARADIA: yeah</p>
+  
+  <p class="aradia">ARADIA: i guess with our martyr story</p>
+  
+  <p class="aradia">ARADIA: by revealing yourself as the teller it turned out...</p>
+  
+  <p class="aradia">ARADIA: you werent even sympathetic to the very story it seemed you were trying to get me invested in from the beginning</p>
+  
+  <p class="aradia">ARADIA: almost like a mean prank!</p>
+  
+  <p class="calliope-dead">JADE: yes.</p>
+  
+  <p class="calliope-dead">JADE: and so there is a very dangerous and destructive quality to these nebulous forces which i have gone to some lengths to demonstrate for you here.</p>
+  
+  <p class="calliope-dead">JADE: not everyone who is affected by these forces is fit to fully grasp their insidious qualities, or the sense of urgency that they must be resisted with.</p>
+  
+  <p class="calliope-dead">JADE: this is the sort of corruption i now must dedicate my existence in this new body to ending once and for all.</p>
+</div>
+  <p class="no-indent">The cherub falls silent. Aradia takes this to mean this lesson of sorts has ended. She ruminates on it all for a while before speaking again.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="aradia">ARADIA: thats all pretty neat i guess</p>
+  
+  <p class="aradia">ARADIA: so...  </p>
+  
+  <p class="aradia">ARADIA: does this stuff have anything to do with this big hole that just opened in the sky</p>
+  
+  <p class="calliope-dead">JADE: no.</p>
+  
+  <p class="aradia">ARADIA: then...  </p>
+  
+  <p class="aradia">ARADIA: what?</p>
+  
+  <p class="aradia">ARADIA: what are we doing here oh great muse</p>
+</div>
+  <p class="no-indent">Aradia starts giggling. Above, the sky yawns open a little wider. Aradia waits, but gets no response.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="aradia">ARADIA: even now when youre being uncharacteristically forthcoming youre still impossible to talk to</p>
+  
+  <p class="aradia">ARADIA: i understand that though</p>
+  
+  <p class="aradia">ARADIA: i was like that when i was dead too</p>
+  
+  <p class="calliope-dead">JADE: like what?</p>
+  
+  <p class="aradia">ARADIA: irrepressibly cryptic</p>
+  
+  <p class="calliope-dead">JADE: i see.</p>
+  
+  <p class="aradia">ARADIA: so</p>
+  
+  <p class="aradia">ARADIA: can i at least take a guess?</p>
+  
+  <p class="calliope-dead">JADE: yes.</p>
+  
+  <p class="aradia">ARADIA: HES coming through there isnt he</p>
+  
+  <p class="aradia">ARADIA: your brother</p>
+  
+  <p class="calliope-dead">JADE: that’s correct.</p>
+  
+  <p class="aradia">ARADIA: are we in danger?</p>
+  
+  <p class="calliope-dead">JADE: he will certainly be very angry.</p>
+  
+  <p class="calliope-dead">JADE: but he will also be wounded.</p>
+  
+  <p class="calliope-dead">JADE: and even on his best day,</p>
+  
+  <p class="calliope-dead">JADE: he would be no match for what i have become.</p>
+  
+  <p class="aradia">ARADIA: 0_0!!!</p>
+</div>
+  <p class="no-indent">The cherub drifts higher and higher. There’s a glint of color at the center of the abyss—a flash like a star going black on the rim of a dying galaxy. Aradia follows behind the cherub, unable to pull her eyes away from the eerie phenomena overhead.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="aradia">ARADIA: what will you do when he comes</p>
+</div>
+  <p class="no-indent">The cherub is focused on something very small falling from above. The bright object flutters down from the broken sky and lands in her host body’s outstretched hand. It’s a feather, burnt at the edges, flickering orange and green.</p>
+<div class="chat type-rg type-hs-small--md" style="margin-bottom:0">  
+  <p class="calliope-dead">JADE: consume his body.</p>
+  
+  <p class="calliope-dead">JADE: absorb his essence.</p>
+  
+  <p class="calliope-dead">JADE: and then using this host, i will generate enough power to move beyond the staggering pull of the event horizon encasing this world.</p>
+  
+  <p class="calliope-dead">JADE: a prison of my own making, which can be escaped only through the supreme unification with my other half.</p>
+  
+  <p class="calliope-dead">JADE: it is crucial to the cosmos that i succeed.</p>
+  
+  <p class="calliope-dead">JADE: the prince of heart has to be stopped.</p>
+</div></div>
+      <div class="o_story-nav type-hs-copy line-tight pad-x-0 pad-x-lg--md pad-b-lg">
+        <div>
+          <span>&gt;</span>
+          <a href="Candy Postscript.html">==&gt; </a><br>
+        </div>
+      </div>
+  
+<footer id="story-footer" role="banner">
+  <div id="story_footer_container" class="o_story-page-footer flex pad-t-0 pad-x-0
+     flex-justify 
+    ">
+      <div class="pad-l-lg--md mar-b-md type-hs-small type-hs-bottom--md type-center type-left--md">
+        <ul class="o_game-nav">
+          <li class="o_game-nav-item">
+            <a id="o_start-over" href="The Homestuck Epilogues.html">Start Over</a>
+          </li>
+            <li class="o_game-nav-item">
+              <a href="Candy 39.html">Go Back</a>
+            </li>
+        </ul>
+      </div>
+      <script>
+//<![CDATA[
+$(document).ready(function() { Gamenav.checkAutosave(); });
+//]]>
+</script>
+
+    <a href="javascript:void(0)" data-gamenav-open="" class="nav-btn nav-btn--center type-hs-small mar-b-md" style="text-decoration:none; text-transform: none; font-size:14px; line-height:14px;"><span>Options</span> <i class="icon-menu" style="margin:0;"></i></a>
+  </div>
+</footer>
+
+
+  </div>
+</div>
+
+
+    
+<div class="o_site-footer row pos-r pad-t-rg pad-b-xl pad-b-0--md bg-dark-gray">
+  <div class="float-l"><img src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif" alt="Footer logo"><br></div>
+  <div class="float-r disp-n disp-bl--sm"><img src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif" alt="Footer logo"><br></div>
+  <div class="type-center pad-t-md--md">
+    <ul>
+      <li><a href="https://www.homestuck.com/contacts">Contacts</a></li>
+      <li><a href="https://www.homestuck.com/privacy">Privacy Policy</a></li>
+    </ul>
+    <div><span style="white-space:nowrap;">© 2018 Homestuck</span> <span style="white-space:nowrap;">and VIZ Media</span></div>
+  </div>
+</div>
+
+
+
+    <div id="overlay" data-overlay-state="off" class="o_overlay"></div>
+    <div id="game_overlay" data-game-overlay-state="off" class="o_game-overlay"></div>
+    <div id="overlay_wait" data-overlay-state="off" class="o_overlay-wait"></div>
+
+
+
+  
+
+<iframe name="googlefcPresent" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;" src="./Epilogue_files/saved_resource.html"></iframe></body></html>

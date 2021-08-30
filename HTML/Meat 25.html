@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en-US"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- application -->
+    <script async="" src="./Epilogue_files/jquery-1.11.3.min.js.download"></script>
+    
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"1b930da09b","applicationID":"65900267","transactionName":"cFkNREpaWA9dF0pBVlRTEB9LQVsRQQ==","queueTime":0,"applicationTime":5,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"1b930da09b",applicationID:"65900267"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>The Homestuck Epilogues</title>
+    <meta name="description" content="Tales of dubious authenticity.">
+    <script>
+//<![CDATA[
+var getGAEventLabel = function(){ return "The Homestuck Epilogues"; };
+//]]>
+</script>
+      <link rel="canonical" href="Meat 25.html">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.homestuck.com/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.homestuck.com/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.homestuck.com/favicon/favicon-16x16.png">
+<link rel="manifest" href="https://www.homestuck.com/favicon/manifest.json">
+<link rel="mask-icon" href="https://www.homestuck.com/favicon/safari-pinned-tab.svg" color="#6bbe4a">
+<meta name="theme-color" content="#ffffff">
+
+        <link rel="stylesheet" media="all" href="./Epilogue_files/manifest-epilogue-1694f2c1abc80cf72e84324f6d6486e6f04b02358ed667dee36c88974eef388f.css">
+      <link rel="stylesheet" href="./Epilogue_files/kek1uwn.css">
+    <link rel="stylesheet" media="all" href="./Epilogue_files/manifest-ui-e03365bbb17dde0f1fd5463dd7b56d096a27cae55aa131b72684e36c1f0c80f6.css">
+    <script src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE=(1)"></script>
+    <script src="./Epilogue_files/manifest-ads-story-1885683d55d6f631dc202ac5db87250ca938be96a613e85bb93739ecc057540e.js.download"></script>
+
+
+    <!-- //Connect Container: Homestuck-->
+<script src="./Epilogue_files/tag.min.js.download" async="" defer=""></script>
+  <script src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE="></script></head>
+  
+  <body class="epilogue">
+
+    
+    <header id="site-header" role="banner">
+  <div id="header-container" class="o_story-page-header row flex pad-t-0 ">
+    <a href="javascript:void(0)" data-nav-open="" class="nav-btn nav-btn--center color-white" style="overflow-wrap:normal;text-decoration:none;"><i class="icon-menu"></i><span>Menu</span></a>
+    <nav id="nav-container" data-nav-state="closed" role="navigation" class="o_nav-container">
+      <a href="javascript:void(0)" data-nav-close="" class="nav-btn color-white pad-y-rg type-rg" style="overflow-wrap:normal;text-decoration:none;"><i class="icon-close"></i><span>Dismiss</span></a>
+      <ul id="primary-nav" class="o_primary-nav style-caps weight-bold disp-ib color-white type-rg">
+     <li class="o_primary-nav-item slide-candycorn pipe"><a class="o_primary-nav-link" style="color:#39d5f6" href="Read.html">READ</a></li><!--
+     --><li class="o_primary-nav-item"><a class="o_primary-nav-link" style="color:#39d5f6" href="Credits.html">INFO</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+    
+
+    <div class="row bg-white bg-light-gray--md pad-t-md--md pos-r">
+  <div id="content_container" class="mar-x-auto disp-bl bg-white" style="max-width:650px;">
+    <div class="pos-r pad-t-sm pad-x-lg--md type-center" style="overflow:visible; height:72px;">
+      <img class="hsep_bullet" alt="Chapter" src="./Epilogue_files/meat_60x60-a20ba4eabbf9e6c7e4778d99648c13802fc7ff42a24bc48bc0535494cdd82195.png">
+      <h3 class="disp-ib type-hsep-header line-tight type-lg pad-t-sm">
+        25
+      </h3>
+    </div>
+  </div>
+</div>
+
+<div class="row bg-white bg-light-gray--md pad-b-md pad-b-lg--md pos-r pad-t-md pad-t-0--md">
+  <div class="mar-x-auto disp-bl bg-white pad-t-lg" style="max-width:650px;">
+      <div class="o-story_text o_epilogue type-rg type-sm--md line-caption line-copy--md pad-x-0 pad-x-lg--md pad-b-lg"><div class="chat type-rg type-hs-small--md" style="margin-top:0">
+  
+  <p class="rose">ROSE: Customarily, we speak in favorable terms about “getting to know each other” as people.</p>
+  
+  <p class="rose">ROSE: Humans, I mean. I doubt trolls are as fixated on this concept as one that is widely understood to have preconceived merit. </p>
+  
+  <p class="rose">ROSE: The more we learn about each other, the more the barriers between us fall and the closer we become. </p>
+  
+  <p class="rose">ROSE: And since birth, this idea is stationed in the part of each human mind that is perfectly immune to the dangers of challenge or scrutiny. </p>
+  
+  <p class="rose">ROSE: To grow closer, to know each other, is what it means to embrace our mutual humanity. What it means to be vulnerable. What it means to realize an intimacy implied as a form of divine birthright. And to question this in any way is to succumb to dysfunction, to pathological insularity, to sociological sin. </p>
+  
+  <p class="rose">ROSE: It is to renounce humanity itself, is it not?</p>
+  
+  <p class="dirk">DIRK: Yo, hold on a sec. This shit is dynamite, I promise.</p>
+  
+  <p class="dirk">DIRK: Gotta take care of something...  </p>
+</div>
+  <p class="no-indent dirk">Rose’s phone is ringing, and I know I’m in for an encore of my last dead-end conversation with Kanaya, so I block her number. I’d like to be able to attend to Rose in peace. It’s only cordial for me to give the greater percentage of my attention to someone I actually invited over. The nagging wife can hold her horses.</p>
+  <p class="dirk">Rose isn’t speaking to me directly. She’s been relocated to somewhere in the workshop a little more comfortable than the fucking floor. There’s a serviceable couch along the far wall, placed there for visitors but never once used for that purpose until now. I cleared off the spare parts and circuit boards that were piled up there, and laid her down in the reclined position she’s in now.</p>
+  <p class="dirk">Her head is in her hands again, hair falling over her shoulders. Her face is entirely hidden from me. Her shadow has faded to light behind her, assuming the shape of a Rose-like apparition. I nod to her, and she continues. When she speaks, it’s almost as if it’s the apparition that’s doing the talking. </p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="rose">ROSE: But is it really a good idea?</p>
+  
+  <p class="rose">ROSE: To know a person?</p>
+  
+  <p class="rose">ROSE: Know them inside and out, so thoroughly that no secrets remain?</p>
+  
+  <p class="rose">ROSE: If two people were to know each other in such a complete way, what remains of their individuality?</p>
+  
+  <p class="dirk">DIRK: If you’re going there, we might as well start at the bottom and define what an “individual” even is.</p>
+  
+  <p class="rose">ROSE: Oh dear god. </p>
+</div>
+  <p class="no-indent dirk">I place my hand on my chin and broadcast the appearance of being deeply pensive about philosophy all of a sudden. She gulps hard, broadcasting her grim realization that I have indeed become serious as shit about this. Literally any kind of intellectual pablum could pour out of my mouth any second, and she’s not prepared. For all she knows, I’m about to start quoting Kierkegaard.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="rose">ROSE: Please don’t start quoting Kierkegaard.</p>
+  
+  <p class="dirk">DIRK: You’ve never even read Kierkegaard, have you.</p>
+  
+  <p class="rose">ROSE: Like you have? </p>
+  
+  <p class="dirk">DIRK: Hey, where I come from, Wikipedia is a venerated literary resource. So if I told you I boned the hell up on his pages, you gotta believe me. That’s not meant as like, a punchline or anything.</p>
+  
+  <p class="dirk">DIRK: I’m a really, really well-read dude.</p>
+  
+  <p class="rose">ROSE: But there were only two human beings alive where you came from. </p>
+  
+  <p class="rose">ROSE: Who exactly were the academic cognoscenti of your era to determine which sources were deemed respectable?</p>
+  
+  <p class="dirk">DIRK: That would be me, obviously.</p>
+  
+  <p class="rose">ROSE: Ok.</p>
+  
+  <p class="dirk">DIRK: I suppose you’re going to tell me you haven’t read enough Wikipedia articles on loads of scholarly shit to fancy yourself an elite academic by 25th century standards as well?</p>
+  
+  <p class="rose">ROSE: No, I guess I have. </p>
+  
+  <p class="rose">ROSE: I’d be one of the top intellectuals by that measure.</p>
+  
+  <p class="rose">ROSE: A measure set by, I guess, literally one solitary self-absorbed teen boy for the express purpose of making himself feel clever.</p>
+  
+  <p class="dirk">DIRK: Absolutely correct.</p>
+  
+  <p class="rose">ROSE: Pretty astounding, when you think about it. That...  </p>
+  
+  <p class="dirk">DIRK: What?</p>
+  
+  <p class="rose">ROSE: That apparently in any given era the standard for depth of intellectual mastery is inversely proportional to the depth of the ocean. </p>
+  
+  <p class="rose">ROSE: Really makes you think.</p>
+  
+  <p class="dirk">DIRK: Does it?</p>
+  
+  <p class="rose">ROSE: No.</p>
+  
+  <p class="dirk">DIRK: It’s one hell of an observation, regardless.</p>
+  
+  <p class="dirk">DIRK: Considering we’ve firmly established the fact that we’ve both read the entire Wikipedia page on self-determinism, like, <em>possibly</em> more than once, even.</p>
+  
+  <p class="dirk">DIRK: Let’s have a totally amateur debate on philosophy. Hit me with the classics.</p>
+  
+  <p class="rose">ROSE: Um.</p>
+  
+  <p class="dirk">DIRK: I’ll go first.</p>
+  
+  <p class="dirk">DIRK: “God is dead.”</p>
+  
+  <p class="rose">ROSE: That’s a good one. </p>
+  
+  <p class="rose">ROSE: Careful where you say that. You could really ruffle some feathers out there.</p>
+  
+  <p class="dirk">DIRK: I’m not a fucking idiot. I keep my potent rhetorical weapons of pure logic safely holstered at all times.</p>
+  
+  <p class="dirk">DIRK: You go.</p>
+  
+  <p class="rose">ROSE: “I think therefore I am.”</p>
+  
+  <p class="dirk">DIRK: Solid. </p>
+  
+  <p class="dirk">DIRK: Check it out though.</p>
+  
+  <p class="dirk">DIRK: “The Hegelian dialectic on history.”</p>
+  
+  <p class="rose">ROSE: Holy shit.</p>
+  
+  <p class="rose">ROSE: Not sure I can keep up with this.</p>
+  
+  <p class="rose">ROSE: How about,</p>
+  
+  <p class="rose">ROSE: “Subjectivity is truth.”</p>
+  
+  <p class="dirk">DIRK: Wrong, but valid.</p>
+  
+  <p class="dirk">DIRK: Try this on for fucking size.</p>
+  
+  <p class="dirk">DIRK: “Late 19th century existential phenomenology pre-supposes that free will is a thing.”</p>
+  
+  <p class="rose">ROSE: I don’t think I bookmarked that page.</p>
+  
+  <p class="rose">ROSE: Can’t back you up there.</p>
+  
+  <p class="dirk">DIRK: But what if there’s no free will.</p>
+  
+  <p class="rose">ROSE: You didn’t put that in quotes. </p>
+  
+  <p class="rose">ROSE: Is this a hackneyed reference, or are you just actually riffing now?</p>
+  
+  <p class="dirk">DIRK: I’m riffing.</p>
+  
+  <p class="rose">ROSE: I see.</p>
+  
+  <p class="rose">ROSE: Asking the hard questions. </p>
+  
+  <p class="rose">ROSE: It’s about time someone had the balls to.</p>
+  
+  <p class="dirk">DIRK: Yeah, I’ve always been underappreciated for my brutal intellectual honesty. Even when I was living alone in the middle of the ocean, if you can believe it.</p>
+  
+  <p class="rose">ROSE: I think free will is a thing, sure.</p>
+  
+  <p class="dirk">DIRK: Are you sure about that?</p>
+  
+  <p class="rose">ROSE: ...  </p>
+  
+  <p class="dirk">DIRK: Haven’t we spent the entire day having a feelings jam on how none of us got here by accident?</p>
+  
+  <p class="dirk">DIRK: Our lives were meticulously planned from clone-ception up through this very post-canon moment we find ourselves riffing in about the very free will we probably don’t even have.</p>
+  
+  <p class="dirk">DIRK: Don’t you think it’s all a little too convenient?</p>
+  
+  <p class="rose">ROSE: This seriously is just a conversation between two stoned people now.</p>
+  
+  <p class="rose">ROSE: The bad kind, where neither one even gets to be high.</p>
+  
+  <p class="dirk">DIRK: Seriously, Rose. Do you think that you have free will?</p>
+  
+  <p class="rose">ROSE: I...  </p>
+  
+  <p class="dirk">DIRK: Stand up.</p>
+</div>
+  <p class="no-indent dirk">She tries to stand up, but I haven’t narratively allowed it yet. Her hands don’t even move. She tenses, then relaxes into the couch again, giving up on the attempt. She attributes it to exhaustion, an all-encompassing sense of weakness due to her condition. Of course, she <em>has</em> been weakened by her condition, and thus she suspects nothing.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="dirk">DIRK: Never mind. </p>
+  
+  <p class="dirk">DIRK: You shouldn’t be moving around much in your condition, remember?</p>
+  
+  <p class="dirk">DIRK: I’ll sit.</p>
+</div>
+  <p class="no-indent dirk">I sit beside her, and cross my legs casually. It’s all done in one fluid motion in a way that serves as a seamless transition between the points I’m making, like a magician asking the volunteer to hold his handkerchief as he continues his verbal misdirection uninterrupted. It’s done deftly enough that she doesn’t notice how close I end up sitting to her. To be honest, I don’t even notice myself until I’ve done it. I continue speaking, and she remains rapt. But now even I can’t help but wonder where I’m going with this.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="dirk">DIRK: Logically speaking, individuality is a collection of processes and properties, interrelations of matter and experience all bundled together.</p>
+  
+  <p class="dirk">DIRK: Your experience and processes don’t want to be bundled together anymore.</p>
+</div>
+  <p class="no-indent dirk">A moment goes by, and she’s quiet, perhaps puzzling over what I said. Then I remember I haven’t narratively permitted a response. I’m forgetting myself, like a fool. Distracted by the surprise my own actions have caused me. I resolve to stay focused, remain in control. I let her speak. </p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="rose">ROSE: I don’t understand.</p>
+  
+  <p class="dirk">DIRK: You do, though.</p>
+  
+  <p class="dirk">DIRK: We’ve been talking about it, but using different concepts.</p>
+  
+  <p class="dirk">DIRK: Your Ultimate Self, that which is revealed when the mind’s partitions are stripped away, and all potentiality of who you are and what you could have been flow together.</p>
+  
+  <p class="dirk">DIRK: Those are the experiences and processes that are refusing to stay bundled, that’s what your body can’t endure. The unbundling itself is your mind coming apart.</p>
+  
+  <p class="dirk">DIRK: Because you’re not as strong as me. Not yet.</p>
+  
+  <p class="dirk">DIRK: But you can be.</p>
+  
+  <p class="dirk">DIRK: I’m working on that. </p>
+  
+  <p class="dirk">DIRK: But for now, I’m focused on stabilizing you with my own expanding consciousness.</p>
+  
+  <p class="dirk">DIRK: It’s enveloping you now, in a way you can’t see. Keeping your thoughts solid, your identity anchored to your physical form as it strains to hold itself together.</p>
+  
+  <p class="dirk">DIRK: You can’t see it, what I’m talking about. But I can help you.</p>
+  
+  <p class="dirk">DIRK: I can help you see what I see, if only for a little while.</p>
+  
+  <p class="dirk">DIRK: All you have to do is open your eyes.</p>
+  
+  <p class="dirk">DIRK: Maybe what you see will help you through this.</p>
+  
+  <p class="dirk">DIRK: Is that what you’d like?</p>
+  
+  <p class="dirk">DIRK: ...Rose?</p>
+</div>
+  <p class="no-indent dirk">Her eyes are shut, her look of concentration speaking to the migraine she must be fighting now. Small beads of sweat appear on her forehead. She won’t respond. And not because I haven’t allowed it.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="dirk">DIRK: Rose, stop being a fucking martyr and open your eyes.</p>
+</div>
+  <p class="no-indent dirk">Rose opens her eyes. Not her physical eyes. She opens the others easily, internally, beholding a field of perception elsewhere entirely. They see what I want her to see. That which quietly desires to be seen. She loses track of my voice, which begins to mingle with these words.</p>
+  <p class="dirk">I offer her my hand. My physical hand. Without opening her physical eyes, she lifts her hand from her lap and places it in mine. I put my other hand on top of hers, and wait as she drifts beyond the torments of her unbundling mind. My words feel like her own intimate thoughts and my distant voice in the room at the same time. </p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="dirk">DIRK: Open your eyes wider.</p>
+  
+  <p class="dirk">DIRK: What do you see?</p>
+</div>
+  <p class="no-indent dirk">We’re not in my workshop anymore. Physically, yes, we’re still here. But on a higher textual plane, we’ve pulled back from that, from Earth C itself. Rose takes a shuddering breath and runs an invisible pair of hands afforded by her new sight over the narrative whole cloth, and begins smoothing out the wrinkles.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="rose">ROSE: I see... John.</p>
+  
+  <p class="dirk">DIRK: Doing exactly what you told him to do, like a good boy.</p>
+  
+  <p class="rose">ROSE: ... </p>
+  
+  <p class="dirk">DIRK: What’s there to be upset about? You knew this was how it was supposed to go down.</p>
+  
+  <p class="rose">ROSE: He could have made another choice.</p>
+  
+  <p class="dirk">DIRK: Then where would we be?</p>
+  
+  <p class="rose">ROSE: Who knows.</p>
+  
+  <p class="dirk">DIRK: No, that wasn’t a rhetorical question. </p>
+  
+  <p class="dirk">DIRK: If John could have made another choice, then you can see what it is.</p>
+  
+  <p class="dirk">DIRK: If it can happen, then it’s been written. And if it’s been written, you can read it right now.</p>
+  
+  <p class="rose">ROSE: I... don’t know if I want to see.</p>
+  
+  <p class="dirk">DIRK: If there’s no free will, then there’s no regret either.</p>
+  
+  <p class="dirk">DIRK: Look harder.</p>
+</div>
+  <p class="no-indent dirk">She looks harder.</p>
+  <p class="dirk">I’m not going to describe what she sees. First of all, that would be spoiling it. Unless you already know, in which case, I guess what’s taking place here qualifies as something closer to dramatic irony. But if you really want to see it for yourself, stop what you’re doing, flip the whole thing over, and begin again. I’ll be right here when you get back, waiting. Trust me, no one’s going anywhere.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="dirk">DIRK: So, what do you think?</p>
+  
+  <p class="rose">ROSE: It’s difficult to say. </p>
+  
+  <p class="rose">ROSE: I suppose there are negatives and positives. I can’t say if that option would be any better or worse than what we’re experiencing now.</p>
+  
+  <p class="rose">ROSE: Whichever way our fate unravels there’s too much of... something.</p>
+  
+  <p class="rose">ROSE: Too much blood, too much sugar.</p>
+  
+  <p class="rose">ROSE: I almost can’t see through it.</p>
+  
+  <p class="rose">ROSE: It’s as if our extra-canon reality, our surroundings, our actions and their consequences...  </p>
+  
+  <p class="rose">ROSE: They’ve all lost the ability to blend the ingredients responsibly. </p>
+  
+  <p class="rose">ROSE: Do you know what I mean?</p>
+  
+  <p class="dirk">DIRK: Yes.</p>
+  
+  <p class="rose">ROSE: As if the moment we entered the victory state, everything began to slowly congeal.</p>
+  
+  <p class="rose">ROSE: And when John made his decision, it accelerated the process. The congealing intensified, causing a sort of grotesque conceptual clumping. </p>
+  
+  <p class="rose">ROSE: Concentrating the constituent properties of consumption into unbearable doses. </p>
+  
+  <p class="rose">ROSE: Like when you get to the bottom of a sweet drink, and all that’s left is syrup. </p>
+</div>
+  <p class="no-indent dirk">It’s growing dark around her again. The apparition she’s been projecting behind her fades, and she starts to bleed light and shadow in all directions. Her physical eyes are open now, and shining bright. It’s a striking sight. She’s beautiful, actually—diaphanous and disheveled and filled with the limitless light of metaspiritual curiosity. </p>
+  <p class="dirk">But for all the effervescent mysticism of her otherworldly becoming, I feel like this is the very first time I’m truly seeing her for what she’s always been to me. She’s my daughter in every sense of the word. My equal, my mirror. </p>
+  <p class="dirk">It used to be odd to consider it. A technical fact I’d accepted as a genetic reality, but nothing that could ever quite penetrate down to the soul. But in this moment it doesn’t feel strange at all. It feels right, suddenly. And I know she must feel the same way. There’s no way she doesn’t. All she needs is a nudge in the right direction.</p>
+  <p class="dirk">We’re family. We belong together. And after years of micromanaging the inconsistent and confused desires of total imbeciles, wouldn’t it be a relief to have someone by my side who understood me?</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="dirk">DIRK: You’re almost there.</p>
+  
+  <p class="dirk">DIRK: All your eyes are open, Rose.</p>
+  
+  <p class="dirk">DIRK: Now all you need to do is take a step off the precipice.</p>
+  
+  <p class="dirk">DIRK: It’ll be a long fall. But I’ll catch you.</p>
+  
+  <p class="rose">ROSE: But what if the person you catch...  </p>
+  
+  <p class="rose">ROSE: Isn’t me anymore?</p>
+  
+  <p class="dirk">DIRK: Who gives a fuck. She’ll be better.</p>
+</div>
+  <p class="no-indent dirk">And there, right there, is the moment she lets go. She uncouples herself from the creaking, buckling partitions of her physical mind, and her consciousness dissolves into a space more vast, a domain given structure and order by my words and conviction. She’s permitted the barriers between us to fall, to allow us to know each other more perfectly. As she was saying before, to resist this, to question it in any way, would be to succumb to dysfunction, to pathological insularity, to sociological <em>sin</em>. Would it not be to renounce humanity itself?</p>
+  <p class="dirk">And yet, ironically, renouncing our humanity is exactly what we have arguably just done. Good riddance, I say.</p>
+  <p class="dirk">Her body should be dead now. But I’m holding it together until I can implement the more permanent solution I have in mind. All in due time. For now, what is there to do but savor this moment? To appreciate her final waking minutes as a being of flesh and blood? She turns, and the light from her eyes is blinding. It dims a bit as she lowers her eyelids. She regards me with an almost unbearably bright adoration. The kind that’s difficult to look at directly, but you can’t manage to look away either. It’s like the first time you see the Green Sun. Of course it is, because that’s the way I’m describing it. The truth belongs to me. And as of now, so does she.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="rose">ROSE: I see it now.</p>
+  
+  <p class="rose">ROSE: You’re right.</p>
+  
+  <p class="dirk">DIRK: Have I ever not been?</p>
+  
+  <p class="rose">ROSE: You...  </p>
+</div>
+  <p class="no-indent dirk">A wrinkle in her brow. It smoothes out quickly. She murmurs to herself, trailing off quietly.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="rose">ROSE: What... time is it...?</p>
+</div>
+  <p class="no-indent dirk">I step forward and steady her, hand firm but gentle against her cheek. That’s all she needs: a stable anchor.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="dirk">DIRK: Rose, does time even exist?</p>
+</div>
+  <p class="no-indent dirk">You already know the answer.</p></div>
+      <div class="o_story-nav type-hs-copy line-tight pad-x-0 pad-x-lg--md pad-b-lg">
+        <div>
+          <span>&gt;</span>
+          <a href="Meat 26.html">==&gt; </a><br>
+        </div>
+      </div>
+  
+<footer id="story-footer" role="banner">
+  <div id="story_footer_container" class="o_story-page-footer flex pad-t-0 pad-x-0
+     flex-justify 
+    ">
+      <div class="pad-l-lg--md mar-b-md type-hs-small type-hs-bottom--md type-center type-left--md">
+        <ul class="o_game-nav">
+          <li class="o_game-nav-item">
+            <a id="o_start-over" href="The Homestuck Epilogues.html">Start Over</a>
+          </li>
+            <li class="o_game-nav-item">
+              <a href="Meat 24.html">Go Back</a>
+            </li>
+        </ul>
+      </div>
+      <script>
+//<![CDATA[
+$(document).ready(function() { Gamenav.checkAutosave(); });
+//]]>
+</script>
+      
+    <a href="javascript:void(0)" data-gamenav-open="" class="nav-btn nav-btn--center type-hs-small mar-b-md" style="text-decoration:none; text-transform: none; font-size:14px; line-height:14px;"><span>Options</span> <i class="icon-menu" style="margin:0;"></i></a>
+  </div>
+</footer>
+
+
+  </div>
+</div><iframe name="__tcfapiLocator" src="./Epilogue_files/saved_resource(2).html" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe>
+
+
+    
+<div class="o_site-footer row pos-r pad-t-rg pad-b-xl pad-b-0--md bg-dark-gray">
+  <div class="float-l"><img src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif" alt="Footer logo"><br></div>
+  <div class="float-r disp-n disp-bl--sm"><img src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif" alt="Footer logo"><br></div>
+  <div class="type-center pad-t-md--md">
+    <ul>
+      <li><a href="https://www.homestuck.com/contacts">Contacts</a></li>
+      <li><a href="https://www.homestuck.com/privacy">Privacy Policy</a></li>
+    </ul>
+    <div><span style="white-space:nowrap;">© 2018 Homestuck</span> <span style="white-space:nowrap;">and VIZ Media</span></div>
+  </div>
+</div>
+
+
+
+    <div id="overlay" data-overlay-state="off" class="o_overlay"></div>
+    <div id="game_overlay" data-game-overlay-state="off" class="o_game-overlay"></div>
+    <div id="overlay_wait" data-overlay-state="off" class="o_overlay-wait"></div>
+
+
+
+  
+
+<iframe name="googlefcPresent" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;" src="./Epilogue_files/saved_resource(6).html" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe></body></html>

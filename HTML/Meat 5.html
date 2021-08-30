@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en-US"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- application -->
+    <script async="" src="./Epilogue_files/jquery-1.11.3.min.js.download"></script>
+    
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"1b930da09b","applicationID":"65900267","transactionName":"cFkNREpaWA9dF0pBVlRTEB9LQVsRQQ==","queueTime":0,"applicationTime":6,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"1b930da09b",applicationID:"65900267"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>The Homestuck Epilogues</title>
+    <meta name="description" content="Tales of dubious authenticity.">
+    <script>
+//<![CDATA[
+var getGAEventLabel = function(){ return "The Homestuck Epilogues"; };
+//]]>
+</script>
+      <link rel="canonical" href="Meat 5.html">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.homestuck.com/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.homestuck.com/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.homestuck.com/favicon/favicon-16x16.png">
+<link rel="manifest" href="https://www.homestuck.com/favicon/manifest.json">
+<link rel="mask-icon" href="https://www.homestuck.com/favicon/safari-pinned-tab.svg" color="#6bbe4a">
+<meta name="theme-color" content="#ffffff">
+
+        <link rel="stylesheet" media="all" href="./Epilogue_files/manifest-epilogue-1694f2c1abc80cf72e84324f6d6486e6f04b02358ed667dee36c88974eef388f.css">
+      <link rel="stylesheet" href="./Epilogue_files/kek1uwn.css">
+    <link rel="stylesheet" media="all" href="./Epilogue_files/manifest-ui-e03365bbb17dde0f1fd5463dd7b56d096a27cae55aa131b72684e36c1f0c80f6.css">
+    <script src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE=(1)"></script>
+    <script src="./Epilogue_files/manifest-ads-story-1885683d55d6f631dc202ac5db87250ca938be96a613e85bb93739ecc057540e.js.download"></script>
+
+
+    <!-- //Connect Container: Homestuck-->
+<script src="./Epilogue_files/tag.min.js.download" async="" defer=""></script>
+  <script async="" src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE=(1)"></script><style type="text/css">* {
+ text-shadow: transparent 0px 0px 0px, rgba(0,0,0,0.68) 0px 0px 0px !important; 
+}</style><script async="" src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE="></script></head>
+  
+  <body class="epilogue">
+
+    
+    <header id="site-header" role="banner">
+  <div id="header-container" class="o_story-page-header row flex pad-t-0 ">
+    <a href="javascript:void(0)" data-nav-open="" class="nav-btn nav-btn--center color-white" style="overflow-wrap:normal;text-decoration:none;"><i class="icon-menu"></i><span>Menu</span></a>
+    <nav id="nav-container" data-nav-state="closed" role="navigation" class="o_nav-container">
+      <a href="javascript:void(0)" data-nav-close="" class="nav-btn color-white pad-y-rg type-rg" style="overflow-wrap:normal;text-decoration:none;"><i class="icon-close"></i><span>Dismiss</span></a>
+      <ul id="primary-nav" class="o_primary-nav style-caps weight-bold disp-ib color-white type-rg">
+     <li class="o_primary-nav-item slide-candycorn pipe"><a class="o_primary-nav-link" style="color:#39d5f6" href="Read.html">READ</a></li><!--
+     --><li class="o_primary-nav-item"><a class="o_primary-nav-link" style="color:#39d5f6" href="Credits.html">INFO</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+    
+
+    <div class="row bg-white bg-light-gray--md pad-t-md--md pos-r">
+  <div id="content_container" class="mar-x-auto disp-bl bg-white" style="max-width:650px;">
+    <div class="pos-r pad-t-sm pad-x-lg--md type-center" style="overflow:visible; height:72px;">
+      <img class="hsep_bullet" alt="Chapter" src="./Epilogue_files/meat_60x60-a20ba4eabbf9e6c7e4778d99648c13802fc7ff42a24bc48bc0535494cdd82195.png">
+      <h3 class="disp-ib type-hsep-header line-tight type-lg pad-t-sm">
+        5
+      </h3>
+    </div>
+  </div>
+</div>
+
+<div class="row bg-white bg-light-gray--md pad-b-md pad-b-lg--md pos-r pad-t-md pad-t-0--md">
+  <div class="mar-x-auto disp-bl bg-white pad-t-lg" style="max-width:650px;">
+      <div class="o-story_text o_epilogue type-rg type-sm--md line-caption line-copy--md pad-x-0 pad-x-lg--md pad-b-lg">  <p class="no-indent"><span class="opener type-hs-opener-rg type-hs-opener-sm--md">T</span>he stands of the Cantown Memorial Arena are packed front to back with audience members from every kingdom. Presently the crowd is going nuts, enthralled by Jake English’s skillful posing and mollified by the deeply theatrical stage dive that Dirk has just taken onto the mat. Dirk, in fact, has unquestioningly eaten shit. His shit eating was so brutal that no one, except maybe Jake, cares that he’s taking a phone call in the middle of a live broadcast. And no one should, really. The broadcast has been going for three hours already.</p>
+  <p>Dave takes a seat on the couch, right in Karkat’s butt groove. He observes his battered ecto-father, who is lying inside a wreath of busted robot limbs like a piece of absolute garbage.</p>
+<div class="chat type-rg type-hs-small--md">
+  <p class="dave">DAVE: bro im watching you on the tube and i gotta say</p>
+  <p class="dave">DAVE: while the beatdown you just received was as thorough as it was humiliating im afraid as usual the solution to this problem should probably not involve your decapitation</p>
+  <p class="dave">DAVE: you fucking drama queen</p>
+  <p class="dirk">DIRK: Damn.</p>
+  <p class="dirk">DIRK: Are you sure?</p>
+  <p class="dave">DAVE: yeah</p>
+  <p class="dave">DAVE: jake just kicked your ass</p>
+  <p class="dave">DAVE: thats really all there is to say on the matter </p>
+  <p class="dirk">DIRK: You’re probably right. </p>
+  <p class="dirk">DIRK: But still not entirely sure we should be so quick to rule out my beheading as a catchall solution to any given problem. </p>
+  <p class="dirk">DIRK: It really could save us all a lot of trouble in the future. Especially me. </p>
+  <p class="dave">DAVE: its really amazing how this meme we have going here continues to be exactly as funny as the day it was established</p>
+  <p class="dirk">DIRK: Isn’t it always though?</p>
+  <p class="dave">DAVE: yeah</p>
+  <p class="dave">DAVE: by the way</p>
+  <p class="dave">DAVE: how DID you get your ass kicked so bad</p>
+  <p class="dave">DAVE: jake sucks and his raps are fucking awful</p>
+  <p class="dave">DAVE: please tell me this garbage show is as rigged as it looks</p>
+</div>
+  <p class="no-indent">On the TV, Dirk makes an elegant hand sign that once might have represented solidarity with some ancient coastal rap group but now has been utterly divorced from its cultural context here on Earth C. The camera pans away from him and over the crowd. It zooms in on a young crocodile wearing an oversized T-shirt with Jake’s highly marketable ass plastered over it and the phrase “Tally ho” written in big bubble letters.</p>
+<div class="chat type-rg type-hs-small--md">
+  <p class="dirk">DIRK: Dave, there’s such a thing as showmanship.</p>
+  <p class="dirk">DIRK: I’m sure I don’t need to explain this to you, of all people.</p>
+  <p class="dave">DAVE: ok cool its fake just making sure</p>
+  <p class="dirk">DIRK: Sigh.</p>
+  <p class="dirk">DIRK: We really don’t like to use that word.</p>
+  <p class="dave">DAVE: lmao ok</p>
+  <p class="dirk">DIRK: Holding back a little to achieve certain results doesn’t necessarily mean you’re participating in a farce or rigging the event. </p>
+  <p class="dirk">DIRK: We do this all the time. We hold back our thoughts, our true feelings, our full potential. We disguise how much we know about what and when, for many purposes. To ease relations, to let others behave naturally and make up their minds without undue intervention. To wait for the right moments to show our hands, to pick our battles. </p>
+  <p class="dirk">DIRK: In life, there are many reasons to show restraint, which would never be regarded as an attempt to rig reality.</p>
+  <p class="dave">DAVE: oof</p>
+  <p class="dave">DAVE: my dog you are full of some SHIT today arent you</p>
+  <p class="dirk">DIRK: Absolutely.</p>
+  <p class="dirk">DIRK: And when it comes to theater, there are just as many reasons for restraint. To build tension. To set the stage. To give the people someone to root against.</p>
+  <p class="dave">DAVE: is that what youre doing now</p>
+  <p class="dave">DAVE: making people root against you</p>
+  <p class="dirk">DIRK: What, by losing a round? No, man. That’s just standard pacing stuff when it comes to battlecraft.</p>
+  <p class="dave">DAVE: no i mean by holding up the whole fight by talking to me</p>
+  <p class="dave">DAVE: i can see you on tv</p>
+  <p class="dave">DAVE: theyre booing you dude</p>
+</div>
+  <p class="no-indent">The crowd has indeed finally exhausted both its patience and its thirst for the ceaseless ogling of Jake’s impressive glutes. The camera swings around to focus on Dirk, who, since landing on his self-admittedly second-rate ass, has not moved except to make arcane, rap-related hand gestures. </p>
+  <p>The excitable salamander manning the camera switches to a fish-eye lens for some unfathomable reason, giving the whole exchange an air of demented absurdity. Dirk’s sunglasses distort and stretch to dominate the entire screen.</p>
+<div class="chat type-rg type-hs-small--md">
+  <p class="dirk">DIRK: Oh.</p>
+  <p class="dirk">DIRK: Then yes, I guess that is what I’m doing.</p>
+  <p class="jake">JAKE: Dirk are you going to be much longer with your telephone call?</p>
+  <p class="jake">JAKE: The crowd is getting feisty...  you didnt get too badly winded from our last scrum did you dirk?</p>
+  <p class="dirk">DIRK: Haha, no Jake. I’m fine. I’ll just be a minute.</p>
+  <p class="jake">JAKE: What about the agitated rabble? Theyre starting to throw things.</p>
+  <p class="dirk">DIRK: I don’t know. Do a dance or something. Sing a song.</p>
+  <p class="dirk">DIRK: They love anything you do.</p>
+  <p class="jake">JAKE: Ummm.</p>
+  <p class="jake">JAKE: Ok sounds stupid but ill try.</p>
+</div>
+  <p class="no-indent">Jake tips an imaginary hat toward center stage and begins doing the Charleston. Dave is subjected to an entire fish-eye lensful of Jake’s booty shorts flexing and constricting against his tanned thighs. </p>
+  <p>Just as Dirk predicted, the crowd immediately loses its shit, except for a single carapacian in the front row, who continues to glower at Dirk with an expression of absolute and total contempt. </p>
+<div class="chat type-rg type-hs-small--md">
+  <p class="dave">DAVE: why do you want people to hate you so much</p>
+  <p class="dave">DAVE: its fucked up</p>
+  <p class="dirk">DIRK: You’re reading way too much into it. </p>
+  <p class="dirk">DIRK: If I wanted another round of embarrassingly indulgent and mutually masturbatory psychoanalysis, I would have called my daughter instead.</p>
+  <p class="dave">DAVE: hm</p>
+  <p class="dave">DAVE: do i need to point out how fucking weird what you just said was or can that start going without saying at this point</p>
+  <p class="dirk">DIRK: I think it can go without saying.</p>
+  <p class="dave">DAVE: nice</p>
+  <p class="dirk">DIRK: The point is, playing myself up as a villain figure in this hacky rap pageant has nothing to do with getting people to dislike me. Besides, everyone loves a good villain. When they boo, they don’t really mean it.</p>
+  <p class="dirk">DIRK: I think you’d be surprised by how popular I actually am.</p>
+  <p class="dave">DAVE: i dunno man</p>
+</div>
+  <p class="no-indent">Something flies out of the audience and smacks Dirk in the side of the head before flopping out of view of the camera. He doesn’t react, or make a facial expression at all.</p>
+<div class="chat type-rg type-hs-small--md">
+  <p class="dave">DAVE: did...  </p>
+  <p class="dave">DAVE: did someone just throw a diaper at you</p>
+  <p class="dirk">DIRK: There’s gonna be some diapers, yeah.</p>
+  <p class="dave">DAVE: sounds bad</p>
+  <p class="dirk">DIRK: The point is, this is much less about me, and more about providing a foil for Jake’s heroism and charisma. </p>
+  <p class="dirk">DIRK: It’s very important that his popularity continues to be cultivated, to maximize his political capital.</p>
+  <p class="dave">DAVE: political capital</p>
+  <p class="dave">DAVE: what the fuck are...  </p>
+  <p class="dave">DAVE: ok how long have you known about the jane thing</p>
+  <p class="dave">DAVE: i mean is this something you have been planning for like</p>
+  <p class="dave">DAVE: a long time or</p>
+  <p class="dirk">DIRK: Planning is such an intense word.</p>
+  <p class="dave">DAVE: god damn it</p>
+  <p class="dirk">DIRK: Look, let’s just say there have been some conversations. </p>
+  <p class="dirk">DIRK: Does that meet with your approval?</p>
+  <p class="dave">DAVE: jane is a shitty candidate dude</p>
+  <p class="dave">DAVE: shes going to be so shitty</p>
+  <p class="dirk">DIRK: I thought you’d feel that way.</p>
+  <p class="dirk">DIRK: I respectfully disagree.</p>
+  <p class="dave">DAVE: i get shes a good friend of yours and all but even you have to admit how far up her own ass she is</p>
+  <p class="dirk">DIRK: Of course. I consider it to be among her best qualifications for the job.</p>
+  <p class="dave">DAVE: christ</p>
+  <p class="dave">DAVE: ok if nothing else have you at least taken into account the DEVASTATION to the economy this will cause???</p>
+  <p class="dirk">DIRK: You know perfectly well how much we differ on fiscal policy. </p>
+  <p class="dirk">DIRK: Maybe this isn’t the best time for one of our epic debates on the subject?</p>
+  <p class="dave">DAVE: yeah what was i thinking</p>
+  <p class="dave">DAVE: wasting the time of the dude currently holding up a televised rap contest so bad hes gettin diapers thrown at him</p>
+  <p class="dirk">DIRK: Dave, I think if you search your soul, you’ll come to the same conclusion I have. Jane is just what this planet needs.</p>
+  <p class="dirk">DIRK: We’ve all had our fun here, but it’s easy to overlook the fact that civilization on Earth C is hardly a sustainable proposition.</p>
+  <p class="dirk">DIRK: Just beneath the surface, it’s quite a dangerous and unstable place. </p>
+  <p class="dave">DAVE: i know that</p>
+  <p class="dave">DAVE: which is why actually i think it would be cool to have a president that is good instead of bad</p>
+  <p class="dirk">DIRK: He’s not as great as you think.</p>
+  <p class="dave">DAVE: what</p>
+  <p class="dave">DAVE: who</p>
+  <p class="dave">DAVE: obama??</p>
+  <p class="dave">DAVE: how dare you</p>
+  <p class="dirk">DIRK: No, fool.</p>
+  <p class="dirk">DIRK: Karkat.</p>
+  <p class="dave">DAVE: oh</p>
+  <p class="dirk">DIRK: I think your heart is in the right place, but the dude is a complete amateur.</p>
+  <p class="dirk">DIRK: He’ll get eaten alive. I also have a hard time imagining he even wants the job.</p>
+  <p class="dirk">DIRK: Really, it’s an awful idea for him to even run. Think about how much it’s going to inflame the interspecies tensions on this planet. Is that what you want?</p>
+  <p class="dirk">DIRK: I’m happy for both of you, really. It’s nice that you encourage and support each other in this way. But you’re sending him on a fool’s errand which can only end badly. </p>
+</div>
+  <p class="no-indent">Dave opens his mouth to argue, but something else occurs to him.</p>
+<div class="chat type-rg type-hs-small--md">
+  <p class="dave">DAVE: wait</p>
+  <p class="dave">DAVE: how do you even know hes entering the race</p>
+  <p class="dave">DAVE: we like just decided this</p>
+  <p class="dirk">DIRK: A competent political operative has his ways.</p>
+  <p class="dirk">DIRK: Besides, it was always pretty obvious to me you’d react this way the moment the announcement was made.</p>
+  <p class="dave">DAVE: ok thats kinda creepy i guess but it doesnt change anything</p>
+  <p class="dave">DAVE: hes running for president and hes going to fuckin win end of story</p>
+  <p class="dirk">DIRK: Fair enough.</p>
+  <p class="dave">DAVE: though now im wondering </p>
+  <p class="dave">DAVE: since you and jane have been planning this for a while how many key endorsements have you locked up</p>
+  <p class="dave">DAVE: cause if youve already got jake on your side then i guess we might as well just fucking quit</p>
+  <p class="dirk">DIRK: I wouldn’t worry about that.</p>
+  <p class="dirk">DIRK: He and I don’t quite have the rapport we once did.</p>
+  <p class="dirk">DIRK: He’s “over me” and doesn’t spare opportunities to make ostentatious demonstration of this claim.</p>
+  <p class="dave">DAVE: um</p>
+  <p class="dirk">DIRK: Basically he doesn’t like being told what to do. Especially not by me.</p>
+  <p class="dirk">DIRK: So it’s fair to say as of now, he’s still fully in play. </p>
+  <p class="dirk">DIRK: Not that I should be encouraging you, really.</p>
+  <p class="dave">DAVE: you are one doubletalking son of a bitch you know that</p>
+  <p class="dave">DAVE: i cant tell if you dont want us to run or are reverse psychology mindfucking us into running</p>
+  <p class="dirk">DIRK: Does it matter?</p>
+  <p class="dave">DAVE: i guess not</p>
+  <p class="dave">DAVE: not like i can just stand around and wait for president crocker to like</p>
+  <p class="dave">DAVE: write fucking grammar laws into the constitution</p>
+  <p class="dirk">DIRK: Good.</p>
+  <p class="dirk">DIRK: That’s a heroic attitude to have, which I’m pleased to hear. Even if your plan is stupid, which it is, and even if Karkat would be an atrocious president, which he would.</p>
+  <p class="dave">DAVE: nuh uh</p>
+  <p class="dirk">DIRK: Sorry to cut this short, but diapers are starting to come down pretty hard right now, and some of them haven’t even had their babies removed.</p>
+  <p class="dave">DAVE: what</p>
+  <p class="dirk">DIRK: That was a joke. </p>
+  <p class="dirk">DIRK: Goodbye, Dave.</p>
+</div>
+  <p class="no-indent">Dirk hangs up the phone and wipes off his face. The mood in Cantown Memorial Arena is tense, snapping and popping from the dual cooling and heating of the audience’s expectations and tempers. An uneven silence begins to fall over the stadium as Dirk hops to his feet. Jake can’t help but watch the motion, raking his eyes over the muscles shifting beneath the skin of Dirk’s neck and arms.</p>
+  <p>There is something implacably magnificent about Dirk Strider, Jake thinks, untamed like a wild game beast of incredible size and strength. Of course, their history together is never far from Jake’s mind, however many years it’s been since their last tussle of an amorous nature. The old dramas and triumphs in the days of Sburb. Dirk’s companionship has been taxing to the heart, to say the least, and yet he’s taught Jake so much—about combat, philosophy, life, love. </p>
+  <p>But sometimes, despite their checkered and problematic past, Jakes wishes that he could seize Dirk by the proverbial horns and wrest him bodily into becoming a much more agreeable fellow. Then again, who would Dirk be if he weren’t so contentious and imperious? Certainly not someone to inspire such wistful lollygagging, Jake cannot help but observe.</p>
+<div class="chat type-rg type-hs-small--md">
+  <p class="dirk">DIRK: Sorry for the momentary diversion, Jake. Now where were we?</p>
+  <p class="jake">JAKE: Momentary??? Gadzooks man you were on the phone for half a friggin hour!</p>
+  <p class="jake">JAKE: I know you like to get the crowd all hot and bothered but we are supposed to be professionals here!</p>
+  <p class="dirk">DIRK: You’re right, my bad. Won’t happen again.</p>
+  <p class="dirk">DIRK: How about you kick off the next round?</p>
+  <p class="dirk">DIRK: I bet this crowd will settle its shit right down the moment you drop the latest rhymes you’ve been tinkering with.</p>
+  <p class="dirk">DIRK: You know the ones.</p>
+  <p class="jake">JAKE: Gasp.</p>
+  <p class="jake">JAKE: You dont mean... </p>
+  <p class="dirk">DIRK: Oh. But I DO.</p>
+</div>
+  <p class="no-indent">Jake’s face lights up. He composes himself, adjusting a bow tie, although he is not wearing one, and making a vague gesture like he’s twirling one end of that mustache Dirk has not yet let him grow. Dirk lets him go with a gentle smile, like the sort you’d give to a dog for performing a trick adequately. Jake responds to the signal like an Olympic athlete hearing the starter pistol. He was born for this.</p>
+<div class="chat type-rg type-hs-small--md">
+  <p class="jake">JAKE: Tally ho its me, jake mcgee!</p>
+  <p class="jake">JAKE: Popping my pistols off, two shots and a kiss</p>
+  <p class="jake">JAKE: My aim is tops, i never miss</p>
+  <p class="jake">JAKE: One shot to the heart and the other to your lips</p>
+  <p class="jake">JAKE: Im heedless</p>
+  <p class="jake">JAKE: You cant impede this</p>
+  <p class="jake">JAKE: While these cads are all hat and very little cattle</p>
+  <p class="jake">JAKE: Cattle so weak one fears they might be feedless!</p>
+  <p class="jake">JAKE: As i prattle and digress you try to make your egress</p>
+  <p class="jake">JAKE: In the middle of the battle, but surely ye jest?</p>
+  <p class="jake">JAKE: FIDDLE FADDLE!</p>
+  <p class="jake">JAKE: My rhymes are known to bring the rattle</p>
+  <p class="jake">JAKE: I rattle those bones right down to the bit</p>
+  <p class="jake">JAKE: Im a mellifluous old chap who knows how to take a hit</p>
+  <p class="jake">JAKE: Im the tip...  </p>
+  <p class="jake">JAKE: Tip top of the morning!</p>
+  <p class="jake">JAKE: A rip roaring halt to your snoring</p>
+  <p class="jake">JAKE: Like pouring butter on bacon </p>
+  <p class="jake">JAKE: Their hunger awakens!</p>
+  <p class="jake">JAKE: All the rascally scalawags </p>
+  <p class="jake">JAKE: And dastardly jackanapes</p>
+  <p class="jake">JAKE: Always ask of me, mate what is shaking?</p>
+  <p class="jake">JAKE: With golden gas pipes such as jake-eng’s</p>
+  <p class="jake">JAKE: Im dodging their shade and ducking their jape-slings</p>
+  <p class="jake">JAKE: While my rump stokes a thirst that my rhymes have been slaking!</p>
+</div>
+  <p class="no-indent">The crowd, as Dirk rightly predicted, has settled its shit right down. This is not due to any accidental brilliance on the part of Jake English, but rather due to an abashed but loyal brand of pity, the kind a devoted fan cannot help but feel when they see a beloved celebrity make an ass out of themselves during a live broadcast they have waited two and a half years in line to buy a ticket for.</p>
+  <p>Dirk’s phone begins going off again.</p>
+<div class="chat type-rg type-hs-small--md">
+  <p class="jake">JAKE: When the splendid lads and ladies ask me “how do you do?” i -</p>
+  <p class="dirk">DIRK: Whoops. Jake, sorry to cut you off...  </p>
+  <p class="dirk">DIRK: Looks like I’m getting another call. Really need to take this one.</p>
+  <p class="dirk">DIRK: Gonna have to wrap this battle up sooner than scheduled.</p>
+</div>
+  <p class="no-indent">With a casual flick of his wrist, Dirk snaps out a bright red tranquilizer handgun and shoots Jake in the neck. Jake’s glasses crack when he hits the mat. A chorus of boos rises up from the crowd like groundwater. Dirk artfully dodges a bucket of obscene troll fluid to field yet another very important personal call.</p>
+<div class="chat type-rg type-hs-small--md" style="margin-bottom:0">
+  <p class="dirk">DIRK: Yo Rose, what’s up?</p>
+</div></div>
+      <div class="o_story-nav type-hs-copy line-tight pad-x-0 pad-x-lg--md pad-b-lg">
+        <div>
+          <span>&gt;</span>
+          <a href="Meat 6.html">==&gt; </a><br>
+        </div>
+      </div>
+  
+<footer id="story-footer" role="banner">
+  <div id="story_footer_container" class="o_story-page-footer flex pad-t-0 pad-x-0
+     flex-justify 
+    ">
+      <div class="pad-l-lg--md mar-b-md type-hs-small type-hs-bottom--md type-center type-left--md">
+        <ul class="o_game-nav">
+          <li class="o_game-nav-item">
+            <a id="o_start-over" href="The Homestuck Epilogues.html">Start Over</a>
+          </li>
+            <li class="o_game-nav-item">
+              <a href="Meat 4.html">Go Back</a>
+            </li>
+        </ul>
+      </div>
+      <script>
+//<![CDATA[
+$(document).ready(function() { Gamenav.checkAutosave(); });
+//]]>
+</script>
+
+    <a href="javascript:void(0)" data-gamenav-open="" class="nav-btn nav-btn--center type-hs-small mar-b-md" style="text-decoration:none; text-transform: none; font-size:14px; line-height:14px;"><span>Options</span> <i class="icon-menu" style="margin:0;"></i></a>
+  </div>
+</footer>
+
+
+  </div>
+</div><iframe name="__tcfapiLocator" src="./Epilogue_files/saved_resource(2).html" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe>
+
+
+    
+<div class="o_site-footer row pos-r pad-t-rg pad-b-xl pad-b-0--md bg-dark-gray">
+  <div class="float-l"><img src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif" alt="Footer logo"><br></div>
+  <div class="float-r disp-n disp-bl--sm"><img src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif" alt="Footer logo"><br></div>
+  <div class="type-center pad-t-md--md">
+    <ul>
+      <li><a href="https://www.homestuck.com/contacts">Contacts</a></li>
+      <li><a href="https://www.homestuck.com/privacy">Privacy Policy</a></li>
+    </ul>
+    <div><span style="white-space:nowrap;">© 2018 Homestuck</span> <span style="white-space:nowrap;">and VIZ Media</span></div>
+  </div>
+</div>
+
+
+
+    <div id="overlay" data-overlay-state="off" class="o_overlay"></div>
+    <div id="game_overlay" data-game-overlay-state="off" class="o_game-overlay"></div>
+    <div id="overlay_wait" data-overlay-state="off" class="o_overlay-wait"></div>
+
+
+
+  
+
+<iframe name="googlefcPresent" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;" src="./Epilogue_files/saved_resource(3).html"></iframe></body></html>

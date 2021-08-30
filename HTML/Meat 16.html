@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en-US"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- application -->
+    <script async="" src="./Epilogue_files/jquery-1.11.3.min.js.download"></script>
+    
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"1b930da09b","applicationID":"65900267","transactionName":"cFkNREpaWA9dF0pBVlRTEB9LQVsRQQ==","queueTime":0,"applicationTime":5,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"1b930da09b",applicationID:"65900267"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>The Homestuck Epilogues</title>
+    <meta name="description" content="Tales of dubious authenticity.">
+    <script>
+//<![CDATA[
+var getGAEventLabel = function(){ return "The Homestuck Epilogues"; };
+//]]>
+</script>
+      <link rel="canonical" href="Meat 16.html">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.homestuck.com/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.homestuck.com/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.homestuck.com/favicon/favicon-16x16.png">
+<link rel="manifest" href="https://www.homestuck.com/favicon/manifest.json">
+<link rel="mask-icon" href="https://www.homestuck.com/favicon/safari-pinned-tab.svg" color="#6bbe4a">
+<meta name="theme-color" content="#ffffff">
+
+        <link rel="stylesheet" media="all" href="./Epilogue_files/manifest-epilogue-1694f2c1abc80cf72e84324f6d6486e6f04b02358ed667dee36c88974eef388f.css">
+      <link rel="stylesheet" href="./Epilogue_files/kek1uwn.css">
+    <link rel="stylesheet" media="all" href="./Epilogue_files/manifest-ui-e03365bbb17dde0f1fd5463dd7b56d096a27cae55aa131b72684e36c1f0c80f6.css">
+    <script src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE=(1)"></script>
+    <script src="./Epilogue_files/manifest-ads-story-1885683d55d6f631dc202ac5db87250ca938be96a613e85bb93739ecc057540e.js.download"></script>
+
+
+    <!-- //Connect Container: Homestuck-->
+<script src="./Epilogue_files/tag.min.js.download" async="" defer=""></script>
+  <script src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE="></script></head>
+  
+  <body class="epilogue">
+
+    
+    <header id="site-header" role="banner">
+  <div id="header-container" class="o_story-page-header row flex pad-t-0 ">
+    <a href="javascript:void(0)" data-nav-open="" class="nav-btn nav-btn--center color-white" style="overflow-wrap:normal;text-decoration:none;"><i class="icon-menu"></i><span>Menu</span></a>
+    <nav id="nav-container" data-nav-state="closed" role="navigation" class="o_nav-container">
+      <a href="javascript:void(0)" data-nav-close="" class="nav-btn color-white pad-y-rg type-rg" style="overflow-wrap:normal;text-decoration:none;"><i class="icon-close"></i><span>Dismiss</span></a>
+      <ul id="primary-nav" class="o_primary-nav style-caps weight-bold disp-ib color-white type-rg">
+     <li class="o_primary-nav-item slide-candycorn pipe"><a class="o_primary-nav-link" style="color:#39d5f6" href="Read.html">READ</a></li><!--
+     --><li class="o_primary-nav-item"><a class="o_primary-nav-link" style="color:#39d5f6" href="Credits.html">INFO</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+    
+
+    <div class="row bg-white bg-light-gray--md pad-t-md--md pos-r">
+  <div id="content_container" class="mar-x-auto disp-bl bg-white" style="max-width:650px;">
+    <div class="pos-r pad-t-sm pad-x-lg--md type-center" style="overflow:visible; height:72px;">
+      <img class="hsep_bullet" alt="Chapter" src="./Epilogue_files/meat_60x60-a20ba4eabbf9e6c7e4778d99648c13802fc7ff42a24bc48bc0535494cdd82195.png">
+      <h3 class="disp-ib type-hsep-header line-tight type-lg pad-t-sm">
+        16
+      </h3>
+    </div>
+  </div>
+</div>
+
+<div class="row bg-white bg-light-gray--md pad-b-md pad-b-lg--md pos-r pad-t-md pad-t-0--md">
+  <div class="mar-x-auto disp-bl bg-white pad-t-lg" style="max-width:650px;">
+      <div class="o-story_text o_epilogue type-rg type-sm--md line-caption line-copy--md pad-x-0 pad-x-lg--md pad-b-lg"><div class="chat type-rg type-hs-small--md" style="margin-top:0">  
+  <p class="rose">ROSE: When I was a child, I wrote a novel.</p>
+</div>
+  <p class="no-indent">Rose is speaking with her eyes closed. She is weary, but standing for now, near one of Dirk’s work tables. She has both hands resting on the chassis of his recent project, Sawtooth 3.1. The energy humming inside its mechanical heart warms her palms. Dirk snorts, but in a good-natured sort of way. That’s the closest he usually gets to laughing.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="dirk">DIRK: Another one of those Lalonde childhood wizard fics, I presume?</p>
+</div>
+  <p class="no-indent">He leans his elbow on the table and stares at her over the rims of his shades. The weight of Dirk’s scrutiny is potent. She looks away.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="rose">ROSE: Complacency of the Learned.</p>
+  
+  <p class="dirk">DIRK: Ah. <em>The</em> wizard fic, then. </p>
+  
+  <p class="rose">ROSE: Yes.</p>
+  
+  <p class="rose">ROSE: Of course, it was nothing like the polished masterpiece penned by the middle-aged version of myself from your world. </p>
+  
+  <p class="rose">ROSE: Nor did the saga span as many volumes. Thirteen-year-old Rose only managed to draft the one, it shames me to say.</p>
+  
+  <p class="dirk">DIRK: How pathetic.</p>
+  
+  <p class="rose">ROSE: I know.</p>
+</div>
+  <p class="no-indent">Rose steps back, trailing her fingers over the rivets that line Sawtooth 3.1’s chest. Eyes closed again, she passes in front of the window. With the sunset behind her she’s a shadow ringed in yellow light that turns white at the tips of her hair. </p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="rose">ROSE: Though I must say, in defense of Young Rose’s literary integrity,</p>
+  
+  <p class="rose">ROSE: Having carefully studied all volumes of the elder’s work, and then revisiting my youthful preteen scribbles of passion...  </p>
+  
+  <p class="rose">ROSE: I observed more power and emotion in the single ragged notebook than the full span of the bestselling series.</p>
+  
+  <p class="rose">ROSE: It’s more raw. It betrays considerably more sincerity than my young self was surely ever aware of stitching into the prose. </p>
+  
+  <p class="rose">ROSE: It <em>meant</em> something. </p>
+  
+  <p class="dirk">DIRK: Hmm. </p>
+</div>
+  <p class="no-indent">She turns to look at him. </p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="rose">ROSE: For all its plainly evident amateurism as the literary product of a child, I’ve come to believe it’s a much stronger work standing alone as a single volume, its meaning and symbolism potently compressed, and its message shining through more nakedly, undisguised by the cleverness of a more seasoned writer.</p>
+  
+  <p class="rose">ROSE: But the basics are the same as the series you’ve read. The plot concerns the machinations of twelve wizard children.</p>
+  
+  <p class="rose">ROSE: They revolt against the complacency of the wise, kind wizards, and go on to become responsible for great evils. </p>
+  
+  <p class="rose">ROSE: It isn’t their intent to commit atrocities, or within their nature to do so originally. They become corrupted by an overabundance of knowledge. The kind never meant for the mortal mind to grasp.</p>
+  
+  <p class="dirk">DIRK: Yeah, this sounds pretty close to my recollection of it.</p>
+  
+  <p class="rose">ROSE: It certainly wasn’t the most fucked up thing I’ve ever written. </p>
+  
+  <p class="rose">ROSE: But it was the most... psychologically potent? The most personal, easily.</p>
+  
+  <p class="rose">ROSE: But the personal aspects to it were all telegraphed through allegory and esoteric symbolism.</p>
+  
+  <p class="rose">ROSE: I wrote it in what would be best described as a fevered haze, as if I were pulling inspiration from beyond myself—channeling the story, rather than writing it.</p>
+  
+  <p class="rose">ROSE: You could almost call the process...</p>
+</div>
+  <p class="no-indent">She runs a hand through her hair, fanning it into a halo that is suspended in the air for a moment, trailing spiderwebs of gold that dissolve into dust. She’s smirking now, just a little.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="rose">ROSE: ...en<em>light</em>ened.</p>
+  
+  <p class="dirk">DIRK: That sucked.</p>
+  
+  <p class="rose">ROSE: Yes.</p>
+  
+  <p class="dirk">DIRK: It also sounds like it’s the opposite of what was going on?</p>
+  
+  <p class="dirk">DIRK: Sounds more like you were trapped in a sort of dire creative fugue state causing you to chart your own mental profile using metaphor revolving around murderous, omniscient children.</p>
+  
+  <p class="rose">ROSE: Well, consider the playful pun rescinded.</p>
+  
+  <p class="rose">ROSE: Apologies for diminishing your presence with my suboptimal health and the toll it has taken on my wordplay. </p>
+  
+  <p class="dirk">DIRK: Thanks. It’s been very difficult for me.</p>
+  
+  <p class="rose">ROSE: You’ve been a real trouper.</p>
+  
+  <p class="rose">ROSE: Anyway, my point is that I’ve long suspected my story was a pre-manifestation of my Seer of Light powers. I was seeing beyond my universe into another.</p>
+  
+  <p class="rose">ROSE: My original thesis was that the children represented the twelve trolls who created our universe.</p>
+  
+  <p class="rose">ROSE: But over the years, I have come to see how malleable any apparent fact of numerological significance can be. </p>
+  
+  <p class="rose">ROSE: Adaptable, actually. Adaptable to shifting circumstance. Changes in setting, stakes, and allied ensembles.</p>
+  
+  <p class="dirk">DIRK: Twelve. That’s how many players went through the door at the end of our game.</p>
+  
+  <p class="rose">ROSE: Exactly. </p>
+  
+  <p class="rose">ROSE: My friends and yours, as well as Kanaya, Karkat, Terezi, and Calliope.</p>
+</div>
+  <p class="no-indent">Dirk settles in against the wall beside Rose, shoulder to shoulder. She seems to take some measure of comfort in the physical proximity. When she finds herself leaning against him—probably without thinking about it, Dirk imagines, because neither of them really “do” that—he doesn’t pull away. If it’s her, it’s all right. He won’t begrudge her a small weakness now.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="dirk">DIRK: You describe this as a fact of numerological significance. </p>
+  
+  <p class="dirk">DIRK: Which makes it seem you suspect these correlations are something less than utterly providential. As if there is a part of you holding on to the belief that certain figures are coincidental. That their significance and repetition smacks of bullshit.</p>
+  
+  <p class="rose">ROSE: Do they not smack of bullshit?</p>
+  
+  <p class="dirk">DIRK: They smack of a bunch of things, and a bunch of other things also happen to smack of bullshit. But the network of relations isn’t perfectly traceable, nor can they all be mapped on a one-to-one basis. It’s unclear exactly which things are smacking, just as it’s unclear that when it comes to bullshit, whether or not smacking accurately describes what is being done per se.</p>
+</div>
+  <p class="no-indent">Rose looks up to Dirk with the ghost of a smile that she inherited from him. On her face, its blankness is as enigmatic as the Mona Lisa’s.  </p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="rose">ROSE: Could it be that it is <em>you</em> who is smacking of bullshit, dear father?</p>
+  
+  <p class="dirk">DIRK: Nah, I smack of many admirable qualities, as well as keen insights.</p>
+</div>
+  <p class="no-indent">She doesn’t seem to have another riposte to return, but her gaze lingers. She stares into his shades as if convinced she could see past them. Dirk allows their eyes to meet.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="dirk">DIRK: I’m just saying it’s all evidence of a grand design. An immortal, metatextual apparatus beyond our ken that we can only catch glimpses of when we’re proverbially shitting our brains out through our nose.</p>
+  
+  <p class="dirk">DIRK: Which both you and I know.</p>
+  
+  <p class="rose">ROSE: Which <em>only</em> you and I know, apparently.</p>
+  
+  <p class="rose">ROSE: Which is precisely my question.</p>
+</div>
+  <p class="no-indent">Her gaze drifts towards the ceiling.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="rose">ROSE: In my story, all twelve of the disciples fell victim to the vagaries of power.</p>
+  
+  <p class="rose">ROSE: They were filled with the light of knowledge and one by one they succumbed to it, turning insane or evil or, most often, both.</p>
+  
+  <p class="rose">ROSE: If this is the effect unchecked powers have on players living in a post-canon victory state, then why isn’t it affecting any of our other friends?</p>
+  
+  <p class="dirk">DIRK: Well.</p>
+  
+  <p class="dirk">DIRK: I got a few theories.</p>
+</div>
+  <p class="no-indent">She shoots him a<span class="Standard-Text CharOverride-14"> look.</span><span class="Standard-Text"> It’s the kind of look Kanaya gives her sometimes.</span></p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="rose">ROSE: Only a few?</p>
+  
+  <p class="dirk">DIRK: I mean, some of us have stopped using our powers completely. Not a whole lot of need for emergency resurrections or complex timeline manipulation on a planet that’s never had a conflict more serious than a sportsball riot or a rumpled hat shortage.</p>
+  
+  <p class="dirk">DIRK: But even aside from how often they’re used... </p>
+  
+  <p class="dirk">DIRK: Some powers don’t lend themselves to the infinite expansion of one’s mind, the way ours do.</p>
+  
+  <p class="rose">ROSE: I see.</p>
+  
+  <p class="rose">ROSE: So what you’re saying is, it’s more a matter of one’s aspect than it is whether one’s powers are practiced further, or allowed to atrophy.</p>
+  
+  <p class="dirk">DIRK: Yep. </p>
+  
+  <p class="rose">ROSE: In that case...</p>
+</div>
+  <p class="no-indent">Rose sways suddenly.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="rose">ROSE: In that case, perhaps Terezi had the right idea.</p>
+  
+  <p class="rose">ROSE: Getting away from this place, I mean.</p>
+  
+  <p class="rose">ROSE: Maybe I was a fool for imagining I could settle down here.</p>
+</div>
+  <p class="no-indent">She jerks away from the wall in a tortured, rag-doll motion, one hand snapping out vainly for something to brace herself against. She staggers forward a bit.</p>
+  <p>Dirk doesn’t reach out to steady her. Anyone else might have had the empathetic reflex to do so. Maybe it says something about him that he lacks this reflex. And maybe it says something about Rose that she prefers it this way. Try as she might to convince herself otherwise, through marriage vows and occasional banter about adoption with her wife, she is still a solitary creature. She gasps, sucks breath down her throat, and squeezes her eyes shut so hard that a tear rolls out. She slides back down the wall, sitting on the floor to save her energy. She’s mostly composed when she raises her head. There’s bitter laughter at the edge of her words.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="rose">ROSE: How...  How are you handling this so well?</p>
+  
+  <p class="rose">ROSE: I assumed it was just that feigned Strider Stoicism, but you seem to be taking this...</p>
+  
+  <p class="dirk">DIRK: In stride?</p>
+  
+  <p class="rose">ROSE: Ugh.</p>
+  
+  <p class="dirk">DIRK: I won’t lie, it’s definitely making me feel pretty crazy. </p>
+</div>
+  <p class="no-indent">Dirk stands over her, adjusts his hair, crosses his arms. He makes no motion to bother joining her on the floor. He looks very together. He says the word “crazy” with the same intonation with which he might say “good morning.” It’s hard to believe he means it at all.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="dirk">DIRK: But I’ve got more practice at this than you do. I spent most of my life before the game multitasking my entire fucking subconscious. I’ve had several times my age on paper to contemplate these mysteries.</p>
+  
+  <p class="dirk">DIRK: Years of prying open can after can of worms filled with answers I don’t like.</p>
+  
+  <p class="dirk">DIRK: Cut yourself on the edge more than once and you stop getting surprised by all the blood.</p>
+  
+  <p class="rose">ROSE: I see.</p>
+</div>
+  <p class="no-indent">Rose wraps her hands around her upper arms like there’s a winter chill rattling through the workshop. She shivers.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="rose">ROSE: It’s not the headaches that concern me most.</p>
+  
+  <p class="rose">ROSE: In fact, I don’t think it’s the expansion of my powers that is causing the headaches, but rather my own resistance to it.</p>
+  
+  <p class="rose">ROSE: Sometimes I get this feeling that I could, if I really wanted to, just let go.</p>
+  
+  <p class="rose">ROSE: It would be as easy as opening my eyes.</p>
+  
+  <p class="rose">ROSE: It’s like that feeling you get when you’re far enough out of a dream to be conscious of it, but not yet awake.</p>
+  
+  <p class="rose">ROSE: I’m caught in the liminal space between reality and reverie, where people once believed demons dwelled. But the only reason the demon is still sitting on my chest is because I refuse to banish it. All it would take is looking directly at it.</p>
+  
+  <p class="rose">ROSE: I’m forcing myself to stumble through my life as a sleepwalker. All this pain and sorrow could go away if I would just allow myself to wake up.</p>
+  
+  <p class="dirk">DIRK: Then why don’t you?</p>
+  
+  <p class="rose">ROSE: Because I’m not sure that the person opening her eyes will be me.</p>
+</div>
+  <p class="no-indent">Her voice is lost at sea, swallowed by the swell of darkness lurking in her imagination.</p>
+  <p>This time, Dirk does reach out to steady her. He kneels in front of her, curls a knuckle under her chin, and lifts her face up to his level. Then, in a deliberate motion, he pulls off his shades.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="dirk">DIRK: I understand completely.</p>
+</div>
+  <p class="no-indent">Rose’s eyelids flutter, heavy. She meets the intensity of his naked gaze aloofly, like she’s not aware this is the first time he’s ever let her see it.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="rose">ROSE: Hm?</p>
+  
+  <p class="dirk">DIRK: I know I sound pretty nonchalant most of the time, but actually I’m scared shitless of myself.</p>
+  
+  <p class="dirk">DIRK: I’ve always had this uncanny ability to chart a course from A to Z and not give a fuck about any of the letters in between. </p>
+  
+  <p class="dirk">DIRK: I’m not sure anyone should be allowed to have that much foresight. Especially a guy like me. </p>
+  
+  <p class="rose">ROSE: What upsets me most, I think, is the distance this is all putting between me and everyone I know.</p>
+  
+  <p class="rose">ROSE: The farther above the board you fly, the harder it gets to care about the pieces.</p>
+  
+  <p class="dirk">DIRK: I hear you. And personally speaking, things usually work out for the best when all of those pieces do exactly what I say.</p>
+  
+  <p class="dirk">DIRK: So I’m also probably not the kind of guy who should get to be right all the time.</p>
+</div>
+  <p class="no-indent">Rose laughs softly. She’s not scared of this abyss she’s staring into at all. She doesn’t even think to look away.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="rose">ROSE: There’s really not an inch of humility in you, is there.</p>
+  
+  <p class="dirk">DIRK: I’ve just spent a lot of time in my own head. </p>
+  
+  <p class="dirk">DIRK: Maybe absolute self-absorption is the inevitable outcome, when the self is all you’ve ever known. When you’re <em>drowning </em>in it.</p>
+  
+  <p class="dirk">DIRK: I know there’s plenty of things that suck about me. No point feigning humility about the things that don’t.</p>
+  
+  <p class="dirk">DIRK: And yes, I may be a shitty human being, but, </p>
+  
+  <p class="dirk">DIRK: As a mechanic, I’m off the fucking charts.</p>
+</div>
+  <p class="no-indent">Rose’s eyes have grown distant, almost mirrorlike. Dirk can see himself reflected in her vacant stare.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="rose">ROSE: All the pieces in their place. </p>
+  
+  <p class="rose">ROSE: The mechanisms all running smoothly.</p>
+</div>
+  <p class="no-indent">She says this in a hollow tone. It’s the disarming voice a puppeteer ventriloquizes for a marionette. Her head falls toward her shoulder slowly. Dirk catches her cheek as she slides into sleep. It’s difficult for the untrained ear to spot the exact moment in their conversation when the words she was saying stopped being hers and started being his. Or maybe they were her words. Does it really matter? In many respects, they’re basically the same person, aren’t they? Kindred spirits in blood and perspective, the puppet masters of the respective games they like to believe they’re playing. </p>
+  <p class="no-indent dirk" style="margin-top:15px">But you already knew that, right?</p></div>
+      <div class="o_story-nav type-hs-copy line-tight pad-x-0 pad-x-lg--md pad-b-lg">
+        <div>
+          <span>&gt;</span>
+          <a href="Meat 17.html">==&gt; </a><br>
+        </div>
+      </div>
+  
+<footer id="story-footer" role="banner">
+  <div id="story_footer_container" class="o_story-page-footer flex pad-t-0 pad-x-0
+     flex-justify 
+    ">
+      <div class="pad-l-lg--md mar-b-md type-hs-small type-hs-bottom--md type-center type-left--md">
+        <ul class="o_game-nav">
+          <li class="o_game-nav-item">
+            <a id="o_start-over" href="The Homestuck Epilogues.html">Start Over</a>
+          </li>
+            <li class="o_game-nav-item">
+              <a href="Meat 15.html">Go Back</a>
+            </li>
+        </ul>
+      </div>
+      <script>
+//<![CDATA[
+$(document).ready(function() { Gamenav.checkAutosave(); });
+//]]>
+</script>
+
+    <a href="javascript:void(0)" data-gamenav-open="" class="nav-btn nav-btn--center type-hs-small mar-b-md" style="text-decoration:none; text-transform: none; font-size:14px; line-height:14px;"><span>Options</span> <i class="icon-menu" style="margin:0;"></i></a>
+  </div>
+</footer>
+
+
+  </div>
+</div><iframe name="__tcfapiLocator" src="./Epilogue_files/saved_resource(2).html" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe>
+
+
+    
+<div class="o_site-footer row pos-r pad-t-rg pad-b-xl pad-b-0--md bg-dark-gray">
+  <div class="float-l"><img src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif" alt="Footer logo"><br></div>
+  <div class="float-r disp-n disp-bl--sm"><img src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif" alt="Footer logo"><br></div>
+  <div class="type-center pad-t-md--md">
+    <ul>
+      <li><a href="https://www.homestuck.com/contacts">Contacts</a></li>
+      <li><a href="https://www.homestuck.com/privacy">Privacy Policy</a></li>
+    </ul>
+    <div><span style="white-space:nowrap;">© 2018 Homestuck</span> <span style="white-space:nowrap;">and VIZ Media</span></div>
+  </div>
+</div>
+
+
+
+    <div id="overlay" data-overlay-state="off" class="o_overlay"></div>
+    <div id="game_overlay" data-game-overlay-state="off" class="o_game-overlay"></div>
+    <div id="overlay_wait" data-overlay-state="off" class="o_overlay-wait"></div>
+
+
+
+  
+
+<iframe name="googlefcPresent" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;" src="./Epilogue_files/saved_resource(6).html" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe></body></html>

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en-US"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- application -->
+    <script async="" src="./Epilogue_files/jquery-1.11.3.min.js.download"></script>
+    
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"1b930da09b","applicationID":"65900267","transactionName":"cFkNREpaWA9dF0pBVlRTEB9LQVsRQQ==","queueTime":0,"applicationTime":5,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"1b930da09b",applicationID:"65900267"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>The Homestuck Epilogues</title>
+    <meta name="description" content="Tales of dubious authenticity.">
+    <script>
+//<![CDATA[
+var getGAEventLabel = function(){ return "The Homestuck Epilogues"; };
+//]]>
+</script>
+      <link rel="canonical" href="Candy 8.html">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.homestuck.com/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.homestuck.com/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.homestuck.com/favicon/favicon-16x16.png">
+<link rel="manifest" href="https://www.homestuck.com/favicon/manifest.json">
+<link rel="mask-icon" href="https://www.homestuck.com/favicon/safari-pinned-tab.svg" color="#6bbe4a">
+<meta name="theme-color" content="#ffffff">
+
+        <link rel="stylesheet" media="all" href="./Epilogue_files/manifest-epilogue-1694f2c1abc80cf72e84324f6d6486e6f04b02358ed667dee36c88974eef388f.css">
+      <link rel="stylesheet" href="./Epilogue_files/kek1uwn.css">
+    <link rel="stylesheet" media="all" href="./Epilogue_files/manifest-ui-e03365bbb17dde0f1fd5463dd7b56d096a27cae55aa131b72684e36c1f0c80f6.css">
+    <script src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE=(1)"></script>
+    <script src="./Epilogue_files/manifest-ads-story-1885683d55d6f631dc202ac5db87250ca938be96a613e85bb93739ecc057540e.js.download"></script>
+
+
+    <!-- //Connect Container: Homestuck-->
+<script src="./Epilogue_files/tag.min.js.download" async="" defer=""></script>
+  <script src="./Epilogue_files/zxy"></script></head>
+  
+  <body class="epilogue vsc-initialized">
+
+    
+    <header id="site-header" role="banner">
+  <div id="header-container" class="o_story-page-header row flex pad-t-0 ">
+    <a href="javascript:void(0)" data-nav-open="" class="nav-btn nav-btn--center color-white" style="overflow-wrap:normal;text-decoration:none;"><i class="icon-menu"></i><span>Menu</span></a>
+    <nav id="nav-container" data-nav-state="closed" role="navigation" class="o_nav-container">
+      <a href="javascript:void(0)" data-nav-close="" class="nav-btn color-white pad-y-rg type-rg" style="overflow-wrap:normal;text-decoration:none;"><i class="icon-close"></i><span>Dismiss</span></a>
+      <ul id="primary-nav" class="o_primary-nav style-caps weight-bold disp-ib color-white type-rg">
+     <li class="o_primary-nav-item slide-candycorn pipe"><a class="o_primary-nav-link" style="color:#39d5f6" href="Read.html">READ</a></li><!--
+     --><li class="o_primary-nav-item"><a class="o_primary-nav-link" style="color:#39d5f6" href="Credits.html">INFO</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+    
+
+    <div class="row bg-white bg-light-gray--md pad-t-md--md pos-r">
+  <div id="content_container" class="mar-x-auto disp-bl bg-white" style="max-width:650px;">
+    <div class="pos-r pad-t-sm pad-x-lg--md type-center" style="overflow:visible; height:72px;">
+      <img class="hsep_bullet" alt="Chapter" src="./Epilogue_files/candy_60x60-6b955ce39772ffce9994587a951f12b804ebf2202ebe8ed230483e25072db855.png">
+      <h3 class="disp-ib type-hsep-header line-tight type-lg pad-t-sm">
+        8
+      </h3>
+    </div>
+  </div>
+</div>
+
+<div class="row bg-white bg-light-gray--md pad-b-md pad-b-lg--md pos-r pad-t-md pad-t-0--md">
+  <div class="mar-x-auto disp-bl bg-white pad-t-lg" style="max-width:650px;">
+      <div class="o-story_text o_epilogue type-rg type-sm--md line-caption line-copy--md pad-x-0 pad-x-lg--md pad-b-lg"><div class="chat type-rg type-hs-small--md" style="margin-top:0">  
+  <p class="rose">ROSE: Did you hear that Jane had been intending to run for president?</p>
+  
+  
+  <p class="kanaya">KANAYA: Yes She In Fact Asked Me To Serve A Position In Her Cabinet</p>
+  
+  
+  <p class="kanaya">KANAYA: On The “Board Of Responsible Troll Reproduction”</p>
+  
+  <p class="rose">ROSE: Oh dear. What did you tell her?</p>
+  
+  
+  <p class="kanaya">KANAYA: Well Not In So Many Words </p>
+  
+  
+  <p class="kanaya">KANAYA: But I Told Her To Kindly Fuck Off</p>
+</div>
+  <p class="no-indent">Rose arches an eyebrow at her wife, who is tending to the Mother Grub. Rose herself is sitting cross-legged on an outcropping over the lip of the breeding pit, knitting a series of tiny scarves for the grub clones that she and Kanaya have come to help hatch.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="rose">ROSE: That bad, huh?</p>
+  
+  
+  <p class="kanaya">KANAYA: She Was Already Talking About Regulating Troll Reproduction</p>
+  
+  
+  <p class="kanaya">KANAYA: With Great Confidence I Might Add As If She Had Already Been Elected</p>
+  
+  <p class="rose">ROSE: Very presumptuous of her.</p>
+  
+  
+  <p class="kanaya">KANAYA: Well I Suppose Her Confidence Was Not Unearned</p>
+  
+  
+  <p class="kanaya">KANAYA: Who Was Going To Run Against Her</p>
+  
+  
+  <p class="kanaya">KANAYA: Karkat?</p>
+</div>
+  <p class="no-indent">Kanaya laughs to herself, more fond than mocking. Rose turns over another row on her scarf with dexterous ease, switching the knit pattern without missing a stitch. From behind her knitting she watches Kanaya check the shell thickness on a batch of eggs. Her wife is luminous in the early morning light, her rainbow-drinker skin soaking in the pink light and reflecting it back like the inside of a snail’s shell.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="rose">ROSE: I don’t think Karkat would be such a bad candidate actually. Depending on certain factors I mean.</p>
+  
+  <p class="rose">ROSE: I’m assuming that in this theoretical scenario, Dave is handling the economy.</p>
+  
+  
+  <p class="kanaya">KANAYA: Oh Of Course</p>
+  
+  <p class="rose">ROSE: Ok. In that case it might have all worked out in the end.</p>
+  
+  
+  <p class="kanaya">KANAYA: Doubtlessly</p>
+  
+  
+  <p class="kanaya">KANAYA: I Have Great Faith In Karkat And Always Have</p>
+  
+  
+  <p class="kanaya">KANAYA: However I Also Am Not Certain That He Could Step Out Of His Hive Without Catching On Fi–</p>
+  
+  
+  <p class="kanaya">KANAYA: Swifer Could You Not Swiff The Mother Grub So Vigorously</p>
+  
+  
+  <p class="kanaya">SWIFER: Oh, sorry ma’am!</p>
+</div>
+  <p class="no-indent">Swifer Eggmop is Kanaya’s over-eager but well-meaning jade-blooded assistant. She talks a little like a parody of a 1920s newsboy archetype, which Rose can only theorize has to do with Jane’s influence on the culture. </p>
+<div class="chat type-rg type-hs-small--md">  
+  
+  <p class="kanaya">SWIFER: Just tryin’ to get her nice and clean! I heard the New Prospit Hornographer’s coming by later to scope out some pics!</p>
+</div>
+  <p class="no-indent">Swifer is at the center of the breeding pit, knee-deep in birthing juice as she mops down the Mother Grub’s exoskeleton. The parturition of troll grubs is apparently an arduous and grisly task, one that has stained the Mother Grub’s shimmering white exoskeleton rainbow-dark with various secretions.</p>
+  <p>Rose takes a moment to feel grateful that her current relationship alignment leaves no chance for her to ever be “human pregnant.” Not that she has any particular distaste for motherhood. It might be nice to adopt a little troll grub once the whole ball on natural production gets rolling. </p>
+  <p>Swifer adjusts the rate of her swiffing to a more acceptable level of vigor. She shines up the last of the segment she’s working on, then twirls the mop over her wrist with a martial flourish that absolutely recalls the fact that she is from a natural-born warrior species. She then gets to work washing the Mother Grub’s horns.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="rose">ROSE: What’s this about the Hornographer?</p>
+  
+  <p class="rose">ROSE: Since when has the press taken in interest in our activities down here?</p>
+  
+  
+  <p class="kanaya">KANAYA: Oh Yes You Were Busy Dying When I Set All Of That Up</p>
+  
+  
+  <p class="kanaya">KANAYA: The Mother Grub Is Mature Enough This Year To Process Inseminated Slurry For The First Time In Our History</p>
+  
+  
+  <p class="kanaya">KANAYA: If The Government Gives Us The Go Ahead We Can Begin Breeding Trolls The Natural Way Next Month</p>
+  
+  
+  <p class="kanaya">KANAYA: I Arranged The Newspaper Story When... </p>
+  
+  <p class="rose">ROSE: When Jane asked you to sit on the “Board for Responsible Troll Reproduction”?</p>
+  
+  
+  <p class="kanaya">KANAYA: Yes The First Thing I Did Immediately After Screaming Into A Pillow Was To Call My Acquaintance At The Paper</p>
+  
+  
+  <p class="kanaya">KANAYA: Now That She Isnt Running It Doesnt Seem Very Important However</p>
+  
+  
+  <p class="kanaya">KANAYA: Actually Im Not Terribly Interested In Politics At All</p>
+  
+  
+  <p class="kanaya">KANAYA: Without Anger Motivating Me I Began To Think About How Its Probably Very Irresponsible For Any Of Us To Use Our Influence In Such A Way</p>
+  
+  <p class="rose">ROSE: I agree. In fact, I’d just assumed that most of us had arrived at such a conclusion.</p>
+  
+  
+  <p class="kanaya">KANAYA: Not Jane Apparently</p>
+  
+  <p class="rose">ROSE: Or Dave, I’m sorry to say.</p>
+</div>
+  <p class="no-indent">There’s a third member of their social group who definitely hasn’t arrived at the conclusion that his power and influence should be meted out responsibly either. Neither of them speak his name, however. For some reason, it feels like a shadow passing over the sun. A brief spike of pain flickers through Rose’s head, a bolt that strikes between her eyes and splinters out. There is color and light behind it. A vision that tears through the material reality in front of her and gives her a brief glimpse into a parallel reality where things are very different.</p>
+  <p>It’s gone as soon as she notices it. The image never materializes. She ties off the last row of her scarf and unwinds her knitting needles from the wool, a serene smile tugging at her lips. Since waking up in the hospital, she has stopped worrying altogether about what might be happening in splintered timelines. She has stopped worrying, in fact, about almost anything at all. A pleasant breeze rustles through her hair, carrying the sweet scent of early spring from the mouth of the chasm. Rose closes her eyes for a moment and breathes it in: taken just one minute at a time, a day can be filled with hundreds of perfect moments.</p>
+<div class="chat type-rg type-hs-small--md">  
+  
+  <p class="kanaya">KANAYA: Well Whatever Inconvenient Party Ruining Opinions Dave and Jane Might Have About The Economic Future Of Our Planet Its All In The Past </p>
+  
+  
+  <p class="kanaya">KANAYA: I Have A Very Good Feeling About Where Things Are Going Now</p>
+  
+  <p class="rose">ROSE: I see. So are you the Seer now?</p>
+  
+  
+  <p class="kanaya">KANAYA: No</p>
+  
+  
+  <p class="kanaya">KANAYA: But I Can Make Predictions Based On Existing Evidence</p>
+  
+  
+  <p class="kanaya">KANAYA: And If I Can Spend Every Day Like This Doing The Work That I Was Born To Do With The Person I Am Most Fond Of In The World By My Side</p>
+  
+  
+  <p class="kanaya">KANAYA: I Believe That I Can Handle Anything</p>
+  
+  <p class="rose">ROSE: Hmm... Did you really use dialogue like that to win my heart, or are we getting complacent and incredibly uncool in our old age?</p>
+  
+  
+  <p class="kanaya">KANAYA: I Convinced You To Marry Me I Dont Think That I Am Obligated To Be Cool Anymore</p>
+  
+  <p class="rose">ROSE: Kanaya, you’re the “coolest chick” I know. </p>
+  
+  
+  <p class="kanaya">KANAYA: What</p>
+  
+  
+  <p class="kanaya">KANAYA: Are You Doing With Your Hands</p>
+  
+  <p class="rose">ROSE: Oh, you know. Just one of these...  </p>
+  
+  
+  <p class="kanaya">KANAYA: Please Dont Tell Me Youre Attempting To Do The Strider Thing</p>
+  
+  
+  <p class="kanaya">KANAYA: That Thing He Does Where He Pretends To Operate An Invisible Record Player</p>
+  
+  <p class="rose">ROSE: B)</p>
+  
+  
+  <p class="kanaya">KANAYA: God</p>
+  
+  <p class="rose">ROSE: Who’s the cool one now?</p>
+  
+  
+  <p class="kanaya">KANAYA: Well</p>
+  
+  
+  <p class="kanaya">KANAYA: It Sure Isnt You</p>
+  
+  
+  <p class="kanaya">SWIFER: Ma’am and Ma’am’s wife! Bank’s closed, ladies!</p>
+  
+  
+  <p class="kanaya">SWIFER: The first egg is hatchin’ already!</p>
+</div>
+  <p class="no-indent">Kanaya twirls on her heel, skin flickering bright as she lifts her skirt and jumps into the breeding pit. Rose sets down her needles and follows, walking along the edge of the pit to the place closest to the eggs. She crouches to watch the miracle of life begin.</p>
+  <p>She’s never taken the time to come down here before and see the grubs hatch. Probably because she’s been too busy diminishing melodramatically on the couch to take an active interest in her wife’s life calling. The grub is already chewing through the chitin eggshell with all its little legs moving sinuously in offbeat concert.</p>
+  <p>Swifer is sniffling. She makes the motion of wiping away a tear, somewhat cartoonishly.</p>
+<div class="chat type-rg type-hs-small--md">  
+  
+  <p class="kanaya">SWIFER: Golly gee oh my. This part always makes me tear up.</p>
+</div>
+  <p class="no-indent">Kanaya dips down to help the grub out of the shell. Her skirt trails through a puddle of birthing jelly, but she doesn’t seem to care. There’s an awed expression lighting up her face, in addition to the literal light emanating from her skin. She tears away the last chunk of the shell. It’s mottled and rough, like a rock on the outside, but has a layer beneath like mulched flesh. Kanaya’s hands are soaked blue with bloody yolk when she finally lifts the grub and holds it up to the light.</p>
+<div class="chat type-rg type-hs-small--md">  
+  
+  <p class="kanaya">KANAYA: Rose Look</p>
+</div>
+  <p class="no-indent">Rose looks. All troll grubs appear kind of samey, but this one has a familiar look about her. Asymmetric horns, one crescent, the other harpoon-like. A mussed mane of hair and a mischievous glint in her beady little eyes. Particularly the one with seven pupils. </p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="rose">ROSE: ...  </p>
+  
+  <p class="rose">ROSE: Vriska?</p>
+  
+  
+  <p class="kanaya">KANAYA: Pretty Close</p>
+  
+  
+  <p class="kanaya">KANAYA: A Reasonable Genetic Approximation</p>
+  
+  
+  <p class="kanaya">KANAYA: This Brood Has Been Utilizing A Slurry Consisting Of Genes From Our Original Group Of Twelve Trolls</p>
+  
+  
+  <p class="kanaya">KANAYA: Mostly This Results In Unique Individuals</p>
+  
+  
+  <p class="kanaya">KANAYA: But Sometimes Very Close Copies Occur</p>
+  
+  
+  <p class="kanaya">KANAYA: As With The case Of Ancestral Descendancy </p>
+  
+  <p class="rose">ROSE: So... Vriska would be this troll’s ancestor?</p>
+  
+  
+  <p class="kanaya">KANAYA: Yes</p>
+  
+  <p class="rose">ROSE: Wow. </p>
+  
+  
+  <p class="kanaya">KANAYA: Rose I Think This Is A Sign</p>
+  
+  <p class="rose">ROSE: A sign of what?</p>
+  
+  
+  <p class="kanaya">KANAYA: Havent We Been Talking About Adopting A Grub</p>
+  
+  <p class="rose">ROSE: Eventually, yes. But a natural-born grub. Don’t you think it will be somewhat... awkward, us raising a clone of your sort-of ex?</p>
+  
+  <p class="rose">ROSE: What happens when Vriska comes back? What do we say to her?</p>
+  
+  
+  <p class="kanaya">KANAYA: Rose Vriska Is Dead So It Doesnt Really Matter</p>
+  
+  <p class="rose">ROSE: Is she dead, though?</p>
+  
+  
+  <p class="kanaya">KANAYA: Absolutely</p>
+  
+  
+  <p class="kanaya">KANAYA: There Are Two Things Of Which I Have No Doubt</p>
+  
+  
+  <p class="kanaya">KANAYA: That You And I Are Going To Be Happy For The Rest Of Our Lives </p>
+  
+  
+  <p class="kanaya">KANAYA: And That We Are Never Ever Going To See Vriska Again</p>
+</div>
+  <p class="no-indent">Baby-Vriska wiggles her six talons. Kanaya cradles the little grub against her chest and pokes it in the nose. The grub reacts by blowing a bubble of bright cerulean yolk membrane out from between its lips. To her own surprise, the sight melts Rose’s heart in an instant. The emotion that hits her feels like one of her old visions. Suddenly she can see her and Kanaya’s future so clearly, like a map rolled out at her feet and stretching far into the horizon. Kanaya is right. Vriska is dead, and despite everything, she died a hero. Vriska was a complicated figure of contrasting extremes; her heroic actions were matched in scale only by her monstrous ones, and since no one had actually witnessed her end, it was impossible to say which side the pendulum swung and judged her death—Heroic or Just.</p>
+  <p>It would be a fitting memorial for her and Kanaya to raise a version of Vriska who would be given every chance to make good on her noble characteristics. A true, symbolic redemption arc. Something about the thought appeals to Rose’s taste for the dramatic flourish. It would be proof that this was all worth it in the end: the destruction of multiple universes, the death of Kanaya’s friends, the circuitous rites of suffering experienced by the nearly infinite splintered versions of every being to inhabit Paradox Space...  </p>
+  <p>Rose loves her wife fiercely in this moment. The new Mother of her species, framed in a literal halo of light. She can’t contain her excitement. She leaps into the pit with Kanaya and runs to embrace her, not caring about the irreversible rainbow-colored stains that she’s smearing into her dress.</p>
+<div class="chat type-rg type-hs-small--md" style="margin-bottom:0">  
+  <p class="rose">ROSE: Oh Kanaya, you’re right. </p>
+  <p class="rose">ROSE: We are going to be so astonishingly happy!</p>
+</div></div>
+      <div class="o_story-nav type-hs-copy line-tight pad-x-0 pad-x-lg--md pad-b-lg">
+        <div>
+          <span>&gt;</span>
+          <a href="Candy 9.html">==&gt; </a><br>
+        </div>
+      </div>
+  
+<footer id="story-footer" role="banner">
+  <div id="story_footer_container" class="o_story-page-footer flex pad-t-0 pad-x-0
+     flex-justify 
+    ">
+      <div class="pad-l-lg--md mar-b-md type-hs-small type-hs-bottom--md type-center type-left--md">
+        <ul class="o_game-nav">
+          <li class="o_game-nav-item">
+            <a id="o_start-over" href="The Homestuck Epilogues.html">Start Over</a>
+          </li>
+            <li class="o_game-nav-item">
+              <a href="Candy 7.html">Go Back</a>
+            </li>
+        </ul>
+      </div>
+      <script>
+//<![CDATA[
+$(document).ready(function() { Gamenav.checkAutosave(); });
+//]]>
+</script>
+
+    <a href="javascript:void(0)" data-gamenav-open="" class="nav-btn nav-btn--center type-hs-small mar-b-md" style="text-decoration:none; text-transform: none; font-size:14px; line-height:14px;"><span>Options</span> <i class="icon-menu" style="margin:0;"></i></a>
+  </div>
+</footer>
+
+
+  </div>
+</div><iframe name="__tcfapiLocator" src="./Epilogue_files/saved_resource(2).html" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe>
+
+
+    
+<div class="o_site-footer row pos-r pad-t-rg pad-b-xl pad-b-0--md bg-dark-gray">
+  <div class="float-l"><img src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif" alt="Footer logo"><br></div>
+  <div class="float-r disp-n disp-bl--sm"><img src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif" alt="Footer logo"><br></div>
+  <div class="type-center pad-t-md--md">
+    <ul>
+      <li><a href="https://www.homestuck.com/contacts">Contacts</a></li>
+      <li><a href="https://www.homestuck.com/privacy">Privacy Policy</a></li>
+    </ul>
+    <div><span style="white-space:nowrap;">© 2018 Homestuck</span> <span style="white-space:nowrap;">and VIZ Media</span></div>
+  </div>
+</div>
+
+
+
+    <div id="overlay" data-overlay-state="off" class="o_overlay"></div>
+    <div id="game_overlay" data-game-overlay-state="off" class="o_game-overlay"></div>
+    <div id="overlay_wait" data-overlay-state="off" class="o_overlay-wait"></div>
+
+
+
+  
+
+<iframe name="googlefcPresent" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;" src="./Epilogue_files/saved_resource(6).html" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe></body></html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en-US"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- application -->
+    <script async="" src="./Epilogue_files/jquery-1.11.3.min.js.download"></script>
+    
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"1b930da09b","applicationID":"65900267","transactionName":"cFkNREpaWA9dF0pBVlRTEB9LQVsRQQ==","queueTime":0,"applicationTime":4,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"1b930da09b",applicationID:"65900267"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>The Homestuck Epilogues</title>
+    <meta name="description" content="Tales of dubious authenticity.">
+    <script>
+//<![CDATA[
+var getGAEventLabel = function(){ return "The Homestuck Epilogues"; };
+//]]>
+</script>
+      <link rel="canonical" href="Meat 11.html">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.homestuck.com/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.homestuck.com/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.homestuck.com/favicon/favicon-16x16.png">
+<link rel="manifest" href="https://www.homestuck.com/favicon/manifest.json">
+<link rel="mask-icon" href="https://www.homestuck.com/favicon/safari-pinned-tab.svg" color="#6bbe4a">
+<meta name="theme-color" content="#ffffff">
+
+        <link rel="stylesheet" media="all" href="./Epilogue_files/manifest-epilogue-1694f2c1abc80cf72e84324f6d6486e6f04b02358ed667dee36c88974eef388f.css">
+      <link rel="stylesheet" href="./Epilogue_files/kek1uwn.css">
+    <link rel="stylesheet" media="all" href="./Epilogue_files/manifest-ui-e03365bbb17dde0f1fd5463dd7b56d096a27cae55aa131b72684e36c1f0c80f6.css">
+    <script src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE=(1)"></script>
+    <script src="./Epilogue_files/manifest-ads-story-1885683d55d6f631dc202ac5db87250ca938be96a613e85bb93739ecc057540e.js.download"></script>
+
+
+    <!-- //Connect Container: Homestuck-->
+<script src="./Epilogue_files/tag.min.js.download" async="" defer=""></script>
+  <script src="./Epilogue_files/ad_srv_"></script></head>
+  
+  <body class="epilogue vsc-initialized">
+
+    
+    <header id="site-header" role="banner">
+  <div id="header-container" class="o_story-page-header row flex pad-t-0 ">
+    <a href="javascript:void(0)" data-nav-open="" class="nav-btn nav-btn--center color-white" style="overflow-wrap:normal;text-decoration:none;"><i class="icon-menu"></i><span>Menu</span></a>
+    <nav id="nav-container" data-nav-state="closed" role="navigation" class="o_nav-container">
+      <a href="javascript:void(0)" data-nav-close="" class="nav-btn color-white pad-y-rg type-rg" style="overflow-wrap:normal;text-decoration:none;"><i class="icon-close"></i><span>Dismiss</span></a>
+      <ul id="primary-nav" class="o_primary-nav style-caps weight-bold disp-ib color-white type-rg">
+     <li class="o_primary-nav-item slide-candycorn pipe"><a class="o_primary-nav-link" style="color:#39d5f6" href="Read.html">READ</a></li><!--
+     --><li class="o_primary-nav-item"><a class="o_primary-nav-link" style="color:#39d5f6" href="Credits.html">INFO</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+    
+
+    <div class="row bg-white bg-light-gray--md pad-t-md--md pos-r">
+  <div id="content_container" class="mar-x-auto disp-bl bg-white" style="max-width:650px;">
+    <div class="pos-r pad-t-sm pad-x-lg--md type-center" style="overflow:visible; height:72px;">
+      <img class="hsep_bullet" alt="Chapter" src="./Epilogue_files/meat_60x60-a20ba4eabbf9e6c7e4778d99648c13802fc7ff42a24bc48bc0535494cdd82195.png">
+      <h3 class="disp-ib type-hsep-header line-tight type-lg pad-t-sm">
+        11
+      </h3>
+    </div>
+  </div>
+</div>
+
+<div class="row bg-white bg-light-gray--md pad-b-md pad-b-lg--md pos-r pad-t-md pad-t-0--md">
+  <div class="mar-x-auto disp-bl bg-white pad-t-lg" style="max-width:650px;">
+      <div class="o-story_text o_epilogue type-rg type-sm--md line-caption line-copy--md pad-x-0 pad-x-lg--md pad-b-lg">  <p class="no-indent"><span class="opener type-hs-opener-rg type-hs-opener-sm--md">T</span>hat’s that, you think. Your glasses are broken forever, and you totally fucked up and underestimated young Lord English. Rose should have known better than to trust this to you alone.</p>
+  <p>Rose, <em>Rose</em>... your smart, amazing friend Rose, you can almost hear her voice now.</p>
+  <p class="Command">&gt; Listen closer, jackass.</p>
+  <p class="no-indent">Oh, wait. You do hear her voice. Vibrating low and muted through the wall of your cell. You’ve only realized right now that your cell has walls, because it’s awfully bright in here. It’s so white that nothing in the cell is casting a shadow. Looking around, you realize there is no apparent source to all this bright light, making it hard to tell where the floor ends and the walls begin.</p>
+<div class="chat type-rg type-hs-small--md">  
+ <p class="rose">ROSE: John? John? Are you there?</p>
+</div>
+  <p class="no-indent">Her voice is muffled, coming from what you presume to be an adjacent room similar to yours on the other side of the wall.</p>
+<div class="chat type-rg type-hs-small--md">  
+ <p class="john">JOHN: yeah, i’m here. </p>
+  
+ <p class="rose">ROSE: Oh, thank goodness. Everyone’s accounted for then. Are you okay?</p>
+  
+ <p class="john">JOHN: what?</p>
+  
+ <p class="rose">ROSE: Are you OKAY?</p>
+  
+ <p class="john">JOHN: i think so. i can barely hear you though.</p>
+</div>
+  <p class="no-indent">You can hear a thud from Rose’s corner, like someone slumping against the wall in relief. Well, that’s what you’re doing at least.</p>
+<div class="chat type-rg type-hs-small--md">  
+  
+ <p class="jade">JADE: —ay?</p>
+  
+ <p class="dave">DAVE: yeah im fine too but this is</p>
+  
+ <p class="dave">DAVE: uh</p>
+  
+ <p class="dave">DAVE: this is kinda dorky to say out loud but i dont</p>
+  
+ <p class="dave">DAVE: feel... time</p>
+  
+ <p class="dave">DAVE: thats not just me right you guys feel it too</p>
+  
+ <p class="dave">DAVE: or dont</p>
+  
+ <p class="jade">JADE: yeah</p>
+  
+ <p class="jade">JADE: i mean theres obviously space inside this box but i cant do ANYTHING</p>
+  
+ <p class="jade">JADE: its like im blind</p>
+</div>
+  <p class="no-indent">The noise outside the juju grows. Something sharp and metallic splinters above and rains down on the top of the chest.</p>
+<div class="chat type-rg type-hs-small--md">  
+ <p class="rose">ROSE: What did my future self say it was we had to do?</p>
+  
+ <p class="john">JOHN: erm... she never rea—</p>
+  
+ <p class="dave">DAVE: WHAT?</p>
+  
+ <p class="john">JOHN: she—</p>
+  
+ <p class="dave">DAVE: I CANT HEAR YOU</p>
+  
+ <p class="john">JOHN: UM, SHE NEVER REALLY TOLD US WHAT WE HAD TO DO, EXACTLY?</p>
+  
+ <p class="john">JOHN: JUST WHAT WAS GOING TO HAPPEN, IN A REALLY LOOSE SORT OF FASHION?</p>
+  
+ <p class="rose">ROSE: DOES THAT MEAN WE’RE STU— </p>
+</div>
+  <p class="no-indent">The metallic noises rain down harder, drowning out Rose’s attempt at being loud. </p>
+  <p class="no-indent" style="margin-top:15px">PLINK, PLINK, SMASH.</p>
+<div class="chat type-rg type-hs-small--md">  
+ <p class="john">JOHN: NOW I CAN’T HEAR YOU!</p>
+  
+ <p class="jade">JADE: TRY USING LESS WORDS</p>
+</div>
+  <p class="no-indent">The length of the silence coming from Rose’s corner communicates just how difficult a task that is for her.</p>
+<div class="chat type-rg type-hs-small--md">  
+ <p class="john">JOHN: SHE SAID THE JUJU WOULD GET LOADED AND UNLOADED.</p>
+  
+ <p class="rose">ROSE: WHAT?</p>
+  
+ <p class="john">JOHN: SO, I MEAN, IT JUST GOT LOADED I THINK?</p>
+  
+ <p class="john">JOHN: WITH US.</p>
+  
+ <p class="dave">DAVE: SO???</p>
+  
+ <p class="john">JOHN: SO I DON’T THINK WE’RE TRAPPED IN HERE FOREVER.</p>
+  
+ <p class="john">JOHN: WE’LL BE UNLOADED FROM IT... AT SOME POINT?</p>
+  
+ <p class="jade">JADE: WHAT?????</p>
+  
+ <p class="john">JOHN: I KNOW IT’S ALL A BIT ABSTRACT, BUT...  </p>
+  
+ <p class="jade">JADE: NO, I JUST CAN’T HEAR YOU!</p>
+  
+ <p class="dave">DAVE: JOHN YOU SUCK AT YELLING</p>
+  
+ <p class="john">JOHN: UGH!</p>
+</div>
+  <p class="no-indent">You stop trying to loudly reassure the worried teens for a moment, and just think. Now you understand defeating young Lord English was never supposed to happen. Not the way Adult Rose was implying it would. You surmise the other four teens remaining outside the juju were the ones meant to be tasked with his defeat. And judging from the cacophony still emanating from beyond the walls of this house and its confining chest, they are taking the task seriously.</p>
+  <p>But what does this mean for the four of you?</p>
+  <p>You try to picture what’s going on in the battle outside, but it’s not easy.</p>
+  <p class="Command">&gt; Use your imagination.</p>
+  <p class="no-indent">In your imagination, the battle is quite vivid and exciting. The coolness of the action in your mind’s eye is belied by the actual sound effects booming all around you, which you can only describe as vaguely stupid. There’s a lot of hysterical screaming, which, if you’re not mistaken, is coming exclusively from the male combatants. There’s a sudden swelling of energy that speaks to a vastness behind its power source. Almost as if an outrageous bubble of pure Hope were enveloping the stage, is how you would describe it if you didn’t mind sounding ridiculous. Then you hear... it can’t be. Horses?? No, not simple horses of flesh and bone. These horses are metal, if we’re to believe they’re horses at all.</p>
+  <p class="Command">&gt; Stop using your imagination.</p>
+  <p class="no-indent">This isn’t getting you anywhere, and clearly your silly imaginative whims aren’t doing the slightest bit of justice to the actual awesome things taking place out there in the heat of battle. Frankly, your theorized skirmish lost the handle on any legitimacy it might have had the moment you started thinking about horses. You figure no one will ever truly know what’s happening out there. You doubt anyone would even be able to handle how incredible the raw, unfiltered account of this teen brawl actually was, so it’s probably for the best.</p>
+  <p>As you slip out of your fanciful conjecture, which may or may not have included a mechanical horse ambush, you overhear Dave from one of the rooms below you, raising his voice to speak to either you or someone else. You’re not sure. You place your ear to the floor again.</p>
+  <p>He’s speaking to Jade. They’re attempting to reminisce again, to the best of their ability to do so while shouting through a wall. Once more you ruefully reflect on these teen versions of your friends, and all the questions they must have for you. For each other. What would you even say to them?</p>
+  <p>Would you want to tell them about the happy outcomes, knowing they might never get the chance to experience those things for themselves? Would you tell them the sad outcomes, thus reinforcing their insecurities and suspicions that they may never truly be capable of living happy lives? You’re not even sure you could handle it, if you were Teen John. You’d have too many follow-up questions, which Adult John is in no way prepared to answer. Would you tell them what’s up with Roxy and Calliope, again having no real grasp yourself over what’s up with them? Would you tell them Dave and Karkat... uh... live in a hive together watching TV all day, and Jade maybe kinda sorta lives there too, but nobody quite knows what’s really going on with that? Would you tell them about Terezi...  </p>
+  <p>For some reason her name feels like nails in your heart. Makes sense, you guess, cause there’s a lot of sharp letters in it. She had sharp teeth too, and sharp elbows. Sharp words. Terezi Pyrope was a sharp girl, and maybe what these sharp feelings are trying to tell you is you miss her more than you realized.</p>
+  <p>She wouldn’t have let you neglect relationships with certain friends for so long that you missed whole chapters of their lives. She wouldn’t have put up with you moping around with the salamanders for so long. She would have kicked your ass for being such a loser about everything. She would have poked you in the forehead and called you insufferably lame and told you to pick up the damn phone. You would have called her a weirdo and pretended you hated it, and maybe you would even have believed you hated it. But now, sitting here in this little white cubicle, contemplating your regrets, you don’t think you’d have hated it much at all.</p>
+  <p>Would you tell the teens that?</p>
+  <p>You’d probably never tell anyone that. Not even her.</p>
+  <p>Another arbitrary thought hits your brain, completely unrelated to the subject of Terezi, or what you would or wouldn’t tell a bunch of incarcerated teens, or so you think.</p>
+<div class="chat type-rg type-hs-small--md">
+  <p class="john">JOHN: am i... depressed??</p>
+</div>
+  <p class="no-indent">You ask aloud, quietly enough that your friends cannot possibly hear it. All the question does is crawl back down your throat and burrow into your gut like it lives there. And it does live there, because as it turns out, you are really fucking depressed. You’re just a giant, wet meat sack of self-involved misery, and all that big, wet, meaty ooze drips out your mouth every time you open it. All the time and space in the world isn’t making it better. It’s something you should have been doing for yourself, instead of waiting around for things to get better.</p>
+  <p>Well, screw waiting! It’s boring as hell! You are JOHN EGBERT, after all, immortal CREATOR OF WORLDS, the one and only man ever to completely transcend the partitions of CANON ITSELF. You’ve got these powers, remember?   </p>
+  <p>You hold up your hands and form a rectangle with your fingers and reach outside yourself, outside canon, to the place your retcon powers come from. You focus. You strain. You contemplate with all your might a place you can zap to, any place but here. </p>
+  <p>You wait. And wait. And wait and...  </p>
+  <p>Nothing happens.</p>
+  <p>You slump back down against the wall, and your despondence eagerly greets you again. Like an old friend ready to pat you on the back and say, good try man. I’ll always be here for you, when you fail. Thanks dude, you think. </p>
+<div class="chat type-rg type-hs-small--md" style="margin-bottom:0">  
+ <p class="john">JOHN: ROSE WAS RIGHT.</p>
+  
+ <p class="dave">DAVE: WHAT?</p>
+  
+ <p class="john">JOHN: THE JUJU HAS TO UNLOAD.</p>
+  
+ <p class="jade">JADE: THE WHAT... HAS TO WHAT??</p>
+  
+ <p class="john">JOHN: THE ONLY WAY OUT OF HERE... </p>
+  
+ <p class="john">JOHN: IS FOR US TO WAIT FOR SOMEONE TO LET US OUT.</p>
+  
+ <p class="john">JOHN: SORRY GUYS. </p>
+  
+ <p class="rose">ROSE: OH.</p>
+  
+ <p class="john">JOHN: ALSO... </p>
+  
+ <p class="john">JOHN: I THINK I MIGHT HAVE DEPRESSION?</p>
+</div></div>
+      <div class="o_story-nav type-hs-copy line-tight pad-x-0 pad-x-lg--md pad-b-lg">
+        <div>
+          <span>&gt;</span>
+          <a href="Meat 12.html">==&gt; </a><br>
+        </div>
+      </div>
+  
+<footer id="story-footer" role="banner">
+  <div id="story_footer_container" class="o_story-page-footer flex pad-t-0 pad-x-0
+     flex-justify 
+    ">
+      <div class="pad-l-lg--md mar-b-md type-hs-small type-hs-bottom--md type-center type-left--md">
+        <ul class="o_game-nav">
+          <li class="o_game-nav-item">
+            <a id="o_start-over" href="The Homestuck Epilogues.html">Start Over</a>
+          </li>
+            <li class="o_game-nav-item">
+              <a href="Meat 10.html">Go Back</a>
+            </li>
+        </ul>
+      </div>
+      <script>
+//<![CDATA[
+$(document).ready(function() { Gamenav.checkAutosave(); });
+//]]>
+</script>
+
+    <a href="javascript:void(0)" data-gamenav-open="" class="nav-btn nav-btn--center type-hs-small mar-b-md" style="text-decoration:none; text-transform: none; font-size:14px; line-height:14px;"><span>Options</span> <i class="icon-menu" style="margin:0;"></i></a>
+  </div>
+</footer>
+
+
+  </div>
+</div><iframe name="__tcfapiLocator" src="./Epilogue_files/saved_resource(2).html" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe>
+
+
+    
+<div class="o_site-footer row pos-r pad-t-rg pad-b-xl pad-b-0--md bg-dark-gray">
+  <div class="float-l"><img src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif" alt="Footer logo"><br></div>
+  <div class="float-r disp-n disp-bl--sm"><img src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif" alt="Footer logo"><br></div>
+  <div class="type-center pad-t-md--md">
+    <ul>
+      <li><a href="https://www.homestuck.com/contacts">Contacts</a></li>
+      <li><a href="https://www.homestuck.com/privacy">Privacy Policy</a></li>
+    </ul>
+    <div><span style="white-space:nowrap;">© 2018 Homestuck</span> <span style="white-space:nowrap;">and VIZ Media</span></div>
+  </div>
+</div>
+
+
+
+    <div id="overlay" data-overlay-state="off" class="o_overlay"></div>
+    <div id="game_overlay" data-game-overlay-state="off" class="o_game-overlay"></div>
+    <div id="overlay_wait" data-overlay-state="off" class="o_overlay-wait"></div>
+
+
+
+  
+
+<iframe name="googlefcPresent" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;" src="./Epilogue_files/saved_resource(6).html" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe></body></html>

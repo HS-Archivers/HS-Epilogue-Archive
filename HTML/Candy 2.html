@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en-US"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- application -->
+    <script src="./Epilogue_files/jquery-1.11.3.min.js.download"></script>
+    
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"1b930da09b","applicationID":"65900267","transactionName":"cFkNREpaWA9dF0pBVlRTEB9LQVsRQQ==","queueTime":0,"applicationTime":5,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"1b930da09b",applicationID:"65900267"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>The Homestuck Epilogues</title>
+    <meta name="description" content="Tales of dubious authenticity.">
+    <script>
+//<![CDATA[
+var getGAEventLabel = function(){ return "The Homestuck Epilogues"; };
+//]]>
+</script>
+      <link rel="canonical" href="https://www.homestuck.com/epilogues/candy/2">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.homestuck.com/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.homestuck.com/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.homestuck.com/favicon/favicon-16x16.png">
+<link rel="manifest" href="https://www.homestuck.com/favicon/manifest.json">
+<link rel="mask-icon" href="https://www.homestuck.com/favicon/safari-pinned-tab.svg" color="#6bbe4a">
+<meta name="theme-color" content="#ffffff">
+
+        <link rel="stylesheet" media="all" href="./Epilogue_files/manifest-epilogue-1694f2c1abc80cf72e84324f6d6486e6f04b02358ed667dee36c88974eef388f.css">
+      <link rel="stylesheet" href="./Epilogue_files/kek1uwn.css">
+    <link rel="stylesheet" media="all" href="./Epilogue_files/manifest-ui-e03365bbb17dde0f1fd5463dd7b56d096a27cae55aa131b72684e36c1f0c80f6.css">
+    <script src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE="></script>
+    <script src="./Epilogue_files/manifest-ads-story-1885683d55d6f631dc202ac5db87250ca938be96a613e85bb93739ecc057540e.js.download"></script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-136373-45', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+    <!-- //Connect Container: Homestuck-->
+<script src="./Epilogue_files/tag.min.js.download" async="" defer=""></script>
+  <script async="" src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE="></script><style type="text/css">* {
+ text-shadow: transparent 0px 0px 0px, rgba(0,0,0,0.68) 0px 0px 0px !important; 
+}</style><script async="" src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE="></script></head>
+  
+  <body class="epilogue">
+
+    
+    <header id="site-header" role="banner">
+  <div id="header-container" class="o_story-page-header row flex pad-t-0 ">
+    <a href="javascript:void(0)" data-nav-open="" class="nav-btn nav-btn--center color-white" style="overflow-wrap:normal;text-decoration:none;"><i class="icon-menu"></i><span>Menu</span></a>
+    <nav id="nav-container" data-nav-state="closed" role="navigation" class="o_nav-container">
+      <a href="javascript:void(0)" data-nav-close="" class="nav-btn color-white pad-y-rg type-rg" style="overflow-wrap:normal;text-decoration:none;"><i class="icon-close"></i><span>Dismiss</span></a>
+      <ul id="primary-nav" class="o_primary-nav style-caps weight-bold disp-ib color-white type-rg">
+     <li class="o_primary-nav-item slide-candycorn pipe"><a class="o_primary-nav-link" style="color:#39d5f6" href="Read.html">READ</a></li><!--
+     --><li class="o_primary-nav-item"><a class="o_primary-nav-link" style="color:#39d5f6" href="Credits.html">INFO</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+    
+
+    <div class="row bg-white bg-light-gray--md pad-t-md--md pos-r">
+  <div id="content_container" class="mar-x-auto disp-bl bg-white" style="max-width:650px;">
+    <div class="pos-r pad-t-sm pad-x-lg--md type-center" style="overflow:visible; height:72px;">
+      <img class="hsep_bullet" alt="Chapter" src="./Epilogue_files/candy_60x60-6b955ce39772ffce9994587a951f12b804ebf2202ebe8ed230483e25072db855.png">
+      <h3 class="disp-ib type-hsep-header line-tight type-lg pad-t-sm">
+        2
+      </h3>
+    </div>
+  </div>
+</div>
+
+<div class="row bg-white bg-light-gray--md pad-b-md pad-b-lg--md pos-r pad-t-md pad-t-0--md">
+  <div class="mar-x-auto disp-bl bg-white pad-t-lg" style="max-width:650px;">
+      <div class="o-story_text o_epilogue type-rg type-sm--md line-caption line-copy--md pad-x-0 pad-x-lg--md pad-b-lg">  <p class="no-indent"><span class="opener type-hs-opener-rg type-hs-opener-sm--md">J</span>ohn zaps back to the quietest point in the fridge’s impressively storied timeline that he can pinpoint, which is on The Land of Tombs and Krypton, T-minus about half an hour before his final battle against every dude they all had to fight to get the hell out of Dodge. As the name of the land would imply, the planet’s surface is covered in tombs, each an ancient skyscraper piercing the brilliant, gaseous thunderclouds above. But there’s only one tomb he’s come for. A simple, household refrigerator, just like the one he grew up with. </p>
+  <p>He pops into canon at one end of a rooftop, up so high that the chemical storm coursing through the atmosphere sets his hair on edge. At the other end of the roof are Dirk and Dave, doing something he never thought he’d see: they’re... <em>hugging</em>. Not just regular, noncommittal hugging. They are emphatically hugging the <em>shit</em> out of each other. Dave’s face is buried in Dirk’s side, and Dirk’s got both arms around him in a way that looks like he’s never actually hugged another human being before.</p>
+  <p>Sensing that this is probably something he shouldn’t be seeing, he tiptoes towards Gamzee’s would-be sarcophagus as carefully and quietly as he can, and places his hands just above the thick aluminum hull. The moment John’s palms hit the fridge, Dirk turns to look at him. His head only moves an inch. Slowly, he lowers one eyebrow and returns to his poignant and deeply personal business with Dave, as if he hasn’t observed anything worth acknowledging at all. </p>
+  <p>Which, John supposes, is for the best? He isn’t trying to mess up the timeline any more than he needs to. He’s only here to steal a refrigerator that has recently been used to entomb a clown. He has enough on his plate with this idiotic heist as it is. </p>
+  <p>Anyway, he decides to mind his own damn business and get this fridge back to Earth C. He zaps himself and the fridge back to the same picnic grounds he departed from, while cleverly leaving the chains wrapping the fridge behind on LOTAK. </p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="john">JOHN: so uh...</p>
+  
+  <p class="john">JOHN: i’m back.</p>
+  
+  <p class="john">JOHN: everyone get ready for THIS fucking guy, i guess... </p>
+</div>
+  <p class="no-indent">With the same delicacy that he’d use to touch a toilet bowl in a public bathroom, he grabs the handle of the fridge and pulls.</p>
+  <p>Gamzee pops out immediately, sweating, gasping for breath, and smelling like socks that have been worn continuously for two weeks straight. John rears back and pinches his nose shut. Calliope shoots John a sharp look, like a stern teacher would.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="gamzee">GAMZEE: HOOOOOOOOOOOONK.</p>
+  
+  <p class="gamzee">GAMZEE: cough COUGH cough CHOKE honk CHOKE!</p>
+  
+  <p class="gamzee">GAMZEE: wheeeeeeeeeze HONK cough HONK choke WHEEEEEZE.</p>
+  
+  <p class="calliope">CALLIOPE: ah, poor thing.</p>
+  
+  <p class="calliope">CALLIOPE: it’s alright now. yoU’re alright.</p>
+  
+  <p class="calliope">CALLIOPE: take a moment to catch yoUr breath, mr. clown. yoU’ll be jUst fine. </p>
+  
+  <p class="gamzee">GAMZEE: cough HACK cough HONK hack CHOKE wheeze HONK honk HONK.</p>
+  
+  <p class="gamzee">GAMZEE: honk HONK honk GASP wheeze GASP... </p>
+  
+  <p class="gamzee">GAMZEE: wheeeeEeeeeEeeeEeeEeEeEeEeEeEeEeEeEeEeEeEeEeZe!</p>
+  
+  <p class="gamzee">GAMZEE: hOoOoOoOoOoOnK cHoKe ChOkE hAcK hOnK cOuGh.</p>
+  
+  <p class="gamzee">GAMZEE: CoUgH cOuGh HoNk HoNk SoB sOb SoB sOb... </p>
+  
+  <p class="gamzee">GAMZEE: SoB sOb BoO hOo HoO hOo HoOoOoOoOoNk... </p>
+  
+  <p class="gamzee">GAMZEE: BoO hOo HoNk HoO hOnK hOnK wAaAaAaAaAaAh!</p>
+  
+  <p class="calliope">CALLIOPE: oh dear.</p>
+  
+  <p class="calliope">CALLIOPE: what is it, sir?</p>
+  
+  <p class="calliope">CALLIOPE: tell Us what pains yoU. let it all oUt, friend.</p>
+  
+  <p class="calliope">CALLIOPE: we are here for yoU. u_u</p>
+  
+  <p class="gamzee">GAMZEE: i BeEn A bItCh AsS nAuGhTy MoThErFuCkEr. :o(</p>
+</div>
+  <p class="no-indent">Calliope nods knowingly, and pats him on the back. </p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="gamzee">GAMZEE: i Up AnD dOnE sOmE mOtHeRfUcKeRs RaW.</p>
+  
+  <p class="gamzee">GAMZEE: ThOsE mOtHeRfUcKeRs MoSt Of AlL wHo I cAlLeD aS mY fRiEnDs.</p>
+  
+  <p class="gamzee">GAMZEE: i PuT tHe StRaIgHt Up FuCkIn HaRsHnEsS aT tHeM aNd It WaSnT mOtHeR fUcKiN nIcE oF mE.</p>
+  
+  <p class="gamzee">GAMZEE: nOt OnE BiT. :o(</p>
+  
+  <p class="gamzee">GAMZEE: aNd NoW i’M aLl At An EmOtIoNaL pLaCe FrOm SwEaTiNg My HaRd TiMe In ThE hUnGeR tRuNk.</p>
+  
+  <p class="gamzee">GAMZEE: A fAtE tO wHiCh I sUrEly GoT mY dEsErVe On FoR.</p>
+  
+  <p class="gamzee">GAMZEE: aNd It GaVe Me AlL tImE tO rEtHiNk My LoT aNd GeT cOnSiDeRiNg To WhAt A rIpE pIlE oF tHe NaStIeSt GaRbAgE i BeEn My WhOlE mOtHeRfUcKiN lIfE.</p>
+  
+  <p class="gamzee">GAMZEE: aNd I gOt My EpIpHaNy GoInG iN tHeRe.</p>
+  
+  <p class="gamzee">GAMZEE: lIkE aLl MoThErFuCkIn BaThEd In ThE rIgHtEoUs EpIpHaNiEs Yo.</p>
+  
+  <p class="gamzee">GAMZEE: PrEtTy MuCh BaLlS oUt *ImMeRsEd* In ThE eMoTiOn BrEaKtHrOuGhS mY gOoD nInJaS.</p>
+  
+  <p class="gamzee">GAMZEE: aNd I cAmE tO gEtTiN sOmE oF mY rEaLiZaTiOnS dOwN rIgHt FuCkInG lOcKeD.</p>
+  
+  <p class="gamzee">GAMZEE: lOcKeD tIgHtEr ThAn I wAs LiKe A bItCh In ThAt FrIdGe.</p>
+  
+  <p class="gamzee">GAMZEE: AnD tHoSe ReAlIzAtIoNs BeInG sOmEtHiN aLl MoThEr FuCkIn ThUsLy Of SoRtS:</p>
+  
+  <p class="gamzee">GAMZEE: i’M a BaD, bAd MaN.</p>
+  
+  <p class="gamzee">GAMZEE: aNd I’m HeRe To FuCkIn *ReDeEm* My MoThErFuCkIn SeLf.</p>
+  
+  <p class="gamzee">GAMZEE: HoOoOoOoOoNk.</p>
+</div>
+  <p class="no-indent">Calliope, eyes closed, continues with her sympathetic gestures. She pats him on the back, nods very slowly, issues an “mm-hm” now and then. Only while he is distracted by his own sobs does she steal a glance at her phone, tipping the fact that she too wouldn’t mind if this redemptive soliloquy could hurry itself along. </p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="gamzee">GAMZEE: ThEsE rEdEmPtiVe FuCkIn EuReKa ThUnDeRcLaPs AlL bAnGiNg At My ThInK pAn... </p>
+  
+  <p class="gamzee">GAMZEE: GeTtInG mE tO gO aLl LiKe, BoO hOo, I’m BaD, i’M bAd!</p>
+  
+  <p class="gamzee">GAMZEE: WhAt I’m SaYiNg AbOuT iS tHe RaW sHiT i DiD gOt SoMe ExPlAnAtIoNs To MaKe YoU sEe ThE tRuTh.</p>
+  
+  <p class="gamzee">GAMZEE: ThE tRuTh ThAt My GnArLiNeSs HaD a MoThErFuCkIn TeNtFuL oF *rOoT cAuSeS* yA gOtTa InDuLgE mE aT.</p>
+  
+  <p class="gamzee">GAMZEE: lIsTeN uP bOyS aNd HoEs, CaUsE hErE cOmEs A bUnCh Of NoIsE tHaT’s MoRaLlY fUcKiN mItIgAtInG aS sHiT.</p>
+  
+  <p class="gamzee">GAMZEE: hOoOoOoNk.</p>
+  
+  <p class="john">JOHN: (oh jesus.)</p>
+  
+  <p class="roxy">ROXY: (shh!)</p>
+  
+  <p class="gamzee">GAMZEE: I bEeN aLl LiKe. AbUsEd AnD sTuFf, HoMiEs.</p>
+  
+  <p class="gamzee">GAMZEE: As A cHiLd, I gOt MoThErFuCkIn NeGlEcTeD oN bY a StErN oLd FaThErLy GoAt.</p>
+  
+  <p class="gamzee">GAMZEE: I wAs A dIsApPoInTmEnT oN hIm, AnD cAn’T sAyS i BlAmE hIm FoR aBaNdOnInG tHe ShIt OuT oF hIs UsElEsS kId. </p>
+  
+  <p class="gamzee">GAMZEE: I wOuLdA mOtHeRfUcKiN dOnE tHe SaMe ShIt At Me If I wAs A bIg CrUeL gOaT.</p>
+  
+  <p class="gamzee">GAMZEE: sO ThAt ExPlAiNs LiKe, PrEtTy SuRe MoSt Of My CrImEs In A wAy ThAt MaKeS a MoThErFuCkEr WaNnA tAkE hIs FoRgIvEnEsS oUt FoR a FuCkInG sPiN.</p>
+  
+  <p class="gamzee">GAMZEE: tHeRe’S oThEr ReAsOnS tO cOnSiDeR, LiKe... </p>
+  
+  <p class="gamzee">GAMZEE: ShIt ThAt MaKeS tHiS rEdEmPtIoN aRc FuCkIn TiGhT lIkE aN uNcRaCkEd ElIxIr.</p>
+  
+  <p class="gamzee">GAMZEE: LiKe, HoWs My PuRpLe BlOoD mEaNt I gOt ThE cUlTuRe PrEsSuReS pUt On Me To Be A SaLtY dAmN jEsTeR fOr LiFe.</p>
+  
+  <p class="gamzee">GAMZEE: WhAt aBoUt ThAt HaNd ThE mEsSiAhS dEaLt Me, My BiTcHeS.</p>
+  
+  <p class="gamzee">GAMZEE: a MoThErFuCkEr’S gOnNa EnVy ThAt LiKe A wIcKeD cOd RaSh.</p>
+  
+  <p class="gamzee">GAMZEE: So HoW cAn I fUlL aNd TrUlY fUcKiN gEt BlAmEd On FoR, wHeN iT cOmEs To A lITtLe BiT oF sUbJuGgLaTiOn I gOt CuLtUrAlLy HoRnSwOgGlEd Up To DoInG, aNd AlSo TrAgIcAlLy GoAt AbUsEd WhIcH nEeDs To MaKe YoU sHeD a TeAr FoR tHiS mOtHeRfUcKeR, lEsT yOu WaNnA bE aS aTrOcIoUs As Me.</p>
+  
+  <p class="gamzee">GAMZEE: AnD sUcH iS wHy I’m GrAbBiNg HoLd Of My RePeNtAnCe As FiRm AnD sErIoUs As I wOuLd A wHoRe’S tItTy!</p>
+  
+  <p class="gamzee">GAMZEE: My ReDeMpTiOn ArC iS tRuLy ThE dAnKnEsS. i MeAn It HaRd, AnD i’M gOiNg SiNcErE aT iT lIkE oNe SaD aNd SoRrY bAdBoY mOtHeRfUcKeR.</p>
+  
+  <p class="gamzee">GAMZEE: fRoM tHiS dAy FrOnTwArD, i PlAn To GeT mY pLeDgE oN tO bE a ChAnGeD cLoWn. </p>
+  
+  <p class="gamzee">GAMZEE: TrUlY a NeW aSs MoThErFuCkEr, ThAnKs To My NeW fRiEnDs. :o)</p>
+  
+  <p class="calliope">CALLIOPE: bravo!!! ^u^</p>
+  
+  <p class="roxy">ROXY: fuck yea</p>
+</div>
+  <p class="no-indent">While John’s two friends are busy hugging it out with arguably the worst person he has ever met in his life, he tiptoes a few yards away from the group and slips his phone out of his pocket. There’s only one person in the universe who can truly understand what John’s going through right now.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="john">JOHN: hey terezi, you around?</p>
+  
+  <p class="terezi">TEREZI: WH4T DO YOU W4NT</p>
+  
+  <p class="john">JOHN: you wouldn’t believe what’s happening just behind me right now.</p>
+  
+  <p class="terezi">TEREZI: 1 PROB4BLY WOULD</p>
+  
+  <p class="john">JOHN: no you won’t.</p>
+  
+  <p class="john">JOHN: check it out... </p>
+</div>
+  <p class="no-indent">John discreetly holds his phone over his shoulder and takes a snapchat of Gamzee sobbing in Calliope’s arms. Roxy is beside them, nodding along solemnly. </p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="terezi">TEREZI: HOLY SH1T</p>
+  
+  <p class="john">JOHN: i know, right?</p>
+  
+  <p class="terezi">TEREZI: H3S CRY1NG L1K3 4 L1TTL3 WR1GGL3R</p>
+  
+  <p class="terezi">TEREZI: GO OV3R 4ND G1V3 H1M 4 K1CK 1N TH3 CODP13C3 FOR M3</p>
+  
+  <p class="john">JOHN: i can’t.</p>
+  
+  <p class="terezi">TEREZI: JOHN, 1M 4SK1NG YOU TO DO 4 S1MPL3 F4VOR FOR 4N OLD 4ND D34R FR13ND</p>
+  
+  <p class="terezi">TEREZI: DO NOT B3 D1FF1CULT</p>
+  
+  <p class="john">JOHN: um, i don’t think that would go over well.</p>
+  
+  <p class="john">JOHN: everybody’s taking this all weirdly seriously.</p>
+  
+  <p class="john">JOHN: apparently we’re going to let him have a “redemption arc”?</p>
+  
+  <p class="terezi">TEREZI: H4H4H4H4H4H4H4H4H4H4H4H4</p>
+  
+  <p class="john">JOHN: yeah, it’s...</p>
+  
+  <p class="john">JOHN: well, what is there to even say?</p>
+  
+  <p class="john">JOHN: it’s literally the dumbest fucking idea i’ve ever heard, but what can you do.</p>
+  
+  <p class="terezi">TEREZI: SHOV3 H1M B4CK 1N TH4T FR1DG3 4ND THROW 1T 1N TH3 OC34N, 1S WH4T</p>
+  
+  <p class="john">JOHN: pretty much.</p>
+  
+  <p class="terezi">TEREZI: WHY 4R3 YOU 1D1OTS 3V3N BOTH3R1NG W1TH TH1S FOOL 4G41N</p>
+  
+  <p class="john">JOHN: don’t ask me. this is a calliope thing.</p>
+  
+  <p class="terezi">TEREZI: OH GOD</p>
+  
+  <p class="john">JOHN: i guess she roped roxy into it... so now i’m just going along with it too.</p>
+  
+  <p class="john">JOHN: i don’t even care actually. i mean, he smells awful, but... </p>
+  
+  <p class="terezi">TEREZI: &gt;XO</p>
+  
+  <p class="john">JOHN: guess that’s just what’s happening now. </p>
+  
+  <p class="john">JOHN: the asshole clown is back. life goes on.</p>
+  
+  <p class="terezi">TEREZI: 1T D1DNT N33D TO THOUGH</p>
+  
+  <p class="terezi">TEREZI: NOT FOR H1M, 4T L34ST</p>
+  
+  <p class="john">JOHN: speaking of life...</p>
+  
+  <p class="john">JOHN: how’s it going out there.</p>
+  
+  <p class="terezi">TEREZI: OH</p>
+  
+  <p class="terezi">TEREZI: F1N3</p>
+  
+  <p class="terezi">TEREZI: PR3TTY BOR1NG, FLY1NG 4ROUND 4ND STUFF</p>
+  
+  <p class="terezi">TEREZI: YOU KNOW HOW 1T 1S</p>
+  
+  <p class="terezi">TEREZI: TH3 S34RCH CONT1NU3S</p>
+  
+  <p class="john">JOHN: any sign of her yet?</p>
+  
+  <p class="terezi">TEREZI: ... </p>
+  
+  <p class="john">JOHN: you’ve been gone, like...</p>
+  
+  <p class="john">JOHN: a really long time, you know.</p>
+  
+  <p class="terezi">TEREZI: 1M SUR3 YOU S33 1T TH4T W4Y</p>
+  
+  <p class="terezi">TEREZI: FROM MY PO1NT OF V13W, 1TS 4 L1TTL3 D1FF3R3NT</p>
+  
+  <p class="terezi">TEREZI: 4NYW4Y, NO TURN1NG B4CK NOW</p>
+  
+  <p class="john">JOHN: yeah, i know.</p>
+  
+  <p class="john">JOHN: everybody misses you though. </p>
+  
+  <p class="john">JOHN: probably even... *shudder*  </p>
+  
+  <p class="john">JOHN: gamzee.</p>
+  
+  <p class="terezi">TEREZI: UGH!!!</p>
+  
+  <p class="terezi">TEREZI: W3LL, TH4T S3TTL3S 1T</p>
+  
+  <p class="terezi">TEREZI: 1 MUST N3V3R R3TURN. SORRY 3GB3RT &gt;:[</p>
+  
+  <p class="john">JOHN: haha, i never should have told you about his shitty redemption arc.</p>
+  
+  <p class="john">JOHN: i blew it!</p>
+  
+  <p class="terezi">TEREZI: YUP &gt;:]</p>
+  
+  <p class="terezi">TEREZI: 4NYW4Y, GOTT4 GO</p>
+  
+  <p class="terezi">TEREZI: N3XT T1M3 W3 SP34K, YOU OW3 M3 4 R3PORT OF 3X4CTLY ON3 PUNCH 1N TH3 CLOWN D1CK</p>
+  
+  <p class="terezi">TEREZI: BY3 DORK</p>
+</div>
+  <p class="no-indent">Smiling, he pockets his phone and heads back to the Gamzee pity party. Gamzee’s sobbing so performatively that many carapacian civilians have stopped to watch. By the looks on their faces, not a single one of them has ever been exposed to such clown grief. Pulled away from Calliope’s embrace, he’s now addressing the gathering crowd about the importance of genuine repentance.</p>
+  <p>Calliope comes to stand with John, her hands folded behind her back and her expression peaceful.</p>
+<div class="chat type-rg type-hs-small--md">  
+  <p class="calliope">CALLIOPE: thank yoU for this, john.</p>
+  
+  <p class="john">JOHN: um...</p>
+  
+  <p class="john">JOHN: you’re welcome?</p>
+</div>
+  <p class="no-indent">Something feels different, but he can’t put his finger on it.</p></div>
+      <div class="o_story-nav type-hs-copy line-tight pad-x-0 pad-x-lg--md pad-b-lg">
+        <div>
+          <span>&gt;</span>
+          <a href="candy 3.html">==&gt; </a><br>
+        </div>
+      </div>
+  
+<footer id="story-footer" role="banner">
+  <div id="story_footer_container" class="o_story-page-footer flex pad-t-0 pad-x-0
+     flex-justify 
+    ">
+      <div class="pad-l-lg--md mar-b-md type-hs-small type-hs-bottom--md type-center type-left--md">
+        <ul class="o_game-nav">
+          <li class="o_game-nav-item">
+            <a id="o_start-over" href="The Homestuck Epilogues.html">Start Over</a>
+          </li>
+            <li class="o_game-nav-item">
+              <a href="candy 1.html">Go Back</a>
+            </li>
+        </ul>
+      </div>
+      <script>
+//<![CDATA[
+$(document).ready(function() { Gamenav.checkAutosave(); });
+//]]>
+</script>
+      
+        <a href="javascript:void(0)" data-gamenav-close="" class="nav-btn color-black pad-y-rg type-rg" style="text-decoration:none;"><i class="icon-close"></i><span>Dismiss</span></a>
+        <ul class="o_game-nav pad-r-lg--md o_game-options">
+          <li class="o_game-nav-item">
+
+            <i class="icon-tool-tip tooltip-target" data-tooltip="" aria-haspopup="true" title="If you have cookies enabled, you can save your spot in the story. Click &quot;Save Game&quot;, then when you return to the site, click &quot;Load Game&quot; to return to where you were.">
+            </i>
+          </li>
+          <li class="o_game-nav-item">
+            <a href="javascript:Gamenav.autoSaveGame();">Auto-Save!</a>
+            <i class="icon-tool-tip tooltip-target" data-tooltip="" aria-haspopup="true" title="If you have cookies enabled, click this to automatically save your spot in the story wherever you go! When you return to the site later, it will automatically take you to where you left off. Pretty neat! 
+
+If this mode ever gets annoying though, remember you can just delete the cookies by clicking &quot;Delete Game Data&quot;.">
+            </i>
+          </li>
+          <li class="o_game-nav-item">
+            <a href="javascript:Gamenav.loadGame();">Load&nbsp;Game</a>
+          </li>
+          <li class="o_game-nav-item">
+            <a href="javascript:Gamenav.deleteGame();">Delete Game Data</a>
+          </li>
+        </ul>
+      </nav>
+    <a href="javascript:void(0)" data-gamenav-open="" class="nav-btn nav-btn--center type-hs-small mar-b-md" style="text-decoration:none; text-transform: none; font-size:14px; line-height:14px;"><span>Options</span> <i class="icon-menu" style="margin:0;"></i></a>
+  </div>
+</footer>
+
+
+  </div>
+</div>
+
+
+    
+<div class="o_site-footer row pos-r pad-t-rg pad-b-xl pad-b-0--md bg-dark-gray">
+  <div class="float-l"><img src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif" alt="Footer logo"><br></div>
+  <div class="float-r disp-n disp-bl--sm"><img src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif" alt="Footer logo"><br></div>
+  <div class="type-center pad-t-md--md">
+    <ul>
+      <li><a href="https://www.homestuck.com/contacts">Contacts</a></li>
+      <li><a href="https://www.homestuck.com/privacy">Privacy Policy</a></li>
+    </ul>
+    <div><span style="white-space:nowrap;">© 2018 Homestuck</span> <span style="white-space:nowrap;">and VIZ Media</span></div>
+  </div>
+</div>
+
+
+
+    <div id="overlay" data-overlay-state="off" class="o_overlay"></div>
+    <div id="game_overlay" data-game-overlay-state="off" class="o_game-overlay"></div>
+    <div id="overlay_wait" data-overlay-state="off" class="o_overlay-wait"></div>
+
+
+
+  
+
+<iframe name="googlefcPresent" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;" src="./Epilogue_files/saved_resource.html"></iframe></body></html>
