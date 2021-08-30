@@ -1,221 +1,333 @@
 <!DOCTYPE html>
 
-<html dir="ltr" lang="en-US"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html dir="ltr" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <!-- application -->
-    <script src="./Epilogue_files/jquery-1.11.3.min.js.download"></script>
-    
-<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"1b930da09b","applicationID":"65900267","transactionName":"cFkNREpaWA9dF0pBVlRTEB9LQVsRQQ==","queueTime":0,"applicationTime":6,"agent":""}</script>
-<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"1b930da09b",applicationID:"65900267"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="format-detection" content="telephone=no">
-    <title>The Homestuck Epilogues</title>
-    <meta name="description" content="Tales of dubious authenticity.">
-    <script>
-//<![CDATA[
-var getGAEventLabel = function(){ return "The Homestuck Epilogues"; };
+  <script src="./Epilogue_files/jquery-1.11.3.min.js.download"></script>
+
+  <script>window.NREUM || (NREUM = {}); NREUM.info = { "beacon": "bam-cell.nr-data.net", "errorBeacon": "bam-cell.nr-data.net", "licenseKey": "1b930da09b", "applicationID": "65900267", "transactionName": "cFkNREpaWA9dF0pBVlRTEB9LQVsRQQ==", "queueTime": 0, "applicationTime": 6, "agent": "" }</script>
+  <script>(window.NREUM || (NREUM = {})).loader_config = { licenseKey: "1b930da09b", applicationID: "65900267" }; window.NREUM || (NREUM = {}), __nr_require = function (t, e, n) { function r(n) { if (!e[ n ]) { var i = e[ n ] = { exports: {} }; t[ n ][ 0 ].call(i.exports, function (e) { var i = t[ n ][ 1 ][ e ]; return r(i || e) }, i, i.exports) } return e[ n ].exports } if ("function" == typeof __nr_require) return __nr_require; for (var i = 0; i < n.length; i++)r(n[ i ]); return r }({ 1: [ function (t, e, n) { function r() { } function i(t, e, n) { return function () { return o(t, [ u.now() ].concat(f(arguments)), e ? null : this, n), e ? void 0 : this } } var o = t("handle"), a = t(8), f = t(9), c = t("ee").get("tracer"), u = t("loader"), s = NREUM; "undefined" == typeof window.newrelic && (newrelic = s); var d = [ "setPageViewName", "setCustomAttribute", "setErrorHandler", "finished", "addToTrace", "inlineHit", "addRelease" ], p = "api-", l = p + "ixn-"; a(d, function (t, e) { s[ e ] = i(p + e, !0, "api") }), s.addPageAction = i(p + "addPageAction", !0), s.setCurrentRouteName = i(p + "routeName", !0), e.exports = newrelic, s.interaction = function () { return (new r).get() }; var m = r.prototype = { createTracer: function (t, e) { var n = {}, r = this, i = "function" == typeof e; return o(l + "tracer", [ u.now(), t, n ], r), function () { if (c.emit((i ? "" : "no-") + "fn-start", [ u.now(), r, i ], n), i) try { return e.apply(this, arguments) } catch (t) { throw c.emit("fn-err", [ arguments, this, t ], n), t } finally { c.emit("fn-end", [ u.now() ], n) } } } }; a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","), function (t, e) { m[ e ] = i(l + e) }), newrelic.noticeError = function (t, e) { "string" == typeof t && (t = new Error(t)), o("err", [ t, u.now(), !1, e ]) } }, {} ], 2: [ function (t, e, n) { function r(t) { if (NREUM.init) { for (var e = NREUM.init, n = t.split("."), r = 0; r < n.length - 1; r++)if (e = e[ n[ r ] ], "object" != typeof e) return; return e = e[ n[ n.length - 1 ] ] } } e.exports = { getConfiguration: r } }, {} ], 3: [ function (t, e, n) { function r() { return f.exists && performance.now ? Math.round(performance.now()) : (o = Math.max((new Date).getTime(), o)) - a } function i() { return o } var o = (new Date).getTime(), a = o, f = t(10); e.exports = r, e.exports.offset = a, e.exports.getLastTimestamp = i }, {} ], 4: [ function (t, e, n) { function r(t) { return !(!t || !t.protocol || "file:" === t.protocol) } e.exports = r }, {} ], 5: [ function (t, e, n) { function r(t, e) { var n = t.getEntries(); n.forEach(function (t) { "first-paint" === t.name ? d("timing", [ "fp", Math.floor(t.startTime) ]) : "first-contentful-paint" === t.name && d("timing", [ "fcp", Math.floor(t.startTime) ]) }) } function i(t, e) { var n = t.getEntries(); n.length > 0 && d("lcp", [ n[ n.length - 1 ] ]) } function o(t) { t.getEntries().forEach(function (t) { t.hadRecentInput || d("cls", [ t ]) }) } function a(t) { if (t instanceof m && !g) { var e = Math.round(t.timeStamp), n = { type: t.type }; e <= p.now() ? n.fid = p.now() - e : e > p.offset && e <= Date.now() ? (e -= p.offset, n.fid = p.now() - e) : e = p.now(), g = !0, d("timing", [ "fi", e, n ]) } } function f(t) { "hidden" === t && d("pageHide", [ p.now() ]) } if (!("init" in NREUM && "page_view_timing" in NREUM.init && "enabled" in NREUM.init.page_view_timing && NREUM.init.page_view_timing.enabled === !1)) { var c, u, s, d = t("handle"), p = t("loader"), l = t(7), m = NREUM.o.EV; if ("PerformanceObserver" in window && "function" == typeof window.PerformanceObserver) { c = new PerformanceObserver(r); try { c.observe({ entryTypes: [ "paint" ] }) } catch (v) { } u = new PerformanceObserver(i); try { u.observe({ entryTypes: [ "largest-contentful-paint" ] }) } catch (v) { } s = new PerformanceObserver(o); try { s.observe({ type: "layout-shift", buffered: !0 }) } catch (v) { } } if ("addEventListener" in document) { var g = !1, h = [ "click", "keydown", "mousedown", "pointerdown", "touchstart" ]; h.forEach(function (t) { document.addEventListener(t, a, !1) }) } l(f) } }, {} ], 6: [ function (t, e, n) { function r(t, e) { if (!i) return !1; if (t !== i) return !1; if (!e) return !0; if (!o) return !1; for (var n = o.split("."), r = e.split("."), a = 0; a < r.length; a++)if (r[ a ] !== n[ a ]) return !1; return !0 } var i = null, o = null, a = /Version\/(\S+)\s+Safari/; if (navigator.userAgent) { var f = navigator.userAgent, c = f.match(a); c && f.indexOf("Chrome") === -1 && f.indexOf("Chromium") === -1 && (i = "Safari", o = c[ 1 ]) } e.exports = { agent: i, version: o, match: r } }, {} ], 7: [ function (t, e, n) { function r(t) { function e() { t(a && document[ a ] ? document[ a ] : document[ i ] ? "hidden" : "visible") } "addEventListener" in document && o && document.addEventListener(o, e, !1) } e.exports = r; var i, o, a; "undefined" != typeof document.hidden ? (i = "hidden", o = "visibilitychange", a = "visibilityState") : "undefined" != typeof document.msHidden ? (i = "msHidden", o = "msvisibilitychange") : "undefined" != typeof document.webkitHidden && (i = "webkitHidden", o = "webkitvisibilitychange", a = "webkitVisibilityState") }, {} ], 8: [ function (t, e, n) { function r(t, e) { var n = [], r = "", o = 0; for (r in t) i.call(t, r) && (n[ o ] = e(r, t[ r ]), o += 1); return n } var i = Object.prototype.hasOwnProperty; e.exports = r }, {} ], 9: [ function (t, e, n) { function r(t, e, n) { e || (e = 0), "undefined" == typeof n && (n = t ? t.length : 0); for (var r = -1, i = n - e || 0, o = Array(i < 0 ? 0 : i); ++r < i;)o[ r ] = t[ e + r ]; return o } e.exports = r }, {} ], 10: [ function (t, e, n) { e.exports = { exists: "undefined" != typeof window.performance && window.performance.timing && "undefined" != typeof window.performance.timing.navigationStart } }, {} ], ee: [ function (t, e, n) { function r() { } function i(t) { function e(t) { return t && t instanceof r ? t : t ? u(t, c, a) : a() } function n(n, r, i, o, a) { if (a !== !1 && (a = !0), !l.aborted || o) { t && a && t(n, r, i); for (var f = e(i), c = v(n), u = c.length, s = 0; s < u; s++)c[ s ].apply(f, r); var p = d[ w[ n ] ]; return p && p.push([ b, n, r, f ]), f } } function o(t, e) { y[ t ] = v(t).concat(e) } function m(t, e) { var n = y[ t ]; if (n) for (var r = 0; r < n.length; r++)n[ r ] === e && n.splice(r, 1) } function v(t) { return y[ t ] || [] } function g(t) { return p[ t ] = p[ t ] || i(n) } function h(t, e) { l.aborted || s(t, function (t, n) { e = e || "feature", w[ n ] = e, e in d || (d[ e ] = []) }) } var y = {}, w = {}, b = { on: o, addEventListener: o, removeEventListener: m, emit: n, get: g, listeners: v, context: e, buffer: h, abort: f, aborted: !1 }; return b } function o(t) { return u(t, c, a) } function a() { return new r } function f() { (d.api || d.feature) && (l.aborted = !0, d = l.backlog = {}) } var c = "nr@context", u = t("gos"), s = t(8), d = {}, p = {}, l = e.exports = i(); e.exports.getOrSetContext = o, l.backlog = d }, {} ], gos: [ function (t, e, n) { function r(t, e, n) { if (i.call(t, e)) return t[ e ]; var r = n(); if (Object.defineProperty && Object.keys) try { return Object.defineProperty(t, e, { value: r, writable: !0, enumerable: !1 }), r } catch (o) { } return t[ e ] = r, r } var i = Object.prototype.hasOwnProperty; e.exports = r }, {} ], handle: [ function (t, e, n) { function r(t, e, n, r) { i.buffer([ t ], r), i.emit(t, e, n) } var i = t("ee").get("handle"); e.exports = r, r.ee = i }, {} ], id: [ function (t, e, n) { function r(t) { var e = typeof t; return !t || "object" !== e && "function" !== e ? -1 : t === window ? 0 : a(t, o, function () { return i++ }) } var i = 1, o = "nr@id", a = t("gos"); e.exports = r }, {} ], loader: [ function (t, e, n) { function r() { if (!R++) { var t = M.info = NREUM.info, e = v.getElementsByTagName("script")[ 0 ]; if (setTimeout(u.abort, 3e4), !(t && t.licenseKey && t.applicationID && e)) return u.abort(); c(E, function (e, n) { t[ e ] || (t[ e ] = n) }); var n = a(); f("mark", [ "onload", n + M.offset ], null, "api"), f("timing", [ "load", n ]); var r = v.createElement("script"); 0 === t.agent.indexOf("http://") || 0 === t.agent.indexOf("https://") ? r.src = t.agent : r.src = l + "://" + t.agent, e.parentNode.insertBefore(r, e) } } function i() { "complete" === v.readyState && o() } function o() { f("mark", [ "domContent", a() + M.offset ], null, "api") } var a = t(3), f = t("handle"), c = t(8), u = t("ee"), s = t(6), d = t(4), p = t(2), l = p.getConfiguration("ssl") === !1 ? "http" : "https", m = window, v = m.document, g = "addEventListener", h = "attachEvent", y = m.XMLHttpRequest, w = y && y.prototype, b = !d(m.location); NREUM.o = { ST: setTimeout, SI: m.setImmediate, CT: clearTimeout, XHR: y, REQ: m.Request, EV: m.Event, PR: m.Promise, MO: m.MutationObserver }; var x = "" + location, E = { beacon: "bam.nr-data.net", errorBeacon: "bam.nr-data.net", agent: "js-agent.newrelic.com/nr-1210.min.js" }, O = y && w && w[ g ] && !/CriOS/.test(navigator.userAgent), M = e.exports = { offset: a.getLastTimestamp(), now: a, origin: x, features: {}, xhrWrappable: O, userAgent: s, disabled: b }; if (!b) { t(1), t(5), v[ g ] ? (v[ g ]("DOMContentLoaded", o, !1), m[ g ]("load", r, !1)) : (v[ h ]("onreadystatechange", i), m[ h ]("onload", r)), f("mark", [ "firstbyte", a.getLastTimestamp() ], null, "api"); var R = 0 } }, {} ], "wrap-function": [ function (t, e, n) { function r(t, e) { function n(e, n, r, c, u) { function nrWrapper() { var o, a, s, p; try { a = this, o = d(arguments), s = "function" == typeof r ? r(o, a) : r || {} } catch (l) { i([ l, "", [ o, a, c ], s ], t) } f(n + "start", [ o, a, c ], s, u); try { return p = e.apply(a, o) } catch (m) { throw f(n + "err", [ o, a, m ], s, u), m } finally { f(n + "end", [ o, a, p ], s, u) } } return a(e) ? e : (n || (n = ""), nrWrapper[ p ] = e, o(e, nrWrapper, t), nrWrapper) } function r(t, e, r, i, o) { r || (r = ""); var f, c, u, s = "-" === r.charAt(0); for (u = 0; u < e.length; u++)c = e[ u ], f = t[ c ], a(f) || (t[ c ] = n(f, s ? c + r : r, i, c, o)) } function f(n, r, o, a) { if (!m || e) { var f = m; m = !0; try { t.emit(n, r, o, e, a) } catch (c) { i([ c, n, r, o ], t) } m = f } } return t || (t = s), n.inPlace = r, n.flag = p, n } function i(t, e) { e || (e = s); try { e.emit("internal-error", t) } catch (n) { } } function o(t, e, n) { if (Object.defineProperty && Object.keys) try { var r = Object.keys(t); return r.forEach(function (n) { Object.defineProperty(e, n, { get: function () { return t[ n ] }, set: function (e) { return t[ n ] = e, e } }) }), e } catch (o) { i([ o ], n) } for (var a in t) l.call(t, a) && (e[ a ] = t[ a ]); return e } function a(t) { return !(t && t instanceof Function && t.apply && !t[ p ]) } function f(t, e) { var n = e(t); return n[ p ] = t, o(t, n, s), n } function c(t, e, n) { var r = t[ e ]; t[ e ] = f(r, n) } function u() { for (var t = arguments.length, e = new Array(t), n = 0; n < t; ++n)e[ n ] = arguments[ n ]; return e } var s = t("ee"), d = t(9), p = "nr@original", l = Object.prototype.hasOwnProperty, m = !1; e.exports = r, e.exports.wrapFunction = f, e.exports.wrapInPlace = c, e.exports.argsToArray = u }, {} ] }, {}, [ "loader" ]);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <title>The Homestuck Epilogues</title>
+  <meta name="description" content="Tales of dubious authenticity.">
+  <script>
+    //<![CDATA[
+    var getGAEventLabel = function () { return "The Homestuck Epilogues"; };
 //]]>
-</script>
-      <link rel="canonical" href=meat/10">
+  </script>
+  <link rel="canonical" href=meat/10">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="https://www.homestuck.com/favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://www.homestuck.com/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://www.homestuck.com/favicon/favicon-16x16.png">
-<link rel="manifest" href="https://www.homestuck.com/favicon/manifest.json">
-<link rel="mask-icon" href="https://www.homestuck.com/favicon/safari-pinned-tab.svg" color="#6bbe4a">
-<meta name="theme-color" content="#ffffff">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www.homestuck.com/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://www.homestuck.com/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://www.homestuck.com/favicon/favicon-16x16.png">
+  <link rel="manifest" href="https://www.homestuck.com/favicon/manifest.json">
+  <link rel="mask-icon" href="https://www.homestuck.com/favicon/safari-pinned-tab.svg" color="#6bbe4a">
+  <meta name="theme-color" content="#ffffff">
 
-        <link rel="stylesheet" media="all" href="./Epilogue_files/manifest-epilogue-1694f2c1abc80cf72e84324f6d6486e6f04b02358ed667dee36c88974eef388f.css">
-      <link rel="stylesheet" href="./Epilogue_files/kek1uwn.css">
-    <link rel="stylesheet" media="all" href="./Epilogue_files/manifest-ui-e03365bbb17dde0f1fd5463dd7b56d096a27cae55aa131b72684e36c1f0c80f6.css">
-    <script src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE="></script>
-    <script src="./Epilogue_files/manifest-ads-story-1885683d55d6f631dc202ac5db87250ca938be96a613e85bb93739ecc057540e.js.download"></script>
+  <link rel="stylesheet" media="all"
+    href="./Epilogue_files/manifest-epilogue-1694f2c1abc80cf72e84324f6d6486e6f04b02358ed667dee36c88974eef388f.css">
+  <link rel="stylesheet" href="./Epilogue_files/kek1uwn.css">
+  <link rel="stylesheet" media="all"
+    href="./Epilogue_files/manifest-ui-e03365bbb17dde0f1fd5463dd7b56d096a27cae55aa131b72684e36c1f0c80f6.css">
+  <script
+    src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE="></script>
+  <script
+    src="./Epilogue_files/manifest-ads-story-1885683d55d6f631dc202ac5db87250ca938be96a613e85bb93739ecc057540e.js.download"></script>
 
 
-    <!-- //Connect Container: Homestuck-->
-<script src="./Epilogue_files/tag.min.js.download" async="" defer=""></script>
-  <script async="" src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE="></script><style type="text/css">* {
- text-shadow: transparent 0px 0px 0px, rgba(0,0,0,0.68) 0px 0px 0px !important; 
-}</style><script async="" src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE="></script></head>
-  
-  <body class="epilogue">
+  <!-- //Connect Container: Homestuck-->
+  <script src="./Epilogue_files/tag.min.js.download" async="" defer=""></script>
+  <script async=""
+    src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE="></script>
+  <style type="text/css">
+    * {
+      text-shadow: transparent 0px 0px 0px, rgba(0, 0, 0, 0.68) 0px 0px 0px !important;
+    }
+  </style>
+  <script async=""
+    src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE="></script>
+</head>
 
-    
-    <header id="site-header" role="banner">
-  <div id="header-container" class="o_story-page-header row flex pad-t-0 ">
-    <a href="javascript:void(0)" data-nav-open="" class="nav-btn nav-btn--center color-white" style="overflow-wrap:normal;text-decoration:none;"><i class="icon-menu"></i><span>Menu</span></a>
-    <nav id="nav-container" data-nav-state="closed" role="navigation" class="o_nav-container">
-      <a href="javascript:void(0)" data-nav-close="" class="nav-btn color-white pad-y-rg type-rg" style="overflow-wrap:normal;text-decoration:none;"><i class="icon-close"></i><span>Dismiss</span></a>
-      <ul id="primary-nav" class="o_primary-nav style-caps weight-bold disp-ib color-white type-rg">
-     <li class="o_primary-nav-item slide-candycorn pipe"><a class="o_primary-nav-link" style="color:#39d5f6" href="Read.html">READ</a></li><!--
-     --><li class="o_primary-nav-item"><a class="o_primary-nav-link" style="color:#39d5f6" href="Credits.html">INFO</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-    
+<body class="epilogue">
 
-    <div class="row bg-white bg-light-gray--md pad-t-md--md pos-r">
-  <div id="content_container" class="mar-x-auto disp-bl bg-white" style="max-width:650px;">
-    <div class="pos-r pad-t-sm pad-x-lg--md type-center" style="overflow:visible; height:72px;">
-      <img class="hsep_bullet" alt="Chapter" src="./Epilogue_files/meat_60x60-a20ba4eabbf9e6c7e4778d99648c13802fc7ff42a24bc48bc0535494cdd82195.png">
-      <h3 class="disp-ib type-hsep-header line-tight type-lg pad-t-sm">
-        10
-      </h3>
+
+  <header id="site-header" role="banner">
+    <div id="header-container" class="o_story-page-header row flex pad-t-0 ">
+      <a href="javascript:void(0)" data-nav-open="" class="nav-btn nav-btn--center color-white"
+        style="overflow-wrap:normal;text-decoration:none;"><i class="icon-menu"></i><span>Menu</span></a>
+      <nav id="nav-container" data-nav-state="closed" role="navigation" class="o_nav-container">
+        <a href="javascript:void(0)" data-nav-close="" class="nav-btn color-white pad-y-rg type-rg"
+          style="overflow-wrap:normal;text-decoration:none;"><i class="icon-close"></i><span>Dismiss</span></a>
+        <ul id="primary-nav" class="o_primary-nav style-caps weight-bold disp-ib color-white type-rg">
+          <li class="o_primary-nav-item slide-candycorn pipe"><a class="o_primary-nav-link" style="color:#39d5f6"
+              href="Read.html">READ</a></li>
+          <!--
+     -->
+          <li class="o_primary-nav-item"><a class="o_primary-nav-link" style="color:#39d5f6"
+              href="Credits.html">INFO</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <div class="row bg-white bg-light-gray--md pad-t-md--md pos-r">
+    <div id="content_container" class="mar-x-auto disp-bl bg-white" style="max-width:650px;">
+      <div class="pos-r pad-t-sm pad-x-lg--md type-center" style="overflow:visible; height:72px;">
+        <img class="hsep_bullet" alt="Chapter"
+          src="./Epilogue_files/meat_60x60-a20ba4eabbf9e6c7e4778d99648c13802fc7ff42a24bc48bc0535494cdd82195.png">
+        <h3 class="disp-ib type-hsep-header line-tight type-lg pad-t-sm">
+          10
+        </h3>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="row bg-white bg-light-gray--md pad-b-md pad-b-lg--md pos-r pad-t-md pad-t-0--md">
-  <div class="mar-x-auto disp-bl bg-white pad-t-lg" style="max-width:650px;">
-      <div class="o-story_text o_epilogue type-rg type-sm--md line-caption line-copy--md pad-x-0 pad-x-lg--md pad-b-lg">  <p class="no-indent"><span class="opener type-hs-opener-rg type-hs-opener-sm--md">J</span>ane Crocker sweeps into her office with grace befitting her station and slams the door shut behind her. The sun cuts through her venetian blinds, painting butter-yellow strips of light all the way from one end of her impeccably tailored office to the other. It’s a lovely day, like most days, so not terribly remarkable except for the horrid news that she has just received at her customary morning press conference. </p>
-  <p>Jane comes to a brisk stop alongside one of her floor-to-ceiling windows—which span a full two-thirds of her office—and brushes her hands over her hips to smooth the wrinkles out of her powder-blue pencil skirt. Then she hems, haws, puffs out her cheeks, and takes a very deep breath before snatching a pillow off the nearest couch so that she can scream into it.</p>
-  <p>There are, surely, a multitude of ways for a person to find out that an acquaintance is running against you in a presidential election. From a carapacian reporter, in front of twenty-six other members of the interspecies press, was not the method Jane would have personally chosen. She is certain that she retained her poise and managed not to look too shocked at the news. She did not exclaim “What?!” but instead managed to eke out through gritted teeth and pursed lips a reasonably thoughtful-sounding “Hmmmmmm!”</p>
-  <p>She cannot believe that Karkat would do this to her. This is no longer a political fiat (which the election would surely have been had she run uncontested by any other civilization-founding celebrities) but rather a battle between “friends.” What did Vantas think he was doing?</p>
-  <p>No, no—it’s not Vantas, Jane realizes. This could not have possibly been Karkat’s idea. Jane knows Karkat. Not intimately, or even casually, but well enough to have made a generalized assessment of his basic character over the years. He is not cut out for politics, neither intellectually nor in the very important matter of social constitution. Certainly not when it comes to economic policy. In fact, Jane is pretty sure that Karkat Vantas would probably literally burst into flame if too many people happened to look at him at the same time, like a vampire walking out into the sun.</p>
-  <p>Wait. Jane lowers the pillow from her face and stares at her brass-and-glass art deco ceiling. Was that vampire thing xenophobic against Kanaya? Or whatever it was that Kanaya was supposed to be? No, of course not, she assures herself. With trolls it was the other way around: vampires were the only members of their species who didn’t balk at the sunlight. Another reason Karkat would make a poor president. Unless... he ran as the Night President? No, the idea is foolish. Best not to give him any ideas. There can only be ONE president.</p>
-  <p>No, surely this must have been Dave’s idea. The kind of plot hatched from their little nest of mutually supportive, codependent, interspecies... whatever it was they had going on over there. Dave was certainly no Dirk Strider, no Rose Lalonde, no Roxy, but he had that same scheming gene, buried deep down beneath his transparent onion layers of posturing and, frankly, rather outdated humor. An instinct to plan. And despite being inarguably the dimmest of his family’s impressive ecto-biological stock...  </p>
-  <p>Oh, dear. Stock. That’s likely a problematic word, isn’t it? Jane thinks. She crosses it off her mental list of “appropriate words to say during a press conference.” </p>
-  <p>She returns to her train of thought. Despite being the least mentally gifted member of his family, Dave has always had an awful lot of opinions on the economy. In fact, Jane cannot remember a single conversation she’s ever had with him that wasn’t about the economy. She thinks back to one time at John’s eighteenth birthday when Dave engaged her in a rigorous and rather one-sided debate about deregulation and the failure of “neoliberal austerity measures” until Karkat had to come over and put his hands over his roommate’s mouth to make him stop talking. Come to think of it, of the few direct interactions with Karkat she’d ever had, this struck her as a truly great act of benevolence toward the common good. Maybe... he <em>would</em> make a good president?</p>
-  <p>NO! She cannot succumb to such thoughts of weakness. She will not.</p>
-  <p>Jane tosses the pillow back onto the couch and begins pacing the length of her office. This really was a disaster. She knew that she was solid on several demographic metrics; the human one, most certainly, and the well-to-do carapacian districts. But Karkat was incredibly popular in the Troll Kingdom, obviously, and carapacians were widely known to be swayed by underdog populism. And the consorts? Who had even given them the right to vote in the first place? In any other year... </p>
-  <p>Jane hops up to sit on her desk and kicks off both her shoes. She picks up a pen and begins to chew the end to bits to stop herself from doing the same to her lower lip. In any other year, this wouldn’t be a problem. She’d be happy to accept a graceful, temporary defeat and let Karkat play president for a couple of years. After all, unlike her, he was not immortal. But Earth C’s paper-thin idyllic history was very close to a boiling point—its very first boiling point, in fact, which will have everything to do with the problematic nature of troll reproduction. The first generation of natural-born trolls obviously cannot be entrusted to a troll.</p>
-  <p>Which was absolutely not a xenophobic thing to think. It was just realistic. The citizens of Earth C were able to rest easy knowing that the government held careful rein over the... well, over matters of equity. No one could possibly trust something so important to a troll, knowing what everyone knew about their violent history.</p>
-  <p>Losing this election could mean social unrest, protests, even war.</p>
-  <p>Jane presses her eyes shut and runs her fingers along the fine-grain patterns in her mahogany-paneled desk. She is about to think something that she has promised herself never to think again. In fact, she is about to say it—this horrible, ghoulish, girlish thought that used to rule her world and make her so terribly weak. The shameful thought is expressed out loud in the form of a defeated sigh.</p>
-<div class="chat type-rg type-hs-small--md">
-  <p class="jane">JANE: I need Jake.</p>
-</div>
-  <p class="no-indent">She spins around and, still sitting on her desk, presses a familiar entry on her phone’s contact list.</p>
-<div class="chat type-rg type-hs-small--md">
-  <p class="jake">JAKE: Ahoy ahoy!</p>
-</div>
-  <p class="no-indent">Jane has to suck in a hard breath to stop herself from groaning. Why were so many of the finest young minds on this planet slaves to this foolish man’s perky glutes?</p>
-<div class="chat type-rg type-hs-small--md">
-  <p class="jane">JANE: Jake! Hello, how are you doing?</p>
-  
-  <p class="jake">JAKE: As well as can be i suppose considering that i just woke up in the middle of a mafficking ruckus at the stadium after getting beaned in the pumper with the ol’ horse tranquilizer trick.</p>
-  
-  <p class="jake">JAKE: Which i suppose i should have seen coming, as dirk has ended all of our matches in this fashion for the past week. </p>
-  
-  <p class="jane">JANE: Oh dear. That sounds absolutely terrible, Jake. Is there anything I can do to help?</p>
-  
-  <p class="jake">JAKE: Help? Gadzooks woman! I hardly think myself in need of help.</p>
-  
-  <p class="jake">JAKE: Its a jolly good adventure working with someone so predictably unpredictable as our good friend dirk!</p>
-</div>
-  <p class="no-indent">You would think that Jake enjoyed the sadomasochistic nature of his and Dirk’s personal and professional relationships. Judging from the last conversation about election strategy with Dirk, he seems to be perfectly aware of this feature of Jake’s personality. You can’t be too nice when courting his endorsement, Dirk would say. He doesn’t respond to nice.</p>
-<div class="chat type-rg type-hs-small--md">
-  <p class="jane">JANE: Be that as it may, Jake, I still do worry about you an awful lot.</p>
-  
-  <p class="jake">JAKE: Well that is...  </p>
-</div>
-  <p class="no-indent">On Jake’s end of the line there is a crash, followed by a noise that sounds suspiciously like something big and hollow and metal connecting with Jake’s head. When Jake comes back to the phone, he’s yelling into it. Jane grimaces.</p>
-<div class="chat type-rg type-hs-small--md">
-  <p class="jake">JAKE: ...very sweet of you jane! I appreciate very much that you have called me out of the blue to say such nice things to me with no ulterior motive!</p>
-</div>
-  <p class="no-indent">From anyone else, this would have been a portentous statement. However, Jane knows that Jake English could not have possibly meant this with anything but the utmost sincerity. </p>
-<div class="chat type-rg type-hs-small--md">
-  <p class="jane">JANE: Well, you know that I—</p>
-  
-  <p class="jake">JAKE: Because i must note that although i try to stay sporting about what comes at me, i cant say that i am chuffed about how much of my correspondence lately has to do with the marketing of my image.</p>
-  
-  <p class="jake">JAKE: Its beginning to feel like all people want from me is to stick my derriere on a signpost for their own profit.</p>
-  
-  <p class="jane">JANE: Oh, Jake. </p>
-  
-  <p class="jane">JANE: You’re right. It must be so difficult. For you more than the rest of us, due to your, let’s say...  </p>
-  
-  <p class="jane">JANE: Natural gifts?</p>
-  
-  <p class="jake">JAKE: Huh?</p>
-  
-  <p class="jane">JANE: But you know that I have always wanted what’s best for you, right?</p>
-  
-  <p class="jane">JANE: And I am ready to give that to you.</p>
-  
-  <p class="jake">JAKE: To give me what?</p>
-  
-  <p class="jane">JANE: The best, Jake. The very best.</p>
-</div>
-  <p class="no-indent">Jake is quiet a moment, and Jane can hear the rusty gears turning in his head.</p>
-<div class="chat type-rg type-hs-small--md">
-  <p class="jane">JANE: You should stop by to see me this evening!</p>
-  <p class="jake">JAKE: Do you mean my evening or yours? Were in different time zones right now and i dare say that the sun just went down here so if you wanted to have a soiree on my time youve missed your chance.</p>
-</div>
-  <p class="no-indent">Jane feels her fake smile flexing so hard that it was beginning to hurt. Oh yes, she loved this man in basically every category that you could possibly love a person, but sometimes talking to him is like trying to build a house of cards while riding a mechanical bull. </p>
-<div class="chat type-rg type-hs-small--md">
-  <p class="jane">JANE: Mine, of course! I’ll have the best year of your favorite crocodile-made scotch flown in from the Consort Kingdom and we’ll have a little catch-up. </p>
-</div>
-  <p class="no-indent">Jake actually hates scotch, and only drinks it for appearance’s sake. But for this—for this unbelievably pivotal moment in the history of the planet that they created with their bare hands—Jane is willing to spend a few thousand boonbucks to watch her old friend pretend to sip at the same glass for a couple of hours while prattling on. </p>
-  <p>And she’s willing to do more than that, too.</p>
-<div class="chat type-rg type-hs-small--md">
-  <p class="jane">JANE: When’s the last time we’ve done that, just you and I?</p>
-  
-  <p class="jake">JAKE: You know what? Youre quite right. Its been a spell since weve met up without dirk.</p>
-  
-  <p class="jake">JAKE: An unforgivably long one at that! Whip me up a kipper jane ill be over promptly!</p>
-  
-  <p class="jane">JANE: A... kipper?</p>
-</div>
-  <p class="no-indent">She considers asking if he intended to request that she literally prepare a fish for his arrival. But of course, Jake has already hung up.</p>
-  <p>With a heavy and somewhat regretful sigh, Jane sets her phone down on the desk. Well, she thinks, that’s that. Time to work your magic, Crocker. </p></div>
+  <div class="row bg-white bg-light-gray--md pad-b-md pad-b-lg--md pos-r pad-t-md pad-t-0--md">
+    <div class="mar-x-auto disp-bl bg-white pad-t-lg" style="max-width:650px;">
+      <div class="o-story_text o_epilogue type-rg type-sm--md line-caption line-copy--md pad-x-0 pad-x-lg--md pad-b-lg">
+        <p class="no-indent"><span class="opener type-hs-opener-rg type-hs-opener-sm--md">J</span>ane Crocker sweeps
+          into her office with grace befitting her station and slams the door shut behind her. The sun cuts through her
+          venetian blinds, painting butter-yellow strips of light all the way from one end of her impeccably tailored
+          office to the other. It’s a lovely day, like most days, so not terribly remarkable except for the horrid news
+          that she has just received at her customary morning press conference. </p>
+        <p>Jane comes to a brisk stop alongside one of her floor-to-ceiling windows—which span a full two-thirds of her
+          office—and brushes her hands over her hips to smooth the wrinkles out of her powder-blue pencil skirt. Then
+          she hems, haws, puffs out her cheeks, and takes a very deep breath before snatching a pillow off the nearest
+          couch so that she can scream into it.</p>
+        <p>There are, surely, a multitude of ways for a person to find out that an acquaintance is running against you
+          in a presidential election. From a carapacian reporter, in front of twenty-six other members of the
+          interspecies press, was not the method Jane would have personally chosen. She is certain that she retained her
+          poise and managed not to look too shocked at the news. She did not exclaim “What?!” but instead managed to eke
+          out through gritted teeth and pursed lips a reasonably thoughtful-sounding “Hmmmmmm!”</p>
+        <p>She cannot believe that Karkat would do this to her. This is no longer a political fiat (which the election
+          would surely have been had she run uncontested by any other civilization-founding celebrities) but rather a
+          battle between “friends.” What did Vantas think he was doing?</p>
+        <p>No, no—it’s not Vantas, Jane realizes. This could not have possibly been Karkat’s idea. Jane knows Karkat.
+          Not intimately, or even casually, but well enough to have made a generalized assessment of his basic character
+          over the years. He is not cut out for politics, neither intellectually nor in the very important matter of
+          social constitution. Certainly not when it comes to economic policy. In fact, Jane is pretty sure that Karkat
+          Vantas would probably literally burst into flame if too many people happened to look at him at the same time,
+          like a vampire walking out into the sun.</p>
+        <p>Wait. Jane lowers the pillow from her face and stares at her brass-and-glass art deco ceiling. Was that
+          vampire thing xenophobic against Kanaya? Or whatever it was that Kanaya was supposed to be? No, of course not,
+          she assures herself. With trolls it was the other way around: vampires were the only members of their species
+          who didn’t balk at the sunlight. Another reason Karkat would make a poor president. Unless... he ran as the
+          Night President? No, the idea is foolish. Best not to give him any ideas. There can only be ONE president.</p>
+        <p>No, surely this must have been Dave’s idea. The kind of plot hatched from their little nest of mutually
+          supportive, codependent, interspecies... whatever it was they had going on over there. Dave was certainly no
+          Dirk Strider, no Rose Lalonde, no Roxy, but he had that same scheming gene, buried deep down beneath his
+          transparent onion layers of posturing and, frankly, rather outdated humor. An instinct to plan. And despite
+          being inarguably the dimmest of his family’s impressive ecto-biological stock... </p>
+        <p>Oh, dear. Stock. That’s likely a problematic word, isn’t it? Jane thinks. She crosses it off her mental list
+          of “appropriate words to say during a press conference.” </p>
+        <p>She returns to her train of thought. Despite being the least mentally gifted member of his family, Dave has
+          always had an awful lot of opinions on the economy. In fact, Jane cannot remember a single conversation she’s
+          ever had with him that wasn’t about the economy. She thinks back to one time at John’s eighteenth birthday
+          when Dave engaged her in a rigorous and rather one-sided debate about deregulation and the failure of
+          “neoliberal austerity measures” until Karkat had to come over and put his hands over his roommate’s mouth to
+          make him stop talking. Come to think of it, of the few direct interactions with Karkat she’d ever had, this
+          struck her as a truly great act of benevolence toward the common good. Maybe... he <em>would</em> make a good
+          president?</p>
+        <p>NO! She cannot succumb to such thoughts of weakness. She will not.</p>
+        <p>Jane tosses the pillow back onto the couch and begins pacing the length of her office. This really was a
+          disaster. She knew that she was solid on several demographic metrics; the human one, most certainly, and the
+          well-to-do carapacian districts. But Karkat was incredibly popular in the Troll Kingdom, obviously, and
+          carapacians were widely known to be swayed by underdog populism. And the consorts? Who had even given them the
+          right to vote in the first place? In any other year... </p>
+        <p>Jane hops up to sit on her desk and kicks off both her shoes. She picks up a pen and begins to chew the end
+          to bits to stop herself from doing the same to her lower lip. In any other year, this wouldn’t be a problem.
+          She’d be happy to accept a graceful, temporary defeat and let Karkat play president for a couple of years.
+          After all, unlike her, he was not immortal. But Earth C’s paper-thin idyllic history was very close to a
+          boiling point—its very first boiling point, in fact, which will have everything to do with the problematic
+          nature of troll reproduction. The first generation of natural-born trolls obviously cannot be entrusted to a
+          troll.</p>
+        <p>Which was absolutely not a xenophobic thing to think. It was just realistic. The citizens of Earth C were
+          able to rest easy knowing that the government held careful rein over the... well, over matters of equity. No
+          one could possibly trust something so important to a troll, knowing what everyone knew about their violent
+          history.</p>
+        <p>Losing this election could mean social unrest, protests, even war.</p>
+        <p>Jane presses her eyes shut and runs her fingers along the fine-grain patterns in her mahogany-paneled desk.
+          She is about to think something that she has promised herself never to think again. In fact, she is about to
+          say it—this horrible, ghoulish, girlish thought that used to rule her world and make her so terribly weak. The
+          shameful thought is expressed out loud in the form of a defeated sigh.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="jane">JANE: I need Jake.</p>
+        </div>
+        <p class="no-indent">She spins around and, still sitting on her desk, presses a familiar entry on her phone’s
+          contact list.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="jake">JAKE: Ahoy ahoy!</p>
+        </div>
+        <p class="no-indent">Jane has to suck in a hard breath to stop herself from groaning. Why were so many of the
+          finest young minds on this planet slaves to this foolish man’s perky glutes?</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="jane">JANE: Jake! Hello, how are you doing?</p>
+
+          <p class="jake">JAKE: As well as can be i suppose considering that i just woke up in the middle of a
+            mafficking ruckus at the stadium after getting beaned in the pumper with the ol’ horse tranquilizer trick.
+          </p>
+
+          <p class="jake">JAKE: Which i suppose i should have seen coming, as dirk has ended all of our matches in this
+            fashion for the past week. </p>
+
+          <p class="jane">JANE: Oh dear. That sounds absolutely terrible, Jake. Is there anything I can do to help?</p>
+
+          <p class="jake">JAKE: Help? Gadzooks woman! I hardly think myself in need of help.</p>
+
+          <p class="jake">JAKE: Its a jolly good adventure working with someone so predictably unpredictable as our good
+            friend dirk!</p>
+        </div>
+        <p class="no-indent">You would think that Jake enjoyed the sadomasochistic nature of his and Dirk’s personal and
+          professional relationships. Judging from the last conversation about election strategy with Dirk, he seems to
+          be perfectly aware of this feature of Jake’s personality. You can’t be too nice when courting his endorsement,
+          Dirk would say. He doesn’t respond to nice.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="jane">JANE: Be that as it may, Jake, I still do worry about you an awful lot.</p>
+
+          <p class="jake">JAKE: Well that is... </p>
+        </div>
+        <p class="no-indent">On Jake’s end of the line there is a crash, followed by a noise that sounds suspiciously
+          like something big and hollow and metal connecting with Jake’s head. When Jake comes back to the phone, he’s
+          yelling into it. Jane grimaces.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="jake">JAKE: ...very sweet of you jane! I appreciate very much that you have called me out of the
+            blue to say such nice things to me with no ulterior motive!</p>
+        </div>
+        <p class="no-indent">From anyone else, this would have been a portentous statement. However, Jane knows that
+          Jake English could not have possibly meant this with anything but the utmost sincerity. </p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="jane">JANE: Well, you know that I—</p>
+
+          <p class="jake">JAKE: Because i must note that although i try to stay sporting about what comes at me, i cant
+            say that i am chuffed about how much of my correspondence lately has to do with the marketing of my image.
+          </p>
+
+          <p class="jake">JAKE: Its beginning to feel like all people want from me is to stick my derriere on a signpost
+            for their own profit.</p>
+
+          <p class="jane">JANE: Oh, Jake. </p>
+
+          <p class="jane">JANE: You’re right. It must be so difficult. For you more than the rest of us, due to your,
+            let’s say... </p>
+
+          <p class="jane">JANE: Natural gifts?</p>
+
+          <p class="jake">JAKE: Huh?</p>
+
+          <p class="jane">JANE: But you know that I have always wanted what’s best for you, right?</p>
+
+          <p class="jane">JANE: And I am ready to give that to you.</p>
+
+          <p class="jake">JAKE: To give me what?</p>
+
+          <p class="jane">JANE: The best, Jake. The very best.</p>
+        </div>
+        <p class="no-indent">Jake is quiet a moment, and Jane can hear the rusty gears turning in his head.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="jane">JANE: You should stop by to see me this evening!</p>
+          <p class="jake">JAKE: Do you mean my evening or yours? Were in different time zones right now and i dare say
+            that the sun just went down here so if you wanted to have a soiree on my time youve missed your chance.</p>
+        </div>
+        <p class="no-indent">Jane feels her fake smile flexing so hard that it was beginning to hurt. Oh yes, she loved
+          this man in basically every category that you could possibly love a person, but sometimes talking to him is
+          like trying to build a house of cards while riding a mechanical bull. </p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="jane">JANE: Mine, of course! I’ll have the best year of your favorite crocodile-made scotch flown in
+            from the Consort Kingdom and we’ll have a little catch-up. </p>
+        </div>
+        <p class="no-indent">Jake actually hates scotch, and only drinks it for appearance’s sake. But for this—for this
+          unbelievably pivotal moment in the history of the planet that they created with their bare hands—Jane is
+          willing to spend a few thousand boonbucks to watch her old friend pretend to sip at the same glass for a
+          couple of hours while prattling on. </p>
+        <p>And she’s willing to do more than that, too.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="jane">JANE: When’s the last time we’ve done that, just you and I?</p>
+
+          <p class="jake">JAKE: You know what? Youre quite right. Its been a spell since weve met up without dirk.</p>
+
+          <p class="jake">JAKE: An unforgivably long one at that! Whip me up a kipper jane ill be over promptly!</p>
+
+          <p class="jane">JANE: A... kipper?</p>
+        </div>
+        <p class="no-indent">She considers asking if he intended to request that she literally prepare a fish for his
+          arrival. But of course, Jake has already hung up.</p>
+        <p>With a heavy and somewhat regretful sigh, Jane sets her phone down on the desk. Well, she thinks, that’s
+          that. Time to work your magic, Crocker. </p>
+      </div>
       <div class="o_story-nav type-hs-copy line-tight pad-x-0 pad-x-lg--md pad-b-lg">
         <div>
           <span>&gt;</span>
           <a href="Meat 11.html">==&gt; </a><br>
         </div>
       </div>
-  
-<footer id="story-footer" role="banner">
-  <div id="story_footer_container" class="o_story-page-footer flex pad-t-0 pad-x-0
+
+      <footer id="story-footer" role="banner">
+        <div id="story_footer_container" class="o_story-page-footer flex pad-t-0 pad-x-0
      flex-justify 
     ">
-      <div class="pad-l-lg--md mar-b-md type-hs-small type-hs-bottom--md type-center type-left--md">
-        <ul class="o_game-nav">
-          <li class="o_game-nav-item">
-            <a id="o_start-over" href="The Homestuck Epilogues.html">Start Over</a>
-          </li>
-            <li class="o_game-nav-item">
-              <a href="Meat 9.html">Go Back</a>
-            </li>
-        </ul>
-      </div>
-      <script>
-//<![CDATA[
-$(document).ready(function() { Gamenav.checkAutosave(); });
+          <div class="pad-l-lg--md mar-b-md type-hs-small type-hs-bottom--md type-center type-left--md">
+            <ul class="o_game-nav">
+              <li class="o_game-nav-item">
+                <a id="o_start-over" href="Choice Page.html">Start Over</a>
+              </li>
+              <li class="o_game-nav-item">
+                <a href="Meat 9.html">Go Back</a>
+              </li>
+            </ul>
+          </div>
+          <script>
+            //<![CDATA[
+            $(document).ready(function () { Gamenav.checkAutosave(); });
 //]]>
-</script>
+          </script>
 
-    <a href="javascript:void(0)" data-gamenav-open="" class="nav-btn nav-btn--center type-hs-small mar-b-md" style="text-decoration:none; text-transform: none; font-size:14px; line-height:14px;"><span>Options</span> <i class="icon-menu" style="margin:0;"></i></a>
+          <a href="javascript:void(0)" data-gamenav-open="" class="nav-btn nav-btn--center type-hs-small mar-b-md"
+            style="text-decoration:none; text-transform: none; font-size:14px; line-height:14px;"><span>Options</span>
+            <i class="icon-menu" style="margin:0;"></i></a>
+        </div>
+      </footer>
+
+
+    </div>
   </div>
-</footer>
 
 
+
+  <div class="o_site-footer row pos-r pad-t-rg pad-b-xl pad-b-0--md bg-dark-gray">
+    <div class="float-l"><img
+        src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif"
+        alt="Footer logo"><br></div>
+    <div class="float-r disp-n disp-bl--sm"><img
+        src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif"
+        alt="Footer logo"><br></div>
+    <div class="type-center pad-t-md--md">
+      <ul>
+        <li><a href="https://www.homestuck.com/contacts">Contacts</a></li>
+        <li><a href="https://www.homestuck.com/privacy">Privacy Policy</a></li>
+      </ul>
+      <div><span style="white-space:nowrap;">© 2018 Homestuck</span> <span style="white-space:nowrap;">and VIZ
+          Media</span></div>
+    </div>
   </div>
-</div>
-
-
-    
-<div class="o_site-footer row pos-r pad-t-rg pad-b-xl pad-b-0--md bg-dark-gray">
-  <div class="float-l"><img src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif" alt="Footer logo"><br></div>
-  <div class="float-r disp-n disp-bl--sm"><img src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif" alt="Footer logo"><br></div>
-  <div class="type-center pad-t-md--md">
-    <ul>
-      <li><a href="https://www.homestuck.com/contacts">Contacts</a></li>
-      <li><a href="https://www.homestuck.com/privacy">Privacy Policy</a></li>
-    </ul>
-    <div><span style="white-space:nowrap;">© 2018 Homestuck</span> <span style="white-space:nowrap;">and VIZ Media</span></div>
-  </div>
-</div>
 
 
 
-    <div id="overlay" data-overlay-state="off" class="o_overlay"></div>
-    <div id="game_overlay" data-game-overlay-state="off" class="o_game-overlay"></div>
-    <div id="overlay_wait" data-overlay-state="off" class="o_overlay-wait"></div>
+  <div id="overlay" data-overlay-state="off" class="o_overlay"></div>
+  <div id="game_overlay" data-game-overlay-state="off" class="o_game-overlay"></div>
+  <div id="overlay_wait" data-overlay-state="off" class="o_overlay-wait"></div>
 
 
 
-  
 
-<iframe name="googlefcPresent" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;" src="./Epilogue_files/saved_resource.html"></iframe></body></html>
+
+  <iframe name="googlefcPresent"
+    style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"
+    src="./Epilogue_files/saved_resource.html"></iframe>
+</body>
+
+</html>

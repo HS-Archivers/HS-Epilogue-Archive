@@ -1,494 +1,575 @@
 <!DOCTYPE html>
 
-<html dir="ltr" lang="en-US"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html dir="ltr" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <!-- application -->
-    <script async="" src="./Epilogue_files/jquery-1.11.3.min.js.download"></script>
-    
-<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"1b930da09b","applicationID":"65900267","transactionName":"cFkNREpaWA9dF0pBVlRTEB9LQVsRQQ==","queueTime":0,"applicationTime":5,"agent":""}</script>
-<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"1b930da09b",applicationID:"65900267"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="format-detection" content="telephone=no">
-    <title>The Homestuck Epilogues</title>
-    <meta name="description" content="Tales of dubious authenticity.">
-    <script>
-//<![CDATA[
-var getGAEventLabel = function(){ return "The Homestuck Epilogues"; };
+  <script async="" src="./Epilogue_files/jquery-1.11.3.min.js.download"></script>
+
+  <script>window.NREUM || (NREUM = {}); NREUM.info = { "beacon": "bam-cell.nr-data.net", "errorBeacon": "bam-cell.nr-data.net", "licenseKey": "1b930da09b", "applicationID": "65900267", "transactionName": "cFkNREpaWA9dF0pBVlRTEB9LQVsRQQ==", "queueTime": 0, "applicationTime": 5, "agent": "" }</script>
+  <script>(window.NREUM || (NREUM = {})).loader_config = { licenseKey: "1b930da09b", applicationID: "65900267" }; window.NREUM || (NREUM = {}), __nr_require = function (t, e, n) { function r(n) { if (!e[ n ]) { var i = e[ n ] = { exports: {} }; t[ n ][ 0 ].call(i.exports, function (e) { var i = t[ n ][ 1 ][ e ]; return r(i || e) }, i, i.exports) } return e[ n ].exports } if ("function" == typeof __nr_require) return __nr_require; for (var i = 0; i < n.length; i++)r(n[ i ]); return r }({ 1: [ function (t, e, n) { function r() { } function i(t, e, n) { return function () { return o(t, [ u.now() ].concat(f(arguments)), e ? null : this, n), e ? void 0 : this } } var o = t("handle"), a = t(8), f = t(9), c = t("ee").get("tracer"), u = t("loader"), s = NREUM; "undefined" == typeof window.newrelic && (newrelic = s); var d = [ "setPageViewName", "setCustomAttribute", "setErrorHandler", "finished", "addToTrace", "inlineHit", "addRelease" ], p = "api-", l = p + "ixn-"; a(d, function (t, e) { s[ e ] = i(p + e, !0, "api") }), s.addPageAction = i(p + "addPageAction", !0), s.setCurrentRouteName = i(p + "routeName", !0), e.exports = newrelic, s.interaction = function () { return (new r).get() }; var m = r.prototype = { createTracer: function (t, e) { var n = {}, r = this, i = "function" == typeof e; return o(l + "tracer", [ u.now(), t, n ], r), function () { if (c.emit((i ? "" : "no-") + "fn-start", [ u.now(), r, i ], n), i) try { return e.apply(this, arguments) } catch (t) { throw c.emit("fn-err", [ arguments, this, t ], n), t } finally { c.emit("fn-end", [ u.now() ], n) } } } }; a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","), function (t, e) { m[ e ] = i(l + e) }), newrelic.noticeError = function (t, e) { "string" == typeof t && (t = new Error(t)), o("err", [ t, u.now(), !1, e ]) } }, {} ], 2: [ function (t, e, n) { function r(t) { if (NREUM.init) { for (var e = NREUM.init, n = t.split("."), r = 0; r < n.length - 1; r++)if (e = e[ n[ r ] ], "object" != typeof e) return; return e = e[ n[ n.length - 1 ] ] } } e.exports = { getConfiguration: r } }, {} ], 3: [ function (t, e, n) { function r() { return f.exists && performance.now ? Math.round(performance.now()) : (o = Math.max((new Date).getTime(), o)) - a } function i() { return o } var o = (new Date).getTime(), a = o, f = t(10); e.exports = r, e.exports.offset = a, e.exports.getLastTimestamp = i }, {} ], 4: [ function (t, e, n) { function r(t) { return !(!t || !t.protocol || "file:" === t.protocol) } e.exports = r }, {} ], 5: [ function (t, e, n) { function r(t, e) { var n = t.getEntries(); n.forEach(function (t) { "first-paint" === t.name ? d("timing", [ "fp", Math.floor(t.startTime) ]) : "first-contentful-paint" === t.name && d("timing", [ "fcp", Math.floor(t.startTime) ]) }) } function i(t, e) { var n = t.getEntries(); n.length > 0 && d("lcp", [ n[ n.length - 1 ] ]) } function o(t) { t.getEntries().forEach(function (t) { t.hadRecentInput || d("cls", [ t ]) }) } function a(t) { if (t instanceof m && !g) { var e = Math.round(t.timeStamp), n = { type: t.type }; e <= p.now() ? n.fid = p.now() - e : e > p.offset && e <= Date.now() ? (e -= p.offset, n.fid = p.now() - e) : e = p.now(), g = !0, d("timing", [ "fi", e, n ]) } } function f(t) { "hidden" === t && d("pageHide", [ p.now() ]) } if (!("init" in NREUM && "page_view_timing" in NREUM.init && "enabled" in NREUM.init.page_view_timing && NREUM.init.page_view_timing.enabled === !1)) { var c, u, s, d = t("handle"), p = t("loader"), l = t(7), m = NREUM.o.EV; if ("PerformanceObserver" in window && "function" == typeof window.PerformanceObserver) { c = new PerformanceObserver(r); try { c.observe({ entryTypes: [ "paint" ] }) } catch (v) { } u = new PerformanceObserver(i); try { u.observe({ entryTypes: [ "largest-contentful-paint" ] }) } catch (v) { } s = new PerformanceObserver(o); try { s.observe({ type: "layout-shift", buffered: !0 }) } catch (v) { } } if ("addEventListener" in document) { var g = !1, h = [ "click", "keydown", "mousedown", "pointerdown", "touchstart" ]; h.forEach(function (t) { document.addEventListener(t, a, !1) }) } l(f) } }, {} ], 6: [ function (t, e, n) { function r(t, e) { if (!i) return !1; if (t !== i) return !1; if (!e) return !0; if (!o) return !1; for (var n = o.split("."), r = e.split("."), a = 0; a < r.length; a++)if (r[ a ] !== n[ a ]) return !1; return !0 } var i = null, o = null, a = /Version\/(\S+)\s+Safari/; if (navigator.userAgent) { var f = navigator.userAgent, c = f.match(a); c && f.indexOf("Chrome") === -1 && f.indexOf("Chromium") === -1 && (i = "Safari", o = c[ 1 ]) } e.exports = { agent: i, version: o, match: r } }, {} ], 7: [ function (t, e, n) { function r(t) { function e() { t(a && document[ a ] ? document[ a ] : document[ i ] ? "hidden" : "visible") } "addEventListener" in document && o && document.addEventListener(o, e, !1) } e.exports = r; var i, o, a; "undefined" != typeof document.hidden ? (i = "hidden", o = "visibilitychange", a = "visibilityState") : "undefined" != typeof document.msHidden ? (i = "msHidden", o = "msvisibilitychange") : "undefined" != typeof document.webkitHidden && (i = "webkitHidden", o = "webkitvisibilitychange", a = "webkitVisibilityState") }, {} ], 8: [ function (t, e, n) { function r(t, e) { var n = [], r = "", o = 0; for (r in t) i.call(t, r) && (n[ o ] = e(r, t[ r ]), o += 1); return n } var i = Object.prototype.hasOwnProperty; e.exports = r }, {} ], 9: [ function (t, e, n) { function r(t, e, n) { e || (e = 0), "undefined" == typeof n && (n = t ? t.length : 0); for (var r = -1, i = n - e || 0, o = Array(i < 0 ? 0 : i); ++r < i;)o[ r ] = t[ e + r ]; return o } e.exports = r }, {} ], 10: [ function (t, e, n) { e.exports = { exists: "undefined" != typeof window.performance && window.performance.timing && "undefined" != typeof window.performance.timing.navigationStart } }, {} ], ee: [ function (t, e, n) { function r() { } function i(t) { function e(t) { return t && t instanceof r ? t : t ? u(t, c, a) : a() } function n(n, r, i, o, a) { if (a !== !1 && (a = !0), !l.aborted || o) { t && a && t(n, r, i); for (var f = e(i), c = v(n), u = c.length, s = 0; s < u; s++)c[ s ].apply(f, r); var p = d[ w[ n ] ]; return p && p.push([ b, n, r, f ]), f } } function o(t, e) { y[ t ] = v(t).concat(e) } function m(t, e) { var n = y[ t ]; if (n) for (var r = 0; r < n.length; r++)n[ r ] === e && n.splice(r, 1) } function v(t) { return y[ t ] || [] } function g(t) { return p[ t ] = p[ t ] || i(n) } function h(t, e) { l.aborted || s(t, function (t, n) { e = e || "feature", w[ n ] = e, e in d || (d[ e ] = []) }) } var y = {}, w = {}, b = { on: o, addEventListener: o, removeEventListener: m, emit: n, get: g, listeners: v, context: e, buffer: h, abort: f, aborted: !1 }; return b } function o(t) { return u(t, c, a) } function a() { return new r } function f() { (d.api || d.feature) && (l.aborted = !0, d = l.backlog = {}) } var c = "nr@context", u = t("gos"), s = t(8), d = {}, p = {}, l = e.exports = i(); e.exports.getOrSetContext = o, l.backlog = d }, {} ], gos: [ function (t, e, n) { function r(t, e, n) { if (i.call(t, e)) return t[ e ]; var r = n(); if (Object.defineProperty && Object.keys) try { return Object.defineProperty(t, e, { value: r, writable: !0, enumerable: !1 }), r } catch (o) { } return t[ e ] = r, r } var i = Object.prototype.hasOwnProperty; e.exports = r }, {} ], handle: [ function (t, e, n) { function r(t, e, n, r) { i.buffer([ t ], r), i.emit(t, e, n) } var i = t("ee").get("handle"); e.exports = r, r.ee = i }, {} ], id: [ function (t, e, n) { function r(t) { var e = typeof t; return !t || "object" !== e && "function" !== e ? -1 : t === window ? 0 : a(t, o, function () { return i++ }) } var i = 1, o = "nr@id", a = t("gos"); e.exports = r }, {} ], loader: [ function (t, e, n) { function r() { if (!R++) { var t = M.info = NREUM.info, e = v.getElementsByTagName("script")[ 0 ]; if (setTimeout(u.abort, 3e4), !(t && t.licenseKey && t.applicationID && e)) return u.abort(); c(E, function (e, n) { t[ e ] || (t[ e ] = n) }); var n = a(); f("mark", [ "onload", n + M.offset ], null, "api"), f("timing", [ "load", n ]); var r = v.createElement("script"); 0 === t.agent.indexOf("http://") || 0 === t.agent.indexOf("https://") ? r.src = t.agent : r.src = l + "://" + t.agent, e.parentNode.insertBefore(r, e) } } function i() { "complete" === v.readyState && o() } function o() { f("mark", [ "domContent", a() + M.offset ], null, "api") } var a = t(3), f = t("handle"), c = t(8), u = t("ee"), s = t(6), d = t(4), p = t(2), l = p.getConfiguration("ssl") === !1 ? "http" : "https", m = window, v = m.document, g = "addEventListener", h = "attachEvent", y = m.XMLHttpRequest, w = y && y.prototype, b = !d(m.location); NREUM.o = { ST: setTimeout, SI: m.setImmediate, CT: clearTimeout, XHR: y, REQ: m.Request, EV: m.Event, PR: m.Promise, MO: m.MutationObserver }; var x = "" + location, E = { beacon: "bam.nr-data.net", errorBeacon: "bam.nr-data.net", agent: "js-agent.newrelic.com/nr-1210.min.js" }, O = y && w && w[ g ] && !/CriOS/.test(navigator.userAgent), M = e.exports = { offset: a.getLastTimestamp(), now: a, origin: x, features: {}, xhrWrappable: O, userAgent: s, disabled: b }; if (!b) { t(1), t(5), v[ g ] ? (v[ g ]("DOMContentLoaded", o, !1), m[ g ]("load", r, !1)) : (v[ h ]("onreadystatechange", i), m[ h ]("onload", r)), f("mark", [ "firstbyte", a.getLastTimestamp() ], null, "api"); var R = 0 } }, {} ], "wrap-function": [ function (t, e, n) { function r(t, e) { function n(e, n, r, c, u) { function nrWrapper() { var o, a, s, p; try { a = this, o = d(arguments), s = "function" == typeof r ? r(o, a) : r || {} } catch (l) { i([ l, "", [ o, a, c ], s ], t) } f(n + "start", [ o, a, c ], s, u); try { return p = e.apply(a, o) } catch (m) { throw f(n + "err", [ o, a, m ], s, u), m } finally { f(n + "end", [ o, a, p ], s, u) } } return a(e) ? e : (n || (n = ""), nrWrapper[ p ] = e, o(e, nrWrapper, t), nrWrapper) } function r(t, e, r, i, o) { r || (r = ""); var f, c, u, s = "-" === r.charAt(0); for (u = 0; u < e.length; u++)c = e[ u ], f = t[ c ], a(f) || (t[ c ] = n(f, s ? c + r : r, i, c, o)) } function f(n, r, o, a) { if (!m || e) { var f = m; m = !0; try { t.emit(n, r, o, e, a) } catch (c) { i([ c, n, r, o ], t) } m = f } } return t || (t = s), n.inPlace = r, n.flag = p, n } function i(t, e) { e || (e = s); try { e.emit("internal-error", t) } catch (n) { } } function o(t, e, n) { if (Object.defineProperty && Object.keys) try { var r = Object.keys(t); return r.forEach(function (n) { Object.defineProperty(e, n, { get: function () { return t[ n ] }, set: function (e) { return t[ n ] = e, e } }) }), e } catch (o) { i([ o ], n) } for (var a in t) l.call(t, a) && (e[ a ] = t[ a ]); return e } function a(t) { return !(t && t instanceof Function && t.apply && !t[ p ]) } function f(t, e) { var n = e(t); return n[ p ] = t, o(t, n, s), n } function c(t, e, n) { var r = t[ e ]; t[ e ] = f(r, n) } function u() { for (var t = arguments.length, e = new Array(t), n = 0; n < t; ++n)e[ n ] = arguments[ n ]; return e } var s = t("ee"), d = t(9), p = "nr@original", l = Object.prototype.hasOwnProperty, m = !1; e.exports = r, e.exports.wrapFunction = f, e.exports.wrapInPlace = c, e.exports.argsToArray = u }, {} ] }, {}, [ "loader" ]);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <title>The Homestuck Epilogues</title>
+  <meta name="description" content="Tales of dubious authenticity.">
+  <script>
+    //<![CDATA[
+    var getGAEventLabel = function () { return "The Homestuck Epilogues"; };
 //]]>
-</script>
-      <link rel="canonical" href="Meat 42.html">
+  </script>
+  <link rel="canonical" href="Meat 42.html">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="https://www.homestuck.com/favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://www.homestuck.com/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://www.homestuck.com/favicon/favicon-16x16.png">
-<link rel="manifest" href="https://www.homestuck.com/favicon/manifest.json">
-<link rel="mask-icon" href="https://www.homestuck.com/favicon/safari-pinned-tab.svg" color="#6bbe4a">
-<meta name="theme-color" content="#ffffff">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www.homestuck.com/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://www.homestuck.com/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://www.homestuck.com/favicon/favicon-16x16.png">
+  <link rel="manifest" href="https://www.homestuck.com/favicon/manifest.json">
+  <link rel="mask-icon" href="https://www.homestuck.com/favicon/safari-pinned-tab.svg" color="#6bbe4a">
+  <meta name="theme-color" content="#ffffff">
 
-        <link rel="stylesheet" media="all" href="./Epilogue_files/manifest-epilogue-1694f2c1abc80cf72e84324f6d6486e6f04b02358ed667dee36c88974eef388f.css">
-      <link rel="stylesheet" href="./Epilogue_files/kek1uwn.css">
-    <link rel="stylesheet" media="all" href="./Epilogue_files/manifest-ui-e03365bbb17dde0f1fd5463dd7b56d096a27cae55aa131b72684e36c1f0c80f6.css">
-    <script src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE=(1)"></script>
-    <script src="./Epilogue_files/manifest-ads-story-1885683d55d6f631dc202ac5db87250ca938be96a613e85bb93739ecc057540e.js.download"></script>
+  <link rel="stylesheet" media="all"
+    href="./Epilogue_files/manifest-epilogue-1694f2c1abc80cf72e84324f6d6486e6f04b02358ed667dee36c88974eef388f.css">
+  <link rel="stylesheet" href="./Epilogue_files/kek1uwn.css">
+  <link rel="stylesheet" media="all"
+    href="./Epilogue_files/manifest-ui-e03365bbb17dde0f1fd5463dd7b56d096a27cae55aa131b72684e36c1f0c80f6.css">
+  <script
+    src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE=(1)"></script>
+  <script
+    src="./Epilogue_files/manifest-ads-story-1885683d55d6f631dc202ac5db87250ca938be96a613e85bb93739ecc057540e.js.download"></script>
 
 
-    <!-- //Connect Container: Homestuck-->
-<script src="./Epilogue_files/tag.min.js.download" async="" defer=""></script>
-  <script src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE="></script></head>
-  
-  <body class="epilogue">
+  <!-- //Connect Container: Homestuck-->
+  <script src="./Epilogue_files/tag.min.js.download" async="" defer=""></script>
+  <script
+    src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE="></script>
+</head>
 
-    
-    <header id="site-header" role="banner">
-  <div id="header-container" class="o_story-page-header row flex pad-t-0 ">
-    <a href="javascript:void(0)" data-nav-open="" class="nav-btn nav-btn--center color-white" style="overflow-wrap:normal;text-decoration:none;"><i class="icon-menu"></i><span>Menu</span></a>
-    <nav id="nav-container" data-nav-state="closed" role="navigation" class="o_nav-container">
-      <a href="javascript:void(0)" data-nav-close="" class="nav-btn color-white pad-y-rg type-rg" style="overflow-wrap:normal;text-decoration:none;"><i class="icon-close"></i><span>Dismiss</span></a>
-      <ul id="primary-nav" class="o_primary-nav style-caps weight-bold disp-ib color-white type-rg">
-     <li class="o_primary-nav-item slide-candycorn pipe"><a class="o_primary-nav-link" style="color:#39d5f6" href="Read.html">READ</a></li><!--
-     --><li class="o_primary-nav-item"><a class="o_primary-nav-link" style="color:#39d5f6" href="Credits.html">INFO</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-    
+<body class="epilogue">
 
-    <div class="row bg-white bg-light-gray--md pad-t-md--md pos-r">
-  <div id="content_container" class="mar-x-auto disp-bl bg-white" style="max-width:650px;">
-    <div class="pos-r pad-t-sm pad-x-lg--md type-center" style="overflow:visible; height:72px;">
-      <img class="hsep_bullet" alt="Chapter" src="./Epilogue_files/meat_60x60-a20ba4eabbf9e6c7e4778d99648c13802fc7ff42a24bc48bc0535494cdd82195.png">
-      <h3 class="disp-ib type-hsep-header line-tight type-lg pad-t-sm">
-        42
-      </h3>
+
+  <header id="site-header" role="banner">
+    <div id="header-container" class="o_story-page-header row flex pad-t-0 ">
+      <a href="javascript:void(0)" data-nav-open="" class="nav-btn nav-btn--center color-white"
+        style="overflow-wrap:normal;text-decoration:none;"><i class="icon-menu"></i><span>Menu</span></a>
+      <nav id="nav-container" data-nav-state="closed" role="navigation" class="o_nav-container">
+        <a href="javascript:void(0)" data-nav-close="" class="nav-btn color-white pad-y-rg type-rg"
+          style="overflow-wrap:normal;text-decoration:none;"><i class="icon-close"></i><span>Dismiss</span></a>
+        <ul id="primary-nav" class="o_primary-nav style-caps weight-bold disp-ib color-white type-rg">
+          <li class="o_primary-nav-item slide-candycorn pipe"><a class="o_primary-nav-link" style="color:#39d5f6"
+              href="Read.html">READ</a></li>
+          <!--
+     -->
+          <li class="o_primary-nav-item"><a class="o_primary-nav-link" style="color:#39d5f6"
+              href="Credits.html">INFO</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <div class="row bg-white bg-light-gray--md pad-t-md--md pos-r">
+    <div id="content_container" class="mar-x-auto disp-bl bg-white" style="max-width:650px;">
+      <div class="pos-r pad-t-sm pad-x-lg--md type-center" style="overflow:visible; height:72px;">
+        <img class="hsep_bullet" alt="Chapter"
+          src="./Epilogue_files/meat_60x60-a20ba4eabbf9e6c7e4778d99648c13802fc7ff42a24bc48bc0535494cdd82195.png">
+        <h3 class="disp-ib type-hsep-header line-tight type-lg pad-t-sm">
+          42
+        </h3>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="row bg-white bg-light-gray--md pad-b-md pad-b-lg--md pos-r pad-t-md pad-t-0--md">
-  <div class="mar-x-auto disp-bl bg-white pad-t-lg" style="max-width:650px;">
-      <div class="o-story_text o_epilogue type-rg type-sm--md line-caption line-copy--md pad-x-0 pad-x-lg--md pad-b-lg"><div class="chat type-rg type-hs-small--md" style="margin-top:0">  
-  <p class="roxy">ROXY: so uhhh</p>
-  
-  <p class="roxy">ROXY: dirk needs to be stopped from</p>
-  
-  <p class="roxy">ROXY: doin what again?</p>
-  
-  <p class="jade">JADE: everything!!!</p>
-  
-  <p class="jade">JADE: whatever hes trying to do RIGHT NOW!</p>
-  
-  <p class="jade">JADE: like.....</p>
-  
-  <p class="jade">JADE: um</p>
-  
-  <p class="jade">JADE: woof this is going to be hard to explain :\</p>
-  
-  <p class="kanaya">KANAYA: Are You Sure Jade</p>
-  
-  <p class="kanaya">KANAYA: After All He Is The One Who Provided Me With The Medicine That Just Woke You Up</p>
-  
-  <p class="jade">JADE: he did?</p>
-  
-  <p class="kanaya">KANAYA: yes</p>
-  
-  <p class="jade">JADE: huh</p>
-  
-  <p class="jade">JADE: ok but...</p>
-  
-  <p class="jade">JADE: hes the one who SHOT me in the first place!</p>
-  
-  <p class="roxy">ROXY: !!!</p>
-  
-  <p class="kanaya">KANAYA: He What</p>
-  
-  <p class="roxy">ROXY: why would he do that</p>
-  
-  <p class="jade">JADE: he needed me to be asleep</p>
-  
-  <p class="jade">JADE: so that</p>
-  
-  <p class="jade">JADE: he could... um</p>
-  
-  <p class="jade">JADE: argh!</p>
-  
-  <p class="jade">JADE: whats going on right now is really abstract, im sorry!</p>
-  
-  <p class="jade">JADE: but you have to believe me this is a CRISIS!!!</p>
-  
-  <p class="kanaya">KANAYA: Okay</p>
-  
-  <p class="kanaya">KANAYA: But Maybe We Shouldnt Rush To Judgment</p>
-  
-  <p class="kanaya">KANAYA: You Have Been In A Coma For Some Time</p>
-  
-  <p class="kanaya">KANAYA: Maybe Its Best To Take A Little While To Recover And Then Gather Your Thoughts</p>
-  
-  <p class="jade">JADE: but.....</p>
-  
-  <p class="kanaya">KANAYA: For Now I Dont See Much Reason To Doubt Dirks Good Intentions</p>
-  
-  <p class="kanaya">KANAYA: He Gave Me This Medicine</p>
-  
-  <p class="kanaya">KANAYA: And We Just Had A Pretty Good Talk Today</p>
-  
-  <p class="kanaya">KANAYA: I Think It Helped Me</p>
-  
-  <p class="kanaya">KANAYA: Clear The Air On A Few Things</p>
-  
-  <p class="kanaya">KANAYA: And Now I Feel Better I Think</p>
-  
-  <p class="kanaya">KANAYA: Sad And Heartbroken Yes But</p>
-  
-  <p class="kanaya">KANAYA: Free</p>
-  
-  <p class="roxy">ROXY: free</p>
-  
-  <p class="roxy">ROXY: whatre u talkin about kanaya</p>
-  
-  <p class="roxy">ROXY: what did he say</p>
-  
-  <p class="kanaya">KANAYA: Hes Going To Take Good Care Of Rose</p>
-  
-  <p class="kanaya">KANAYA: Probably Much Better Than Id Ever Be Able To</p>
-  
-  <p class="kanaya">KANAYA: Ill Miss Her But Im At Least Thankful For That</p>
-  
-  <p class="jade">JADE: THANKFUL??</p>
-  
-  <p class="jade">JADE: kanaya...</p>
-  
-  <p class="jade">JADE: did</p>
-  
-  <p class="jade">JADE: did dirk KIDNAP ROSE?!</p>
-  
-  <p class="kanaya">KANAYA: No No</p>
-  
-  <p class="kanaya">KANAYA: Its Not Like That At All</p>
-  
-  <p class="kanaya">KANAYA: You See He</p>
-  
-  <p class="kanaya">KANAYA: Okay</p>
-  
-  <p class="kanaya">KANAYA: Yes I Know How This Must Sound</p>
-  
-  <p class="roxy">ROXY: so like</p>
-  
-  <p class="roxy">ROXY: where IS rose</p>
-  
-  <p class="roxy">ROXY: is she with him</p>
-  
-  <p class="kanaya">KANAYA: Yes</p>
-  
-  <p class="kanaya">KANAYA: Theyre</p>
-  
-  <p class="kanaya">KANAYA: Well</p>
-  
-  <p class="kanaya">KANAYA: I Guess They Have Formed A Strong Human Familial Bond Such That It Is No Longer Necessary For Rose To Have Me As Her Spouse</p>
-  
-  <p class="kanaya">KANAYA: And Now They Will Leave This Planet Together And</p>
-  
-  <p class="kanaya">KANAYA: Do Important Things I Guess Which Do Not Concern Us</p>
-  
-  <p class="roxy">ROXY: WHAT?????</p>
-  
-  <p class="kanaya">KANAYA: No I Know</p>
-  
-  <p class="kanaya">KANAYA: It Probably Sounds</p>
-  
-  <p class="kanaya">KANAYA: Um</p>
-  
-  <p class="kanaya">KANAYA: Well I Know How It Sounds But Please Believe Me That Appearances Are Misleading Here</p>
-  
-  <p class="roxy">ROXY: the appearance that like</p>
-  
-  <p class="roxy">ROXY: the dude just kidnapped ur fuckin WIFE and peaced out??</p>
-  
-  <p class="kanaya">KANAYA: Y-</p>
-  
-  <p class="kanaya">KANAYA: Yes?</p>
-  
-  <p class="kanaya">KANAYA: I</p>
-  
-  <p class="kanaya">KANAYA: Hmm</p>
-  
-  <p class="jade">JADE: you see???</p>
-  
-  <p class="jade">JADE: somethings wrong!</p>
-  
-  <p class="jade">JADE: kanaya...</p>
-  
-  <p class="jade">JADE: can i just ask</p>
-  
-  <p class="jade">JADE: how did you come to feel this way? like, to be this ok with it i mean?</p>
-  
-  <p class="kanaya">KANAYA: ...</p>
-  
-  <p class="jade">JADE: did dirk convince you to be fine with this directly, like in a conversation?</p>
-  
-  <p class="jade">JADE: or did you just make peace with it on your own?</p>
-  
-  <p class="kanaya">KANAYA: I Was Running Around Desperately Trying To Catch Them In The Act Of Their Duplicitous Behavior</p>
-  
-  <p class="kanaya">KANAYA: And Then</p>
-  
-  <p class="kanaya">KANAYA: I Sat Down And Thought About It</p>
-  
-  <p class="kanaya">KANAYA: And Realized I Was Being Foolish</p>
-  
-  <p class="kanaya">KANAYA: That It Was Better To Let Rose Go If That Is What She Really Wanted</p>
-  
-  <p class="jade">JADE: THERE!</p>
-  
-  <p class="jade">JADE: THATS IT!</p>
-  
-  <p class="jade">JADE: thats what im talking about, kanaya theres no WAY you would just let rose go like that without someone pulling the strings!</p>
-  
-  <p class="jade">JADE: dirks been FUCKING with you!</p>
-  
-  <p class="jade">JADE: hes been fucking with ALL OF US!!!</p>
-  
-  <p class="roxy">ROXY: god damn</p>
-  
-  <p class="roxy">ROXY: rly??</p>
-  
-  <p class="jade">JADE: YES!</p>
-  
-  <p class="jade">JADE: kanaya! THINK about it for a second!</p>
-  
-  <p class="jade">JADE: think about how you REALLY feel! about rose, about all of this!</p>
-  
-  <p class="jade">JADE: are you SURE youre just... FINE with rose leaving just like THAT?</p>
-  
-  <p class="kanaya">KANAYA: Im...</p>
-</div>
-  <p class="no-indent dirk">It’s fine, Kanaya. Why don’t we just say I’m invoking the mercy rule here. Jade is onto me obviously. But I wouldn’t have even let her wake up if there was anything you all could do about it by now. As the cherub resurfaces in her mind, I’ll be fading out of here soon anyway. I don’t see any reason to keep my dear friends in limbo any longer than they need to be.</p>
-  <p class="dirk">So forget what I said. All that stuff about you not being good enough for her. It probably wasn’t true. I mean, what do I know? How worthy you are of another’s company is just a matter of the choices you make, right? I’m sure you could figure out how to prove your worth to her if you really tried. For now, the only thing that really matters is to acknowledge it’s too late for any of that.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="kanaya">KANAYA: Wait</p>
-  
-  <p class="kanaya">KANAYA: I Dont...</p>
-  
-  <p class="kanaya">KANAYA: Im Confused</p>
-  
-  <p class="roxy">ROXY: ???</p>
-  
-  <p class="kanaya">KANAYA: Why Didnt I At Least </p>
-  
-  <p class="kanaya">KANAYA: Demand To See My Wife Before They Departed While I Had Dirk On The Phone</p>
-  
-  <p class="roxy">ROXY: omg u didnt even SEE her before she left??</p>
-  
-  <p class="kanaya">KANAYA: No</p>
-  
-  <p class="kanaya">KANAYA: At The Time It Didnt Feel Right To Ask I Guess</p>
-  
-  <p class="kanaya">KANAYA: I Was So Devastated I Thought</p>
-  
-  <p class="kanaya">KANAYA: That I Should Just</p>
-  
-  <p class="kanaya">KANAYA: I Dont Know What I Thought</p>
-  
-  <p class="kanaya">KANAYA: What</p>
-  
-  <p class="kanaya">KANAYA: What Was I THINKING?</p>
-  
-  <p class="jade">JADE: :(</p>
-</div>
-  <p class="no-indent dirk">Kanaya stares into the distance. The best fucking question anybody ever asked is: why am I so fucking awesome? I believe I’ve recently provided more than enough material to supply an answer to that question. But Kanaya may have just asked the second-best fucking question anybody ever asked. What WAS she thinking? What are any of us thinking, really? Who’s doing the thinking, and who’s having the thoughts?</p>
-  <p class="dirk">The more you study the question, the more it seems all concrete forms of accountability go up in smoke. Her original thoughts were never that important, and the significance of the idea that she was the one authoring them was always a bit overrated. My mission is to someday clear this all up for everyone. Remove the ambiguity, suck the mud out of the water. It’ll be a lot better that way, trust me.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="kanaya">KANAYA: HAVE I LOST MY FUCKING MIND?????????</p>
-</div>
-  <p class="no-indent dirk">She’s really pissed. Yikes. Couldn’t pay me to be in that room right now. Not for all the agency in the world.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="kanaya">KANAYA: WHAT HAS DIRK DONE TO MY WIFE?!</p>
-  
-  <p class="roxy">ROXY: whoa</p>
-  
-  <p class="roxy">ROXY: what u mean there </p>
-  
-  <p class="kanaya">KANAYA: HE DID SOMETHING TO HER!</p>
-  
-  <p class="kanaya">KANAYA: HE HAS CORRUPTED HER IN SOME WAY!</p>
-  
-  <p class="kanaya">KANAYA: I KNOW ROSE! I LOVE ROSE!</p>
-  
-  <p class="kanaya">KANAYA: SHE WOULD NEVER DO SOMETHING LIKE THIS TO ME!</p>
-  
-  <p class="kanaya">KANAYA: SHE WOULDNT DO IT TO ANYONE! NOT UNLESS SHE WAS UNDER DURESS IN SOME WAY!</p>
-  
-  <p class="kanaya">KANAYA: ITS DIRK! ITS *ALWAYS* BEEN DIRK!!</p>
-  
-  <p class="kanaya">KANAYA: HE IS BEHIND THIS! ILL GET HIM FOR THIS!</p>
-  
-  <p class="kanaya">KANAYA: ***I SWEAR THAT I SHALL MAKE HIM PAY DEARLY FOR STEALING MY BELOVED WIFE!***</p>
-  
-  <p class="roxy">ROXY: :o</p>
-  
-  <p class="kanaya">KANAYA: JADE!!!!!</p>
-</div>
-  <p class="no-indent dirk">She uses both hands to grab Jade by the hospital gown and starts shaking her vigorously. But she’s unlikely to get answers from her that way. If anything, she’ll cause her to go silent a lot more quickly than she was about to anyway. She’s just wresting the spirit from her slumber.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="kanaya">KANAYA: TELL ME EVERYTHING YOU KNOW!</p>
-  
-  <p class="kanaya">KANAYA: WHY DOES DIRK HAVE TO BE STOPPED?! WHAT DOES THAT *MEAN*?!!</p>
-  
-  <p class="kanaya">KANAYA: HOW DID YOU LEARN OF ALL THIS?! TELL ME YOUR SECRETS DAMN IT!</p>
-  
-  <p class="jade">JADE: um... k-kan... kanyayaya...</p>
-  
-  <p class="jade">JADE: argh! p-please! s-s-stop shaking me-e-e-e!</p>
-  
-  <p class="kanaya">KANAYA: IM!</p>
-  
-  <p class="kanaya">KANAYA: Im Sorry</p>
-  
-  <p class="jade">JADE: when i was asleep, i saw things...</p>
-  
-  <p class="jade">JADE: and was visited in my dreams by the old muse who once helped us</p>
-  
-  <p class="jade">JADE: callies ghost double</p>
-  
-  <p class="jade">JADE: and... </p>
-  
-  <p class="jade">JADE: there was so much</p>
-  
-  <p class="jade">JADE: all these memories from different timelines and such</p>
-  
-  <p class="jade">JADE: sad memories, visions of death and sacrifices... a great battle with lord english</p>
-  
-  <p class="jade">JADE: it was so overwhelming and hard to make sense of</p>
-  
-  <p class="kanaya">KANAYA: Yes Yes But What About DIRK</p>
-  
-  <p class="jade">JADE: im trying to get to that!</p>
-  
-  <p class="jade">JADE: the thing with dirk is...</p>
-  
-  <p class="jade">JADE: is...</p>
-</div>
-  <p class="no-indent dirk"><span class="type-sm type-hs-small--md">It’s happening. Roxy notices it right away, because she’s seen it before. And now Kanaya sees it too. A distant look in her eyes as she trails off. They get cloudy, turn gray, and then fill in completely, as if jet-black ink were flooding the vitreous bodies of her eyeballs. Jade isn’t here anymore.</span></p>
-  <p class="dirk"><span class="type-hs-small type-bs--md">And with that, I’ll be getting my hat and coat, so to speak. No use lingering around here much longer. The cherub is already beginning to drown me out. I can feel it. But this time, I’m ready.</span></p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="kanaya">KANAYA: Jade?</p>
-  
-  <p class="kanaya">KANAYA: JADE???</p>
-  
-  <p class="roxy">ROXY: aw no</p>
-  
-  <p class="roxy">ROXY: not again with this shit</p>
-  
-  <p class="kanaya">KANAYA: JADE! NO!</p>
-  
-  <p class="kanaya">KANAYA: PLEASE SNAP OUT OF THIS...</p>
-  
-  <p class="kanaya">KANAYA: THIS *GRIM CONDITION* OF SORTS</p>
-  
-  <p class="kanaya">KANAYA: I NEED YOU TO TELL ME WHAT YOU KNOW!</p>
-</div>
-  <p class="no-indent dirk"><span class="type-bs type-hs-bottom--md">She’s not going to tell you shit. Not for a good while anyway. It’s up to the cherub to let go of her now. And I doubt she’ll do that before I’m light-years away from this planet. She’ll keep jamming my signal, and won’t dare risk stopping until she knows I’m at a safe distance.</span></p>
-  <p class="dirk"><span class="type-bs type-hs-bottom--md">Kind of a catch-22, right, Kanaya? The one who’s “protecting” you all from my influence is also blocking you from getting any answers. Not that you’d even know what to do with them.</span></p>
-  <p class="no-indent calliope-dead" style="margin:15px 0">they will know what to do, when they are ready.</p>
-  <p class="no-indent dirk"><span class="type-bs type-hs-bottom--md">Ha ha. Sure. They’ll all just hop in a spaceship and go on a wild goose chase trying to hunt me down. I know that already. It’s really not rocket science. Except for the fact that it literally is.</span></p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="roxy">ROXY: kanaya pls chill</p>
-  
-  <p class="roxy">ROXY: ive seen this before</p>
-  
-  <p class="roxy">ROXY: theres no breakin her out of this</p>
-  
-  <p class="roxy">ROXY: except uh</p>
-  
-  <p class="roxy">ROXY: i guess by doing what dirk did?</p>
-  
-  <p class="roxy">ROXY: shooting her and wakin her up and...</p>
-  
-  <p class="roxy">ROXY: man</p>
-  
-  <p class="roxy">ROXY: poor jade :(</p>
-  
-  <p class="kanaya">KANAYA: Yes Poor Jade!</p>
-  
-  <p class="kanaya">KANAYA: Poor Me!!</p>
-  
-  <p class="kanaya">KANAYA: Poor ROSE!!!</p>
-  
-  <p class="kanaya">KANAYA: POOR EVERYONE!!!!</p>
-  
-  <p class="kanaya">KANAYA: FUCK DIRK!!!!!</p>
-  
-  <p class="kanaya">KANAYA: AAAAAAAAAAAAAAAAAAAAAH!</p>
-</div>
-  <p class="no-indent dirk"><span class="type-bs type-hs-bottom--md">She picks up the heart monitor and throws it out the hospital window. Holy shit?</span></p>
-  <p class="no-indent calliope-dead" style="margin:15px 0">she picks up the heart monitor, and throws it out the hospital window. </p>
-  <p class="no-indent dirk"><span class="type-bs type-hs-bottom--md">Oh, yeah. I guess I don’t need to fucking do this anymore. Don’t worry, I’ll bow out. Seems like you got this from here. Go nuts, skull girl.</span></p>
-  <p class="no-indent calliope-dead" style="margin:15px 0 0 0">the monitor smashes on the pavement below, shattering into a thousand pieces. spectators gather around, and look up. roxy is looking out the broken window with an apologetic demeanor, a hand to his mouth.</p>
-  <p class="calliope-dead" style="margin:0 0 15px 0">kanaya drops to the floor and begins weeping again. she feels the sorrow anew from her wife’s departure, with a sense of rage and pain unshrouded by the veil of the prince. neither she nor her friends will have to worry about him anymore, so long as they remain on this planet and under my protection.</p>
-  <p class="no-indent dirk"><span class="type-bs type-hs-bottom--md">But a bunch of them won’t remain, will they? They won’t be able to help themselves. You know that.</span></p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="kanaya">KANAYA: He Has To Be Stopped...</p>
-  
-  <p class="kanaya">KANAYA: He Has To Be Stopped...</p>
-</div>
-  <p class="no-indent calliope-dead" style="margin:0 0 15px 0">huddled on the floor, she repeats this pledge to herself. theoretically, he could be stopped before he leaves, if they hurried. they would need to know what to do, where to go, and to have the motivation to do it, but time is short. i could push them to, with a certain degree of intervention, but i will not. my unwillingness to do so is what separates me from him. and what corporeal life needs now is someone presiding over them who is <em>nothing</em> like him at all.</p>
-  <p class="no-indent dirk"><span class="type-bs type-hs-bottom--md">That’s a nice line. I get why you’d want to dial up the drama, making your grand reentrance and all. But the fact is, even if they wanted to, even if you brain-fried them all to become your own personal cherubic puppets and sent them on the warpath to come get me, they’d still never catch me. You still don’t get it yet.</span></p>
-  <p class="dirk"><span class="type-bs type-hs-bottom--md">I’m already gone.</span></p></div>
+  <div class="row bg-white bg-light-gray--md pad-b-md pad-b-lg--md pos-r pad-t-md pad-t-0--md">
+    <div class="mar-x-auto disp-bl bg-white pad-t-lg" style="max-width:650px;">
+      <div class="o-story_text o_epilogue type-rg type-sm--md line-caption line-copy--md pad-x-0 pad-x-lg--md pad-b-lg">
+        <div class="chat type-rg type-hs-small--md" style="margin-top:0">
+          <p class="roxy">ROXY: so uhhh</p>
+
+          <p class="roxy">ROXY: dirk needs to be stopped from</p>
+
+          <p class="roxy">ROXY: doin what again?</p>
+
+          <p class="jade">JADE: everything!!!</p>
+
+          <p class="jade">JADE: whatever hes trying to do RIGHT NOW!</p>
+
+          <p class="jade">JADE: like.....</p>
+
+          <p class="jade">JADE: um</p>
+
+          <p class="jade">JADE: woof this is going to be hard to explain :\</p>
+
+          <p class="kanaya">KANAYA: Are You Sure Jade</p>
+
+          <p class="kanaya">KANAYA: After All He Is The One Who Provided Me With The Medicine That Just Woke You Up</p>
+
+          <p class="jade">JADE: he did?</p>
+
+          <p class="kanaya">KANAYA: yes</p>
+
+          <p class="jade">JADE: huh</p>
+
+          <p class="jade">JADE: ok but...</p>
+
+          <p class="jade">JADE: hes the one who SHOT me in the first place!</p>
+
+          <p class="roxy">ROXY: !!!</p>
+
+          <p class="kanaya">KANAYA: He What</p>
+
+          <p class="roxy">ROXY: why would he do that</p>
+
+          <p class="jade">JADE: he needed me to be asleep</p>
+
+          <p class="jade">JADE: so that</p>
+
+          <p class="jade">JADE: he could... um</p>
+
+          <p class="jade">JADE: argh!</p>
+
+          <p class="jade">JADE: whats going on right now is really abstract, im sorry!</p>
+
+          <p class="jade">JADE: but you have to believe me this is a CRISIS!!!</p>
+
+          <p class="kanaya">KANAYA: Okay</p>
+
+          <p class="kanaya">KANAYA: But Maybe We Shouldnt Rush To Judgment</p>
+
+          <p class="kanaya">KANAYA: You Have Been In A Coma For Some Time</p>
+
+          <p class="kanaya">KANAYA: Maybe Its Best To Take A Little While To Recover And Then Gather Your Thoughts</p>
+
+          <p class="jade">JADE: but.....</p>
+
+          <p class="kanaya">KANAYA: For Now I Dont See Much Reason To Doubt Dirks Good Intentions</p>
+
+          <p class="kanaya">KANAYA: He Gave Me This Medicine</p>
+
+          <p class="kanaya">KANAYA: And We Just Had A Pretty Good Talk Today</p>
+
+          <p class="kanaya">KANAYA: I Think It Helped Me</p>
+
+          <p class="kanaya">KANAYA: Clear The Air On A Few Things</p>
+
+          <p class="kanaya">KANAYA: And Now I Feel Better I Think</p>
+
+          <p class="kanaya">KANAYA: Sad And Heartbroken Yes But</p>
+
+          <p class="kanaya">KANAYA: Free</p>
+
+          <p class="roxy">ROXY: free</p>
+
+          <p class="roxy">ROXY: whatre u talkin about kanaya</p>
+
+          <p class="roxy">ROXY: what did he say</p>
+
+          <p class="kanaya">KANAYA: Hes Going To Take Good Care Of Rose</p>
+
+          <p class="kanaya">KANAYA: Probably Much Better Than Id Ever Be Able To</p>
+
+          <p class="kanaya">KANAYA: Ill Miss Her But Im At Least Thankful For That</p>
+
+          <p class="jade">JADE: THANKFUL??</p>
+
+          <p class="jade">JADE: kanaya...</p>
+
+          <p class="jade">JADE: did</p>
+
+          <p class="jade">JADE: did dirk KIDNAP ROSE?!</p>
+
+          <p class="kanaya">KANAYA: No No</p>
+
+          <p class="kanaya">KANAYA: Its Not Like That At All</p>
+
+          <p class="kanaya">KANAYA: You See He</p>
+
+          <p class="kanaya">KANAYA: Okay</p>
+
+          <p class="kanaya">KANAYA: Yes I Know How This Must Sound</p>
+
+          <p class="roxy">ROXY: so like</p>
+
+          <p class="roxy">ROXY: where IS rose</p>
+
+          <p class="roxy">ROXY: is she with him</p>
+
+          <p class="kanaya">KANAYA: Yes</p>
+
+          <p class="kanaya">KANAYA: Theyre</p>
+
+          <p class="kanaya">KANAYA: Well</p>
+
+          <p class="kanaya">KANAYA: I Guess They Have Formed A Strong Human Familial Bond Such That It Is No Longer
+            Necessary For Rose To Have Me As Her Spouse</p>
+
+          <p class="kanaya">KANAYA: And Now They Will Leave This Planet Together And</p>
+
+          <p class="kanaya">KANAYA: Do Important Things I Guess Which Do Not Concern Us</p>
+
+          <p class="roxy">ROXY: WHAT?????</p>
+
+          <p class="kanaya">KANAYA: No I Know</p>
+
+          <p class="kanaya">KANAYA: It Probably Sounds</p>
+
+          <p class="kanaya">KANAYA: Um</p>
+
+          <p class="kanaya">KANAYA: Well I Know How It Sounds But Please Believe Me That Appearances Are Misleading Here
+          </p>
+
+          <p class="roxy">ROXY: the appearance that like</p>
+
+          <p class="roxy">ROXY: the dude just kidnapped ur fuckin WIFE and peaced out??</p>
+
+          <p class="kanaya">KANAYA: Y-</p>
+
+          <p class="kanaya">KANAYA: Yes?</p>
+
+          <p class="kanaya">KANAYA: I</p>
+
+          <p class="kanaya">KANAYA: Hmm</p>
+
+          <p class="jade">JADE: you see???</p>
+
+          <p class="jade">JADE: somethings wrong!</p>
+
+          <p class="jade">JADE: kanaya...</p>
+
+          <p class="jade">JADE: can i just ask</p>
+
+          <p class="jade">JADE: how did you come to feel this way? like, to be this ok with it i mean?</p>
+
+          <p class="kanaya">KANAYA: ...</p>
+
+          <p class="jade">JADE: did dirk convince you to be fine with this directly, like in a conversation?</p>
+
+          <p class="jade">JADE: or did you just make peace with it on your own?</p>
+
+          <p class="kanaya">KANAYA: I Was Running Around Desperately Trying To Catch Them In The Act Of Their
+            Duplicitous Behavior</p>
+
+          <p class="kanaya">KANAYA: And Then</p>
+
+          <p class="kanaya">KANAYA: I Sat Down And Thought About It</p>
+
+          <p class="kanaya">KANAYA: And Realized I Was Being Foolish</p>
+
+          <p class="kanaya">KANAYA: That It Was Better To Let Rose Go If That Is What She Really Wanted</p>
+
+          <p class="jade">JADE: THERE!</p>
+
+          <p class="jade">JADE: THATS IT!</p>
+
+          <p class="jade">JADE: thats what im talking about, kanaya theres no WAY you would just let rose go like that
+            without someone pulling the strings!</p>
+
+          <p class="jade">JADE: dirks been FUCKING with you!</p>
+
+          <p class="jade">JADE: hes been fucking with ALL OF US!!!</p>
+
+          <p class="roxy">ROXY: god damn</p>
+
+          <p class="roxy">ROXY: rly??</p>
+
+          <p class="jade">JADE: YES!</p>
+
+          <p class="jade">JADE: kanaya! THINK about it for a second!</p>
+
+          <p class="jade">JADE: think about how you REALLY feel! about rose, about all of this!</p>
+
+          <p class="jade">JADE: are you SURE youre just... FINE with rose leaving just like THAT?</p>
+
+          <p class="kanaya">KANAYA: Im...</p>
+        </div>
+        <p class="no-indent dirk">It’s fine, Kanaya. Why don’t we just say I’m invoking the mercy rule here. Jade is
+          onto me obviously. But I wouldn’t have even let her wake up if there was anything you all could do about it by
+          now. As the cherub resurfaces in her mind, I’ll be fading out of here soon anyway. I don’t see any reason to
+          keep my dear friends in limbo any longer than they need to be.</p>
+        <p class="dirk">So forget what I said. All that stuff about you not being good enough for her. It probably
+          wasn’t true. I mean, what do I know? How worthy you are of another’s company is just a matter of the choices
+          you make, right? I’m sure you could figure out how to prove your worth to her if you really tried. For now,
+          the only thing that really matters is to acknowledge it’s too late for any of that.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="kanaya">KANAYA: Wait</p>
+
+          <p class="kanaya">KANAYA: I Dont...</p>
+
+          <p class="kanaya">KANAYA: Im Confused</p>
+
+          <p class="roxy">ROXY: ???</p>
+
+          <p class="kanaya">KANAYA: Why Didnt I At Least </p>
+
+          <p class="kanaya">KANAYA: Demand To See My Wife Before They Departed While I Had Dirk On The Phone</p>
+
+          <p class="roxy">ROXY: omg u didnt even SEE her before she left??</p>
+
+          <p class="kanaya">KANAYA: No</p>
+
+          <p class="kanaya">KANAYA: At The Time It Didnt Feel Right To Ask I Guess</p>
+
+          <p class="kanaya">KANAYA: I Was So Devastated I Thought</p>
+
+          <p class="kanaya">KANAYA: That I Should Just</p>
+
+          <p class="kanaya">KANAYA: I Dont Know What I Thought</p>
+
+          <p class="kanaya">KANAYA: What</p>
+
+          <p class="kanaya">KANAYA: What Was I THINKING?</p>
+
+          <p class="jade">JADE: :(</p>
+        </div>
+        <p class="no-indent dirk">Kanaya stares into the distance. The best fucking question anybody ever asked is: why
+          am I so fucking awesome? I believe I’ve recently provided more than enough material to supply an answer to
+          that question. But Kanaya may have just asked the second-best fucking question anybody ever asked. What WAS
+          she thinking? What are any of us thinking, really? Who’s doing the thinking, and who’s having the thoughts?
+        </p>
+        <p class="dirk">The more you study the question, the more it seems all concrete forms of accountability go up in
+          smoke. Her original thoughts were never that important, and the significance of the idea that she was the one
+          authoring them was always a bit overrated. My mission is to someday clear this all up for everyone. Remove the
+          ambiguity, suck the mud out of the water. It’ll be a lot better that way, trust me.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="kanaya">KANAYA: HAVE I LOST MY FUCKING MIND?????????</p>
+        </div>
+        <p class="no-indent dirk">She’s really pissed. Yikes. Couldn’t pay me to be in that room right now. Not for all
+          the agency in the world.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="kanaya">KANAYA: WHAT HAS DIRK DONE TO MY WIFE?!</p>
+
+          <p class="roxy">ROXY: whoa</p>
+
+          <p class="roxy">ROXY: what u mean there </p>
+
+          <p class="kanaya">KANAYA: HE DID SOMETHING TO HER!</p>
+
+          <p class="kanaya">KANAYA: HE HAS CORRUPTED HER IN SOME WAY!</p>
+
+          <p class="kanaya">KANAYA: I KNOW ROSE! I LOVE ROSE!</p>
+
+          <p class="kanaya">KANAYA: SHE WOULD NEVER DO SOMETHING LIKE THIS TO ME!</p>
+
+          <p class="kanaya">KANAYA: SHE WOULDNT DO IT TO ANYONE! NOT UNLESS SHE WAS UNDER DURESS IN SOME WAY!</p>
+
+          <p class="kanaya">KANAYA: ITS DIRK! ITS *ALWAYS* BEEN DIRK!!</p>
+
+          <p class="kanaya">KANAYA: HE IS BEHIND THIS! ILL GET HIM FOR THIS!</p>
+
+          <p class="kanaya">KANAYA: ***I SWEAR THAT I SHALL MAKE HIM PAY DEARLY FOR STEALING MY BELOVED WIFE!***</p>
+
+          <p class="roxy">ROXY: :o</p>
+
+          <p class="kanaya">KANAYA: JADE!!!!!</p>
+        </div>
+        <p class="no-indent dirk">She uses both hands to grab Jade by the hospital gown and starts shaking her
+          vigorously. But she’s unlikely to get answers from her that way. If anything, she’ll cause her to go silent a
+          lot more quickly than she was about to anyway. She’s just wresting the spirit from her slumber.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="kanaya">KANAYA: TELL ME EVERYTHING YOU KNOW!</p>
+
+          <p class="kanaya">KANAYA: WHY DOES DIRK HAVE TO BE STOPPED?! WHAT DOES THAT *MEAN*?!!</p>
+
+          <p class="kanaya">KANAYA: HOW DID YOU LEARN OF ALL THIS?! TELL ME YOUR SECRETS DAMN IT!</p>
+
+          <p class="jade">JADE: um... k-kan... kanyayaya...</p>
+
+          <p class="jade">JADE: argh! p-please! s-s-stop shaking me-e-e-e!</p>
+
+          <p class="kanaya">KANAYA: IM!</p>
+
+          <p class="kanaya">KANAYA: Im Sorry</p>
+
+          <p class="jade">JADE: when i was asleep, i saw things...</p>
+
+          <p class="jade">JADE: and was visited in my dreams by the old muse who once helped us</p>
+
+          <p class="jade">JADE: callies ghost double</p>
+
+          <p class="jade">JADE: and... </p>
+
+          <p class="jade">JADE: there was so much</p>
+
+          <p class="jade">JADE: all these memories from different timelines and such</p>
+
+          <p class="jade">JADE: sad memories, visions of death and sacrifices... a great battle with lord english</p>
+
+          <p class="jade">JADE: it was so overwhelming and hard to make sense of</p>
+
+          <p class="kanaya">KANAYA: Yes Yes But What About DIRK</p>
+
+          <p class="jade">JADE: im trying to get to that!</p>
+
+          <p class="jade">JADE: the thing with dirk is...</p>
+
+          <p class="jade">JADE: is...</p>
+        </div>
+        <p class="no-indent dirk"><span class="type-sm type-hs-small--md">It’s happening. Roxy notices it right away,
+            because she’s seen it before. And now Kanaya sees it too. A distant look in her eyes as she trails off. They
+            get cloudy, turn gray, and then fill in completely, as if jet-black ink were flooding the vitreous bodies of
+            her eyeballs. Jade isn’t here anymore.</span></p>
+        <p class="dirk"><span class="type-hs-small type-bs--md">And with that, I’ll be getting my hat and coat, so to
+            speak. No use lingering around here much longer. The cherub is already beginning to drown me out. I can feel
+            it. But this time, I’m ready.</span></p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="kanaya">KANAYA: Jade?</p>
+
+          <p class="kanaya">KANAYA: JADE???</p>
+
+          <p class="roxy">ROXY: aw no</p>
+
+          <p class="roxy">ROXY: not again with this shit</p>
+
+          <p class="kanaya">KANAYA: JADE! NO!</p>
+
+          <p class="kanaya">KANAYA: PLEASE SNAP OUT OF THIS...</p>
+
+          <p class="kanaya">KANAYA: THIS *GRIM CONDITION* OF SORTS</p>
+
+          <p class="kanaya">KANAYA: I NEED YOU TO TELL ME WHAT YOU KNOW!</p>
+        </div>
+        <p class="no-indent dirk"><span class="type-bs type-hs-bottom--md">She’s not going to tell you shit. Not for a
+            good while anyway. It’s up to the cherub to let go of her now. And I doubt she’ll do that before I’m
+            light-years away from this planet. She’ll keep jamming my signal, and won’t dare risk stopping until she
+            knows I’m at a safe distance.</span></p>
+        <p class="dirk"><span class="type-bs type-hs-bottom--md">Kind of a catch-22, right, Kanaya? The one who’s
+            “protecting” you all from my influence is also blocking you from getting any answers. Not that you’d even
+            know what to do with them.</span></p>
+        <p class="no-indent calliope-dead" style="margin:15px 0">they will know what to do, when they are ready.</p>
+        <p class="no-indent dirk"><span class="type-bs type-hs-bottom--md">Ha ha. Sure. They’ll all just hop in a
+            spaceship and go on a wild goose chase trying to hunt me down. I know that already. It’s really not rocket
+            science. Except for the fact that it literally is.</span></p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="roxy">ROXY: kanaya pls chill</p>
+
+          <p class="roxy">ROXY: ive seen this before</p>
+
+          <p class="roxy">ROXY: theres no breakin her out of this</p>
+
+          <p class="roxy">ROXY: except uh</p>
+
+          <p class="roxy">ROXY: i guess by doing what dirk did?</p>
+
+          <p class="roxy">ROXY: shooting her and wakin her up and...</p>
+
+          <p class="roxy">ROXY: man</p>
+
+          <p class="roxy">ROXY: poor jade :(</p>
+
+          <p class="kanaya">KANAYA: Yes Poor Jade!</p>
+
+          <p class="kanaya">KANAYA: Poor Me!!</p>
+
+          <p class="kanaya">KANAYA: Poor ROSE!!!</p>
+
+          <p class="kanaya">KANAYA: POOR EVERYONE!!!!</p>
+
+          <p class="kanaya">KANAYA: FUCK DIRK!!!!!</p>
+
+          <p class="kanaya">KANAYA: AAAAAAAAAAAAAAAAAAAAAH!</p>
+        </div>
+        <p class="no-indent dirk"><span class="type-bs type-hs-bottom--md">She picks up the heart monitor and throws it
+            out the hospital window. Holy shit?</span></p>
+        <p class="no-indent calliope-dead" style="margin:15px 0">she picks up the heart monitor, and throws it out the
+          hospital window. </p>
+        <p class="no-indent dirk"><span class="type-bs type-hs-bottom--md">Oh, yeah. I guess I don’t need to fucking do
+            this anymore. Don’t worry, I’ll bow out. Seems like you got this from here. Go nuts, skull girl.</span></p>
+        <p class="no-indent calliope-dead" style="margin:15px 0 0 0">the monitor smashes on the pavement below,
+          shattering into a thousand pieces. spectators gather around, and look up. roxy is looking out the broken
+          window with an apologetic demeanor, a hand to his mouth.</p>
+        <p class="calliope-dead" style="margin:0 0 15px 0">kanaya drops to the floor and begins weeping again. she feels
+          the sorrow anew from her wife’s departure, with a sense of rage and pain unshrouded by the veil of the prince.
+          neither she nor her friends will have to worry about him anymore, so long as they remain on this planet and
+          under my protection.</p>
+        <p class="no-indent dirk"><span class="type-bs type-hs-bottom--md">But a bunch of them won’t remain, will they?
+            They won’t be able to help themselves. You know that.</span></p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="kanaya">KANAYA: He Has To Be Stopped...</p>
+
+          <p class="kanaya">KANAYA: He Has To Be Stopped...</p>
+        </div>
+        <p class="no-indent calliope-dead" style="margin:0 0 15px 0">huddled on the floor, she repeats this pledge to
+          herself. theoretically, he could be stopped before he leaves, if they hurried. they would need to know what to
+          do, where to go, and to have the motivation to do it, but time is short. i could push them to, with a certain
+          degree of intervention, but i will not. my unwillingness to do so is what separates me from him. and what
+          corporeal life needs now is someone presiding over them who is <em>nothing</em> like him at all.</p>
+        <p class="no-indent dirk"><span class="type-bs type-hs-bottom--md">That’s a nice line. I get why you’d want to
+            dial up the drama, making your grand reentrance and all. But the fact is, even if they wanted to, even if
+            you brain-fried them all to become your own personal cherubic puppets and sent them on the warpath to come
+            get me, they’d still never catch me. You still don’t get it yet.</span></p>
+        <p class="dirk"><span class="type-bs type-hs-bottom--md">I’m already gone.</span></p>
+      </div>
       <div class="o_story-nav type-hs-copy line-tight pad-x-0 pad-x-lg--md pad-b-lg">
         <div>
           <span>&gt;</span>
           <a href="Meat 43.html">==&gt; </a><br>
         </div>
       </div>
-  
-<footer id="story-footer" role="banner">
-  <div id="story_footer_container" class="o_story-page-footer flex pad-t-0 pad-x-0
+
+      <footer id="story-footer" role="banner">
+        <div id="story_footer_container" class="o_story-page-footer flex pad-t-0 pad-x-0
      flex-justify 
     ">
-      <div class="pad-l-lg--md mar-b-md type-hs-small type-hs-bottom--md type-center type-left--md">
-        <ul class="o_game-nav">
-          <li class="o_game-nav-item">
-            <a id="o_start-over" href="The Homestuck Epilogues.html">Start Over</a>
-          </li>
-            <li class="o_game-nav-item">
-              <a href="Meat 41.html">Go Back</a>
-            </li>
-        </ul>
-      </div>
-      <script>
-//<![CDATA[
-$(document).ready(function() { Gamenav.checkAutosave(); });
+          <div class="pad-l-lg--md mar-b-md type-hs-small type-hs-bottom--md type-center type-left--md">
+            <ul class="o_game-nav">
+              <li class="o_game-nav-item">
+                <a id="o_start-over" href="Choice Page.html">Start Over</a>
+              </li>
+              <li class="o_game-nav-item">
+                <a href="Meat 41.html">Go Back</a>
+              </li>
+            </ul>
+          </div>
+          <script>
+            //<![CDATA[
+            $(document).ready(function () { Gamenav.checkAutosave(); });
 //]]>
-</script>
+          </script>
 
-    <a href="javascript:void(0)" data-gamenav-open="" class="nav-btn nav-btn--center type-hs-small mar-b-md" style="text-decoration:none; text-transform: none; font-size:14px; line-height:14px;"><span>Options</span> <i class="icon-menu" style="margin:0;"></i></a>
+          <a href="javascript:void(0)" data-gamenav-open="" class="nav-btn nav-btn--center type-hs-small mar-b-md"
+            style="text-decoration:none; text-transform: none; font-size:14px; line-height:14px;"><span>Options</span>
+            <i class="icon-menu" style="margin:0;"></i></a>
+        </div>
+      </footer>
+
+
+    </div>
+  </div><iframe name="__tcfapiLocator" src="./Epilogue_files/saved_resource(2).html"
+    style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe>
+
+
+
+  <div class="o_site-footer row pos-r pad-t-rg pad-b-xl pad-b-0--md bg-dark-gray">
+    <div class="float-l"><img
+        src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif"
+        alt="Footer logo"><br></div>
+    <div class="float-r disp-n disp-bl--sm"><img
+        src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif"
+        alt="Footer logo"><br></div>
+    <div class="type-center pad-t-md--md">
+      <ul>
+        <li><a href="https://www.homestuck.com/contacts">Contacts</a></li>
+        <li><a href="https://www.homestuck.com/privacy">Privacy Policy</a></li>
+      </ul>
+      <div><span style="white-space:nowrap;">© 2018 Homestuck</span> <span style="white-space:nowrap;">and VIZ
+          Media</span></div>
+    </div>
   </div>
-</footer>
-
-
-  </div>
-</div><iframe name="__tcfapiLocator" src="./Epilogue_files/saved_resource(2).html" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe>
-
-
-    
-<div class="o_site-footer row pos-r pad-t-rg pad-b-xl pad-b-0--md bg-dark-gray">
-  <div class="float-l"><img src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif" alt="Footer logo"><br></div>
-  <div class="float-r disp-n disp-bl--sm"><img src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif" alt="Footer logo"><br></div>
-  <div class="type-center pad-t-md--md">
-    <ul>
-      <li><a href="https://www.homestuck.com/contacts">Contacts</a></li>
-      <li><a href="https://www.homestuck.com/privacy">Privacy Policy</a></li>
-    </ul>
-    <div><span style="white-space:nowrap;">© 2018 Homestuck</span> <span style="white-space:nowrap;">and VIZ Media</span></div>
-  </div>
-</div>
 
 
 
-    <div id="overlay" data-overlay-state="off" class="o_overlay"></div>
-    <div id="game_overlay" data-game-overlay-state="off" class="o_game-overlay"></div>
-    <div id="overlay_wait" data-overlay-state="off" class="o_overlay-wait"></div>
+  <div id="overlay" data-overlay-state="off" class="o_overlay"></div>
+  <div id="game_overlay" data-game-overlay-state="off" class="o_game-overlay"></div>
+  <div id="overlay_wait" data-overlay-state="off" class="o_overlay-wait"></div>
 
 
 
-  
 
-<iframe name="googlefcPresent" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;" src="./Epilogue_files/saved_resource(6).html" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe></body></html>
+
+  <iframe name="googlefcPresent"
+    style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"
+    src="./Epilogue_files/saved_resource(6).html"
+    style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe>
+</body>
+
+</html>

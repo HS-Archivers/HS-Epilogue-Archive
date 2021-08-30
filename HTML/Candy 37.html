@@ -1,657 +1,747 @@
 <!DOCTYPE html>
 
-<html dir="ltr" lang="en-US"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html dir="ltr" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <!-- application -->
-    <script async="" src="./Epilogue_files/jquery-1.11.3.min.js.download"></script>
-    
-<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"1b930da09b","applicationID":"65900267","transactionName":"cFkNREpaWA9dF0pBVlRTEB9LQVsRQQ==","queueTime":0,"applicationTime":5,"agent":""}</script>
-<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"1b930da09b",applicationID:"65900267"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="format-detection" content="telephone=no">
-    <title>The Homestuck Epilogues</title>
-    <meta name="description" content="Tales of dubious authenticity.">
-    <script>
-//<![CDATA[
-var getGAEventLabel = function(){ return "The Homestuck Epilogues"; };
+  <script async="" src="./Epilogue_files/jquery-1.11.3.min.js.download"></script>
+
+  <script>window.NREUM || (NREUM = {}); NREUM.info = { "beacon": "bam-cell.nr-data.net", "errorBeacon": "bam-cell.nr-data.net", "licenseKey": "1b930da09b", "applicationID": "65900267", "transactionName": "cFkNREpaWA9dF0pBVlRTEB9LQVsRQQ==", "queueTime": 0, "applicationTime": 5, "agent": "" }</script>
+  <script>(window.NREUM || (NREUM = {})).loader_config = { licenseKey: "1b930da09b", applicationID: "65900267" }; window.NREUM || (NREUM = {}), __nr_require = function (t, e, n) { function r(n) { if (!e[ n ]) { var i = e[ n ] = { exports: {} }; t[ n ][ 0 ].call(i.exports, function (e) { var i = t[ n ][ 1 ][ e ]; return r(i || e) }, i, i.exports) } return e[ n ].exports } if ("function" == typeof __nr_require) return __nr_require; for (var i = 0; i < n.length; i++)r(n[ i ]); return r }({ 1: [ function (t, e, n) { function r() { } function i(t, e, n) { return function () { return o(t, [ u.now() ].concat(f(arguments)), e ? null : this, n), e ? void 0 : this } } var o = t("handle"), a = t(8), f = t(9), c = t("ee").get("tracer"), u = t("loader"), s = NREUM; "undefined" == typeof window.newrelic && (newrelic = s); var d = [ "setPageViewName", "setCustomAttribute", "setErrorHandler", "finished", "addToTrace", "inlineHit", "addRelease" ], p = "api-", l = p + "ixn-"; a(d, function (t, e) { s[ e ] = i(p + e, !0, "api") }), s.addPageAction = i(p + "addPageAction", !0), s.setCurrentRouteName = i(p + "routeName", !0), e.exports = newrelic, s.interaction = function () { return (new r).get() }; var m = r.prototype = { createTracer: function (t, e) { var n = {}, r = this, i = "function" == typeof e; return o(l + "tracer", [ u.now(), t, n ], r), function () { if (c.emit((i ? "" : "no-") + "fn-start", [ u.now(), r, i ], n), i) try { return e.apply(this, arguments) } catch (t) { throw c.emit("fn-err", [ arguments, this, t ], n), t } finally { c.emit("fn-end", [ u.now() ], n) } } } }; a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","), function (t, e) { m[ e ] = i(l + e) }), newrelic.noticeError = function (t, e) { "string" == typeof t && (t = new Error(t)), o("err", [ t, u.now(), !1, e ]) } }, {} ], 2: [ function (t, e, n) { function r(t) { if (NREUM.init) { for (var e = NREUM.init, n = t.split("."), r = 0; r < n.length - 1; r++)if (e = e[ n[ r ] ], "object" != typeof e) return; return e = e[ n[ n.length - 1 ] ] } } e.exports = { getConfiguration: r } }, {} ], 3: [ function (t, e, n) { function r() { return f.exists && performance.now ? Math.round(performance.now()) : (o = Math.max((new Date).getTime(), o)) - a } function i() { return o } var o = (new Date).getTime(), a = o, f = t(10); e.exports = r, e.exports.offset = a, e.exports.getLastTimestamp = i }, {} ], 4: [ function (t, e, n) { function r(t) { return !(!t || !t.protocol || "file:" === t.protocol) } e.exports = r }, {} ], 5: [ function (t, e, n) { function r(t, e) { var n = t.getEntries(); n.forEach(function (t) { "first-paint" === t.name ? d("timing", [ "fp", Math.floor(t.startTime) ]) : "first-contentful-paint" === t.name && d("timing", [ "fcp", Math.floor(t.startTime) ]) }) } function i(t, e) { var n = t.getEntries(); n.length > 0 && d("lcp", [ n[ n.length - 1 ] ]) } function o(t) { t.getEntries().forEach(function (t) { t.hadRecentInput || d("cls", [ t ]) }) } function a(t) { if (t instanceof m && !g) { var e = Math.round(t.timeStamp), n = { type: t.type }; e <= p.now() ? n.fid = p.now() - e : e > p.offset && e <= Date.now() ? (e -= p.offset, n.fid = p.now() - e) : e = p.now(), g = !0, d("timing", [ "fi", e, n ]) } } function f(t) { "hidden" === t && d("pageHide", [ p.now() ]) } if (!("init" in NREUM && "page_view_timing" in NREUM.init && "enabled" in NREUM.init.page_view_timing && NREUM.init.page_view_timing.enabled === !1)) { var c, u, s, d = t("handle"), p = t("loader"), l = t(7), m = NREUM.o.EV; if ("PerformanceObserver" in window && "function" == typeof window.PerformanceObserver) { c = new PerformanceObserver(r); try { c.observe({ entryTypes: [ "paint" ] }) } catch (v) { } u = new PerformanceObserver(i); try { u.observe({ entryTypes: [ "largest-contentful-paint" ] }) } catch (v) { } s = new PerformanceObserver(o); try { s.observe({ type: "layout-shift", buffered: !0 }) } catch (v) { } } if ("addEventListener" in document) { var g = !1, h = [ "click", "keydown", "mousedown", "pointerdown", "touchstart" ]; h.forEach(function (t) { document.addEventListener(t, a, !1) }) } l(f) } }, {} ], 6: [ function (t, e, n) { function r(t, e) { if (!i) return !1; if (t !== i) return !1; if (!e) return !0; if (!o) return !1; for (var n = o.split("."), r = e.split("."), a = 0; a < r.length; a++)if (r[ a ] !== n[ a ]) return !1; return !0 } var i = null, o = null, a = /Version\/(\S+)\s+Safari/; if (navigator.userAgent) { var f = navigator.userAgent, c = f.match(a); c && f.indexOf("Chrome") === -1 && f.indexOf("Chromium") === -1 && (i = "Safari", o = c[ 1 ]) } e.exports = { agent: i, version: o, match: r } }, {} ], 7: [ function (t, e, n) { function r(t) { function e() { t(a && document[ a ] ? document[ a ] : document[ i ] ? "hidden" : "visible") } "addEventListener" in document && o && document.addEventListener(o, e, !1) } e.exports = r; var i, o, a; "undefined" != typeof document.hidden ? (i = "hidden", o = "visibilitychange", a = "visibilityState") : "undefined" != typeof document.msHidden ? (i = "msHidden", o = "msvisibilitychange") : "undefined" != typeof document.webkitHidden && (i = "webkitHidden", o = "webkitvisibilitychange", a = "webkitVisibilityState") }, {} ], 8: [ function (t, e, n) { function r(t, e) { var n = [], r = "", o = 0; for (r in t) i.call(t, r) && (n[ o ] = e(r, t[ r ]), o += 1); return n } var i = Object.prototype.hasOwnProperty; e.exports = r }, {} ], 9: [ function (t, e, n) { function r(t, e, n) { e || (e = 0), "undefined" == typeof n && (n = t ? t.length : 0); for (var r = -1, i = n - e || 0, o = Array(i < 0 ? 0 : i); ++r < i;)o[ r ] = t[ e + r ]; return o } e.exports = r }, {} ], 10: [ function (t, e, n) { e.exports = { exists: "undefined" != typeof window.performance && window.performance.timing && "undefined" != typeof window.performance.timing.navigationStart } }, {} ], ee: [ function (t, e, n) { function r() { } function i(t) { function e(t) { return t && t instanceof r ? t : t ? u(t, c, a) : a() } function n(n, r, i, o, a) { if (a !== !1 && (a = !0), !l.aborted || o) { t && a && t(n, r, i); for (var f = e(i), c = v(n), u = c.length, s = 0; s < u; s++)c[ s ].apply(f, r); var p = d[ w[ n ] ]; return p && p.push([ b, n, r, f ]), f } } function o(t, e) { y[ t ] = v(t).concat(e) } function m(t, e) { var n = y[ t ]; if (n) for (var r = 0; r < n.length; r++)n[ r ] === e && n.splice(r, 1) } function v(t) { return y[ t ] || [] } function g(t) { return p[ t ] = p[ t ] || i(n) } function h(t, e) { l.aborted || s(t, function (t, n) { e = e || "feature", w[ n ] = e, e in d || (d[ e ] = []) }) } var y = {}, w = {}, b = { on: o, addEventListener: o, removeEventListener: m, emit: n, get: g, listeners: v, context: e, buffer: h, abort: f, aborted: !1 }; return b } function o(t) { return u(t, c, a) } function a() { return new r } function f() { (d.api || d.feature) && (l.aborted = !0, d = l.backlog = {}) } var c = "nr@context", u = t("gos"), s = t(8), d = {}, p = {}, l = e.exports = i(); e.exports.getOrSetContext = o, l.backlog = d }, {} ], gos: [ function (t, e, n) { function r(t, e, n) { if (i.call(t, e)) return t[ e ]; var r = n(); if (Object.defineProperty && Object.keys) try { return Object.defineProperty(t, e, { value: r, writable: !0, enumerable: !1 }), r } catch (o) { } return t[ e ] = r, r } var i = Object.prototype.hasOwnProperty; e.exports = r }, {} ], handle: [ function (t, e, n) { function r(t, e, n, r) { i.buffer([ t ], r), i.emit(t, e, n) } var i = t("ee").get("handle"); e.exports = r, r.ee = i }, {} ], id: [ function (t, e, n) { function r(t) { var e = typeof t; return !t || "object" !== e && "function" !== e ? -1 : t === window ? 0 : a(t, o, function () { return i++ }) } var i = 1, o = "nr@id", a = t("gos"); e.exports = r }, {} ], loader: [ function (t, e, n) { function r() { if (!R++) { var t = M.info = NREUM.info, e = v.getElementsByTagName("script")[ 0 ]; if (setTimeout(u.abort, 3e4), !(t && t.licenseKey && t.applicationID && e)) return u.abort(); c(E, function (e, n) { t[ e ] || (t[ e ] = n) }); var n = a(); f("mark", [ "onload", n + M.offset ], null, "api"), f("timing", [ "load", n ]); var r = v.createElement("script"); 0 === t.agent.indexOf("http://") || 0 === t.agent.indexOf("https://") ? r.src = t.agent : r.src = l + "://" + t.agent, e.parentNode.insertBefore(r, e) } } function i() { "complete" === v.readyState && o() } function o() { f("mark", [ "domContent", a() + M.offset ], null, "api") } var a = t(3), f = t("handle"), c = t(8), u = t("ee"), s = t(6), d = t(4), p = t(2), l = p.getConfiguration("ssl") === !1 ? "http" : "https", m = window, v = m.document, g = "addEventListener", h = "attachEvent", y = m.XMLHttpRequest, w = y && y.prototype, b = !d(m.location); NREUM.o = { ST: setTimeout, SI: m.setImmediate, CT: clearTimeout, XHR: y, REQ: m.Request, EV: m.Event, PR: m.Promise, MO: m.MutationObserver }; var x = "" + location, E = { beacon: "bam.nr-data.net", errorBeacon: "bam.nr-data.net", agent: "js-agent.newrelic.com/nr-1210.min.js" }, O = y && w && w[ g ] && !/CriOS/.test(navigator.userAgent), M = e.exports = { offset: a.getLastTimestamp(), now: a, origin: x, features: {}, xhrWrappable: O, userAgent: s, disabled: b }; if (!b) { t(1), t(5), v[ g ] ? (v[ g ]("DOMContentLoaded", o, !1), m[ g ]("load", r, !1)) : (v[ h ]("onreadystatechange", i), m[ h ]("onload", r)), f("mark", [ "firstbyte", a.getLastTimestamp() ], null, "api"); var R = 0 } }, {} ], "wrap-function": [ function (t, e, n) { function r(t, e) { function n(e, n, r, c, u) { function nrWrapper() { var o, a, s, p; try { a = this, o = d(arguments), s = "function" == typeof r ? r(o, a) : r || {} } catch (l) { i([ l, "", [ o, a, c ], s ], t) } f(n + "start", [ o, a, c ], s, u); try { return p = e.apply(a, o) } catch (m) { throw f(n + "err", [ o, a, m ], s, u), m } finally { f(n + "end", [ o, a, p ], s, u) } } return a(e) ? e : (n || (n = ""), nrWrapper[ p ] = e, o(e, nrWrapper, t), nrWrapper) } function r(t, e, r, i, o) { r || (r = ""); var f, c, u, s = "-" === r.charAt(0); for (u = 0; u < e.length; u++)c = e[ u ], f = t[ c ], a(f) || (t[ c ] = n(f, s ? c + r : r, i, c, o)) } function f(n, r, o, a) { if (!m || e) { var f = m; m = !0; try { t.emit(n, r, o, e, a) } catch (c) { i([ c, n, r, o ], t) } m = f } } return t || (t = s), n.inPlace = r, n.flag = p, n } function i(t, e) { e || (e = s); try { e.emit("internal-error", t) } catch (n) { } } function o(t, e, n) { if (Object.defineProperty && Object.keys) try { var r = Object.keys(t); return r.forEach(function (n) { Object.defineProperty(e, n, { get: function () { return t[ n ] }, set: function (e) { return t[ n ] = e, e } }) }), e } catch (o) { i([ o ], n) } for (var a in t) l.call(t, a) && (e[ a ] = t[ a ]); return e } function a(t) { return !(t && t instanceof Function && t.apply && !t[ p ]) } function f(t, e) { var n = e(t); return n[ p ] = t, o(t, n, s), n } function c(t, e, n) { var r = t[ e ]; t[ e ] = f(r, n) } function u() { for (var t = arguments.length, e = new Array(t), n = 0; n < t; ++n)e[ n ] = arguments[ n ]; return e } var s = t("ee"), d = t(9), p = "nr@original", l = Object.prototype.hasOwnProperty, m = !1; e.exports = r, e.exports.wrapFunction = f, e.exports.wrapInPlace = c, e.exports.argsToArray = u }, {} ] }, {}, [ "loader" ]);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <title>The Homestuck Epilogues</title>
+  <meta name="description" content="Tales of dubious authenticity.">
+  <script>
+    //<![CDATA[
+    var getGAEventLabel = function () { return "The Homestuck Epilogues"; };
 //]]>
-</script>
-      <link rel="canonical" href="Candy 37.html">
+  </script>
+  <link rel="canonical" href="Candy 37.html">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="https://www.homestuck.com/favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://www.homestuck.com/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://www.homestuck.com/favicon/favicon-16x16.png">
-<link rel="manifest" href="https://www.homestuck.com/favicon/manifest.json">
-<link rel="mask-icon" href="https://www.homestuck.com/favicon/safari-pinned-tab.svg" color="#6bbe4a">
-<meta name="theme-color" content="#ffffff">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www.homestuck.com/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://www.homestuck.com/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://www.homestuck.com/favicon/favicon-16x16.png">
+  <link rel="manifest" href="https://www.homestuck.com/favicon/manifest.json">
+  <link rel="mask-icon" href="https://www.homestuck.com/favicon/safari-pinned-tab.svg" color="#6bbe4a">
+  <meta name="theme-color" content="#ffffff">
 
-        <link rel="stylesheet" media="all" href="./Epilogue_files/manifest-epilogue-1694f2c1abc80cf72e84324f6d6486e6f04b02358ed667dee36c88974eef388f.css">
-      <link rel="stylesheet" href="./Epilogue_files/kek1uwn.css">
-    <link rel="stylesheet" media="all" href="./Epilogue_files/manifest-ui-e03365bbb17dde0f1fd5463dd7b56d096a27cae55aa131b72684e36c1f0c80f6.css">
-    <script src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE=(1)"></script>
-    <script src="./Epilogue_files/manifest-ads-story-1885683d55d6f631dc202ac5db87250ca938be96a613e85bb93739ecc057540e.js.download"></script>
+  <link rel="stylesheet" media="all"
+    href="./Epilogue_files/manifest-epilogue-1694f2c1abc80cf72e84324f6d6486e6f04b02358ed667dee36c88974eef388f.css">
+  <link rel="stylesheet" href="./Epilogue_files/kek1uwn.css">
+  <link rel="stylesheet" media="all"
+    href="./Epilogue_files/manifest-ui-e03365bbb17dde0f1fd5463dd7b56d096a27cae55aa131b72684e36c1f0c80f6.css">
+  <script
+    src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE=(1)"></script>
+  <script
+    src="./Epilogue_files/manifest-ads-story-1885683d55d6f631dc202ac5db87250ca938be96a613e85bb93739ecc057540e.js.download"></script>
 
 
-    <!-- //Connect Container: Homestuck-->
-<script src="./Epilogue_files/tag.min.js.download" async="" defer=""></script>
-  <script src="./Epilogue_files/__load_ad"></script></head>
-  
-  <body class="epilogue vsc-initialized">
+  <!-- //Connect Container: Homestuck-->
+  <script src="./Epilogue_files/tag.min.js.download" async="" defer=""></script>
+  <script src="./Epilogue_files/__load_ad"></script>
+</head>
 
-    
-    <header id="site-header" role="banner">
-  <div id="header-container" class="o_story-page-header row flex pad-t-0 ">
-    <a href="javascript:void(0)" data-nav-open="" class="nav-btn nav-btn--center color-white" style="overflow-wrap:normal;text-decoration:none;"><i class="icon-menu"></i><span>Menu</span></a>
-    <nav id="nav-container" data-nav-state="closed" role="navigation" class="o_nav-container">
-      <a href="javascript:void(0)" data-nav-close="" class="nav-btn color-white pad-y-rg type-rg" style="overflow-wrap:normal;text-decoration:none;"><i class="icon-close"></i><span>Dismiss</span></a>
-      <ul id="primary-nav" class="o_primary-nav style-caps weight-bold disp-ib color-white type-rg">
-     <li class="o_primary-nav-item slide-candycorn pipe"><a class="o_primary-nav-link" style="color:#39d5f6" href="Read.html">READ</a></li><!--
-     --><li class="o_primary-nav-item"><a class="o_primary-nav-link" style="color:#39d5f6" href="Credits.html">INFO</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-    
+<body class="epilogue vsc-initialized">
 
-    <div class="row bg-white bg-light-gray--md pad-t-md--md pos-r">
-  <div id="content_container" class="mar-x-auto disp-bl bg-white" style="max-width:650px;">
-    <div class="pos-r pad-t-sm pad-x-lg--md type-center" style="overflow:visible; height:72px;">
-      <img class="hsep_bullet" alt="Chapter" src="./Epilogue_files/candy_60x60-6b955ce39772ffce9994587a951f12b804ebf2202ebe8ed230483e25072db855.png">
-      <h3 class="disp-ib type-hsep-header line-tight type-lg pad-t-sm">
-        37
-      </h3>
+
+  <header id="site-header" role="banner">
+    <div id="header-container" class="o_story-page-header row flex pad-t-0 ">
+      <a href="javascript:void(0)" data-nav-open="" class="nav-btn nav-btn--center color-white"
+        style="overflow-wrap:normal;text-decoration:none;"><i class="icon-menu"></i><span>Menu</span></a>
+      <nav id="nav-container" data-nav-state="closed" role="navigation" class="o_nav-container">
+        <a href="javascript:void(0)" data-nav-close="" class="nav-btn color-white pad-y-rg type-rg"
+          style="overflow-wrap:normal;text-decoration:none;"><i class="icon-close"></i><span>Dismiss</span></a>
+        <ul id="primary-nav" class="o_primary-nav style-caps weight-bold disp-ib color-white type-rg">
+          <li class="o_primary-nav-item slide-candycorn pipe"><a class="o_primary-nav-link" style="color:#39d5f6"
+              href="Read.html">READ</a></li>
+          <!--
+     -->
+          <li class="o_primary-nav-item"><a class="o_primary-nav-link" style="color:#39d5f6"
+              href="Credits.html">INFO</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <div class="row bg-white bg-light-gray--md pad-t-md--md pos-r">
+    <div id="content_container" class="mar-x-auto disp-bl bg-white" style="max-width:650px;">
+      <div class="pos-r pad-t-sm pad-x-lg--md type-center" style="overflow:visible; height:72px;">
+        <img class="hsep_bullet" alt="Chapter"
+          src="./Epilogue_files/candy_60x60-6b955ce39772ffce9994587a951f12b804ebf2202ebe8ed230483e25072db855.png">
+        <h3 class="disp-ib type-hsep-header line-tight type-lg pad-t-sm">
+          37
+        </h3>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="row bg-white bg-light-gray--md pad-b-md pad-b-lg--md pos-r pad-t-md pad-t-0--md">
-  <div class="mar-x-auto disp-bl bg-white pad-t-lg" style="max-width:650px;">
-      <div class="o-story_text o_epilogue type-rg type-sm--md line-caption line-copy--md pad-x-0 pad-x-lg--md pad-b-lg">  <p class="no-indent"><span class="opener type-hs-opener-rg type-hs-opener-sm--md">B</span>ecause (Vriska) only spent a few minutes on Prospit before her dream self was whisked away to the Battlefield the moment she ascended to her god tier form, she never exactly got to enjoy Prospit life as much as some of her friends did. Which by all accounts involved a lot of leisure time—floating around, lounging about on golden crenellations, and looking at pretty much the only thing there was to look at on Prospit: the big blue sphere full of prescient clouds known as Skaia. She’s certain Terezi must have spent more than her share of time ogling the fluffy nimbus forms, or sniffing in their direction at least. </p>
-  <p>This must have been what life on Prospit felt like, (Vriska) thinks, as she adjusts her head to a slightly more comfortable position on the fresh clown carcass she’s now using as a pillow. She lets out a long exhale, feeling more relaxed than she’s felt in a long time. The clouds aren’t showing her any visions, but that’s okay. She realizes you can see whatever you want to see in a cloud, if you spend a long enough time looking at its shape. All that’s really required is a willingness to let yourself waste the time. A willingness she only just discovered minutes ago, since wringing the life from a libidinous harlequin.  </p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="vriska">(VRISKA): I think that one is...</p>
-  
-  <p class="vriska">(VRISKA): A sort of snake?</p>
-  
-  <p class="vriska">(VRISKA): A snake with a strangely 8ig head. </p>
-  
-  <p class="vriska">VRISKA: Nah, it’s a pipe.</p>
-  
-  <p class="vriska">(VRISKA): A what?</p>
-  
-  <p class="vriska">VRISKA: It’s a Thing you Smoke with.</p>
-  
-  <p class="vriska">(VRISKA): Oh.</p>
-  
-  <p class="vriska">(VRISKA): You mean, like, the human marijuana I’ve heard Dave ram8le a8out sometimes?</p>
-  
-  <p class="vriska">VRISKA: God.</p>
-  
-  <p class="vriska">VRISKA: You Really Did grow up on an Alien Planet, didn’t you.</p>
-  
-  <p class="vriska">(VRISKA): Yes, as a matter of fact I did.</p>
-  
-  <p class="vriska">(VRISKA): I’m from the world which was home to the race you yourself are apparently a mem8er of.</p>
-  
-  <p class="vriska">VRISKA: Yeah 8ut I’m actually Normal?</p>
-  
-  <p class="vriska">VRISKA: No Offense.</p>
-  
-  <p class="vriska">(VRISKA): None taken. You’re a lot like me, really.</p>
-  
-  <p class="vriska">(VRISKA): I mean, unsurprisingly? This shouldn’t 8e shocking news.</p>
-  
-  <p class="vriska">VRISKA: You just kinda remind me of my mom.</p>
-  
-  <p class="vriska">VRISKA: Not in Many ways, I just mean you say shit that makes it O8vious this isn’t where you grew up.</p>
-  
-  <p class="vriska">(VRISKA): How is Kanaya, 8y the way?</p>
-  
-  <p class="vriska">VRISKA: Um. 8oring?</p>
-  
-  <p class="vriska">VRISKA: And Old.</p>
-  
-  <p class="vriska">VRISKA: Old and 8oring as Fuck.</p>
-  
-  <p class="vriska">(VRISKA): Hahahaha.</p>
-  
-  <p class="vriska">(VRISKA): Sounds a8out right.</p>
-  
-  <p class="vriska">VRISKA: I mean, Older Than Us, 8y a lot.</p>
-  
-  <p class="vriska">VRISKA: 8ut you knew her when you were the same age, so...</p>
-  
-  <p class="vriska">VRISKA: That’s why I said that? Fuck it. She’s like, Regular. A 8asic Ass Mom.</p>
-  
-  <p class="vriska">VRISKA: She’s fine, I like her. 8oth my moms are alright.</p>
-  
-  <p class="vriska">VRISKA: They’re a little o8sessed with all this War Shit though.</p>
-  
-  <p class="vriska">(VRISKA): Oh yeah?</p>
-  
-  <p class="vriska">VRISKA: Yeah.</p>
-  
-  <p class="vriska">VRISKA: Old people get hella 8ent out of shape a8out War And Politics.</p>
-  
-  <p class="vriska">VRISKA: Same shit as always.</p>
-  
-  <p class="vriska">(VRISKA): You’re right. I guess that’s how it was in my culture too.</p>
-</div>
-  <p class="no-indent">Vriska doesn’t seem to have a response to this. Her parents have told her many tales of Alternia, and her curiosity about the subject was satiated some time before she entered high school. She shrugs and turns her attention back to the sky. Another nimbus cloud wanders lazily into view, and catches (Vriska)’s eye due to its peculiar shape.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="vriska">(VRISKA): That one there.</p>
-  
-  <p class="vriska">(VRISKA): That’s... some sort of squat, can-like 8uilding, right?</p>
-  
-  <p class="vriska">VRISKA: What?</p>
-  
-  <p class="vriska">(VRISKA): Like the ridiculous structures my friends used to 8uild with the Mayor.</p>
-  
-  <p class="vriska">(VRISKA): Hey, is the Mayor still around?</p>
-  
-  <p class="vriska">VRISKA: The Mayor’s dead, dude.</p>
-  
-  <p class="vriska">(VRISKA): Shit!</p>
-  
-  <p class="vriska">(VRISKA): I loved the Mayor.</p>
-  
-  <p class="vriska">VRISKA: Everyone loved the Mayor.</p>
-  
-  <p class="vriska">VRISKA: He’s in our damn history 8ooks.</p>
-  
-  <p class="vriska">(VRISKA): Wow.</p>
-  
-  <p class="vriska">(VRISKA): 8ut you see what I mean, right? That one!</p>
-  
-  <p class="vriska">VRISKA: Lol, you don’t know Anything.</p>
-  
-  <p class="vriska">VRISKA: Kinda cute, actually.</p>
-  
-  <p class="vriska">(VRISKA): What?? Then what is it, smartass.</p>
-  
-  <p class="vriska">VRISKA: It’s a cake.</p>
-  
-  <p class="vriska">(VRISKA): ........</p>
-  
-  <p class="vriska">VRISKA: A 8irthday cake. See? Those are candles.</p>
-  
-  <p class="vriska">VRISKA: It’s so o8vious.</p>
-  
-  <p class="vriska">(VRISKA): Oh! Like those shitty things John’s dad was always making?</p>
-  
-  <p class="vriska">VRISKA: Guess so.</p>
-  
-  <p class="vriska">(VRISKA): What’s with all the clouds shaped like John stuff?</p>
-  
-  <p class="vriska">(VRISKA): Like that one there. That’s... a 8ig dollop of “shaving cream,” right?</p>
-  
-  <p class="vriska">VRISKA: Ummmmmmmm, nah.</p>
-  
-  <p class="vriska">VRISKA: That’s just a normal cloud I think.</p>
-  
-  <p class="vriska">(VRISKA): Fine, 8ad example. </p>
-  
-  <p class="vriska">(VRISKA): 8ut THAT one. </p>
-  
-  <p class="vriska">(VRISKA): That’s DEFINITELY a human hat.</p>
-  
-  <p class="vriska">VRISKA: Oh yeah, it totally is.</p>
-  
-  <p class="vriska">VRISKA: Just a fuckin’ Sky Hat. Right there.</p>
-  
-  <p class="vriska">(VRISKA): Is Earth C always like this?</p>
-  
-  <p class="vriska">VRISKA: I dunno, I never noticed.</p>
-</div>
-  <p class="no-indent">(Vriska) scans the sky. She notices a few more John-specific cloud shapes. A ghost over there. A beagle puss just overhead. But the more she stares at them, the more she realizes her ability to recognize the shapes is beginning to fade. They start to resemble fluffy, amorphous blobs. Was it all just in her imagination?</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="vriska">(VRISKA): May8e this is just crazy nonsense, actually.</p>
-  
-  <p class="vriska">(VRISKA): Seeing shapes in clouds, I mean.</p>
-  
-  <p class="vriska">VRISKA: May8e. Idk.</p>
-  
-  <p class="vriska">(VRISKA): Or may8e the truth just makes me kind of nervous. </p>
-  
-  <p class="vriska">VRISKA: What “Truth”?</p>
-  
-  <p class="vriska">(VRISKA): Don’t tell him I said this, 8ut, I think John is just an extremely powerful 8eing. Even when he sucks.</p>
-  
-  <p class="vriska">(VRISKA): And he certainly does appear to suck in this reality.</p>
-  
-  <p class="vriska">(VRISKA): And yet, the uneasy feeling is there.</p>
-  
-  <p class="vriska">(VRISKA): It’s a vague feeling I’ve had in the 8ack of my mind for a long time, 8ut it really hit me when I was talking to him earlier.</p>
-  
-  <p class="vriska">(VRISKA): It’s distur8ing to think a8out that much power 8ottled up in one stupid nerd who’ll never understand it.</p>
-  
-  <p class="vriska">VRISKA: What Power are you even talking a8out?</p>
-  
-  <p class="vriska">VRISKA: Like, lame Wind Powers?</p>
-  
-  <p class="vriska">(VRISKA): No, I mean...</p>
-  
-  <p class="vriska">(VRISKA): The power to shape reality. Even without intending to.</p>
-  
-  <p class="vriska">(VRISKA): Like, just falling 8ackwards into the most insanely overpowered 8ullshit, when the rest of us have to work our asses off for a fraction of that kind of power and relevance.</p>
-  
-  <p class="vriska">(VRISKA): He could rewrite everything that ever happened if he wanted. </p>
-  
-  <p class="vriska">(VRISKA): And he could pro8a8ly even 8end reality to his will in certain ways even if he didn’t have the slightest idea what he was doing, which he usually doesn’t.</p>
-  
-  <p class="vriska">(VRISKA): He’d pro8a8ly manage to 8e more relevant than I could ever dream of 8eing even if he was dead.</p>
-  
-  <p class="vriska">(VRISKA): It’s a little depressing to think a8out, actually.</p>
-  
-  <p class="vriska">VRISKA: Eh, no it’s not. </p>
-  
-  <p class="vriska">VRISKA: Harry’s dad is a Joke! He’s a Washed Up Loser.</p>
-  
-  <p class="vriska">VRISKA: He’s not worth feeling shitty a8out At All.</p>
-  
-  <p class="vriska">(VRISKA): Wow. You know what?</p>
-  
-  <p class="vriska">(VRISKA): You’re RIGHT.</p>
-  
-  <p class="vriska">(VRISKA): Man, that is SUCH a good attitude?</p>
-  
-  <p class="vriska">(VRISKA): Why didn’t I say that??</p>
-  
-  <p class="vriska">(VRISKA): I used to say shit like that.</p>
-</div>
-  <p class="no-indent">(Vriska) turns to face Vriska, propping her head a little higher up on the torso to get comfortable. The Vriskas have become virtually oblivious to the fact that a strangled juggalo is currently functioning as a throw pillow. It feels right, natural even, as if he was never meant to serve any purpose other than that of a deceased, soft vehicle for head and neck support between two blossoming friends. </p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="vriska">VRISKA: Hey, can I just ask...</p>
-  
-  <p class="vriska">VRISKA: Why were you making out with this Ridiculous Shithead?</p>
-  
-  <p class="vriska">(VRISKA): Wow, could we may8e not talk a8out that?</p>
-  
-  <p class="vriska">(VRISKA): I’m fucking em8arrassed.</p>
-  
-  <p class="vriska">VRISKA: I’m not even Judging. It’s not like I can 8lame you.</p>
-  
-  <p class="vriska">VRISKA: Sometimes a girl just needs to give up on her Dignity for a while and kiss a Dum8 Clown. </p>
-  
-  <p class="vriska">VRISKA: That does a lot to Explain my Relationship with Harry, actually.</p>
-  
-  <p class="vriska">(VRISKA): Haha.</p>
-  
-  <p class="vriska">(VRISKA): Yeah, that’s a good way of putting it. </p>
-  
-  <p class="vriska">(VRISKA): Let’s just call it a 8rief and inadvisa8le catharsis through fleeting clown lust, and agree to never speak of this again.</p>
-  
-  <p class="vriska">VRISKA: You got it.</p>
-  
-  <p class="vriska">(VRISKA): 8ut anyway, I was trying to make a point!</p>
-  
-  <p class="vriska">(VRISKA): I have to say... I’m almost a little jealous of you.</p>
-  
-  <p class="vriska">VRISKA: Jealous. Why? I’ve done fuck all.</p>
-  
-  <p class="vriska">VRISKA: I go to highschool and that’s a8out it?</p>
-  
-  <p class="vriska">VRISKA: Haven’t you like,</p>
-  
-  <p class="vriska">VRISKA: Literally Ascended To Godhood, cre8d Multiple Universes, and uh.</p>
-  
-  <p class="vriska">VRISKA: Killed Guys And Stuff?</p>
-  
-  <p class="vriska">(VRISKA): Yes, I did do all of that stuff.</p>
-  
-  <p class="vriska">VRISKA: Didn’t you Mind Control some idiot to jump off a Cliff, and he got Paralyzed...</p>
-  
-  <p class="vriska">VRISKA: 8ut then you started Dating him or something?</p>
-  
-  <p class="vriska">(VRISKA): Yeah.</p>
-  
-  <p class="vriska">(VRISKA): That was 8efore I killed him.</p>
-  
-  <p class="vriska">VRISKA: Lmao!!</p>
-  
-  <p class="vriska">(VRISKA): It’s cool though, we made up!</p>
-  
-  <p class="vriska">(VRISKA): As ghosts I mean. Well, a different copy of me did that, 8ut I think it still counts.</p>
-  
-  <p class="vriska">(VRISKA): Wh8ver, it’s just one thing I did. Who can even keep track of this stuff.</p>
-  
-  <p class="vriska">VRISKA: Didn’t you 8lind some O8noxious 8itch one time?</p>
-  
-  <p class="vriska">(VRISKA): HEY!</p>
-  
-  <p class="vriska">(VRISKA): Some of this stuff is kind of priv8??</p>
-  
-  <p class="vriska">(VRISKA): Anyway, the point wasn’t to go strolling down memory lane on some of the 8adass things I’ve done. </p>
-  
-  <p class="vriska">(VRISKA): Not that there isn’t a lot of gr8 material there.</p>
-  
-  <p class="vriska">(VRISKA): I’m just saying, with the life you’re living here, you seem...</p>
-  
-  <p class="vriska">(VRISKA): Free?</p>
-  
-  <p class="vriska">(VRISKA): Free to just 8e yourself, and 8e cool, and not really care too much a8out other people’s horse shit.</p>
-  
-  <p class="vriska">(VRISKA): I’ve spent so long caring so much a8out what other people thought of me. Mainly that they saw me as important, or making a “difference.”</p>
-  
-  <p class="vriska">(VRISKA): It’s such a futile struggle sometimes. And I thought I was doing SO well, and getting SO close to the 8ig prize... and then I end up... here???</p>
-  
-  <p class="vriska">(VRISKA): It’s like a 8ig joke. And sometimes it feels like real freedom is just understanding that.</p>
-  
-  <p class="vriska">(VRISKA): And when you do, it comes through in your personality, and it’s a lot easier to just seem...</p>
-  
-  <p class="vriska">(VRISKA): Cool. You know?</p>
-  
-  <p class="vriska">VRISKA: I guess.</p>
-  
-  <p class="vriska">(VRISKA): This is really funny. I feel like such a fuckup. 8ecause now that I’m saying this, I realize there WAS a person like that I met once.</p>
-  
-  <p class="vriska">(VRISKA): Like you, sorta. It was just another version of myself.</p>
-  
-  <p class="vriska">(VRISKA): She was genuinely happy, and living her 8est life, even though she was ironically a ghost.</p>
-  
-  <p class="vriska">(VRISKA): 8ut something a8out her attitude set me off.</p>
-  
-  <p class="vriska">(VRISKA): So I ripped her to pieces??</p>
-  
-  <p class="vriska">(VRISKA): Also I sort of stole her girlfriend.</p>
-  
-  <p class="vriska">VRISKA: Holy shit?</p>
-  
-  <p class="vriska">(VRISKA): I know! I’m terri8le.</p>
-  
-  <p class="vriska">VRISKA: No not really. </p>
-  
-  <p class="vriska">VRISKA: This all sounds kind of Legendary, t8h.</p>
-  
-  <p class="vriska">(VRISKA): No, I know! I know how it sounds. </p>
-  
-  <p class="vriska">(VRISKA): Just, please, don’t look at me as some sort of role model, ok? </p>
-  
-  <p class="vriska">(VRISKA): This isn’t good! The point is it’s 8AD!</p>
-  
-  <p class="vriska">(VRISKA): Take it from me, don’t do the shit where you start modeling yourself after some mental image you have of a cooler version of yourself! It just sucks.</p>
-  
-  <p class="vriska">VRISKA: Haha, alright, Whatever You Say. :::::::)</p>
-  
-  <p class="vriska">(VRISKA): Ugh. This isn’t going in the direction I was hoping.</p>
-  
-  <p class="vriska">(VRISKA): The POINT is, I was so mad at her.</p>
-  
-  <p class="vriska">(VRISKA): That happy ghost version of myself, who was free of everything.</p>
-  
-  <p class="vriska">(VRISKA): I was pro8a8ly mad 8ecause she got to 8e who she really was, without stressing a8out it, which is something I never felt like I was allowed to have.</p>
-  
-  <p class="vriska">VRISKA: Well.</p>
-  
-  <p class="vriska">VRISKA: You can now, right?</p>
-  
-  <p class="vriska">VRISKA: What the fuck is Stopping you.</p>
-  
-  <p class="vriska">(VRISKA): I guess so. </p>
-  
-  <p class="vriska">(VRISKA): I wonder what the point would 8e?</p>
-  
-  <p class="vriska">VRISKA: What do you mean.</p>
-  
-  <p class="vriska">(VRISKA): I could 8e a 8etter version of myself than I am, 8ut...</p>
-  
-  <p class="vriska">(VRISKA): Then...</p>
-  
-  <p class="vriska">(VRISKA): Who would even 8e around to notice?</p>
-  
-  <p class="vriska">VRISKA: I would.</p>
-  
-  <p class="vriska">(VRISKA): Oh, yeah. No, I mean, that’s gr8.</p>
-  
-  <p class="vriska">(VRISKA): And it’s nice talking to you, and getting stuff off my chest? It’s not what I meant, though.</p>
-  
-  <p class="vriska">(VRISKA): I left the people I care most a8out 8ehind.</p>
-  
-  <p class="vriska">(VRISKA): What’s the point of 8ecoming your 8est self, if the people most important to you aren’t around to witness it?</p>
-  
-  <p class="vriska">VRISKA: Um. Aren’t all your friends Here though?</p>
-  
-  <p class="vriska">VRISKA: I know they’re a 8unch of Old Fucks now, 8ut...</p>
-  
-  <p class="vriska">(VRISKA): No, they are. That’s...</p>
-  
-  <p class="vriska">(VRISKA): Not what I mean.</p>
-  
-  <p class="vriska">(VRISKA): Sigh. This is hard to explain.</p>
-  
-  <p class="vriska">(VRISKA): I guess I mean there’s someone specifically I fell out of touch with, who it feels like I’ll never see again.</p>
-  
-  <p class="vriska">VRISKA: Oh.</p>
-  
-  <p class="vriska">(VRISKA): May8e...</p>
-</div>
-  <p class="no-indent">(Vriska) thinks for a while on her next statement. She needs the time to let a thought she’d never had before arrange itself into words.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="vriska">(VRISKA): May8e that’s why I h8’d my ghost self so much?</p>
-  
-  <p class="vriska">VRISKA: Why?</p>
-  
-  <p class="vriska">(VRISKA): 8ecause I just had a sense.</p>
-  
-  <p class="vriska">(VRISKA): On some level I knew she was right. She was happy and honest with herself. And that’s what made her...</p>
-  
-  <p class="vriska">(VRISKA): A version of myself who was actually worthy of someone I cared a8out.</p>
-  
-  <p class="vriska">(VRISKA): Don’t get me wrong, we had a nice time for a few years living on that meteor. </p>
-  
-  <p class="vriska">(VRISKA): It was a good, sta8le pale relationship. 8ut that’s all it was.</p>
-  
-  <p class="vriska">(VRISKA): We couldn’t really connect in a deeper way 8ecause I was still... the way I am, I guess?</p>
-  
-  <p class="vriska">(VRISKA): Layers and layers of armor and defenses. </p>
-  
-  <p class="vriska">(VRISKA): And I had some mysterious feeling that weak ghost version of myself was always meant to form the kind of connection with her that I never could, 8ecause she didn’t have any of that stuff getting in the way.</p>
-  
-  <p class="vriska">(VRISKA): Which is pro8a8ly why I flipped out at her.</p>
-  
-  <p class="vriska">VRISKA: The person you’re talking a8out here...</p>
-  
-  <p class="vriska">VRISKA: It kinda sounds like you Love her.</p>
-  
-  <p class="vriska">(VRISKA): What??</p>
-  
-  <p class="vriska">(VRISKA): No!</p>
-  
-  <p class="vriska">VRISKA: Okay, Whatever.</p>
-  
-  <p class="vriska">(VRISKA): I don’t 8elieve this.</p>
-  
-  <p class="vriska">(VRISKA): I mean... may8e?</p>
-  
-  <p class="vriska">(VRISKA): Sorta.</p>
-  
-  <p class="vriska">(VRISKA): It’s a complic8d feeling.</p>
-  
-  <p class="vriska">VRISKA: It actually doesn’t sound that complic8d, 8ut again, Whatever.</p>
-  
-  <p class="vriska">(VRISKA): I don’t know!!!!!!!!</p>
-  
-  <p class="vriska">(VRISKA): I still feel sort of messed up a8out this, and I don’t think I can pinpoint exactly how I feel!!!!!!!!</p>
-  
-  <p class="vriska">(VRISKA): May8e you can’t even 8oil it down to one quadrant at all!!!!!!!!</p>
-  
-  <p class="vriska">VRISKA: Who are we Talking a8out here?</p>
-  
-  <p class="vriska">(VRISKA): I DON’T THINK I CAN TALK A8OUT THIS ANYMORE!</p>
-  
-  <p class="vriska">VRISKA: Oh god, it’s not...</p>
-  
-  <p class="vriska">VRISKA: My MOM, is it?</p>
-  
-  <p class="vriska">VRISKA: Or one of them?</p>
-  
-  <p class="vriska">(VRISKA): Oh FUCK no. Not them.</p>
-  
-  <p class="vriska">(VRISKA): Anyway, they’re living on this planet. Remem8er I said I’d pro8a8ly never see her again?</p>
-  
-  <p class="vriska">VRISKA: Yeah.</p>
-  
-  <p class="vriska">VRISKA: You’re just talking a8out The Girl You 8linded that one time, aren’t you?</p>
-  
-  <p class="vriska">(VRISKA): Ummmmmmmm.</p>
-  
-  <p class="vriska">VRISKA: May8e I’m not Fucking Stupid?</p>
-  
-  <p class="vriska">VRISKA: I know some Lore.</p>
-</div>
-  <p class="no-indent">(Vriska) rolls her head against the clown cadaver to face the sky again. Even if this is another near-duplicate of herself who’s easy to confide in, maybe she’s said too much already. Maybe she’s even admitted too much to herself. Moments pass in silence.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="vriska">VRISKA: I’m pretty sure Harry’s Dad used to talk to her a lot.</p>
-  
-  <p class="vriska">(VRISKA): What?</p>
-  
-  <p class="vriska">VRISKA: The 8lind Girl.</p>
-  
-  <p class="vriska">(VRISKA): He did? When?</p>
-  
-  <p class="vriska">VRISKA: I dunno. Years ago. </p>
-  
-  <p class="vriska">(VRISKA): How is that possi8le? I mean... from THIS place?</p>
-  
-  <p class="vriska">VRISKA: What. Earth C? </p>
-  
-  <p class="vriska">VRISKA: I don’t think I get the question.</p>
-  
-  <p class="vriska">(VRISKA): You still don’t seem to understand. We’re all inside...</p>
-  
-  <p class="vriska">(VRISKA): Never mind. </p>
-  
-  <p class="vriska">(VRISKA): What were they even talking a8out?</p>
-  
-  <p class="vriska">VRISKA: I have No Idea.</p>
-  
-  <p class="vriska">VRISKA: You wanna Look?</p>
-  
-  <p class="vriska">(VRISKA): Look at what?</p>
-  
-  <p class="vriska">VRISKA: Just a minute ago I swiped his Phone.</p>
-  
-  <p class="vriska">(VRISKA): You stole John’s phone??</p>
-  
-  <p class="vriska">VRISKA: Yeah.</p>
-  
-  <p class="vriska">VRISKA: I Steal Stuff sometimes. </p>
-  
-  <p class="vriska">VRISKA: The ha8it’s Pro8a8ly just in my DNA.</p>
-  
-  <p class="vriska">(VRISKA): Lol.</p>
-  
-  <p class="vriska">(VRISKA): Yeah, let’s take a look.</p>
-</div>
-  <p class="no-indent">Vriska hands over the phone. It exhibits decades of use. This is not the device of a man who frequently upgrades his technology. There’s no password to unlock it. (Vriska) scrolls upward on a text exchange for quite some time.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="vriska">(VRISKA): How far 8ack does this go??</p>
-  
-  <p class="vriska">VRISKA: Not sure. 8efore I was hatched, at least.</p>
-  
-  <p class="vriska">(VRISKA): This is all... </p>
-  
-  <p class="vriska">(VRISKA): Weirdly flirtatious????????</p>
-  
-  <p class="vriska">VRISKA: Yeah.</p>
-  
-  <p class="vriska">(VRISKA): Terezi was like that with a lot of people though.</p>
-  
-  <p class="vriska">(VRISKA): Still, it’s a little jarring.</p>
-  
-  <p class="vriska">(VRISKA): It’s all kind of 8lowing my mind.</p>
-  
-  <p class="vriska">VRISKA: You know what this Means, don’t you?</p>
-  
-  <p class="vriska">(VRISKA): What?</p>
-  
-  <p class="vriska">VRISKA: You can Contact Her.</p>
-  
-  <p class="vriska">(VRISKA): Holy shit.</p>
-</div>
-  <p class="no-indent">(Vriska) clicks on the reply field. Her thumbs hover over the digital keys.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="vriska">(VRISKA): What would I even say?</p>
-  
-  <p class="vriska">VRISKA: Tell her you Love Her.</p>
-  
-  <p class="vriska">(VRISKA): Oh, shut the fuck up.</p>
-  
-  <p class="vriska">VRISKA: Ha Ha Ha Ha.</p>
-  
-  <p class="vriska">(VRISKA): 8ut seriously...</p>
-  
-  <p class="vriska">(VRISKA): I have no idea where she is, or what she’s doing. Is she old now too, like everyone else?</p>
-  
-  <p class="vriska">(VRISKA): That would feel weird.</p>
-  
-  <p class="vriska">VRISKA: Only one way to Find Out.</p>
-</div>
-  <p class="no-indent">(Vriska) stands up, and paces in circles around the vanquished bard. Vriska maintains her relaxed position while studying the cloud shapes again, providing (Vriska) with a wide berth for this critical rumination. </p>
-  <p>Finally, (Vriska) stops pacing, and begins typing.</p>
-<div class="chat type-rg type-hs-small--md" style="margin-bottom:0">  
-  <p class="vriska">(VRISKA): Hey Terezi.</p>
-  
-  <p class="vriska">(VRISKA): This isn’t John.</p>
-  
-  <p class="vriska">(VRISKA): It’s Vriska.</p>
-</div></div>
+  <div class="row bg-white bg-light-gray--md pad-b-md pad-b-lg--md pos-r pad-t-md pad-t-0--md">
+    <div class="mar-x-auto disp-bl bg-white pad-t-lg" style="max-width:650px;">
+      <div class="o-story_text o_epilogue type-rg type-sm--md line-caption line-copy--md pad-x-0 pad-x-lg--md pad-b-lg">
+        <p class="no-indent"><span class="opener type-hs-opener-rg type-hs-opener-sm--md">B</span>ecause (Vriska) only
+          spent a few minutes on Prospit before her dream self was whisked away to the Battlefield the moment she
+          ascended to her god tier form, she never exactly got to enjoy Prospit life as much as some of her friends did.
+          Which by all accounts involved a lot of leisure time—floating around, lounging about on golden crenellations,
+          and looking at pretty much the only thing there was to look at on Prospit: the big blue sphere full of
+          prescient clouds known as Skaia. She’s certain Terezi must have spent more than her share of time ogling the
+          fluffy nimbus forms, or sniffing in their direction at least. </p>
+        <p>This must have been what life on Prospit felt like, (Vriska) thinks, as she adjusts her head to a slightly
+          more comfortable position on the fresh clown carcass she’s now using as a pillow. She lets out a long exhale,
+          feeling more relaxed than she’s felt in a long time. The clouds aren’t showing her any visions, but that’s
+          okay. She realizes you can see whatever you want to see in a cloud, if you spend a long enough time looking at
+          its shape. All that’s really required is a willingness to let yourself waste the time. A willingness she only
+          just discovered minutes ago, since wringing the life from a libidinous harlequin. </p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="vriska">(VRISKA): I think that one is...</p>
+
+          <p class="vriska">(VRISKA): A sort of snake?</p>
+
+          <p class="vriska">(VRISKA): A snake with a strangely 8ig head. </p>
+
+          <p class="vriska">VRISKA: Nah, it’s a pipe.</p>
+
+          <p class="vriska">(VRISKA): A what?</p>
+
+          <p class="vriska">VRISKA: It’s a Thing you Smoke with.</p>
+
+          <p class="vriska">(VRISKA): Oh.</p>
+
+          <p class="vriska">(VRISKA): You mean, like, the human marijuana I’ve heard Dave ram8le a8out sometimes?</p>
+
+          <p class="vriska">VRISKA: God.</p>
+
+          <p class="vriska">VRISKA: You Really Did grow up on an Alien Planet, didn’t you.</p>
+
+          <p class="vriska">(VRISKA): Yes, as a matter of fact I did.</p>
+
+          <p class="vriska">(VRISKA): I’m from the world which was home to the race you yourself are apparently a mem8er
+            of.</p>
+
+          <p class="vriska">VRISKA: Yeah 8ut I’m actually Normal?</p>
+
+          <p class="vriska">VRISKA: No Offense.</p>
+
+          <p class="vriska">(VRISKA): None taken. You’re a lot like me, really.</p>
+
+          <p class="vriska">(VRISKA): I mean, unsurprisingly? This shouldn’t 8e shocking news.</p>
+
+          <p class="vriska">VRISKA: You just kinda remind me of my mom.</p>
+
+          <p class="vriska">VRISKA: Not in Many ways, I just mean you say shit that makes it O8vious this isn’t where
+            you grew up.</p>
+
+          <p class="vriska">(VRISKA): How is Kanaya, 8y the way?</p>
+
+          <p class="vriska">VRISKA: Um. 8oring?</p>
+
+          <p class="vriska">VRISKA: And Old.</p>
+
+          <p class="vriska">VRISKA: Old and 8oring as Fuck.</p>
+
+          <p class="vriska">(VRISKA): Hahahaha.</p>
+
+          <p class="vriska">(VRISKA): Sounds a8out right.</p>
+
+          <p class="vriska">VRISKA: I mean, Older Than Us, 8y a lot.</p>
+
+          <p class="vriska">VRISKA: 8ut you knew her when you were the same age, so...</p>
+
+          <p class="vriska">VRISKA: That’s why I said that? Fuck it. She’s like, Regular. A 8asic Ass Mom.</p>
+
+          <p class="vriska">VRISKA: She’s fine, I like her. 8oth my moms are alright.</p>
+
+          <p class="vriska">VRISKA: They’re a little o8sessed with all this War Shit though.</p>
+
+          <p class="vriska">(VRISKA): Oh yeah?</p>
+
+          <p class="vriska">VRISKA: Yeah.</p>
+
+          <p class="vriska">VRISKA: Old people get hella 8ent out of shape a8out War And Politics.</p>
+
+          <p class="vriska">VRISKA: Same shit as always.</p>
+
+          <p class="vriska">(VRISKA): You’re right. I guess that’s how it was in my culture too.</p>
+        </div>
+        <p class="no-indent">Vriska doesn’t seem to have a response to this. Her parents have told her many tales of
+          Alternia, and her curiosity about the subject was satiated some time before she entered high school. She
+          shrugs and turns her attention back to the sky. Another nimbus cloud wanders lazily into view, and catches
+          (Vriska)’s eye due to its peculiar shape.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="vriska">(VRISKA): That one there.</p>
+
+          <p class="vriska">(VRISKA): That’s... some sort of squat, can-like 8uilding, right?</p>
+
+          <p class="vriska">VRISKA: What?</p>
+
+          <p class="vriska">(VRISKA): Like the ridiculous structures my friends used to 8uild with the Mayor.</p>
+
+          <p class="vriska">(VRISKA): Hey, is the Mayor still around?</p>
+
+          <p class="vriska">VRISKA: The Mayor’s dead, dude.</p>
+
+          <p class="vriska">(VRISKA): Shit!</p>
+
+          <p class="vriska">(VRISKA): I loved the Mayor.</p>
+
+          <p class="vriska">VRISKA: Everyone loved the Mayor.</p>
+
+          <p class="vriska">VRISKA: He’s in our damn history 8ooks.</p>
+
+          <p class="vriska">(VRISKA): Wow.</p>
+
+          <p class="vriska">(VRISKA): 8ut you see what I mean, right? That one!</p>
+
+          <p class="vriska">VRISKA: Lol, you don’t know Anything.</p>
+
+          <p class="vriska">VRISKA: Kinda cute, actually.</p>
+
+          <p class="vriska">(VRISKA): What?? Then what is it, smartass.</p>
+
+          <p class="vriska">VRISKA: It’s a cake.</p>
+
+          <p class="vriska">(VRISKA): ........</p>
+
+          <p class="vriska">VRISKA: A 8irthday cake. See? Those are candles.</p>
+
+          <p class="vriska">VRISKA: It’s so o8vious.</p>
+
+          <p class="vriska">(VRISKA): Oh! Like those shitty things John’s dad was always making?</p>
+
+          <p class="vriska">VRISKA: Guess so.</p>
+
+          <p class="vriska">(VRISKA): What’s with all the clouds shaped like John stuff?</p>
+
+          <p class="vriska">(VRISKA): Like that one there. That’s... a 8ig dollop of “shaving cream,” right?</p>
+
+          <p class="vriska">VRISKA: Ummmmmmmm, nah.</p>
+
+          <p class="vriska">VRISKA: That’s just a normal cloud I think.</p>
+
+          <p class="vriska">(VRISKA): Fine, 8ad example. </p>
+
+          <p class="vriska">(VRISKA): 8ut THAT one. </p>
+
+          <p class="vriska">(VRISKA): That’s DEFINITELY a human hat.</p>
+
+          <p class="vriska">VRISKA: Oh yeah, it totally is.</p>
+
+          <p class="vriska">VRISKA: Just a fuckin’ Sky Hat. Right there.</p>
+
+          <p class="vriska">(VRISKA): Is Earth C always like this?</p>
+
+          <p class="vriska">VRISKA: I dunno, I never noticed.</p>
+        </div>
+        <p class="no-indent">(Vriska) scans the sky. She notices a few more John-specific cloud shapes. A ghost over
+          there. A beagle puss just overhead. But the more she stares at them, the more she realizes her ability to
+          recognize the shapes is beginning to fade. They start to resemble fluffy, amorphous blobs. Was it all just in
+          her imagination?</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="vriska">(VRISKA): May8e this is just crazy nonsense, actually.</p>
+
+          <p class="vriska">(VRISKA): Seeing shapes in clouds, I mean.</p>
+
+          <p class="vriska">VRISKA: May8e. Idk.</p>
+
+          <p class="vriska">(VRISKA): Or may8e the truth just makes me kind of nervous. </p>
+
+          <p class="vriska">VRISKA: What “Truth”?</p>
+
+          <p class="vriska">(VRISKA): Don’t tell him I said this, 8ut, I think John is just an extremely powerful 8eing.
+            Even when he sucks.</p>
+
+          <p class="vriska">(VRISKA): And he certainly does appear to suck in this reality.</p>
+
+          <p class="vriska">(VRISKA): And yet, the uneasy feeling is there.</p>
+
+          <p class="vriska">(VRISKA): It’s a vague feeling I’ve had in the 8ack of my mind for a long time, 8ut it
+            really hit me when I was talking to him earlier.</p>
+
+          <p class="vriska">(VRISKA): It’s distur8ing to think a8out that much power 8ottled up in one stupid nerd
+            who’ll never understand it.</p>
+
+          <p class="vriska">VRISKA: What Power are you even talking a8out?</p>
+
+          <p class="vriska">VRISKA: Like, lame Wind Powers?</p>
+
+          <p class="vriska">(VRISKA): No, I mean...</p>
+
+          <p class="vriska">(VRISKA): The power to shape reality. Even without intending to.</p>
+
+          <p class="vriska">(VRISKA): Like, just falling 8ackwards into the most insanely overpowered 8ullshit, when the
+            rest of us have to work our asses off for a fraction of that kind of power and relevance.</p>
+
+          <p class="vriska">(VRISKA): He could rewrite everything that ever happened if he wanted. </p>
+
+          <p class="vriska">(VRISKA): And he could pro8a8ly even 8end reality to his will in certain ways even if he
+            didn’t have the slightest idea what he was doing, which he usually doesn’t.</p>
+
+          <p class="vriska">(VRISKA): He’d pro8a8ly manage to 8e more relevant than I could ever dream of 8eing even if
+            he was dead.</p>
+
+          <p class="vriska">(VRISKA): It’s a little depressing to think a8out, actually.</p>
+
+          <p class="vriska">VRISKA: Eh, no it’s not. </p>
+
+          <p class="vriska">VRISKA: Harry’s dad is a Joke! He’s a Washed Up Loser.</p>
+
+          <p class="vriska">VRISKA: He’s not worth feeling shitty a8out At All.</p>
+
+          <p class="vriska">(VRISKA): Wow. You know what?</p>
+
+          <p class="vriska">(VRISKA): You’re RIGHT.</p>
+
+          <p class="vriska">(VRISKA): Man, that is SUCH a good attitude?</p>
+
+          <p class="vriska">(VRISKA): Why didn’t I say that??</p>
+
+          <p class="vriska">(VRISKA): I used to say shit like that.</p>
+        </div>
+        <p class="no-indent">(Vriska) turns to face Vriska, propping her head a little higher up on the torso to get
+          comfortable. The Vriskas have become virtually oblivious to the fact that a strangled juggalo is currently
+          functioning as a throw pillow. It feels right, natural even, as if he was never meant to serve any purpose
+          other than that of a deceased, soft vehicle for head and neck support between two blossoming friends. </p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="vriska">VRISKA: Hey, can I just ask...</p>
+
+          <p class="vriska">VRISKA: Why were you making out with this Ridiculous Shithead?</p>
+
+          <p class="vriska">(VRISKA): Wow, could we may8e not talk a8out that?</p>
+
+          <p class="vriska">(VRISKA): I’m fucking em8arrassed.</p>
+
+          <p class="vriska">VRISKA: I’m not even Judging. It’s not like I can 8lame you.</p>
+
+          <p class="vriska">VRISKA: Sometimes a girl just needs to give up on her Dignity for a while and kiss a Dum8
+            Clown. </p>
+
+          <p class="vriska">VRISKA: That does a lot to Explain my Relationship with Harry, actually.</p>
+
+          <p class="vriska">(VRISKA): Haha.</p>
+
+          <p class="vriska">(VRISKA): Yeah, that’s a good way of putting it. </p>
+
+          <p class="vriska">(VRISKA): Let’s just call it a 8rief and inadvisa8le catharsis through fleeting clown lust,
+            and agree to never speak of this again.</p>
+
+          <p class="vriska">VRISKA: You got it.</p>
+
+          <p class="vriska">(VRISKA): 8ut anyway, I was trying to make a point!</p>
+
+          <p class="vriska">(VRISKA): I have to say... I’m almost a little jealous of you.</p>
+
+          <p class="vriska">VRISKA: Jealous. Why? I’ve done fuck all.</p>
+
+          <p class="vriska">VRISKA: I go to highschool and that’s a8out it?</p>
+
+          <p class="vriska">VRISKA: Haven’t you like,</p>
+
+          <p class="vriska">VRISKA: Literally Ascended To Godhood, cre8d Multiple Universes, and uh.</p>
+
+          <p class="vriska">VRISKA: Killed Guys And Stuff?</p>
+
+          <p class="vriska">(VRISKA): Yes, I did do all of that stuff.</p>
+
+          <p class="vriska">VRISKA: Didn’t you Mind Control some idiot to jump off a Cliff, and he got Paralyzed...</p>
+
+          <p class="vriska">VRISKA: 8ut then you started Dating him or something?</p>
+
+          <p class="vriska">(VRISKA): Yeah.</p>
+
+          <p class="vriska">(VRISKA): That was 8efore I killed him.</p>
+
+          <p class="vriska">VRISKA: Lmao!!</p>
+
+          <p class="vriska">(VRISKA): It’s cool though, we made up!</p>
+
+          <p class="vriska">(VRISKA): As ghosts I mean. Well, a different copy of me did that, 8ut I think it still
+            counts.</p>
+
+          <p class="vriska">(VRISKA): Wh8ver, it’s just one thing I did. Who can even keep track of this stuff.</p>
+
+          <p class="vriska">VRISKA: Didn’t you 8lind some O8noxious 8itch one time?</p>
+
+          <p class="vriska">(VRISKA): HEY!</p>
+
+          <p class="vriska">(VRISKA): Some of this stuff is kind of priv8??</p>
+
+          <p class="vriska">(VRISKA): Anyway, the point wasn’t to go strolling down memory lane on some of the 8adass
+            things I’ve done. </p>
+
+          <p class="vriska">(VRISKA): Not that there isn’t a lot of gr8 material there.</p>
+
+          <p class="vriska">(VRISKA): I’m just saying, with the life you’re living here, you seem...</p>
+
+          <p class="vriska">(VRISKA): Free?</p>
+
+          <p class="vriska">(VRISKA): Free to just 8e yourself, and 8e cool, and not really care too much a8out other
+            people’s horse shit.</p>
+
+          <p class="vriska">(VRISKA): I’ve spent so long caring so much a8out what other people thought of me. Mainly
+            that they saw me as important, or making a “difference.”</p>
+
+          <p class="vriska">(VRISKA): It’s such a futile struggle sometimes. And I thought I was doing SO well, and
+            getting SO close to the 8ig prize... and then I end up... here???</p>
+
+          <p class="vriska">(VRISKA): It’s like a 8ig joke. And sometimes it feels like real freedom is just
+            understanding that.</p>
+
+          <p class="vriska">(VRISKA): And when you do, it comes through in your personality, and it’s a lot easier to
+            just seem...</p>
+
+          <p class="vriska">(VRISKA): Cool. You know?</p>
+
+          <p class="vriska">VRISKA: I guess.</p>
+
+          <p class="vriska">(VRISKA): This is really funny. I feel like such a fuckup. 8ecause now that I’m saying this,
+            I realize there WAS a person like that I met once.</p>
+
+          <p class="vriska">(VRISKA): Like you, sorta. It was just another version of myself.</p>
+
+          <p class="vriska">(VRISKA): She was genuinely happy, and living her 8est life, even though she was ironically
+            a ghost.</p>
+
+          <p class="vriska">(VRISKA): 8ut something a8out her attitude set me off.</p>
+
+          <p class="vriska">(VRISKA): So I ripped her to pieces??</p>
+
+          <p class="vriska">(VRISKA): Also I sort of stole her girlfriend.</p>
+
+          <p class="vriska">VRISKA: Holy shit?</p>
+
+          <p class="vriska">(VRISKA): I know! I’m terri8le.</p>
+
+          <p class="vriska">VRISKA: No not really. </p>
+
+          <p class="vriska">VRISKA: This all sounds kind of Legendary, t8h.</p>
+
+          <p class="vriska">(VRISKA): No, I know! I know how it sounds. </p>
+
+          <p class="vriska">(VRISKA): Just, please, don’t look at me as some sort of role model, ok? </p>
+
+          <p class="vriska">(VRISKA): This isn’t good! The point is it’s 8AD!</p>
+
+          <p class="vriska">(VRISKA): Take it from me, don’t do the shit where you start modeling yourself after some
+            mental image you have of a cooler version of yourself! It just sucks.</p>
+
+          <p class="vriska">VRISKA: Haha, alright, Whatever You Say. :::::::)</p>
+
+          <p class="vriska">(VRISKA): Ugh. This isn’t going in the direction I was hoping.</p>
+
+          <p class="vriska">(VRISKA): The POINT is, I was so mad at her.</p>
+
+          <p class="vriska">(VRISKA): That happy ghost version of myself, who was free of everything.</p>
+
+          <p class="vriska">(VRISKA): I was pro8a8ly mad 8ecause she got to 8e who she really was, without stressing
+            a8out it, which is something I never felt like I was allowed to have.</p>
+
+          <p class="vriska">VRISKA: Well.</p>
+
+          <p class="vriska">VRISKA: You can now, right?</p>
+
+          <p class="vriska">VRISKA: What the fuck is Stopping you.</p>
+
+          <p class="vriska">(VRISKA): I guess so. </p>
+
+          <p class="vriska">(VRISKA): I wonder what the point would 8e?</p>
+
+          <p class="vriska">VRISKA: What do you mean.</p>
+
+          <p class="vriska">(VRISKA): I could 8e a 8etter version of myself than I am, 8ut...</p>
+
+          <p class="vriska">(VRISKA): Then...</p>
+
+          <p class="vriska">(VRISKA): Who would even 8e around to notice?</p>
+
+          <p class="vriska">VRISKA: I would.</p>
+
+          <p class="vriska">(VRISKA): Oh, yeah. No, I mean, that’s gr8.</p>
+
+          <p class="vriska">(VRISKA): And it’s nice talking to you, and getting stuff off my chest? It’s not what I
+            meant, though.</p>
+
+          <p class="vriska">(VRISKA): I left the people I care most a8out 8ehind.</p>
+
+          <p class="vriska">(VRISKA): What’s the point of 8ecoming your 8est self, if the people most important to you
+            aren’t around to witness it?</p>
+
+          <p class="vriska">VRISKA: Um. Aren’t all your friends Here though?</p>
+
+          <p class="vriska">VRISKA: I know they’re a 8unch of Old Fucks now, 8ut...</p>
+
+          <p class="vriska">(VRISKA): No, they are. That’s...</p>
+
+          <p class="vriska">(VRISKA): Not what I mean.</p>
+
+          <p class="vriska">(VRISKA): Sigh. This is hard to explain.</p>
+
+          <p class="vriska">(VRISKA): I guess I mean there’s someone specifically I fell out of touch with, who it feels
+            like I’ll never see again.</p>
+
+          <p class="vriska">VRISKA: Oh.</p>
+
+          <p class="vriska">(VRISKA): May8e...</p>
+        </div>
+        <p class="no-indent">(Vriska) thinks for a while on her next statement. She needs the time to let a thought
+          she’d never had before arrange itself into words.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="vriska">(VRISKA): May8e that’s why I h8’d my ghost self so much?</p>
+
+          <p class="vriska">VRISKA: Why?</p>
+
+          <p class="vriska">(VRISKA): 8ecause I just had a sense.</p>
+
+          <p class="vriska">(VRISKA): On some level I knew she was right. She was happy and honest with herself. And
+            that’s what made her...</p>
+
+          <p class="vriska">(VRISKA): A version of myself who was actually worthy of someone I cared a8out.</p>
+
+          <p class="vriska">(VRISKA): Don’t get me wrong, we had a nice time for a few years living on that meteor. </p>
+
+          <p class="vriska">(VRISKA): It was a good, sta8le pale relationship. 8ut that’s all it was.</p>
+
+          <p class="vriska">(VRISKA): We couldn’t really connect in a deeper way 8ecause I was still... the way I am, I
+            guess?</p>
+
+          <p class="vriska">(VRISKA): Layers and layers of armor and defenses. </p>
+
+          <p class="vriska">(VRISKA): And I had some mysterious feeling that weak ghost version of myself was always
+            meant to form the kind of connection with her that I never could, 8ecause she didn’t have any of that stuff
+            getting in the way.</p>
+
+          <p class="vriska">(VRISKA): Which is pro8a8ly why I flipped out at her.</p>
+
+          <p class="vriska">VRISKA: The person you’re talking a8out here...</p>
+
+          <p class="vriska">VRISKA: It kinda sounds like you Love her.</p>
+
+          <p class="vriska">(VRISKA): What??</p>
+
+          <p class="vriska">(VRISKA): No!</p>
+
+          <p class="vriska">VRISKA: Okay, Whatever.</p>
+
+          <p class="vriska">(VRISKA): I don’t 8elieve this.</p>
+
+          <p class="vriska">(VRISKA): I mean... may8e?</p>
+
+          <p class="vriska">(VRISKA): Sorta.</p>
+
+          <p class="vriska">(VRISKA): It’s a complic8d feeling.</p>
+
+          <p class="vriska">VRISKA: It actually doesn’t sound that complic8d, 8ut again, Whatever.</p>
+
+          <p class="vriska">(VRISKA): I don’t know!!!!!!!!</p>
+
+          <p class="vriska">(VRISKA): I still feel sort of messed up a8out this, and I don’t think I can pinpoint
+            exactly how I feel!!!!!!!!</p>
+
+          <p class="vriska">(VRISKA): May8e you can’t even 8oil it down to one quadrant at all!!!!!!!!</p>
+
+          <p class="vriska">VRISKA: Who are we Talking a8out here?</p>
+
+          <p class="vriska">(VRISKA): I DON’T THINK I CAN TALK A8OUT THIS ANYMORE!</p>
+
+          <p class="vriska">VRISKA: Oh god, it’s not...</p>
+
+          <p class="vriska">VRISKA: My MOM, is it?</p>
+
+          <p class="vriska">VRISKA: Or one of them?</p>
+
+          <p class="vriska">(VRISKA): Oh FUCK no. Not them.</p>
+
+          <p class="vriska">(VRISKA): Anyway, they’re living on this planet. Remem8er I said I’d pro8a8ly never see her
+            again?</p>
+
+          <p class="vriska">VRISKA: Yeah.</p>
+
+          <p class="vriska">VRISKA: You’re just talking a8out The Girl You 8linded that one time, aren’t you?</p>
+
+          <p class="vriska">(VRISKA): Ummmmmmmm.</p>
+
+          <p class="vriska">VRISKA: May8e I’m not Fucking Stupid?</p>
+
+          <p class="vriska">VRISKA: I know some Lore.</p>
+        </div>
+        <p class="no-indent">(Vriska) rolls her head against the clown cadaver to face the sky again. Even if this is
+          another near-duplicate of herself who’s easy to confide in, maybe she’s said too much already. Maybe she’s
+          even admitted too much to herself. Moments pass in silence.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="vriska">VRISKA: I’m pretty sure Harry’s Dad used to talk to her a lot.</p>
+
+          <p class="vriska">(VRISKA): What?</p>
+
+          <p class="vriska">VRISKA: The 8lind Girl.</p>
+
+          <p class="vriska">(VRISKA): He did? When?</p>
+
+          <p class="vriska">VRISKA: I dunno. Years ago. </p>
+
+          <p class="vriska">(VRISKA): How is that possi8le? I mean... from THIS place?</p>
+
+          <p class="vriska">VRISKA: What. Earth C? </p>
+
+          <p class="vriska">VRISKA: I don’t think I get the question.</p>
+
+          <p class="vriska">(VRISKA): You still don’t seem to understand. We’re all inside...</p>
+
+          <p class="vriska">(VRISKA): Never mind. </p>
+
+          <p class="vriska">(VRISKA): What were they even talking a8out?</p>
+
+          <p class="vriska">VRISKA: I have No Idea.</p>
+
+          <p class="vriska">VRISKA: You wanna Look?</p>
+
+          <p class="vriska">(VRISKA): Look at what?</p>
+
+          <p class="vriska">VRISKA: Just a minute ago I swiped his Phone.</p>
+
+          <p class="vriska">(VRISKA): You stole John’s phone??</p>
+
+          <p class="vriska">VRISKA: Yeah.</p>
+
+          <p class="vriska">VRISKA: I Steal Stuff sometimes. </p>
+
+          <p class="vriska">VRISKA: The ha8it’s Pro8a8ly just in my DNA.</p>
+
+          <p class="vriska">(VRISKA): Lol.</p>
+
+          <p class="vriska">(VRISKA): Yeah, let’s take a look.</p>
+        </div>
+        <p class="no-indent">Vriska hands over the phone. It exhibits decades of use. This is not the device of a man
+          who frequently upgrades his technology. There’s no password to unlock it. (Vriska) scrolls upward on a text
+          exchange for quite some time.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="vriska">(VRISKA): How far 8ack does this go??</p>
+
+          <p class="vriska">VRISKA: Not sure. 8efore I was hatched, at least.</p>
+
+          <p class="vriska">(VRISKA): This is all... </p>
+
+          <p class="vriska">(VRISKA): Weirdly flirtatious????????</p>
+
+          <p class="vriska">VRISKA: Yeah.</p>
+
+          <p class="vriska">(VRISKA): Terezi was like that with a lot of people though.</p>
+
+          <p class="vriska">(VRISKA): Still, it’s a little jarring.</p>
+
+          <p class="vriska">(VRISKA): It’s all kind of 8lowing my mind.</p>
+
+          <p class="vriska">VRISKA: You know what this Means, don’t you?</p>
+
+          <p class="vriska">(VRISKA): What?</p>
+
+          <p class="vriska">VRISKA: You can Contact Her.</p>
+
+          <p class="vriska">(VRISKA): Holy shit.</p>
+        </div>
+        <p class="no-indent">(Vriska) clicks on the reply field. Her thumbs hover over the digital keys.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="vriska">(VRISKA): What would I even say?</p>
+
+          <p class="vriska">VRISKA: Tell her you Love Her.</p>
+
+          <p class="vriska">(VRISKA): Oh, shut the fuck up.</p>
+
+          <p class="vriska">VRISKA: Ha Ha Ha Ha.</p>
+
+          <p class="vriska">(VRISKA): 8ut seriously...</p>
+
+          <p class="vriska">(VRISKA): I have no idea where she is, or what she’s doing. Is she old now too, like
+            everyone else?</p>
+
+          <p class="vriska">(VRISKA): That would feel weird.</p>
+
+          <p class="vriska">VRISKA: Only one way to Find Out.</p>
+        </div>
+        <p class="no-indent">(Vriska) stands up, and paces in circles around the vanquished bard. Vriska maintains her
+          relaxed position while studying the cloud shapes again, providing (Vriska) with a wide berth for this critical
+          rumination. </p>
+        <p>Finally, (Vriska) stops pacing, and begins typing.</p>
+        <div class="chat type-rg type-hs-small--md" style="margin-bottom:0">
+          <p class="vriska">(VRISKA): Hey Terezi.</p>
+
+          <p class="vriska">(VRISKA): This isn’t John.</p>
+
+          <p class="vriska">(VRISKA): It’s Vriska.</p>
+        </div>
+      </div>
       <div class="o_story-nav type-hs-copy line-tight pad-x-0 pad-x-lg--md pad-b-lg">
         <div>
           <span>&gt;</span>
           <a href="Candy 38.html">==&gt; </a><br>
         </div>
       </div>
-  
-<footer id="story-footer" role="banner">
-  <div id="story_footer_container" class="o_story-page-footer flex pad-t-0 pad-x-0
+
+      <footer id="story-footer" role="banner">
+        <div id="story_footer_container" class="o_story-page-footer flex pad-t-0 pad-x-0
      flex-justify 
     ">
-      <div class="pad-l-lg--md mar-b-md type-hs-small type-hs-bottom--md type-center type-left--md">
-        <ul class="o_game-nav">
-          <li class="o_game-nav-item">
-            <a id="o_start-over" href="The Homestuck Epilogues.html">Start Over</a>
-          </li>
-            <li class="o_game-nav-item">
-              <a href="Candy 36.html">Go Back</a>
-            </li>
-        </ul>
-      </div>
-      <script>
-//<![CDATA[
-$(document).ready(function() { Gamenav.checkAutosave(); });
+          <div class="pad-l-lg--md mar-b-md type-hs-small type-hs-bottom--md type-center type-left--md">
+            <ul class="o_game-nav">
+              <li class="o_game-nav-item">
+                <a id="o_start-over" href="Choice Page.html">Start Over</a>
+              </li>
+              <li class="o_game-nav-item">
+                <a href="Candy 36.html">Go Back</a>
+              </li>
+            </ul>
+          </div>
+          <script>
+            //<![CDATA[
+            $(document).ready(function () { Gamenav.checkAutosave(); });
 //]]>
-</script>
+          </script>
 
-    <a href="javascript:void(0)" data-gamenav-open="" class="nav-btn nav-btn--center type-hs-small mar-b-md" style="text-decoration:none; text-transform: none; font-size:14px; line-height:14px;"><span>Options</span> <i class="icon-menu" style="margin:0;"></i></a>
+          <a href="javascript:void(0)" data-gamenav-open="" class="nav-btn nav-btn--center type-hs-small mar-b-md"
+            style="text-decoration:none; text-transform: none; font-size:14px; line-height:14px;"><span>Options</span>
+            <i class="icon-menu" style="margin:0;"></i></a>
+        </div>
+      </footer>
+
+
+    </div>
+  </div><iframe name="__tcfapiLocator" src="./Epilogue_files/saved_resource(2).html"
+    style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe>
+
+
+
+  <div class="o_site-footer row pos-r pad-t-rg pad-b-xl pad-b-0--md bg-dark-gray">
+    <div class="float-l"><img
+        src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif"
+        alt="Footer logo"><br></div>
+    <div class="float-r disp-n disp-bl--sm"><img
+        src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif"
+        alt="Footer logo"><br></div>
+    <div class="type-center pad-t-md--md">
+      <ul>
+        <li><a href="https://www.homestuck.com/contacts">Contacts</a></li>
+        <li><a href="https://www.homestuck.com/privacy">Privacy Policy</a></li>
+      </ul>
+      <div><span style="white-space:nowrap;">© 2018 Homestuck</span> <span style="white-space:nowrap;">and VIZ
+          Media</span></div>
+    </div>
   </div>
-</footer>
-
-
-  </div>
-</div><iframe name="__tcfapiLocator" src="./Epilogue_files/saved_resource(2).html" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe>
-
-
-    
-<div class="o_site-footer row pos-r pad-t-rg pad-b-xl pad-b-0--md bg-dark-gray">
-  <div class="float-l"><img src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif" alt="Footer logo"><br></div>
-  <div class="float-r disp-n disp-bl--sm"><img src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif" alt="Footer logo"><br></div>
-  <div class="type-center pad-t-md--md">
-    <ul>
-      <li><a href="https://www.homestuck.com/contacts">Contacts</a></li>
-      <li><a href="https://www.homestuck.com/privacy">Privacy Policy</a></li>
-    </ul>
-    <div><span style="white-space:nowrap;">© 2018 Homestuck</span> <span style="white-space:nowrap;">and VIZ Media</span></div>
-  </div>
-</div>
 
 
 
-    <div id="overlay" data-overlay-state="off" class="o_overlay"></div>
-    <div id="game_overlay" data-game-overlay-state="off" class="o_game-overlay"></div>
-    <div id="overlay_wait" data-overlay-state="off" class="o_overlay-wait"></div>
+  <div id="overlay" data-overlay-state="off" class="o_overlay"></div>
+  <div id="game_overlay" data-game-overlay-state="off" class="o_game-overlay"></div>
+  <div id="overlay_wait" data-overlay-state="off" class="o_overlay-wait"></div>
 
 
 
-  
 
-<iframe name="googlefcPresent" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;" src="./Epilogue_files/saved_resource(6).html" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe></body></html>
+
+  <iframe name="googlefcPresent"
+    style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"
+    src="./Epilogue_files/saved_resource(6).html"
+    style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe>
+</body>
+
+</html>

@@ -1,409 +1,524 @@
 <!DOCTYPE html>
 
-<html dir="ltr" lang="en-US"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html dir="ltr" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <!-- application -->
-    <script async="" src="./Epilogue_files/jquery-1.11.3.min.js.download"></script>
-    
-<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"1b930da09b","applicationID":"65900267","transactionName":"cFkNREpaWA9dF0pBVlRTEB9LQVsRQQ==","queueTime":0,"applicationTime":5,"agent":""}</script>
-<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"1b930da09b",applicationID:"65900267"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="format-detection" content="telephone=no">
-    <title>The Homestuck Epilogues</title>
-    <meta name="description" content="Tales of dubious authenticity.">
-    <script>
-//<![CDATA[
-var getGAEventLabel = function(){ return "The Homestuck Epilogues"; };
+  <script async="" src="./Epilogue_files/jquery-1.11.3.min.js.download"></script>
+
+  <script>window.NREUM || (NREUM = {}); NREUM.info = { "beacon": "bam-cell.nr-data.net", "errorBeacon": "bam-cell.nr-data.net", "licenseKey": "1b930da09b", "applicationID": "65900267", "transactionName": "cFkNREpaWA9dF0pBVlRTEB9LQVsRQQ==", "queueTime": 0, "applicationTime": 5, "agent": "" }</script>
+  <script>(window.NREUM || (NREUM = {})).loader_config = { licenseKey: "1b930da09b", applicationID: "65900267" }; window.NREUM || (NREUM = {}), __nr_require = function (t, e, n) { function r(n) { if (!e[ n ]) { var i = e[ n ] = { exports: {} }; t[ n ][ 0 ].call(i.exports, function (e) { var i = t[ n ][ 1 ][ e ]; return r(i || e) }, i, i.exports) } return e[ n ].exports } if ("function" == typeof __nr_require) return __nr_require; for (var i = 0; i < n.length; i++)r(n[ i ]); return r }({ 1: [ function (t, e, n) { function r() { } function i(t, e, n) { return function () { return o(t, [ u.now() ].concat(f(arguments)), e ? null : this, n), e ? void 0 : this } } var o = t("handle"), a = t(8), f = t(9), c = t("ee").get("tracer"), u = t("loader"), s = NREUM; "undefined" == typeof window.newrelic && (newrelic = s); var d = [ "setPageViewName", "setCustomAttribute", "setErrorHandler", "finished", "addToTrace", "inlineHit", "addRelease" ], p = "api-", l = p + "ixn-"; a(d, function (t, e) { s[ e ] = i(p + e, !0, "api") }), s.addPageAction = i(p + "addPageAction", !0), s.setCurrentRouteName = i(p + "routeName", !0), e.exports = newrelic, s.interaction = function () { return (new r).get() }; var m = r.prototype = { createTracer: function (t, e) { var n = {}, r = this, i = "function" == typeof e; return o(l + "tracer", [ u.now(), t, n ], r), function () { if (c.emit((i ? "" : "no-") + "fn-start", [ u.now(), r, i ], n), i) try { return e.apply(this, arguments) } catch (t) { throw c.emit("fn-err", [ arguments, this, t ], n), t } finally { c.emit("fn-end", [ u.now() ], n) } } } }; a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","), function (t, e) { m[ e ] = i(l + e) }), newrelic.noticeError = function (t, e) { "string" == typeof t && (t = new Error(t)), o("err", [ t, u.now(), !1, e ]) } }, {} ], 2: [ function (t, e, n) { function r(t) { if (NREUM.init) { for (var e = NREUM.init, n = t.split("."), r = 0; r < n.length - 1; r++)if (e = e[ n[ r ] ], "object" != typeof e) return; return e = e[ n[ n.length - 1 ] ] } } e.exports = { getConfiguration: r } }, {} ], 3: [ function (t, e, n) { function r() { return f.exists && performance.now ? Math.round(performance.now()) : (o = Math.max((new Date).getTime(), o)) - a } function i() { return o } var o = (new Date).getTime(), a = o, f = t(10); e.exports = r, e.exports.offset = a, e.exports.getLastTimestamp = i }, {} ], 4: [ function (t, e, n) { function r(t) { return !(!t || !t.protocol || "file:" === t.protocol) } e.exports = r }, {} ], 5: [ function (t, e, n) { function r(t, e) { var n = t.getEntries(); n.forEach(function (t) { "first-paint" === t.name ? d("timing", [ "fp", Math.floor(t.startTime) ]) : "first-contentful-paint" === t.name && d("timing", [ "fcp", Math.floor(t.startTime) ]) }) } function i(t, e) { var n = t.getEntries(); n.length > 0 && d("lcp", [ n[ n.length - 1 ] ]) } function o(t) { t.getEntries().forEach(function (t) { t.hadRecentInput || d("cls", [ t ]) }) } function a(t) { if (t instanceof m && !g) { var e = Math.round(t.timeStamp), n = { type: t.type }; e <= p.now() ? n.fid = p.now() - e : e > p.offset && e <= Date.now() ? (e -= p.offset, n.fid = p.now() - e) : e = p.now(), g = !0, d("timing", [ "fi", e, n ]) } } function f(t) { "hidden" === t && d("pageHide", [ p.now() ]) } if (!("init" in NREUM && "page_view_timing" in NREUM.init && "enabled" in NREUM.init.page_view_timing && NREUM.init.page_view_timing.enabled === !1)) { var c, u, s, d = t("handle"), p = t("loader"), l = t(7), m = NREUM.o.EV; if ("PerformanceObserver" in window && "function" == typeof window.PerformanceObserver) { c = new PerformanceObserver(r); try { c.observe({ entryTypes: [ "paint" ] }) } catch (v) { } u = new PerformanceObserver(i); try { u.observe({ entryTypes: [ "largest-contentful-paint" ] }) } catch (v) { } s = new PerformanceObserver(o); try { s.observe({ type: "layout-shift", buffered: !0 }) } catch (v) { } } if ("addEventListener" in document) { var g = !1, h = [ "click", "keydown", "mousedown", "pointerdown", "touchstart" ]; h.forEach(function (t) { document.addEventListener(t, a, !1) }) } l(f) } }, {} ], 6: [ function (t, e, n) { function r(t, e) { if (!i) return !1; if (t !== i) return !1; if (!e) return !0; if (!o) return !1; for (var n = o.split("."), r = e.split("."), a = 0; a < r.length; a++)if (r[ a ] !== n[ a ]) return !1; return !0 } var i = null, o = null, a = /Version\/(\S+)\s+Safari/; if (navigator.userAgent) { var f = navigator.userAgent, c = f.match(a); c && f.indexOf("Chrome") === -1 && f.indexOf("Chromium") === -1 && (i = "Safari", o = c[ 1 ]) } e.exports = { agent: i, version: o, match: r } }, {} ], 7: [ function (t, e, n) { function r(t) { function e() { t(a && document[ a ] ? document[ a ] : document[ i ] ? "hidden" : "visible") } "addEventListener" in document && o && document.addEventListener(o, e, !1) } e.exports = r; var i, o, a; "undefined" != typeof document.hidden ? (i = "hidden", o = "visibilitychange", a = "visibilityState") : "undefined" != typeof document.msHidden ? (i = "msHidden", o = "msvisibilitychange") : "undefined" != typeof document.webkitHidden && (i = "webkitHidden", o = "webkitvisibilitychange", a = "webkitVisibilityState") }, {} ], 8: [ function (t, e, n) { function r(t, e) { var n = [], r = "", o = 0; for (r in t) i.call(t, r) && (n[ o ] = e(r, t[ r ]), o += 1); return n } var i = Object.prototype.hasOwnProperty; e.exports = r }, {} ], 9: [ function (t, e, n) { function r(t, e, n) { e || (e = 0), "undefined" == typeof n && (n = t ? t.length : 0); for (var r = -1, i = n - e || 0, o = Array(i < 0 ? 0 : i); ++r < i;)o[ r ] = t[ e + r ]; return o } e.exports = r }, {} ], 10: [ function (t, e, n) { e.exports = { exists: "undefined" != typeof window.performance && window.performance.timing && "undefined" != typeof window.performance.timing.navigationStart } }, {} ], ee: [ function (t, e, n) { function r() { } function i(t) { function e(t) { return t && t instanceof r ? t : t ? u(t, c, a) : a() } function n(n, r, i, o, a) { if (a !== !1 && (a = !0), !l.aborted || o) { t && a && t(n, r, i); for (var f = e(i), c = v(n), u = c.length, s = 0; s < u; s++)c[ s ].apply(f, r); var p = d[ w[ n ] ]; return p && p.push([ b, n, r, f ]), f } } function o(t, e) { y[ t ] = v(t).concat(e) } function m(t, e) { var n = y[ t ]; if (n) for (var r = 0; r < n.length; r++)n[ r ] === e && n.splice(r, 1) } function v(t) { return y[ t ] || [] } function g(t) { return p[ t ] = p[ t ] || i(n) } function h(t, e) { l.aborted || s(t, function (t, n) { e = e || "feature", w[ n ] = e, e in d || (d[ e ] = []) }) } var y = {}, w = {}, b = { on: o, addEventListener: o, removeEventListener: m, emit: n, get: g, listeners: v, context: e, buffer: h, abort: f, aborted: !1 }; return b } function o(t) { return u(t, c, a) } function a() { return new r } function f() { (d.api || d.feature) && (l.aborted = !0, d = l.backlog = {}) } var c = "nr@context", u = t("gos"), s = t(8), d = {}, p = {}, l = e.exports = i(); e.exports.getOrSetContext = o, l.backlog = d }, {} ], gos: [ function (t, e, n) { function r(t, e, n) { if (i.call(t, e)) return t[ e ]; var r = n(); if (Object.defineProperty && Object.keys) try { return Object.defineProperty(t, e, { value: r, writable: !0, enumerable: !1 }), r } catch (o) { } return t[ e ] = r, r } var i = Object.prototype.hasOwnProperty; e.exports = r }, {} ], handle: [ function (t, e, n) { function r(t, e, n, r) { i.buffer([ t ], r), i.emit(t, e, n) } var i = t("ee").get("handle"); e.exports = r, r.ee = i }, {} ], id: [ function (t, e, n) { function r(t) { var e = typeof t; return !t || "object" !== e && "function" !== e ? -1 : t === window ? 0 : a(t, o, function () { return i++ }) } var i = 1, o = "nr@id", a = t("gos"); e.exports = r }, {} ], loader: [ function (t, e, n) { function r() { if (!R++) { var t = M.info = NREUM.info, e = v.getElementsByTagName("script")[ 0 ]; if (setTimeout(u.abort, 3e4), !(t && t.licenseKey && t.applicationID && e)) return u.abort(); c(E, function (e, n) { t[ e ] || (t[ e ] = n) }); var n = a(); f("mark", [ "onload", n + M.offset ], null, "api"), f("timing", [ "load", n ]); var r = v.createElement("script"); 0 === t.agent.indexOf("http://") || 0 === t.agent.indexOf("https://") ? r.src = t.agent : r.src = l + "://" + t.agent, e.parentNode.insertBefore(r, e) } } function i() { "complete" === v.readyState && o() } function o() { f("mark", [ "domContent", a() + M.offset ], null, "api") } var a = t(3), f = t("handle"), c = t(8), u = t("ee"), s = t(6), d = t(4), p = t(2), l = p.getConfiguration("ssl") === !1 ? "http" : "https", m = window, v = m.document, g = "addEventListener", h = "attachEvent", y = m.XMLHttpRequest, w = y && y.prototype, b = !d(m.location); NREUM.o = { ST: setTimeout, SI: m.setImmediate, CT: clearTimeout, XHR: y, REQ: m.Request, EV: m.Event, PR: m.Promise, MO: m.MutationObserver }; var x = "" + location, E = { beacon: "bam.nr-data.net", errorBeacon: "bam.nr-data.net", agent: "js-agent.newrelic.com/nr-1210.min.js" }, O = y && w && w[ g ] && !/CriOS/.test(navigator.userAgent), M = e.exports = { offset: a.getLastTimestamp(), now: a, origin: x, features: {}, xhrWrappable: O, userAgent: s, disabled: b }; if (!b) { t(1), t(5), v[ g ] ? (v[ g ]("DOMContentLoaded", o, !1), m[ g ]("load", r, !1)) : (v[ h ]("onreadystatechange", i), m[ h ]("onload", r)), f("mark", [ "firstbyte", a.getLastTimestamp() ], null, "api"); var R = 0 } }, {} ], "wrap-function": [ function (t, e, n) { function r(t, e) { function n(e, n, r, c, u) { function nrWrapper() { var o, a, s, p; try { a = this, o = d(arguments), s = "function" == typeof r ? r(o, a) : r || {} } catch (l) { i([ l, "", [ o, a, c ], s ], t) } f(n + "start", [ o, a, c ], s, u); try { return p = e.apply(a, o) } catch (m) { throw f(n + "err", [ o, a, m ], s, u), m } finally { f(n + "end", [ o, a, p ], s, u) } } return a(e) ? e : (n || (n = ""), nrWrapper[ p ] = e, o(e, nrWrapper, t), nrWrapper) } function r(t, e, r, i, o) { r || (r = ""); var f, c, u, s = "-" === r.charAt(0); for (u = 0; u < e.length; u++)c = e[ u ], f = t[ c ], a(f) || (t[ c ] = n(f, s ? c + r : r, i, c, o)) } function f(n, r, o, a) { if (!m || e) { var f = m; m = !0; try { t.emit(n, r, o, e, a) } catch (c) { i([ c, n, r, o ], t) } m = f } } return t || (t = s), n.inPlace = r, n.flag = p, n } function i(t, e) { e || (e = s); try { e.emit("internal-error", t) } catch (n) { } } function o(t, e, n) { if (Object.defineProperty && Object.keys) try { var r = Object.keys(t); return r.forEach(function (n) { Object.defineProperty(e, n, { get: function () { return t[ n ] }, set: function (e) { return t[ n ] = e, e } }) }), e } catch (o) { i([ o ], n) } for (var a in t) l.call(t, a) && (e[ a ] = t[ a ]); return e } function a(t) { return !(t && t instanceof Function && t.apply && !t[ p ]) } function f(t, e) { var n = e(t); return n[ p ] = t, o(t, n, s), n } function c(t, e, n) { var r = t[ e ]; t[ e ] = f(r, n) } function u() { for (var t = arguments.length, e = new Array(t), n = 0; n < t; ++n)e[ n ] = arguments[ n ]; return e } var s = t("ee"), d = t(9), p = "nr@original", l = Object.prototype.hasOwnProperty, m = !1; e.exports = r, e.exports.wrapFunction = f, e.exports.wrapInPlace = c, e.exports.argsToArray = u }, {} ] }, {}, [ "loader" ]);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <title>The Homestuck Epilogues</title>
+  <meta name="description" content="Tales of dubious authenticity.">
+  <script>
+    //<![CDATA[
+    var getGAEventLabel = function () { return "The Homestuck Epilogues"; };
 //]]>
-</script>
-      <link rel="canonical" href="Meat 36.html">
+  </script>
+  <link rel="canonical" href="Meat 36.html">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="https://www.homestuck.com/favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://www.homestuck.com/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://www.homestuck.com/favicon/favicon-16x16.png">
-<link rel="manifest" href="https://www.homestuck.com/favicon/manifest.json">
-<link rel="mask-icon" href="https://www.homestuck.com/favicon/safari-pinned-tab.svg" color="#6bbe4a">
-<meta name="theme-color" content="#ffffff">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www.homestuck.com/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://www.homestuck.com/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://www.homestuck.com/favicon/favicon-16x16.png">
+  <link rel="manifest" href="https://www.homestuck.com/favicon/manifest.json">
+  <link rel="mask-icon" href="https://www.homestuck.com/favicon/safari-pinned-tab.svg" color="#6bbe4a">
+  <meta name="theme-color" content="#ffffff">
 
-        <link rel="stylesheet" media="all" href="./Epilogue_files/manifest-epilogue-1694f2c1abc80cf72e84324f6d6486e6f04b02358ed667dee36c88974eef388f.css">
-      <link rel="stylesheet" href="./Epilogue_files/kek1uwn.css">
-    <link rel="stylesheet" media="all" href="./Epilogue_files/manifest-ui-e03365bbb17dde0f1fd5463dd7b56d096a27cae55aa131b72684e36c1f0c80f6.css">
-    <script src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE=(1)"></script>
-    <script src="./Epilogue_files/manifest-ads-story-1885683d55d6f631dc202ac5db87250ca938be96a613e85bb93739ecc057540e.js.download"></script>
+  <link rel="stylesheet" media="all"
+    href="./Epilogue_files/manifest-epilogue-1694f2c1abc80cf72e84324f6d6486e6f04b02358ed667dee36c88974eef388f.css">
+  <link rel="stylesheet" href="./Epilogue_files/kek1uwn.css">
+  <link rel="stylesheet" media="all"
+    href="./Epilogue_files/manifest-ui-e03365bbb17dde0f1fd5463dd7b56d096a27cae55aa131b72684e36c1f0c80f6.css">
+  <script
+    src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE=(1)"></script>
+  <script
+    src="./Epilogue_files/manifest-ads-story-1885683d55d6f631dc202ac5db87250ca938be96a613e85bb93739ecc057540e.js.download"></script>
 
 
-    <!-- //Connect Container: Homestuck-->
-<script src="./Epilogue_files/tag.min.js.download" async="" defer=""></script>
-  <script src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE="></script></head>
-  
-  <body class="epilogue">
+  <!-- //Connect Container: Homestuck-->
+  <script src="./Epilogue_files/tag.min.js.download" async="" defer=""></script>
+  <script
+    src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE="></script>
+</head>
 
-    
-    <header id="site-header" role="banner">
-  <div id="header-container" class="o_story-page-header row flex pad-t-0 ">
-    <a href="javascript:void(0)" data-nav-open="" class="nav-btn nav-btn--center color-white" style="overflow-wrap:normal;text-decoration:none;"><i class="icon-menu"></i><span>Menu</span></a>
-    <nav id="nav-container" data-nav-state="closed" role="navigation" class="o_nav-container">
-      <a href="javascript:void(0)" data-nav-close="" class="nav-btn color-white pad-y-rg type-rg" style="overflow-wrap:normal;text-decoration:none;"><i class="icon-close"></i><span>Dismiss</span></a>
-      <ul id="primary-nav" class="o_primary-nav style-caps weight-bold disp-ib color-white type-rg">
-     <li class="o_primary-nav-item slide-candycorn pipe"><a class="o_primary-nav-link" style="color:#39d5f6" href="Read.html">READ</a></li><!--
-     --><li class="o_primary-nav-item"><a class="o_primary-nav-link" style="color:#39d5f6" href="Credits.html">INFO</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-    
+<body class="epilogue">
 
-    <div class="row bg-white bg-light-gray--md pad-t-md--md pos-r">
-  <div id="content_container" class="mar-x-auto disp-bl bg-white" style="max-width:650px;">
-    <div class="pos-r pad-t-sm pad-x-lg--md type-center" style="overflow:visible; height:72px;">
-      <img class="hsep_bullet" alt="Chapter" src="./Epilogue_files/meat_60x60-a20ba4eabbf9e6c7e4778d99648c13802fc7ff42a24bc48bc0535494cdd82195.png">
-      <h3 class="disp-ib type-hsep-header line-tight type-lg pad-t-sm">
-        36
-      </h3>
+
+  <header id="site-header" role="banner">
+    <div id="header-container" class="o_story-page-header row flex pad-t-0 ">
+      <a href="javascript:void(0)" data-nav-open="" class="nav-btn nav-btn--center color-white"
+        style="overflow-wrap:normal;text-decoration:none;"><i class="icon-menu"></i><span>Menu</span></a>
+      <nav id="nav-container" data-nav-state="closed" role="navigation" class="o_nav-container">
+        <a href="javascript:void(0)" data-nav-close="" class="nav-btn color-white pad-y-rg type-rg"
+          style="overflow-wrap:normal;text-decoration:none;"><i class="icon-close"></i><span>Dismiss</span></a>
+        <ul id="primary-nav" class="o_primary-nav style-caps weight-bold disp-ib color-white type-rg">
+          <li class="o_primary-nav-item slide-candycorn pipe"><a class="o_primary-nav-link" style="color:#39d5f6"
+              href="Read.html">READ</a></li>
+          <!--
+     -->
+          <li class="o_primary-nav-item"><a class="o_primary-nav-link" style="color:#39d5f6"
+              href="Credits.html">INFO</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <div class="row bg-white bg-light-gray--md pad-t-md--md pos-r">
+    <div id="content_container" class="mar-x-auto disp-bl bg-white" style="max-width:650px;">
+      <div class="pos-r pad-t-sm pad-x-lg--md type-center" style="overflow:visible; height:72px;">
+        <img class="hsep_bullet" alt="Chapter"
+          src="./Epilogue_files/meat_60x60-a20ba4eabbf9e6c7e4778d99648c13802fc7ff42a24bc48bc0535494cdd82195.png">
+        <h3 class="disp-ib type-hsep-header line-tight type-lg pad-t-sm">
+          36
+        </h3>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="row bg-white bg-light-gray--md pad-b-md pad-b-lg--md pos-r pad-t-md pad-t-0--md">
-  <div class="mar-x-auto disp-bl bg-white pad-t-lg" style="max-width:650px;">
-      <div class="o-story_text o_epilogue type-rg type-sm--md line-caption line-copy--md pad-x-0 pad-x-lg--md pad-b-lg">  <p class="no-indent dirk"><span class="opener type-hs-opener-rg type-hs-opener-sm--md">S</span>o it turns out that “home” is an entirely abstract concept. A state of mind, if you will, rather than a literal, physical construct that can make you feel one way or the other. Terezi’s been gone long enough that her friends seem like strangers: entangled in relationship dynamics that she’s obliquely excluded from, embroiled in petty feuds, obsessed with politics. </p>
-  <p class="dirk">Oh, do you want to know how those petty feuds and political obsessions turned out by the way? I thought it was pretty obvious, but I’ll say what’s up anyway.</p>
-  <p class="dirk">Jane swept the election, of course. I told you I was going to win. After Jake’s incoherent and scandalous heel-turn at Karkat’s ill-fated rally, no amount of esoteric, three-dimensional jpeg artefacts could have salvaged the Vantas campaign. Besides, Dave and Karkat now have other concerns. Mainly that their BFF Jade has been in a coma for an entire month. They’ve been in and out of the hospital handling her affairs. Her next of kin is listed as John Egbert, and no one’s seen him in ages. It’s like he just disappeared suddenly. Like some great hand came out of the sky and crossed his name off the big list of guys we ever need to give a shit about anymore. </p>
-  <p class="dirk">Terezi heard about Jade from a rather harried Kanaya, who is doubtlessly run ragged from the hot-potato plot circles that I’ve been sending her on for weeks to stop her from reading me the riot act for “kidnapping” her lovely wife. The woman is obviously hysterical and needs to chill the fuck out. I mean, she’s hysterical because I’ve been specifically and deliberately causing her to be that way, sure. But still. She should be fine soon enough.</p>
-  <p class="dirk">It takes Terezi a couple days to work up the...  </p>
-  <p class="dirk">The <em>what</em>, exactly? What is she supposed to be feeling right now? I’m not sure myself. Maybe I should take a minute to think about the thing you’re supposed to feel when someone goes through whatever the hell it was she just went through. If I come up with any ideas, I could easily do her the favor of helping her feel it.</p>
-  <p class="dirk">Whatever it is she’s supposed to feel, what she actually feels is empty. Colorless, dried up, as she walks beneath a holographic billboard displaying Jane’s glorious victory speech. The ceremony accompanying the speech is patently absurd, stuffed with so much pomp and circumstance that Terezi’s nose can’t make sense of what she’s supposed to be looking at. It’s all just light and color, signifying nothing. </p>
-  <p class="dirk">Her internal smelloscope is so discombobulated from the onslaught of pastry-themed floats, and Jane’s tearful soliloquy on the Legacy of Responsibility she is about to inherit, that she mistakes the familiar figure standing in front of the hospital for someone else entirely.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="terezi">TEREZI: H3Y COOLK1D</p>
-  
-  <p class="terezi">TEREZI: HOWS J4DE DO1NG</p>
-</div>
-  <p class="no-indent dirk">Roxy turns around and blinks in confusion. Terezi blinks back. Kanaya had warned her that Roxy had been going through some changes, but this still takes her by surprise.</p>
-  <p class="dirk">So, in her defense, this was an honest mistake to make. Dave gets half of his genetics from Roxy, after all, and since her big heart-to-heart about the personal politics of queer onion metaphors, and ten stages of galaxy-braining through the many vicissitudes of the phrase “no homo,” Roxy has decided to really step up her gender experimentation. I guess at this point she’s gone beyond Stage Ten. Which I imagine is somewhat like reaching Super Saiyan 2 of gender, and then going even further beyond.</p>
-  <p class="dirk">She’s got the Shades™ now, and sports one of those sweep-over hipster cuts Dave loves so much. Nothing ambiguous about this presentation, although if I’m being totally real, it’s a bit derivative. Anyway, I can’t complain too much about her decision to crib the Strider style, since, you know. She’s family. Besides, I’m T-minus ten hours from fucking off this gay Earth forever. It’s her life, her gender, her style—she can be whatever the fuck she wants.</p>
-  <p class="dirk">Roxy’s whole face lights up when she sees Terezi.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="roxy">ROXY: omg terezi i didnt know u were back!</p>
-  
-  <p class="roxy">ROXY: what UP???</p>
-  
-  <p class="terezi">TEREZI: OH ROXY</p>
-  
-  <p class="terezi">TEREZI: UH H1</p>
-  
-  <p class="terezi">TEREZI: 1</p>
-  
-  <p class="terezi">TEREZI: 1 THOUGHT YOU W3R3 D4V3</p>
-  
-  <p class="roxy">ROXY: o lmao that makes sense</p>
-  
-  <p class="roxy">ROXY: i thought for a minute u were appreciating my rad new look</p>
-  
-  <p class="roxy">ROXY: but i know i got a ways to go b4 i dethrone the original coolkid</p>
-  
-  <p class="terezi">TEREZI: NO NO YOUR3 V3RY COOL!</p>
-  
-  <p class="terezi">TEREZI: 1N F4CT 1 WOULD PROB4BLY V3NTUR3 TH4T 1F W3 W3R3 JUDG1NG COOLN3SS 1N 4 FORM4L COOLN3SS CONT3ST JUDG3D BY TH3 PROS, ON 4 COMPL3T3LY OBJ3CT1V3 B4S1S</p>
-  
-  <p class="terezi">TEREZI: YOU 4R3 4CTU4LLY 4BOUT 4 B1LL1ON T1M3S COOL3R TH4N D4V3</p>
-  
-  <p class="roxy">ROXY: wow thx!</p>
-  
-  <p class="terezi">TEREZI: WH1CH 1S 4 F4CT TH4T S33MS SO OBV1OUS TH4T 1V3 D3F1N1T3LY KNOCK3D S3V3R4L R4NKS OFF MY OWN P3RSON4L COOLN3SS 4TTR1BUT3 BY 3V3N S4Y1NG 1T OUT LOUD, R4TH3R TH4N 4LLOW1NG 1T TO B3 4SSUM3D</p>
-  
-  <p class="roxy">ROXY: lol no WAY</p>
-  
-  <p class="roxy">ROXY: terezi ur like the raddest chick i know</p>
-</div>
-  <p class="no-indent dirk">Terezi’s jaw tightens. She’s not ready to hear any words that remind her of those few hours with John. Her hand goes to her pocket, where she’s keeping the wallet. She traces the contours of it with her thumb and forces a smile.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="terezi">TEREZI: 1F YOU S4Y SO</p>
-  
-  <p class="roxy">ROXY: um yeah i fuckin DO say so</p>
-  
-  <p class="roxy">ROXY: dont make me repeat myself</p>
-</div>
-  <p class="no-indent dirk">Roxy seems almost effusive despite the circumstances. An earthy, genuine effusiveness that lights her up from inside. Terezi’s head is filled with stories about a different version of Roxy—the polar opposite of the one standing in front of her. </p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="roxy">ROXY: so....</p>
-  
-  <p class="roxy">ROXY: ur here to see jade huh??</p>
-  
-  <p class="terezi">TEREZI: Y34H</p>
-  
-  <p class="terezi">TEREZI: 1 H34RD WH4T H4PP3N3D TO H3R 4ND THOUGHT 1 SHOULD COM3</p>
-  
-  <p class="terezi">TEREZI: W3LL YOU KNOW</p>
-</div>
-  <p class="no-indent dirk">Pay respects? No, that’s dumb. Terezi knows that’s dumb. This is just a motion you go through. John would definitely want to be here, though, and technically Terezi is taking him with her. He may be in her pocket, but lately she’s been feeling more like he’s under her skin. She hasn’t told anyone what happened. But at least she knows she can look at him whenever she wants. </p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="roxy">ROXY: yeaaa</p>
-  
-  <p class="roxy">ROXY: its lookin grim</p>
-  
-  <p class="roxy">ROXY: on one hand shes just layin there so theres not rly a chance of her doin anything either evil or heroic to off herself permanently</p>
-  
-  <p class="roxy">ROXY: but its also been so long its like</p>
-  
-  <p class="roxy">ROXY: is she just gonna sleep forever???</p>
-  
-  <p class="terezi">TEREZI: SL33P1NG FOR3V3R D3F1N1T3LY SOUNDS L1K3 4 J4D3 MOV3 TO M3</p>
-  
-  <p class="roxy">ROXY: yeah lol i feel bad crackin jokes about it but</p>
-  
-  <p class="roxy">ROXY: i think its what shed want</p>
-  
-  <p class="roxy">ROXY: us havin hope n all</p>
-  
-  <p class="terezi">TEREZI: Y3S</p>
-  
-  <p class="terezi">TEREZI: ...3R</p>
-  
-  <p class="terezi">TEREZI: WH3R3S C4LL1OP3?</p>
-  
-  <p class="terezi">TEREZI: YOU TWO 4R3 ST1LL</p>
-  
-  <p class="terezi">TEREZI: TOG3TH3R?</p>
-  
-  <p class="terezi">TEREZI: R1GHT</p>
-  
-  <p class="roxy">ROXY: oh </p>
-  
-  <p class="roxy">ROXY: um GAWD</p>
-  
-  <p class="roxy">ROXY: back when jade first got all effed up callie saw somethin and it made them freak out</p>
-  
-  <p class="roxy">ROXY: it took me weeks to convince them that it was safe to come home</p>
-  
-  <p class="roxy">ROXY: but now we got the opposite problem and they arent leavin the house at all</p>
-  
-  <p class="roxy">ROXY: they stay home all day with the blinds drawn paintin some weird ass shit on the walls</p>
-  
-  <p class="terezi">TEREZI: WH4T?</p>
-  
-  <p class="roxy">ROXY: its not as bad as it sounds i promise</p>
-  
-  <p class="roxy">ROXY: some of it is like</p>
-  
-  <p class="roxy">ROXY: weird and violent??</p>
-  
-  <p class="roxy">ROXY: like lotsa nasty purple blood and um</p>
-  
-  <p class="roxy">ROXY: nudity????</p>
-  
-  <p class="terezi">TEREZI: &gt;:?</p>
-  
-  <p class="roxy">ROXY: yeah yikes</p>
-  
-  <p class="roxy">ROXY: but MOST of it is cute stuff like... various combos of all of us being happy and gettin married and shit</p>
-  
-  <p class="roxy">ROXY: anyway thats kept callie kinda busy</p>
-  
-  <p class="roxy">ROXY: so it was hard as hell to convince them to let me come see jade at all</p>
-  
-  <p class="roxy">ROXY: its like theyre traumatized</p>
-  
-  <p class="roxy">ROXY: and they think ill drag whatever possessed jade back into our home with me</p>
-  
-  <p class="terezi">TEREZI: DO3S C4LL13 KNOW WH4T H4PP3N3D TO J4D3 TH3N?</p>
-  
-  <p class="roxy">ROXY: maybe idk</p>
-  
-  <p class="roxy">ROXY: im not gonna push them </p>
-  
-  <p class="roxy">ROXY: callies got all kinda hang ups about their existence and purpose and potential lack thereof </p>
-  
-  <p class="roxy">ROXY: when theyre ready to talk about it i want them to be able to talk about it u know?</p>
-  
-  <p class="terezi">TEREZI: Y3S</p>
-  
-  <p class="terezi">TEREZI: 1T DO3S SOUND L1K3 PUSH1NG TH3M WH3N TH3YR3 VULN3R4BL3 W1LL JUST B4CKF1R3 </p>
-</div>
-  <p class="no-indent dirk">Terezi startles a bit when her phone buzzes. Who would even be messaging her now, when the only person she ever talked to is currently dead in her other pocket? She’s intrigued, but she thinks better of worrying about it. It’d be rude to look at her phone while she’s in the middle of a conversation. </p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="roxy">ROXY: oh that reminds me!</p>
-  
-  <p class="roxy">ROXY: have u seen john lately?</p>
-</div>
-  <p class="no-indent dirk">Terezi’s heart skips a beat. It’s almost as if Roxy is the one reading her mind.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="terezi">TEREZI: WHY DO YOU 4SK</p>
-</div>
-  <p class="no-indent dirk">No one else has asked yet. </p>
-  <p class="dirk">Roxy gives a shrug. A conflicted look crosses her face, but I can’t see past it. With the Dead Cherub out of the picture, the aura of void surrounding Roxy once again is impenetrable. Those baller shades aren’t exactly improving my odds of reading her, either. I’ll say again what I’ve always felt about her on some level: some riddles were never meant to be solved.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="roxy">ROXY: he went back to the medium a while ago right??</p>
-  
-  <p class="roxy">ROXY: i thought</p>
-  
-  <p class="roxy">ROXY: maybe u and he crossed paths</p>
-</div>
-  <p class="no-indent dirk">Terezi does not flinch. Her pleasant expression does not falter. She’s good at the appearance of confidence even when wracked with indecision and grief.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="terezi">TEREZI: NO</p>
-  
-  <p class="terezi">TEREZI: I H4V3NT S33N H1M</p>
-  
-  <p class="roxy">ROXY: oh....</p>
-  
-  <p class="roxy">ROXY: damn thats too bad</p>
-  
-  <p class="roxy">ROXY: callie n i have been worried</p>
-  
-  <p class="roxy">ROXY: kinda hoped he woulda come back</p>
-  
-  <p class="roxy">ROXY: or at least let us know what hes up to</p>
-  
-  <p class="roxy">ROXY: ugh between this and whats goin on with jade the lack of closures gonna keep me up at night</p>
-  
-  <p class="terezi">TEREZI: 1M SORRY</p>
-  
-  <p class="terezi">TEREZI: 1 W1SH 1 KN3W WH4T TO T3LL YOU</p>
-  
-  <p class="roxy">ROXY: hey its fine</p>
-  
-  <p class="roxy">ROXY: u cant fix everyones problems</p>
-  
-  <p class="terezi">TEREZI: 1 KNOW</p>
-</div>
-  <p class="no-indent dirk">Roxy pinches her lips together and examines Terezi over the rim of her sunglasses for a moment.</p>
-  <p class="dirk">Maybe, having watched her own friend group suffer stress fractures recently, she understands the weight of those words as uttered by this specific person. Because Terezi is a fixer, and it has been a very difficult lesson for her to learn that some things are simply out of her control. Maybe it’s just that Roxy can hear the bone-deep sorrow in her voice. </p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="terezi">TEREZI: (OMFG)</p>
-  
-  <p class="terezi">TEREZI: (1TS “H1M” YOU FUCK1NG O4F!!!)</p>
-  
-  <p class="roxy">ROXY: wat</p>
-  
-  <p class="roxy">ROXY: who u loudly whispering to</p>
-  
-  <p class="terezi">TEREZI: OH</p>
-  
-  <p class="terezi">TEREZI: NOBODY</p>
-</div>
-  <p class="no-indent dirk">Oh, my bad. Why not send him my regards? Tell him he makes a kickass him for me. It suits the hell out of him.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="terezi">TEREZI: (1M NOT FUCK1NG T3LL1NG H1M TH4T)</p>
-</div>
-  <p class="no-indent dirk">Whatever was bothering Roxy, it passes quickly, and he says nothing about it. He puts his hand on Terezi’s shoulder and gives it a warm clap. The fraternal kind, which a couple of solid dudes might exchange after having just “bro’ed out.” It’s convincing, actually. Reasonably authentic, and quite masculine. He’s off to a great start exhibiting the mannerisms associated with his chosen gender. I’m genuinely proud of him.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="roxy">ROXY: ummm</p>
-  
-  <p class="roxy">ROXY: kay well i should get goin</p>
-  
-  <p class="roxy">ROXY: was nice catchin up!</p>
-  
-  <p class="roxy">ROXY: dont be a stranger alright?</p>
-  
-  <p class="terezi">TEREZI: STR4NG3R TH4N WH4T</p>
-  
-  <p class="roxy">ROXY: lmao ur a riot</p>
-  
-  <p class="roxy">ROXY: but u know what i mean</p>
-  
-  <p class="terezi">TEREZI: Y34H</p>
-  
-  <p class="terezi">TEREZI: S33 YOU</p>
-  
-  <p class="roxy">ROXY: 8)</p>
-</div>
-  <p class="no-indent dirk">As soon as Roxy’s gone, Terezi regrets lying to him about John. It’s a hard secret to keep, but probably a harder one to reveal. Maybe it would have been better if she <em>had</em> run into Dave instead of Roxy. It would have been easier to confide something like that to Dave, wouldn’t it? Well, <em>maybe</em> it would have been easier. Years ago, in a different timeline. And even then, she messed that up, didn’t she? But we can’t beat ourselves up too much for our teen mistakes. Let alone the stuff we can’t even remember, because it technically never even happened to us. We have enough to worry about as it is, right, Terezi?</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="terezi">TEREZI: UUUUUUUGH</p>
-</div>
-  <p class="no-indent dirk">I know you can hear me.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="terezi">TEREZI: OF COURS3 1 C4N H3AR YOU!!!</p>
-  
-  <p class="terezi">TEREZI: YOUV3 B33N BRO4DC4ST1NG YOUR NONS3NS3 4T M3 NONSTOP S1NC3 JOHN Z4PP3D US B4CK!</p>
-  
-  <p class="terezi">TEREZI: 1 KNOW TH4T 3V3RY M3MB3R OF YOUR F4M1ILY 3XC3PT TH3 ON3 1 JUST H4D 4 PL34S4NTLY BR13F CONV3RS4T1ON W1TH 1S G3N3T1C4LLY 1NC4P4BL3 OF SHUTT1NG UP</p>
-  
-  <p class="terezi">TEREZI: BUT C4NT YOU JUST L3T M3 B3 D3PR3SS3D 1N P34C3?!</p>
-</div>
-  <p class="no-indent dirk">I feel depressed all the time. But I can’t remember ever having the luxury of feeling peaceful about it. Why should it be different for anyone else?</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="terezi">TEREZI: WH4T DO YOU W4NT?!</p>
-</div>
-  <p class="no-indent dirk">Come on, Terezi. You don’t belong here. You <em>know</em> you don’t belong here.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="terezi">TEREZI: 4ND WH4T TH3 H3LL DO YOU KNOW 4BOUT WH3R3 1 B3LONG?</p>
-  
-  <p class="terezi">TEREZI: WH4T DO YOU KNOW 4BOUT WH4T 1 “KNOW”??</p>
-  
-  <p class="terezi">TEREZI: H4V3 W3 3V3N H4D 4 S1NGL3 SUST41N3D CONV3RS4T1ON TH4T L4ST3D MOR3 TH4N T3N M1NUT3S???</p>
-</div>
-  <p class="no-indent dirk">To be honest, I’m not sure if we’ve ever exchanged any words at all. But why should that matter? Here we both are. It’s a beautiful day. You’ve got your dead boyfriend in your wallet. And we’ve already managed to strike such a nice metatextual rapport. So hear me out. </p>
-  <p class="dirk">I know that you’ve always felt out of step here on Earth C. I know that you could easily put on a brilliant act that would fool everyone. You could potentially do that for the rest of your life. But it will eat into you, hollow you out like a parasite, because you’ll always refuse to allow yourself to be understood. </p>
-  <p class="dirk">You know you’ll never be happy here. And neither will I. Because this place isn’t for people like us.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="terezi">TEREZI: D1RK, 1 H4V3 NO 1D34 WH4T YOUR3 T4LK1NG 4BOUT </p>
-</div>
-  <p class="no-indent dirk">You’ll see, if you come with us. </p>
-  <p class="dirk">Hey, here’s an idea. Why don’t you bring him with you? </p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="terezi">TEREZI: H1M?</p>
-</div>
-  <p class="no-indent dirk">Yeah. You saved his body for a reason, right? Maybe it doesn’t even have to be the end for him. Endings are kind of overrated anyway.</p>
-  <p class="dirk">I’ll give you some time to think about it. My door is open, but not for long.</p>
-  <p class="dirk">And I do give her the time. I ease the throttle back a bit, just enough so that I’m not whispering directly into her ear when she slips the wallet out of her pocket. She clutches it so hard in her palm that she’s digging dents into the leather, and bites her lip. The gentle breeze is all she can hear. It’s louder than my voice, and in some understated way, makes my case for me more persuasively. She knows I’m right. </p></div>
+  <div class="row bg-white bg-light-gray--md pad-b-md pad-b-lg--md pos-r pad-t-md pad-t-0--md">
+    <div class="mar-x-auto disp-bl bg-white pad-t-lg" style="max-width:650px;">
+      <div class="o-story_text o_epilogue type-rg type-sm--md line-caption line-copy--md pad-x-0 pad-x-lg--md pad-b-lg">
+        <p class="no-indent dirk"><span class="opener type-hs-opener-rg type-hs-opener-sm--md">S</span>o it turns out
+          that “home” is an entirely abstract concept. A state of mind, if you will, rather than a literal, physical
+          construct that can make you feel one way or the other. Terezi’s been gone long enough that her friends seem
+          like strangers: entangled in relationship dynamics that she’s obliquely excluded from, embroiled in petty
+          feuds, obsessed with politics. </p>
+        <p class="dirk">Oh, do you want to know how those petty feuds and political obsessions turned out by the way? I
+          thought it was pretty obvious, but I’ll say what’s up anyway.</p>
+        <p class="dirk">Jane swept the election, of course. I told you I was going to win. After Jake’s incoherent and
+          scandalous heel-turn at Karkat’s ill-fated rally, no amount of esoteric, three-dimensional jpeg artefacts
+          could have salvaged the Vantas campaign. Besides, Dave and Karkat now have other concerns. Mainly that their
+          BFF Jade has been in a coma for an entire month. They’ve been in and out of the hospital handling her affairs.
+          Her next of kin is listed as John Egbert, and no one’s seen him in ages. It’s like he just disappeared
+          suddenly. Like some great hand came out of the sky and crossed his name off the big list of guys we ever need
+          to give a shit about anymore. </p>
+        <p class="dirk">Terezi heard about Jade from a rather harried Kanaya, who is doubtlessly run ragged from the
+          hot-potato plot circles that I’ve been sending her on for weeks to stop her from reading me the riot act for
+          “kidnapping” her lovely wife. The woman is obviously hysterical and needs to chill the fuck out. I mean, she’s
+          hysterical because I’ve been specifically and deliberately causing her to be that way, sure. But still. She
+          should be fine soon enough.</p>
+        <p class="dirk">It takes Terezi a couple days to work up the... </p>
+        <p class="dirk">The <em>what</em>, exactly? What is she supposed to be feeling right now? I’m not sure myself.
+          Maybe I should take a minute to think about the thing you’re supposed to feel when someone goes through
+          whatever the hell it was she just went through. If I come up with any ideas, I could easily do her the favor
+          of helping her feel it.</p>
+        <p class="dirk">Whatever it is she’s supposed to feel, what she actually feels is empty. Colorless, dried up, as
+          she walks beneath a holographic billboard displaying Jane’s glorious victory speech. The ceremony accompanying
+          the speech is patently absurd, stuffed with so much pomp and circumstance that Terezi’s nose can’t make sense
+          of what she’s supposed to be looking at. It’s all just light and color, signifying nothing. </p>
+        <p class="dirk">Her internal smelloscope is so discombobulated from the onslaught of pastry-themed floats, and
+          Jane’s tearful soliloquy on the Legacy of Responsibility she is about to inherit, that she mistakes the
+          familiar figure standing in front of the hospital for someone else entirely.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="terezi">TEREZI: H3Y COOLK1D</p>
+
+          <p class="terezi">TEREZI: HOWS J4DE DO1NG</p>
+        </div>
+        <p class="no-indent dirk">Roxy turns around and blinks in confusion. Terezi blinks back. Kanaya had warned her
+          that Roxy had been going through some changes, but this still takes her by surprise.</p>
+        <p class="dirk">So, in her defense, this was an honest mistake to make. Dave gets half of his genetics from
+          Roxy, after all, and since her big heart-to-heart about the personal politics of queer onion metaphors, and
+          ten stages of galaxy-braining through the many vicissitudes of the phrase “no homo,” Roxy has decided to
+          really step up her gender experimentation. I guess at this point she’s gone beyond Stage Ten. Which I imagine
+          is somewhat like reaching Super Saiyan 2 of gender, and then going even further beyond.</p>
+        <p class="dirk">She’s got the Shades™ now, and sports one of those sweep-over hipster cuts Dave loves so much.
+          Nothing ambiguous about this presentation, although if I’m being totally real, it’s a bit derivative. Anyway,
+          I can’t complain too much about her decision to crib the Strider style, since, you know. She’s family.
+          Besides, I’m T-minus ten hours from fucking off this gay Earth forever. It’s her life, her gender, her
+          style—she can be whatever the fuck she wants.</p>
+        <p class="dirk">Roxy’s whole face lights up when she sees Terezi.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="roxy">ROXY: omg terezi i didnt know u were back!</p>
+
+          <p class="roxy">ROXY: what UP???</p>
+
+          <p class="terezi">TEREZI: OH ROXY</p>
+
+          <p class="terezi">TEREZI: UH H1</p>
+
+          <p class="terezi">TEREZI: 1</p>
+
+          <p class="terezi">TEREZI: 1 THOUGHT YOU W3R3 D4V3</p>
+
+          <p class="roxy">ROXY: o lmao that makes sense</p>
+
+          <p class="roxy">ROXY: i thought for a minute u were appreciating my rad new look</p>
+
+          <p class="roxy">ROXY: but i know i got a ways to go b4 i dethrone the original coolkid</p>
+
+          <p class="terezi">TEREZI: NO NO YOUR3 V3RY COOL!</p>
+
+          <p class="terezi">TEREZI: 1N F4CT 1 WOULD PROB4BLY V3NTUR3 TH4T 1F W3 W3R3 JUDG1NG COOLN3SS 1N 4 FORM4L
+            COOLN3SS CONT3ST JUDG3D BY TH3 PROS, ON 4 COMPL3T3LY OBJ3CT1V3 B4S1S</p>
+
+          <p class="terezi">TEREZI: YOU 4R3 4CTU4LLY 4BOUT 4 B1LL1ON T1M3S COOL3R TH4N D4V3</p>
+
+          <p class="roxy">ROXY: wow thx!</p>
+
+          <p class="terezi">TEREZI: WH1CH 1S 4 F4CT TH4T S33MS SO OBV1OUS TH4T 1V3 D3F1N1T3LY KNOCK3D S3V3R4L R4NKS OFF
+            MY OWN P3RSON4L COOLN3SS 4TTR1BUT3 BY 3V3N S4Y1NG 1T OUT LOUD, R4TH3R TH4N 4LLOW1NG 1T TO B3 4SSUM3D</p>
+
+          <p class="roxy">ROXY: lol no WAY</p>
+
+          <p class="roxy">ROXY: terezi ur like the raddest chick i know</p>
+        </div>
+        <p class="no-indent dirk">Terezi’s jaw tightens. She’s not ready to hear any words that remind her of those few
+          hours with John. Her hand goes to her pocket, where she’s keeping the wallet. She traces the contours of it
+          with her thumb and forces a smile.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="terezi">TEREZI: 1F YOU S4Y SO</p>
+
+          <p class="roxy">ROXY: um yeah i fuckin DO say so</p>
+
+          <p class="roxy">ROXY: dont make me repeat myself</p>
+        </div>
+        <p class="no-indent dirk">Roxy seems almost effusive despite the circumstances. An earthy, genuine effusiveness
+          that lights her up from inside. Terezi’s head is filled with stories about a different version of Roxy—the
+          polar opposite of the one standing in front of her. </p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="roxy">ROXY: so....</p>
+
+          <p class="roxy">ROXY: ur here to see jade huh??</p>
+
+          <p class="terezi">TEREZI: Y34H</p>
+
+          <p class="terezi">TEREZI: 1 H34RD WH4T H4PP3N3D TO H3R 4ND THOUGHT 1 SHOULD COM3</p>
+
+          <p class="terezi">TEREZI: W3LL YOU KNOW</p>
+        </div>
+        <p class="no-indent dirk">Pay respects? No, that’s dumb. Terezi knows that’s dumb. This is just a motion you go
+          through. John would definitely want to be here, though, and technically Terezi is taking him with her. He may
+          be in her pocket, but lately she’s been feeling more like he’s under her skin. She hasn’t told anyone what
+          happened. But at least she knows she can look at him whenever she wants. </p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="roxy">ROXY: yeaaa</p>
+
+          <p class="roxy">ROXY: its lookin grim</p>
+
+          <p class="roxy">ROXY: on one hand shes just layin there so theres not rly a chance of her doin anything either
+            evil or heroic to off herself permanently</p>
+
+          <p class="roxy">ROXY: but its also been so long its like</p>
+
+          <p class="roxy">ROXY: is she just gonna sleep forever???</p>
+
+          <p class="terezi">TEREZI: SL33P1NG FOR3V3R D3F1N1T3LY SOUNDS L1K3 4 J4D3 MOV3 TO M3</p>
+
+          <p class="roxy">ROXY: yeah lol i feel bad crackin jokes about it but</p>
+
+          <p class="roxy">ROXY: i think its what shed want</p>
+
+          <p class="roxy">ROXY: us havin hope n all</p>
+
+          <p class="terezi">TEREZI: Y3S</p>
+
+          <p class="terezi">TEREZI: ...3R</p>
+
+          <p class="terezi">TEREZI: WH3R3S C4LL1OP3?</p>
+
+          <p class="terezi">TEREZI: YOU TWO 4R3 ST1LL</p>
+
+          <p class="terezi">TEREZI: TOG3TH3R?</p>
+
+          <p class="terezi">TEREZI: R1GHT</p>
+
+          <p class="roxy">ROXY: oh </p>
+
+          <p class="roxy">ROXY: um GAWD</p>
+
+          <p class="roxy">ROXY: back when jade first got all effed up callie saw somethin and it made them freak out</p>
+
+          <p class="roxy">ROXY: it took me weeks to convince them that it was safe to come home</p>
+
+          <p class="roxy">ROXY: but now we got the opposite problem and they arent leavin the house at all</p>
+
+          <p class="roxy">ROXY: they stay home all day with the blinds drawn paintin some weird ass shit on the walls
+          </p>
+
+          <p class="terezi">TEREZI: WH4T?</p>
+
+          <p class="roxy">ROXY: its not as bad as it sounds i promise</p>
+
+          <p class="roxy">ROXY: some of it is like</p>
+
+          <p class="roxy">ROXY: weird and violent??</p>
+
+          <p class="roxy">ROXY: like lotsa nasty purple blood and um</p>
+
+          <p class="roxy">ROXY: nudity????</p>
+
+          <p class="terezi">TEREZI: &gt;:?</p>
+
+          <p class="roxy">ROXY: yeah yikes</p>
+
+          <p class="roxy">ROXY: but MOST of it is cute stuff like... various combos of all of us being happy and gettin
+            married and shit</p>
+
+          <p class="roxy">ROXY: anyway thats kept callie kinda busy</p>
+
+          <p class="roxy">ROXY: so it was hard as hell to convince them to let me come see jade at all</p>
+
+          <p class="roxy">ROXY: its like theyre traumatized</p>
+
+          <p class="roxy">ROXY: and they think ill drag whatever possessed jade back into our home with me</p>
+
+          <p class="terezi">TEREZI: DO3S C4LL13 KNOW WH4T H4PP3N3D TO J4D3 TH3N?</p>
+
+          <p class="roxy">ROXY: maybe idk</p>
+
+          <p class="roxy">ROXY: im not gonna push them </p>
+
+          <p class="roxy">ROXY: callies got all kinda hang ups about their existence and purpose and potential lack
+            thereof </p>
+
+          <p class="roxy">ROXY: when theyre ready to talk about it i want them to be able to talk about it u know?</p>
+
+          <p class="terezi">TEREZI: Y3S</p>
+
+          <p class="terezi">TEREZI: 1T DO3S SOUND L1K3 PUSH1NG TH3M WH3N TH3YR3 VULN3R4BL3 W1LL JUST B4CKF1R3 </p>
+        </div>
+        <p class="no-indent dirk">Terezi startles a bit when her phone buzzes. Who would even be messaging her now, when
+          the only person she ever talked to is currently dead in her other pocket? She’s intrigued, but she thinks
+          better of worrying about it. It’d be rude to look at her phone while she’s in the middle of a conversation.
+        </p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="roxy">ROXY: oh that reminds me!</p>
+
+          <p class="roxy">ROXY: have u seen john lately?</p>
+        </div>
+        <p class="no-indent dirk">Terezi’s heart skips a beat. It’s almost as if Roxy is the one reading her mind.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="terezi">TEREZI: WHY DO YOU 4SK</p>
+        </div>
+        <p class="no-indent dirk">No one else has asked yet. </p>
+        <p class="dirk">Roxy gives a shrug. A conflicted look crosses her face, but I can’t see past it. With the Dead
+          Cherub out of the picture, the aura of void surrounding Roxy once again is impenetrable. Those baller shades
+          aren’t exactly improving my odds of reading her, either. I’ll say again what I’ve always felt about her on
+          some level: some riddles were never meant to be solved.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="roxy">ROXY: he went back to the medium a while ago right??</p>
+
+          <p class="roxy">ROXY: i thought</p>
+
+          <p class="roxy">ROXY: maybe u and he crossed paths</p>
+        </div>
+        <p class="no-indent dirk">Terezi does not flinch. Her pleasant expression does not falter. She’s good at the
+          appearance of confidence even when wracked with indecision and grief.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="terezi">TEREZI: NO</p>
+
+          <p class="terezi">TEREZI: I H4V3NT S33N H1M</p>
+
+          <p class="roxy">ROXY: oh....</p>
+
+          <p class="roxy">ROXY: damn thats too bad</p>
+
+          <p class="roxy">ROXY: callie n i have been worried</p>
+
+          <p class="roxy">ROXY: kinda hoped he woulda come back</p>
+
+          <p class="roxy">ROXY: or at least let us know what hes up to</p>
+
+          <p class="roxy">ROXY: ugh between this and whats goin on with jade the lack of closures gonna keep me up at
+            night</p>
+
+          <p class="terezi">TEREZI: 1M SORRY</p>
+
+          <p class="terezi">TEREZI: 1 W1SH 1 KN3W WH4T TO T3LL YOU</p>
+
+          <p class="roxy">ROXY: hey its fine</p>
+
+          <p class="roxy">ROXY: u cant fix everyones problems</p>
+
+          <p class="terezi">TEREZI: 1 KNOW</p>
+        </div>
+        <p class="no-indent dirk">Roxy pinches her lips together and examines Terezi over the rim of her sunglasses for
+          a moment.</p>
+        <p class="dirk">Maybe, having watched her own friend group suffer stress fractures recently, she understands the
+          weight of those words as uttered by this specific person. Because Terezi is a fixer, and it has been a very
+          difficult lesson for her to learn that some things are simply out of her control. Maybe it’s just that Roxy
+          can hear the bone-deep sorrow in her voice. </p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="terezi">TEREZI: (OMFG)</p>
+
+          <p class="terezi">TEREZI: (1TS “H1M” YOU FUCK1NG O4F!!!)</p>
+
+          <p class="roxy">ROXY: wat</p>
+
+          <p class="roxy">ROXY: who u loudly whispering to</p>
+
+          <p class="terezi">TEREZI: OH</p>
+
+          <p class="terezi">TEREZI: NOBODY</p>
+        </div>
+        <p class="no-indent dirk">Oh, my bad. Why not send him my regards? Tell him he makes a kickass him for me. It
+          suits the hell out of him.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="terezi">TEREZI: (1M NOT FUCK1NG T3LL1NG H1M TH4T)</p>
+        </div>
+        <p class="no-indent dirk">Whatever was bothering Roxy, it passes quickly, and he says nothing about it. He puts
+          his hand on Terezi’s shoulder and gives it a warm clap. The fraternal kind, which a couple of solid dudes
+          might exchange after having just “bro’ed out.” It’s convincing, actually. Reasonably authentic, and quite
+          masculine. He’s off to a great start exhibiting the mannerisms associated with his chosen gender. I’m
+          genuinely proud of him.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="roxy">ROXY: ummm</p>
+
+          <p class="roxy">ROXY: kay well i should get goin</p>
+
+          <p class="roxy">ROXY: was nice catchin up!</p>
+
+          <p class="roxy">ROXY: dont be a stranger alright?</p>
+
+          <p class="terezi">TEREZI: STR4NG3R TH4N WH4T</p>
+
+          <p class="roxy">ROXY: lmao ur a riot</p>
+
+          <p class="roxy">ROXY: but u know what i mean</p>
+
+          <p class="terezi">TEREZI: Y34H</p>
+
+          <p class="terezi">TEREZI: S33 YOU</p>
+
+          <p class="roxy">ROXY: 8)</p>
+        </div>
+        <p class="no-indent dirk">As soon as Roxy’s gone, Terezi regrets lying to him about John. It’s a hard secret to
+          keep, but probably a harder one to reveal. Maybe it would have been better if she <em>had</em> run into Dave
+          instead of Roxy. It would have been easier to confide something like that to Dave, wouldn’t it? Well,
+          <em>maybe</em> it would have been easier. Years ago, in a different timeline. And even then, she messed that
+          up, didn’t she? But we can’t beat ourselves up too much for our teen mistakes. Let alone the stuff we can’t
+          even remember, because it technically never even happened to us. We have enough to worry about as it is,
+          right, Terezi?</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="terezi">TEREZI: UUUUUUUGH</p>
+        </div>
+        <p class="no-indent dirk">I know you can hear me.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="terezi">TEREZI: OF COURS3 1 C4N H3AR YOU!!!</p>
+
+          <p class="terezi">TEREZI: YOUV3 B33N BRO4DC4ST1NG YOUR NONS3NS3 4T M3 NONSTOP S1NC3 JOHN Z4PP3D US B4CK!</p>
+
+          <p class="terezi">TEREZI: 1 KNOW TH4T 3V3RY M3MB3R OF YOUR F4M1ILY 3XC3PT TH3 ON3 1 JUST H4D 4 PL34S4NTLY
+            BR13F CONV3RS4T1ON W1TH 1S G3N3T1C4LLY 1NC4P4BL3 OF SHUTT1NG UP</p>
+
+          <p class="terezi">TEREZI: BUT C4NT YOU JUST L3T M3 B3 D3PR3SS3D 1N P34C3?!</p>
+        </div>
+        <p class="no-indent dirk">I feel depressed all the time. But I can’t remember ever having the luxury of feeling
+          peaceful about it. Why should it be different for anyone else?</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="terezi">TEREZI: WH4T DO YOU W4NT?!</p>
+        </div>
+        <p class="no-indent dirk">Come on, Terezi. You don’t belong here. You <em>know</em> you don’t belong here.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="terezi">TEREZI: 4ND WH4T TH3 H3LL DO YOU KNOW 4BOUT WH3R3 1 B3LONG?</p>
+
+          <p class="terezi">TEREZI: WH4T DO YOU KNOW 4BOUT WH4T 1 “KNOW”??</p>
+
+          <p class="terezi">TEREZI: H4V3 W3 3V3N H4D 4 S1NGL3 SUST41N3D CONV3RS4T1ON TH4T L4ST3D MOR3 TH4N T3N
+            M1NUT3S???</p>
+        </div>
+        <p class="no-indent dirk">To be honest, I’m not sure if we’ve ever exchanged any words at all. But why should
+          that matter? Here we both are. It’s a beautiful day. You’ve got your dead boyfriend in your wallet. And we’ve
+          already managed to strike such a nice metatextual rapport. So hear me out. </p>
+        <p class="dirk">I know that you’ve always felt out of step here on Earth C. I know that you could easily put on
+          a brilliant act that would fool everyone. You could potentially do that for the rest of your life. But it will
+          eat into you, hollow you out like a parasite, because you’ll always refuse to allow yourself to be understood.
+        </p>
+        <p class="dirk">You know you’ll never be happy here. And neither will I. Because this place isn’t for people
+          like us.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="terezi">TEREZI: D1RK, 1 H4V3 NO 1D34 WH4T YOUR3 T4LK1NG 4BOUT </p>
+        </div>
+        <p class="no-indent dirk">You’ll see, if you come with us. </p>
+        <p class="dirk">Hey, here’s an idea. Why don’t you bring him with you? </p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="terezi">TEREZI: H1M?</p>
+        </div>
+        <p class="no-indent dirk">Yeah. You saved his body for a reason, right? Maybe it doesn’t even have to be the end
+          for him. Endings are kind of overrated anyway.</p>
+        <p class="dirk">I’ll give you some time to think about it. My door is open, but not for long.</p>
+        <p class="dirk">And I do give her the time. I ease the throttle back a bit, just enough so that I’m not
+          whispering directly into her ear when she slips the wallet out of her pocket. She clutches it so hard in her
+          palm that she’s digging dents into the leather, and bites her lip. The gentle breeze is all she can hear. It’s
+          louder than my voice, and in some understated way, makes my case for me more persuasively. She knows I’m
+          right. </p>
+      </div>
       <div class="o_story-nav type-hs-copy line-tight pad-x-0 pad-x-lg--md pad-b-lg">
         <div>
           <span>&gt;</span>
           <a href="Meat 37.html">==&gt; </a><br>
         </div>
       </div>
-  
-<footer id="story-footer" role="banner">
-  <div id="story_footer_container" class="o_story-page-footer flex pad-t-0 pad-x-0
+
+      <footer id="story-footer" role="banner">
+        <div id="story_footer_container" class="o_story-page-footer flex pad-t-0 pad-x-0
      flex-justify 
     ">
-      <div class="pad-l-lg--md mar-b-md type-hs-small type-hs-bottom--md type-center type-left--md">
-        <ul class="o_game-nav">
-          <li class="o_game-nav-item">
-            <a id="o_start-over" href="The Homestuck Epilogues.html">Start Over</a>
-          </li>
-            <li class="o_game-nav-item">
-              <a href="Meat 35.html">Go Back</a>
-            </li>
-        </ul>
-      </div>
-      <script>
-//<![CDATA[
-$(document).ready(function() { Gamenav.checkAutosave(); });
+          <div class="pad-l-lg--md mar-b-md type-hs-small type-hs-bottom--md type-center type-left--md">
+            <ul class="o_game-nav">
+              <li class="o_game-nav-item">
+                <a id="o_start-over" href="Choice Page.html">Start Over</a>
+              </li>
+              <li class="o_game-nav-item">
+                <a href="Meat 35.html">Go Back</a>
+              </li>
+            </ul>
+          </div>
+          <script>
+            //<![CDATA[
+            $(document).ready(function () { Gamenav.checkAutosave(); });
 //]]>
-</script>
+          </script>
 
-    <a href="javascript:void(0)" data-gamenav-open="" class="nav-btn nav-btn--center type-hs-small mar-b-md" style="text-decoration:none; text-transform: none; font-size:14px; line-height:14px;"><span>Options</span> <i class="icon-menu" style="margin:0;"></i></a>
+          <a href="javascript:void(0)" data-gamenav-open="" class="nav-btn nav-btn--center type-hs-small mar-b-md"
+            style="text-decoration:none; text-transform: none; font-size:14px; line-height:14px;"><span>Options</span>
+            <i class="icon-menu" style="margin:0;"></i></a>
+        </div>
+      </footer>
+
+
+    </div>
+  </div><iframe name="__tcfapiLocator" src="./Epilogue_files/saved_resource(2).html"
+    style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe>
+
+
+
+  <div class="o_site-footer row pos-r pad-t-rg pad-b-xl pad-b-0--md bg-dark-gray">
+    <div class="float-l"><img
+        src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif"
+        alt="Footer logo"><br></div>
+    <div class="float-r disp-n disp-bl--sm"><img
+        src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif"
+        alt="Footer logo"><br></div>
+    <div class="type-center pad-t-md--md">
+      <ul>
+        <li><a href="https://www.homestuck.com/contacts">Contacts</a></li>
+        <li><a href="https://www.homestuck.com/privacy">Privacy Policy</a></li>
+      </ul>
+      <div><span style="white-space:nowrap;">© 2018 Homestuck</span> <span style="white-space:nowrap;">and VIZ
+          Media</span></div>
+    </div>
   </div>
-</footer>
-
-
-  </div>
-</div><iframe name="__tcfapiLocator" src="./Epilogue_files/saved_resource(2).html" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe>
-
-
-    
-<div class="o_site-footer row pos-r pad-t-rg pad-b-xl pad-b-0--md bg-dark-gray">
-  <div class="float-l"><img src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif" alt="Footer logo"><br></div>
-  <div class="float-r disp-n disp-bl--sm"><img src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif" alt="Footer logo"><br></div>
-  <div class="type-center pad-t-md--md">
-    <ul>
-      <li><a href="https://www.homestuck.com/contacts">Contacts</a></li>
-      <li><a href="https://www.homestuck.com/privacy">Privacy Policy</a></li>
-    </ul>
-    <div><span style="white-space:nowrap;">© 2018 Homestuck</span> <span style="white-space:nowrap;">and VIZ Media</span></div>
-  </div>
-</div>
 
 
 
-    <div id="overlay" data-overlay-state="off" class="o_overlay"></div>
-    <div id="game_overlay" data-game-overlay-state="off" class="o_game-overlay"></div>
-    <div id="overlay_wait" data-overlay-state="off" class="o_overlay-wait"></div>
+  <div id="overlay" data-overlay-state="off" class="o_overlay"></div>
+  <div id="game_overlay" data-game-overlay-state="off" class="o_game-overlay"></div>
+  <div id="overlay_wait" data-overlay-state="off" class="o_overlay-wait"></div>
 
 
 
-  
 
-<iframe name="googlefcPresent" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;" src="./Epilogue_files/saved_resource(6).html" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe></body></html>
+
+  <iframe name="googlefcPresent"
+    style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"
+    src="./Epilogue_files/saved_resource(6).html"
+    style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe>
+</body>
+
+</html>

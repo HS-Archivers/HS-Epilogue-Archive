@@ -1,329 +1,453 @@
 <!DOCTYPE html>
 
-<html dir="ltr" lang="en-US"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html dir="ltr" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <!-- application -->
-    <script src="./Epilogue_files/jquery-1.11.3.min.js.download"></script>
-    
-<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"1b930da09b","applicationID":"65900267","transactionName":"cFkNREpaWA9dF0pBVlRTEB9LQVsRQQ==","queueTime":0,"applicationTime":5,"agent":""}</script>
-<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"1b930da09b",applicationID:"65900267"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="format-detection" content="telephone=no">
-    <title>The Homestuck Epilogues</title>
-    <meta name="description" content="Tales of dubious authenticity.">
-    <script>
-//<![CDATA[
-var getGAEventLabel = function(){ return "The Homestuck Epilogues"; };
+  <script src="./Epilogue_files/jquery-1.11.3.min.js.download"></script>
+
+  <script>window.NREUM || (NREUM = {}); NREUM.info = { "beacon": "bam-cell.nr-data.net", "errorBeacon": "bam-cell.nr-data.net", "licenseKey": "1b930da09b", "applicationID": "65900267", "transactionName": "cFkNREpaWA9dF0pBVlRTEB9LQVsRQQ==", "queueTime": 0, "applicationTime": 5, "agent": "" }</script>
+  <script>(window.NREUM || (NREUM = {})).loader_config = { licenseKey: "1b930da09b", applicationID: "65900267" }; window.NREUM || (NREUM = {}), __nr_require = function (t, e, n) { function r(n) { if (!e[ n ]) { var i = e[ n ] = { exports: {} }; t[ n ][ 0 ].call(i.exports, function (e) { var i = t[ n ][ 1 ][ e ]; return r(i || e) }, i, i.exports) } return e[ n ].exports } if ("function" == typeof __nr_require) return __nr_require; for (var i = 0; i < n.length; i++)r(n[ i ]); return r }({ 1: [ function (t, e, n) { function r() { } function i(t, e, n) { return function () { return o(t, [ u.now() ].concat(f(arguments)), e ? null : this, n), e ? void 0 : this } } var o = t("handle"), a = t(8), f = t(9), c = t("ee").get("tracer"), u = t("loader"), s = NREUM; "undefined" == typeof window.newrelic && (newrelic = s); var d = [ "setPageViewName", "setCustomAttribute", "setErrorHandler", "finished", "addToTrace", "inlineHit", "addRelease" ], p = "api-", l = p + "ixn-"; a(d, function (t, e) { s[ e ] = i(p + e, !0, "api") }), s.addPageAction = i(p + "addPageAction", !0), s.setCurrentRouteName = i(p + "routeName", !0), e.exports = newrelic, s.interaction = function () { return (new r).get() }; var m = r.prototype = { createTracer: function (t, e) { var n = {}, r = this, i = "function" == typeof e; return o(l + "tracer", [ u.now(), t, n ], r), function () { if (c.emit((i ? "" : "no-") + "fn-start", [ u.now(), r, i ], n), i) try { return e.apply(this, arguments) } catch (t) { throw c.emit("fn-err", [ arguments, this, t ], n), t } finally { c.emit("fn-end", [ u.now() ], n) } } } }; a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","), function (t, e) { m[ e ] = i(l + e) }), newrelic.noticeError = function (t, e) { "string" == typeof t && (t = new Error(t)), o("err", [ t, u.now(), !1, e ]) } }, {} ], 2: [ function (t, e, n) { function r(t) { if (NREUM.init) { for (var e = NREUM.init, n = t.split("."), r = 0; r < n.length - 1; r++)if (e = e[ n[ r ] ], "object" != typeof e) return; return e = e[ n[ n.length - 1 ] ] } } e.exports = { getConfiguration: r } }, {} ], 3: [ function (t, e, n) { function r() { return f.exists && performance.now ? Math.round(performance.now()) : (o = Math.max((new Date).getTime(), o)) - a } function i() { return o } var o = (new Date).getTime(), a = o, f = t(10); e.exports = r, e.exports.offset = a, e.exports.getLastTimestamp = i }, {} ], 4: [ function (t, e, n) { function r(t) { return !(!t || !t.protocol || "file:" === t.protocol) } e.exports = r }, {} ], 5: [ function (t, e, n) { function r(t, e) { var n = t.getEntries(); n.forEach(function (t) { "first-paint" === t.name ? d("timing", [ "fp", Math.floor(t.startTime) ]) : "first-contentful-paint" === t.name && d("timing", [ "fcp", Math.floor(t.startTime) ]) }) } function i(t, e) { var n = t.getEntries(); n.length > 0 && d("lcp", [ n[ n.length - 1 ] ]) } function o(t) { t.getEntries().forEach(function (t) { t.hadRecentInput || d("cls", [ t ]) }) } function a(t) { if (t instanceof m && !g) { var e = Math.round(t.timeStamp), n = { type: t.type }; e <= p.now() ? n.fid = p.now() - e : e > p.offset && e <= Date.now() ? (e -= p.offset, n.fid = p.now() - e) : e = p.now(), g = !0, d("timing", [ "fi", e, n ]) } } function f(t) { "hidden" === t && d("pageHide", [ p.now() ]) } if (!("init" in NREUM && "page_view_timing" in NREUM.init && "enabled" in NREUM.init.page_view_timing && NREUM.init.page_view_timing.enabled === !1)) { var c, u, s, d = t("handle"), p = t("loader"), l = t(7), m = NREUM.o.EV; if ("PerformanceObserver" in window && "function" == typeof window.PerformanceObserver) { c = new PerformanceObserver(r); try { c.observe({ entryTypes: [ "paint" ] }) } catch (v) { } u = new PerformanceObserver(i); try { u.observe({ entryTypes: [ "largest-contentful-paint" ] }) } catch (v) { } s = new PerformanceObserver(o); try { s.observe({ type: "layout-shift", buffered: !0 }) } catch (v) { } } if ("addEventListener" in document) { var g = !1, h = [ "click", "keydown", "mousedown", "pointerdown", "touchstart" ]; h.forEach(function (t) { document.addEventListener(t, a, !1) }) } l(f) } }, {} ], 6: [ function (t, e, n) { function r(t, e) { if (!i) return !1; if (t !== i) return !1; if (!e) return !0; if (!o) return !1; for (var n = o.split("."), r = e.split("."), a = 0; a < r.length; a++)if (r[ a ] !== n[ a ]) return !1; return !0 } var i = null, o = null, a = /Version\/(\S+)\s+Safari/; if (navigator.userAgent) { var f = navigator.userAgent, c = f.match(a); c && f.indexOf("Chrome") === -1 && f.indexOf("Chromium") === -1 && (i = "Safari", o = c[ 1 ]) } e.exports = { agent: i, version: o, match: r } }, {} ], 7: [ function (t, e, n) { function r(t) { function e() { t(a && document[ a ] ? document[ a ] : document[ i ] ? "hidden" : "visible") } "addEventListener" in document && o && document.addEventListener(o, e, !1) } e.exports = r; var i, o, a; "undefined" != typeof document.hidden ? (i = "hidden", o = "visibilitychange", a = "visibilityState") : "undefined" != typeof document.msHidden ? (i = "msHidden", o = "msvisibilitychange") : "undefined" != typeof document.webkitHidden && (i = "webkitHidden", o = "webkitvisibilitychange", a = "webkitVisibilityState") }, {} ], 8: [ function (t, e, n) { function r(t, e) { var n = [], r = "", o = 0; for (r in t) i.call(t, r) && (n[ o ] = e(r, t[ r ]), o += 1); return n } var i = Object.prototype.hasOwnProperty; e.exports = r }, {} ], 9: [ function (t, e, n) { function r(t, e, n) { e || (e = 0), "undefined" == typeof n && (n = t ? t.length : 0); for (var r = -1, i = n - e || 0, o = Array(i < 0 ? 0 : i); ++r < i;)o[ r ] = t[ e + r ]; return o } e.exports = r }, {} ], 10: [ function (t, e, n) { e.exports = { exists: "undefined" != typeof window.performance && window.performance.timing && "undefined" != typeof window.performance.timing.navigationStart } }, {} ], ee: [ function (t, e, n) { function r() { } function i(t) { function e(t) { return t && t instanceof r ? t : t ? u(t, c, a) : a() } function n(n, r, i, o, a) { if (a !== !1 && (a = !0), !l.aborted || o) { t && a && t(n, r, i); for (var f = e(i), c = v(n), u = c.length, s = 0; s < u; s++)c[ s ].apply(f, r); var p = d[ w[ n ] ]; return p && p.push([ b, n, r, f ]), f } } function o(t, e) { y[ t ] = v(t).concat(e) } function m(t, e) { var n = y[ t ]; if (n) for (var r = 0; r < n.length; r++)n[ r ] === e && n.splice(r, 1) } function v(t) { return y[ t ] || [] } function g(t) { return p[ t ] = p[ t ] || i(n) } function h(t, e) { l.aborted || s(t, function (t, n) { e = e || "feature", w[ n ] = e, e in d || (d[ e ] = []) }) } var y = {}, w = {}, b = { on: o, addEventListener: o, removeEventListener: m, emit: n, get: g, listeners: v, context: e, buffer: h, abort: f, aborted: !1 }; return b } function o(t) { return u(t, c, a) } function a() { return new r } function f() { (d.api || d.feature) && (l.aborted = !0, d = l.backlog = {}) } var c = "nr@context", u = t("gos"), s = t(8), d = {}, p = {}, l = e.exports = i(); e.exports.getOrSetContext = o, l.backlog = d }, {} ], gos: [ function (t, e, n) { function r(t, e, n) { if (i.call(t, e)) return t[ e ]; var r = n(); if (Object.defineProperty && Object.keys) try { return Object.defineProperty(t, e, { value: r, writable: !0, enumerable: !1 }), r } catch (o) { } return t[ e ] = r, r } var i = Object.prototype.hasOwnProperty; e.exports = r }, {} ], handle: [ function (t, e, n) { function r(t, e, n, r) { i.buffer([ t ], r), i.emit(t, e, n) } var i = t("ee").get("handle"); e.exports = r, r.ee = i }, {} ], id: [ function (t, e, n) { function r(t) { var e = typeof t; return !t || "object" !== e && "function" !== e ? -1 : t === window ? 0 : a(t, o, function () { return i++ }) } var i = 1, o = "nr@id", a = t("gos"); e.exports = r }, {} ], loader: [ function (t, e, n) { function r() { if (!R++) { var t = M.info = NREUM.info, e = v.getElementsByTagName("script")[ 0 ]; if (setTimeout(u.abort, 3e4), !(t && t.licenseKey && t.applicationID && e)) return u.abort(); c(E, function (e, n) { t[ e ] || (t[ e ] = n) }); var n = a(); f("mark", [ "onload", n + M.offset ], null, "api"), f("timing", [ "load", n ]); var r = v.createElement("script"); 0 === t.agent.indexOf("http://") || 0 === t.agent.indexOf("https://") ? r.src = t.agent : r.src = l + "://" + t.agent, e.parentNode.insertBefore(r, e) } } function i() { "complete" === v.readyState && o() } function o() { f("mark", [ "domContent", a() + M.offset ], null, "api") } var a = t(3), f = t("handle"), c = t(8), u = t("ee"), s = t(6), d = t(4), p = t(2), l = p.getConfiguration("ssl") === !1 ? "http" : "https", m = window, v = m.document, g = "addEventListener", h = "attachEvent", y = m.XMLHttpRequest, w = y && y.prototype, b = !d(m.location); NREUM.o = { ST: setTimeout, SI: m.setImmediate, CT: clearTimeout, XHR: y, REQ: m.Request, EV: m.Event, PR: m.Promise, MO: m.MutationObserver }; var x = "" + location, E = { beacon: "bam.nr-data.net", errorBeacon: "bam.nr-data.net", agent: "js-agent.newrelic.com/nr-1210.min.js" }, O = y && w && w[ g ] && !/CriOS/.test(navigator.userAgent), M = e.exports = { offset: a.getLastTimestamp(), now: a, origin: x, features: {}, xhrWrappable: O, userAgent: s, disabled: b }; if (!b) { t(1), t(5), v[ g ] ? (v[ g ]("DOMContentLoaded", o, !1), m[ g ]("load", r, !1)) : (v[ h ]("onreadystatechange", i), m[ h ]("onload", r)), f("mark", [ "firstbyte", a.getLastTimestamp() ], null, "api"); var R = 0 } }, {} ], "wrap-function": [ function (t, e, n) { function r(t, e) { function n(e, n, r, c, u) { function nrWrapper() { var o, a, s, p; try { a = this, o = d(arguments), s = "function" == typeof r ? r(o, a) : r || {} } catch (l) { i([ l, "", [ o, a, c ], s ], t) } f(n + "start", [ o, a, c ], s, u); try { return p = e.apply(a, o) } catch (m) { throw f(n + "err", [ o, a, m ], s, u), m } finally { f(n + "end", [ o, a, p ], s, u) } } return a(e) ? e : (n || (n = ""), nrWrapper[ p ] = e, o(e, nrWrapper, t), nrWrapper) } function r(t, e, r, i, o) { r || (r = ""); var f, c, u, s = "-" === r.charAt(0); for (u = 0; u < e.length; u++)c = e[ u ], f = t[ c ], a(f) || (t[ c ] = n(f, s ? c + r : r, i, c, o)) } function f(n, r, o, a) { if (!m || e) { var f = m; m = !0; try { t.emit(n, r, o, e, a) } catch (c) { i([ c, n, r, o ], t) } m = f } } return t || (t = s), n.inPlace = r, n.flag = p, n } function i(t, e) { e || (e = s); try { e.emit("internal-error", t) } catch (n) { } } function o(t, e, n) { if (Object.defineProperty && Object.keys) try { var r = Object.keys(t); return r.forEach(function (n) { Object.defineProperty(e, n, { get: function () { return t[ n ] }, set: function (e) { return t[ n ] = e, e } }) }), e } catch (o) { i([ o ], n) } for (var a in t) l.call(t, a) && (e[ a ] = t[ a ]); return e } function a(t) { return !(t && t instanceof Function && t.apply && !t[ p ]) } function f(t, e) { var n = e(t); return n[ p ] = t, o(t, n, s), n } function c(t, e, n) { var r = t[ e ]; t[ e ] = f(r, n) } function u() { for (var t = arguments.length, e = new Array(t), n = 0; n < t; ++n)e[ n ] = arguments[ n ]; return e } var s = t("ee"), d = t(9), p = "nr@original", l = Object.prototype.hasOwnProperty, m = !1; e.exports = r, e.exports.wrapFunction = f, e.exports.wrapInPlace = c, e.exports.argsToArray = u }, {} ] }, {}, [ "loader" ]);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <title>The Homestuck Epilogues</title>
+  <meta name="description" content="Tales of dubious authenticity.">
+  <script>
+    //<![CDATA[
+    var getGAEventLabel = function () { return "The Homestuck Epilogues"; };
 //]]>
-</script>
-      <link rel="canonical" href=candy/35">
+  </script>
+  <link rel="canonical" href=candy/35">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="https://www.homestuck.com/favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://www.homestuck.com/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://www.homestuck.com/favicon/favicon-16x16.png">
-<link rel="manifest" href="https://www.homestuck.com/favicon/manifest.json">
-<link rel="mask-icon" href="https://www.homestuck.com/favicon/safari-pinned-tab.svg" color="#6bbe4a">
-<meta name="theme-color" content="#ffffff">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www.homestuck.com/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://www.homestuck.com/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://www.homestuck.com/favicon/favicon-16x16.png">
+  <link rel="manifest" href="https://www.homestuck.com/favicon/manifest.json">
+  <link rel="mask-icon" href="https://www.homestuck.com/favicon/safari-pinned-tab.svg" color="#6bbe4a">
+  <meta name="theme-color" content="#ffffff">
 
-        <link rel="stylesheet" media="all" href="./Epilogue_files/manifest-epilogue-1694f2c1abc80cf72e84324f6d6486e6f04b02358ed667dee36c88974eef388f.css">
-      <link rel="stylesheet" href="./Epilogue_files/kek1uwn.css">
-    <link rel="stylesheet" media="all" href="./Epilogue_files/manifest-ui-e03365bbb17dde0f1fd5463dd7b56d096a27cae55aa131b72684e36c1f0c80f6.css">
-    <script src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE="></script>
-    <script src="./Epilogue_files/manifest-ads-story-1885683d55d6f631dc202ac5db87250ca938be96a613e85bb93739ecc057540e.js.download"></script>
+  <link rel="stylesheet" media="all"
+    href="./Epilogue_files/manifest-epilogue-1694f2c1abc80cf72e84324f6d6486e6f04b02358ed667dee36c88974eef388f.css">
+  <link rel="stylesheet" href="./Epilogue_files/kek1uwn.css">
+  <link rel="stylesheet" media="all"
+    href="./Epilogue_files/manifest-ui-e03365bbb17dde0f1fd5463dd7b56d096a27cae55aa131b72684e36c1f0c80f6.css">
+  <script
+    src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE="></script>
+  <script
+    src="./Epilogue_files/manifest-ads-story-1885683d55d6f631dc202ac5db87250ca938be96a613e85bb93739ecc057540e.js.download"></script>
 
 
-    <!-- //Connect Container: Homestuck-->
-<script src="./Epilogue_files/tag.min.js.download" async="" defer=""></script>
-  <script async="" src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE="></script><style type="text/css">* {
- text-shadow: transparent 0px 0px 0px, rgba(0,0,0,0.68) 0px 0px 0px !important; 
-}</style><script async="" src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE="></script></head>
-  
-  <body class="epilogue">
+  <!-- //Connect Container: Homestuck-->
+  <script src="./Epilogue_files/tag.min.js.download" async="" defer=""></script>
+  <script async=""
+    src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE="></script>
+  <style type="text/css">
+    * {
+      text-shadow: transparent 0px 0px 0px, rgba(0, 0, 0, 0.68) 0px 0px 0px !important;
+    }
+  </style>
+  <script async=""
+    src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE="></script>
+</head>
 
-    
-    <header id="site-header" role="banner">
-  <div id="header-container" class="o_story-page-header row flex pad-t-0 ">
-    <a href="javascript:void(0)" data-nav-open="" class="nav-btn nav-btn--center color-white" style="overflow-wrap:normal;text-decoration:none;"><i class="icon-menu"></i><span>Menu</span></a>
-    <nav id="nav-container" data-nav-state="closed" role="navigation" class="o_nav-container">
-      <a href="javascript:void(0)" data-nav-close="" class="nav-btn color-white pad-y-rg type-rg" style="overflow-wrap:normal;text-decoration:none;"><i class="icon-close"></i><span>Dismiss</span></a>
-      <ul id="primary-nav" class="o_primary-nav style-caps weight-bold disp-ib color-white type-rg">
-     <li class="o_primary-nav-item slide-candycorn pipe"><a class="o_primary-nav-link" style="color:#39d5f6" href="Read.html">READ</a></li><!--
-     --><li class="o_primary-nav-item"><a class="o_primary-nav-link" style="color:#39d5f6" href="Credits.html">INFO</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-    
+<body class="epilogue">
 
-    <div class="row bg-white bg-light-gray--md pad-t-md--md pos-r">
-  <div id="content_container" class="mar-x-auto disp-bl bg-white" style="max-width:650px;">
-    <div class="pos-r pad-t-sm pad-x-lg--md type-center" style="overflow:visible; height:72px;">
-      <img class="hsep_bullet" alt="Chapter" src="./Epilogue_files/candy_60x60-6b955ce39772ffce9994587a951f12b804ebf2202ebe8ed230483e25072db855.png">
-      <h3 class="disp-ib type-hsep-header line-tight type-lg pad-t-sm">
-        35
-      </h3>
+
+  <header id="site-header" role="banner">
+    <div id="header-container" class="o_story-page-header row flex pad-t-0 ">
+      <a href="javascript:void(0)" data-nav-open="" class="nav-btn nav-btn--center color-white"
+        style="overflow-wrap:normal;text-decoration:none;"><i class="icon-menu"></i><span>Menu</span></a>
+      <nav id="nav-container" data-nav-state="closed" role="navigation" class="o_nav-container">
+        <a href="javascript:void(0)" data-nav-close="" class="nav-btn color-white pad-y-rg type-rg"
+          style="overflow-wrap:normal;text-decoration:none;"><i class="icon-close"></i><span>Dismiss</span></a>
+        <ul id="primary-nav" class="o_primary-nav style-caps weight-bold disp-ib color-white type-rg">
+          <li class="o_primary-nav-item slide-candycorn pipe"><a class="o_primary-nav-link" style="color:#39d5f6"
+              href="Read.html">READ</a></li>
+          <!--
+     -->
+          <li class="o_primary-nav-item"><a class="o_primary-nav-link" style="color:#39d5f6"
+              href="Credits.html">INFO</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <div class="row bg-white bg-light-gray--md pad-t-md--md pos-r">
+    <div id="content_container" class="mar-x-auto disp-bl bg-white" style="max-width:650px;">
+      <div class="pos-r pad-t-sm pad-x-lg--md type-center" style="overflow:visible; height:72px;">
+        <img class="hsep_bullet" alt="Chapter"
+          src="./Epilogue_files/candy_60x60-6b955ce39772ffce9994587a951f12b804ebf2202ebe8ed230483e25072db855.png">
+        <h3 class="disp-ib type-hsep-header line-tight type-lg pad-t-sm">
+          35
+        </h3>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="row bg-white bg-light-gray--md pad-b-md pad-b-lg--md pos-r pad-t-md pad-t-0--md">
-  <div class="mar-x-auto disp-bl bg-white pad-t-lg" style="max-width:650px;">
-      <div class="o-story_text o_epilogue type-rg type-sm--md line-caption line-copy--md pad-x-0 pad-x-lg--md pad-b-lg">  <p class="no-indent"><span class="opener type-hs-opener-rg type-hs-opener-sm--md">W</span>hile John dealt with the sight by immediately turning and walking away, and the Earth Vriska dove into a nearby bush for safety, Vriska is contending with her predicament through willful denial. She’s resolved to do everything in her power to prevent herself from thinking about the situation directly behind her. It is a situation which, if she could bear to look at it, would strike her as the precise intersection between the most humiliating moment of her existence, an unprecedented circus mishap, and a gruesome crime scene. Her attempt to ignore the unspeakable catastrophe behind her may nearly have worked, if not for the reminder provided by the many fresh bloodstains on her shirt. Not only stains of her own familiar cerulean hue, but others of a most unwelcome color mingling with them. A color she never imagined she’d see contaminating her cool and casual ensemble, and certainly not in a context like this. </p>
-  <p>Her attempt to distract herself, to delay the inevitable engagement with her poor judgment, would not fly for much longer. Sooner or later, she would have to turn around and confront the fact that she just kissed a very smelly clown, head-on. </p>
-  <p>No. She doesn’t want to. She WON’T.</p>
-  <p>There’s a rustling in the grass behind her, as Gamzee shifts his grotesque, supine length. Nope. She covers her ears. She remembers the shame and excoriation of her childhood—the fear, the pressure, being coerced to do awful things to undeserving kids. All that embarrassing effort she spent trying to emulate her ancestor. She threw every bit of herself into the role, but in recent years reflecting on the charade has only made her cringe. And in what couldn’t have been more than an hour ago, she was on the precipice of watching the glorious defeat of Lord English after unleashing a secret weapon that she went to the bother of retrieving and wielding against him. And then… </p>
-  <p>No, she doesn’t want to dwell on that moment. It was almost as bad as kissing a juggalo. Almost. But nothing can compete with this. Nothing could even come close. Yet as she stands there, feeling soiled and ashamed, there’s no denying it. The moment she stuck her tongue in the heinous mouth of that frisky, unwashed jester, she began jackhammering through the stubborn concrete of rock bottom like she was digging up the corpse of a mob snitch. </p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="gamzee">GAMZEE: HeY (vRiSkA) mY bOoTyLiCiOuS bAbY bItCh.</p>
-  
-  <p class="gamzee">GAMZEE: YoUr BaD bOnE dAdDy Is GeTtIn To Be A cHiLlY mOtHeRfUcKeR fRoM tHiS dAnK sUmMeR bReEzE.</p>
-  
-  <p class="gamzee">GAMZEE: hOw AbOuT wE gEt OuR wIcKeD sNuGgLe On DoWn At ThIs GrAsS wE jUsT mAdE aLl NaStY iN. :o)</p>
-</div>
-  <p class="no-indent">She shudders. Somehow during her self-incriminating reverie, she’d managed to forget that she’s not even Vriska anymore. She’s now (Vriska). She scans the bushes and spots her. The sixteen-year-old girl who’d somehow earned the right to call herself Vriska. The adopted teen daughter of Rose and Kanaya Maryam-Lalonde. The person who, for all anyone knew, might be an exact genetic double of (Vriska) herself. </p>
-  <p>Not that she had any grounds to object. She missed her shot. Snatched shame from the jaws of glory and washed up on the shores of this candy-coated shithole of an approximation of what a paradise planet might look like to certain individuals. The small sob she’s been stifling finally comes out. Tears cut through the oily, shining mask of blue, purple, and mud on her face. </p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="gamzee">GAMZEE: HeY bEaUtIfUl. :O)</p>
-  
-  <p class="gamzee">GAMZEE: iS sOmEtHiNg MoThEr FuCkIn ThE mAtTeR?</p>
-  
-  <p class="gamzee">GAMZEE: We CaN tAlK aLl OpEn At EaCh OtHeR aBoUt ThE sAd NoIsE hApPeNiNg In OuR bOsOm NoW tHaT wE aLl MaDe ThE sOrDiD pLeDgE tO pRaCtIcE tHe WiCkEd InTiMaCy On ThE mOtHeRfUcKiN rEgUlAr. </p>
-</div>
-  <p class="no-indent">(Vriska) nearly vomits but holds it together. She wipes the tears off her face in a flurry of indignant motions, smearing the blood around. She looks at her hands, notices the blood, and continues cleaning her face, using her tears as a solvent and wiping the blood on her shirt. </p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="vriska">(VRISKA): Gamzee...</p>
-  
-  <p class="vriska">(VRISKA): Can you just</p>
-  
-  <p class="vriska">(VRISKA): Not talk? </p>
-  
-  <p class="vriska">(VRISKA): For just a little while, so I can...</p>
-  
-  <p class="gamzee">GAMZEE: :o)</p>
-  
-  <p class="vriska">(VRISKA): So I can...</p>
-  
-  <p class="vriska">(VRISKA): I don’t know.</p>
-  
-  <p class="vriska">(VRISKA): Just.</p>
-  
-  <p class="vriska">(VRISKA): 8e quiet.</p>
-  
-  <p class="gamzee">GAMZEE: HONK!</p>
-</div>
-  <p class="no-indent">Her final sniffle is a snort of anger. If nothing else, she’s learning something about herself today. Nothing sobers her up emotionally quite like the post-amorous insubordination of a raunchy clown. It’s almost like a smelling salt. She sneers, revealing a fang, and spins on her heel to face him.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="vriska">(VRISKA): Did you hear what I F8CKING said????????</p>
-</div>
-  <p class="no-indent">If his infuriating exclamation was just a whiff of the smelling salt, actually looking directly at him again is like upending the whole barrel and pouring it all over her face. She recoils involuntarily, but regroups. Her gaze sweeps across his entire ungainly form from head to foot. He’s got his head propped up with one arm, elbow in the grass. His legs are crossed. His face is a disaster. One eye swollen shut, nose broken, widely-smiling mouth split vertically down the lips. And hanging from his mouth is...</p>
-  <p>Is that a baby bottle?</p>
-  <p>She doesn’t even want to think about where he might have been concealing it all this time. What sort of milk was that? It’s another question she immediately wishes she hadn’t just asked herself. She curls the other side of her lip to reveal both fangs now. She stomps forward, plants her left foot in the ground, and uses her right to punt the baby bottle clean out of his mouth, sending it flying several hundred yards to land just beyond a distant row of trees. The rubber nipple remains stuck in his clenched teeth, his face now coated with a good portion of the punted bottle’s milk. </p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="gamzee">GAMZEE: Aw MoThEr FuCk SuGaRpUsS. :o(</p>
-  
-  <p class="gamzee">GAMZEE: mY nAnNa NeCtAr!!!</p>
-</div>
-  <p class="no-indent">(Vriska) presses her foot down on his chest and pins his back flush against the grass. He exhales with a startled wheeze at the sudden force. </p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="vriska">(VRISKA): You 8etter fucking listen up, Makara. </p>
-  
-  <p class="vriska">(VRISKA): I don’t know what you may have thought... THIS was. Whatever the fuck it was that just happened here.</p>
-  
-  <p class="vriska">(VRISKA): 8ut let me clue you in.</p>
-  
-  <p class="vriska">(VRISKA): It was NOTHING. </p>
-  
-  <p class="vriska">(VRISKA): Nothing happened here. </p>
-  
-  <p class="vriska">(VRISKA): Do we understand each other, you reprehensi8le, malodorous PIECE OF SHIT?</p>
-  
-  <p class="gamzee">GAMZEE: honk. :o)</p>
-</div>
-  <p class="no-indent">She glares down at him with an intensity that would cause any other man to wither, were he not a reeking pile of circus manure. Gamzee’s expression however remains steadfast in its vaguely lewd sense of serenity. He simply gazes back at her, his smile slowly broadening. The milk seems to be mixing with the blood on his face, slightly lightening the tint of the purple.</p>
-  <p>She hears a faint digital clicking somewhere. What is that? It seems to be coming from just behind her. She turns around.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="vriska">(VRISKA): What the fuck do you think you’re doing????????</p>
-</div>
-  <p class="no-indent">At the end of his long, outstretched arm, his hand is working a smartphone. He’s smearing blood on the screen as he’s typing a text to someone. Even at a casual glance, (Vriska) can tell he’s going to the bother of alternating capital and lowercase letters in the text, making it take more than twice as long. Somehow this makes her even more pissed off about it than if he were just broadcasting their snogging fiasco without the use of a typing quirk.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="gamzee">GAMZEE: I gOtS tO fUcKiN tElL mY nUmBeR oNe InVeRtEbRoThEr AbOuT aLl WhAt JuSt GoT dId.</p>
-  
-  <p class="gamzee">GAMZEE: hE aNd I aReN’t As TiGhT aS tHe BoYs We UsEd To RoLl As, BuT hE sHoUlD gEt HiS kIcK oN aBoUt WhAt A hIgHlY uNaNtIcIpAtEd YeT bItChIn PiEcE oF hOt N hEaVy HoRsEpLaY i WaS jUsT mAdE tO pArToOk.</p>
-  
-  <p class="vriska">(VRISKA): You were just “made” to... ?!</p>
-  
-  <p class="vriska">(VRISKA): Why you FUCKING...</p>
-  
-  <p class="vriska">(VRISKA): You’re not telling Karkat a8out this!!!!!!!!</p>
-  
-  <p class="vriska">(VRISKA): You’re n8t telling ANY8NE. Do you hear me, cl8wn????????</p>
-  
-  <p class="gamzee">GAMZEE: LoL.</p>
-  
-  <p class="gamzee">GAMZEE: mOtHeRfUcKiN sHaMe On Me, FoR fAiLiNg To ReCoGnIzE uP sOoNeR fOr HoW cUtE yOu ArE wHeN yOu’Re AnGrY. :o)</p>
-  
-  <p class="vriska">(VRISKA): AAAAAAAARGH!!!!!!!!</p>
-  
-  <p class="gamzee">GAMZEE: NoW wHy DoN’t YoU cOmE aLl SeTtLe YoUr WoRkEd Up WiGgLeR aSs DoWn HeRe WiTh YoUr SaLtY nEw RuMpUs UnClE sO i CaN sNaP sOmE mOtHeRfUcKiN sElFiEs, My FiRm YeT sLiPpErY lItTlE pAsSiOn PeAcH.</p>
-  
-  <p class="vriska">(VRISKA): GIVE ME TH8T!</p>
-</div>
-  <p class="no-indent">She snatches the phone out of his hand, holds it from either side, and breaks it in half. She then spikes both pieces down at him, missing, but causing him to flinch nonetheless. </p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="vriska">(VRISKA): No selfies, no texts, no N8THING!</p>
-  
-  <p class="vriska">(VRISKA): Which fucking part of “you’re not telling anyone” is so hard to understand?!</p>
-  
-  <p class="vriska">(VRISKA): This NEVER HAPPENED.</p>
-  
-  <p class="vriska">(VRISKA): Not a single fucking word of this is EVER going to 8e 8reathed, whispered, or honked to ANY8ODY.</p>
-  
-  <p class="vriska">(VRISKA): LEAST of all any insinuation that this is something I “made” you do. You GET me, fuckface??</p>
-  
-  <p class="vriska">(VRISKA): I didn’t MAKE you do anything. </p>
-  
-  <p class="vriska">(VRISKA): You were slo88ering all over my FUCKING foot, while I was 8eating the SHIT out of you.</p>
-  
-  <p class="vriska">(VRISKA): I SAW that look on your face. </p>
-  
-  <p class="vriska">(VRISKA): I saw your how your codpiece was, like... </p>
-  
-  <p class="vriska">(VRISKA): Ok, never mind that.</p>
-  
-  <p class="vriska">(VRISKA): I mean, once we were actually... you were totally into... don’t even try to convince me you weren’t, like...</p>
-  
-  <p class="vriska">(VRISKA): UGH!!!!!!!!</p>
-  
-  <p class="vriska">(VRISKA): Why am I even TALKING a8out this??</p>
-  
-  <p class="vriska">(VRISKA): I DON’T NEED TO JUSTIFY MYSELF TO A DISGUSTING, HORNY PIECE OF FILTH LIKE YOU!</p>
-</div>
-  <p class="no-indent">Gamzee’s expression changes slightly. He retains his unfortunate aura of amorous placidity, but there’s now a hint of sadness.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="gamzee">GAMZEE: I dOn’T kNoW aBoUt AlL tHe BuSiNeSs YoU sAiD, hOnEyNiPs.</p>
-  
-  <p class="gamzee">GAMZEE: i’Ve GoT tO fEeLiNg ThAt WoNdEr In My HeArT wHiCh SaYs MaYbE i GoT eRoTiCaLlY bUsHwAcKeD hErE.</p>
-  
-  <p class="gamzee">GAMZEE: i’M sO cOnFuSeD... i DoN’t HaRdLy KnOw At WhIcH wAy Is Up AnYmOrE, aBoUt My OrIgInAl WaNtInGs FoR tHe NaStY dAnCe We JuSt DiD.</p>
-  
-  <p class="gamzee">GAMZEE: MaYbE tHe TrUtH oF tHe ShIt Is MoRe LiKe...</p>
-  
-  <p class="gamzee">GAMZEE: I gOt ThE aDvAnTaGe TaKeN oF mE.</p>
-</div>
-  <p class="no-indent">(Vriska)’s face contorts with rage. </p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="vriska">(VRISKA): You son of a 8itch.</p>
-  
-  <p class="vriska">(VRISKA): This was C8NSENSUAL!</p>
-  
-  <p class="vriska">(VRISKA): If ANYONE didn’t consent to this horror show it was ME, RETRO8CTIVELY!!!!!!!!</p>
-  
-  <p class="gamzee">GAMZEE: :o(</p>
-  
-  <p class="gamzee">GAMZEE: VrIsKa, I...</p>
-  
-  <p class="gamzee">GAMZEE: gOt To MoThEr FuCkInG sAy.</p>
-  
-  <p class="gamzee">GAMZEE: tHiS wHoLe ExPeRiEnCe HaS lEfT a MoThErFuCkEr FeElInG a LiL bIt UnCoMfY.</p>
-  
-  <p class="gamzee">GAMZEE: uNcOmFy, UnReSpEcTeD, uSeD, aNd MaYbE aLsO,</p>
-  
-  <p class="gamzee">GAMZEE: JuSt An EeNsY wEeNsY iTtY lItTlE bIt...</p>
-  
-  <p class="gamzee">GAMZEE: uNsAfE. :o(</p>
-  
-  <p class="vriska">(VRISKA): I don’t care if you feel “unsafe”!!!!!!!!</p>
-  
-  <p class="vriska">(VRISKA): You’re a lying, disingenuous puddle of sideshow puke, and I don’t 8elieve for a SECOND you meant ANY of that!</p>
-  
-  <p class="vriska">(VRISKA): The 8NLY thing that matters here is that you keep your F8CKING MOUTH SHUT A8OUT WH8T WE JUST D8D!!!!!!!!</p>
-  
-  <p class="gamzee">GAMZEE: (VrIsKa), My MeAn QuEeN sQuEeZe, AnD bOrDeRlInE sExUaL vIlLaIn,</p>
-  
-  <p class="gamzee">GAMZEE: i GoTs ReAsOnS oF sElF pRoTeCtIoN aGaInSt YoUr PrObLeMaTiC hOlLeRs ThAt I sHoUlD kEeP tHe WiCkEd ShIt ZiPpEd, JuSt LiKe YoU sAy.</p>
-  
-  <p class="gamzee">GAMZEE: TeLl It To Me FuCkIn StRaIgHt, TuRbO tUsH...</p>
-  
-  <p class="gamzee">GAMZEE: dO tHeSe LoOk LiKe LoOsE lIpS tO yOu?</p>
-</div>
-  <p class="no-indent">If (Vriska) were to be honest, Gamzee’s swollen, battered mouth was just about the most structurally incontinent feature she’d ever seen on a person’s face. That limp, floppy maw couldn’t keep a cantaloupe secure, much less a secret.</p>
-  <p>She drops down and straddles him in a way that is unmistakably non-amorous, even to an extraordinarily obtuse, randy juggalo. She puts her shaking hands around his neck and grips tight. She positions her face inches from his, hissing hot breath through her clenched teeth.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="vriska">(VRISKA): NO ONE IS GOING TO FIND OUT A8OUT THIS YOU FUCKING 8ASTARD.</p>
-  
-  <p class="vriska">(VRISKA): NO ONE WILL EVER KNOW, SO HELP ME G8D.</p>
-</div>
-  <p class="no-indent">(Vriska) is so furious, she has no way of pinpointing the exact moment her intent stopped being intimidating him into silence and started being guaranteeing his silence, forever. She knows this impostor was never a real god tier. She’s always known, just like everyone else. Once he’s gone, he’ll be gone for good. She just needs another minute. Her grip grows tighter, and she feels the throbbing pulse beneath her hands gradually subside. His arms flail, grab at hers, clutch at her wrists. He’s alarmingly strong. But at this particular moment, not as strong as her.</p>
-  <p>And then, she lets go. His face is frozen in a repellent mask exhibiting the perfectly undetectable difference between terror and ecstasy. He’s dead.</p>
-  <p>(Vriska) exhales forcefully, staggers to her feet, shaking. She backs up a few steps, studying the corpse. If her body language signals any remorse or sadness, the witness in the bushes certainly can’t tell.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="vriska">Vriska: (Eep!)</p>
-</div>
-  <p class="no-indent">Oh shit. (Vriska) had already forgotten about her, somehow. Her stylishly dressed teen duplicate, who surely just witnessed not only the original feat of debauchery, but all the compromising activity which followed as well. (Vriska) would probably need to have a few words with her.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="vriska">Vriska: Um...</p>
-</div>
-  <p class="no-indent">Vriska stands up slowly from the bush, obviously trying not to look at the lifeless clown. She puts a hand behind her head and seems to be casting about desperately for the right thing to say during such a moment. But soon it’s clear she’s given up. (Vriska) doesn’t blame her. She can’t imagine there being anything in anybody’s life that could adequately prepare them to have a snappy response ready for a situation like this.</p>
-<div class="chat type-rg type-hs-small--md" stylw="margin-bottom:0">  
-  <p class="vriska">Vriska: Hey.</p>
-  <p class="vriska">(Vriska): Sup.</p>
-</div></div>
+  <div class="row bg-white bg-light-gray--md pad-b-md pad-b-lg--md pos-r pad-t-md pad-t-0--md">
+    <div class="mar-x-auto disp-bl bg-white pad-t-lg" style="max-width:650px;">
+      <div class="o-story_text o_epilogue type-rg type-sm--md line-caption line-copy--md pad-x-0 pad-x-lg--md pad-b-lg">
+        <p class="no-indent"><span class="opener type-hs-opener-rg type-hs-opener-sm--md">W</span>hile John dealt with
+          the sight by immediately turning and walking away, and the Earth Vriska dove into a nearby bush for safety,
+          Vriska is contending with her predicament through willful denial. She’s resolved to do everything in her power
+          to prevent herself from thinking about the situation directly behind her. It is a situation which, if she
+          could bear to look at it, would strike her as the precise intersection between the most humiliating moment of
+          her existence, an unprecedented circus mishap, and a gruesome crime scene. Her attempt to ignore the
+          unspeakable catastrophe behind her may nearly have worked, if not for the reminder provided by the many fresh
+          bloodstains on her shirt. Not only stains of her own familiar cerulean hue, but others of a most unwelcome
+          color mingling with them. A color she never imagined she’d see contaminating her cool and casual ensemble, and
+          certainly not in a context like this. </p>
+        <p>Her attempt to distract herself, to delay the inevitable engagement with her poor judgment, would not fly for
+          much longer. Sooner or later, she would have to turn around and confront the fact that she just kissed a very
+          smelly clown, head-on. </p>
+        <p>No. She doesn’t want to. She WON’T.</p>
+        <p>There’s a rustling in the grass behind her, as Gamzee shifts his grotesque, supine length. Nope. She covers
+          her ears. She remembers the shame and excoriation of her childhood—the fear, the pressure, being coerced to do
+          awful things to undeserving kids. All that embarrassing effort she spent trying to emulate her ancestor. She
+          threw every bit of herself into the role, but in recent years reflecting on the charade has only made her
+          cringe. And in what couldn’t have been more than an hour ago, she was on the precipice of watching the
+          glorious defeat of Lord English after unleashing a secret weapon that she went to the bother of retrieving and
+          wielding against him. And then… </p>
+        <p>No, she doesn’t want to dwell on that moment. It was almost as bad as kissing a juggalo. Almost. But nothing
+          can compete with this. Nothing could even come close. Yet as she stands there, feeling soiled and ashamed,
+          there’s no denying it. The moment she stuck her tongue in the heinous mouth of that frisky, unwashed jester,
+          she began jackhammering through the stubborn concrete of rock bottom like she was digging up the corpse of a
+          mob snitch. </p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="gamzee">GAMZEE: HeY (vRiSkA) mY bOoTyLiCiOuS bAbY bItCh.</p>
+
+          <p class="gamzee">GAMZEE: YoUr BaD bOnE dAdDy Is GeTtIn To Be A cHiLlY mOtHeRfUcKeR fRoM tHiS dAnK sUmMeR
+            bReEzE.</p>
+
+          <p class="gamzee">GAMZEE: hOw AbOuT wE gEt OuR wIcKeD sNuGgLe On DoWn At ThIs GrAsS wE jUsT mAdE aLl NaStY iN.
+            :o)</p>
+        </div>
+        <p class="no-indent">She shudders. Somehow during her self-incriminating reverie, she’d managed to forget that
+          she’s not even Vriska anymore. She’s now (Vriska). She scans the bushes and spots her. The sixteen-year-old
+          girl who’d somehow earned the right to call herself Vriska. The adopted teen daughter of Rose and Kanaya
+          Maryam-Lalonde. The person who, for all anyone knew, might be an exact genetic double of (Vriska) herself.
+        </p>
+        <p>Not that she had any grounds to object. She missed her shot. Snatched shame from the jaws of glory and washed
+          up on the shores of this candy-coated shithole of an approximation of what a paradise planet might look like
+          to certain individuals. The small sob she’s been stifling finally comes out. Tears cut through the oily,
+          shining mask of blue, purple, and mud on her face. </p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="gamzee">GAMZEE: HeY bEaUtIfUl. :O)</p>
+
+          <p class="gamzee">GAMZEE: iS sOmEtHiNg MoThEr FuCkIn ThE mAtTeR?</p>
+
+          <p class="gamzee">GAMZEE: We CaN tAlK aLl OpEn At EaCh OtHeR aBoUt ThE sAd NoIsE hApPeNiNg In OuR bOsOm NoW
+            tHaT wE aLl MaDe ThE sOrDiD pLeDgE tO pRaCtIcE tHe WiCkEd InTiMaCy On ThE mOtHeRfUcKiN rEgUlAr. </p>
+        </div>
+        <p class="no-indent">(Vriska) nearly vomits but holds it together. She wipes the tears off her face in a flurry
+          of indignant motions, smearing the blood around. She looks at her hands, notices the blood, and continues
+          cleaning her face, using her tears as a solvent and wiping the blood on her shirt. </p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="vriska">(VRISKA): Gamzee...</p>
+
+          <p class="vriska">(VRISKA): Can you just</p>
+
+          <p class="vriska">(VRISKA): Not talk? </p>
+
+          <p class="vriska">(VRISKA): For just a little while, so I can...</p>
+
+          <p class="gamzee">GAMZEE: :o)</p>
+
+          <p class="vriska">(VRISKA): So I can...</p>
+
+          <p class="vriska">(VRISKA): I don’t know.</p>
+
+          <p class="vriska">(VRISKA): Just.</p>
+
+          <p class="vriska">(VRISKA): 8e quiet.</p>
+
+          <p class="gamzee">GAMZEE: HONK!</p>
+        </div>
+        <p class="no-indent">Her final sniffle is a snort of anger. If nothing else, she’s learning something about
+          herself today. Nothing sobers her up emotionally quite like the post-amorous insubordination of a raunchy
+          clown. It’s almost like a smelling salt. She sneers, revealing a fang, and spins on her heel to face him.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="vriska">(VRISKA): Did you hear what I F8CKING said????????</p>
+        </div>
+        <p class="no-indent">If his infuriating exclamation was just a whiff of the smelling salt, actually looking
+          directly at him again is like upending the whole barrel and pouring it all over her face. She recoils
+          involuntarily, but regroups. Her gaze sweeps across his entire ungainly form from head to foot. He’s got his
+          head propped up with one arm, elbow in the grass. His legs are crossed. His face is a disaster. One eye
+          swollen shut, nose broken, widely-smiling mouth split vertically down the lips. And hanging from his mouth
+          is...</p>
+        <p>Is that a baby bottle?</p>
+        <p>She doesn’t even want to think about where he might have been concealing it all this time. What sort of milk
+          was that? It’s another question she immediately wishes she hadn’t just asked herself. She curls the other side
+          of her lip to reveal both fangs now. She stomps forward, plants her left foot in the ground, and uses her
+          right to punt the baby bottle clean out of his mouth, sending it flying several hundred yards to land just
+          beyond a distant row of trees. The rubber nipple remains stuck in his clenched teeth, his face now coated with
+          a good portion of the punted bottle’s milk. </p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="gamzee">GAMZEE: Aw MoThEr FuCk SuGaRpUsS. :o(</p>
+
+          <p class="gamzee">GAMZEE: mY nAnNa NeCtAr!!!</p>
+        </div>
+        <p class="no-indent">(Vriska) presses her foot down on his chest and pins his back flush against the grass. He
+          exhales with a startled wheeze at the sudden force. </p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="vriska">(VRISKA): You 8etter fucking listen up, Makara. </p>
+
+          <p class="vriska">(VRISKA): I don’t know what you may have thought... THIS was. Whatever the fuck it was that
+            just happened here.</p>
+
+          <p class="vriska">(VRISKA): 8ut let me clue you in.</p>
+
+          <p class="vriska">(VRISKA): It was NOTHING. </p>
+
+          <p class="vriska">(VRISKA): Nothing happened here. </p>
+
+          <p class="vriska">(VRISKA): Do we understand each other, you reprehensi8le, malodorous PIECE OF SHIT?</p>
+
+          <p class="gamzee">GAMZEE: honk. :o)</p>
+        </div>
+        <p class="no-indent">She glares down at him with an intensity that would cause any other man to wither, were he
+          not a reeking pile of circus manure. Gamzee’s expression however remains steadfast in its vaguely lewd sense
+          of serenity. He simply gazes back at her, his smile slowly broadening. The milk seems to be mixing with the
+          blood on his face, slightly lightening the tint of the purple.</p>
+        <p>She hears a faint digital clicking somewhere. What is that? It seems to be coming from just behind her. She
+          turns around.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="vriska">(VRISKA): What the fuck do you think you’re doing????????</p>
+        </div>
+        <p class="no-indent">At the end of his long, outstretched arm, his hand is working a smartphone. He’s smearing
+          blood on the screen as he’s typing a text to someone. Even at a casual glance, (Vriska) can tell he’s going to
+          the bother of alternating capital and lowercase letters in the text, making it take more than twice as long.
+          Somehow this makes her even more pissed off about it than if he were just broadcasting their snogging fiasco
+          without the use of a typing quirk.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="gamzee">GAMZEE: I gOtS tO fUcKiN tElL mY nUmBeR oNe InVeRtEbRoThEr AbOuT aLl WhAt JuSt GoT dId.</p>
+
+          <p class="gamzee">GAMZEE: hE aNd I aReN’t As TiGhT aS tHe BoYs We UsEd To RoLl As, BuT hE sHoUlD gEt HiS kIcK
+            oN aBoUt WhAt A hIgHlY uNaNtIcIpAtEd YeT bItChIn PiEcE oF hOt N hEaVy HoRsEpLaY i WaS jUsT mAdE tO pArToOk.
+          </p>
+
+          <p class="vriska">(VRISKA): You were just “made” to... ?!</p>
+
+          <p class="vriska">(VRISKA): Why you FUCKING...</p>
+
+          <p class="vriska">(VRISKA): You’re not telling Karkat a8out this!!!!!!!!</p>
+
+          <p class="vriska">(VRISKA): You’re n8t telling ANY8NE. Do you hear me, cl8wn????????</p>
+
+          <p class="gamzee">GAMZEE: LoL.</p>
+
+          <p class="gamzee">GAMZEE: mOtHeRfUcKiN sHaMe On Me, FoR fAiLiNg To ReCoGnIzE uP sOoNeR fOr HoW cUtE yOu ArE
+            wHeN yOu’Re AnGrY. :o)</p>
+
+          <p class="vriska">(VRISKA): AAAAAAAARGH!!!!!!!!</p>
+
+          <p class="gamzee">GAMZEE: NoW wHy DoN’t YoU cOmE aLl SeTtLe YoUr WoRkEd Up WiGgLeR aSs DoWn HeRe WiTh YoUr
+            SaLtY nEw RuMpUs UnClE sO i CaN sNaP sOmE mOtHeRfUcKiN sElFiEs, My FiRm YeT sLiPpErY lItTlE pAsSiOn PeAcH.
+          </p>
+
+          <p class="vriska">(VRISKA): GIVE ME TH8T!</p>
+        </div>
+        <p class="no-indent">She snatches the phone out of his hand, holds it from either side, and breaks it in half.
+          She then spikes both pieces down at him, missing, but causing him to flinch nonetheless. </p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="vriska">(VRISKA): No selfies, no texts, no N8THING!</p>
+
+          <p class="vriska">(VRISKA): Which fucking part of “you’re not telling anyone” is so hard to understand?!</p>
+
+          <p class="vriska">(VRISKA): This NEVER HAPPENED.</p>
+
+          <p class="vriska">(VRISKA): Not a single fucking word of this is EVER going to 8e 8reathed, whispered, or
+            honked to ANY8ODY.</p>
+
+          <p class="vriska">(VRISKA): LEAST of all any insinuation that this is something I “made” you do. You GET me,
+            fuckface??</p>
+
+          <p class="vriska">(VRISKA): I didn’t MAKE you do anything. </p>
+
+          <p class="vriska">(VRISKA): You were slo88ering all over my FUCKING foot, while I was 8eating the SHIT out of
+            you.</p>
+
+          <p class="vriska">(VRISKA): I SAW that look on your face. </p>
+
+          <p class="vriska">(VRISKA): I saw your how your codpiece was, like... </p>
+
+          <p class="vriska">(VRISKA): Ok, never mind that.</p>
+
+          <p class="vriska">(VRISKA): I mean, once we were actually... you were totally into... don’t even try to
+            convince me you weren’t, like...</p>
+
+          <p class="vriska">(VRISKA): UGH!!!!!!!!</p>
+
+          <p class="vriska">(VRISKA): Why am I even TALKING a8out this??</p>
+
+          <p class="vriska">(VRISKA): I DON’T NEED TO JUSTIFY MYSELF TO A DISGUSTING, HORNY PIECE OF FILTH LIKE YOU!</p>
+        </div>
+        <p class="no-indent">Gamzee’s expression changes slightly. He retains his unfortunate aura of amorous placidity,
+          but there’s now a hint of sadness.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="gamzee">GAMZEE: I dOn’T kNoW aBoUt AlL tHe BuSiNeSs YoU sAiD, hOnEyNiPs.</p>
+
+          <p class="gamzee">GAMZEE: i’Ve GoT tO fEeLiNg ThAt WoNdEr In My HeArT wHiCh SaYs MaYbE i GoT eRoTiCaLlY
+            bUsHwAcKeD hErE.</p>
+
+          <p class="gamzee">GAMZEE: i’M sO cOnFuSeD... i DoN’t HaRdLy KnOw At WhIcH wAy Is Up AnYmOrE, aBoUt My OrIgInAl
+            WaNtInGs FoR tHe NaStY dAnCe We JuSt DiD.</p>
+
+          <p class="gamzee">GAMZEE: MaYbE tHe TrUtH oF tHe ShIt Is MoRe LiKe...</p>
+
+          <p class="gamzee">GAMZEE: I gOt ThE aDvAnTaGe TaKeN oF mE.</p>
+        </div>
+        <p class="no-indent">(Vriska)’s face contorts with rage. </p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="vriska">(VRISKA): You son of a 8itch.</p>
+
+          <p class="vriska">(VRISKA): This was C8NSENSUAL!</p>
+
+          <p class="vriska">(VRISKA): If ANYONE didn’t consent to this horror show it was ME, RETRO8CTIVELY!!!!!!!!</p>
+
+          <p class="gamzee">GAMZEE: :o(</p>
+
+          <p class="gamzee">GAMZEE: VrIsKa, I...</p>
+
+          <p class="gamzee">GAMZEE: gOt To MoThEr FuCkInG sAy.</p>
+
+          <p class="gamzee">GAMZEE: tHiS wHoLe ExPeRiEnCe HaS lEfT a MoThErFuCkEr FeElInG a LiL bIt UnCoMfY.</p>
+
+          <p class="gamzee">GAMZEE: uNcOmFy, UnReSpEcTeD, uSeD, aNd MaYbE aLsO,</p>
+
+          <p class="gamzee">GAMZEE: JuSt An EeNsY wEeNsY iTtY lItTlE bIt...</p>
+
+          <p class="gamzee">GAMZEE: uNsAfE. :o(</p>
+
+          <p class="vriska">(VRISKA): I don’t care if you feel “unsafe”!!!!!!!!</p>
+
+          <p class="vriska">(VRISKA): You’re a lying, disingenuous puddle of sideshow puke, and I don’t 8elieve for a
+            SECOND you meant ANY of that!</p>
+
+          <p class="vriska">(VRISKA): The 8NLY thing that matters here is that you keep your F8CKING MOUTH SHUT A8OUT
+            WH8T WE JUST D8D!!!!!!!!</p>
+
+          <p class="gamzee">GAMZEE: (VrIsKa), My MeAn QuEeN sQuEeZe, AnD bOrDeRlInE sExUaL vIlLaIn,</p>
+
+          <p class="gamzee">GAMZEE: i GoTs ReAsOnS oF sElF pRoTeCtIoN aGaInSt YoUr PrObLeMaTiC hOlLeRs ThAt I sHoUlD
+            kEeP tHe WiCkEd ShIt ZiPpEd, JuSt LiKe YoU sAy.</p>
+
+          <p class="gamzee">GAMZEE: TeLl It To Me FuCkIn StRaIgHt, TuRbO tUsH...</p>
+
+          <p class="gamzee">GAMZEE: dO tHeSe LoOk LiKe LoOsE lIpS tO yOu?</p>
+        </div>
+        <p class="no-indent">If (Vriska) were to be honest, Gamzee’s swollen, battered mouth was just about the most
+          structurally incontinent feature she’d ever seen on a person’s face. That limp, floppy maw couldn’t keep a
+          cantaloupe secure, much less a secret.</p>
+        <p>She drops down and straddles him in a way that is unmistakably non-amorous, even to an extraordinarily
+          obtuse, randy juggalo. She puts her shaking hands around his neck and grips tight. She positions her face
+          inches from his, hissing hot breath through her clenched teeth.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="vriska">(VRISKA): NO ONE IS GOING TO FIND OUT A8OUT THIS YOU FUCKING 8ASTARD.</p>
+
+          <p class="vriska">(VRISKA): NO ONE WILL EVER KNOW, SO HELP ME G8D.</p>
+        </div>
+        <p class="no-indent">(Vriska) is so furious, she has no way of pinpointing the exact moment her intent stopped
+          being intimidating him into silence and started being guaranteeing his silence, forever. She knows this
+          impostor was never a real god tier. She’s always known, just like everyone else. Once he’s gone, he’ll be gone
+          for good. She just needs another minute. Her grip grows tighter, and she feels the throbbing pulse beneath her
+          hands gradually subside. His arms flail, grab at hers, clutch at her wrists. He’s alarmingly strong. But at
+          this particular moment, not as strong as her.</p>
+        <p>And then, she lets go. His face is frozen in a repellent mask exhibiting the perfectly undetectable
+          difference between terror and ecstasy. He’s dead.</p>
+        <p>(Vriska) exhales forcefully, staggers to her feet, shaking. She backs up a few steps, studying the corpse. If
+          her body language signals any remorse or sadness, the witness in the bushes certainly can’t tell.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="vriska">Vriska: (Eep!)</p>
+        </div>
+        <p class="no-indent">Oh shit. (Vriska) had already forgotten about her, somehow. Her stylishly dressed teen
+          duplicate, who surely just witnessed not only the original feat of debauchery, but all the compromising
+          activity which followed as well. (Vriska) would probably need to have a few words with her.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="vriska">Vriska: Um...</p>
+        </div>
+        <p class="no-indent">Vriska stands up slowly from the bush, obviously trying not to look at the lifeless clown.
+          She puts a hand behind her head and seems to be casting about desperately for the right thing to say during
+          such a moment. But soon it’s clear she’s given up. (Vriska) doesn’t blame her. She can’t imagine there being
+          anything in anybody’s life that could adequately prepare them to have a snappy response ready for a situation
+          like this.</p>
+        <div class="chat type-rg type-hs-small--md" stylw="margin-bottom:0">
+          <p class="vriska">Vriska: Hey.</p>
+          <p class="vriska">(Vriska): Sup.</p>
+        </div>
+      </div>
       <div class="o_story-nav type-hs-copy line-tight pad-x-0 pad-x-lg--md pad-b-lg">
         <div>
           <span>&gt;</span>
           <a href="Candy 36.html">==&gt; </a><br>
         </div>
       </div>
-  
-<footer id="story-footer" role="banner">
-  <div id="story_footer_container" class="o_story-page-footer flex pad-t-0 pad-x-0
+
+      <footer id="story-footer" role="banner">
+        <div id="story_footer_container" class="o_story-page-footer flex pad-t-0 pad-x-0
      flex-justify 
     ">
-      <div class="pad-l-lg--md mar-b-md type-hs-small type-hs-bottom--md type-center type-left--md">
-        <ul class="o_game-nav">
-          <li class="o_game-nav-item">
-            <a id="o_start-over" href="The Homestuck Epilogues.html">Start Over</a>
-          </li>
-            <li class="o_game-nav-item">
-              <a href="Candy 34.html">Go Back</a>
-            </li>
-        </ul>
-      </div>
-      <script>
-//<![CDATA[
-$(document).ready(function() { Gamenav.checkAutosave(); });
+          <div class="pad-l-lg--md mar-b-md type-hs-small type-hs-bottom--md type-center type-left--md">
+            <ul class="o_game-nav">
+              <li class="o_game-nav-item">
+                <a id="o_start-over" href="Choice Page.html">Start Over</a>
+              </li>
+              <li class="o_game-nav-item">
+                <a href="Candy 34.html">Go Back</a>
+              </li>
+            </ul>
+          </div>
+          <script>
+            //<![CDATA[
+            $(document).ready(function () { Gamenav.checkAutosave(); });
 //]]>
-</script>
+          </script>
 
-    <a href="javascript:void(0)" data-gamenav-open="" class="nav-btn nav-btn--center type-hs-small mar-b-md" style="text-decoration:none; text-transform: none; font-size:14px; line-height:14px;"><span>Options</span> <i class="icon-menu" style="margin:0;"></i></a>
+          <a href="javascript:void(0)" data-gamenav-open="" class="nav-btn nav-btn--center type-hs-small mar-b-md"
+            style="text-decoration:none; text-transform: none; font-size:14px; line-height:14px;"><span>Options</span>
+            <i class="icon-menu" style="margin:0;"></i></a>
+        </div>
+      </footer>
+
+
+    </div>
   </div>
-</footer>
 
 
+
+  <div class="o_site-footer row pos-r pad-t-rg pad-b-xl pad-b-0--md bg-dark-gray">
+    <div class="float-l"><img
+        src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif"
+        alt="Footer logo"><br></div>
+    <div class="float-r disp-n disp-bl--sm"><img
+        src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif"
+        alt="Footer logo"><br></div>
+    <div class="type-center pad-t-md--md">
+      <ul>
+        <li><a href="https://www.homestuck.com/contacts">Contacts</a></li>
+        <li><a href="https://www.homestuck.com/privacy">Privacy Policy</a></li>
+      </ul>
+      <div><span style="white-space:nowrap;">© 2018 Homestuck</span> <span style="white-space:nowrap;">and VIZ
+          Media</span></div>
+    </div>
   </div>
-</div>
-
-
-    
-<div class="o_site-footer row pos-r pad-t-rg pad-b-xl pad-b-0--md bg-dark-gray">
-  <div class="float-l"><img src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif" alt="Footer logo"><br></div>
-  <div class="float-r disp-n disp-bl--sm"><img src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif" alt="Footer logo"><br></div>
-  <div class="type-center pad-t-md--md">
-    <ul>
-      <li><a href="https://www.homestuck.com/contacts">Contacts</a></li>
-      <li><a href="https://www.homestuck.com/privacy">Privacy Policy</a></li>
-    </ul>
-    <div><span style="white-space:nowrap;">© 2018 Homestuck</span> <span style="white-space:nowrap;">and VIZ Media</span></div>
-  </div>
-</div>
 
 
 
-    <div id="overlay" data-overlay-state="off" class="o_overlay"></div>
-    <div id="game_overlay" data-game-overlay-state="off" class="o_game-overlay"></div>
-    <div id="overlay_wait" data-overlay-state="off" class="o_overlay-wait"></div>
+  <div id="overlay" data-overlay-state="off" class="o_overlay"></div>
+  <div id="game_overlay" data-game-overlay-state="off" class="o_game-overlay"></div>
+  <div id="overlay_wait" data-overlay-state="off" class="o_overlay-wait"></div>
 
 
 
-  
 
-<iframe name="googlefcPresent" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;" src="./Epilogue_files/saved_resource.html"></iframe></body></html>
+
+  <iframe name="googlefcPresent"
+    style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"
+    src="./Epilogue_files/saved_resource.html"></iframe>
+</body>
+
+</html>

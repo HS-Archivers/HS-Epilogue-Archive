@@ -1,427 +1,519 @@
 <!DOCTYPE html>
 
-<html dir="ltr" lang="en-US"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html dir="ltr" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <!-- application -->
-    <script async="" src="./Epilogue_files/jquery-1.11.3.min.js.download"></script>
-    
-<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"1b930da09b","applicationID":"65900267","transactionName":"cFkNREpaWA9dF0pBVlRTEB9LQVsRQQ==","queueTime":0,"applicationTime":5,"agent":""}</script>
-<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"1b930da09b",applicationID:"65900267"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="format-detection" content="telephone=no">
-    <title>The Homestuck Epilogues</title>
-    <meta name="description" content="Tales of dubious authenticity.">
-    <script>
-//<![CDATA[
-var getGAEventLabel = function(){ return "The Homestuck Epilogues"; };
+  <script async="" src="./Epilogue_files/jquery-1.11.3.min.js.download"></script>
+
+  <script>window.NREUM || (NREUM = {}); NREUM.info = { "beacon": "bam-cell.nr-data.net", "errorBeacon": "bam-cell.nr-data.net", "licenseKey": "1b930da09b", "applicationID": "65900267", "transactionName": "cFkNREpaWA9dF0pBVlRTEB9LQVsRQQ==", "queueTime": 0, "applicationTime": 5, "agent": "" }</script>
+  <script>(window.NREUM || (NREUM = {})).loader_config = { licenseKey: "1b930da09b", applicationID: "65900267" }; window.NREUM || (NREUM = {}), __nr_require = function (t, e, n) { function r(n) { if (!e[ n ]) { var i = e[ n ] = { exports: {} }; t[ n ][ 0 ].call(i.exports, function (e) { var i = t[ n ][ 1 ][ e ]; return r(i || e) }, i, i.exports) } return e[ n ].exports } if ("function" == typeof __nr_require) return __nr_require; for (var i = 0; i < n.length; i++)r(n[ i ]); return r }({ 1: [ function (t, e, n) { function r() { } function i(t, e, n) { return function () { return o(t, [ u.now() ].concat(f(arguments)), e ? null : this, n), e ? void 0 : this } } var o = t("handle"), a = t(8), f = t(9), c = t("ee").get("tracer"), u = t("loader"), s = NREUM; "undefined" == typeof window.newrelic && (newrelic = s); var d = [ "setPageViewName", "setCustomAttribute", "setErrorHandler", "finished", "addToTrace", "inlineHit", "addRelease" ], p = "api-", l = p + "ixn-"; a(d, function (t, e) { s[ e ] = i(p + e, !0, "api") }), s.addPageAction = i(p + "addPageAction", !0), s.setCurrentRouteName = i(p + "routeName", !0), e.exports = newrelic, s.interaction = function () { return (new r).get() }; var m = r.prototype = { createTracer: function (t, e) { var n = {}, r = this, i = "function" == typeof e; return o(l + "tracer", [ u.now(), t, n ], r), function () { if (c.emit((i ? "" : "no-") + "fn-start", [ u.now(), r, i ], n), i) try { return e.apply(this, arguments) } catch (t) { throw c.emit("fn-err", [ arguments, this, t ], n), t } finally { c.emit("fn-end", [ u.now() ], n) } } } }; a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","), function (t, e) { m[ e ] = i(l + e) }), newrelic.noticeError = function (t, e) { "string" == typeof t && (t = new Error(t)), o("err", [ t, u.now(), !1, e ]) } }, {} ], 2: [ function (t, e, n) { function r(t) { if (NREUM.init) { for (var e = NREUM.init, n = t.split("."), r = 0; r < n.length - 1; r++)if (e = e[ n[ r ] ], "object" != typeof e) return; return e = e[ n[ n.length - 1 ] ] } } e.exports = { getConfiguration: r } }, {} ], 3: [ function (t, e, n) { function r() { return f.exists && performance.now ? Math.round(performance.now()) : (o = Math.max((new Date).getTime(), o)) - a } function i() { return o } var o = (new Date).getTime(), a = o, f = t(10); e.exports = r, e.exports.offset = a, e.exports.getLastTimestamp = i }, {} ], 4: [ function (t, e, n) { function r(t) { return !(!t || !t.protocol || "file:" === t.protocol) } e.exports = r }, {} ], 5: [ function (t, e, n) { function r(t, e) { var n = t.getEntries(); n.forEach(function (t) { "first-paint" === t.name ? d("timing", [ "fp", Math.floor(t.startTime) ]) : "first-contentful-paint" === t.name && d("timing", [ "fcp", Math.floor(t.startTime) ]) }) } function i(t, e) { var n = t.getEntries(); n.length > 0 && d("lcp", [ n[ n.length - 1 ] ]) } function o(t) { t.getEntries().forEach(function (t) { t.hadRecentInput || d("cls", [ t ]) }) } function a(t) { if (t instanceof m && !g) { var e = Math.round(t.timeStamp), n = { type: t.type }; e <= p.now() ? n.fid = p.now() - e : e > p.offset && e <= Date.now() ? (e -= p.offset, n.fid = p.now() - e) : e = p.now(), g = !0, d("timing", [ "fi", e, n ]) } } function f(t) { "hidden" === t && d("pageHide", [ p.now() ]) } if (!("init" in NREUM && "page_view_timing" in NREUM.init && "enabled" in NREUM.init.page_view_timing && NREUM.init.page_view_timing.enabled === !1)) { var c, u, s, d = t("handle"), p = t("loader"), l = t(7), m = NREUM.o.EV; if ("PerformanceObserver" in window && "function" == typeof window.PerformanceObserver) { c = new PerformanceObserver(r); try { c.observe({ entryTypes: [ "paint" ] }) } catch (v) { } u = new PerformanceObserver(i); try { u.observe({ entryTypes: [ "largest-contentful-paint" ] }) } catch (v) { } s = new PerformanceObserver(o); try { s.observe({ type: "layout-shift", buffered: !0 }) } catch (v) { } } if ("addEventListener" in document) { var g = !1, h = [ "click", "keydown", "mousedown", "pointerdown", "touchstart" ]; h.forEach(function (t) { document.addEventListener(t, a, !1) }) } l(f) } }, {} ], 6: [ function (t, e, n) { function r(t, e) { if (!i) return !1; if (t !== i) return !1; if (!e) return !0; if (!o) return !1; for (var n = o.split("."), r = e.split("."), a = 0; a < r.length; a++)if (r[ a ] !== n[ a ]) return !1; return !0 } var i = null, o = null, a = /Version\/(\S+)\s+Safari/; if (navigator.userAgent) { var f = navigator.userAgent, c = f.match(a); c && f.indexOf("Chrome") === -1 && f.indexOf("Chromium") === -1 && (i = "Safari", o = c[ 1 ]) } e.exports = { agent: i, version: o, match: r } }, {} ], 7: [ function (t, e, n) { function r(t) { function e() { t(a && document[ a ] ? document[ a ] : document[ i ] ? "hidden" : "visible") } "addEventListener" in document && o && document.addEventListener(o, e, !1) } e.exports = r; var i, o, a; "undefined" != typeof document.hidden ? (i = "hidden", o = "visibilitychange", a = "visibilityState") : "undefined" != typeof document.msHidden ? (i = "msHidden", o = "msvisibilitychange") : "undefined" != typeof document.webkitHidden && (i = "webkitHidden", o = "webkitvisibilitychange", a = "webkitVisibilityState") }, {} ], 8: [ function (t, e, n) { function r(t, e) { var n = [], r = "", o = 0; for (r in t) i.call(t, r) && (n[ o ] = e(r, t[ r ]), o += 1); return n } var i = Object.prototype.hasOwnProperty; e.exports = r }, {} ], 9: [ function (t, e, n) { function r(t, e, n) { e || (e = 0), "undefined" == typeof n && (n = t ? t.length : 0); for (var r = -1, i = n - e || 0, o = Array(i < 0 ? 0 : i); ++r < i;)o[ r ] = t[ e + r ]; return o } e.exports = r }, {} ], 10: [ function (t, e, n) { e.exports = { exists: "undefined" != typeof window.performance && window.performance.timing && "undefined" != typeof window.performance.timing.navigationStart } }, {} ], ee: [ function (t, e, n) { function r() { } function i(t) { function e(t) { return t && t instanceof r ? t : t ? u(t, c, a) : a() } function n(n, r, i, o, a) { if (a !== !1 && (a = !0), !l.aborted || o) { t && a && t(n, r, i); for (var f = e(i), c = v(n), u = c.length, s = 0; s < u; s++)c[ s ].apply(f, r); var p = d[ w[ n ] ]; return p && p.push([ b, n, r, f ]), f } } function o(t, e) { y[ t ] = v(t).concat(e) } function m(t, e) { var n = y[ t ]; if (n) for (var r = 0; r < n.length; r++)n[ r ] === e && n.splice(r, 1) } function v(t) { return y[ t ] || [] } function g(t) { return p[ t ] = p[ t ] || i(n) } function h(t, e) { l.aborted || s(t, function (t, n) { e = e || "feature", w[ n ] = e, e in d || (d[ e ] = []) }) } var y = {}, w = {}, b = { on: o, addEventListener: o, removeEventListener: m, emit: n, get: g, listeners: v, context: e, buffer: h, abort: f, aborted: !1 }; return b } function o(t) { return u(t, c, a) } function a() { return new r } function f() { (d.api || d.feature) && (l.aborted = !0, d = l.backlog = {}) } var c = "nr@context", u = t("gos"), s = t(8), d = {}, p = {}, l = e.exports = i(); e.exports.getOrSetContext = o, l.backlog = d }, {} ], gos: [ function (t, e, n) { function r(t, e, n) { if (i.call(t, e)) return t[ e ]; var r = n(); if (Object.defineProperty && Object.keys) try { return Object.defineProperty(t, e, { value: r, writable: !0, enumerable: !1 }), r } catch (o) { } return t[ e ] = r, r } var i = Object.prototype.hasOwnProperty; e.exports = r }, {} ], handle: [ function (t, e, n) { function r(t, e, n, r) { i.buffer([ t ], r), i.emit(t, e, n) } var i = t("ee").get("handle"); e.exports = r, r.ee = i }, {} ], id: [ function (t, e, n) { function r(t) { var e = typeof t; return !t || "object" !== e && "function" !== e ? -1 : t === window ? 0 : a(t, o, function () { return i++ }) } var i = 1, o = "nr@id", a = t("gos"); e.exports = r }, {} ], loader: [ function (t, e, n) { function r() { if (!R++) { var t = M.info = NREUM.info, e = v.getElementsByTagName("script")[ 0 ]; if (setTimeout(u.abort, 3e4), !(t && t.licenseKey && t.applicationID && e)) return u.abort(); c(E, function (e, n) { t[ e ] || (t[ e ] = n) }); var n = a(); f("mark", [ "onload", n + M.offset ], null, "api"), f("timing", [ "load", n ]); var r = v.createElement("script"); 0 === t.agent.indexOf("http://") || 0 === t.agent.indexOf("https://") ? r.src = t.agent : r.src = l + "://" + t.agent, e.parentNode.insertBefore(r, e) } } function i() { "complete" === v.readyState && o() } function o() { f("mark", [ "domContent", a() + M.offset ], null, "api") } var a = t(3), f = t("handle"), c = t(8), u = t("ee"), s = t(6), d = t(4), p = t(2), l = p.getConfiguration("ssl") === !1 ? "http" : "https", m = window, v = m.document, g = "addEventListener", h = "attachEvent", y = m.XMLHttpRequest, w = y && y.prototype, b = !d(m.location); NREUM.o = { ST: setTimeout, SI: m.setImmediate, CT: clearTimeout, XHR: y, REQ: m.Request, EV: m.Event, PR: m.Promise, MO: m.MutationObserver }; var x = "" + location, E = { beacon: "bam.nr-data.net", errorBeacon: "bam.nr-data.net", agent: "js-agent.newrelic.com/nr-1210.min.js" }, O = y && w && w[ g ] && !/CriOS/.test(navigator.userAgent), M = e.exports = { offset: a.getLastTimestamp(), now: a, origin: x, features: {}, xhrWrappable: O, userAgent: s, disabled: b }; if (!b) { t(1), t(5), v[ g ] ? (v[ g ]("DOMContentLoaded", o, !1), m[ g ]("load", r, !1)) : (v[ h ]("onreadystatechange", i), m[ h ]("onload", r)), f("mark", [ "firstbyte", a.getLastTimestamp() ], null, "api"); var R = 0 } }, {} ], "wrap-function": [ function (t, e, n) { function r(t, e) { function n(e, n, r, c, u) { function nrWrapper() { var o, a, s, p; try { a = this, o = d(arguments), s = "function" == typeof r ? r(o, a) : r || {} } catch (l) { i([ l, "", [ o, a, c ], s ], t) } f(n + "start", [ o, a, c ], s, u); try { return p = e.apply(a, o) } catch (m) { throw f(n + "err", [ o, a, m ], s, u), m } finally { f(n + "end", [ o, a, p ], s, u) } } return a(e) ? e : (n || (n = ""), nrWrapper[ p ] = e, o(e, nrWrapper, t), nrWrapper) } function r(t, e, r, i, o) { r || (r = ""); var f, c, u, s = "-" === r.charAt(0); for (u = 0; u < e.length; u++)c = e[ u ], f = t[ c ], a(f) || (t[ c ] = n(f, s ? c + r : r, i, c, o)) } function f(n, r, o, a) { if (!m || e) { var f = m; m = !0; try { t.emit(n, r, o, e, a) } catch (c) { i([ c, n, r, o ], t) } m = f } } return t || (t = s), n.inPlace = r, n.flag = p, n } function i(t, e) { e || (e = s); try { e.emit("internal-error", t) } catch (n) { } } function o(t, e, n) { if (Object.defineProperty && Object.keys) try { var r = Object.keys(t); return r.forEach(function (n) { Object.defineProperty(e, n, { get: function () { return t[ n ] }, set: function (e) { return t[ n ] = e, e } }) }), e } catch (o) { i([ o ], n) } for (var a in t) l.call(t, a) && (e[ a ] = t[ a ]); return e } function a(t) { return !(t && t instanceof Function && t.apply && !t[ p ]) } function f(t, e) { var n = e(t); return n[ p ] = t, o(t, n, s), n } function c(t, e, n) { var r = t[ e ]; t[ e ] = f(r, n) } function u() { for (var t = arguments.length, e = new Array(t), n = 0; n < t; ++n)e[ n ] = arguments[ n ]; return e } var s = t("ee"), d = t(9), p = "nr@original", l = Object.prototype.hasOwnProperty, m = !1; e.exports = r, e.exports.wrapFunction = f, e.exports.wrapInPlace = c, e.exports.argsToArray = u }, {} ] }, {}, [ "loader" ]);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <title>The Homestuck Epilogues</title>
+  <meta name="description" content="Tales of dubious authenticity.">
+  <script>
+    //<![CDATA[
+    var getGAEventLabel = function () { return "The Homestuck Epilogues"; };
 //]]>
-</script>
-      <link rel="canonical" href="Candy 19.html">
+  </script>
+  <link rel="canonical" href="Candy 19.html">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="https://www.homestuck.com/favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://www.homestuck.com/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://www.homestuck.com/favicon/favicon-16x16.png">
-<link rel="manifest" href="https://www.homestuck.com/favicon/manifest.json">
-<link rel="mask-icon" href="https://www.homestuck.com/favicon/safari-pinned-tab.svg" color="#6bbe4a">
-<meta name="theme-color" content="#ffffff">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www.homestuck.com/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://www.homestuck.com/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://www.homestuck.com/favicon/favicon-16x16.png">
+  <link rel="manifest" href="https://www.homestuck.com/favicon/manifest.json">
+  <link rel="mask-icon" href="https://www.homestuck.com/favicon/safari-pinned-tab.svg" color="#6bbe4a">
+  <meta name="theme-color" content="#ffffff">
 
-        <link rel="stylesheet" media="all" href="./Epilogue_files/manifest-epilogue-1694f2c1abc80cf72e84324f6d6486e6f04b02358ed667dee36c88974eef388f.css">
-      <link rel="stylesheet" href="./Epilogue_files/kek1uwn.css">
-    <link rel="stylesheet" media="all" href="./Epilogue_files/manifest-ui-e03365bbb17dde0f1fd5463dd7b56d096a27cae55aa131b72684e36c1f0c80f6.css">
-    <script src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE=(1)"></script>
-    <script src="./Epilogue_files/manifest-ads-story-1885683d55d6f631dc202ac5db87250ca938be96a613e85bb93739ecc057540e.js.download"></script>
+  <link rel="stylesheet" media="all"
+    href="./Epilogue_files/manifest-epilogue-1694f2c1abc80cf72e84324f6d6486e6f04b02358ed667dee36c88974eef388f.css">
+  <link rel="stylesheet" href="./Epilogue_files/kek1uwn.css">
+  <link rel="stylesheet" media="all"
+    href="./Epilogue_files/manifest-ui-e03365bbb17dde0f1fd5463dd7b56d096a27cae55aa131b72684e36c1f0c80f6.css">
+  <script
+    src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE=(1)"></script>
+  <script
+    src="./Epilogue_files/manifest-ads-story-1885683d55d6f631dc202ac5db87250ca938be96a613e85bb93739ecc057540e.js.download"></script>
 
 
-    <!-- //Connect Container: Homestuck-->
-<script src="./Epilogue_files/tag.min.js.download" async="" defer=""></script>
-  <script src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE="></script></head>
-  
-  <body class="epilogue">
+  <!-- //Connect Container: Homestuck-->
+  <script src="./Epilogue_files/tag.min.js.download" async="" defer=""></script>
+  <script
+    src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE="></script>
+</head>
 
-    
-    <header id="site-header" role="banner">
-  <div id="header-container" class="o_story-page-header row flex pad-t-0 ">
-    <a href="javascript:void(0)" data-nav-open="" class="nav-btn nav-btn--center color-white" style="overflow-wrap:normal;text-decoration:none;"><i class="icon-menu"></i><span>Menu</span></a>
-    <nav id="nav-container" data-nav-state="closed" role="navigation" class="o_nav-container">
-      <a href="javascript:void(0)" data-nav-close="" class="nav-btn color-white pad-y-rg type-rg" style="overflow-wrap:normal;text-decoration:none;"><i class="icon-close"></i><span>Dismiss</span></a>
-      <ul id="primary-nav" class="o_primary-nav style-caps weight-bold disp-ib color-white type-rg">
-     <li class="o_primary-nav-item slide-candycorn pipe"><a class="o_primary-nav-link" style="color:#39d5f6" href="Read.html">READ</a></li><!--
-     --><li class="o_primary-nav-item"><a class="o_primary-nav-link" style="color:#39d5f6" href="Credits.html">INFO</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-    
+<body class="epilogue">
 
-    <div class="row bg-white bg-light-gray--md pad-t-md--md pos-r">
-  <div id="content_container" class="mar-x-auto disp-bl bg-white" style="max-width:650px;">
-    <div class="pos-r pad-t-sm pad-x-lg--md type-center" style="overflow:visible; height:72px;">
-      <img class="hsep_bullet" alt="Chapter" src="./Epilogue_files/candy_60x60-6b955ce39772ffce9994587a951f12b804ebf2202ebe8ed230483e25072db855.png">
-      <h3 class="disp-ib type-hsep-header line-tight type-lg pad-t-sm">
-        19
-      </h3>
+
+  <header id="site-header" role="banner">
+    <div id="header-container" class="o_story-page-header row flex pad-t-0 ">
+      <a href="javascript:void(0)" data-nav-open="" class="nav-btn nav-btn--center color-white"
+        style="overflow-wrap:normal;text-decoration:none;"><i class="icon-menu"></i><span>Menu</span></a>
+      <nav id="nav-container" data-nav-state="closed" role="navigation" class="o_nav-container">
+        <a href="javascript:void(0)" data-nav-close="" class="nav-btn color-white pad-y-rg type-rg"
+          style="overflow-wrap:normal;text-decoration:none;"><i class="icon-close"></i><span>Dismiss</span></a>
+        <ul id="primary-nav" class="o_primary-nav style-caps weight-bold disp-ib color-white type-rg">
+          <li class="o_primary-nav-item slide-candycorn pipe"><a class="o_primary-nav-link" style="color:#39d5f6"
+              href="Read.html">READ</a></li>
+          <!--
+     -->
+          <li class="o_primary-nav-item"><a class="o_primary-nav-link" style="color:#39d5f6"
+              href="Credits.html">INFO</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <div class="row bg-white bg-light-gray--md pad-t-md--md pos-r">
+    <div id="content_container" class="mar-x-auto disp-bl bg-white" style="max-width:650px;">
+      <div class="pos-r pad-t-sm pad-x-lg--md type-center" style="overflow:visible; height:72px;">
+        <img class="hsep_bullet" alt="Chapter"
+          src="./Epilogue_files/candy_60x60-6b955ce39772ffce9994587a951f12b804ebf2202ebe8ed230483e25072db855.png">
+        <h3 class="disp-ib type-hsep-header line-tight type-lg pad-t-sm">
+          19
+        </h3>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="row bg-white bg-light-gray--md pad-b-md pad-b-lg--md pos-r pad-t-md pad-t-0--md">
-  <div class="mar-x-auto disp-bl bg-white pad-t-lg" style="max-width:650px;">
-      <div class="o-story_text o_epilogue type-rg type-sm--md line-caption line-copy--md pad-x-0 pad-x-lg--md pad-b-lg"><div class="chat type-rg type-hs-small--md" style="margin-top:0">  
-  <p class="jade">JADE: how cute do you guys think johns baby is going to be </p>
-  
-  <p class="jade">JADE: like on a scale of 1-11???</p>
-</div>
-  <p class="no-indent">Jade rolls over and nuzzles herself into the crook of Dave’s armpit, taking Karkat’s hand with her so that it’s slung over her stomach. Dave doesn’t stop scrolling on his phone. His face is a kaleidoscope of neon, lit from beneath by the Alternian mushrooms that flare up at night with a sick, green bioluminescence, and from above by the soft glow of his social media accounts.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="dave">DAVE: i dunno </p>
-  
-  <p class="dave">DAVE: i still havent come to terms with the fact that johns gonna be a dad</p>
-  
-  <p class="jade">JADE: you dont think hell be a good one?</p>
-  
-  <p class="dave">DAVE: i didnt say that but ok since you asked</p>
-  
-  <p class="dave">DAVE: i mean think about it if you were gonna rank us in order of maturity based on all the years weve known each other</p>
-  
-  <p class="dave">DAVE: about where would you put john</p>
-</div>
-  <p class="no-indent">Karkat, lazily munching on a chocolate beetle, taps his foot against the picnic blanket. Jade moves his hand so that it’s resting subtly on the line of exposed skin above her skirt, where her tank top is riding up. He seems not to notice. Instead, he’s seriously considering Dave’s question. He picks a leg off one of his beetles and flicks it over Jade so that it lands on Dave’s forehead.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="karkat">KARKAT: BELOW ME BUT ABOVE YOU.</p>
-  
-  <p class="dave">DAVE: yeah exactly</p>
-  
-  <p class="dave">DAVE: now hes all married and pregnant and hes got a mustache</p>
-  
-  <p class="karkat">KARKAT: I’M STILL NOT OVER THE FUCKING MUSTACHE.</p>
-  
-  <p class="jade">JADE: why not he looks so good!!</p>
-  
-  <p class="dave">DAVE: yeah he looks disturbingly good</p>
-  
-  <p class="dave">DAVE: i almost cant talk to him anymore it looks so good</p>
-  
-  <p class="jade">JADE: ohhhhh?</p>
-  
-  <p class="dave">DAVE: jesus jade dont fuckin read into it</p>
-  
-  <p class="dave">DAVE: a bro can appreciate how attractive his bro has become and maybe get a little breathless at the sight of his chiseled jawline and manly facial hair without being gay about it</p>
-  
-  <p class="dave">DAVE: ive just been thinking lately everytime i see him that hes</p>
-  
-  <p class="dave">DAVE: ok dont make fun of me for saying this but its like</p>
-  
-  <p class="dave">DAVE: johns a Man</p>
-  
-  <p class="dave">DAVE: not a lowercase m man but a fully grown up legit fuckin Dude with a leather briefcase and a suit that he only wears on special occasions </p>
-  
-  <p class="karkat">KARKAT: PRETTY FUCKED UP.</p>
-  
-  <p class="dave">DAVE: i know right</p>
-  
-  <p class="jade">JADE: hmmmm...  </p>
-</div>
-  <p class="no-indent">Jade pokes a finger into Dave’s chin, sliding it up his jawline so that it puckers his mouth into a pout. It’s a pretty cute thing to do, if extremely immature. This might be the point Dave was trying to make, that they’re all still kind of immature. Jade doesn’t pick up on the obvious subtext in the conversation, however, because she’s been willfully undermining the subtext in her own personal life for nearly a year now.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="jade">JADE: well... </p>
-  
-  <p class="jade">JADE: ive actually been thinking lately about how since rose and kanaya had a kid and jane and jake had a kid and john and roxy are gonna have a kid.......</p>
-  
-  <p class="jade">JADE: what would you think if maybe...  </p>
-  
-  <p class="jade">JADE: ....we had kids???</p>
-  
-  <p class="karkat">KARKAT: WHAT</p>
-  
-  <p class="karkat">KARKAT: WHO? YOU AND DAVE?</p>
-</div>
-  <p class="no-indent">Karkat starts laughing. Jade flicks him in the forehead.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="jade">JADE: no stupid all three of us!</p>
-  
-  <p class="dave">DAVE: uhhh</p>
-  
-  <p class="jade">JADE: what??</p>
-  
-  <p class="dave">DAVE: uhhhhhhh</p>
-  
-  <p class="jade">JADE: look i know there are “issues” to sort out in terms of um....... feasibility</p>
-  
-  <p class="jade">JADE: but i think there are a lot of options to consider!</p>
-  
-  <p class="jade">JADE: maybe someone can help us out</p>
-  
-  <p class="jade">JADE: like.... someone we know?</p>
-  
-  <p class="jade">JADE: or i dont know! what about adoption!</p>
-  
-  <p class="jade">JADE: that could be cute! adopting a little grub!! aww... </p>
-  
-  <p class="jade">JADE: or a human! whatever! im not picky </p>
-  
-  <p class="dave">DAVE: uhhhhhhhhhhhhh</p>
-  
-  <p class="karkat">KARKAT: UHHHHHH IS FUCKING RIGHT.</p>
-  
-  <p class="karkat">KARKAT: JADE, DON’T YOU READ THE NEWSPAPERS?</p>
-  
-  <p class="karkat">KARKAT: THE NEW ADMINISTRATION IS CRACKING DOWN ON CERTAIN KINDS OF INTERSPECIES ADOPTION LAWS.</p>
-  
-  <p class="karkat">KARKAT: IF YOU’RE SO INTENT ON IT BEING “THE THREE OF US,” WE LITERALLY WILL NOT BE ABLE TO ADOPT A HUMAN CHILD BECAUSE THE HUMAN ADMINISTRATION IS AFRAID THAT I’D...   </p>
-  
-  <p class="karkat">KARKAT: I DON’T KNOW.</p>
-  
-  <p class="karkat">KARKAT: TEAR INTO IT, AND FEAST ON ITS ORGANS.</p>
-  
-  <p class="karkat">KARKAT: AND IN THAT KIND OF POLITICAL CLIMATE? WELL, I’M NOT SURE IT’S A WORLD I WOULD WANT TO RAISE A TROLL CHILD IN RIGHT NOW.</p>
-  
-  <p class="dave">DAVE: jokes on them ive never seen you tear into anything more complicated than a microwave dinner</p>
-  
-  <p class="karkat">KARKAT: I KNOW, RIGHT?</p>
-  
-  <p class="dave">DAVE: i mean on the other hand if we adopt a kid young enough it would totally fit in the microwave</p>
-  
-  <p class="karkat">KARKAT: WHAT THE FUCK, DAVE. I’M NOT GONNA EAT OUR THEORETICAL BABY.</p>
-</div>
-  <p class="no-indent">Dave puts away his phone and rolls up so that he’s braced on his elbow. He meets Karkat’s gaze over the rise of Jade’s chest and smiles at him. </p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="dave">DAVE: yeah dude i know </p>
-  
-  <p class="dave">DAVE: youre probably like closet dad of the fuckin year</p>
-  
-  <p class="dave">DAVE: just waiting for his moment to shine</p>
-  
-  <p class="dave">DAVE: i bet youd whine and complain about getting a kid til we actually brought junior home </p>
-  
-  <p class="dave">DAVE: the moment you saw his chubby lil cheeks your face would light right up</p>
-  
-  <p class="jade">JADE: oh... i can imagine the look on karkats face right now</p>
-  
-  <p class="jade">JADE: heheh</p>
-  
-  <p class="dave">DAVE: yeah you know exactly the one</p>
-  
-  <p class="dave">DAVE: like how he looks when his hot pocket finishes cooking in the microwave</p>
-  
-  <p class="dave">DAVE: which he understands is an instrument of food preparation</p>
-  
-  <p class="dave">DAVE: and not some sort of grim infant warming device</p>
-  
-  <p class="karkat">KARKAT: WHY DID YOU HAVE TO BRING IT BACK TO THE MICROWAVE?</p>
-  
-  <p class="dave">DAVE: oh</p>
-  
-  <p class="dave">DAVE: cause i had more jokes to make about the subject</p>
-  
-  <p class="karkat">KARKAT: OF COURSE. GOD FORBID JADE AND I ARE NOT FORCED TO LISTEN TO EVERY LETTER OF YOUR MORBID INTERNAL DIALOGUE.</p>
-  
-  <p class="dave">DAVE: whatever you love it</p>
-  
-  <p class="dave">DAVE: anyway</p>
-  
-  <p class="dave">DAVE: on the baby in the microwave front</p>
-  
-  <p class="karkat">KARKAT: GOD</p>
-  
-  <p class="dave">DAVE: id be more worried about me being the one whod do the deed so to speak</p>
-  
-  <p class="dave">DAVE: i mean its not like ive got a great demonstrative background in child rearing or anything</p>
-  
-  <p class="dave">DAVE: considering all the places i got left as a kid i wouldnt be surprised if id just put our baby in the toaster by accident or something</p>
-  
-  <p class="dave">DAVE: like if you tally up the amount of hours i spent locked in the fridge compared to the amount of hours i spent in the american school system learning how to be normal and do polynomials</p>
-  
-  <p class="dave">DAVE: just sayin it looks dire</p>
-  
-  <p class="jade">JADE: .....</p>
-  
-  <p class="karkat">KARKAT: ... </p>
-</div>
-  <p class="no-indent">Dave’s staring into the distance like a stopped clock, or at the very least like a dude who’s been locked in the fridge more than once in his life. Jade and Karkat exchange a private look they’ve also given each other more than once in Dave’s presence.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="dave">DAVE: yeah so anyway im gonna stick to hot pockets i think</p>
-  
-  <p class="jade">JADE: dave</p>
-  
-  <p class="jade">JADE: you really think youd make that bad a father?</p>
-  
-  <p class="jade">JADE: even with me and karkat helping you?</p>
-  
-  <p class="dave">DAVE: eh dont take this personally but im an evidence based hypothesis kinda guy and so far three way relationships in our friend group attempting parenthood...  </p>
-  
-  <p class="dave">DAVE: the record aint so lookin so good</p>
-  
-  <p class="dave">DAVE: just saying</p>
-  
-  <p class="dave">DAVE: a clown a fascist and a male sex icon walk into a bar sounds like the start of a bad but funny joke</p>
-  
-  <p class="dave">DAVE: but when its the start of a family thats when it gets a bit less funny to me</p>
-  
-  <p class="dave">DAVE: poor little dude gonna be fucked up</p>
-  
-  <p class="jade">JADE: oh come on dave</p>
-  
-  <p class="jade">JADE: tavros is a cute kid!</p>
-  
-  <p class="karkat">KARKAT: SURE, HE IS *NOW*.</p>
-  
-  <p class="dave">DAVE: the moment cognitive function starts firing off in that kids head hes gonna be scarred for life</p>
-  
-  <p class="jade">JADE: we dont KNOW that</p>
-  
-  <p class="dave">DAVE: jade i know jakes like your bestie</p>
-  
-  <p class="dave">DAVE: and also your grandfather</p>
-  
-  <p class="dave">DAVE: and also kinda your grandson</p>
-  
-  <p class="dave">DAVE: oh also your fucking dad i guess</p>
-  
-  <p class="dave">DAVE: but his relationship is bad</p>
-  
-  <p class="jade">JADE: hey... thats...  </p>
-  
-  <p class="jade">JADE: not NECESSARILY true...  </p>
-  
-  <p class="karkat">KARKAT: YOU’RE RIGHT, IT’S NOT FUCKING TRUE.</p>
-  
-  <p class="karkat">KARKAT: DAVE’S JUST BEING GENTLE HERE TO SPARE YOUR FEELINGS.</p>
-  
-  <p class="karkat">KARKAT: HIS RELATIONSHIP IS NOT MERELY “BAD”</p>
-  
-  <p class="karkat">KARKAT: HIS RELATIONSHIP IS A FLAMING WRECK OF AN INTERSTELLAR WARSHIP HURTLING TOWARDS THE PLANET AT TERMINAL VELOCITY WITH THE ENTIRE CREW BRUTALLY SLAUGHTERED UPON REENTRY, SHOVED STRAIGHT DOWN THE CHAGRIN TUNNEL AND THEN IMMEDIATELY SHAT OUT THE OTHER SIDE, THUS FLOODING THE ENTIRE FUCKING NEIGHBORHOOD WHEN IT CLOGS UP THE LOAD GAPER.</p>
-</div>
-  <p class="no-indent">Jade sits up and wraps her arms around her knees. Her ears go flat as she chews her lip.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="jade">JADE: ...its not like i dont know that</p>
-  
-  <p class="jade">JADE: john never shuts up about it</p>
-  
-  <p class="jade">JADE: i mean, he and jane used to be close back when we all first met but last time i talked to john he....</p>
-  
-  <p class="jade">JADE: well, he accused her of “raping” jake</p>
-  
-  <p class="dave">DAVE: oh shit</p>
-  
-  <p class="karkat">KARKAT: YOU DON’T FUCKING SAY.</p>
-  
-  <p class="jade">JADE: its not like i dont worry about jake but come on! </p>
-  
-  <p class="jade">JADE: were all adults</p>
-  
-  <p class="jade">JADE: what am i supposed to do? show up at his window dressed like the blue fairy and whisk him away from his terrible life??</p>
-  
-  <p class="jade">JADE: maybe that would work for a few days, but one thing i learned from dating around a lot in my youth is that no ones going to leave a bad relationship until its THEIR idea to leave</p>
-</div>
-  <p class="no-indent">She takes in a shaky breath and shuts her eyes. Her hair spills around her face when she leans forward to put her chin on her knees. Dave and Karkat exchange a look that is equal parts confused, miserable, and desperate. Karkat’s making a fist against the ground, digging up a handful of moss and getting dirt under his fingernails. Perhaps it’s a metaphor, he wryly speculates, for the way Jade has just dug up the emotional dirt in their relationship. Dave clears his throat quietly. One of them could say something right now if they found the nerve. But as the moments slide by, nerve remains in short supply.</p>
-  <p>Karkat opens his mouth, without quite having settled on the words that will come out of it. But before any do, the sky cracks open. Instead, he lets out an undignified yelp and scuttles back so he doesn’t get hit by the sharp debris suddenly raining from above.</p>
-  <p>Jade spins around and flings her arms out, using her Space powers to catch the offensive rubble and shrink it into harmless granules. They spark and clash against her fingers. She can’t quite tell what they are. They’re not rocks, or metal... they don’t even seem to be physical. </p>
-  <p>Something else comes hurtling out of the hole in the sky, too fast for Jade to catch. It hits the ground with a clap of green lightning. The collision sends a geyser of dirt, rock, and vapor into the air. Dave flash-steps to shield Karkat. Jade doesn’t move, taking the brunt of the explosion face on, using her abilities to warp the energy around her so that she’s a mote at the center of the storm. When the dust clears, she’s the first to jump in the crater, trailing smoke behind her.</p>
-  <p>There’s a body at the center of it. The torso is bloody, tangled, and curled into a fetal position. Its shoes are missing, but otherwise the outfit is quite familiar to her: it’s a dead ringer for her old Witch of Space uniform. Jade touches the body with the toe of her shoe, and then gasps when it rolls over to reveal its face.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="jade">JADE: its... </p>
-  
-  <p class="jade">JADE: ME???</p>
-</div>
-  <p class="no-indent">Karkat and Dave stick their heads over the edge of the pit.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="dave">DAVE: holy shit</p>
-  
-  <p class="karkat">KARKAT: WHAT IN THE EVER LIVING FUCK?</p>
-  
-  <p class="dave">DAVE: uh</p>
-  
-  <p class="dave">DAVE: good question</p>
-  
-  <p class="dave">DAVE: idk but we should probably get her some help</p>
-  
-  <p class="karkat">KARKAT: HELP? FOR WHAT?? </p>
-  
-  <p class="karkat">KARKAT: IT LOOKS LIKE HER INTERNAL ORGANS ARE OBLITERATED. SHE’S COVERED IN MORE BLOOD THAN I THOUGHT HUMANS EVEN HAD INSIDE THEM.</p>
-  
-  <p class="dave">DAVE: well we cant just leave her in this fuckin hole man</p>
-  
-  <p class="dave">DAVE: come on gimme a hand</p>
-</div>
-  <p class="no-indent">Karkat watches as Jade stands over her own younger corpse. He notices the way her shoulders are slanted. It’s clear even from a distance that she’s shaking.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="karkat">KARKAT: JADE? </p>
-  
-  <p class="karkat">KARKAT: DO YOU HAVE ANY IDEA WHAT’S GOING ON HERE??</p>
-  
-  <p class="karkat">KARKAT: WHAT SHOULD WE DO ABOUT THIS</p>
-</div>
-  <p class="no-indent">Jade doesn’t say anything. She’s staring at the body. A badly broken version of herself, probably from a different timeline, she guesses. This Jade looks about sixteen years old. Her hair is matted with blood. Her appearance is gruesome, yet also... peaceful, somehow. </p>
-  <p>Dave slides down the ridge of the crater and grabs her by the shoulder.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="dave">DAVE: hey jade you hear us</p>
-</div>
-  <p class="no-indent">Jade wipes a hand across her cheek and looks down to find that it’s come away bloody. One of those shrunken, massless shards from the sky must have nicked her in the face. Her eyes go wide and she feels the breath go out of her for a moment. She looks directly upward. Where did this body come from?</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="dave">DAVE: jade???</p>
-  
-  <p class="jade">JADE: yes dave i heard you</p>
-</div>
-  <p class="no-indent">Still staring at the body, Jade digs her phone out of her pocket.</p>
-<div class="chat type-rg type-hs-small--md" style="margin-bottom:0">  
-  <p class="jade">JADE: i need to talk to jane</p>
-</div></div>
+  <div class="row bg-white bg-light-gray--md pad-b-md pad-b-lg--md pos-r pad-t-md pad-t-0--md">
+    <div class="mar-x-auto disp-bl bg-white pad-t-lg" style="max-width:650px;">
+      <div class="o-story_text o_epilogue type-rg type-sm--md line-caption line-copy--md pad-x-0 pad-x-lg--md pad-b-lg">
+        <div class="chat type-rg type-hs-small--md" style="margin-top:0">
+          <p class="jade">JADE: how cute do you guys think johns baby is going to be </p>
+
+          <p class="jade">JADE: like on a scale of 1-11???</p>
+        </div>
+        <p class="no-indent">Jade rolls over and nuzzles herself into the crook of Dave’s armpit, taking Karkat’s hand
+          with her so that it’s slung over her stomach. Dave doesn’t stop scrolling on his phone. His face is a
+          kaleidoscope of neon, lit from beneath by the Alternian mushrooms that flare up at night with a sick, green
+          bioluminescence, and from above by the soft glow of his social media accounts.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="dave">DAVE: i dunno </p>
+
+          <p class="dave">DAVE: i still havent come to terms with the fact that johns gonna be a dad</p>
+
+          <p class="jade">JADE: you dont think hell be a good one?</p>
+
+          <p class="dave">DAVE: i didnt say that but ok since you asked</p>
+
+          <p class="dave">DAVE: i mean think about it if you were gonna rank us in order of maturity based on all the
+            years weve known each other</p>
+
+          <p class="dave">DAVE: about where would you put john</p>
+        </div>
+        <p class="no-indent">Karkat, lazily munching on a chocolate beetle, taps his foot against the picnic blanket.
+          Jade moves his hand so that it’s resting subtly on the line of exposed skin above her skirt, where her tank
+          top is riding up. He seems not to notice. Instead, he’s seriously considering Dave’s question. He picks a leg
+          off one of his beetles and flicks it over Jade so that it lands on Dave’s forehead.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="karkat">KARKAT: BELOW ME BUT ABOVE YOU.</p>
+
+          <p class="dave">DAVE: yeah exactly</p>
+
+          <p class="dave">DAVE: now hes all married and pregnant and hes got a mustache</p>
+
+          <p class="karkat">KARKAT: I’M STILL NOT OVER THE FUCKING MUSTACHE.</p>
+
+          <p class="jade">JADE: why not he looks so good!!</p>
+
+          <p class="dave">DAVE: yeah he looks disturbingly good</p>
+
+          <p class="dave">DAVE: i almost cant talk to him anymore it looks so good</p>
+
+          <p class="jade">JADE: ohhhhh?</p>
+
+          <p class="dave">DAVE: jesus jade dont fuckin read into it</p>
+
+          <p class="dave">DAVE: a bro can appreciate how attractive his bro has become and maybe get a little breathless
+            at the sight of his chiseled jawline and manly facial hair without being gay about it</p>
+
+          <p class="dave">DAVE: ive just been thinking lately everytime i see him that hes</p>
+
+          <p class="dave">DAVE: ok dont make fun of me for saying this but its like</p>
+
+          <p class="dave">DAVE: johns a Man</p>
+
+          <p class="dave">DAVE: not a lowercase m man but a fully grown up legit fuckin Dude with a leather briefcase
+            and a suit that he only wears on special occasions </p>
+
+          <p class="karkat">KARKAT: PRETTY FUCKED UP.</p>
+
+          <p class="dave">DAVE: i know right</p>
+
+          <p class="jade">JADE: hmmmm... </p>
+        </div>
+        <p class="no-indent">Jade pokes a finger into Dave’s chin, sliding it up his jawline so that it puckers his
+          mouth into a pout. It’s a pretty cute thing to do, if extremely immature. This might be the point Dave was
+          trying to make, that they’re all still kind of immature. Jade doesn’t pick up on the obvious subtext in the
+          conversation, however, because she’s been willfully undermining the subtext in her own personal life for
+          nearly a year now.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="jade">JADE: well... </p>
+
+          <p class="jade">JADE: ive actually been thinking lately about how since rose and kanaya had a kid and jane and
+            jake had a kid and john and roxy are gonna have a kid.......</p>
+
+          <p class="jade">JADE: what would you think if maybe... </p>
+
+          <p class="jade">JADE: ....we had kids???</p>
+
+          <p class="karkat">KARKAT: WHAT</p>
+
+          <p class="karkat">KARKAT: WHO? YOU AND DAVE?</p>
+        </div>
+        <p class="no-indent">Karkat starts laughing. Jade flicks him in the forehead.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="jade">JADE: no stupid all three of us!</p>
+
+          <p class="dave">DAVE: uhhh</p>
+
+          <p class="jade">JADE: what??</p>
+
+          <p class="dave">DAVE: uhhhhhhh</p>
+
+          <p class="jade">JADE: look i know there are “issues” to sort out in terms of um....... feasibility</p>
+
+          <p class="jade">JADE: but i think there are a lot of options to consider!</p>
+
+          <p class="jade">JADE: maybe someone can help us out</p>
+
+          <p class="jade">JADE: like.... someone we know?</p>
+
+          <p class="jade">JADE: or i dont know! what about adoption!</p>
+
+          <p class="jade">JADE: that could be cute! adopting a little grub!! aww... </p>
+
+          <p class="jade">JADE: or a human! whatever! im not picky </p>
+
+          <p class="dave">DAVE: uhhhhhhhhhhhhh</p>
+
+          <p class="karkat">KARKAT: UHHHHHH IS FUCKING RIGHT.</p>
+
+          <p class="karkat">KARKAT: JADE, DON’T YOU READ THE NEWSPAPERS?</p>
+
+          <p class="karkat">KARKAT: THE NEW ADMINISTRATION IS CRACKING DOWN ON CERTAIN KINDS OF INTERSPECIES ADOPTION
+            LAWS.</p>
+
+          <p class="karkat">KARKAT: IF YOU’RE SO INTENT ON IT BEING “THE THREE OF US,” WE LITERALLY WILL NOT BE ABLE TO
+            ADOPT A HUMAN CHILD BECAUSE THE HUMAN ADMINISTRATION IS AFRAID THAT I’D... </p>
+
+          <p class="karkat">KARKAT: I DON’T KNOW.</p>
+
+          <p class="karkat">KARKAT: TEAR INTO IT, AND FEAST ON ITS ORGANS.</p>
+
+          <p class="karkat">KARKAT: AND IN THAT KIND OF POLITICAL CLIMATE? WELL, I’M NOT SURE IT’S A WORLD I WOULD WANT
+            TO RAISE A TROLL CHILD IN RIGHT NOW.</p>
+
+          <p class="dave">DAVE: jokes on them ive never seen you tear into anything more complicated than a microwave
+            dinner</p>
+
+          <p class="karkat">KARKAT: I KNOW, RIGHT?</p>
+
+          <p class="dave">DAVE: i mean on the other hand if we adopt a kid young enough it would totally fit in the
+            microwave</p>
+
+          <p class="karkat">KARKAT: WHAT THE FUCK, DAVE. I’M NOT GONNA EAT OUR THEORETICAL BABY.</p>
+        </div>
+        <p class="no-indent">Dave puts away his phone and rolls up so that he’s braced on his elbow. He meets Karkat’s
+          gaze over the rise of Jade’s chest and smiles at him. </p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="dave">DAVE: yeah dude i know </p>
+
+          <p class="dave">DAVE: youre probably like closet dad of the fuckin year</p>
+
+          <p class="dave">DAVE: just waiting for his moment to shine</p>
+
+          <p class="dave">DAVE: i bet youd whine and complain about getting a kid til we actually brought junior home
+          </p>
+
+          <p class="dave">DAVE: the moment you saw his chubby lil cheeks your face would light right up</p>
+
+          <p class="jade">JADE: oh... i can imagine the look on karkats face right now</p>
+
+          <p class="jade">JADE: heheh</p>
+
+          <p class="dave">DAVE: yeah you know exactly the one</p>
+
+          <p class="dave">DAVE: like how he looks when his hot pocket finishes cooking in the microwave</p>
+
+          <p class="dave">DAVE: which he understands is an instrument of food preparation</p>
+
+          <p class="dave">DAVE: and not some sort of grim infant warming device</p>
+
+          <p class="karkat">KARKAT: WHY DID YOU HAVE TO BRING IT BACK TO THE MICROWAVE?</p>
+
+          <p class="dave">DAVE: oh</p>
+
+          <p class="dave">DAVE: cause i had more jokes to make about the subject</p>
+
+          <p class="karkat">KARKAT: OF COURSE. GOD FORBID JADE AND I ARE NOT FORCED TO LISTEN TO EVERY LETTER OF YOUR
+            MORBID INTERNAL DIALOGUE.</p>
+
+          <p class="dave">DAVE: whatever you love it</p>
+
+          <p class="dave">DAVE: anyway</p>
+
+          <p class="dave">DAVE: on the baby in the microwave front</p>
+
+          <p class="karkat">KARKAT: GOD</p>
+
+          <p class="dave">DAVE: id be more worried about me being the one whod do the deed so to speak</p>
+
+          <p class="dave">DAVE: i mean its not like ive got a great demonstrative background in child rearing or
+            anything</p>
+
+          <p class="dave">DAVE: considering all the places i got left as a kid i wouldnt be surprised if id just put our
+            baby in the toaster by accident or something</p>
+
+          <p class="dave">DAVE: like if you tally up the amount of hours i spent locked in the fridge compared to the
+            amount of hours i spent in the american school system learning how to be normal and do polynomials</p>
+
+          <p class="dave">DAVE: just sayin it looks dire</p>
+
+          <p class="jade">JADE: .....</p>
+
+          <p class="karkat">KARKAT: ... </p>
+        </div>
+        <p class="no-indent">Dave’s staring into the distance like a stopped clock, or at the very least like a dude
+          who’s been locked in the fridge more than once in his life. Jade and Karkat exchange a private look they’ve
+          also given each other more than once in Dave’s presence.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="dave">DAVE: yeah so anyway im gonna stick to hot pockets i think</p>
+
+          <p class="jade">JADE: dave</p>
+
+          <p class="jade">JADE: you really think youd make that bad a father?</p>
+
+          <p class="jade">JADE: even with me and karkat helping you?</p>
+
+          <p class="dave">DAVE: eh dont take this personally but im an evidence based hypothesis kinda guy and so far
+            three way relationships in our friend group attempting parenthood... </p>
+
+          <p class="dave">DAVE: the record aint so lookin so good</p>
+
+          <p class="dave">DAVE: just saying</p>
+
+          <p class="dave">DAVE: a clown a fascist and a male sex icon walk into a bar sounds like the start of a bad but
+            funny joke</p>
+
+          <p class="dave">DAVE: but when its the start of a family thats when it gets a bit less funny to me</p>
+
+          <p class="dave">DAVE: poor little dude gonna be fucked up</p>
+
+          <p class="jade">JADE: oh come on dave</p>
+
+          <p class="jade">JADE: tavros is a cute kid!</p>
+
+          <p class="karkat">KARKAT: SURE, HE IS *NOW*.</p>
+
+          <p class="dave">DAVE: the moment cognitive function starts firing off in that kids head hes gonna be scarred
+            for life</p>
+
+          <p class="jade">JADE: we dont KNOW that</p>
+
+          <p class="dave">DAVE: jade i know jakes like your bestie</p>
+
+          <p class="dave">DAVE: and also your grandfather</p>
+
+          <p class="dave">DAVE: and also kinda your grandson</p>
+
+          <p class="dave">DAVE: oh also your fucking dad i guess</p>
+
+          <p class="dave">DAVE: but his relationship is bad</p>
+
+          <p class="jade">JADE: hey... thats... </p>
+
+          <p class="jade">JADE: not NECESSARILY true... </p>
+
+          <p class="karkat">KARKAT: YOU’RE RIGHT, IT’S NOT FUCKING TRUE.</p>
+
+          <p class="karkat">KARKAT: DAVE’S JUST BEING GENTLE HERE TO SPARE YOUR FEELINGS.</p>
+
+          <p class="karkat">KARKAT: HIS RELATIONSHIP IS NOT MERELY “BAD”</p>
+
+          <p class="karkat">KARKAT: HIS RELATIONSHIP IS A FLAMING WRECK OF AN INTERSTELLAR WARSHIP HURTLING TOWARDS THE
+            PLANET AT TERMINAL VELOCITY WITH THE ENTIRE CREW BRUTALLY SLAUGHTERED UPON REENTRY, SHOVED STRAIGHT DOWN THE
+            CHAGRIN TUNNEL AND THEN IMMEDIATELY SHAT OUT THE OTHER SIDE, THUS FLOODING THE ENTIRE FUCKING NEIGHBORHOOD
+            WHEN IT CLOGS UP THE LOAD GAPER.</p>
+        </div>
+        <p class="no-indent">Jade sits up and wraps her arms around her knees. Her ears go flat as she chews her lip.
+        </p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="jade">JADE: ...its not like i dont know that</p>
+
+          <p class="jade">JADE: john never shuts up about it</p>
+
+          <p class="jade">JADE: i mean, he and jane used to be close back when we all first met but last time i talked
+            to john he....</p>
+
+          <p class="jade">JADE: well, he accused her of “raping” jake</p>
+
+          <p class="dave">DAVE: oh shit</p>
+
+          <p class="karkat">KARKAT: YOU DON’T FUCKING SAY.</p>
+
+          <p class="jade">JADE: its not like i dont worry about jake but come on! </p>
+
+          <p class="jade">JADE: were all adults</p>
+
+          <p class="jade">JADE: what am i supposed to do? show up at his window dressed like the blue fairy and whisk
+            him away from his terrible life??</p>
+
+          <p class="jade">JADE: maybe that would work for a few days, but one thing i learned from dating around a lot
+            in my youth is that no ones going to leave a bad relationship until its THEIR idea to leave</p>
+        </div>
+        <p class="no-indent">She takes in a shaky breath and shuts her eyes. Her hair spills around her face when she
+          leans forward to put her chin on her knees. Dave and Karkat exchange a look that is equal parts confused,
+          miserable, and desperate. Karkat’s making a fist against the ground, digging up a handful of moss and getting
+          dirt under his fingernails. Perhaps it’s a metaphor, he wryly speculates, for the way Jade has just dug up the
+          emotional dirt in their relationship. Dave clears his throat quietly. One of them could say something right
+          now if they found the nerve. But as the moments slide by, nerve remains in short supply.</p>
+        <p>Karkat opens his mouth, without quite having settled on the words that will come out of it. But before any
+          do, the sky cracks open. Instead, he lets out an undignified yelp and scuttles back so he doesn’t get hit by
+          the sharp debris suddenly raining from above.</p>
+        <p>Jade spins around and flings her arms out, using her Space powers to catch the offensive rubble and shrink it
+          into harmless granules. They spark and clash against her fingers. She can’t quite tell what they are. They’re
+          not rocks, or metal... they don’t even seem to be physical. </p>
+        <p>Something else comes hurtling out of the hole in the sky, too fast for Jade to catch. It hits the ground with
+          a clap of green lightning. The collision sends a geyser of dirt, rock, and vapor into the air. Dave
+          flash-steps to shield Karkat. Jade doesn’t move, taking the brunt of the explosion face on, using her
+          abilities to warp the energy around her so that she’s a mote at the center of the storm. When the dust clears,
+          she’s the first to jump in the crater, trailing smoke behind her.</p>
+        <p>There’s a body at the center of it. The torso is bloody, tangled, and curled into a fetal position. Its shoes
+          are missing, but otherwise the outfit is quite familiar to her: it’s a dead ringer for her old Witch of Space
+          uniform. Jade touches the body with the toe of her shoe, and then gasps when it rolls over to reveal its face.
+        </p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="jade">JADE: its... </p>
+
+          <p class="jade">JADE: ME???</p>
+        </div>
+        <p class="no-indent">Karkat and Dave stick their heads over the edge of the pit.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="dave">DAVE: holy shit</p>
+
+          <p class="karkat">KARKAT: WHAT IN THE EVER LIVING FUCK?</p>
+
+          <p class="dave">DAVE: uh</p>
+
+          <p class="dave">DAVE: good question</p>
+
+          <p class="dave">DAVE: idk but we should probably get her some help</p>
+
+          <p class="karkat">KARKAT: HELP? FOR WHAT?? </p>
+
+          <p class="karkat">KARKAT: IT LOOKS LIKE HER INTERNAL ORGANS ARE OBLITERATED. SHE’S COVERED IN MORE BLOOD THAN
+            I THOUGHT HUMANS EVEN HAD INSIDE THEM.</p>
+
+          <p class="dave">DAVE: well we cant just leave her in this fuckin hole man</p>
+
+          <p class="dave">DAVE: come on gimme a hand</p>
+        </div>
+        <p class="no-indent">Karkat watches as Jade stands over her own younger corpse. He notices the way her shoulders
+          are slanted. It’s clear even from a distance that she’s shaking.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="karkat">KARKAT: JADE? </p>
+
+          <p class="karkat">KARKAT: DO YOU HAVE ANY IDEA WHAT’S GOING ON HERE??</p>
+
+          <p class="karkat">KARKAT: WHAT SHOULD WE DO ABOUT THIS</p>
+        </div>
+        <p class="no-indent">Jade doesn’t say anything. She’s staring at the body. A badly broken version of herself,
+          probably from a different timeline, she guesses. This Jade looks about sixteen years old. Her hair is matted
+          with blood. Her appearance is gruesome, yet also... peaceful, somehow. </p>
+        <p>Dave slides down the ridge of the crater and grabs her by the shoulder.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="dave">DAVE: hey jade you hear us</p>
+        </div>
+        <p class="no-indent">Jade wipes a hand across her cheek and looks down to find that it’s come away bloody. One
+          of those shrunken, massless shards from the sky must have nicked her in the face. Her eyes go wide and she
+          feels the breath go out of her for a moment. She looks directly upward. Where did this body come from?</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="dave">DAVE: jade???</p>
+
+          <p class="jade">JADE: yes dave i heard you</p>
+        </div>
+        <p class="no-indent">Still staring at the body, Jade digs her phone out of her pocket.</p>
+        <div class="chat type-rg type-hs-small--md" style="margin-bottom:0">
+          <p class="jade">JADE: i need to talk to jane</p>
+        </div>
+      </div>
       <div class="o_story-nav type-hs-copy line-tight pad-x-0 pad-x-lg--md pad-b-lg">
         <div>
           <span>&gt;</span>
           <a href="Candy 20.html">==&gt; </a><br>
         </div>
       </div>
-  
-<footer id="story-footer" role="banner">
-  <div id="story_footer_container" class="o_story-page-footer flex pad-t-0 pad-x-0
+
+      <footer id="story-footer" role="banner">
+        <div id="story_footer_container" class="o_story-page-footer flex pad-t-0 pad-x-0
      flex-justify 
     ">
-      <div class="pad-l-lg--md mar-b-md type-hs-small type-hs-bottom--md type-center type-left--md">
-        <ul class="o_game-nav">
-          <li class="o_game-nav-item">
-            <a id="o_start-over" href="The Homestuck Epilogues.html">Start Over</a>
-          </li>
-            <li class="o_game-nav-item">
-              <a href="Candy 18.html">Go Back</a>
-            </li>
-        </ul>
-      </div>
-      <script>
-//<![CDATA[
-$(document).ready(function() { Gamenav.checkAutosave(); });
+          <div class="pad-l-lg--md mar-b-md type-hs-small type-hs-bottom--md type-center type-left--md">
+            <ul class="o_game-nav">
+              <li class="o_game-nav-item">
+                <a id="o_start-over" href="Choice Page.html">Start Over</a>
+              </li>
+              <li class="o_game-nav-item">
+                <a href="Candy 18.html">Go Back</a>
+              </li>
+            </ul>
+          </div>
+          <script>
+            //<![CDATA[
+            $(document).ready(function () { Gamenav.checkAutosave(); });
 //]]>
-</script>
+          </script>
 
-    <a href="javascript:void(0)" data-gamenav-open="" class="nav-btn nav-btn--center type-hs-small mar-b-md" style="text-decoration:none; text-transform: none; font-size:14px; line-height:14px;"><span>Options</span> <i class="icon-menu" style="margin:0;"></i></a>
+          <a href="javascript:void(0)" data-gamenav-open="" class="nav-btn nav-btn--center type-hs-small mar-b-md"
+            style="text-decoration:none; text-transform: none; font-size:14px; line-height:14px;"><span>Options</span>
+            <i class="icon-menu" style="margin:0;"></i></a>
+        </div>
+      </footer>
+
+
+    </div>
+  </div><iframe name="__tcfapiLocator" src="./Epilogue_files/saved_resource(2).html"
+    style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe>
+
+
+
+  <div class="o_site-footer row pos-r pad-t-rg pad-b-xl pad-b-0--md bg-dark-gray">
+    <div class="float-l"><img
+        src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif"
+        alt="Footer logo"><br></div>
+    <div class="float-r disp-n disp-bl--sm"><img
+        src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif"
+        alt="Footer logo"><br></div>
+    <div class="type-center pad-t-md--md">
+      <ul>
+        <li><a href="https://www.homestuck.com/contacts">Contacts</a></li>
+        <li><a href="https://www.homestuck.com/privacy">Privacy Policy</a></li>
+      </ul>
+      <div><span style="white-space:nowrap;">© 2018 Homestuck</span> <span style="white-space:nowrap;">and VIZ
+          Media</span></div>
+    </div>
   </div>
-</footer>
-
-
-  </div>
-</div><iframe name="__tcfapiLocator" src="./Epilogue_files/saved_resource(2).html" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe>
-
-
-    
-<div class="o_site-footer row pos-r pad-t-rg pad-b-xl pad-b-0--md bg-dark-gray">
-  <div class="float-l"><img src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif" alt="Footer logo"><br></div>
-  <div class="float-r disp-n disp-bl--sm"><img src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif" alt="Footer logo"><br></div>
-  <div class="type-center pad-t-md--md">
-    <ul>
-      <li><a href="https://www.homestuck.com/contacts">Contacts</a></li>
-      <li><a href="https://www.homestuck.com/privacy">Privacy Policy</a></li>
-    </ul>
-    <div><span style="white-space:nowrap;">© 2018 Homestuck</span> <span style="white-space:nowrap;">and VIZ Media</span></div>
-  </div>
-</div>
 
 
 
-    <div id="overlay" data-overlay-state="off" class="o_overlay"></div>
-    <div id="game_overlay" data-game-overlay-state="off" class="o_game-overlay"></div>
-    <div id="overlay_wait" data-overlay-state="off" class="o_overlay-wait"></div>
+  <div id="overlay" data-overlay-state="off" class="o_overlay"></div>
+  <div id="game_overlay" data-game-overlay-state="off" class="o_game-overlay"></div>
+  <div id="overlay_wait" data-overlay-state="off" class="o_overlay-wait"></div>
 
 
 
-  
 
-<iframe name="googlefcPresent" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;" src="./Epilogue_files/saved_resource(6).html" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe></body></html>
+
+  <iframe name="googlefcPresent"
+    style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"
+    src="./Epilogue_files/saved_resource(6).html"
+    style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe>
+</body>
+
+</html>

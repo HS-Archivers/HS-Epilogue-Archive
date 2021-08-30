@@ -1,493 +1,619 @@
 <!DOCTYPE html>
 
-<html dir="ltr" lang="en-US"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html dir="ltr" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <!-- application -->
-    <script async="" src="./Epilogue_files/jquery-1.11.3.min.js.download"></script>
-    
-<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"1b930da09b","applicationID":"65900267","transactionName":"cFkNREpaWA9dF0pBVlRTEB9LQVsRQQ==","queueTime":0,"applicationTime":6,"agent":""}</script>
-<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"1b930da09b",applicationID:"65900267"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="format-detection" content="telephone=no">
-    <title>The Homestuck Epilogues</title>
-    <meta name="description" content="Tales of dubious authenticity.">
-    <script>
-//<![CDATA[
-var getGAEventLabel = function(){ return "The Homestuck Epilogues"; };
+  <script async="" src="./Epilogue_files/jquery-1.11.3.min.js.download"></script>
+
+  <script>window.NREUM || (NREUM = {}); NREUM.info = { "beacon": "bam-cell.nr-data.net", "errorBeacon": "bam-cell.nr-data.net", "licenseKey": "1b930da09b", "applicationID": "65900267", "transactionName": "cFkNREpaWA9dF0pBVlRTEB9LQVsRQQ==", "queueTime": 0, "applicationTime": 6, "agent": "" }</script>
+  <script>(window.NREUM || (NREUM = {})).loader_config = { licenseKey: "1b930da09b", applicationID: "65900267" }; window.NREUM || (NREUM = {}), __nr_require = function (t, e, n) { function r(n) { if (!e[ n ]) { var i = e[ n ] = { exports: {} }; t[ n ][ 0 ].call(i.exports, function (e) { var i = t[ n ][ 1 ][ e ]; return r(i || e) }, i, i.exports) } return e[ n ].exports } if ("function" == typeof __nr_require) return __nr_require; for (var i = 0; i < n.length; i++)r(n[ i ]); return r }({ 1: [ function (t, e, n) { function r() { } function i(t, e, n) { return function () { return o(t, [ u.now() ].concat(f(arguments)), e ? null : this, n), e ? void 0 : this } } var o = t("handle"), a = t(8), f = t(9), c = t("ee").get("tracer"), u = t("loader"), s = NREUM; "undefined" == typeof window.newrelic && (newrelic = s); var d = [ "setPageViewName", "setCustomAttribute", "setErrorHandler", "finished", "addToTrace", "inlineHit", "addRelease" ], p = "api-", l = p + "ixn-"; a(d, function (t, e) { s[ e ] = i(p + e, !0, "api") }), s.addPageAction = i(p + "addPageAction", !0), s.setCurrentRouteName = i(p + "routeName", !0), e.exports = newrelic, s.interaction = function () { return (new r).get() }; var m = r.prototype = { createTracer: function (t, e) { var n = {}, r = this, i = "function" == typeof e; return o(l + "tracer", [ u.now(), t, n ], r), function () { if (c.emit((i ? "" : "no-") + "fn-start", [ u.now(), r, i ], n), i) try { return e.apply(this, arguments) } catch (t) { throw c.emit("fn-err", [ arguments, this, t ], n), t } finally { c.emit("fn-end", [ u.now() ], n) } } } }; a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","), function (t, e) { m[ e ] = i(l + e) }), newrelic.noticeError = function (t, e) { "string" == typeof t && (t = new Error(t)), o("err", [ t, u.now(), !1, e ]) } }, {} ], 2: [ function (t, e, n) { function r(t) { if (NREUM.init) { for (var e = NREUM.init, n = t.split("."), r = 0; r < n.length - 1; r++)if (e = e[ n[ r ] ], "object" != typeof e) return; return e = e[ n[ n.length - 1 ] ] } } e.exports = { getConfiguration: r } }, {} ], 3: [ function (t, e, n) { function r() { return f.exists && performance.now ? Math.round(performance.now()) : (o = Math.max((new Date).getTime(), o)) - a } function i() { return o } var o = (new Date).getTime(), a = o, f = t(10); e.exports = r, e.exports.offset = a, e.exports.getLastTimestamp = i }, {} ], 4: [ function (t, e, n) { function r(t) { return !(!t || !t.protocol || "file:" === t.protocol) } e.exports = r }, {} ], 5: [ function (t, e, n) { function r(t, e) { var n = t.getEntries(); n.forEach(function (t) { "first-paint" === t.name ? d("timing", [ "fp", Math.floor(t.startTime) ]) : "first-contentful-paint" === t.name && d("timing", [ "fcp", Math.floor(t.startTime) ]) }) } function i(t, e) { var n = t.getEntries(); n.length > 0 && d("lcp", [ n[ n.length - 1 ] ]) } function o(t) { t.getEntries().forEach(function (t) { t.hadRecentInput || d("cls", [ t ]) }) } function a(t) { if (t instanceof m && !g) { var e = Math.round(t.timeStamp), n = { type: t.type }; e <= p.now() ? n.fid = p.now() - e : e > p.offset && e <= Date.now() ? (e -= p.offset, n.fid = p.now() - e) : e = p.now(), g = !0, d("timing", [ "fi", e, n ]) } } function f(t) { "hidden" === t && d("pageHide", [ p.now() ]) } if (!("init" in NREUM && "page_view_timing" in NREUM.init && "enabled" in NREUM.init.page_view_timing && NREUM.init.page_view_timing.enabled === !1)) { var c, u, s, d = t("handle"), p = t("loader"), l = t(7), m = NREUM.o.EV; if ("PerformanceObserver" in window && "function" == typeof window.PerformanceObserver) { c = new PerformanceObserver(r); try { c.observe({ entryTypes: [ "paint" ] }) } catch (v) { } u = new PerformanceObserver(i); try { u.observe({ entryTypes: [ "largest-contentful-paint" ] }) } catch (v) { } s = new PerformanceObserver(o); try { s.observe({ type: "layout-shift", buffered: !0 }) } catch (v) { } } if ("addEventListener" in document) { var g = !1, h = [ "click", "keydown", "mousedown", "pointerdown", "touchstart" ]; h.forEach(function (t) { document.addEventListener(t, a, !1) }) } l(f) } }, {} ], 6: [ function (t, e, n) { function r(t, e) { if (!i) return !1; if (t !== i) return !1; if (!e) return !0; if (!o) return !1; for (var n = o.split("."), r = e.split("."), a = 0; a < r.length; a++)if (r[ a ] !== n[ a ]) return !1; return !0 } var i = null, o = null, a = /Version\/(\S+)\s+Safari/; if (navigator.userAgent) { var f = navigator.userAgent, c = f.match(a); c && f.indexOf("Chrome") === -1 && f.indexOf("Chromium") === -1 && (i = "Safari", o = c[ 1 ]) } e.exports = { agent: i, version: o, match: r } }, {} ], 7: [ function (t, e, n) { function r(t) { function e() { t(a && document[ a ] ? document[ a ] : document[ i ] ? "hidden" : "visible") } "addEventListener" in document && o && document.addEventListener(o, e, !1) } e.exports = r; var i, o, a; "undefined" != typeof document.hidden ? (i = "hidden", o = "visibilitychange", a = "visibilityState") : "undefined" != typeof document.msHidden ? (i = "msHidden", o = "msvisibilitychange") : "undefined" != typeof document.webkitHidden && (i = "webkitHidden", o = "webkitvisibilitychange", a = "webkitVisibilityState") }, {} ], 8: [ function (t, e, n) { function r(t, e) { var n = [], r = "", o = 0; for (r in t) i.call(t, r) && (n[ o ] = e(r, t[ r ]), o += 1); return n } var i = Object.prototype.hasOwnProperty; e.exports = r }, {} ], 9: [ function (t, e, n) { function r(t, e, n) { e || (e = 0), "undefined" == typeof n && (n = t ? t.length : 0); for (var r = -1, i = n - e || 0, o = Array(i < 0 ? 0 : i); ++r < i;)o[ r ] = t[ e + r ]; return o } e.exports = r }, {} ], 10: [ function (t, e, n) { e.exports = { exists: "undefined" != typeof window.performance && window.performance.timing && "undefined" != typeof window.performance.timing.navigationStart } }, {} ], ee: [ function (t, e, n) { function r() { } function i(t) { function e(t) { return t && t instanceof r ? t : t ? u(t, c, a) : a() } function n(n, r, i, o, a) { if (a !== !1 && (a = !0), !l.aborted || o) { t && a && t(n, r, i); for (var f = e(i), c = v(n), u = c.length, s = 0; s < u; s++)c[ s ].apply(f, r); var p = d[ w[ n ] ]; return p && p.push([ b, n, r, f ]), f } } function o(t, e) { y[ t ] = v(t).concat(e) } function m(t, e) { var n = y[ t ]; if (n) for (var r = 0; r < n.length; r++)n[ r ] === e && n.splice(r, 1) } function v(t) { return y[ t ] || [] } function g(t) { return p[ t ] = p[ t ] || i(n) } function h(t, e) { l.aborted || s(t, function (t, n) { e = e || "feature", w[ n ] = e, e in d || (d[ e ] = []) }) } var y = {}, w = {}, b = { on: o, addEventListener: o, removeEventListener: m, emit: n, get: g, listeners: v, context: e, buffer: h, abort: f, aborted: !1 }; return b } function o(t) { return u(t, c, a) } function a() { return new r } function f() { (d.api || d.feature) && (l.aborted = !0, d = l.backlog = {}) } var c = "nr@context", u = t("gos"), s = t(8), d = {}, p = {}, l = e.exports = i(); e.exports.getOrSetContext = o, l.backlog = d }, {} ], gos: [ function (t, e, n) { function r(t, e, n) { if (i.call(t, e)) return t[ e ]; var r = n(); if (Object.defineProperty && Object.keys) try { return Object.defineProperty(t, e, { value: r, writable: !0, enumerable: !1 }), r } catch (o) { } return t[ e ] = r, r } var i = Object.prototype.hasOwnProperty; e.exports = r }, {} ], handle: [ function (t, e, n) { function r(t, e, n, r) { i.buffer([ t ], r), i.emit(t, e, n) } var i = t("ee").get("handle"); e.exports = r, r.ee = i }, {} ], id: [ function (t, e, n) { function r(t) { var e = typeof t; return !t || "object" !== e && "function" !== e ? -1 : t === window ? 0 : a(t, o, function () { return i++ }) } var i = 1, o = "nr@id", a = t("gos"); e.exports = r }, {} ], loader: [ function (t, e, n) { function r() { if (!R++) { var t = M.info = NREUM.info, e = v.getElementsByTagName("script")[ 0 ]; if (setTimeout(u.abort, 3e4), !(t && t.licenseKey && t.applicationID && e)) return u.abort(); c(E, function (e, n) { t[ e ] || (t[ e ] = n) }); var n = a(); f("mark", [ "onload", n + M.offset ], null, "api"), f("timing", [ "load", n ]); var r = v.createElement("script"); 0 === t.agent.indexOf("http://") || 0 === t.agent.indexOf("https://") ? r.src = t.agent : r.src = l + "://" + t.agent, e.parentNode.insertBefore(r, e) } } function i() { "complete" === v.readyState && o() } function o() { f("mark", [ "domContent", a() + M.offset ], null, "api") } var a = t(3), f = t("handle"), c = t(8), u = t("ee"), s = t(6), d = t(4), p = t(2), l = p.getConfiguration("ssl") === !1 ? "http" : "https", m = window, v = m.document, g = "addEventListener", h = "attachEvent", y = m.XMLHttpRequest, w = y && y.prototype, b = !d(m.location); NREUM.o = { ST: setTimeout, SI: m.setImmediate, CT: clearTimeout, XHR: y, REQ: m.Request, EV: m.Event, PR: m.Promise, MO: m.MutationObserver }; var x = "" + location, E = { beacon: "bam.nr-data.net", errorBeacon: "bam.nr-data.net", agent: "js-agent.newrelic.com/nr-1210.min.js" }, O = y && w && w[ g ] && !/CriOS/.test(navigator.userAgent), M = e.exports = { offset: a.getLastTimestamp(), now: a, origin: x, features: {}, xhrWrappable: O, userAgent: s, disabled: b }; if (!b) { t(1), t(5), v[ g ] ? (v[ g ]("DOMContentLoaded", o, !1), m[ g ]("load", r, !1)) : (v[ h ]("onreadystatechange", i), m[ h ]("onload", r)), f("mark", [ "firstbyte", a.getLastTimestamp() ], null, "api"); var R = 0 } }, {} ], "wrap-function": [ function (t, e, n) { function r(t, e) { function n(e, n, r, c, u) { function nrWrapper() { var o, a, s, p; try { a = this, o = d(arguments), s = "function" == typeof r ? r(o, a) : r || {} } catch (l) { i([ l, "", [ o, a, c ], s ], t) } f(n + "start", [ o, a, c ], s, u); try { return p = e.apply(a, o) } catch (m) { throw f(n + "err", [ o, a, m ], s, u), m } finally { f(n + "end", [ o, a, p ], s, u) } } return a(e) ? e : (n || (n = ""), nrWrapper[ p ] = e, o(e, nrWrapper, t), nrWrapper) } function r(t, e, r, i, o) { r || (r = ""); var f, c, u, s = "-" === r.charAt(0); for (u = 0; u < e.length; u++)c = e[ u ], f = t[ c ], a(f) || (t[ c ] = n(f, s ? c + r : r, i, c, o)) } function f(n, r, o, a) { if (!m || e) { var f = m; m = !0; try { t.emit(n, r, o, e, a) } catch (c) { i([ c, n, r, o ], t) } m = f } } return t || (t = s), n.inPlace = r, n.flag = p, n } function i(t, e) { e || (e = s); try { e.emit("internal-error", t) } catch (n) { } } function o(t, e, n) { if (Object.defineProperty && Object.keys) try { var r = Object.keys(t); return r.forEach(function (n) { Object.defineProperty(e, n, { get: function () { return t[ n ] }, set: function (e) { return t[ n ] = e, e } }) }), e } catch (o) { i([ o ], n) } for (var a in t) l.call(t, a) && (e[ a ] = t[ a ]); return e } function a(t) { return !(t && t instanceof Function && t.apply && !t[ p ]) } function f(t, e) { var n = e(t); return n[ p ] = t, o(t, n, s), n } function c(t, e, n) { var r = t[ e ]; t[ e ] = f(r, n) } function u() { for (var t = arguments.length, e = new Array(t), n = 0; n < t; ++n)e[ n ] = arguments[ n ]; return e } var s = t("ee"), d = t(9), p = "nr@original", l = Object.prototype.hasOwnProperty, m = !1; e.exports = r, e.exports.wrapFunction = f, e.exports.wrapInPlace = c, e.exports.argsToArray = u }, {} ] }, {}, [ "loader" ]);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <title>The Homestuck Epilogues</title>
+  <meta name="description" content="Tales of dubious authenticity.">
+  <script>
+    //<![CDATA[
+    var getGAEventLabel = function () { return "The Homestuck Epilogues"; };
 //]]>
-</script>
-      <link rel="canonical" href="Meat 30.html">
+  </script>
+  <link rel="canonical" href="Meat 30.html">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="https://www.homestuck.com/favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://www.homestuck.com/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://www.homestuck.com/favicon/favicon-16x16.png">
-<link rel="manifest" href="https://www.homestuck.com/favicon/manifest.json">
-<link rel="mask-icon" href="https://www.homestuck.com/favicon/safari-pinned-tab.svg" color="#6bbe4a">
-<meta name="theme-color" content="#ffffff">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www.homestuck.com/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://www.homestuck.com/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://www.homestuck.com/favicon/favicon-16x16.png">
+  <link rel="manifest" href="https://www.homestuck.com/favicon/manifest.json">
+  <link rel="mask-icon" href="https://www.homestuck.com/favicon/safari-pinned-tab.svg" color="#6bbe4a">
+  <meta name="theme-color" content="#ffffff">
 
-        <link rel="stylesheet" media="all" href="./Epilogue_files/manifest-epilogue-1694f2c1abc80cf72e84324f6d6486e6f04b02358ed667dee36c88974eef388f.css">
-      <link rel="stylesheet" href="./Epilogue_files/kek1uwn.css">
-    <link rel="stylesheet" media="all" href="./Epilogue_files/manifest-ui-e03365bbb17dde0f1fd5463dd7b56d096a27cae55aa131b72684e36c1f0c80f6.css">
-    <script src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE=(1)"></script>
-    <script src="./Epilogue_files/manifest-ads-story-1885683d55d6f631dc202ac5db87250ca938be96a613e85bb93739ecc057540e.js.download"></script>
+  <link rel="stylesheet" media="all"
+    href="./Epilogue_files/manifest-epilogue-1694f2c1abc80cf72e84324f6d6486e6f04b02358ed667dee36c88974eef388f.css">
+  <link rel="stylesheet" href="./Epilogue_files/kek1uwn.css">
+  <link rel="stylesheet" media="all"
+    href="./Epilogue_files/manifest-ui-e03365bbb17dde0f1fd5463dd7b56d096a27cae55aa131b72684e36c1f0c80f6.css">
+  <script
+    src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE=(1)"></script>
+  <script
+    src="./Epilogue_files/manifest-ads-story-1885683d55d6f631dc202ac5db87250ca938be96a613e85bb93739ecc057540e.js.download"></script>
 
 
-    <!-- //Connect Container: Homestuck-->
-<script src="./Epilogue_files/tag.min.js.download" async="" defer=""></script>
-  <script src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE="></script></head>
-  
-  <body class="epilogue">
+  <!-- //Connect Container: Homestuck-->
+  <script src="./Epilogue_files/tag.min.js.download" async="" defer=""></script>
+  <script
+    src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE="></script>
+</head>
 
-    
-    <header id="site-header" role="banner">
-  <div id="header-container" class="o_story-page-header row flex pad-t-0 ">
-    <a href="javascript:void(0)" data-nav-open="" class="nav-btn nav-btn--center color-white" style="overflow-wrap:normal;text-decoration:none;"><i class="icon-menu"></i><span>Menu</span></a>
-    <nav id="nav-container" data-nav-state="closed" role="navigation" class="o_nav-container">
-      <a href="javascript:void(0)" data-nav-close="" class="nav-btn color-white pad-y-rg type-rg" style="overflow-wrap:normal;text-decoration:none;"><i class="icon-close"></i><span>Dismiss</span></a>
-      <ul id="primary-nav" class="o_primary-nav style-caps weight-bold disp-ib color-white type-rg">
-     <li class="o_primary-nav-item slide-candycorn pipe"><a class="o_primary-nav-link" style="color:#39d5f6" href="Read.html">READ</a></li><!--
-     --><li class="o_primary-nav-item"><a class="o_primary-nav-link" style="color:#39d5f6" href="Credits.html">INFO</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-    
+<body class="epilogue">
 
-    <div class="row bg-white bg-light-gray--md pad-t-md--md pos-r">
-  <div id="content_container" class="mar-x-auto disp-bl bg-white" style="max-width:650px;">
-    <div class="pos-r pad-t-sm pad-x-lg--md type-center" style="overflow:visible; height:72px;">
-      <img class="hsep_bullet" alt="Chapter" src="./Epilogue_files/meat_60x60-a20ba4eabbf9e6c7e4778d99648c13802fc7ff42a24bc48bc0535494cdd82195.png">
-      <h3 class="disp-ib type-hsep-header line-tight type-lg pad-t-sm">
-        30
-      </h3>
+
+  <header id="site-header" role="banner">
+    <div id="header-container" class="o_story-page-header row flex pad-t-0 ">
+      <a href="javascript:void(0)" data-nav-open="" class="nav-btn nav-btn--center color-white"
+        style="overflow-wrap:normal;text-decoration:none;"><i class="icon-menu"></i><span>Menu</span></a>
+      <nav id="nav-container" data-nav-state="closed" role="navigation" class="o_nav-container">
+        <a href="javascript:void(0)" data-nav-close="" class="nav-btn color-white pad-y-rg type-rg"
+          style="overflow-wrap:normal;text-decoration:none;"><i class="icon-close"></i><span>Dismiss</span></a>
+        <ul id="primary-nav" class="o_primary-nav style-caps weight-bold disp-ib color-white type-rg">
+          <li class="o_primary-nav-item slide-candycorn pipe"><a class="o_primary-nav-link" style="color:#39d5f6"
+              href="Read.html">READ</a></li>
+          <!--
+     -->
+          <li class="o_primary-nav-item"><a class="o_primary-nav-link" style="color:#39d5f6"
+              href="Credits.html">INFO</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <div class="row bg-white bg-light-gray--md pad-t-md--md pos-r">
+    <div id="content_container" class="mar-x-auto disp-bl bg-white" style="max-width:650px;">
+      <div class="pos-r pad-t-sm pad-x-lg--md type-center" style="overflow:visible; height:72px;">
+        <img class="hsep_bullet" alt="Chapter"
+          src="./Epilogue_files/meat_60x60-a20ba4eabbf9e6c7e4778d99648c13802fc7ff42a24bc48bc0535494cdd82195.png">
+        <h3 class="disp-ib type-hsep-header line-tight type-lg pad-t-sm">
+          30
+        </h3>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="row bg-white bg-light-gray--md pad-b-md pad-b-lg--md pos-r pad-t-md pad-t-0--md">
-  <div class="mar-x-auto disp-bl bg-white pad-t-lg" style="max-width:650px;">
-      <div class="o-story_text o_epilogue type-rg type-sm--md line-caption line-copy--md pad-x-0 pad-x-lg--md pad-b-lg"><div class="chat type-rg type-hs-small--md" style="margin-top:0">
-  
-  <p class="jake">JAKE: Ah chaps dont you love to take a rigorous jaunt about the wilds first thing in the morning, middle thing in the day, and last thing in the evening?</p>
-  
-  <p class="karkat">KARKAT: NO</p>
-</div>
-  <p class="no-indent calliope-dead">karkat both looks and feels uncomfortable in his red and gray suit. he is tired from an afternoon of campaigning in the consort kingdom. jake is jaunting rigorously, as he put it, up the ridge of the mountain behind his mansion. every now and then, he pauses to accommodate the pace of his less limber friends.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="jake">JAKE: By jove karkat that you are so winded by such little activity is truly alarming!</p>
-  
-  <p class="karkat">KARKAT: WE’VE BEEN HIKING FOR A FUCKING HOUR, DIPSHIT. </p>
-  
-  <p class="karkat">KARKAT: I CAN ALREADY FEEL MY LEGS STARTING TO LOCK UP. I THINK THEY’RE GETTING A HEAD START ON THE RIGOR MORTIS!</p>
-  
-  <p class="karkat">KARKAT: BECAUSE YOU’RE FUCKING KILLING ME, IS WHAT I’M SAYING. BY MAKING ME HIKE THROUGH NATURE IN A FUCKING SUIT.</p>
-  
-  <p class="karkat">KARKAT: GREAT WORK EVERYONE. YOU’LL BE OFFERING UP A PRE-ASSASSINATED PRESIDENT TO A FRENZIED ELECTORATE. AWESOME STRATEGY!</p>
-  
-  <p class="jake">JAKE: Perhaps you need a better calisthenics routine. I can suggest several alterations to your morning workout and even give you a lesson or two myself!</p>
-  
-  <p class="karkat">KARKAT: MY MORNING WORKOUT??</p>
-  
-  <p class="karkat">KARKAT: I COULDN’T THINK OF A MORE OFFENSIVELY PRESUMPTUOUS PHRASE IF I TRIED.</p>
-  
-  <p class="karkat">KARKAT: ALSO, WHAT THE FUCK IS A CALISTHENIC?</p>
-  
-  <p class="karkat">KARKAT: IS THAT THE NAME OF YOUR FAN CHERUB??</p>
-</div>
-  <p class="no-indent calliope-dead">karkat’s tirade is interrupted as he trips over a protruding tree root. dave, who has been cheating on their hike by hovering very slightly off the ground rather than walking, catches karkat before his face hits the dirt. he sets his companion upright and continues to guide him with his hand on his back as he walks, the way an older human does with a small child who is learning to ride a bicycle. </p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="dave">DAVE: hey jake were cool on the whole cardio program or whatever</p>
-  
-  <p class="dave">DAVE: karkats not really what id call a kinesthetic learner</p>
-  
-  <p class="karkat">KARKAT: HEY!</p>
-  
-  <p class="karkat">KARKAT: I CAN HOLD MY OWN IN A THRESHING MATCH BETTER THAN 99% OF THE SQUISHY, PLACID HUMAN POPULATION ON THIS PLANET.</p>
-  
-  <p class="karkat">KARKAT: I WAS LITERALLY TRAINING TO BE A COMBAT SPECIALIST ON ALTERNIA. </p>
-  
-  <p class="karkat">KARKAT: MAYBE WE SHOULD SOMETIMES TRY TO REMEMBER AND *FUCKING RESPECT* THAT FACT ABOUT ME???</p>
-  
-  <p class="dave">DAVE: hm</p>
-  
-  <p class="dave">DAVE: gonna make another mental note about which material to avoid when writing your campaign speeches</p>
-  
-  <p class="dave">DAVE: like</p>
-  
-  <p class="dave">DAVE: dude is nuts with a sickle</p>
-  
-  <p class="dave">DAVE: can carve a bloody arc through a surrounding circle of gathered squishy humans</p>
-  
-  <p class="dave">DAVE: watch their guts spill on the floor while he roars at the sky in honor of his genocidal ancestors</p>
-  
-  <p class="dave">DAVE: were kinda trying to downplay the idea that trolls are naturally good at violence and shit here?</p>
-  
-  <p class="dave">DAVE: hey speaking of which</p>
-  
-  <p class="dave">DAVE: jake you wanna back karkat in this election or what</p>
-  
-  <p class="jake">JAKE: Uhhh... </p>
-</div>
-  <p class="no-indent calliope-dead">jake spins around in his worn boots. he bites his lip and looks at the ground.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="jake">JAKE: Ah i see. That was your purpose in coming out here.</p>
-  
-  <p class="dave">DAVE: yeah</p>
-  
-  <p class="dave">DAVE: that IS basically the only reason either of us would waste time climbing a mountain instead of like </p>
-  
-  <p class="dave">DAVE: almost perfectly replicating the experience by checking out sweet stock photos of a mountain on the crockernet image search while spraying our hive with air freshener or something</p>
-  
-  <p class="dave">DAVE: oh hey wait that reminds me</p>
-  
-  <p class="dave">DAVE: isnt it fucked up how jane literally owns the internet??</p>
-  
-  <p class="jake">JAKE: Id never really thought about it i admit.</p>
-  
-  <p class="dave">DAVE: its pretty fucked up trust me</p>
-  
-  <p class="dave">DAVE: like she already owns the major method of information dissemination and now she wants to be the one ultimately in control of what information gets disseminated</p>
-  
-  <p class="dave">DAVE: do you really think one person should have all that power</p>
-  
-  <p class="jake">JAKE: Hmmmmmmmmm.</p>
-  
-  <p class="karkat">KARKAT: THE ANSWER IS NO, IDIOT.</p>
-  
-  <p class="dave">DAVE: yeah</p>
-  
-  <p class="dave">DAVE: which is why you should back us and our campaign</p>
-  
-  <p class="dave">DAVE: our campaign slogan for the purpose of this conversation only is “hey isnt it cool how were not jane and also we dont want to own everything”</p>
-  
-  <p class="dave">DAVE: and also... man</p>
-  
-  <p class="dave">DAVE: on a more personal note</p>
-  
-  <p class="dave">DAVE: i mean have you even SEEN the shit janes been saying about you in the media</p>
-</div>
-  <p class="no-indent calliope-dead">a look of sadness sweeps across jake’s face, but he quickly turns it into a glare of indignation.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="jake">JAKE: Ive seen the shit YOUVE been saying about HER! </p>
-  
-  <p class="jake">JAKE: Your poorly optimized billboards about “huge dunks” on the economy and “neoliberal austerity measures” tumbling down geometrically improbable staircases have made quite a stir in the neighborhood. </p>
-  
-  <p class="jake">JAKE: These advertisements play at all hours of the night my good man. One can hardly get a wink of sleep!</p>
-  
-  <p class="dave">DAVE: yeah but at least we paid for it out of campaign dollars instead of spinelessly setting up super pacs to spew out propaganda for us</p>
-  
-  <p class="jake">JAKE: Super pacs??</p>
-  
-  <p class="dave">DAVE: oh yeah </p>
-  
-  <p class="dave">DAVE: listen to this bullshit</p>
-  
-  <p class="dave">DAVE: so theyre technically expenditure independent committees meaning they can allocate unlimited funding for...  </p>
-</div>
-  <p class="no-indent calliope-dead">karkat covers dave’s mouth, having had the concept of the “super pac” laboriously explained in his presence more than once. in his estimation, there are few individuals on this world who would benefit less from an in-depth discussion of political financing procedure than jake english.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="karkat">KARKAT: LOOK, DAVE. JAKE REALLY DOESN’T CARE WHAT A SUPER PAC IS. </p>
-  
-  <p class="karkat">KARKAT: I DON’T THINK ANYONE CARES ABOUT FUCKING SUPER PACS??</p>
-  
-  <p class="karkat">KARKAT: I KNOW YOU PUT A LOT OF WORK INTO YOUR SPIEL ABOUT IT, ESPECIALLY THE RAPPED SEQUENCE.</p>
-  
-  <p class="karkat">KARKAT: BUT YOU’RE NEVER GOING TO GET ANYBODY TO GIVE A FUCK ABOUT THIS STUFF MAN, I’M SORRY.</p>
-  
-  <p class="dave">DAVE: mmff noomph</p>
-  
-  <p class="karkat">KARKAT: JAKE, THE POINT IS THIS.</p>
-  
-  <p class="karkat">KARKAT: JANE IS HAVING YOU SMEARED INDIRECTLY.</p>
-  
-  <p class="jake">JAKE: Well that would be the way to do it i suppose if you wished to keep clean hands in an inherently dirty business.</p>
-</div>
-  <p class="no-indent calliope-dead">dave peels karkat’s hand off his mouth, and bumps him away with his hip, so that he may continue saying things he regards as terribly important for others to hear.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="dave">DAVE: ok but thats partially my point</p>
-  
-  <p class="dave">DAVE: were doing all our propaganda in house instead of outsourcing to unscrupulous shadow networks with deep money pockets</p>
-  
-  <p class="karkat">KARKAT: FOR BETTER OR FOR WORSE.</p>
-  
-  <p class="dave">DAVE: what does that mean</p>
-  
-  <p class="karkat">KARKAT: AS MUCH AS I APPRECIATE YOUR “ARTISTIC VISION” DAVE, I THINK THAT YOUR POLITICAL ADS ARE LARGELY GOING OVER PEOPLE’S HEADS. </p>
-  
-  <p class="karkat">KARKAT: THEY’RE KIND OF... </p>
-  
-  <p class="dave">DAVE: bold?</p>
-  
-  <p class="karkat">KARKAT: NO</p>
-  
-  <p class="dave">DAVE: oh you mean avant garde</p>
-  
-  <p class="dave">DAVE: well yeah</p>
-  
-  <p class="dave">DAVE: everyone knows that</p>
-  
-  <p class="karkat">KARKAT: NOT REALLY HOW I WOULD PUT IT EITHER.</p>
-  
-  <p class="dave">DAVE: nuanced</p>
-  
-  <p class="dave">DAVE: oh wait</p>
-  
-  <p class="dave">DAVE: visionary</p>
-  
-  <p class="dave">DAVE: you think theyre visionary as fuck</p>
-  
-  <p class="dave">DAVE: ok yeah you got me</p>
-  
-  <p class="dave">DAVE: im a forward thinker karkat</p>
-  
-  <p class="dave">DAVE: this is just what life is like in the dave lane</p>
-  
-  <p class="dave">DAVE: buckle the fuck up</p>
-  
-  <p class="karkat">KARKAT: JESUS FUCKING CHRIST</p>
-  
-  <p class="karkat">KARKAT: I’M GOING TO SAY THIS FOR THE LAST TIME.</p>
-  
-  <p class="karkat">KARKAT: SWEET BRO AND HELLA JEFF IS ABSOLUTELY HORRENDOUS SUBJECT MATTER FOR PRODUCING CAMPAIGN ADS!</p>
-  
-  <p class="karkat">KARKAT: NOBODY KNOWS WHAT THE FUCK YOU’RE TALKING ABOUT, OR WHAT POINTS YOU’RE TRYING TO MAKE!</p>
-  
-  <p class="dave">DAVE: yeah its awesome</p>
-  
-  <p class="karkat">KARKAT: YOU’RE WASTING CAMPAIGN MONEY!!!</p>
-  
-  <p class="dave">DAVE: were fucking trillionaires dude</p>
-</div>
-  <p class="no-indent calliope-dead">as the vantas campaign bickers internally, jake becomes pensive, thoughtful. he kicks a rock over the edge of the trail and watches it bounce down the mountain with a baleful expression. </p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="jake">JAKE: Willickers dave has anyone ever told you that you have an uncanny talent for cutting straight and incisively to the point without sweating any of the bullshit.</p>
-  
-  <p class="jake">JAKE: Youre rather like dirk in that way actually.</p>
-  
-  <p class="dave">DAVE: i... what</p>
-  
-  <p class="karkat">KARKAT: HAHAHA. *DAVE* IS GOOD AT CUTTING THROUGH *BULLSHIT*??</p>
-  
-  <p class="karkat">KARKAT: STRIDER IS A FOG MACHINE OF *PURE* BULLSHIT.</p>
-  
-  <p class="karkat">KARKAT: THERE IS NOTHING THAT COMES OUT OF HIS MOUTH THAT IS *NOT BULLSHIT*.</p>
-  
-  <p class="dave">DAVE: thats basically true</p>
-  
-  <p class="karkat">KARKAT: AND I’M PRETTY SURE DIRK MIGHT BE EVEN WORSE?!</p>
-  
-  <p class="dave">DAVE: yeah pretty much</p>
-  
-  <p class="karkat">KARKAT: SORRY JAKE. I KNOW WE’RE SOLICITING YOU FOR THE SWAY YOUR HOT POPULAR ASS HAS OVER THE PEOPLE, AND NOT EXACTLY YOUR BRAINPOWER, SO MAYBE THIS IS SOMEWHAT UNFAIR, BUT...  </p>
-  
-  <p class="karkat">KARKAT: THAT MAY HAVE BEEN THE WORST TAKE I’VE EVER FUCKING HEARD IN MY LIFE?</p>
-  
-  <p class="dave">DAVE: whoa chill out man</p>
-  
-  <p class="dave">DAVE: remember were trying to woo this guy onto our side </p>
-  
-  <p class="dave">DAVE: can you maybe go at least a solid minute without forgetting youre a fuckin politician now?</p>
-  
-  <p class="dave">DAVE: that means you should try not to insult everybody you meet multiple times per sentence</p>
-  
-  <p class="karkat">KARKAT: FUCK!! </p>
-  
-  <p class="karkat">KARKAT: YEAH, I KNOW.</p>
-  
-  <p class="karkat">KARKAT: I’M FUCKING SORRY JAKE. FOR IMPLYING THAT YOU HAVE SLIGHTLY LESS CEREBRAL PROCESSING POWER THAN THE SWEATY WEDGIE THIS FUCKING SUIT IS GIVING MY THROBBING, HIKE-SORE ASS.</p>
-  
-  <p class="dave">DAVE: hmm</p>
-  
-  <p class="dave">DAVE: nope that still sucks</p>
-  
-  <p class="dave">DAVE: you suck dude</p>
-  
-  <p class="karkat">KARKAT: YEAH, WELL CHEW ON THIS, “MASTER STRATEGIST.” MAYBE YOU TELLING ME I SUCK IS ACTUALLY THE SMARTEST THING YOU’VE EVER FUCKING SAID!</p>
-  
-  <p class="jake">JAKE: Gentlemen!!!</p>
-  
-  <p class="jake">JAKE: Jeepers fucking christmas.</p>
-  
-  <p class="jake">JAKE: I was just trying to pay mr strider a gracious compliment not every little pleasantry need be taken with such blasted literalism! </p>
-  
-  <p class="jake">JAKE: And i appreciate that youre trying to sway my political favor into your bungalow with a bit of the old elbow grease and cajolery even if your methods are wont to veer into full throated invective in virtually every single exchange no matter how harmless the topic.</p>
-  
-  <p class="jake">JAKE: And i truly mean it when i say i DO appreciate the effort. Both at the brownnosing as well as the dubious restraint when it comes to impugning my noodle.</p>
-  
-  <p class="jake">JAKE: But all this is adding up to make me wonder...  </p>
-</div>
-  <p class="no-indent calliope-dead">jake slices a hand through the air, determined to display his newfound autonomy. it’s growing by the minute now that his thought process has been severed from the prince’s grip. an old confidence fills him as he continues to speak, a feeling of inner freedom he hasn’t enjoyed in some time.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="jake">JAKE: Why should i side with either of you?</p>
-  
-  <p class="jake">JAKE: Flattery is all well and good but i hardly think i would bother casting my knickers in with anyones lot based on the quality of praise or for that matter withholding them due to having my ego bruised from a verbal drubbing.</p>
-  
-  <p class="jake">JAKE: Im not entirely ignorant of the rules of this jamboree. I understand that whoever i endorse will have a good chance of winning on nothing but my good word.</p>
-  
-  <p class="jake">JAKE: So why should i trust ANYONE trying to win my favor right now? Do you have ANY case to make which does not involve glowing accounts of my muscular bottom???</p>
-</div>
-  <p class="no-indent dirk" style="margin:15px 0"><span class="type-bs type-hs-bottom--md">I know it seems like an objectively good thing from some pithy moral standpoint to let everyone in this little drama Jane’s cooked up make their “own decisions,” but trust me: Jake isn’t thinking for himself any more than he was while being indirectly controlled. Everything he’s thinking and feeling right now is merely reactive. He’s like a mostly dead bug twitching around on the last of its hemolymph after getting its head cut off. Under my guidance, he was like an ant being influenced by the cordyceps fungus. You can’t really call one of these “better” than the other, but at least the latter is being directed toward some greater purpose.</span></p>
-  <p class="no-indent calliope-dead">for a moment, jake thinks he hears something. a miniscule voice, prattling along vaingloriously. but he realizes it’s only a tiny insect buzzing about his ear. a gnat-like presence of absolutely no consequence. he simply waves it away.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="dave">DAVE: ok yeah we can do that</p>
-  
-  <p class="dave">DAVE: you mean like</p>
-  
-  <p class="dave">DAVE: an actual pitch?</p>
-  
-  <p class="dave">DAVE: on policy or shit</p>
-  
-  <p class="dave">DAVE: or vision for the world</p>
-  
-  <p class="dave">DAVE: we can set you up bro</p>
-  
-  <p class="dave">DAVE: or i mean this guy can</p>
-  
-  <p class="dave">DAVE: thats what he was made for</p>
-  
-  <p class="dave">DAVE: born fuckin leader right here</p>
-  
-  <p class="karkat">KARKAT: WHAT?</p>
-  
-  <p class="dave">DAVE: take it away man</p>
-  
-  <p class="dave">DAVE: our boy jake here wants to be goddamn dazzled</p>
-</div>
-  <p class="no-indent calliope-dead">dave grins and affectionately taps karkat on the head with his knuckles.</p>
-  <p class="calliope-dead">karkat unwinds from dave’s loose embrace, takes a deep breath, and clambers up the ridge to speak with jake in a more personable proximity. he has learned new methods for connecting with others on the campaign trail. how to speak broadly, with sweeping conviction, and yet create a sense of intimacy when addressing an individual. he has learned to come across as one who was once a leader, and could be again.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="karkat">KARKAT: LOOK, JAKE.</p>
-  
-  <p class="karkat">KARKAT: I’M NOT GOING TO TRY TO SELL YOU SOME LUDICROUS STORY ABOUT HOW I’M THE BEST CANDIDATE EARTH C HAS EVER SEEN OR ANYTHING.</p>
-  
-  <p class="karkat">KARKAT: I’M NOT GOING TO BE THAT ARROGANT, ESPECIALLY SINCE MY ARM HAD TO BE TWISTED RIGHT OUT OF ITS SOCKET TO GET ME TO EVEN RUN.</p>
-  
-  <p class="karkat">KARKAT: BUT AT LEAST WE’RE NOT HIDING OUR INTENTIONS.</p>
-  
-  <p class="karkat">KARKAT: AT THIS POINT, IT’S NOT A POLICY BEEF THAT I HAVE WITH JANE CROCKER.</p>
-  
-  <p class="dave">DAVE: yeah im the one with the policy beef</p>
-  
-  <p class="dave">DAVE: corporate welfare destroys public infrastructure</p>
-  
-  <p class="karkat">KARKAT: SHUT UP, I’M TALKING.</p>
-  
-  <p class="dave">DAVE: word</p>
-  
-  <p class="karkat">KARKAT: WE’RE STILL LIVING ON AN INCREDIBLY YOUNG PLANET. LET’S BE REAL. EVERY PRESIDENT UP UNTIL NOW HAS JUST BEEN SOME BOZO BASICALLY PLAYACTING AT BEING IN CHARGE.</p>
-  
-  <p class="karkat">KARKAT: BECAUSE THIS WHOLE TIME EVERYONE’S BEEN HOLDING THEIR BREATH WAITING FOR ONE OF *US* TO RUN.</p>
-  
-  <p class="karkat">KARKAT: WHOEVER WINS, ME OR JANE, WILL SET THE TONE FOR SUBSEQUENT ADMINISTRATIONS FOR WHO KNOWS HOW FUCKING LONG.</p>
-  
-  <p class="karkat">KARKAT: IT’S ENTIRELY POSSIBLE THAT JANE WILL PROVE TO BE A COMPETENT PRESIDENT. I HAVE NO DOUBTS ON HER ADMINISTRATIVE ACUMEN, CONSIDERING THAT’S PROBABLY THE ONLY FUCKING THING SHE HAS GOING FOR HER, BESIDES A SERIES OF PHYSICAL ATTRIBUTES WHICH I KEEP BEING TOLD AREN’T TOO HARD ON THE EYES, BUT FRANKLY, I STILL DON’T KNOW IF I’M SEEING IT? </p>
-  
-  <p class="karkat">KARKAT: I MEAN, SHE’S LIKE... *ALRIGHT*? I FUCKING *GUESS*??</p>
-  
-  <p class="jake">JAKE: Now lets not be too unfair old chap...  </p>
-  
-  <p class="karkat">KARKAT: I THINK I’M ALLOWED TO BE *UNFAIR* WHEN SHE’S HOLDING THE REPRODUCTIVE RIGHTS OF MY ENTIRE SPECIES HOSTAGE.</p>
-  
-  <p class="jake">JAKE: Ah. Point well met.</p>
-  
-  <p class="karkat">KARKAT: JAKE, SHE WILL SET A HORRIBLE PRECEDENT.</p>
-  
-  <p class="karkat">KARKAT: SHE’S INDIRECT. SHE’S PRIVILEGED. SHE’S CONCERNED WITH HOW THINGS *LOOK* RATHER THAN HOW THINGS *ARE*.</p>
-  
-  <p class="karkat">KARKAT: NO MATTER HOW NICE SHE WAS WHEN YOU WERE KIDS, HER DEDICATION TO THE APPEARANCE OF THAT “NICENESS” HAS ALREADY LED HER DOWN A PATH OF CORRUPTION AND DUPLICITY.</p>
-  
-  <p class="karkat">KARKAT: BECAUSE WHEN YOU LIVE INSIDE A SKIN THAT’S A LIE, YOU’LL EITHER GROW TO FIT IT, OR COLLAPSE UNDER THE UNBEARABLE WEIGHT OF YOUR OWN SHIT-SPEWING COGNITIVE DISSONANCE.</p>
-  
-  <p class="karkat">KARKAT: TRUST ME, I FUCKING KNOW, BECAUSE I USED TO SPEW AN UNTOLD AMOUNT OF SHIT.</p>
-  
-  <p class="dave">DAVE: (yeah... “used to”)</p>
-  
-  <p class="karkat">KARKAT: DUDE!</p>
-  
-  <p class="karkat">KARKAT: WHAT THE FUCK DO YOU WANT!</p>
-  
-  <p class="karkat">KARKAT: GET OFF MY BULGE.</p>
-  
-  <p class="karkat">KARKAT: YOU WANTED ME TO SPIN SOME FUCKING GOLD? TO BUST OUT THE *GOOD SHIT*??</p>
-  
-  <p class="karkat">KARKAT: THERE! I SAID IT! THAT WAS THE ***GOOD SHIT***!</p>
-  
-  <p class="karkat">KARKAT: I’M DONE! I DID MY THING! THIS MINCING HALFWIT IN THE TINY SHORTS CAN DO WHATEVER THE FUCK HE WANTS NOW!</p>
-  
-  <p class="dave">DAVE: (no no that was good man)</p>
-  
-  <p class="dave">DAVE: (i was just messin with you)</p>
-  
-  <p class="dave">DAVE: (great job dude i love it)</p>
-</div>
-  <p class="no-indent calliope-dead">jake chews on these remarks for a minute. he loves jane and dirk dearly. he has loved both of them for years, on and off, in multiple fashions and configurations, in accordance with the human understanding of this feeling. he thinks it could break jane’s heart were he to oppose her. and yet, hasn’t she fired the first shot by broadcasting such scandalous things about him in the media? and it was so soon after they’d nearly had an intimate reconciliation. the more he thinks on it, the more jake struggles to believe in the sincerity behind jane’s friendship with him.</p>
-  <p class="calliope-dead">and the prince?</p>
-  <p class="calliope-dead">dirk, as he knows him, hasn’t been given much thought by jake recently. jake has been savoring the fruits of a mental liberation he is barely aware of, let alone capable of comprehending. when he considers crossing dirk, he’s not afraid of making him angry or hurting his feelings. he’s simply always wanted to avoid disappointing him. and yet, with the cognitive cloud of dirk’s influence dispelled, jake now cannot shake the feeling that the best course of action would be the one that asserts the most independence from dirk, disappointment be damned.</p>
-  <p class="calliope-dead">and to whatever extent the prince intends to put jake’s life in jeopardy, for now, his agency remains safely obscured from his sniper sight. </p>
-<div class="chat type-rg type-hs-small--md" style="margin-bottom:0">  
-  <p class="jake">JAKE: Well dash my wig!</p>
-  
-  <p class="jake">JAKE: Ill do it!</p>
-  
-  <p class="karkat">KARKAT: DASH YOUR WHAT?</p>
-  <p class="dave">DAVE: fuck yeah</p>
-</div></div>
+  <div class="row bg-white bg-light-gray--md pad-b-md pad-b-lg--md pos-r pad-t-md pad-t-0--md">
+    <div class="mar-x-auto disp-bl bg-white pad-t-lg" style="max-width:650px;">
+      <div class="o-story_text o_epilogue type-rg type-sm--md line-caption line-copy--md pad-x-0 pad-x-lg--md pad-b-lg">
+        <div class="chat type-rg type-hs-small--md" style="margin-top:0">
+
+          <p class="jake">JAKE: Ah chaps dont you love to take a rigorous jaunt about the wilds first thing in the
+            morning, middle thing in the day, and last thing in the evening?</p>
+
+          <p class="karkat">KARKAT: NO</p>
+        </div>
+        <p class="no-indent calliope-dead">karkat both looks and feels uncomfortable in his red and gray suit. he is
+          tired from an afternoon of campaigning in the consort kingdom. jake is jaunting rigorously, as he put it, up
+          the ridge of the mountain behind his mansion. every now and then, he pauses to accommodate the pace of his
+          less limber friends.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="jake">JAKE: By jove karkat that you are so winded by such little activity is truly alarming!</p>
+
+          <p class="karkat">KARKAT: WE’VE BEEN HIKING FOR A FUCKING HOUR, DIPSHIT. </p>
+
+          <p class="karkat">KARKAT: I CAN ALREADY FEEL MY LEGS STARTING TO LOCK UP. I THINK THEY’RE GETTING A HEAD START
+            ON THE RIGOR MORTIS!</p>
+
+          <p class="karkat">KARKAT: BECAUSE YOU’RE FUCKING KILLING ME, IS WHAT I’M SAYING. BY MAKING ME HIKE THROUGH
+            NATURE IN A FUCKING SUIT.</p>
+
+          <p class="karkat">KARKAT: GREAT WORK EVERYONE. YOU’LL BE OFFERING UP A PRE-ASSASSINATED PRESIDENT TO A
+            FRENZIED ELECTORATE. AWESOME STRATEGY!</p>
+
+          <p class="jake">JAKE: Perhaps you need a better calisthenics routine. I can suggest several alterations to
+            your morning workout and even give you a lesson or two myself!</p>
+
+          <p class="karkat">KARKAT: MY MORNING WORKOUT??</p>
+
+          <p class="karkat">KARKAT: I COULDN’T THINK OF A MORE OFFENSIVELY PRESUMPTUOUS PHRASE IF I TRIED.</p>
+
+          <p class="karkat">KARKAT: ALSO, WHAT THE FUCK IS A CALISTHENIC?</p>
+
+          <p class="karkat">KARKAT: IS THAT THE NAME OF YOUR FAN CHERUB??</p>
+        </div>
+        <p class="no-indent calliope-dead">karkat’s tirade is interrupted as he trips over a protruding tree root. dave,
+          who has been cheating on their hike by hovering very slightly off the ground rather than walking, catches
+          karkat before his face hits the dirt. he sets his companion upright and continues to guide him with his hand
+          on his back as he walks, the way an older human does with a small child who is learning to ride a bicycle.
+        </p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="dave">DAVE: hey jake were cool on the whole cardio program or whatever</p>
+
+          <p class="dave">DAVE: karkats not really what id call a kinesthetic learner</p>
+
+          <p class="karkat">KARKAT: HEY!</p>
+
+          <p class="karkat">KARKAT: I CAN HOLD MY OWN IN A THRESHING MATCH BETTER THAN 99% OF THE SQUISHY, PLACID HUMAN
+            POPULATION ON THIS PLANET.</p>
+
+          <p class="karkat">KARKAT: I WAS LITERALLY TRAINING TO BE A COMBAT SPECIALIST ON ALTERNIA. </p>
+
+          <p class="karkat">KARKAT: MAYBE WE SHOULD SOMETIMES TRY TO REMEMBER AND *FUCKING RESPECT* THAT FACT ABOUT
+            ME???</p>
+
+          <p class="dave">DAVE: hm</p>
+
+          <p class="dave">DAVE: gonna make another mental note about which material to avoid when writing your campaign
+            speeches</p>
+
+          <p class="dave">DAVE: like</p>
+
+          <p class="dave">DAVE: dude is nuts with a sickle</p>
+
+          <p class="dave">DAVE: can carve a bloody arc through a surrounding circle of gathered squishy humans</p>
+
+          <p class="dave">DAVE: watch their guts spill on the floor while he roars at the sky in honor of his genocidal
+            ancestors</p>
+
+          <p class="dave">DAVE: were kinda trying to downplay the idea that trolls are naturally good at violence and
+            shit here?</p>
+
+          <p class="dave">DAVE: hey speaking of which</p>
+
+          <p class="dave">DAVE: jake you wanna back karkat in this election or what</p>
+
+          <p class="jake">JAKE: Uhhh... </p>
+        </div>
+        <p class="no-indent calliope-dead">jake spins around in his worn boots. he bites his lip and looks at the
+          ground.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="jake">JAKE: Ah i see. That was your purpose in coming out here.</p>
+
+          <p class="dave">DAVE: yeah</p>
+
+          <p class="dave">DAVE: that IS basically the only reason either of us would waste time climbing a mountain
+            instead of like </p>
+
+          <p class="dave">DAVE: almost perfectly replicating the experience by checking out sweet stock photos of a
+            mountain on the crockernet image search while spraying our hive with air freshener or something</p>
+
+          <p class="dave">DAVE: oh hey wait that reminds me</p>
+
+          <p class="dave">DAVE: isnt it fucked up how jane literally owns the internet??</p>
+
+          <p class="jake">JAKE: Id never really thought about it i admit.</p>
+
+          <p class="dave">DAVE: its pretty fucked up trust me</p>
+
+          <p class="dave">DAVE: like she already owns the major method of information dissemination and now she wants to
+            be the one ultimately in control of what information gets disseminated</p>
+
+          <p class="dave">DAVE: do you really think one person should have all that power</p>
+
+          <p class="jake">JAKE: Hmmmmmmmmm.</p>
+
+          <p class="karkat">KARKAT: THE ANSWER IS NO, IDIOT.</p>
+
+          <p class="dave">DAVE: yeah</p>
+
+          <p class="dave">DAVE: which is why you should back us and our campaign</p>
+
+          <p class="dave">DAVE: our campaign slogan for the purpose of this conversation only is “hey isnt it cool how
+            were not jane and also we dont want to own everything”</p>
+
+          <p class="dave">DAVE: and also... man</p>
+
+          <p class="dave">DAVE: on a more personal note</p>
+
+          <p class="dave">DAVE: i mean have you even SEEN the shit janes been saying about you in the media</p>
+        </div>
+        <p class="no-indent calliope-dead">a look of sadness sweeps across jake’s face, but he quickly turns it into a
+          glare of indignation.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="jake">JAKE: Ive seen the shit YOUVE been saying about HER! </p>
+
+          <p class="jake">JAKE: Your poorly optimized billboards about “huge dunks” on the economy and “neoliberal
+            austerity measures” tumbling down geometrically improbable staircases have made quite a stir in the
+            neighborhood. </p>
+
+          <p class="jake">JAKE: These advertisements play at all hours of the night my good man. One can hardly get a
+            wink of sleep!</p>
+
+          <p class="dave">DAVE: yeah but at least we paid for it out of campaign dollars instead of spinelessly setting
+            up super pacs to spew out propaganda for us</p>
+
+          <p class="jake">JAKE: Super pacs??</p>
+
+          <p class="dave">DAVE: oh yeah </p>
+
+          <p class="dave">DAVE: listen to this bullshit</p>
+
+          <p class="dave">DAVE: so theyre technically expenditure independent committees meaning they can allocate
+            unlimited funding for... </p>
+        </div>
+        <p class="no-indent calliope-dead">karkat covers dave’s mouth, having had the concept of the “super pac”
+          laboriously explained in his presence more than once. in his estimation, there are few individuals on this
+          world who would benefit less from an in-depth discussion of political financing procedure than jake english.
+        </p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="karkat">KARKAT: LOOK, DAVE. JAKE REALLY DOESN’T CARE WHAT A SUPER PAC IS. </p>
+
+          <p class="karkat">KARKAT: I DON’T THINK ANYONE CARES ABOUT FUCKING SUPER PACS??</p>
+
+          <p class="karkat">KARKAT: I KNOW YOU PUT A LOT OF WORK INTO YOUR SPIEL ABOUT IT, ESPECIALLY THE RAPPED
+            SEQUENCE.</p>
+
+          <p class="karkat">KARKAT: BUT YOU’RE NEVER GOING TO GET ANYBODY TO GIVE A FUCK ABOUT THIS STUFF MAN, I’M
+            SORRY.</p>
+
+          <p class="dave">DAVE: mmff noomph</p>
+
+          <p class="karkat">KARKAT: JAKE, THE POINT IS THIS.</p>
+
+          <p class="karkat">KARKAT: JANE IS HAVING YOU SMEARED INDIRECTLY.</p>
+
+          <p class="jake">JAKE: Well that would be the way to do it i suppose if you wished to keep clean hands in an
+            inherently dirty business.</p>
+        </div>
+        <p class="no-indent calliope-dead">dave peels karkat’s hand off his mouth, and bumps him away with his hip, so
+          that he may continue saying things he regards as terribly important for others to hear.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="dave">DAVE: ok but thats partially my point</p>
+
+          <p class="dave">DAVE: were doing all our propaganda in house instead of outsourcing to unscrupulous shadow
+            networks with deep money pockets</p>
+
+          <p class="karkat">KARKAT: FOR BETTER OR FOR WORSE.</p>
+
+          <p class="dave">DAVE: what does that mean</p>
+
+          <p class="karkat">KARKAT: AS MUCH AS I APPRECIATE YOUR “ARTISTIC VISION” DAVE, I THINK THAT YOUR POLITICAL ADS
+            ARE LARGELY GOING OVER PEOPLE’S HEADS. </p>
+
+          <p class="karkat">KARKAT: THEY’RE KIND OF... </p>
+
+          <p class="dave">DAVE: bold?</p>
+
+          <p class="karkat">KARKAT: NO</p>
+
+          <p class="dave">DAVE: oh you mean avant garde</p>
+
+          <p class="dave">DAVE: well yeah</p>
+
+          <p class="dave">DAVE: everyone knows that</p>
+
+          <p class="karkat">KARKAT: NOT REALLY HOW I WOULD PUT IT EITHER.</p>
+
+          <p class="dave">DAVE: nuanced</p>
+
+          <p class="dave">DAVE: oh wait</p>
+
+          <p class="dave">DAVE: visionary</p>
+
+          <p class="dave">DAVE: you think theyre visionary as fuck</p>
+
+          <p class="dave">DAVE: ok yeah you got me</p>
+
+          <p class="dave">DAVE: im a forward thinker karkat</p>
+
+          <p class="dave">DAVE: this is just what life is like in the dave lane</p>
+
+          <p class="dave">DAVE: buckle the fuck up</p>
+
+          <p class="karkat">KARKAT: JESUS FUCKING CHRIST</p>
+
+          <p class="karkat">KARKAT: I’M GOING TO SAY THIS FOR THE LAST TIME.</p>
+
+          <p class="karkat">KARKAT: SWEET BRO AND HELLA JEFF IS ABSOLUTELY HORRENDOUS SUBJECT MATTER FOR PRODUCING
+            CAMPAIGN ADS!</p>
+
+          <p class="karkat">KARKAT: NOBODY KNOWS WHAT THE FUCK YOU’RE TALKING ABOUT, OR WHAT POINTS YOU’RE TRYING TO
+            MAKE!</p>
+
+          <p class="dave">DAVE: yeah its awesome</p>
+
+          <p class="karkat">KARKAT: YOU’RE WASTING CAMPAIGN MONEY!!!</p>
+
+          <p class="dave">DAVE: were fucking trillionaires dude</p>
+        </div>
+        <p class="no-indent calliope-dead">as the vantas campaign bickers internally, jake becomes pensive, thoughtful.
+          he kicks a rock over the edge of the trail and watches it bounce down the mountain with a baleful expression.
+        </p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="jake">JAKE: Willickers dave has anyone ever told you that you have an uncanny talent for cutting
+            straight and incisively to the point without sweating any of the bullshit.</p>
+
+          <p class="jake">JAKE: Youre rather like dirk in that way actually.</p>
+
+          <p class="dave">DAVE: i... what</p>
+
+          <p class="karkat">KARKAT: HAHAHA. *DAVE* IS GOOD AT CUTTING THROUGH *BULLSHIT*??</p>
+
+          <p class="karkat">KARKAT: STRIDER IS A FOG MACHINE OF *PURE* BULLSHIT.</p>
+
+          <p class="karkat">KARKAT: THERE IS NOTHING THAT COMES OUT OF HIS MOUTH THAT IS *NOT BULLSHIT*.</p>
+
+          <p class="dave">DAVE: thats basically true</p>
+
+          <p class="karkat">KARKAT: AND I’M PRETTY SURE DIRK MIGHT BE EVEN WORSE?!</p>
+
+          <p class="dave">DAVE: yeah pretty much</p>
+
+          <p class="karkat">KARKAT: SORRY JAKE. I KNOW WE’RE SOLICITING YOU FOR THE SWAY YOUR HOT POPULAR ASS HAS OVER
+            THE PEOPLE, AND NOT EXACTLY YOUR BRAINPOWER, SO MAYBE THIS IS SOMEWHAT UNFAIR, BUT... </p>
+
+          <p class="karkat">KARKAT: THAT MAY HAVE BEEN THE WORST TAKE I’VE EVER FUCKING HEARD IN MY LIFE?</p>
+
+          <p class="dave">DAVE: whoa chill out man</p>
+
+          <p class="dave">DAVE: remember were trying to woo this guy onto our side </p>
+
+          <p class="dave">DAVE: can you maybe go at least a solid minute without forgetting youre a fuckin politician
+            now?</p>
+
+          <p class="dave">DAVE: that means you should try not to insult everybody you meet multiple times per sentence
+          </p>
+
+          <p class="karkat">KARKAT: FUCK!! </p>
+
+          <p class="karkat">KARKAT: YEAH, I KNOW.</p>
+
+          <p class="karkat">KARKAT: I’M FUCKING SORRY JAKE. FOR IMPLYING THAT YOU HAVE SLIGHTLY LESS CEREBRAL PROCESSING
+            POWER THAN THE SWEATY WEDGIE THIS FUCKING SUIT IS GIVING MY THROBBING, HIKE-SORE ASS.</p>
+
+          <p class="dave">DAVE: hmm</p>
+
+          <p class="dave">DAVE: nope that still sucks</p>
+
+          <p class="dave">DAVE: you suck dude</p>
+
+          <p class="karkat">KARKAT: YEAH, WELL CHEW ON THIS, “MASTER STRATEGIST.” MAYBE YOU TELLING ME I SUCK IS
+            ACTUALLY THE SMARTEST THING YOU’VE EVER FUCKING SAID!</p>
+
+          <p class="jake">JAKE: Gentlemen!!!</p>
+
+          <p class="jake">JAKE: Jeepers fucking christmas.</p>
+
+          <p class="jake">JAKE: I was just trying to pay mr strider a gracious compliment not every little pleasantry
+            need be taken with such blasted literalism! </p>
+
+          <p class="jake">JAKE: And i appreciate that youre trying to sway my political favor into your bungalow with a
+            bit of the old elbow grease and cajolery even if your methods are wont to veer into full throated invective
+            in virtually every single exchange no matter how harmless the topic.</p>
+
+          <p class="jake">JAKE: And i truly mean it when i say i DO appreciate the effort. Both at the brownnosing as
+            well as the dubious restraint when it comes to impugning my noodle.</p>
+
+          <p class="jake">JAKE: But all this is adding up to make me wonder... </p>
+        </div>
+        <p class="no-indent calliope-dead">jake slices a hand through the air, determined to display his newfound
+          autonomy. it’s growing by the minute now that his thought process has been severed from the prince’s grip. an
+          old confidence fills him as he continues to speak, a feeling of inner freedom he hasn’t enjoyed in some time.
+        </p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="jake">JAKE: Why should i side with either of you?</p>
+
+          <p class="jake">JAKE: Flattery is all well and good but i hardly think i would bother casting my knickers in
+            with anyones lot based on the quality of praise or for that matter withholding them due to having my ego
+            bruised from a verbal drubbing.</p>
+
+          <p class="jake">JAKE: Im not entirely ignorant of the rules of this jamboree. I understand that whoever i
+            endorse will have a good chance of winning on nothing but my good word.</p>
+
+          <p class="jake">JAKE: So why should i trust ANYONE trying to win my favor right now? Do you have ANY case to
+            make which does not involve glowing accounts of my muscular bottom???</p>
+        </div>
+        <p class="no-indent dirk" style="margin:15px 0"><span class="type-bs type-hs-bottom--md">I know it seems like an
+            objectively good thing from some pithy moral standpoint to let everyone in this little drama Jane’s cooked
+            up make their “own decisions,” but trust me: Jake isn’t thinking for himself any more than he was while
+            being indirectly controlled. Everything he’s thinking and feeling right now is merely reactive. He’s like a
+            mostly dead bug twitching around on the last of its hemolymph after getting its head cut off. Under my
+            guidance, he was like an ant being influenced by the cordyceps fungus. You can’t really call one of these
+            “better” than the other, but at least the latter is being directed toward some greater purpose.</span></p>
+        <p class="no-indent calliope-dead">for a moment, jake thinks he hears something. a miniscule voice, prattling
+          along vaingloriously. but he realizes it’s only a tiny insect buzzing about his ear. a gnat-like presence of
+          absolutely no consequence. he simply waves it away.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="dave">DAVE: ok yeah we can do that</p>
+
+          <p class="dave">DAVE: you mean like</p>
+
+          <p class="dave">DAVE: an actual pitch?</p>
+
+          <p class="dave">DAVE: on policy or shit</p>
+
+          <p class="dave">DAVE: or vision for the world</p>
+
+          <p class="dave">DAVE: we can set you up bro</p>
+
+          <p class="dave">DAVE: or i mean this guy can</p>
+
+          <p class="dave">DAVE: thats what he was made for</p>
+
+          <p class="dave">DAVE: born fuckin leader right here</p>
+
+          <p class="karkat">KARKAT: WHAT?</p>
+
+          <p class="dave">DAVE: take it away man</p>
+
+          <p class="dave">DAVE: our boy jake here wants to be goddamn dazzled</p>
+        </div>
+        <p class="no-indent calliope-dead">dave grins and affectionately taps karkat on the head with his knuckles.</p>
+        <p class="calliope-dead">karkat unwinds from dave’s loose embrace, takes a deep breath, and clambers up the
+          ridge to speak with jake in a more personable proximity. he has learned new methods for connecting with others
+          on the campaign trail. how to speak broadly, with sweeping conviction, and yet create a sense of intimacy when
+          addressing an individual. he has learned to come across as one who was once a leader, and could be again.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="karkat">KARKAT: LOOK, JAKE.</p>
+
+          <p class="karkat">KARKAT: I’M NOT GOING TO TRY TO SELL YOU SOME LUDICROUS STORY ABOUT HOW I’M THE BEST
+            CANDIDATE EARTH C HAS EVER SEEN OR ANYTHING.</p>
+
+          <p class="karkat">KARKAT: I’M NOT GOING TO BE THAT ARROGANT, ESPECIALLY SINCE MY ARM HAD TO BE TWISTED RIGHT
+            OUT OF ITS SOCKET TO GET ME TO EVEN RUN.</p>
+
+          <p class="karkat">KARKAT: BUT AT LEAST WE’RE NOT HIDING OUR INTENTIONS.</p>
+
+          <p class="karkat">KARKAT: AT THIS POINT, IT’S NOT A POLICY BEEF THAT I HAVE WITH JANE CROCKER.</p>
+
+          <p class="dave">DAVE: yeah im the one with the policy beef</p>
+
+          <p class="dave">DAVE: corporate welfare destroys public infrastructure</p>
+
+          <p class="karkat">KARKAT: SHUT UP, I’M TALKING.</p>
+
+          <p class="dave">DAVE: word</p>
+
+          <p class="karkat">KARKAT: WE’RE STILL LIVING ON AN INCREDIBLY YOUNG PLANET. LET’S BE REAL. EVERY PRESIDENT UP
+            UNTIL NOW HAS JUST BEEN SOME BOZO BASICALLY PLAYACTING AT BEING IN CHARGE.</p>
+
+          <p class="karkat">KARKAT: BECAUSE THIS WHOLE TIME EVERYONE’S BEEN HOLDING THEIR BREATH WAITING FOR ONE OF *US*
+            TO RUN.</p>
+
+          <p class="karkat">KARKAT: WHOEVER WINS, ME OR JANE, WILL SET THE TONE FOR SUBSEQUENT ADMINISTRATIONS FOR WHO
+            KNOWS HOW FUCKING LONG.</p>
+
+          <p class="karkat">KARKAT: IT’S ENTIRELY POSSIBLE THAT JANE WILL PROVE TO BE A COMPETENT PRESIDENT. I HAVE NO
+            DOUBTS ON HER ADMINISTRATIVE ACUMEN, CONSIDERING THAT’S PROBABLY THE ONLY FUCKING THING SHE HAS GOING FOR
+            HER, BESIDES A SERIES OF PHYSICAL ATTRIBUTES WHICH I KEEP BEING TOLD AREN’T TOO HARD ON THE EYES, BUT
+            FRANKLY, I STILL DON’T KNOW IF I’M SEEING IT? </p>
+
+          <p class="karkat">KARKAT: I MEAN, SHE’S LIKE... *ALRIGHT*? I FUCKING *GUESS*??</p>
+
+          <p class="jake">JAKE: Now lets not be too unfair old chap... </p>
+
+          <p class="karkat">KARKAT: I THINK I’M ALLOWED TO BE *UNFAIR* WHEN SHE’S HOLDING THE REPRODUCTIVE RIGHTS OF MY
+            ENTIRE SPECIES HOSTAGE.</p>
+
+          <p class="jake">JAKE: Ah. Point well met.</p>
+
+          <p class="karkat">KARKAT: JAKE, SHE WILL SET A HORRIBLE PRECEDENT.</p>
+
+          <p class="karkat">KARKAT: SHE’S INDIRECT. SHE’S PRIVILEGED. SHE’S CONCERNED WITH HOW THINGS *LOOK* RATHER THAN
+            HOW THINGS *ARE*.</p>
+
+          <p class="karkat">KARKAT: NO MATTER HOW NICE SHE WAS WHEN YOU WERE KIDS, HER DEDICATION TO THE APPEARANCE OF
+            THAT “NICENESS” HAS ALREADY LED HER DOWN A PATH OF CORRUPTION AND DUPLICITY.</p>
+
+          <p class="karkat">KARKAT: BECAUSE WHEN YOU LIVE INSIDE A SKIN THAT’S A LIE, YOU’LL EITHER GROW TO FIT IT, OR
+            COLLAPSE UNDER THE UNBEARABLE WEIGHT OF YOUR OWN SHIT-SPEWING COGNITIVE DISSONANCE.</p>
+
+          <p class="karkat">KARKAT: TRUST ME, I FUCKING KNOW, BECAUSE I USED TO SPEW AN UNTOLD AMOUNT OF SHIT.</p>
+
+          <p class="dave">DAVE: (yeah... “used to”)</p>
+
+          <p class="karkat">KARKAT: DUDE!</p>
+
+          <p class="karkat">KARKAT: WHAT THE FUCK DO YOU WANT!</p>
+
+          <p class="karkat">KARKAT: GET OFF MY BULGE.</p>
+
+          <p class="karkat">KARKAT: YOU WANTED ME TO SPIN SOME FUCKING GOLD? TO BUST OUT THE *GOOD SHIT*??</p>
+
+          <p class="karkat">KARKAT: THERE! I SAID IT! THAT WAS THE ***GOOD SHIT***!</p>
+
+          <p class="karkat">KARKAT: I’M DONE! I DID MY THING! THIS MINCING HALFWIT IN THE TINY SHORTS CAN DO WHATEVER
+            THE FUCK HE WANTS NOW!</p>
+
+          <p class="dave">DAVE: (no no that was good man)</p>
+
+          <p class="dave">DAVE: (i was just messin with you)</p>
+
+          <p class="dave">DAVE: (great job dude i love it)</p>
+        </div>
+        <p class="no-indent calliope-dead">jake chews on these remarks for a minute. he loves jane and dirk dearly. he
+          has loved both of them for years, on and off, in multiple fashions and configurations, in accordance with the
+          human understanding of this feeling. he thinks it could break jane’s heart were he to oppose her. and yet,
+          hasn’t she fired the first shot by broadcasting such scandalous things about him in the media? and it was so
+          soon after they’d nearly had an intimate reconciliation. the more he thinks on it, the more jake struggles to
+          believe in the sincerity behind jane’s friendship with him.</p>
+        <p class="calliope-dead">and the prince?</p>
+        <p class="calliope-dead">dirk, as he knows him, hasn’t been given much thought by jake recently. jake has been
+          savoring the fruits of a mental liberation he is barely aware of, let alone capable of comprehending. when he
+          considers crossing dirk, he’s not afraid of making him angry or hurting his feelings. he’s simply always
+          wanted to avoid disappointing him. and yet, with the cognitive cloud of dirk’s influence dispelled, jake now
+          cannot shake the feeling that the best course of action would be the one that asserts the most independence
+          from dirk, disappointment be damned.</p>
+        <p class="calliope-dead">and to whatever extent the prince intends to put jake’s life in jeopardy, for now, his
+          agency remains safely obscured from his sniper sight. </p>
+        <div class="chat type-rg type-hs-small--md" style="margin-bottom:0">
+          <p class="jake">JAKE: Well dash my wig!</p>
+
+          <p class="jake">JAKE: Ill do it!</p>
+
+          <p class="karkat">KARKAT: DASH YOUR WHAT?</p>
+          <p class="dave">DAVE: fuck yeah</p>
+        </div>
+      </div>
       <div class="o_story-nav type-hs-copy line-tight pad-x-0 pad-x-lg--md pad-b-lg">
         <div>
           <span>&gt;</span>
           <a href="Meat 31.html">==&gt; </a><br>
         </div>
       </div>
-  
-<footer id="story-footer" role="banner">
-  <div id="story_footer_container" class="o_story-page-footer flex pad-t-0 pad-x-0
+
+      <footer id="story-footer" role="banner">
+        <div id="story_footer_container" class="o_story-page-footer flex pad-t-0 pad-x-0
      flex-justify 
     ">
-      <div class="pad-l-lg--md mar-b-md type-hs-small type-hs-bottom--md type-center type-left--md">
-        <ul class="o_game-nav">
-          <li class="o_game-nav-item">
-            <a id="o_start-over" href="The Homestuck Epilogues.html">Start Over</a>
-          </li>
-            <li class="o_game-nav-item">
-              <a href="Meat 29.html">Go Back</a>
-            </li>
-        </ul>
-      </div>
-      <script>
-//<![CDATA[
-$(document).ready(function() { Gamenav.checkAutosave(); });
+          <div class="pad-l-lg--md mar-b-md type-hs-small type-hs-bottom--md type-center type-left--md">
+            <ul class="o_game-nav">
+              <li class="o_game-nav-item">
+                <a id="o_start-over" href="Choice Page.html">Start Over</a>
+              </li>
+              <li class="o_game-nav-item">
+                <a href="Meat 29.html">Go Back</a>
+              </li>
+            </ul>
+          </div>
+          <script>
+            //<![CDATA[
+            $(document).ready(function () { Gamenav.checkAutosave(); });
 //]]>
-</script>
+          </script>
 
-    <a href="javascript:void(0)" data-gamenav-open="" class="nav-btn nav-btn--center type-hs-small mar-b-md" style="text-decoration:none; text-transform: none; font-size:14px; line-height:14px;"><span>Options</span> <i class="icon-menu" style="margin:0;"></i></a>
+          <a href="javascript:void(0)" data-gamenav-open="" class="nav-btn nav-btn--center type-hs-small mar-b-md"
+            style="text-decoration:none; text-transform: none; font-size:14px; line-height:14px;"><span>Options</span>
+            <i class="icon-menu" style="margin:0;"></i></a>
+        </div>
+      </footer>
+
+
+    </div>
+  </div><iframe name="__tcfapiLocator" src="./Epilogue_files/saved_resource(2).html"
+    style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe>
+
+
+
+  <div class="o_site-footer row pos-r pad-t-rg pad-b-xl pad-b-0--md bg-dark-gray">
+    <div class="float-l"><img
+        src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif"
+        alt="Footer logo"><br></div>
+    <div class="float-r disp-n disp-bl--sm"><img
+        src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif"
+        alt="Footer logo"><br></div>
+    <div class="type-center pad-t-md--md">
+      <ul>
+        <li><a href="https://www.homestuck.com/contacts">Contacts</a></li>
+        <li><a href="https://www.homestuck.com/privacy">Privacy Policy</a></li>
+      </ul>
+      <div><span style="white-space:nowrap;">© 2018 Homestuck</span> <span style="white-space:nowrap;">and VIZ
+          Media</span></div>
+    </div>
   </div>
-</footer>
-
-
-  </div>
-</div><iframe name="__tcfapiLocator" src="./Epilogue_files/saved_resource(2).html" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe>
-
-
-    
-<div class="o_site-footer row pos-r pad-t-rg pad-b-xl pad-b-0--md bg-dark-gray">
-  <div class="float-l"><img src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif" alt="Footer logo"><br></div>
-  <div class="float-r disp-n disp-bl--sm"><img src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif" alt="Footer logo"><br></div>
-  <div class="type-center pad-t-md--md">
-    <ul>
-      <li><a href="https://www.homestuck.com/contacts">Contacts</a></li>
-      <li><a href="https://www.homestuck.com/privacy">Privacy Policy</a></li>
-    </ul>
-    <div><span style="white-space:nowrap;">© 2018 Homestuck</span> <span style="white-space:nowrap;">and VIZ Media</span></div>
-  </div>
-</div>
 
 
 
-    <div id="overlay" data-overlay-state="off" class="o_overlay"></div>
-    <div id="game_overlay" data-game-overlay-state="off" class="o_game-overlay"></div>
-    <div id="overlay_wait" data-overlay-state="off" class="o_overlay-wait"></div>
+  <div id="overlay" data-overlay-state="off" class="o_overlay"></div>
+  <div id="game_overlay" data-game-overlay-state="off" class="o_game-overlay"></div>
+  <div id="overlay_wait" data-overlay-state="off" class="o_overlay-wait"></div>
 
 
 
-  
 
-<iframe name="googlefcPresent" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;" src="./Epilogue_files/saved_resource(6).html" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe></body></html>
+
+  <iframe name="googlefcPresent"
+    style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"
+    src="./Epilogue_files/saved_resource(6).html"
+    style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe>
+</body>
+
+</html>

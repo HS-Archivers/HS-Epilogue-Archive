@@ -1,606 +1,738 @@
 <!DOCTYPE html>
 
-<html dir="ltr" lang="en-US"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html dir="ltr" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <!-- application -->
-    <script src="./Epilogue_files/jquery-1.11.3.min.js.download"></script>
-    
-<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"1b930da09b","applicationID":"65900267","transactionName":"cFkNREpaWA9dF0pBVlRTEB9LQVsRQQ==","queueTime":0,"applicationTime":6,"agent":""}</script>
-<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"1b930da09b",applicationID:"65900267"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="format-detection" content="telephone=no">
-    <title>The Homestuck Epilogues</title>
-    <meta name="description" content="Tales of dubious authenticity.">
-    <script>
-//<![CDATA[
-var getGAEventLabel = function(){ return "The Homestuck Epilogues"; };
+  <script src="./Epilogue_files/jquery-1.11.3.min.js.download"></script>
+
+  <script>window.NREUM || (NREUM = {}); NREUM.info = { "beacon": "bam-cell.nr-data.net", "errorBeacon": "bam-cell.nr-data.net", "licenseKey": "1b930da09b", "applicationID": "65900267", "transactionName": "cFkNREpaWA9dF0pBVlRTEB9LQVsRQQ==", "queueTime": 0, "applicationTime": 6, "agent": "" }</script>
+  <script>(window.NREUM || (NREUM = {})).loader_config = { licenseKey: "1b930da09b", applicationID: "65900267" }; window.NREUM || (NREUM = {}), __nr_require = function (t, e, n) { function r(n) { if (!e[ n ]) { var i = e[ n ] = { exports: {} }; t[ n ][ 0 ].call(i.exports, function (e) { var i = t[ n ][ 1 ][ e ]; return r(i || e) }, i, i.exports) } return e[ n ].exports } if ("function" == typeof __nr_require) return __nr_require; for (var i = 0; i < n.length; i++)r(n[ i ]); return r }({ 1: [ function (t, e, n) { function r() { } function i(t, e, n) { return function () { return o(t, [ u.now() ].concat(f(arguments)), e ? null : this, n), e ? void 0 : this } } var o = t("handle"), a = t(8), f = t(9), c = t("ee").get("tracer"), u = t("loader"), s = NREUM; "undefined" == typeof window.newrelic && (newrelic = s); var d = [ "setPageViewName", "setCustomAttribute", "setErrorHandler", "finished", "addToTrace", "inlineHit", "addRelease" ], p = "api-", l = p + "ixn-"; a(d, function (t, e) { s[ e ] = i(p + e, !0, "api") }), s.addPageAction = i(p + "addPageAction", !0), s.setCurrentRouteName = i(p + "routeName", !0), e.exports = newrelic, s.interaction = function () { return (new r).get() }; var m = r.prototype = { createTracer: function (t, e) { var n = {}, r = this, i = "function" == typeof e; return o(l + "tracer", [ u.now(), t, n ], r), function () { if (c.emit((i ? "" : "no-") + "fn-start", [ u.now(), r, i ], n), i) try { return e.apply(this, arguments) } catch (t) { throw c.emit("fn-err", [ arguments, this, t ], n), t } finally { c.emit("fn-end", [ u.now() ], n) } } } }; a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","), function (t, e) { m[ e ] = i(l + e) }), newrelic.noticeError = function (t, e) { "string" == typeof t && (t = new Error(t)), o("err", [ t, u.now(), !1, e ]) } }, {} ], 2: [ function (t, e, n) { function r(t) { if (NREUM.init) { for (var e = NREUM.init, n = t.split("."), r = 0; r < n.length - 1; r++)if (e = e[ n[ r ] ], "object" != typeof e) return; return e = e[ n[ n.length - 1 ] ] } } e.exports = { getConfiguration: r } }, {} ], 3: [ function (t, e, n) { function r() { return f.exists && performance.now ? Math.round(performance.now()) : (o = Math.max((new Date).getTime(), o)) - a } function i() { return o } var o = (new Date).getTime(), a = o, f = t(10); e.exports = r, e.exports.offset = a, e.exports.getLastTimestamp = i }, {} ], 4: [ function (t, e, n) { function r(t) { return !(!t || !t.protocol || "file:" === t.protocol) } e.exports = r }, {} ], 5: [ function (t, e, n) { function r(t, e) { var n = t.getEntries(); n.forEach(function (t) { "first-paint" === t.name ? d("timing", [ "fp", Math.floor(t.startTime) ]) : "first-contentful-paint" === t.name && d("timing", [ "fcp", Math.floor(t.startTime) ]) }) } function i(t, e) { var n = t.getEntries(); n.length > 0 && d("lcp", [ n[ n.length - 1 ] ]) } function o(t) { t.getEntries().forEach(function (t) { t.hadRecentInput || d("cls", [ t ]) }) } function a(t) { if (t instanceof m && !g) { var e = Math.round(t.timeStamp), n = { type: t.type }; e <= p.now() ? n.fid = p.now() - e : e > p.offset && e <= Date.now() ? (e -= p.offset, n.fid = p.now() - e) : e = p.now(), g = !0, d("timing", [ "fi", e, n ]) } } function f(t) { "hidden" === t && d("pageHide", [ p.now() ]) } if (!("init" in NREUM && "page_view_timing" in NREUM.init && "enabled" in NREUM.init.page_view_timing && NREUM.init.page_view_timing.enabled === !1)) { var c, u, s, d = t("handle"), p = t("loader"), l = t(7), m = NREUM.o.EV; if ("PerformanceObserver" in window && "function" == typeof window.PerformanceObserver) { c = new PerformanceObserver(r); try { c.observe({ entryTypes: [ "paint" ] }) } catch (v) { } u = new PerformanceObserver(i); try { u.observe({ entryTypes: [ "largest-contentful-paint" ] }) } catch (v) { } s = new PerformanceObserver(o); try { s.observe({ type: "layout-shift", buffered: !0 }) } catch (v) { } } if ("addEventListener" in document) { var g = !1, h = [ "click", "keydown", "mousedown", "pointerdown", "touchstart" ]; h.forEach(function (t) { document.addEventListener(t, a, !1) }) } l(f) } }, {} ], 6: [ function (t, e, n) { function r(t, e) { if (!i) return !1; if (t !== i) return !1; if (!e) return !0; if (!o) return !1; for (var n = o.split("."), r = e.split("."), a = 0; a < r.length; a++)if (r[ a ] !== n[ a ]) return !1; return !0 } var i = null, o = null, a = /Version\/(\S+)\s+Safari/; if (navigator.userAgent) { var f = navigator.userAgent, c = f.match(a); c && f.indexOf("Chrome") === -1 && f.indexOf("Chromium") === -1 && (i = "Safari", o = c[ 1 ]) } e.exports = { agent: i, version: o, match: r } }, {} ], 7: [ function (t, e, n) { function r(t) { function e() { t(a && document[ a ] ? document[ a ] : document[ i ] ? "hidden" : "visible") } "addEventListener" in document && o && document.addEventListener(o, e, !1) } e.exports = r; var i, o, a; "undefined" != typeof document.hidden ? (i = "hidden", o = "visibilitychange", a = "visibilityState") : "undefined" != typeof document.msHidden ? (i = "msHidden", o = "msvisibilitychange") : "undefined" != typeof document.webkitHidden && (i = "webkitHidden", o = "webkitvisibilitychange", a = "webkitVisibilityState") }, {} ], 8: [ function (t, e, n) { function r(t, e) { var n = [], r = "", o = 0; for (r in t) i.call(t, r) && (n[ o ] = e(r, t[ r ]), o += 1); return n } var i = Object.prototype.hasOwnProperty; e.exports = r }, {} ], 9: [ function (t, e, n) { function r(t, e, n) { e || (e = 0), "undefined" == typeof n && (n = t ? t.length : 0); for (var r = -1, i = n - e || 0, o = Array(i < 0 ? 0 : i); ++r < i;)o[ r ] = t[ e + r ]; return o } e.exports = r }, {} ], 10: [ function (t, e, n) { e.exports = { exists: "undefined" != typeof window.performance && window.performance.timing && "undefined" != typeof window.performance.timing.navigationStart } }, {} ], ee: [ function (t, e, n) { function r() { } function i(t) { function e(t) { return t && t instanceof r ? t : t ? u(t, c, a) : a() } function n(n, r, i, o, a) { if (a !== !1 && (a = !0), !l.aborted || o) { t && a && t(n, r, i); for (var f = e(i), c = v(n), u = c.length, s = 0; s < u; s++)c[ s ].apply(f, r); var p = d[ w[ n ] ]; return p && p.push([ b, n, r, f ]), f } } function o(t, e) { y[ t ] = v(t).concat(e) } function m(t, e) { var n = y[ t ]; if (n) for (var r = 0; r < n.length; r++)n[ r ] === e && n.splice(r, 1) } function v(t) { return y[ t ] || [] } function g(t) { return p[ t ] = p[ t ] || i(n) } function h(t, e) { l.aborted || s(t, function (t, n) { e = e || "feature", w[ n ] = e, e in d || (d[ e ] = []) }) } var y = {}, w = {}, b = { on: o, addEventListener: o, removeEventListener: m, emit: n, get: g, listeners: v, context: e, buffer: h, abort: f, aborted: !1 }; return b } function o(t) { return u(t, c, a) } function a() { return new r } function f() { (d.api || d.feature) && (l.aborted = !0, d = l.backlog = {}) } var c = "nr@context", u = t("gos"), s = t(8), d = {}, p = {}, l = e.exports = i(); e.exports.getOrSetContext = o, l.backlog = d }, {} ], gos: [ function (t, e, n) { function r(t, e, n) { if (i.call(t, e)) return t[ e ]; var r = n(); if (Object.defineProperty && Object.keys) try { return Object.defineProperty(t, e, { value: r, writable: !0, enumerable: !1 }), r } catch (o) { } return t[ e ] = r, r } var i = Object.prototype.hasOwnProperty; e.exports = r }, {} ], handle: [ function (t, e, n) { function r(t, e, n, r) { i.buffer([ t ], r), i.emit(t, e, n) } var i = t("ee").get("handle"); e.exports = r, r.ee = i }, {} ], id: [ function (t, e, n) { function r(t) { var e = typeof t; return !t || "object" !== e && "function" !== e ? -1 : t === window ? 0 : a(t, o, function () { return i++ }) } var i = 1, o = "nr@id", a = t("gos"); e.exports = r }, {} ], loader: [ function (t, e, n) { function r() { if (!R++) { var t = M.info = NREUM.info, e = v.getElementsByTagName("script")[ 0 ]; if (setTimeout(u.abort, 3e4), !(t && t.licenseKey && t.applicationID && e)) return u.abort(); c(E, function (e, n) { t[ e ] || (t[ e ] = n) }); var n = a(); f("mark", [ "onload", n + M.offset ], null, "api"), f("timing", [ "load", n ]); var r = v.createElement("script"); 0 === t.agent.indexOf("http://") || 0 === t.agent.indexOf("https://") ? r.src = t.agent : r.src = l + "://" + t.agent, e.parentNode.insertBefore(r, e) } } function i() { "complete" === v.readyState && o() } function o() { f("mark", [ "domContent", a() + M.offset ], null, "api") } var a = t(3), f = t("handle"), c = t(8), u = t("ee"), s = t(6), d = t(4), p = t(2), l = p.getConfiguration("ssl") === !1 ? "http" : "https", m = window, v = m.document, g = "addEventListener", h = "attachEvent", y = m.XMLHttpRequest, w = y && y.prototype, b = !d(m.location); NREUM.o = { ST: setTimeout, SI: m.setImmediate, CT: clearTimeout, XHR: y, REQ: m.Request, EV: m.Event, PR: m.Promise, MO: m.MutationObserver }; var x = "" + location, E = { beacon: "bam.nr-data.net", errorBeacon: "bam.nr-data.net", agent: "js-agent.newrelic.com/nr-1210.min.js" }, O = y && w && w[ g ] && !/CriOS/.test(navigator.userAgent), M = e.exports = { offset: a.getLastTimestamp(), now: a, origin: x, features: {}, xhrWrappable: O, userAgent: s, disabled: b }; if (!b) { t(1), t(5), v[ g ] ? (v[ g ]("DOMContentLoaded", o, !1), m[ g ]("load", r, !1)) : (v[ h ]("onreadystatechange", i), m[ h ]("onload", r)), f("mark", [ "firstbyte", a.getLastTimestamp() ], null, "api"); var R = 0 } }, {} ], "wrap-function": [ function (t, e, n) { function r(t, e) { function n(e, n, r, c, u) { function nrWrapper() { var o, a, s, p; try { a = this, o = d(arguments), s = "function" == typeof r ? r(o, a) : r || {} } catch (l) { i([ l, "", [ o, a, c ], s ], t) } f(n + "start", [ o, a, c ], s, u); try { return p = e.apply(a, o) } catch (m) { throw f(n + "err", [ o, a, m ], s, u), m } finally { f(n + "end", [ o, a, p ], s, u) } } return a(e) ? e : (n || (n = ""), nrWrapper[ p ] = e, o(e, nrWrapper, t), nrWrapper) } function r(t, e, r, i, o) { r || (r = ""); var f, c, u, s = "-" === r.charAt(0); for (u = 0; u < e.length; u++)c = e[ u ], f = t[ c ], a(f) || (t[ c ] = n(f, s ? c + r : r, i, c, o)) } function f(n, r, o, a) { if (!m || e) { var f = m; m = !0; try { t.emit(n, r, o, e, a) } catch (c) { i([ c, n, r, o ], t) } m = f } } return t || (t = s), n.inPlace = r, n.flag = p, n } function i(t, e) { e || (e = s); try { e.emit("internal-error", t) } catch (n) { } } function o(t, e, n) { if (Object.defineProperty && Object.keys) try { var r = Object.keys(t); return r.forEach(function (n) { Object.defineProperty(e, n, { get: function () { return t[ n ] }, set: function (e) { return t[ n ] = e, e } }) }), e } catch (o) { i([ o ], n) } for (var a in t) l.call(t, a) && (e[ a ] = t[ a ]); return e } function a(t) { return !(t && t instanceof Function && t.apply && !t[ p ]) } function f(t, e) { var n = e(t); return n[ p ] = t, o(t, n, s), n } function c(t, e, n) { var r = t[ e ]; t[ e ] = f(r, n) } function u() { for (var t = arguments.length, e = new Array(t), n = 0; n < t; ++n)e[ n ] = arguments[ n ]; return e } var s = t("ee"), d = t(9), p = "nr@original", l = Object.prototype.hasOwnProperty, m = !1; e.exports = r, e.exports.wrapFunction = f, e.exports.wrapInPlace = c, e.exports.argsToArray = u }, {} ] }, {}, [ "loader" ]);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <title>The Homestuck Epilogues</title>
+  <meta name="description" content="Tales of dubious authenticity.">
+  <script>
+    //<![CDATA[
+    var getGAEventLabel = function () { return "The Homestuck Epilogues"; };
 //]]>
-</script>
-      <link rel="canonical" href=meat/12">
+  </script>
+  <link rel="canonical" href=meat/12">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="https://www.homestuck.com/favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://www.homestuck.com/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://www.homestuck.com/favicon/favicon-16x16.png">
-<link rel="manifest" href="https://www.homestuck.com/favicon/manifest.json">
-<link rel="mask-icon" href="https://www.homestuck.com/favicon/safari-pinned-tab.svg" color="#6bbe4a">
-<meta name="theme-color" content="#ffffff">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www.homestuck.com/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://www.homestuck.com/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://www.homestuck.com/favicon/favicon-16x16.png">
+  <link rel="manifest" href="https://www.homestuck.com/favicon/manifest.json">
+  <link rel="mask-icon" href="https://www.homestuck.com/favicon/safari-pinned-tab.svg" color="#6bbe4a">
+  <meta name="theme-color" content="#ffffff">
 
-        <link rel="stylesheet" media="all" href="./Epilogue_files/manifest-epilogue-1694f2c1abc80cf72e84324f6d6486e6f04b02358ed667dee36c88974eef388f.css">
-      <link rel="stylesheet" href="./Epilogue_files/kek1uwn.css">
-    <link rel="stylesheet" media="all" href="./Epilogue_files/manifest-ui-e03365bbb17dde0f1fd5463dd7b56d096a27cae55aa131b72684e36c1f0c80f6.css">
-    <script src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE="></script>
-    <script src="./Epilogue_files/manifest-ads-story-1885683d55d6f631dc202ac5db87250ca938be96a613e85bb93739ecc057540e.js.download"></script>
+  <link rel="stylesheet" media="all"
+    href="./Epilogue_files/manifest-epilogue-1694f2c1abc80cf72e84324f6d6486e6f04b02358ed667dee36c88974eef388f.css">
+  <link rel="stylesheet" href="./Epilogue_files/kek1uwn.css">
+  <link rel="stylesheet" media="all"
+    href="./Epilogue_files/manifest-ui-e03365bbb17dde0f1fd5463dd7b56d096a27cae55aa131b72684e36c1f0c80f6.css">
+  <script
+    src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE="></script>
+  <script
+    src="./Epilogue_files/manifest-ads-story-1885683d55d6f631dc202ac5db87250ca938be96a613e85bb93739ecc057540e.js.download"></script>
 
 
-    <!-- //Connect Container: Homestuck-->
-<script src="./Epilogue_files/tag.min.js.download" async="" defer=""></script>
-  <script async="" src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE="></script><style type="text/css">* {
- text-shadow: transparent 0px 0px 0px, rgba(0,0,0,0.68) 0px 0px 0px !important; 
-}</style><script async="" src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE="></script></head>
-  
-  <body class="epilogue">
+  <!-- //Connect Container: Homestuck-->
+  <script src="./Epilogue_files/tag.min.js.download" async="" defer=""></script>
+  <script async=""
+    src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE="></script>
+  <style type="text/css">
+    * {
+      text-shadow: transparent 0px 0px 0px, rgba(0, 0, 0, 0.68) 0px 0px 0px !important;
+    }
+  </style>
+  <script async=""
+    src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE="></script>
+</head>
 
-    
-    <header id="site-header" role="banner">
-  <div id="header-container" class="o_story-page-header row flex pad-t-0 ">
-    <a href="javascript:void(0)" data-nav-open="" class="nav-btn nav-btn--center color-white" style="overflow-wrap:normal;text-decoration:none;"><i class="icon-menu"></i><span>Menu</span></a>
-    <nav id="nav-container" data-nav-state="closed" role="navigation" class="o_nav-container">
-      <a href="javascript:void(0)" data-nav-close="" class="nav-btn color-white pad-y-rg type-rg" style="overflow-wrap:normal;text-decoration:none;"><i class="icon-close"></i><span>Dismiss</span></a>
-      <ul id="primary-nav" class="o_primary-nav style-caps weight-bold disp-ib color-white type-rg">
-     <li class="o_primary-nav-item slide-candycorn pipe"><a class="o_primary-nav-link" style="color:#39d5f6" href="Read.html">READ</a></li><!--
-     --><li class="o_primary-nav-item"><a class="o_primary-nav-link" style="color:#39d5f6" href="Credits.html">INFO</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-    
+<body class="epilogue">
 
-    <div class="row bg-white bg-light-gray--md pad-t-md--md pos-r">
-  <div id="content_container" class="mar-x-auto disp-bl bg-white" style="max-width:650px;">
-    <div class="pos-r pad-t-sm pad-x-lg--md type-center" style="overflow:visible; height:72px;">
-      <img class="hsep_bullet" alt="Chapter" src="./Epilogue_files/meat_60x60-a20ba4eabbf9e6c7e4778d99648c13802fc7ff42a24bc48bc0535494cdd82195.png">
-      <h3 class="disp-ib type-hsep-header line-tight type-lg pad-t-sm">
-        12
-      </h3>
+
+  <header id="site-header" role="banner">
+    <div id="header-container" class="o_story-page-header row flex pad-t-0 ">
+      <a href="javascript:void(0)" data-nav-open="" class="nav-btn nav-btn--center color-white"
+        style="overflow-wrap:normal;text-decoration:none;"><i class="icon-menu"></i><span>Menu</span></a>
+      <nav id="nav-container" data-nav-state="closed" role="navigation" class="o_nav-container">
+        <a href="javascript:void(0)" data-nav-close="" class="nav-btn color-white pad-y-rg type-rg"
+          style="overflow-wrap:normal;text-decoration:none;"><i class="icon-close"></i><span>Dismiss</span></a>
+        <ul id="primary-nav" class="o_primary-nav style-caps weight-bold disp-ib color-white type-rg">
+          <li class="o_primary-nav-item slide-candycorn pipe"><a class="o_primary-nav-link" style="color:#39d5f6"
+              href="Read.html">READ</a></li>
+          <!--
+     -->
+          <li class="o_primary-nav-item"><a class="o_primary-nav-link" style="color:#39d5f6"
+              href="Credits.html">INFO</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <div class="row bg-white bg-light-gray--md pad-t-md--md pos-r">
+    <div id="content_container" class="mar-x-auto disp-bl bg-white" style="max-width:650px;">
+      <div class="pos-r pad-t-sm pad-x-lg--md type-center" style="overflow:visible; height:72px;">
+        <img class="hsep_bullet" alt="Chapter"
+          src="./Epilogue_files/meat_60x60-a20ba4eabbf9e6c7e4778d99648c13802fc7ff42a24bc48bc0535494cdd82195.png">
+        <h3 class="disp-ib type-hsep-header line-tight type-lg pad-t-sm">
+          12
+        </h3>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="row bg-white bg-light-gray--md pad-b-md pad-b-lg--md pos-r pad-t-md pad-t-0--md">
-  <div class="mar-x-auto disp-bl bg-white pad-t-lg" style="max-width:650px;">
-      <div class="o-story_text o_epilogue type-rg type-sm--md line-caption line-copy--md pad-x-0 pad-x-lg--md pad-b-lg"><div class="chat type-rg type-hs-small--md" style="margin-top:0">
-  
-  <p class="dave">DAVE: so we gotta hit jane right in her neoliberal austerity measures were all agreed on that right</p>
-  
-  <p class="karkat">KARKAT: UH HUH.</p>
-  
-  <p class="jade">JADE: yeah sure</p>
-  
-  <p class="dave">DAVE: now shes gonna spin some shit about supply side economics but we cant let her control the narrative on that one cause the first thing thats gonna happen once she begins deregulating the baking industry is that some sweet dumb crocodile down in consort land is gonna start putting sparkle glue in the cupcake mix which isnt even the real issue thats just surface issues</p>
-  
-  <p class="karkat">KARKAT: RIGHT.</p>
-  
-  <p class="jade">JADE: definitely</p>
-  
-  <p class="dave">DAVE: i mean earth c has just been play acting capitalism the last five thousand years while we timeskipped ahead to live rad lives as gods without bothering with any of the boring shit that goes into making a civilization </p>
-  
-  <p class="dave">DAVE: which is fine i mean you cant really expect a bunch of teens who didnt finish middle school to set up a sustainable form of social democracy that isnt just blatantly ripped off whatever we incorrectly thought obama god rest his soul was doing back in the day</p>
-  
-  <p class="karkat">KARKAT: SIGH</p>
-  
-  <p class="dave">DAVE: but janes got this old school mentality you just know she wants to restrict grist alchemy for the sake of “growth” and when that goes down itll take three seconds flat for some nobody in new dersetown to drop the earth c communist manifesto</p>
-  
-  <p class="dave">DAVE: at which point were in for a speedrun of either our 20th century or her 21st century</p>
-  
-  <p class="dave">DAVE: were gonna glitch under the map straight from marx to clown dictatorship</p>
-  
-  <p class="dave">DAVE: which also isnt the real issue</p>
-  
-  <p class="karkat">KARKAT: OH YEAH.</p>
-  
-  <p class="jade">JADE: of course</p>
-  
-  <p class="dave">DAVE: are you two even listening or are you just making noises with your mouths</p>
-  
-  <p class="karkat">KARKAT: HOW DARE YOU.</p>
-  
-  <p class="karkat">KARKAT: I CAN’T BELIEVE I’M BEING ACCUSED BY DAVE STRIDER, REIGNING EMPEROR OF SPEWING ENDLESS VERBAL DIARRHEA DIRECTLY INTO MY INNOCENT HEAR DUCTS EVERY DAY OF MY FUCKING LIFE, OF MAKING THOUGHTLESS MOUTH NOISES.</p>
-  
-  <p class="karkat">KARKAT: JADE, ARE YOU HEARING THIS?</p>
-  
-  <p class="jade">JADE: im scandalized</p>
-  
-  <p class="jade">JADE: especially when</p>
-  
-  <p class="jade">JADE: there are much better things we could all be doing with our mouths.....</p>
-</div>
-  <p class="no-indent">It’s been a really nice day they’ve been having, and then Jade had to go say something like that. The air in the hive changes in a way that is palpable, in a way that she can’t seem to accurately gauge despite having both superhuman and superdog senses. She’s lying on her stomach on the floor, chin in her palms, glasses slid down to the tip of her nose, kicking her legs in the air. Elements of her outfit resemble her god tier jammies: peasant skirt, sparkly flats, and a bold choice in striped tights. Her tail swishes from side to side, showing way too much of her thigh, which isn’t really all that salacious considering three of her bras are thrown over the back of the couch where she crashed last night, and the night before that, and the better part of the seven years before that. There are other personal effects of hers in the living room too: plants on the windowstill, her bass guitar sitting in a corner, a horrific-looking periodic table that Dave made her for her seventeenth birthday pinned above the stairwell. He typed it in Comic Sans, and then deep-fried it to oblivion with JPEG artifacts. </p>
-  <p>Everyone in this room knows each other way too well, so what happens next goes a little like clockwork.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="karkat">KARKAT: UHHHHHHHHHHHHHHHHHHHHHHHHHHH</p>
-</div>
-  <p class="no-indent">Says Karkat, for like thirty seconds straight as he retreats into the bulk of his sweater. He scoots a half foot to put his back against the couch when Jade pushes her glasses up the bridge of her nose and looks at him.</p>
-  <p>And Dave, with his preternaturally perfect timing, sweeps a hand over his tablet to bring up a new PowerPoint slide on the TV. He returns to his Comic Sans-written political presentation, gruesome artifacts and all, with the grace and proficiency of a man who has diffused an awkward situation in his own household many times per day, every day, for many years.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="dave">DAVE: anyway we all know the real issue is troll reproduction</p>
-  
-  <p class="dave">DAVE: this election season is gonna be so jacked up with dogwhistles jade will never sleep again</p>
-  
-  <p class="jade">JADE: woof!</p>
-  
-  <p class="dave">DAVE: yo get ready for the top propaganda hits of the year</p>
-  
-  <p class="dave">DAVE: alternia: brutal eugenics based space dictatorship</p>
-  
-  <p class="karkat">KARKAT: NOT UNTRUE.</p>
-  
-  <p class="dave">DAVE: troll homeworld: lord of the flies nightmare scenario where kids murder each other just to get the chance to get to grow up and murder other aliens instead</p>
-  
-  <p class="karkat">KARKAT: IT WASN’T THAT BAD.</p>
-  
-  <p class="dave">DAVE: actual names of professions on alternia: threshecutioner </p>
-  
-  <p class="dave">DAVE: legislacerator </p>
-  
-  <p class="dave">DAVE: minister of sucking the eyeballs out of your fucking skull then putting my two monstrous hr giger tier troll dicks up in there and just mashing the shit out of your brain with them</p>
-  
-  <p class="karkat">KARKAT: YOU MADE THAT LAST ONE UP.</p>
-  
-  <p class="karkat">KARKAT: ALSO, IT WAS DISGUSTING??</p>
-  
-  <p class="karkat">KARKAT: GROW THE FUCK UP, YOU UTTERLY CONTEMPTIBLE, POTTY MOUTHED *CUNT*.</p>
-  
-  <p class="jade">JADE: also you know trolls dont actually have two dicks dave thats an offensive stereotype</p>
-  
-  <p class="dave">DAVE: i know thats the point keep up guys</p>
-  
-  <p class="dave">DAVE: ready for another one</p>
-  
-  <p class="dave">DAVE: trolls: literally ate babies</p>
-  
-  <p class="karkat">KARKAT: ONLY THE DEFECTIVE ONES.</p>
-  
-  <p class="dave">DAVE: like you my dude</p>
-  
-  <p class="karkat">KARKAT: ...YEAH.</p>
-  
-  <p class="dave">DAVE: so thats why our campaign can work</p>
-  
-  <p class="karkat">KARKAT: ...</p>
-  
-  <p class="dave">DAVE: btw im gonna be giving a long form exam at the end of this to make sure youre retaining info because this is only like the most important thing weve ever done collectively</p>
-  
-  <p class="jade">JADE: siiiiiiiigh</p>
-  
-  <p class="dave">DAVE: aside from creating the universe i mean</p>
-  
-  <p class="jade">JADE: its not that it isnt important dave its that like</p>
-  
-  <p class="jade">JADE: the method youre using to communicate it is kinda........</p>
-  
-  <p class="jade">JADE: inefficient and BORING</p>
-  
-  <p class="dave">DAVE: you mean </p>
-  
-  <p class="dave">DAVE: words</p>
-  
-  <p class="jade">JADE: i mean YOUR words specifically!!!</p>
-  
-  <p class="jade">JADE: we already understand the issues at play you dont have to explain it to us over and over again like were twelve</p>
-  
-  <p class="jade">JADE: right karkat???</p>
-  
-  <p class="karkat">KARKAT: ARE YOU ASKING ME WHETHER I’VE HEARD THIS EXACT SPEECH ALMOST WORD FOR WORD, INCLUDING REHEARSED VERSIONS OF BOTH THE COLORFUL METAPHORS AND “JOKES,” TEN OR TWENTY TIMES ALREADY?</p>
-  
-  <p class="karkat">KARKAT: BECAUSE THE ANSWER WOULD BE</p>
-  
-  <p class="karkat">KARKAT: YES, OF COURSE I FUCKING HAVE.</p>
-</div>
-  <p class="no-indent">Karkat elbows Dave in the thigh, a move that is obviously meant to be an action of pure, brotherly jest. But instead it comes off as affectionate and overly intimate. Jade’s clever eyes don’t miss this. Her pupils follow the motion of Karkat’s arm, and then they follow the movement of Dave’s mouth as he smiles in what he probably thinks is a totally neutral expression that reveals exactly 0% of his true feelings toward Karkat Vantas. In reality, his veneer is as thin and transparent as cellophane. He is the only person who can’t see through it.</p>
-  <p>Jade does some calculations in her head. Two kinds of calculations, in fact: mathematical ones and personal ones. </p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="jade">JADE: soooooo</p>
-  
-  <p class="jade">JADE: do you want a projection of her first years hit on the economy down to the decimal with a 0.3% margin of error</p>
-  
-  <p class="jade">JADE: because thats a thing i can do if itll make you stop talking about this stupid election for ten minutes</p>
-  
-  <p class="dave">DAVE: damn hit me up girl calculator</p>
-  
-  <p class="jade">JADE: i dont think youre wrong about janes plans</p>
-</div>
-  <p class="no-indent">She proceeds to dazzle the two boys with explications on complex math utilizing taxation rates, GDP figures, and some damned thing called the “Laffer curve,” which she easily could have just invented to own them both. But the truth is, she cares too deeply for these boys to fabricate silly-sounding economic models on the spot in order to make them seem foolish in front of the camera later. </p>
-  <p>The thing about Jade Harley is that she’s not as good at personal things as she is at other things. Like science, or mastering fraymotifs, or kissing, the last of which she has definitely put a lot of levels into over the past few years because, well, what else are you supposed to do with immortal godhood once you hit the age where the dog hormones start kicking into overdrive? She rolls over and hitches up on her palms so that she can stare her two friends down. Her high-prescription lenses make her eyes look anime-huge. They might literally be glittering, she’s so completely serious about the issue she is trying to stress.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="jade">JADE: so now that thats all out of the way</p>
-  
-  <p class="jade">JADE: its time to get real you two</p>
-  
-  <p class="dave">DAVE: i</p>
-  
-  <p class="jade">JADE: that wasnt an invitation for you to make a pun about having all the time in the world or whatever it was you were going to say</p>
-  
-  <p class="dave">DAVE: oh</p>
-  
-  <p class="jade">JADE: im about to lay out some cold hard evidence so pay attention!</p>
-  
-  <p class="karkat">KARKAT: OH, HANG ON, LET ME GET A PEN.</p>
-  
-  <p class="jade">JADE: evidence about.....</p>
-  
-  <p class="jade">JADE: our relationship!</p>
-  
-  <p class="karkat">KARKAT: FUCK</p>
-  
-  <p class="jade">JADE: you let me live in your hive when im in town</p>
-  
-  <p class="karkat">KARKAT: I CAN’T BELIEVE...  </p>
-  
-  <p class="jade">JADE: im preeeetty intimately entwined in both your lives </p>
-  
-  <p class="karkat">KARKAT: THAT YOU’RE JUST TALKING ABOUT THIS?</p>
-  
-  <p class="jade">JADE: AND you dont disengage from about 86.234% of my flirtations</p>
-  
-  <p class="karkat">KARKAT: WAIT, WHY THE FUCK WOULD YOU KEEP TRACK OF SOMETHING LIKE THAT?</p>
-  
-  <p class="jade">JADE: so....... are we doing this or not?</p>
-  
-  <p class="karkat">KARKAT: DOING WHAT?!</p>
-  
-  <p class="jade">JADE: dating dummy!!!!!!!!</p>
-  
-  <p class="karkat">KARKAT: OH.</p>
-  
-  <p class="karkat">KARKAT: THAT IS </p>
-  
-  <p class="karkat">KARKAT: THAT IS... A COMPLICATED TOPIC IN MY CULTURE THAT I’M NOT SURE HUMANS ARE EQUIPPED TO TALK ABOUT.</p>
-  
-  <p class="dave">DAVE: also totally unrelated to the economy</p>
-  
-  <p class="dave">DAVE: which not gonna lie is the only thing i want to talk about for uh</p>
-  
-  <p class="dave">DAVE: for however long it takes for this other conversation to stop happening</p>
-  
-  <p class="jade">JADE: so say no!!!</p>
-  
-  <p class="dave">DAVE: well</p>
-  
-  <p class="karkat">KARKAT: UHHHHH</p>
-  
-  <p class="jade">JADE: im not just forcing this conversation for my sake! its for you two as well </p>
-  
-  <p class="jade">JADE: i mean after all this time have you two even kissed yet??????</p>
-  
-  <p class="dave">DAVE: wha</p>
-  
-  <p class="karkat">KARKAT: WH-WHY WOULD</p>
-  
-  <p class="dave">DAVE: uhh</p>
-  
-  <p class="karkat">KARKAT: WHY WOULD WE KISS??</p>
-  
-  <p class="dave">DAVE: thats</p>
-  
-  <p class="karkat">KARKAT: THAT’S... YOU... I MEAN, HE’S... HE’S DAVE.</p>
-  
-  <p class="dave">DAVE: we</p>
-  
-  <p class="karkat">KARKAT: AND I’M KARKAT.</p>
-  
-  <p class="jade">JADE: yes hes dave and youre karkat and everyone we know always calls you that</p>
-  
-  <p class="jade">JADE: “dave and karkat” </p>
-  
-  <p class="jade">JADE: i cant remember the last time i heard anyone mention one of you without the other</p>
-  
-  <p class="jade">JADE: the two of you have basically been together since your days on the meteor its SO obvious</p>
-  
-  <p class="karkat">KARKAT: TOGETHER, YES. AS FRIENDS.</p>
-  
-  <p class="dave">DAVE: yea</p>
-  
-  <p class="karkat">KARKAT: VERY CLOSE FRIENDS WHO UNDERSTAND AND SUPPORT EACH OTHER ON A DEEP AND EMPATHETIC LEVEL THAT GOES BEYOND HATE OR PITY. YOU COULD EVEN SAY THAT OUR RELATIONSHIP...</p>
-  
-  <p class="karkat">KARKAT: ...TRANSCENDS QUADRANTS.</p>
-  
-  <p class="jade">JADE: yeaaaaaah not gonna lie karkat but that sounds totally kinda gay</p>
-  
-  <p class="karkat">KARKAT: UGH YOU HUMANS AND YOUR UNFATHOMABLE GENDER BASED QUADRANTS.</p>
-</div>
-  <p class="no-indent">Jade faceplams. She does it a little too hard and slams the bridge of her glasses into her forehead. </p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="jade">JADE: ow!</p>
-  
-  <p class="karkat">KARKAT: ANYWAY WEREN’T YOU... DATING THAT CARAPACIAN COUPLE? LAST TIME WE CHECKED?</p>
-</div>
-  <p class="no-indent">Jade drags her hand down the bottom half of her face and sighs.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="jade">JADE: yeah for FUN</p>
-  
-  <p class="jade">JADE: im twenty three dont you think thats a little old to still be dating for fun</p>
-  
-  <p class="dave">DAVE: wait you saying we arent fun</p>
-  
-  <p class="jade">JADE: whens the last time either of you left the house??????</p>
-  
-  <p class="dave">DAVE: ... </p>
-  
-  <p class="karkat">KARKAT: ... </p>
-</div>
-  <p class="no-indent">Jade sighs and crawls closer. She takes one of Karkat’s hands in hers.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="jade">JADE: i think wed all work good together</p>
-</div>
-  <p class="no-indent">In her other hand, she tries to grab Dave’s wrist, but he flash-steps to the other side of the couch. She pouts at him and keeps holding Karkat’s increasingly sweaty palm.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="jade">JADE: and i think weve been dancing around that for years now</p>
-  
-  <p class="jade">JADE: i wanna try dating for real</p>
-  
-  <p class="karkat">KARKAT: HAVE YOU EVER CONSIDERED</p>
-  
-  <p class="karkat">KARKAT: SORRY IF WHAT I’M ABOUT TO SAY TOTALLY BLOWS YOUR MIND</p>
-  
-  <p class="karkat">KARKAT: DATING A SINGLE PERSON, FOR MORE THAN HALF A SWEEP, FOR REASONS OTHER THAN INITIATING THE CONCUPISCENT EXCHANGE OF FLUIDS?</p>
-</div>
-  <p class="no-indent">Jade’s grip on Karkat’s hand gets a little too tight, but her big-toothed smile remains flawlessly pleasant. This is a common sort of exchange between them and could be easily considered flirtation on several different metrics, especially considering the history between them and the sheer level of black flirtation that Karkat accidentally indulged in during his insecure youth. He doesn’t even pull his hand away.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="jade">JADE: ok first of all dont slut shame me fuckass</p>
-  
-  <p class="jade">JADE: second of all thats what im trying to do here</p>
-  
-  <p class="jade">JADE: third of all karkat arent you from a culture where people are expected to engage in romantic relationships with up to like five people at a time??</p>
-  
-  <p class="karkat">KARKAT: THAT’S NOT</p>
-  
-  <p class="karkat">KARKAT: THAT’S NOT THE SAME THING AT ALL.</p>
-  
-  <p class="jade">JADE: oh yeah??? explain the fundamental epistemological difference</p>
-  
-  <p class="karkat">KARKAT: WHAT THE FUCK?!</p>
-  
-  <p class="dave">DAVE: ok jade i think theres a flaw in your approach here cause you seem to think winning an argument on super clever logical grounds is gonna get a couple dudes to break down and fling themselves at you in like, a sexual way</p>
-  
-  <p class="jade">JADE: wellll it usually does ;B</p>
-  
-  <p class="dave">DAVE: oh my fucking god</p>
-</div>
-  <p class="no-indent">This earns Dave a look. A long, sad one that has Jade messing with her glasses again so that she can peer right at him and apply some more of that faulty personal math to his facial expression.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="jade">JADE: dave...... </p>
-  
-  <p class="dave">DAVE: what</p>
-  
-  <p class="jade">JADE: is this...........</p>
-  
-  <p class="jade">JADE: about obama???</p>
-  
-  <p class="dave">DAVE: what</p>
-  
-  <p class="dave">DAVE: no i</p>
-  
-  <p class="jade">JADE: dave are you in love with obama?</p>
-  
-  <p class="dave">DAVE: jade jesus where do you get this shit from</p>
-  
-  <p class="jade">JADE: is it about jesus then??????</p>
-  
-  <p class="dave">DAVE: no!</p>
-  
-  <p class="dave">DAVE: jesus wasnt even real</p>
-  
-  <p class="jade">JADE: i know he wasnt real!</p>
-  
-  <p class="jade">JADE: wait... </p>
-  
-  <p class="jade">JADE: are you saying</p>
-  
-  <p class="jade">JADE: obama was real?</p>
-  
-  <p class="dave">DAVE: ... </p>
-  
-  <p class="dave">DAVE: yes</p>
-  
-  <p class="dave">DAVE: obama was real</p>
-  
-  <p class="dave">DAVE: he was the president</p>
-  
-  <p class="karkat">KARKAT: AHAHAHAHAHAHAHAHAHAHAHA</p>
-  
-  <p class="jade">JADE: all this time i thought obama was like </p>
-  
-  <p class="jade">JADE: an aspirational fictional character that you modeled your life after </p>
-  
-  <p class="karkat">KARKAT: AHAHAHAHA I CAN’T AHAHA BREATHE...  </p>
-  
-  <p class="jade">JADE: like snoop dog or nicolas cage</p>
-  
-  <p class="karkat">KARKAT: THIS IS FUCKING INCREDIBLE</p>
-  
-  <p class="dave">DAVE: they were both real too</p>
-  
-  <p class="dave">DAVE: i know that you grew up on an isolated island in the middle of nowhere and everything but didnt you have like</p>
-  
-  <p class="dave">DAVE: access to the internet</p>
-  
-  <p class="jade">JADE: wow well im sorry i wasted my whole childhood filling my head with pointless things like astrophysics and senary numeral systems that allow me to do complex equations in my head!!!!!!</p>
-  
-  <p class="dave">DAVE: no dude thats kind of fucked up</p>
-  
-  <p class="dave">DAVE: karkat stop laughing jades fucked up childhood isnt funny</p>
-  
-  <p class="karkat">KARKAT: HAHAHAHAHA YES IT FUCKING IS!</p>
-  
-  <p class="karkat">KARKAT: ALSO SCREW YOU FOR SAYING IT’S NOT FUNNY??</p>
-  
-  <p class="karkat">KARKAT: WHY IS IT LIKE SOME SORT OF *TRAGEDY* HOW SHE WAS RAISED?</p>
-  
-  <p class="karkat">KARKAT: BECAUSE SHE WAS RAISED ALONE BY AN ANIMAL??</p>
-  
-  <p class="karkat">KARKAT: *I* WAS RAISED ALONE BY AN ANIMAL!</p>
-  
-  <p class="karkat">KARKAT: FUCK OFF AND LET ME ENJOY THIS!</p>
-  
-  <p class="karkat">KARKAT: AHHHHHH HAHAHAHAHAHAHAHAHAHAHAHAHAHA!</p>
-</div>
-  <p class="no-indent">Karkat has finally pulled his hand away so that he can clutch his stomach, he’s laughing so hard. Jade gets up and stalks over to where Dave is awkwardly cowering at the other end of the couch and snatches his tablet from him. There’s a ripple in the room that makes it clear their god tier powers have just clashed against each other. He shifts his arm through time and Jade warps the space around them so that she’s the one holding the tablet. This is not the first time that they have rearranged the fabric of reality for a petty reason like this. Karkat has permanently sworn off playing board games with them.</p>
-  <p>The moment Jade brings the paint program up on the television, Karkat stops laughing.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="karkat">KARKAT: NO!</p>
-</div>
-  <p class="no-indent">He tries to grab the tablet from her, but she’s hovering well above the ground and he simply is not tall enough to reach. With a shit-eating grin and deliberate care, Jade begins to draw a grid.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="jade">JADE: ill put this in terms karkat will appreciate, check it out </p>
-  
-  <p class="karkat">KARKAT: JADE, I SWEAR TO...  </p>
-</div>
-  <p class="no-indent">Karkat jumps and tries to grab her skirt, but she swims through the air with ease, giggling as she doodles.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="karkat">KARKAT: YOU BETTER NOT BE DRAWING WHAT I THINK YOU’RE DRAWING!</p>
-</div>
-  <p class="no-indent">Her artistic skill even at the advanced age of twenty-three still leaves something to be desired, but it’s pretty easy to produce recognizable caricatures of the three people in the room right now. She gives Karkat a pair of fuzzy, angry eyebrows and starts drawing other lines. Sinister lines, with salacious meaning. It’s exactly what Karkat fears: a shipping grid.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="karkat">KARKAT: STOP! CEASE! DESIST THIS MOMENT! DO NOT DRAW ONE MORE LINE!</p>
-  
-  <p class="jade">JADE: oh nooo im drawing a line karkat better stop me before it goes aaaall the way from my mouth to yours!</p>
-</div>
-  <p class="no-indent">Karkat catches the back of her shirt and she goes plummeting weightlessly to the floor, still laughing. Karkat tries to wrestle the pen out of her hand, but all he accomplishes is turning the redrom trajectory between her and Dave into a redrom loop-de-loop. </p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="jade">JADE: see me and karkat have great black chemistry!</p>
-  
-  <p class="karkat">KARKAT: IT IS NOT BLACK CHEMISTRY YOU HORRID NON-CHITINOUS WINDBAG!</p>
-</div>
-  <p class="no-indent">Jade and Karkat roll over each other on the floor and he gets a mouthful of her hair </p>
-  <p class="no-indent">for his trouble. Jade comes out on top and sits on his back, humming to herself as she crafts her grand design.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="jade">JADE: and now that daves all chill hed make a great auspistice</p>
-</div>
-  <p class="no-indent">She says, cheerful and oblivious.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="dave">DAVE: no</p>
-  
-  <p class="jade">JADE: because you and karkat are kind of like moirails</p>
-  
-  <p class="dave">DAVE: no</p>
-  
-  <p class="jade">JADE: and you and i</p>
-  
-  <p class="jade">JADE: well yknow its always been pretty flirty</p>
-  
-  <p class="dave">DAVE: jade</p>
-  
-  <p class="jade">JADE: EXCEPT!</p>
-</div>
-  <p class="no-indent">Jade finishes drawing a shaky heart directly into the paint program. It’s so big and bright on the TV that it fills the entire room with red light. Karkat raises his face and stares at it in utterly bereft horror. The sick light makes the bags under his eyes look like divots. </p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="jade">JADE: in this model..........</p>
-  
-  <p class="jade">JADE: troll quadrants are dumb so we ALL kiss!</p>
-  
-  <p class="jade">JADE: i call this political arrangement:</p>
-  
-  <p class="jade">JADE: fully automated luxury polyamorous space-time communism!!!!!!!</p>
-</div>
-  <p class="no-indent">No one reacts. Karkat is defeated, completely. Dave has just crossed his arms and pressed his mouth into a thinner line than usual. Jade’s ears flatten and she huffs. It sounds a little like a dog whining.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="jade">JADE: oh come on that was a good one!</p>
-  
-  <p class="jade">JADE: its politically relevant and everything</p>
-  
-  <p class="dave">DAVE: jade im not gonna laugh at your made up ship name for this imaginary threesome thats not happening</p>
-</div>
-  <p class="no-indent">Jade rolls her eyes and tosses both the tablet and pen over her shoulder. Dave flashes across the living room to catch his very expensive computing device in both arms. The pen bounces off his forehead. Jade dismounts from Karkat’s poor, abused, terribly mortal spine and brushes down her skirt.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="jade">JADE: well ive said what i wanted to say</p>
-  
-  <p class="jade">JADE: its up to you two what you do with it</p>
-  
-  <p class="jade">JADE: i have to go talk to roxy and callie about the election anyway</p>
-  
-  <p class="jade">JADE: call me when you two figure it all out!</p>
-</div>
-  <p class="no-indent">Jade clicks her heels together to propel herself back into the air and actually winks at them before absconding through an open window. She has to push the thick curtains aside to do so. Karkat hisses when the light spills over his face.</p>
-  <p>What Jade leaves in her wake is not quite the emotional scorched-earth situation that she was going for, but a few of her needles have definitely gotten under some skin. Dave and Karkat both stare after her, silently caught in their own private rationalization spirals.</p>
-  <p>Karkat needs to verbalize part of his out loud.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="karkat">KARKAT: WOW WHAT A CRAZY AND TOTALLY IMPROBABLE CONVERSATION WE JUST HAD WITH OUR BEST FRIEND JADE.</p>
-  
-  <p class="dave">DAVE: y...  </p>
-  
-  <p class="dave">DAVE: yeah</p>
-  
-  <p class="karkat">KARKAT: WHAT A GOOD THING FOR US THAT SHE’S TOTALLY DELUSIONAL AND HAS NO IDEA WHAT SHE’S TALKING ABOUT, HUH?</p>
-  
-  <p class="dave">DAVE: for sure</p>
-</div>
-  <p class="no-indent">Dave offers Karkat a hand up from the floor. When their palms connect, there’s a moment where something could happen. A little spark of potential. It would be so very easy for something to happen. </p>
-<div class="chat type-rg type-hs-small--md" style="margin-bottom:0">  
-  <p class="karkat">KARKAT: ...........</p>
-  
-  <p class="dave">DAVE: ..........</p>
-  
-  <p class="karkat">KARKAT: WANNA PLAY SOME TROLL TONY HAWK?</p>
-  
-  <p class="dave">DAVE: hell </p>
-  <p class="dave">DAVE: yeah</p>
-</div></div>
+  <div class="row bg-white bg-light-gray--md pad-b-md pad-b-lg--md pos-r pad-t-md pad-t-0--md">
+    <div class="mar-x-auto disp-bl bg-white pad-t-lg" style="max-width:650px;">
+      <div class="o-story_text o_epilogue type-rg type-sm--md line-caption line-copy--md pad-x-0 pad-x-lg--md pad-b-lg">
+        <div class="chat type-rg type-hs-small--md" style="margin-top:0">
+
+          <p class="dave">DAVE: so we gotta hit jane right in her neoliberal austerity measures were all agreed on that
+            right</p>
+
+          <p class="karkat">KARKAT: UH HUH.</p>
+
+          <p class="jade">JADE: yeah sure</p>
+
+          <p class="dave">DAVE: now shes gonna spin some shit about supply side economics but we cant let her control
+            the narrative on that one cause the first thing thats gonna happen once she begins deregulating the baking
+            industry is that some sweet dumb crocodile down in consort land is gonna start putting sparkle glue in the
+            cupcake mix which isnt even the real issue thats just surface issues</p>
+
+          <p class="karkat">KARKAT: RIGHT.</p>
+
+          <p class="jade">JADE: definitely</p>
+
+          <p class="dave">DAVE: i mean earth c has just been play acting capitalism the last five thousand years while
+            we timeskipped ahead to live rad lives as gods without bothering with any of the boring shit that goes into
+            making a civilization </p>
+
+          <p class="dave">DAVE: which is fine i mean you cant really expect a bunch of teens who didnt finish middle
+            school to set up a sustainable form of social democracy that isnt just blatantly ripped off whatever we
+            incorrectly thought obama god rest his soul was doing back in the day</p>
+
+          <p class="karkat">KARKAT: SIGH</p>
+
+          <p class="dave">DAVE: but janes got this old school mentality you just know she wants to restrict grist
+            alchemy for the sake of “growth” and when that goes down itll take three seconds flat for some nobody in new
+            dersetown to drop the earth c communist manifesto</p>
+
+          <p class="dave">DAVE: at which point were in for a speedrun of either our 20th century or her 21st century</p>
+
+          <p class="dave">DAVE: were gonna glitch under the map straight from marx to clown dictatorship</p>
+
+          <p class="dave">DAVE: which also isnt the real issue</p>
+
+          <p class="karkat">KARKAT: OH YEAH.</p>
+
+          <p class="jade">JADE: of course</p>
+
+          <p class="dave">DAVE: are you two even listening or are you just making noises with your mouths</p>
+
+          <p class="karkat">KARKAT: HOW DARE YOU.</p>
+
+          <p class="karkat">KARKAT: I CAN’T BELIEVE I’M BEING ACCUSED BY DAVE STRIDER, REIGNING EMPEROR OF SPEWING
+            ENDLESS VERBAL DIARRHEA DIRECTLY INTO MY INNOCENT HEAR DUCTS EVERY DAY OF MY FUCKING LIFE, OF MAKING
+            THOUGHTLESS MOUTH NOISES.</p>
+
+          <p class="karkat">KARKAT: JADE, ARE YOU HEARING THIS?</p>
+
+          <p class="jade">JADE: im scandalized</p>
+
+          <p class="jade">JADE: especially when</p>
+
+          <p class="jade">JADE: there are much better things we could all be doing with our mouths.....</p>
+        </div>
+        <p class="no-indent">It’s been a really nice day they’ve been having, and then Jade had to go say something like
+          that. The air in the hive changes in a way that is palpable, in a way that she can’t seem to accurately gauge
+          despite having both superhuman and superdog senses. She’s lying on her stomach on the floor, chin in her
+          palms, glasses slid down to the tip of her nose, kicking her legs in the air. Elements of her outfit resemble
+          her god tier jammies: peasant skirt, sparkly flats, and a bold choice in striped tights. Her tail swishes from
+          side to side, showing way too much of her thigh, which isn’t really all that salacious considering three of
+          her bras are thrown over the back of the couch where she crashed last night, and the night before that, and
+          the better part of the seven years before that. There are other personal effects of hers in the living room
+          too: plants on the windowstill, her bass guitar sitting in a corner, a horrific-looking periodic table that
+          Dave made her for her seventeenth birthday pinned above the stairwell. He typed it in Comic Sans, and then
+          deep-fried it to oblivion with JPEG artifacts. </p>
+        <p>Everyone in this room knows each other way too well, so what happens next goes a little like clockwork.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="karkat">KARKAT: UHHHHHHHHHHHHHHHHHHHHHHHHHHH</p>
+        </div>
+        <p class="no-indent">Says Karkat, for like thirty seconds straight as he retreats into the bulk of his sweater.
+          He scoots a half foot to put his back against the couch when Jade pushes her glasses up the bridge of her nose
+          and looks at him.</p>
+        <p>And Dave, with his preternaturally perfect timing, sweeps a hand over his tablet to bring up a new PowerPoint
+          slide on the TV. He returns to his Comic Sans-written political presentation, gruesome artifacts and all, with
+          the grace and proficiency of a man who has diffused an awkward situation in his own household many times per
+          day, every day, for many years.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="dave">DAVE: anyway we all know the real issue is troll reproduction</p>
+
+          <p class="dave">DAVE: this election season is gonna be so jacked up with dogwhistles jade will never sleep
+            again</p>
+
+          <p class="jade">JADE: woof!</p>
+
+          <p class="dave">DAVE: yo get ready for the top propaganda hits of the year</p>
+
+          <p class="dave">DAVE: alternia: brutal eugenics based space dictatorship</p>
+
+          <p class="karkat">KARKAT: NOT UNTRUE.</p>
+
+          <p class="dave">DAVE: troll homeworld: lord of the flies nightmare scenario where kids murder each other just
+            to get the chance to get to grow up and murder other aliens instead</p>
+
+          <p class="karkat">KARKAT: IT WASN’T THAT BAD.</p>
+
+          <p class="dave">DAVE: actual names of professions on alternia: threshecutioner </p>
+
+          <p class="dave">DAVE: legislacerator </p>
+
+          <p class="dave">DAVE: minister of sucking the eyeballs out of your fucking skull then putting my two monstrous
+            hr giger tier troll dicks up in there and just mashing the shit out of your brain with them</p>
+
+          <p class="karkat">KARKAT: YOU MADE THAT LAST ONE UP.</p>
+
+          <p class="karkat">KARKAT: ALSO, IT WAS DISGUSTING??</p>
+
+          <p class="karkat">KARKAT: GROW THE FUCK UP, YOU UTTERLY CONTEMPTIBLE, POTTY MOUTHED *CUNT*.</p>
+
+          <p class="jade">JADE: also you know trolls dont actually have two dicks dave thats an offensive stereotype</p>
+
+          <p class="dave">DAVE: i know thats the point keep up guys</p>
+
+          <p class="dave">DAVE: ready for another one</p>
+
+          <p class="dave">DAVE: trolls: literally ate babies</p>
+
+          <p class="karkat">KARKAT: ONLY THE DEFECTIVE ONES.</p>
+
+          <p class="dave">DAVE: like you my dude</p>
+
+          <p class="karkat">KARKAT: ...YEAH.</p>
+
+          <p class="dave">DAVE: so thats why our campaign can work</p>
+
+          <p class="karkat">KARKAT: ...</p>
+
+          <p class="dave">DAVE: btw im gonna be giving a long form exam at the end of this to make sure youre retaining
+            info because this is only like the most important thing weve ever done collectively</p>
+
+          <p class="jade">JADE: siiiiiiiigh</p>
+
+          <p class="dave">DAVE: aside from creating the universe i mean</p>
+
+          <p class="jade">JADE: its not that it isnt important dave its that like</p>
+
+          <p class="jade">JADE: the method youre using to communicate it is kinda........</p>
+
+          <p class="jade">JADE: inefficient and BORING</p>
+
+          <p class="dave">DAVE: you mean </p>
+
+          <p class="dave">DAVE: words</p>
+
+          <p class="jade">JADE: i mean YOUR words specifically!!!</p>
+
+          <p class="jade">JADE: we already understand the issues at play you dont have to explain it to us over and over
+            again like were twelve</p>
+
+          <p class="jade">JADE: right karkat???</p>
+
+          <p class="karkat">KARKAT: ARE YOU ASKING ME WHETHER I’VE HEARD THIS EXACT SPEECH ALMOST WORD FOR WORD,
+            INCLUDING REHEARSED VERSIONS OF BOTH THE COLORFUL METAPHORS AND “JOKES,” TEN OR TWENTY TIMES ALREADY?</p>
+
+          <p class="karkat">KARKAT: BECAUSE THE ANSWER WOULD BE</p>
+
+          <p class="karkat">KARKAT: YES, OF COURSE I FUCKING HAVE.</p>
+        </div>
+        <p class="no-indent">Karkat elbows Dave in the thigh, a move that is obviously meant to be an action of pure,
+          brotherly jest. But instead it comes off as affectionate and overly intimate. Jade’s clever eyes don’t miss
+          this. Her pupils follow the motion of Karkat’s arm, and then they follow the movement of Dave’s mouth as he
+          smiles in what he probably thinks is a totally neutral expression that reveals exactly 0% of his true feelings
+          toward Karkat Vantas. In reality, his veneer is as thin and transparent as cellophane. He is the only person
+          who can’t see through it.</p>
+        <p>Jade does some calculations in her head. Two kinds of calculations, in fact: mathematical ones and personal
+          ones. </p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="jade">JADE: soooooo</p>
+
+          <p class="jade">JADE: do you want a projection of her first years hit on the economy down to the decimal with
+            a 0.3% margin of error</p>
+
+          <p class="jade">JADE: because thats a thing i can do if itll make you stop talking about this stupid election
+            for ten minutes</p>
+
+          <p class="dave">DAVE: damn hit me up girl calculator</p>
+
+          <p class="jade">JADE: i dont think youre wrong about janes plans</p>
+        </div>
+        <p class="no-indent">She proceeds to dazzle the two boys with explications on complex math utilizing taxation
+          rates, GDP figures, and some damned thing called the “Laffer curve,” which she easily could have just invented
+          to own them both. But the truth is, she cares too deeply for these boys to fabricate silly-sounding economic
+          models on the spot in order to make them seem foolish in front of the camera later. </p>
+        <p>The thing about Jade Harley is that she’s not as good at personal things as she is at other things. Like
+          science, or mastering fraymotifs, or kissing, the last of which she has definitely put a lot of levels into
+          over the past few years because, well, what else are you supposed to do with immortal godhood once you hit the
+          age where the dog hormones start kicking into overdrive? She rolls over and hitches up on her palms so that
+          she can stare her two friends down. Her high-prescription lenses make her eyes look anime-huge. They might
+          literally be glittering, she’s so completely serious about the issue she is trying to stress.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="jade">JADE: so now that thats all out of the way</p>
+
+          <p class="jade">JADE: its time to get real you two</p>
+
+          <p class="dave">DAVE: i</p>
+
+          <p class="jade">JADE: that wasnt an invitation for you to make a pun about having all the time in the world or
+            whatever it was you were going to say</p>
+
+          <p class="dave">DAVE: oh</p>
+
+          <p class="jade">JADE: im about to lay out some cold hard evidence so pay attention!</p>
+
+          <p class="karkat">KARKAT: OH, HANG ON, LET ME GET A PEN.</p>
+
+          <p class="jade">JADE: evidence about.....</p>
+
+          <p class="jade">JADE: our relationship!</p>
+
+          <p class="karkat">KARKAT: FUCK</p>
+
+          <p class="jade">JADE: you let me live in your hive when im in town</p>
+
+          <p class="karkat">KARKAT: I CAN’T BELIEVE... </p>
+
+          <p class="jade">JADE: im preeeetty intimately entwined in both your lives </p>
+
+          <p class="karkat">KARKAT: THAT YOU’RE JUST TALKING ABOUT THIS?</p>
+
+          <p class="jade">JADE: AND you dont disengage from about 86.234% of my flirtations</p>
+
+          <p class="karkat">KARKAT: WAIT, WHY THE FUCK WOULD YOU KEEP TRACK OF SOMETHING LIKE THAT?</p>
+
+          <p class="jade">JADE: so....... are we doing this or not?</p>
+
+          <p class="karkat">KARKAT: DOING WHAT?!</p>
+
+          <p class="jade">JADE: dating dummy!!!!!!!!</p>
+
+          <p class="karkat">KARKAT: OH.</p>
+
+          <p class="karkat">KARKAT: THAT IS </p>
+
+          <p class="karkat">KARKAT: THAT IS... A COMPLICATED TOPIC IN MY CULTURE THAT I’M NOT SURE HUMANS ARE EQUIPPED
+            TO TALK ABOUT.</p>
+
+          <p class="dave">DAVE: also totally unrelated to the economy</p>
+
+          <p class="dave">DAVE: which not gonna lie is the only thing i want to talk about for uh</p>
+
+          <p class="dave">DAVE: for however long it takes for this other conversation to stop happening</p>
+
+          <p class="jade">JADE: so say no!!!</p>
+
+          <p class="dave">DAVE: well</p>
+
+          <p class="karkat">KARKAT: UHHHHH</p>
+
+          <p class="jade">JADE: im not just forcing this conversation for my sake! its for you two as well </p>
+
+          <p class="jade">JADE: i mean after all this time have you two even kissed yet??????</p>
+
+          <p class="dave">DAVE: wha</p>
+
+          <p class="karkat">KARKAT: WH-WHY WOULD</p>
+
+          <p class="dave">DAVE: uhh</p>
+
+          <p class="karkat">KARKAT: WHY WOULD WE KISS??</p>
+
+          <p class="dave">DAVE: thats</p>
+
+          <p class="karkat">KARKAT: THAT’S... YOU... I MEAN, HE’S... HE’S DAVE.</p>
+
+          <p class="dave">DAVE: we</p>
+
+          <p class="karkat">KARKAT: AND I’M KARKAT.</p>
+
+          <p class="jade">JADE: yes hes dave and youre karkat and everyone we know always calls you that</p>
+
+          <p class="jade">JADE: “dave and karkat” </p>
+
+          <p class="jade">JADE: i cant remember the last time i heard anyone mention one of you without the other</p>
+
+          <p class="jade">JADE: the two of you have basically been together since your days on the meteor its SO obvious
+          </p>
+
+          <p class="karkat">KARKAT: TOGETHER, YES. AS FRIENDS.</p>
+
+          <p class="dave">DAVE: yea</p>
+
+          <p class="karkat">KARKAT: VERY CLOSE FRIENDS WHO UNDERSTAND AND SUPPORT EACH OTHER ON A DEEP AND EMPATHETIC
+            LEVEL THAT GOES BEYOND HATE OR PITY. YOU COULD EVEN SAY THAT OUR RELATIONSHIP...</p>
+
+          <p class="karkat">KARKAT: ...TRANSCENDS QUADRANTS.</p>
+
+          <p class="jade">JADE: yeaaaaaah not gonna lie karkat but that sounds totally kinda gay</p>
+
+          <p class="karkat">KARKAT: UGH YOU HUMANS AND YOUR UNFATHOMABLE GENDER BASED QUADRANTS.</p>
+        </div>
+        <p class="no-indent">Jade faceplams. She does it a little too hard and slams the bridge of her glasses into her
+          forehead. </p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="jade">JADE: ow!</p>
+
+          <p class="karkat">KARKAT: ANYWAY WEREN’T YOU... DATING THAT CARAPACIAN COUPLE? LAST TIME WE CHECKED?</p>
+        </div>
+        <p class="no-indent">Jade drags her hand down the bottom half of her face and sighs.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="jade">JADE: yeah for FUN</p>
+
+          <p class="jade">JADE: im twenty three dont you think thats a little old to still be dating for fun</p>
+
+          <p class="dave">DAVE: wait you saying we arent fun</p>
+
+          <p class="jade">JADE: whens the last time either of you left the house??????</p>
+
+          <p class="dave">DAVE: ... </p>
+
+          <p class="karkat">KARKAT: ... </p>
+        </div>
+        <p class="no-indent">Jade sighs and crawls closer. She takes one of Karkat’s hands in hers.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="jade">JADE: i think wed all work good together</p>
+        </div>
+        <p class="no-indent">In her other hand, she tries to grab Dave’s wrist, but he flash-steps to the other side of
+          the couch. She pouts at him and keeps holding Karkat’s increasingly sweaty palm.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="jade">JADE: and i think weve been dancing around that for years now</p>
+
+          <p class="jade">JADE: i wanna try dating for real</p>
+
+          <p class="karkat">KARKAT: HAVE YOU EVER CONSIDERED</p>
+
+          <p class="karkat">KARKAT: SORRY IF WHAT I’M ABOUT TO SAY TOTALLY BLOWS YOUR MIND</p>
+
+          <p class="karkat">KARKAT: DATING A SINGLE PERSON, FOR MORE THAN HALF A SWEEP, FOR REASONS OTHER THAN
+            INITIATING THE CONCUPISCENT EXCHANGE OF FLUIDS?</p>
+        </div>
+        <p class="no-indent">Jade’s grip on Karkat’s hand gets a little too tight, but her big-toothed smile remains
+          flawlessly pleasant. This is a common sort of exchange between them and could be easily considered flirtation
+          on several different metrics, especially considering the history between them and the sheer level of black
+          flirtation that Karkat accidentally indulged in during his insecure youth. He doesn’t even pull his hand away.
+        </p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="jade">JADE: ok first of all dont slut shame me fuckass</p>
+
+          <p class="jade">JADE: second of all thats what im trying to do here</p>
+
+          <p class="jade">JADE: third of all karkat arent you from a culture where people are expected to engage in
+            romantic relationships with up to like five people at a time??</p>
+
+          <p class="karkat">KARKAT: THAT’S NOT</p>
+
+          <p class="karkat">KARKAT: THAT’S NOT THE SAME THING AT ALL.</p>
+
+          <p class="jade">JADE: oh yeah??? explain the fundamental epistemological difference</p>
+
+          <p class="karkat">KARKAT: WHAT THE FUCK?!</p>
+
+          <p class="dave">DAVE: ok jade i think theres a flaw in your approach here cause you seem to think winning an
+            argument on super clever logical grounds is gonna get a couple dudes to break down and fling themselves at
+            you in like, a sexual way</p>
+
+          <p class="jade">JADE: wellll it usually does ;B</p>
+
+          <p class="dave">DAVE: oh my fucking god</p>
+        </div>
+        <p class="no-indent">This earns Dave a look. A long, sad one that has Jade messing with her glasses again so
+          that she can peer right at him and apply some more of that faulty personal math to his facial expression.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="jade">JADE: dave...... </p>
+
+          <p class="dave">DAVE: what</p>
+
+          <p class="jade">JADE: is this...........</p>
+
+          <p class="jade">JADE: about obama???</p>
+
+          <p class="dave">DAVE: what</p>
+
+          <p class="dave">DAVE: no i</p>
+
+          <p class="jade">JADE: dave are you in love with obama?</p>
+
+          <p class="dave">DAVE: jade jesus where do you get this shit from</p>
+
+          <p class="jade">JADE: is it about jesus then??????</p>
+
+          <p class="dave">DAVE: no!</p>
+
+          <p class="dave">DAVE: jesus wasnt even real</p>
+
+          <p class="jade">JADE: i know he wasnt real!</p>
+
+          <p class="jade">JADE: wait... </p>
+
+          <p class="jade">JADE: are you saying</p>
+
+          <p class="jade">JADE: obama was real?</p>
+
+          <p class="dave">DAVE: ... </p>
+
+          <p class="dave">DAVE: yes</p>
+
+          <p class="dave">DAVE: obama was real</p>
+
+          <p class="dave">DAVE: he was the president</p>
+
+          <p class="karkat">KARKAT: AHAHAHAHAHAHAHAHAHAHAHA</p>
+
+          <p class="jade">JADE: all this time i thought obama was like </p>
+
+          <p class="jade">JADE: an aspirational fictional character that you modeled your life after </p>
+
+          <p class="karkat">KARKAT: AHAHAHAHA I CAN’T AHAHA BREATHE... </p>
+
+          <p class="jade">JADE: like snoop dog or nicolas cage</p>
+
+          <p class="karkat">KARKAT: THIS IS FUCKING INCREDIBLE</p>
+
+          <p class="dave">DAVE: they were both real too</p>
+
+          <p class="dave">DAVE: i know that you grew up on an isolated island in the middle of nowhere and everything
+            but didnt you have like</p>
+
+          <p class="dave">DAVE: access to the internet</p>
+
+          <p class="jade">JADE: wow well im sorry i wasted my whole childhood filling my head with pointless things like
+            astrophysics and senary numeral systems that allow me to do complex equations in my head!!!!!!</p>
+
+          <p class="dave">DAVE: no dude thats kind of fucked up</p>
+
+          <p class="dave">DAVE: karkat stop laughing jades fucked up childhood isnt funny</p>
+
+          <p class="karkat">KARKAT: HAHAHAHAHA YES IT FUCKING IS!</p>
+
+          <p class="karkat">KARKAT: ALSO SCREW YOU FOR SAYING IT’S NOT FUNNY??</p>
+
+          <p class="karkat">KARKAT: WHY IS IT LIKE SOME SORT OF *TRAGEDY* HOW SHE WAS RAISED?</p>
+
+          <p class="karkat">KARKAT: BECAUSE SHE WAS RAISED ALONE BY AN ANIMAL??</p>
+
+          <p class="karkat">KARKAT: *I* WAS RAISED ALONE BY AN ANIMAL!</p>
+
+          <p class="karkat">KARKAT: FUCK OFF AND LET ME ENJOY THIS!</p>
+
+          <p class="karkat">KARKAT: AHHHHHH HAHAHAHAHAHAHAHAHAHAHAHAHAHA!</p>
+        </div>
+        <p class="no-indent">Karkat has finally pulled his hand away so that he can clutch his stomach, he’s laughing so
+          hard. Jade gets up and stalks over to where Dave is awkwardly cowering at the other end of the couch and
+          snatches his tablet from him. There’s a ripple in the room that makes it clear their god tier powers have just
+          clashed against each other. He shifts his arm through time and Jade warps the space around them so that she’s
+          the one holding the tablet. This is not the first time that they have rearranged the fabric of reality for a
+          petty reason like this. Karkat has permanently sworn off playing board games with them.</p>
+        <p>The moment Jade brings the paint program up on the television, Karkat stops laughing.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="karkat">KARKAT: NO!</p>
+        </div>
+        <p class="no-indent">He tries to grab the tablet from her, but she’s hovering well above the ground and he
+          simply is not tall enough to reach. With a shit-eating grin and deliberate care, Jade begins to draw a grid.
+        </p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="jade">JADE: ill put this in terms karkat will appreciate, check it out </p>
+
+          <p class="karkat">KARKAT: JADE, I SWEAR TO... </p>
+        </div>
+        <p class="no-indent">Karkat jumps and tries to grab her skirt, but she swims through the air with ease, giggling
+          as she doodles.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="karkat">KARKAT: YOU BETTER NOT BE DRAWING WHAT I THINK YOU’RE DRAWING!</p>
+        </div>
+        <p class="no-indent">Her artistic skill even at the advanced age of twenty-three still leaves something to be
+          desired, but it’s pretty easy to produce recognizable caricatures of the three people in the room right now.
+          She gives Karkat a pair of fuzzy, angry eyebrows and starts drawing other lines. Sinister lines, with
+          salacious meaning. It’s exactly what Karkat fears: a shipping grid.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="karkat">KARKAT: STOP! CEASE! DESIST THIS MOMENT! DO NOT DRAW ONE MORE LINE!</p>
+
+          <p class="jade">JADE: oh nooo im drawing a line karkat better stop me before it goes aaaall the way from my
+            mouth to yours!</p>
+        </div>
+        <p class="no-indent">Karkat catches the back of her shirt and she goes plummeting weightlessly to the floor,
+          still laughing. Karkat tries to wrestle the pen out of her hand, but all he accomplishes is turning the redrom
+          trajectory between her and Dave into a redrom loop-de-loop. </p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="jade">JADE: see me and karkat have great black chemistry!</p>
+
+          <p class="karkat">KARKAT: IT IS NOT BLACK CHEMISTRY YOU HORRID NON-CHITINOUS WINDBAG!</p>
+        </div>
+        <p class="no-indent">Jade and Karkat roll over each other on the floor and he gets a mouthful of her hair </p>
+        <p class="no-indent">for his trouble. Jade comes out on top and sits on his back, humming to herself as she
+          crafts her grand design.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="jade">JADE: and now that daves all chill hed make a great auspistice</p>
+        </div>
+        <p class="no-indent">She says, cheerful and oblivious.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="dave">DAVE: no</p>
+
+          <p class="jade">JADE: because you and karkat are kind of like moirails</p>
+
+          <p class="dave">DAVE: no</p>
+
+          <p class="jade">JADE: and you and i</p>
+
+          <p class="jade">JADE: well yknow its always been pretty flirty</p>
+
+          <p class="dave">DAVE: jade</p>
+
+          <p class="jade">JADE: EXCEPT!</p>
+        </div>
+        <p class="no-indent">Jade finishes drawing a shaky heart directly into the paint program. It’s so big and bright
+          on the TV that it fills the entire room with red light. Karkat raises his face and stares at it in utterly
+          bereft horror. The sick light makes the bags under his eyes look like divots. </p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="jade">JADE: in this model..........</p>
+
+          <p class="jade">JADE: troll quadrants are dumb so we ALL kiss!</p>
+
+          <p class="jade">JADE: i call this political arrangement:</p>
+
+          <p class="jade">JADE: fully automated luxury polyamorous space-time communism!!!!!!!</p>
+        </div>
+        <p class="no-indent">No one reacts. Karkat is defeated, completely. Dave has just crossed his arms and pressed
+          his mouth into a thinner line than usual. Jade’s ears flatten and she huffs. It sounds a little like a dog
+          whining.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="jade">JADE: oh come on that was a good one!</p>
+
+          <p class="jade">JADE: its politically relevant and everything</p>
+
+          <p class="dave">DAVE: jade im not gonna laugh at your made up ship name for this imaginary threesome thats not
+            happening</p>
+        </div>
+        <p class="no-indent">Jade rolls her eyes and tosses both the tablet and pen over her shoulder. Dave flashes
+          across the living room to catch his very expensive computing device in both arms. The pen bounces off his
+          forehead. Jade dismounts from Karkat’s poor, abused, terribly mortal spine and brushes down her skirt.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="jade">JADE: well ive said what i wanted to say</p>
+
+          <p class="jade">JADE: its up to you two what you do with it</p>
+
+          <p class="jade">JADE: i have to go talk to roxy and callie about the election anyway</p>
+
+          <p class="jade">JADE: call me when you two figure it all out!</p>
+        </div>
+        <p class="no-indent">Jade clicks her heels together to propel herself back into the air and actually winks at
+          them before absconding through an open window. She has to push the thick curtains aside to do so. Karkat
+          hisses when the light spills over his face.</p>
+        <p>What Jade leaves in her wake is not quite the emotional scorched-earth situation that she was going for, but
+          a few of her needles have definitely gotten under some skin. Dave and Karkat both stare after her, silently
+          caught in their own private rationalization spirals.</p>
+        <p>Karkat needs to verbalize part of his out loud.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="karkat">KARKAT: WOW WHAT A CRAZY AND TOTALLY IMPROBABLE CONVERSATION WE JUST HAD WITH OUR BEST
+            FRIEND JADE.</p>
+
+          <p class="dave">DAVE: y... </p>
+
+          <p class="dave">DAVE: yeah</p>
+
+          <p class="karkat">KARKAT: WHAT A GOOD THING FOR US THAT SHE’S TOTALLY DELUSIONAL AND HAS NO IDEA WHAT SHE’S
+            TALKING ABOUT, HUH?</p>
+
+          <p class="dave">DAVE: for sure</p>
+        </div>
+        <p class="no-indent">Dave offers Karkat a hand up from the floor. When their palms connect, there’s a moment
+          where something could happen. A little spark of potential. It would be so very easy for something to happen.
+        </p>
+        <div class="chat type-rg type-hs-small--md" style="margin-bottom:0">
+          <p class="karkat">KARKAT: ...........</p>
+
+          <p class="dave">DAVE: ..........</p>
+
+          <p class="karkat">KARKAT: WANNA PLAY SOME TROLL TONY HAWK?</p>
+
+          <p class="dave">DAVE: hell </p>
+          <p class="dave">DAVE: yeah</p>
+        </div>
+      </div>
       <div class="o_story-nav type-hs-copy line-tight pad-x-0 pad-x-lg--md pad-b-lg">
         <div>
           <span>&gt;</span>
           <a href="Meat 13.html">==&gt; </a><br>
         </div>
       </div>
-  
-<footer id="story-footer" role="banner">
-  <div id="story_footer_container" class="o_story-page-footer flex pad-t-0 pad-x-0
+
+      <footer id="story-footer" role="banner">
+        <div id="story_footer_container" class="o_story-page-footer flex pad-t-0 pad-x-0
      flex-justify 
     ">
-      <div class="pad-l-lg--md mar-b-md type-hs-small type-hs-bottom--md type-center type-left--md">
-        <ul class="o_game-nav">
-          <li class="o_game-nav-item">
-            <a id="o_start-over" href="The Homestuck Epilogues.html">Start Over</a>
-          </li>
-            <li class="o_game-nav-item">
-              <a href="Meat 11.html">Go Back</a>
-            </li>
-        </ul>
-      </div>
-      <script>
-//<![CDATA[
-$(document).ready(function() { Gamenav.checkAutosave(); });
+          <div class="pad-l-lg--md mar-b-md type-hs-small type-hs-bottom--md type-center type-left--md">
+            <ul class="o_game-nav">
+              <li class="o_game-nav-item">
+                <a id="o_start-over" href="Choice Page.html">Start Over</a>
+              </li>
+              <li class="o_game-nav-item">
+                <a href="Meat 11.html">Go Back</a>
+              </li>
+            </ul>
+          </div>
+          <script>
+            //<![CDATA[
+            $(document).ready(function () { Gamenav.checkAutosave(); });
 //]]>
-</script>
+          </script>
 
-    <a href="javascript:void(0)" data-gamenav-open="" class="nav-btn nav-btn--center type-hs-small mar-b-md" style="text-decoration:none; text-transform: none; font-size:14px; line-height:14px;"><span>Options</span> <i class="icon-menu" style="margin:0;"></i></a>
+          <a href="javascript:void(0)" data-gamenav-open="" class="nav-btn nav-btn--center type-hs-small mar-b-md"
+            style="text-decoration:none; text-transform: none; font-size:14px; line-height:14px;"><span>Options</span>
+            <i class="icon-menu" style="margin:0;"></i></a>
+        </div>
+      </footer>
+
+
+    </div>
   </div>
-</footer>
 
 
+
+  <div class="o_site-footer row pos-r pad-t-rg pad-b-xl pad-b-0--md bg-dark-gray">
+    <div class="float-l"><img
+        src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif"
+        alt="Footer logo"><br></div>
+    <div class="float-r disp-n disp-bl--sm"><img
+        src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif"
+        alt="Footer logo"><br></div>
+    <div class="type-center pad-t-md--md">
+      <ul>
+        <li><a href="https://www.homestuck.com/contacts">Contacts</a></li>
+        <li><a href="https://www.homestuck.com/privacy">Privacy Policy</a></li>
+      </ul>
+      <div><span style="white-space:nowrap;">© 2018 Homestuck</span> <span style="white-space:nowrap;">and VIZ
+          Media</span></div>
+    </div>
   </div>
-</div>
-
-
-    
-<div class="o_site-footer row pos-r pad-t-rg pad-b-xl pad-b-0--md bg-dark-gray">
-  <div class="float-l"><img src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif" alt="Footer logo"><br></div>
-  <div class="float-r disp-n disp-bl--sm"><img src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif" alt="Footer logo"><br></div>
-  <div class="type-center pad-t-md--md">
-    <ul>
-      <li><a href="https://www.homestuck.com/contacts">Contacts</a></li>
-      <li><a href="https://www.homestuck.com/privacy">Privacy Policy</a></li>
-    </ul>
-    <div><span style="white-space:nowrap;">© 2018 Homestuck</span> <span style="white-space:nowrap;">and VIZ Media</span></div>
-  </div>
-</div>
 
 
 
-    <div id="overlay" data-overlay-state="off" class="o_overlay"></div>
-    <div id="game_overlay" data-game-overlay-state="off" class="o_game-overlay"></div>
-    <div id="overlay_wait" data-overlay-state="off" class="o_overlay-wait"></div>
+  <div id="overlay" data-overlay-state="off" class="o_overlay"></div>
+  <div id="game_overlay" data-game-overlay-state="off" class="o_game-overlay"></div>
+  <div id="overlay_wait" data-overlay-state="off" class="o_overlay-wait"></div>
 
 
 
-  
 
-<iframe name="googlefcPresent" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;" src="./Epilogue_files/saved_resource.html"></iframe></body></html>
+
+  <iframe name="googlefcPresent"
+    style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"
+    src="./Epilogue_files/saved_resource.html"></iframe>
+</body>
+
+</html>

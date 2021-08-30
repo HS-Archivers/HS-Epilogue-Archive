@@ -1,443 +1,550 @@
 <!DOCTYPE html>
 
-<html dir="ltr" lang="en-US"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html dir="ltr" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <!-- application -->
-    <script async="" src="./Epilogue_files/jquery-1.11.3.min.js.download"></script>
-    
-<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"1b930da09b","applicationID":"65900267","transactionName":"cFkNREpaWA9dF0pBVlRTEB9LQVsRQQ==","queueTime":0,"applicationTime":5,"agent":""}</script>
-<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"1b930da09b",applicationID:"65900267"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="format-detection" content="telephone=no">
-    <title>The Homestuck Epilogues</title>
-    <meta name="description" content="Tales of dubious authenticity.">
-    <script>
-//<![CDATA[
-var getGAEventLabel = function(){ return "The Homestuck Epilogues"; };
+  <script async="" src="./Epilogue_files/jquery-1.11.3.min.js.download"></script>
+
+  <script>window.NREUM || (NREUM = {}); NREUM.info = { "beacon": "bam-cell.nr-data.net", "errorBeacon": "bam-cell.nr-data.net", "licenseKey": "1b930da09b", "applicationID": "65900267", "transactionName": "cFkNREpaWA9dF0pBVlRTEB9LQVsRQQ==", "queueTime": 0, "applicationTime": 5, "agent": "" }</script>
+  <script>(window.NREUM || (NREUM = {})).loader_config = { licenseKey: "1b930da09b", applicationID: "65900267" }; window.NREUM || (NREUM = {}), __nr_require = function (t, e, n) { function r(n) { if (!e[ n ]) { var i = e[ n ] = { exports: {} }; t[ n ][ 0 ].call(i.exports, function (e) { var i = t[ n ][ 1 ][ e ]; return r(i || e) }, i, i.exports) } return e[ n ].exports } if ("function" == typeof __nr_require) return __nr_require; for (var i = 0; i < n.length; i++)r(n[ i ]); return r }({ 1: [ function (t, e, n) { function r() { } function i(t, e, n) { return function () { return o(t, [ u.now() ].concat(f(arguments)), e ? null : this, n), e ? void 0 : this } } var o = t("handle"), a = t(8), f = t(9), c = t("ee").get("tracer"), u = t("loader"), s = NREUM; "undefined" == typeof window.newrelic && (newrelic = s); var d = [ "setPageViewName", "setCustomAttribute", "setErrorHandler", "finished", "addToTrace", "inlineHit", "addRelease" ], p = "api-", l = p + "ixn-"; a(d, function (t, e) { s[ e ] = i(p + e, !0, "api") }), s.addPageAction = i(p + "addPageAction", !0), s.setCurrentRouteName = i(p + "routeName", !0), e.exports = newrelic, s.interaction = function () { return (new r).get() }; var m = r.prototype = { createTracer: function (t, e) { var n = {}, r = this, i = "function" == typeof e; return o(l + "tracer", [ u.now(), t, n ], r), function () { if (c.emit((i ? "" : "no-") + "fn-start", [ u.now(), r, i ], n), i) try { return e.apply(this, arguments) } catch (t) { throw c.emit("fn-err", [ arguments, this, t ], n), t } finally { c.emit("fn-end", [ u.now() ], n) } } } }; a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","), function (t, e) { m[ e ] = i(l + e) }), newrelic.noticeError = function (t, e) { "string" == typeof t && (t = new Error(t)), o("err", [ t, u.now(), !1, e ]) } }, {} ], 2: [ function (t, e, n) { function r(t) { if (NREUM.init) { for (var e = NREUM.init, n = t.split("."), r = 0; r < n.length - 1; r++)if (e = e[ n[ r ] ], "object" != typeof e) return; return e = e[ n[ n.length - 1 ] ] } } e.exports = { getConfiguration: r } }, {} ], 3: [ function (t, e, n) { function r() { return f.exists && performance.now ? Math.round(performance.now()) : (o = Math.max((new Date).getTime(), o)) - a } function i() { return o } var o = (new Date).getTime(), a = o, f = t(10); e.exports = r, e.exports.offset = a, e.exports.getLastTimestamp = i }, {} ], 4: [ function (t, e, n) { function r(t) { return !(!t || !t.protocol || "file:" === t.protocol) } e.exports = r }, {} ], 5: [ function (t, e, n) { function r(t, e) { var n = t.getEntries(); n.forEach(function (t) { "first-paint" === t.name ? d("timing", [ "fp", Math.floor(t.startTime) ]) : "first-contentful-paint" === t.name && d("timing", [ "fcp", Math.floor(t.startTime) ]) }) } function i(t, e) { var n = t.getEntries(); n.length > 0 && d("lcp", [ n[ n.length - 1 ] ]) } function o(t) { t.getEntries().forEach(function (t) { t.hadRecentInput || d("cls", [ t ]) }) } function a(t) { if (t instanceof m && !g) { var e = Math.round(t.timeStamp), n = { type: t.type }; e <= p.now() ? n.fid = p.now() - e : e > p.offset && e <= Date.now() ? (e -= p.offset, n.fid = p.now() - e) : e = p.now(), g = !0, d("timing", [ "fi", e, n ]) } } function f(t) { "hidden" === t && d("pageHide", [ p.now() ]) } if (!("init" in NREUM && "page_view_timing" in NREUM.init && "enabled" in NREUM.init.page_view_timing && NREUM.init.page_view_timing.enabled === !1)) { var c, u, s, d = t("handle"), p = t("loader"), l = t(7), m = NREUM.o.EV; if ("PerformanceObserver" in window && "function" == typeof window.PerformanceObserver) { c = new PerformanceObserver(r); try { c.observe({ entryTypes: [ "paint" ] }) } catch (v) { } u = new PerformanceObserver(i); try { u.observe({ entryTypes: [ "largest-contentful-paint" ] }) } catch (v) { } s = new PerformanceObserver(o); try { s.observe({ type: "layout-shift", buffered: !0 }) } catch (v) { } } if ("addEventListener" in document) { var g = !1, h = [ "click", "keydown", "mousedown", "pointerdown", "touchstart" ]; h.forEach(function (t) { document.addEventListener(t, a, !1) }) } l(f) } }, {} ], 6: [ function (t, e, n) { function r(t, e) { if (!i) return !1; if (t !== i) return !1; if (!e) return !0; if (!o) return !1; for (var n = o.split("."), r = e.split("."), a = 0; a < r.length; a++)if (r[ a ] !== n[ a ]) return !1; return !0 } var i = null, o = null, a = /Version\/(\S+)\s+Safari/; if (navigator.userAgent) { var f = navigator.userAgent, c = f.match(a); c && f.indexOf("Chrome") === -1 && f.indexOf("Chromium") === -1 && (i = "Safari", o = c[ 1 ]) } e.exports = { agent: i, version: o, match: r } }, {} ], 7: [ function (t, e, n) { function r(t) { function e() { t(a && document[ a ] ? document[ a ] : document[ i ] ? "hidden" : "visible") } "addEventListener" in document && o && document.addEventListener(o, e, !1) } e.exports = r; var i, o, a; "undefined" != typeof document.hidden ? (i = "hidden", o = "visibilitychange", a = "visibilityState") : "undefined" != typeof document.msHidden ? (i = "msHidden", o = "msvisibilitychange") : "undefined" != typeof document.webkitHidden && (i = "webkitHidden", o = "webkitvisibilitychange", a = "webkitVisibilityState") }, {} ], 8: [ function (t, e, n) { function r(t, e) { var n = [], r = "", o = 0; for (r in t) i.call(t, r) && (n[ o ] = e(r, t[ r ]), o += 1); return n } var i = Object.prototype.hasOwnProperty; e.exports = r }, {} ], 9: [ function (t, e, n) { function r(t, e, n) { e || (e = 0), "undefined" == typeof n && (n = t ? t.length : 0); for (var r = -1, i = n - e || 0, o = Array(i < 0 ? 0 : i); ++r < i;)o[ r ] = t[ e + r ]; return o } e.exports = r }, {} ], 10: [ function (t, e, n) { e.exports = { exists: "undefined" != typeof window.performance && window.performance.timing && "undefined" != typeof window.performance.timing.navigationStart } }, {} ], ee: [ function (t, e, n) { function r() { } function i(t) { function e(t) { return t && t instanceof r ? t : t ? u(t, c, a) : a() } function n(n, r, i, o, a) { if (a !== !1 && (a = !0), !l.aborted || o) { t && a && t(n, r, i); for (var f = e(i), c = v(n), u = c.length, s = 0; s < u; s++)c[ s ].apply(f, r); var p = d[ w[ n ] ]; return p && p.push([ b, n, r, f ]), f } } function o(t, e) { y[ t ] = v(t).concat(e) } function m(t, e) { var n = y[ t ]; if (n) for (var r = 0; r < n.length; r++)n[ r ] === e && n.splice(r, 1) } function v(t) { return y[ t ] || [] } function g(t) { return p[ t ] = p[ t ] || i(n) } function h(t, e) { l.aborted || s(t, function (t, n) { e = e || "feature", w[ n ] = e, e in d || (d[ e ] = []) }) } var y = {}, w = {}, b = { on: o, addEventListener: o, removeEventListener: m, emit: n, get: g, listeners: v, context: e, buffer: h, abort: f, aborted: !1 }; return b } function o(t) { return u(t, c, a) } function a() { return new r } function f() { (d.api || d.feature) && (l.aborted = !0, d = l.backlog = {}) } var c = "nr@context", u = t("gos"), s = t(8), d = {}, p = {}, l = e.exports = i(); e.exports.getOrSetContext = o, l.backlog = d }, {} ], gos: [ function (t, e, n) { function r(t, e, n) { if (i.call(t, e)) return t[ e ]; var r = n(); if (Object.defineProperty && Object.keys) try { return Object.defineProperty(t, e, { value: r, writable: !0, enumerable: !1 }), r } catch (o) { } return t[ e ] = r, r } var i = Object.prototype.hasOwnProperty; e.exports = r }, {} ], handle: [ function (t, e, n) { function r(t, e, n, r) { i.buffer([ t ], r), i.emit(t, e, n) } var i = t("ee").get("handle"); e.exports = r, r.ee = i }, {} ], id: [ function (t, e, n) { function r(t) { var e = typeof t; return !t || "object" !== e && "function" !== e ? -1 : t === window ? 0 : a(t, o, function () { return i++ }) } var i = 1, o = "nr@id", a = t("gos"); e.exports = r }, {} ], loader: [ function (t, e, n) { function r() { if (!R++) { var t = M.info = NREUM.info, e = v.getElementsByTagName("script")[ 0 ]; if (setTimeout(u.abort, 3e4), !(t && t.licenseKey && t.applicationID && e)) return u.abort(); c(E, function (e, n) { t[ e ] || (t[ e ] = n) }); var n = a(); f("mark", [ "onload", n + M.offset ], null, "api"), f("timing", [ "load", n ]); var r = v.createElement("script"); 0 === t.agent.indexOf("http://") || 0 === t.agent.indexOf("https://") ? r.src = t.agent : r.src = l + "://" + t.agent, e.parentNode.insertBefore(r, e) } } function i() { "complete" === v.readyState && o() } function o() { f("mark", [ "domContent", a() + M.offset ], null, "api") } var a = t(3), f = t("handle"), c = t(8), u = t("ee"), s = t(6), d = t(4), p = t(2), l = p.getConfiguration("ssl") === !1 ? "http" : "https", m = window, v = m.document, g = "addEventListener", h = "attachEvent", y = m.XMLHttpRequest, w = y && y.prototype, b = !d(m.location); NREUM.o = { ST: setTimeout, SI: m.setImmediate, CT: clearTimeout, XHR: y, REQ: m.Request, EV: m.Event, PR: m.Promise, MO: m.MutationObserver }; var x = "" + location, E = { beacon: "bam.nr-data.net", errorBeacon: "bam.nr-data.net", agent: "js-agent.newrelic.com/nr-1210.min.js" }, O = y && w && w[ g ] && !/CriOS/.test(navigator.userAgent), M = e.exports = { offset: a.getLastTimestamp(), now: a, origin: x, features: {}, xhrWrappable: O, userAgent: s, disabled: b }; if (!b) { t(1), t(5), v[ g ] ? (v[ g ]("DOMContentLoaded", o, !1), m[ g ]("load", r, !1)) : (v[ h ]("onreadystatechange", i), m[ h ]("onload", r)), f("mark", [ "firstbyte", a.getLastTimestamp() ], null, "api"); var R = 0 } }, {} ], "wrap-function": [ function (t, e, n) { function r(t, e) { function n(e, n, r, c, u) { function nrWrapper() { var o, a, s, p; try { a = this, o = d(arguments), s = "function" == typeof r ? r(o, a) : r || {} } catch (l) { i([ l, "", [ o, a, c ], s ], t) } f(n + "start", [ o, a, c ], s, u); try { return p = e.apply(a, o) } catch (m) { throw f(n + "err", [ o, a, m ], s, u), m } finally { f(n + "end", [ o, a, p ], s, u) } } return a(e) ? e : (n || (n = ""), nrWrapper[ p ] = e, o(e, nrWrapper, t), nrWrapper) } function r(t, e, r, i, o) { r || (r = ""); var f, c, u, s = "-" === r.charAt(0); for (u = 0; u < e.length; u++)c = e[ u ], f = t[ c ], a(f) || (t[ c ] = n(f, s ? c + r : r, i, c, o)) } function f(n, r, o, a) { if (!m || e) { var f = m; m = !0; try { t.emit(n, r, o, e, a) } catch (c) { i([ c, n, r, o ], t) } m = f } } return t || (t = s), n.inPlace = r, n.flag = p, n } function i(t, e) { e || (e = s); try { e.emit("internal-error", t) } catch (n) { } } function o(t, e, n) { if (Object.defineProperty && Object.keys) try { var r = Object.keys(t); return r.forEach(function (n) { Object.defineProperty(e, n, { get: function () { return t[ n ] }, set: function (e) { return t[ n ] = e, e } }) }), e } catch (o) { i([ o ], n) } for (var a in t) l.call(t, a) && (e[ a ] = t[ a ]); return e } function a(t) { return !(t && t instanceof Function && t.apply && !t[ p ]) } function f(t, e) { var n = e(t); return n[ p ] = t, o(t, n, s), n } function c(t, e, n) { var r = t[ e ]; t[ e ] = f(r, n) } function u() { for (var t = arguments.length, e = new Array(t), n = 0; n < t; ++n)e[ n ] = arguments[ n ]; return e } var s = t("ee"), d = t(9), p = "nr@original", l = Object.prototype.hasOwnProperty, m = !1; e.exports = r, e.exports.wrapFunction = f, e.exports.wrapInPlace = c, e.exports.argsToArray = u }, {} ] }, {}, [ "loader" ]);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <title>The Homestuck Epilogues</title>
+  <meta name="description" content="Tales of dubious authenticity.">
+  <script>
+    //<![CDATA[
+    var getGAEventLabel = function () { return "The Homestuck Epilogues"; };
 //]]>
-</script>
-      <link rel="canonical" href="Meat 28.html">
+  </script>
+  <link rel="canonical" href="Meat 28.html">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="https://www.homestuck.com/favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://www.homestuck.com/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://www.homestuck.com/favicon/favicon-16x16.png">
-<link rel="manifest" href="https://www.homestuck.com/favicon/manifest.json">
-<link rel="mask-icon" href="https://www.homestuck.com/favicon/safari-pinned-tab.svg" color="#6bbe4a">
-<meta name="theme-color" content="#ffffff">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www.homestuck.com/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://www.homestuck.com/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://www.homestuck.com/favicon/favicon-16x16.png">
+  <link rel="manifest" href="https://www.homestuck.com/favicon/manifest.json">
+  <link rel="mask-icon" href="https://www.homestuck.com/favicon/safari-pinned-tab.svg" color="#6bbe4a">
+  <meta name="theme-color" content="#ffffff">
 
-        <link rel="stylesheet" media="all" href="./Epilogue_files/manifest-epilogue-1694f2c1abc80cf72e84324f6d6486e6f04b02358ed667dee36c88974eef388f.css">
-      <link rel="stylesheet" href="./Epilogue_files/kek1uwn.css">
-    <link rel="stylesheet" media="all" href="./Epilogue_files/manifest-ui-e03365bbb17dde0f1fd5463dd7b56d096a27cae55aa131b72684e36c1f0c80f6.css">
-    <script src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE=(1)"></script>
-    <script src="./Epilogue_files/manifest-ads-story-1885683d55d6f631dc202ac5db87250ca938be96a613e85bb93739ecc057540e.js.download"></script>
+  <link rel="stylesheet" media="all"
+    href="./Epilogue_files/manifest-epilogue-1694f2c1abc80cf72e84324f6d6486e6f04b02358ed667dee36c88974eef388f.css">
+  <link rel="stylesheet" href="./Epilogue_files/kek1uwn.css">
+  <link rel="stylesheet" media="all"
+    href="./Epilogue_files/manifest-ui-e03365bbb17dde0f1fd5463dd7b56d096a27cae55aa131b72684e36c1f0c80f6.css">
+  <script
+    src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE=(1)"></script>
+  <script
+    src="./Epilogue_files/manifest-ads-story-1885683d55d6f631dc202ac5db87250ca938be96a613e85bb93739ecc057540e.js.download"></script>
 
 
-    <!-- //Connect Container: Homestuck-->
-<script src="./Epilogue_files/tag.min.js.download" async="" defer=""></script>
-  <script src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE="></script></head>
-  
-  <body class="epilogue">
+  <!-- //Connect Container: Homestuck-->
+  <script src="./Epilogue_files/tag.min.js.download" async="" defer=""></script>
+  <script
+    src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE="></script>
+</head>
 
-    
-    <header id="site-header" role="banner">
-  <div id="header-container" class="o_story-page-header row flex pad-t-0 ">
-    <a href="javascript:void(0)" data-nav-open="" class="nav-btn nav-btn--center color-white" style="overflow-wrap:normal;text-decoration:none;"><i class="icon-menu"></i><span>Menu</span></a>
-    <nav id="nav-container" data-nav-state="closed" role="navigation" class="o_nav-container">
-      <a href="javascript:void(0)" data-nav-close="" class="nav-btn color-white pad-y-rg type-rg" style="overflow-wrap:normal;text-decoration:none;"><i class="icon-close"></i><span>Dismiss</span></a>
-      <ul id="primary-nav" class="o_primary-nav style-caps weight-bold disp-ib color-white type-rg">
-     <li class="o_primary-nav-item slide-candycorn pipe"><a class="o_primary-nav-link" style="color:#39d5f6" href="Read.html">READ</a></li><!--
-     --><li class="o_primary-nav-item"><a class="o_primary-nav-link" style="color:#39d5f6" href="Credits.html">INFO</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-    
+<body class="epilogue">
 
-    <div class="row bg-white bg-light-gray--md pad-t-md--md pos-r">
-  <div id="content_container" class="mar-x-auto disp-bl bg-white" style="max-width:650px;">
-  <h2 class="pad-t-lg pad-x-lg--md type-center type-hsep-header line-tight type-xl">EPILOGUE FIVE</h2>
-    <div class="pos-r pad-t-sm pad-x-lg--md type-center" style="overflow:visible; height:72px;">
-      <img class="hsep_bullet" alt="Chapter" src="./Epilogue_files/meat_60x60-a20ba4eabbf9e6c7e4778d99648c13802fc7ff42a24bc48bc0535494cdd82195.png">
-      <h3 class="disp-ib type-hsep-header line-tight type-lg pad-t-sm">
-        28
-      </h3>
+
+  <header id="site-header" role="banner">
+    <div id="header-container" class="o_story-page-header row flex pad-t-0 ">
+      <a href="javascript:void(0)" data-nav-open="" class="nav-btn nav-btn--center color-white"
+        style="overflow-wrap:normal;text-decoration:none;"><i class="icon-menu"></i><span>Menu</span></a>
+      <nav id="nav-container" data-nav-state="closed" role="navigation" class="o_nav-container">
+        <a href="javascript:void(0)" data-nav-close="" class="nav-btn color-white pad-y-rg type-rg"
+          style="overflow-wrap:normal;text-decoration:none;"><i class="icon-close"></i><span>Dismiss</span></a>
+        <ul id="primary-nav" class="o_primary-nav style-caps weight-bold disp-ib color-white type-rg">
+          <li class="o_primary-nav-item slide-candycorn pipe"><a class="o_primary-nav-link" style="color:#39d5f6"
+              href="Read.html">READ</a></li>
+          <!--
+     -->
+          <li class="o_primary-nav-item"><a class="o_primary-nav-link" style="color:#39d5f6"
+              href="Credits.html">INFO</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <div class="row bg-white bg-light-gray--md pad-t-md--md pos-r">
+    <div id="content_container" class="mar-x-auto disp-bl bg-white" style="max-width:650px;">
+      <h2 class="pad-t-lg pad-x-lg--md type-center type-hsep-header line-tight type-xl">EPILOGUE FIVE</h2>
+      <div class="pos-r pad-t-sm pad-x-lg--md type-center" style="overflow:visible; height:72px;">
+        <img class="hsep_bullet" alt="Chapter"
+          src="./Epilogue_files/meat_60x60-a20ba4eabbf9e6c7e4778d99648c13802fc7ff42a24bc48bc0535494cdd82195.png">
+        <h3 class="disp-ib type-hsep-header line-tight type-lg pad-t-sm">
+          28
+        </h3>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="row bg-white bg-light-gray--md pad-b-md pad-b-lg--md pos-r pad-t-md pad-t-0--md">
-  <div class="mar-x-auto disp-bl bg-white pad-t-lg" style="max-width:650px;">
-      <div class="o-story_text o_epilogue type-rg type-sm--md line-caption line-copy--md pad-x-0 pad-x-lg--md pad-b-lg"><div class="chat type-rg type-hs-small--md" style="margin-top:0">
-  <p class="john">JOHN: uh, how long have you been watching?</p>
-  
-  <p class="terezi">TEREZI: LONG 3NOUGH TO SM3LL YOU FL41L1NG 4BOUT L1K3 4 W1GGL3R WH1L3 T4LK1NG TO J4D3S SHO3S</p>
-  
-  <p class="john">JOHN: oh, heh. </p>
-  
-  <p class="john">JOHN: awkward.</p>
-  
-  <p class="terezi">TEREZI: ... </p>
-  
-  <p class="john">JOHN: ... </p>
-</div>
-  <p class="no-indent calliope-dead">she stares at john for some time, a curious expression on her face. she says nothing for long enough that john begins to wonder if she has any use for him at all. will she offer one last barbed jest before vanishing from his life again, for good this time? he hopes he means more to her than that, especially after all the trying experiences they’ve shared.</p>
-  <p class="calliope-dead">and he does mean more to her than that. her hesitation isn’t meant to make him feel unwelcome. she’s simply processing what she is “seeing.” something is off about him. </p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="terezi">TEREZI: JOHN DO NOT T4K3 TH1S P3RSON4LLY</p>
-  
-  <p class="terezi">TEREZI: 4LTHOUGH 1 DO 4BSOLUT3LY M34N 1T P3RSON4LLY</p>
-  
-  <p class="terezi">TEREZI: BUT YOU SM3LL L1K3 SH1T</p>
-</div>
-  <p class="no-indent calliope-dead">it isn’t his unseemly appearance she finds surprising. he is gravely wounded, but it’s not that either. something else is different about him. different, somehow, from how she thought he’d be when she imagined they’d next meet. under all the gore, he smells... too fresh. </p>
-  <p class="calliope-dead">she decides to keep her observations to herself, lest she cause this ailing version of john more confusion.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="john">JOHN: yeah well... you smell like shit too!</p>
-  
-  <p class="terezi">TEREZI: 1 4SSUM3 TH4T YOU 4R3 CORR3CT</p>
-  
-  <p class="terezi">TEREZI: B31NG TH4T 1V3 B33N OUT H3R3 FOR 4 C3RT41N 4MOUNT of T1M3 W1TH L1M1T3ED ACC3SS TO FOOD 4ND W4T3R</p>
-  
-  <p class="terezi">TEREZI: BUT 1 TH1NK TH4T YOUR S1TU4T1ON 1S 4 B1T MOR3 S3R1OUS TH4N M1N3</p>
-  
-  <p class="terezi">TEREZI: 4S YOU S33M TO B3 BL33D1NG TO D34TH FROM 4 TOOTH IN YOUR CH3ST</p>
-</div>
-  <p class="no-indent calliope-dead">john laughs, exposing his two rows of disarmingly dull human teeth, signature characteristics of his smile.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="john">JOHN: oh this?</p>
-  
-  <p class="john">JOHN: it’s only a flesh wound, haha.</p>
-  
-  <p class="terezi">TEREZI: Y3S JOHN, G3N3R4LLY WOUNDS T3ND TO H4PP3N TO TH3 FL3SH</p>
-  
-  <p class="john">JOHN: no, see, it’s a movie reference.</p>
-  
-  <p class="john">JOHN: there’s this knight and he keeps losing the fight that he’s in, but he refuses to give up.</p>
-  
-  <p class="john">JOHN: so when they cut off his arms and legs and stuff, he keeps acting like it’s no big deal.</p>
-  
-  <p class="john">JOHN: and to remain defiant, he keeps saying stuff like “it’s only a flesh wound”... heh.</p>
-  
-  <p class="terezi">TEREZI: 1S TH4T TH3 T1TL3 OF TH3 MOV13?</p>
-  
-  <p class="john">JOHN: no the movie is called monty python.</p>
-  
-  <p class="john">JOHN: it actually kind of sucks?</p>
-  
-  <p class="john">JOHN: movies from the 90s are so much better.</p>
-  
-  <p class="john">JOHN: i don’t even know why i’m quoting this crap? i must really be in bad shape here...  </p>
-</div>
-  <p class="no-indent calliope-dead">terezi tips her head to one side, with what john personally regards as a cute expression, one he believes is unique to her. whether he’s correct or not, it’s his belief that there is no one else who emotes in this manner. it’s both quizzical and mocking, two descriptors that he considers to be an apt summation of her personality as well.</p>
-  <p class="calliope-dead">john pauses, reflecting on the word “cute” as it passes through his mind. he wonders if this really is what he thinks of terezi, without influence, without delirium, without mistaking one emotion for another.</p>
-  <p class="calliope-dead">but it is what he thinks of her, quite truthfully. i have no desire to interject thoughts into others’ minds, or to sway intent. nor do i see value in masking the reality of the emotions that i transcribe. this is how he feels. his mind, however, has made a habit of being less clear about his thoughts than i am willing to be.</p>
-  <p class="calliope-dead">john would be mortified with human embarrassment if he could understand the clarity and precision with which i am willing to telegraph his thoughts. but his embarrassment is irrelevant to me. as always, the truth is paramount. john thinks terezi is very cute. he always has. he thinks she’s small for how big she talks, and has a nose that resembles a button. these qualities he regards as particularly adorable, due to their sharp contrast with her harsh and incisive demeanor. john recalls the concept of “gap moe,” a term which the prince, speaking from his highly self-aggrandized position as a “scholar” of ancient asian earth lore, once explained to mean a charming, measured discrepancy between one’s archetypical appearance and idiosyncratic personal attributes. terezi is definitely cute, john decides. the conclusion is now at the forefront of his mind.</p>
-  <p class="no-indent dirk" style="margin:15px 0"><span class="type-bs type-hs-bottom--md">I don’t fucking believe this.</span></p>
-  <p class="no-indent calliope-dead">but he still resists, doubts himself. perhaps it’s even weirder to frame it this way, he wonders. he fears he is in danger of seeming like the type of creepy human male who is likely to collect large pillows bearing the illustrated images of japanese earth females. to me, this idea means nothing. but it is causing him to sweat.</p>
-  <p class="calliope-dead">he is worried that these are the thoughts entertained by a man of low character. by, perhaps, a scoundrel. his worries are interrupted, as terezi floats over and flicks him on the forehead.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="terezi">TEREZI: DONT STR41N YOURS3LF TH1NK1NG TOO H4RD TH3R3 3GB3RT</p>
-  
-  <p class="john">JOHN: uh, yeah, now that i think about it, that was a dumb metaphor.</p>
-  
-  <p class="john">JOHN: it’s one of those earth things that’s probably impossible for an alien to understand.</p>
-  
-  <p class="john">JOHN: maybe it’s the blood loss... ugh, i’m probably making a fool of myself here.</p>
-  
-  <p class="terezi">TEREZI: JOHN, YOUR MONK3Y PYTHON 4N3CDOT3 W4S V1NT4G3 3GB3RT-T13R 4DOR4STUP1D. DONT WORRY 4BOUT 1T</p>
-  
-  <p class="terezi">TEREZI: B3S1D3S, ON 4LT3RN14 1T WOULD B3 CONS1D3R3D W31RD FOR SOM3ON3 TO STOP 4 F1GHT JUST FOR LOS1NG 4 L1MB</p>
-  
-  <p class="john">JOHN: really?</p>
-  
-  <p class="terezi">TEREZI: Y34H, 1F SOM3ON3 1N TH3 M1L1T4RY R4N 4W4Y JUST FOR TH4T TH3YD PROB4BLY G3T CULL3D</p>
-  
-  <p class="john">JOHN: wow.</p>
-  
-  <p class="john">JOHN: alternia sucked.</p>
-  
-  <p class="terezi">TEREZI: Y34H</p>
-</div>
-  <p class="no-indent calliope-dead">suddenly, terezi sways, feeling woozy. john reaches out to catch her shoulders, steadies her. now closer, he examines her face in detail. her complexion is chalky. 
-    compared to humans, trolls have little color to lose. when they feel ill, there is a pallor to them, a dusty quality running deeper than the surface of the skin. </p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="john">JOHN: woah! are you ok?</p>
-  
-  <p class="terezi">TEREZI: OF COURS3 NOT!</p>
-  
-  <p class="terezi">TEREZI: JOHN, 1 4M 1N TH3 PROC3SS OF ST4RV1NG TO D34TH</p>
-  
-  <p class="terezi">TEREZI: D1DNT 1 JUST S4Y 1V3 B33N OUT H3R3 FOR 4 LONG T1M3?!</p>
-  
-  <p class="john">JOHN: alright! i’m just worried about you, dumbass! </p>
-  
-  <p class="john">JOHN: you don’t need to jump down my throat about every little thing!</p>
-  
-  <p class="terezi">TEREZI: ...</p>
-  
-  <p class="terezi">TEREZI: 1M SORRY</p>
-  
-  <p class="john">JOHN: just... how long have you been out here, terezi?</p>
-  
-  <p class="terezi">TEREZI: 1.........</p>
-  
-  <p class="terezi">TEREZI: H4V3 NO 1D34</p>
-  
-  <p class="terezi">TEREZI: T1M3 P4SS3S D1FF3R3NTLY H3R3</p>
-  
-  <p class="terezi">TEREZI: 4ND NOT 4LW4YS 1N 4 STR41GHT L1N3</p>
-  
-  <p class="terezi">TEREZI: SOM3T1M3S 1T F33LS L1K3 1V3 B33N H3R3 4 HUNDR3D SW33PS</p>
-  
-  <p class="terezi">TEREZI: 4ND 1M NOT 3V3N SUR3 TH4TS NOT TRU3</p>
-  
-  <p class="terezi">TEREZI: 1TS</p>
-  
-  <p class="terezi">TEREZI: H4RD TO ST4Y 4NCHOR3D</p>
-  
-  <p class="john">JOHN: whew... </p>
-  
-  <p class="john">JOHN: that’s... pretty heavy?</p>
-  
-  <p class="terezi">TEREZI: Y34H</p>
-  
-  <p class="john">JOHN: here, look. </p>
-  
-  <p class="john">JOHN: i found my dad’s wallet floating out here, like, fucking randomly? can you believe that?</p>
-  
-  <p class="terezi">TEREZI: &gt;:?</p>
-  
-  <p class="john">JOHN: let’s see if there’s any food in it.</p>
-</div>
-  <p class="no-indent calliope-dead">she hesitates, weighing her temptation to playfully antagonize john against the virtue of sincere expression. there are times she worries the latter may be more appropriate.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="terezi">TEREZI: TH4NKS 3GB3RT</p>
-  
-  <p class="john">JOHN: no problem. we’re friends, terezi...  </p>
-  
-  <p class="john">JOHN: it’s not like i’m going to let you die out here just because we bicker sometimes. </p>
-  
-  <p class="john">JOHN: you don’t have to be so on guard! actually, i’m glad to see you. </p>
-  
-  <p class="john">JOHN: i’ve been thinking about you a lot lately. i...  </p>
-</div>
-  <p class="no-indent calliope-dead">when john opens the wallet, the first thing he sees stored in the capacious modus is a spare car. his ever-prepared father must have captchalogued a second one as a backup. perhaps, as john speculates, in case his primary vehicle got a flat tire. </p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="terezi">TEREZI: ...  </p>
-  
-  <p class="terezi">TEREZI: YOU WH4T JOHN?</p>
-  
-  <p class="john">JOHN: uh, hold that thought...  </p>
-  
-  <p class="john">JOHN: check this out!</p>
-</div>
-  <p class="no-indent calliope-dead">john deploys the spare car. it looks brand-new, like the day his father brought the other one back from the dealership. it strikes john as the first bit of good luck he’s had all day.</p>
-  <p class="calliope-dead">terezi is less impressed.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="terezi">TEREZI: 1S TH1S P4TH3T1C4LLY PR1M1T1V3 FOUR WH33L D3V1C3 3D1BL3, OR 4M 1 M1SUND3RST4ND1NG SOM3TH1NG H3R3</p>
-  
-  <p class="john">JOHN: no, it’s just that i...  </p>
-</div>
-  <p class="no-indent calliope-dead">john’s vision is dark and blurry around the edges. he is reminded he is not in perfect physical condition either and could use a moment of rest. he climbs onto the trunk of the car, assuming a sitting position with his legs dangling in front of the bumper. he exhales, then turns to look at terezi.</p>
-  <p class="calliope-dead">he pats the place beside him, inviting her to sit. she looks skeptical but relents, shimmying up next to him on the chrome. she shrugs out of the straps of her rocket pack. they sit silently for several minutes, shoulders two inches apart. the atmosphere is thin and chilly. below their dangling feet, the black hole looms, watching them. above, the sky seems to stretch on more infinitely than a typical infinite expanse, without being boxed in by the properties of space or time. john observes terezi watching the sky. the light flickers, meteoric, over her sharp features. it casts pools of shadow beneath her eyes and in the dip of her neck.</p>
-  <p class="calliope-dead">his innocent thoughts continue, with the cautious yet growing confidence of a skittish animal creeping out of the woods. it is confident only in its surety of being unobserved. like this, he does not think she is cute at all. no, she is beautiful. this vision of her is haunting to him.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="terezi">TEREZI: 1TS R34LLY 4 M3SS OUT H3R3 1SNT 1T</p>
-  
-  <p class="john">JOHN: yeah... </p>
-</div>
-  <p class="no-indent calliope-dead">he opens the wallet again, both to search for something edible and to take his eyes away from her. objects begin appearing around him as he leafs through the cards. a crumpled fedora. a silk tie. his father’s backup cufflinks. </p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="john">JOHN: what are you doing out here anyway? </p>
-  
-  <p class="terezi">TEREZI: WH4T DO YOU TH1NK 1M DO1NG OUT H3R3?</p>
-  
-  <p class="terezi">TEREZI: LOOK1NG FOR VR1SK4 OF COURS3</p>
-  
-  <p class="john">JOHN: still?</p>
-  
-  <p class="terezi">TEREZI: WH4T DO YOU M34N ST1LL</p>
-  
-  <p class="john">JOHN: well... it’s been years.</p>
-  
-  <p class="john">JOHN: at least from my perspective it has. </p>
-  
-  <p class="john">JOHN: what have you seen since you started looking?</p>
-  
-  <p class="john">JOHN: there’s just... nothing out here.</p>
-  
-  <p class="john">JOHN: not anymore.</p>
-  
-  <p class="john">JOHN: if you haven’t found her yet, i hate to say it, but...  </p>
-  
-  <p class="john">JOHN: she’s probably not here.</p>
-  
-  <p class="terezi">TEREZI: ...  </p>
-  
-  <p class="john">JOHN: i mean, she went to fight lord english, right? </p>
-  
-  <p class="john">JOHN: i was just there, and i didn’t see her.</p>
-  
-  <p class="john">JOHN: and i’m pretty sure everyone who WAS there is dead now.</p>
-  
-  <p class="john">JOHN: i... </p>
-  
-  <p class="john">JOHN: i wouldn’t be surprised if we’re the only two people left alive out here.</p>
-</div>
-  <p class="no-indent calliope-dead">terezi stares at him with her wide, red eyes.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="terezi">TEREZI: Y34RS...  </p>
-  
-  <p class="john">JOHN: yes.</p>
-  
-  <p class="john">JOHN: oh. a year is about half a sw—</p>
-  
-  <p class="terezi">TEREZI: 1 KNOW TH4T, FOOL</p>
-  
-  <p class="john">JOHN: oh.</p>
-  
-  <p class="terezi">TEREZI: 1TS JUST S1NK1NG 1N</p>
-  
-  <p class="terezi">TEREZI: HOW T1M3 H4S P4SS3D D1FF3R3NTLY FOR US</p>
-  
-  <p class="john">JOHN: right.</p>
-  
-  <p class="terezi">TEREZI: T1M3 NOT 1N TH3 L1T3R4L S3NS3 OF S3CONDS P4SS1NG BY</p>
-  
-  <p class="terezi">TEREZI: BUT...</p>
-  
-  <p class="terezi">TEREZI: PROGR3SS</p>
-  
-  <p class="terezi">TEREZI: YOUV3 CH4NG3D SO MUCH</p>
-  
-  <p class="terezi">TEREZI: 4ND 4LL 1V3 DON3 1S W4ST3 MY 3NT1RE L1F3SP4N W4LK1NG 1N C1RCL3S</p>
-  
-  <p class="john">JOHN: hey, let’s not throw in the towel just yet!</p>
-  
-  <p class="john">JOHN: um.</p>
-  
-  <p class="john">JOHN: so, do you think...  </p>
-  
-  <p class="john">JOHN: do i actually LOOK that much different to you?</p>
-</div>
-  <p class="no-indent calliope-dead">she leans in close to sniff him carefully.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="terezi">TEREZI: HMMM</p>
+  <div class="row bg-white bg-light-gray--md pad-b-md pad-b-lg--md pos-r pad-t-md pad-t-0--md">
+    <div class="mar-x-auto disp-bl bg-white pad-t-lg" style="max-width:650px;">
+      <div class="o-story_text o_epilogue type-rg type-sm--md line-caption line-copy--md pad-x-0 pad-x-lg--md pad-b-lg">
+        <div class="chat type-rg type-hs-small--md" style="margin-top:0">
+          <p class="john">JOHN: uh, how long have you been watching?</p>
 
-  <p class="terezi">TEREZI: YOU SM3LL OLD3R</p>
-  
-  <p class="terezi">TEREZI: BUT NOT 4S OLD 4S 1 THOUGHT YOUD B3</p>
-  
-  <p class="john">JOHN: what does that mean?</p>
-  
-  <p class="terezi">TEREZI: DONT WORRY 4BOUT 1T </p>
-  
-  <p class="terezi">TEREZI: OH! WH4T 1S TH4T?</p>
-</div>
-  <p class="no-indent calliope-dead">terezi appears delighted. she quickly snatches something out of the open wallet. it is a can of human shaving cream. she clutches it with covetous desperation, her mouth watering. </p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="john">JOHN: terezi, no! </p>
-  
-  <p class="john">JOHN: that’s not food!!</p>
-</div>
-  <p class="no-indent calliope-dead">john is too late. she sprays the airy white foam directly into her mouth. she is slurping the earth product known as barbasol greedily, groaning in pleasure as it runs down her chin in viscid, frothy rivers.  john’s eyes bulge at the unappetizing spectacle. </p>
-  <p class="calliope-dead">he watches with a strange mixture of disgust and fondness. he briefly wonders about the caloric value of the foam. however, regardless of its nutritional merit, it does appear to have restored some of her vigor, so he decides not to interfere. he feels a twinge of pain in his chest, and considers it may be on account of missing her so greatly. </p>
-  <p class="calliope-dead">but no. it’s just my brother’s tooth, lodged deep in his chest, spreading its poison. it really should be extracted before it’s too late. </p>
-<div class="chat type-rg type-hs-small--md"> 
-  <p class="john">JOHN: um... you feel better?</p>
-  
-  <p class="terezi">TEREZI: Y3S</p>
-  
-  <p class="john">JOHN: that’s good.</p>
-  
-  <p class="john">JOHN: but personally speaking, i feel like total shit.</p>
-  
-  <p class="john">JOHN: i think we should go back. </p>
-  
-  <p class="john">JOHN: home, i mean.</p>
-  
-  <p class="terezi">TEREZI: N... NO</p>
-</div>
-  <p class="no-indent calliope-dead">she grabs him by the shirt. her voice begins to waver. he notices desperation in the dark circles under her eyes. </p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="terezi">TEREZI: PL34S3 JOHN</p>
-  
-  <p class="terezi">TEREZI: C4N W3 JUST</p>
-  
-  <p class="terezi">TEREZI: ST4Y 4 L1TTL3 LONG3R?</p>
-</div>
-  <p class="no-indent calliope-dead">his mind knows he must say no. his sense of self-preservation insists on it. but he simply can’t. he redoubles his effort to ignore the pain. he fights back tears. she can sense his great struggle but says nothing. with a tilt of his head, he gestures toward the car.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="john">JOHN: um. ok. </p>
-  
-  <p class="john">JOHN: we can stay a little longer.</p>
-  
-  <p class="john">JOHN: why don’t you rest in the back seat, so you can save your energy.</p>
-  
-  <p class="john">JOHN: i’ll drive.</p>
-  
-  <p class="john">JOHN: um.</p>
-  
-  <p class="john">JOHN: not literally drive, but... you know.</p>
-</div>
-  <p class="no-indent calliope-dead">terezi crawls in back, while john floats into the driver’s seat. he summons a gust of wind to propel the car through the decaying medium, as he once did on the battlefield so long ago. terezi closes her eyes the moment her head hits the seat. she snores heavily. john makes a concerted effort not to be creepy about it, by his own estimation of the word’s meaning, yet cannot stop looking at her in the rearview mirror. he tells himself it’s just to make sure she’s still breathing.</p>
-  <p class="calliope-dead">that it’s just to make sure she’s actually <em>there</em>.</p></div>
+          <p class="terezi">TEREZI: LONG 3NOUGH TO SM3LL YOU FL41L1NG 4BOUT L1K3 4 W1GGL3R WH1L3 T4LK1NG TO J4D3S SHO3S
+          </p>
+
+          <p class="john">JOHN: oh, heh. </p>
+
+          <p class="john">JOHN: awkward.</p>
+
+          <p class="terezi">TEREZI: ... </p>
+
+          <p class="john">JOHN: ... </p>
+        </div>
+        <p class="no-indent calliope-dead">she stares at john for some time, a curious expression on her face. she says
+          nothing for long enough that john begins to wonder if she has any use for him at all. will she offer one last
+          barbed jest before vanishing from his life again, for good this time? he hopes he means more to her than that,
+          especially after all the trying experiences they’ve shared.</p>
+        <p class="calliope-dead">and he does mean more to her than that. her hesitation isn’t meant to make him feel
+          unwelcome. she’s simply processing what she is “seeing.” something is off about him. </p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="terezi">TEREZI: JOHN DO NOT T4K3 TH1S P3RSON4LLY</p>
+
+          <p class="terezi">TEREZI: 4LTHOUGH 1 DO 4BSOLUT3LY M34N 1T P3RSON4LLY</p>
+
+          <p class="terezi">TEREZI: BUT YOU SM3LL L1K3 SH1T</p>
+        </div>
+        <p class="no-indent calliope-dead">it isn’t his unseemly appearance she finds surprising. he is gravely wounded,
+          but it’s not that either. something else is different about him. different, somehow, from how she thought he’d
+          be when she imagined they’d next meet. under all the gore, he smells... too fresh. </p>
+        <p class="calliope-dead">she decides to keep her observations to herself, lest she cause this ailing version of
+          john more confusion.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="john">JOHN: yeah well... you smell like shit too!</p>
+
+          <p class="terezi">TEREZI: 1 4SSUM3 TH4T YOU 4R3 CORR3CT</p>
+
+          <p class="terezi">TEREZI: B31NG TH4T 1V3 B33N OUT H3R3 FOR 4 C3RT41N 4MOUNT of T1M3 W1TH L1M1T3ED ACC3SS TO
+            FOOD 4ND W4T3R</p>
+
+          <p class="terezi">TEREZI: BUT 1 TH1NK TH4T YOUR S1TU4T1ON 1S 4 B1T MOR3 S3R1OUS TH4N M1N3</p>
+
+          <p class="terezi">TEREZI: 4S YOU S33M TO B3 BL33D1NG TO D34TH FROM 4 TOOTH IN YOUR CH3ST</p>
+        </div>
+        <p class="no-indent calliope-dead">john laughs, exposing his two rows of disarmingly dull human teeth, signature
+          characteristics of his smile.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="john">JOHN: oh this?</p>
+
+          <p class="john">JOHN: it’s only a flesh wound, haha.</p>
+
+          <p class="terezi">TEREZI: Y3S JOHN, G3N3R4LLY WOUNDS T3ND TO H4PP3N TO TH3 FL3SH</p>
+
+          <p class="john">JOHN: no, see, it’s a movie reference.</p>
+
+          <p class="john">JOHN: there’s this knight and he keeps losing the fight that he’s in, but he refuses to give
+            up.</p>
+
+          <p class="john">JOHN: so when they cut off his arms and legs and stuff, he keeps acting like it’s no big deal.
+          </p>
+
+          <p class="john">JOHN: and to remain defiant, he keeps saying stuff like “it’s only a flesh wound”... heh.</p>
+
+          <p class="terezi">TEREZI: 1S TH4T TH3 T1TL3 OF TH3 MOV13?</p>
+
+          <p class="john">JOHN: no the movie is called monty python.</p>
+
+          <p class="john">JOHN: it actually kind of sucks?</p>
+
+          <p class="john">JOHN: movies from the 90s are so much better.</p>
+
+          <p class="john">JOHN: i don’t even know why i’m quoting this crap? i must really be in bad shape here... </p>
+        </div>
+        <p class="no-indent calliope-dead">terezi tips her head to one side, with what john personally regards as a cute
+          expression, one he believes is unique to her. whether he’s correct or not, it’s his belief that there is no
+          one else who emotes in this manner. it’s both quizzical and mocking, two descriptors that he considers to be
+          an apt summation of her personality as well.</p>
+        <p class="calliope-dead">john pauses, reflecting on the word “cute” as it passes through his mind. he wonders if
+          this really is what he thinks of terezi, without influence, without delirium, without mistaking one emotion
+          for another.</p>
+        <p class="calliope-dead">but it is what he thinks of her, quite truthfully. i have no desire to interject
+          thoughts into others’ minds, or to sway intent. nor do i see value in masking the reality of the emotions that
+          i transcribe. this is how he feels. his mind, however, has made a habit of being less clear about his thoughts
+          than i am willing to be.</p>
+        <p class="calliope-dead">john would be mortified with human embarrassment if he could understand the clarity and
+          precision with which i am willing to telegraph his thoughts. but his embarrassment is irrelevant to me. as
+          always, the truth is paramount. john thinks terezi is very cute. he always has. he thinks she’s small for how
+          big she talks, and has a nose that resembles a button. these qualities he regards as particularly adorable,
+          due to their sharp contrast with her harsh and incisive demeanor. john recalls the concept of “gap moe,” a
+          term which the prince, speaking from his highly self-aggrandized position as a “scholar” of ancient asian
+          earth lore, once explained to mean a charming, measured discrepancy between one’s archetypical appearance and
+          idiosyncratic personal attributes. terezi is definitely cute, john decides. the conclusion is now at the
+          forefront of his mind.</p>
+        <p class="no-indent dirk" style="margin:15px 0"><span class="type-bs type-hs-bottom--md">I don’t fucking believe
+            this.</span></p>
+        <p class="no-indent calliope-dead">but he still resists, doubts himself. perhaps it’s even weirder to frame it
+          this way, he wonders. he fears he is in danger of seeming like the type of creepy human male who is likely to
+          collect large pillows bearing the illustrated images of japanese earth females. to me, this idea means
+          nothing. but it is causing him to sweat.</p>
+        <p class="calliope-dead">he is worried that these are the thoughts entertained by a man of low character. by,
+          perhaps, a scoundrel. his worries are interrupted, as terezi floats over and flicks him on the forehead.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="terezi">TEREZI: DONT STR41N YOURS3LF TH1NK1NG TOO H4RD TH3R3 3GB3RT</p>
+
+          <p class="john">JOHN: uh, yeah, now that i think about it, that was a dumb metaphor.</p>
+
+          <p class="john">JOHN: it’s one of those earth things that’s probably impossible for an alien to understand.
+          </p>
+
+          <p class="john">JOHN: maybe it’s the blood loss... ugh, i’m probably making a fool of myself here.</p>
+
+          <p class="terezi">TEREZI: JOHN, YOUR MONK3Y PYTHON 4N3CDOT3 W4S V1NT4G3 3GB3RT-T13R 4DOR4STUP1D. DONT WORRY
+            4BOUT 1T</p>
+
+          <p class="terezi">TEREZI: B3S1D3S, ON 4LT3RN14 1T WOULD B3 CONS1D3R3D W31RD FOR SOM3ON3 TO STOP 4 F1GHT JUST
+            FOR LOS1NG 4 L1MB</p>
+
+          <p class="john">JOHN: really?</p>
+
+          <p class="terezi">TEREZI: Y34H, 1F SOM3ON3 1N TH3 M1L1T4RY R4N 4W4Y JUST FOR TH4T TH3YD PROB4BLY G3T CULL3D
+          </p>
+
+          <p class="john">JOHN: wow.</p>
+
+          <p class="john">JOHN: alternia sucked.</p>
+
+          <p class="terezi">TEREZI: Y34H</p>
+        </div>
+        <p class="no-indent calliope-dead">suddenly, terezi sways, feeling woozy. john reaches out to catch her
+          shoulders, steadies her. now closer, he examines her face in detail. her complexion is chalky.
+          compared to humans, trolls have little color to lose. when they feel ill, there is a pallor to them, a dusty
+          quality running deeper than the surface of the skin. </p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="john">JOHN: woah! are you ok?</p>
+
+          <p class="terezi">TEREZI: OF COURS3 NOT!</p>
+
+          <p class="terezi">TEREZI: JOHN, 1 4M 1N TH3 PROC3SS OF ST4RV1NG TO D34TH</p>
+
+          <p class="terezi">TEREZI: D1DNT 1 JUST S4Y 1V3 B33N OUT H3R3 FOR 4 LONG T1M3?!</p>
+
+          <p class="john">JOHN: alright! i’m just worried about you, dumbass! </p>
+
+          <p class="john">JOHN: you don’t need to jump down my throat about every little thing!</p>
+
+          <p class="terezi">TEREZI: ...</p>
+
+          <p class="terezi">TEREZI: 1M SORRY</p>
+
+          <p class="john">JOHN: just... how long have you been out here, terezi?</p>
+
+          <p class="terezi">TEREZI: 1.........</p>
+
+          <p class="terezi">TEREZI: H4V3 NO 1D34</p>
+
+          <p class="terezi">TEREZI: T1M3 P4SS3S D1FF3R3NTLY H3R3</p>
+
+          <p class="terezi">TEREZI: 4ND NOT 4LW4YS 1N 4 STR41GHT L1N3</p>
+
+          <p class="terezi">TEREZI: SOM3T1M3S 1T F33LS L1K3 1V3 B33N H3R3 4 HUNDR3D SW33PS</p>
+
+          <p class="terezi">TEREZI: 4ND 1M NOT 3V3N SUR3 TH4TS NOT TRU3</p>
+
+          <p class="terezi">TEREZI: 1TS</p>
+
+          <p class="terezi">TEREZI: H4RD TO ST4Y 4NCHOR3D</p>
+
+          <p class="john">JOHN: whew... </p>
+
+          <p class="john">JOHN: that’s... pretty heavy?</p>
+
+          <p class="terezi">TEREZI: Y34H</p>
+
+          <p class="john">JOHN: here, look. </p>
+
+          <p class="john">JOHN: i found my dad’s wallet floating out here, like, fucking randomly? can you believe that?
+          </p>
+
+          <p class="terezi">TEREZI: &gt;:?</p>
+
+          <p class="john">JOHN: let’s see if there’s any food in it.</p>
+        </div>
+        <p class="no-indent calliope-dead">she hesitates, weighing her temptation to playfully antagonize john against
+          the virtue of sincere expression. there are times she worries the latter may be more appropriate.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="terezi">TEREZI: TH4NKS 3GB3RT</p>
+
+          <p class="john">JOHN: no problem. we’re friends, terezi... </p>
+
+          <p class="john">JOHN: it’s not like i’m going to let you die out here just because we bicker sometimes. </p>
+
+          <p class="john">JOHN: you don’t have to be so on guard! actually, i’m glad to see you. </p>
+
+          <p class="john">JOHN: i’ve been thinking about you a lot lately. i... </p>
+        </div>
+        <p class="no-indent calliope-dead">when john opens the wallet, the first thing he sees stored in the capacious
+          modus is a spare car. his ever-prepared father must have captchalogued a second one as a backup. perhaps, as
+          john speculates, in case his primary vehicle got a flat tire. </p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="terezi">TEREZI: ... </p>
+
+          <p class="terezi">TEREZI: YOU WH4T JOHN?</p>
+
+          <p class="john">JOHN: uh, hold that thought... </p>
+
+          <p class="john">JOHN: check this out!</p>
+        </div>
+        <p class="no-indent calliope-dead">john deploys the spare car. it looks brand-new, like the day his father
+          brought the other one back from the dealership. it strikes john as the first bit of good luck he’s had all
+          day.</p>
+        <p class="calliope-dead">terezi is less impressed.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="terezi">TEREZI: 1S TH1S P4TH3T1C4LLY PR1M1T1V3 FOUR WH33L D3V1C3 3D1BL3, OR 4M 1 M1SUND3RST4ND1NG
+            SOM3TH1NG H3R3</p>
+
+          <p class="john">JOHN: no, it’s just that i... </p>
+        </div>
+        <p class="no-indent calliope-dead">john’s vision is dark and blurry around the edges. he is reminded he is not
+          in perfect physical condition either and could use a moment of rest. he climbs onto the trunk of the car,
+          assuming a sitting position with his legs dangling in front of the bumper. he exhales, then turns to look at
+          terezi.</p>
+        <p class="calliope-dead">he pats the place beside him, inviting her to sit. she looks skeptical but relents,
+          shimmying up next to him on the chrome. she shrugs out of the straps of her rocket pack. they sit silently for
+          several minutes, shoulders two inches apart. the atmosphere is thin and chilly. below their dangling feet, the
+          black hole looms, watching them. above, the sky seems to stretch on more infinitely than a typical infinite
+          expanse, without being boxed in by the properties of space or time. john observes terezi watching the sky. the
+          light flickers, meteoric, over her sharp features. it casts pools of shadow beneath her eyes and in the dip of
+          her neck.</p>
+        <p class="calliope-dead">his innocent thoughts continue, with the cautious yet growing confidence of a skittish
+          animal creeping out of the woods. it is confident only in its surety of being unobserved. like this, he does
+          not think she is cute at all. no, she is beautiful. this vision of her is haunting to him.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="terezi">TEREZI: 1TS R34LLY 4 M3SS OUT H3R3 1SNT 1T</p>
+
+          <p class="john">JOHN: yeah... </p>
+        </div>
+        <p class="no-indent calliope-dead">he opens the wallet again, both to search for something edible and to take
+          his eyes away from her. objects begin appearing around him as he leafs through the cards. a crumpled fedora. a
+          silk tie. his father’s backup cufflinks. </p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="john">JOHN: what are you doing out here anyway? </p>
+
+          <p class="terezi">TEREZI: WH4T DO YOU TH1NK 1M DO1NG OUT H3R3?</p>
+
+          <p class="terezi">TEREZI: LOOK1NG FOR VR1SK4 OF COURS3</p>
+
+          <p class="john">JOHN: still?</p>
+
+          <p class="terezi">TEREZI: WH4T DO YOU M34N ST1LL</p>
+
+          <p class="john">JOHN: well... it’s been years.</p>
+
+          <p class="john">JOHN: at least from my perspective it has. </p>
+
+          <p class="john">JOHN: what have you seen since you started looking?</p>
+
+          <p class="john">JOHN: there’s just... nothing out here.</p>
+
+          <p class="john">JOHN: not anymore.</p>
+
+          <p class="john">JOHN: if you haven’t found her yet, i hate to say it, but... </p>
+
+          <p class="john">JOHN: she’s probably not here.</p>
+
+          <p class="terezi">TEREZI: ... </p>
+
+          <p class="john">JOHN: i mean, she went to fight lord english, right? </p>
+
+          <p class="john">JOHN: i was just there, and i didn’t see her.</p>
+
+          <p class="john">JOHN: and i’m pretty sure everyone who WAS there is dead now.</p>
+
+          <p class="john">JOHN: i... </p>
+
+          <p class="john">JOHN: i wouldn’t be surprised if we’re the only two people left alive out here.</p>
+        </div>
+        <p class="no-indent calliope-dead">terezi stares at him with her wide, red eyes.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="terezi">TEREZI: Y34RS... </p>
+
+          <p class="john">JOHN: yes.</p>
+
+          <p class="john">JOHN: oh. a year is about half a sw—</p>
+
+          <p class="terezi">TEREZI: 1 KNOW TH4T, FOOL</p>
+
+          <p class="john">JOHN: oh.</p>
+
+          <p class="terezi">TEREZI: 1TS JUST S1NK1NG 1N</p>
+
+          <p class="terezi">TEREZI: HOW T1M3 H4S P4SS3D D1FF3R3NTLY FOR US</p>
+
+          <p class="john">JOHN: right.</p>
+
+          <p class="terezi">TEREZI: T1M3 NOT 1N TH3 L1T3R4L S3NS3 OF S3CONDS P4SS1NG BY</p>
+
+          <p class="terezi">TEREZI: BUT...</p>
+
+          <p class="terezi">TEREZI: PROGR3SS</p>
+
+          <p class="terezi">TEREZI: YOUV3 CH4NG3D SO MUCH</p>
+
+          <p class="terezi">TEREZI: 4ND 4LL 1V3 DON3 1S W4ST3 MY 3NT1RE L1F3SP4N W4LK1NG 1N C1RCL3S</p>
+
+          <p class="john">JOHN: hey, let’s not throw in the towel just yet!</p>
+
+          <p class="john">JOHN: um.</p>
+
+          <p class="john">JOHN: so, do you think... </p>
+
+          <p class="john">JOHN: do i actually LOOK that much different to you?</p>
+        </div>
+        <p class="no-indent calliope-dead">she leans in close to sniff him carefully.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="terezi">TEREZI: HMMM</p>
+
+          <p class="terezi">TEREZI: YOU SM3LL OLD3R</p>
+
+          <p class="terezi">TEREZI: BUT NOT 4S OLD 4S 1 THOUGHT YOUD B3</p>
+
+          <p class="john">JOHN: what does that mean?</p>
+
+          <p class="terezi">TEREZI: DONT WORRY 4BOUT 1T </p>
+
+          <p class="terezi">TEREZI: OH! WH4T 1S TH4T?</p>
+        </div>
+        <p class="no-indent calliope-dead">terezi appears delighted. she quickly snatches something out of the open
+          wallet. it is a can of human shaving cream. she clutches it with covetous desperation, her mouth watering.
+        </p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="john">JOHN: terezi, no! </p>
+
+          <p class="john">JOHN: that’s not food!!</p>
+        </div>
+        <p class="no-indent calliope-dead">john is too late. she sprays the airy white foam directly into her mouth. she
+          is slurping the earth product known as barbasol greedily, groaning in pleasure as it runs down her chin in
+          viscid, frothy rivers. john’s eyes bulge at the unappetizing spectacle. </p>
+        <p class="calliope-dead">he watches with a strange mixture of disgust and fondness. he briefly wonders about the
+          caloric value of the foam. however, regardless of its nutritional merit, it does appear to have restored some
+          of her vigor, so he decides not to interfere. he feels a twinge of pain in his chest, and considers it may be
+          on account of missing her so greatly. </p>
+        <p class="calliope-dead">but no. it’s just my brother’s tooth, lodged deep in his chest, spreading its poison.
+          it really should be extracted before it’s too late. </p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="john">JOHN: um... you feel better?</p>
+
+          <p class="terezi">TEREZI: Y3S</p>
+
+          <p class="john">JOHN: that’s good.</p>
+
+          <p class="john">JOHN: but personally speaking, i feel like total shit.</p>
+
+          <p class="john">JOHN: i think we should go back. </p>
+
+          <p class="john">JOHN: home, i mean.</p>
+
+          <p class="terezi">TEREZI: N... NO</p>
+        </div>
+        <p class="no-indent calliope-dead">she grabs him by the shirt. her voice begins to waver. he notices desperation
+          in the dark circles under her eyes. </p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="terezi">TEREZI: PL34S3 JOHN</p>
+
+          <p class="terezi">TEREZI: C4N W3 JUST</p>
+
+          <p class="terezi">TEREZI: ST4Y 4 L1TTL3 LONG3R?</p>
+        </div>
+        <p class="no-indent calliope-dead">his mind knows he must say no. his sense of self-preservation insists on it.
+          but he simply can’t. he redoubles his effort to ignore the pain. he fights back tears. she can sense his great
+          struggle but says nothing. with a tilt of his head, he gestures toward the car.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="john">JOHN: um. ok. </p>
+
+          <p class="john">JOHN: we can stay a little longer.</p>
+
+          <p class="john">JOHN: why don’t you rest in the back seat, so you can save your energy.</p>
+
+          <p class="john">JOHN: i’ll drive.</p>
+
+          <p class="john">JOHN: um.</p>
+
+          <p class="john">JOHN: not literally drive, but... you know.</p>
+        </div>
+        <p class="no-indent calliope-dead">terezi crawls in back, while john floats into the driver’s seat. he summons a
+          gust of wind to propel the car through the decaying medium, as he once did on the battlefield so long ago.
+          terezi closes her eyes the moment her head hits the seat. she snores heavily. john makes a concerted effort
+          not to be creepy about it, by his own estimation of the word’s meaning, yet cannot stop looking at her in the
+          rearview mirror. he tells himself it’s just to make sure she’s still breathing.</p>
+        <p class="calliope-dead">that it’s just to make sure she’s actually <em>there</em>.</p>
+      </div>
       <div class="o_story-nav type-hs-copy line-tight pad-x-0 pad-x-lg--md pad-b-lg">
         <div>
           <span>&gt;</span>
           <a href="Meat 29.html">==&gt; </a><br>
         </div>
       </div>
-  
-<footer id="story-footer" role="banner">
-  <div id="story_footer_container" class="o_story-page-footer flex pad-t-0 pad-x-0
+
+      <footer id="story-footer" role="banner">
+        <div id="story_footer_container" class="o_story-page-footer flex pad-t-0 pad-x-0
      flex-justify 
     ">
-      <div class="pad-l-lg--md mar-b-md type-hs-small type-hs-bottom--md type-center type-left--md">
-        <ul class="o_game-nav">
-          <li class="o_game-nav-item">
-            <a id="o_start-over" href="The Homestuck Epilogues.html">Start Over</a>
-          </li>
-            <li class="o_game-nav-item">
-              <a href="Meat 27.html">Go Back</a>
-            </li>
-        </ul>
-      </div>
-      <script>
-//<![CDATA[
-$(document).ready(function() { Gamenav.checkAutosave(); });
+          <div class="pad-l-lg--md mar-b-md type-hs-small type-hs-bottom--md type-center type-left--md">
+            <ul class="o_game-nav">
+              <li class="o_game-nav-item">
+                <a id="o_start-over" href="Choice Page.html">Start Over</a>
+              </li>
+              <li class="o_game-nav-item">
+                <a href="Meat 27.html">Go Back</a>
+              </li>
+            </ul>
+          </div>
+          <script>
+            //<![CDATA[
+            $(document).ready(function () { Gamenav.checkAutosave(); });
 //]]>
-</script>
+          </script>
 
-    <a href="javascript:void(0)" data-gamenav-open="" class="nav-btn nav-btn--center type-hs-small mar-b-md" style="text-decoration:none; text-transform: none; font-size:14px; line-height:14px;"><span>Options</span> <i class="icon-menu" style="margin:0;"></i></a>
+          <a href="javascript:void(0)" data-gamenav-open="" class="nav-btn nav-btn--center type-hs-small mar-b-md"
+            style="text-decoration:none; text-transform: none; font-size:14px; line-height:14px;"><span>Options</span>
+            <i class="icon-menu" style="margin:0;"></i></a>
+        </div>
+      </footer>
+
+
+    </div>
+  </div><iframe name="__tcfapiLocator" src="./Epilogue_files/saved_resource(2).html"
+    style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe>
+
+
+
+  <div class="o_site-footer row pos-r pad-t-rg pad-b-xl pad-b-0--md bg-dark-gray">
+    <div class="float-l"><img
+        src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif"
+        alt="Footer logo"><br></div>
+    <div class="float-r disp-n disp-bl--sm"><img
+        src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif"
+        alt="Footer logo"><br></div>
+    <div class="type-center pad-t-md--md">
+      <ul>
+        <li><a href="https://www.homestuck.com/contacts">Contacts</a></li>
+        <li><a href="https://www.homestuck.com/privacy">Privacy Policy</a></li>
+      </ul>
+      <div><span style="white-space:nowrap;">© 2018 Homestuck</span> <span style="white-space:nowrap;">and VIZ
+          Media</span></div>
+    </div>
   </div>
-</footer>
-
-
-  </div>
-</div><iframe name="__tcfapiLocator" src="./Epilogue_files/saved_resource(2).html" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe>
-
-
-    
-<div class="o_site-footer row pos-r pad-t-rg pad-b-xl pad-b-0--md bg-dark-gray">
-  <div class="float-l"><img src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif" alt="Footer logo"><br></div>
-  <div class="float-r disp-n disp-bl--sm"><img src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif" alt="Footer logo"><br></div>
-  <div class="type-center pad-t-md--md">
-    <ul>
-      <li><a href="https://www.homestuck.com/contacts">Contacts</a></li>
-      <li><a href="https://www.homestuck.com/privacy">Privacy Policy</a></li>
-    </ul>
-    <div><span style="white-space:nowrap;">© 2018 Homestuck</span> <span style="white-space:nowrap;">and VIZ Media</span></div>
-  </div>
-</div>
 
 
 
-    <div id="overlay" data-overlay-state="off" class="o_overlay"></div>
-    <div id="game_overlay" data-game-overlay-state="off" class="o_game-overlay"></div>
-    <div id="overlay_wait" data-overlay-state="off" class="o_overlay-wait"></div>
+  <div id="overlay" data-overlay-state="off" class="o_overlay"></div>
+  <div id="game_overlay" data-game-overlay-state="off" class="o_game-overlay"></div>
+  <div id="overlay_wait" data-overlay-state="off" class="o_overlay-wait"></div>
 
 
 
-  
 
-<iframe name="googlefcPresent" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;" src="./Epilogue_files/saved_resource(6).html" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe></body></html>
+
+  <iframe name="googlefcPresent"
+    style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"
+    src="./Epilogue_files/saved_resource(6).html"
+    style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe>
+</body>
+
+</html>

@@ -1,608 +1,769 @@
 <!DOCTYPE html>
 
-<html dir="ltr" lang="en-US"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html dir="ltr" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <!-- application -->
-    <script async="" src="./Epilogue_files/jquery-1.11.3.min.js.download"></script>
-    
-<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"1b930da09b","applicationID":"65900267","transactionName":"cFkNREpaWA9dF0pBVlRTEB9LQVsRQQ==","queueTime":0,"applicationTime":5,"agent":""}</script>
-<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"1b930da09b",applicationID:"65900267"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="format-detection" content="telephone=no">
-    <title>The Homestuck Epilogues</title>
-    <meta name="description" content="Tales of dubious authenticity.">
-    <script>
-//<![CDATA[
-var getGAEventLabel = function(){ return "The Homestuck Epilogues"; };
+  <script async="" src="./Epilogue_files/jquery-1.11.3.min.js.download"></script>
+
+  <script>window.NREUM || (NREUM = {}); NREUM.info = { "beacon": "bam-cell.nr-data.net", "errorBeacon": "bam-cell.nr-data.net", "licenseKey": "1b930da09b", "applicationID": "65900267", "transactionName": "cFkNREpaWA9dF0pBVlRTEB9LQVsRQQ==", "queueTime": 0, "applicationTime": 5, "agent": "" }</script>
+  <script>(window.NREUM || (NREUM = {})).loader_config = { licenseKey: "1b930da09b", applicationID: "65900267" }; window.NREUM || (NREUM = {}), __nr_require = function (t, e, n) { function r(n) { if (!e[ n ]) { var i = e[ n ] = { exports: {} }; t[ n ][ 0 ].call(i.exports, function (e) { var i = t[ n ][ 1 ][ e ]; return r(i || e) }, i, i.exports) } return e[ n ].exports } if ("function" == typeof __nr_require) return __nr_require; for (var i = 0; i < n.length; i++)r(n[ i ]); return r }({ 1: [ function (t, e, n) { function r() { } function i(t, e, n) { return function () { return o(t, [ u.now() ].concat(f(arguments)), e ? null : this, n), e ? void 0 : this } } var o = t("handle"), a = t(8), f = t(9), c = t("ee").get("tracer"), u = t("loader"), s = NREUM; "undefined" == typeof window.newrelic && (newrelic = s); var d = [ "setPageViewName", "setCustomAttribute", "setErrorHandler", "finished", "addToTrace", "inlineHit", "addRelease" ], p = "api-", l = p + "ixn-"; a(d, function (t, e) { s[ e ] = i(p + e, !0, "api") }), s.addPageAction = i(p + "addPageAction", !0), s.setCurrentRouteName = i(p + "routeName", !0), e.exports = newrelic, s.interaction = function () { return (new r).get() }; var m = r.prototype = { createTracer: function (t, e) { var n = {}, r = this, i = "function" == typeof e; return o(l + "tracer", [ u.now(), t, n ], r), function () { if (c.emit((i ? "" : "no-") + "fn-start", [ u.now(), r, i ], n), i) try { return e.apply(this, arguments) } catch (t) { throw c.emit("fn-err", [ arguments, this, t ], n), t } finally { c.emit("fn-end", [ u.now() ], n) } } } }; a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","), function (t, e) { m[ e ] = i(l + e) }), newrelic.noticeError = function (t, e) { "string" == typeof t && (t = new Error(t)), o("err", [ t, u.now(), !1, e ]) } }, {} ], 2: [ function (t, e, n) { function r(t) { if (NREUM.init) { for (var e = NREUM.init, n = t.split("."), r = 0; r < n.length - 1; r++)if (e = e[ n[ r ] ], "object" != typeof e) return; return e = e[ n[ n.length - 1 ] ] } } e.exports = { getConfiguration: r } }, {} ], 3: [ function (t, e, n) { function r() { return f.exists && performance.now ? Math.round(performance.now()) : (o = Math.max((new Date).getTime(), o)) - a } function i() { return o } var o = (new Date).getTime(), a = o, f = t(10); e.exports = r, e.exports.offset = a, e.exports.getLastTimestamp = i }, {} ], 4: [ function (t, e, n) { function r(t) { return !(!t || !t.protocol || "file:" === t.protocol) } e.exports = r }, {} ], 5: [ function (t, e, n) { function r(t, e) { var n = t.getEntries(); n.forEach(function (t) { "first-paint" === t.name ? d("timing", [ "fp", Math.floor(t.startTime) ]) : "first-contentful-paint" === t.name && d("timing", [ "fcp", Math.floor(t.startTime) ]) }) } function i(t, e) { var n = t.getEntries(); n.length > 0 && d("lcp", [ n[ n.length - 1 ] ]) } function o(t) { t.getEntries().forEach(function (t) { t.hadRecentInput || d("cls", [ t ]) }) } function a(t) { if (t instanceof m && !g) { var e = Math.round(t.timeStamp), n = { type: t.type }; e <= p.now() ? n.fid = p.now() - e : e > p.offset && e <= Date.now() ? (e -= p.offset, n.fid = p.now() - e) : e = p.now(), g = !0, d("timing", [ "fi", e, n ]) } } function f(t) { "hidden" === t && d("pageHide", [ p.now() ]) } if (!("init" in NREUM && "page_view_timing" in NREUM.init && "enabled" in NREUM.init.page_view_timing && NREUM.init.page_view_timing.enabled === !1)) { var c, u, s, d = t("handle"), p = t("loader"), l = t(7), m = NREUM.o.EV; if ("PerformanceObserver" in window && "function" == typeof window.PerformanceObserver) { c = new PerformanceObserver(r); try { c.observe({ entryTypes: [ "paint" ] }) } catch (v) { } u = new PerformanceObserver(i); try { u.observe({ entryTypes: [ "largest-contentful-paint" ] }) } catch (v) { } s = new PerformanceObserver(o); try { s.observe({ type: "layout-shift", buffered: !0 }) } catch (v) { } } if ("addEventListener" in document) { var g = !1, h = [ "click", "keydown", "mousedown", "pointerdown", "touchstart" ]; h.forEach(function (t) { document.addEventListener(t, a, !1) }) } l(f) } }, {} ], 6: [ function (t, e, n) { function r(t, e) { if (!i) return !1; if (t !== i) return !1; if (!e) return !0; if (!o) return !1; for (var n = o.split("."), r = e.split("."), a = 0; a < r.length; a++)if (r[ a ] !== n[ a ]) return !1; return !0 } var i = null, o = null, a = /Version\/(\S+)\s+Safari/; if (navigator.userAgent) { var f = navigator.userAgent, c = f.match(a); c && f.indexOf("Chrome") === -1 && f.indexOf("Chromium") === -1 && (i = "Safari", o = c[ 1 ]) } e.exports = { agent: i, version: o, match: r } }, {} ], 7: [ function (t, e, n) { function r(t) { function e() { t(a && document[ a ] ? document[ a ] : document[ i ] ? "hidden" : "visible") } "addEventListener" in document && o && document.addEventListener(o, e, !1) } e.exports = r; var i, o, a; "undefined" != typeof document.hidden ? (i = "hidden", o = "visibilitychange", a = "visibilityState") : "undefined" != typeof document.msHidden ? (i = "msHidden", o = "msvisibilitychange") : "undefined" != typeof document.webkitHidden && (i = "webkitHidden", o = "webkitvisibilitychange", a = "webkitVisibilityState") }, {} ], 8: [ function (t, e, n) { function r(t, e) { var n = [], r = "", o = 0; for (r in t) i.call(t, r) && (n[ o ] = e(r, t[ r ]), o += 1); return n } var i = Object.prototype.hasOwnProperty; e.exports = r }, {} ], 9: [ function (t, e, n) { function r(t, e, n) { e || (e = 0), "undefined" == typeof n && (n = t ? t.length : 0); for (var r = -1, i = n - e || 0, o = Array(i < 0 ? 0 : i); ++r < i;)o[ r ] = t[ e + r ]; return o } e.exports = r }, {} ], 10: [ function (t, e, n) { e.exports = { exists: "undefined" != typeof window.performance && window.performance.timing && "undefined" != typeof window.performance.timing.navigationStart } }, {} ], ee: [ function (t, e, n) { function r() { } function i(t) { function e(t) { return t && t instanceof r ? t : t ? u(t, c, a) : a() } function n(n, r, i, o, a) { if (a !== !1 && (a = !0), !l.aborted || o) { t && a && t(n, r, i); for (var f = e(i), c = v(n), u = c.length, s = 0; s < u; s++)c[ s ].apply(f, r); var p = d[ w[ n ] ]; return p && p.push([ b, n, r, f ]), f } } function o(t, e) { y[ t ] = v(t).concat(e) } function m(t, e) { var n = y[ t ]; if (n) for (var r = 0; r < n.length; r++)n[ r ] === e && n.splice(r, 1) } function v(t) { return y[ t ] || [] } function g(t) { return p[ t ] = p[ t ] || i(n) } function h(t, e) { l.aborted || s(t, function (t, n) { e = e || "feature", w[ n ] = e, e in d || (d[ e ] = []) }) } var y = {}, w = {}, b = { on: o, addEventListener: o, removeEventListener: m, emit: n, get: g, listeners: v, context: e, buffer: h, abort: f, aborted: !1 }; return b } function o(t) { return u(t, c, a) } function a() { return new r } function f() { (d.api || d.feature) && (l.aborted = !0, d = l.backlog = {}) } var c = "nr@context", u = t("gos"), s = t(8), d = {}, p = {}, l = e.exports = i(); e.exports.getOrSetContext = o, l.backlog = d }, {} ], gos: [ function (t, e, n) { function r(t, e, n) { if (i.call(t, e)) return t[ e ]; var r = n(); if (Object.defineProperty && Object.keys) try { return Object.defineProperty(t, e, { value: r, writable: !0, enumerable: !1 }), r } catch (o) { } return t[ e ] = r, r } var i = Object.prototype.hasOwnProperty; e.exports = r }, {} ], handle: [ function (t, e, n) { function r(t, e, n, r) { i.buffer([ t ], r), i.emit(t, e, n) } var i = t("ee").get("handle"); e.exports = r, r.ee = i }, {} ], id: [ function (t, e, n) { function r(t) { var e = typeof t; return !t || "object" !== e && "function" !== e ? -1 : t === window ? 0 : a(t, o, function () { return i++ }) } var i = 1, o = "nr@id", a = t("gos"); e.exports = r }, {} ], loader: [ function (t, e, n) { function r() { if (!R++) { var t = M.info = NREUM.info, e = v.getElementsByTagName("script")[ 0 ]; if (setTimeout(u.abort, 3e4), !(t && t.licenseKey && t.applicationID && e)) return u.abort(); c(E, function (e, n) { t[ e ] || (t[ e ] = n) }); var n = a(); f("mark", [ "onload", n + M.offset ], null, "api"), f("timing", [ "load", n ]); var r = v.createElement("script"); 0 === t.agent.indexOf("http://") || 0 === t.agent.indexOf("https://") ? r.src = t.agent : r.src = l + "://" + t.agent, e.parentNode.insertBefore(r, e) } } function i() { "complete" === v.readyState && o() } function o() { f("mark", [ "domContent", a() + M.offset ], null, "api") } var a = t(3), f = t("handle"), c = t(8), u = t("ee"), s = t(6), d = t(4), p = t(2), l = p.getConfiguration("ssl") === !1 ? "http" : "https", m = window, v = m.document, g = "addEventListener", h = "attachEvent", y = m.XMLHttpRequest, w = y && y.prototype, b = !d(m.location); NREUM.o = { ST: setTimeout, SI: m.setImmediate, CT: clearTimeout, XHR: y, REQ: m.Request, EV: m.Event, PR: m.Promise, MO: m.MutationObserver }; var x = "" + location, E = { beacon: "bam.nr-data.net", errorBeacon: "bam.nr-data.net", agent: "js-agent.newrelic.com/nr-1210.min.js" }, O = y && w && w[ g ] && !/CriOS/.test(navigator.userAgent), M = e.exports = { offset: a.getLastTimestamp(), now: a, origin: x, features: {}, xhrWrappable: O, userAgent: s, disabled: b }; if (!b) { t(1), t(5), v[ g ] ? (v[ g ]("DOMContentLoaded", o, !1), m[ g ]("load", r, !1)) : (v[ h ]("onreadystatechange", i), m[ h ]("onload", r)), f("mark", [ "firstbyte", a.getLastTimestamp() ], null, "api"); var R = 0 } }, {} ], "wrap-function": [ function (t, e, n) { function r(t, e) { function n(e, n, r, c, u) { function nrWrapper() { var o, a, s, p; try { a = this, o = d(arguments), s = "function" == typeof r ? r(o, a) : r || {} } catch (l) { i([ l, "", [ o, a, c ], s ], t) } f(n + "start", [ o, a, c ], s, u); try { return p = e.apply(a, o) } catch (m) { throw f(n + "err", [ o, a, m ], s, u), m } finally { f(n + "end", [ o, a, p ], s, u) } } return a(e) ? e : (n || (n = ""), nrWrapper[ p ] = e, o(e, nrWrapper, t), nrWrapper) } function r(t, e, r, i, o) { r || (r = ""); var f, c, u, s = "-" === r.charAt(0); for (u = 0; u < e.length; u++)c = e[ u ], f = t[ c ], a(f) || (t[ c ] = n(f, s ? c + r : r, i, c, o)) } function f(n, r, o, a) { if (!m || e) { var f = m; m = !0; try { t.emit(n, r, o, e, a) } catch (c) { i([ c, n, r, o ], t) } m = f } } return t || (t = s), n.inPlace = r, n.flag = p, n } function i(t, e) { e || (e = s); try { e.emit("internal-error", t) } catch (n) { } } function o(t, e, n) { if (Object.defineProperty && Object.keys) try { var r = Object.keys(t); return r.forEach(function (n) { Object.defineProperty(e, n, { get: function () { return t[ n ] }, set: function (e) { return t[ n ] = e, e } }) }), e } catch (o) { i([ o ], n) } for (var a in t) l.call(t, a) && (e[ a ] = t[ a ]); return e } function a(t) { return !(t && t instanceof Function && t.apply && !t[ p ]) } function f(t, e) { var n = e(t); return n[ p ] = t, o(t, n, s), n } function c(t, e, n) { var r = t[ e ]; t[ e ] = f(r, n) } function u() { for (var t = arguments.length, e = new Array(t), n = 0; n < t; ++n)e[ n ] = arguments[ n ]; return e } var s = t("ee"), d = t(9), p = "nr@original", l = Object.prototype.hasOwnProperty, m = !1; e.exports = r, e.exports.wrapFunction = f, e.exports.wrapInPlace = c, e.exports.argsToArray = u }, {} ] }, {}, [ "loader" ]);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <title>The Homestuck Epilogues</title>
+  <meta name="description" content="Tales of dubious authenticity.">
+  <script>
+    //<![CDATA[
+    var getGAEventLabel = function () { return "The Homestuck Epilogues"; };
 //]]>
-</script>
-      <link rel="canonical" href="Meat 38.html">
+  </script>
+  <link rel="canonical" href="Meat 38.html">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="https://www.homestuck.com/favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://www.homestuck.com/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://www.homestuck.com/favicon/favicon-16x16.png">
-<link rel="manifest" href="https://www.homestuck.com/favicon/manifest.json">
-<link rel="mask-icon" href="https://www.homestuck.com/favicon/safari-pinned-tab.svg" color="#6bbe4a">
-<meta name="theme-color" content="#ffffff">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www.homestuck.com/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://www.homestuck.com/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://www.homestuck.com/favicon/favicon-16x16.png">
+  <link rel="manifest" href="https://www.homestuck.com/favicon/manifest.json">
+  <link rel="mask-icon" href="https://www.homestuck.com/favicon/safari-pinned-tab.svg" color="#6bbe4a">
+  <meta name="theme-color" content="#ffffff">
 
-        <link rel="stylesheet" media="all" href="./Epilogue_files/manifest-epilogue-1694f2c1abc80cf72e84324f6d6486e6f04b02358ed667dee36c88974eef388f.css">
-      <link rel="stylesheet" href="./Epilogue_files/kek1uwn.css">
-    <link rel="stylesheet" media="all" href="./Epilogue_files/manifest-ui-e03365bbb17dde0f1fd5463dd7b56d096a27cae55aa131b72684e36c1f0c80f6.css">
-    <script src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE=(1)"></script>
-    <script src="./Epilogue_files/manifest-ads-story-1885683d55d6f631dc202ac5db87250ca938be96a613e85bb93739ecc057540e.js.download"></script>
+  <link rel="stylesheet" media="all"
+    href="./Epilogue_files/manifest-epilogue-1694f2c1abc80cf72e84324f6d6486e6f04b02358ed667dee36c88974eef388f.css">
+  <link rel="stylesheet" href="./Epilogue_files/kek1uwn.css">
+  <link rel="stylesheet" media="all"
+    href="./Epilogue_files/manifest-ui-e03365bbb17dde0f1fd5463dd7b56d096a27cae55aa131b72684e36c1f0c80f6.css">
+  <script
+    src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE=(1)"></script>
+  <script
+    src="./Epilogue_files/manifest-ads-story-1885683d55d6f631dc202ac5db87250ca938be96a613e85bb93739ecc057540e.js.download"></script>
 
 
-    <!-- //Connect Container: Homestuck-->
-<script src="./Epilogue_files/tag.min.js.download" async="" defer=""></script>
-  <script src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE="></script></head>
-  
-  <body class="epilogue">
+  <!-- //Connect Container: Homestuck-->
+  <script src="./Epilogue_files/tag.min.js.download" async="" defer=""></script>
+  <script
+    src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE="></script>
+</head>
 
-    
-    <header id="site-header" role="banner">
-  <div id="header-container" class="o_story-page-header row flex pad-t-0 ">
-    <a href="javascript:void(0)" data-nav-open="" class="nav-btn nav-btn--center color-white" style="overflow-wrap:normal;text-decoration:none;"><i class="icon-menu"></i><span>Menu</span></a>
-    <nav id="nav-container" data-nav-state="closed" role="navigation" class="o_nav-container">
-      <a href="javascript:void(0)" data-nav-close="" class="nav-btn color-white pad-y-rg type-rg" style="overflow-wrap:normal;text-decoration:none;"><i class="icon-close"></i><span>Dismiss</span></a>
-      <ul id="primary-nav" class="o_primary-nav style-caps weight-bold disp-ib color-white type-rg">
-     <li class="o_primary-nav-item slide-candycorn pipe"><a class="o_primary-nav-link" style="color:#39d5f6" href="Read.html">READ</a></li><!--
-     --><li class="o_primary-nav-item"><a class="o_primary-nav-link" style="color:#39d5f6" href="Credits.html">INFO</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-    
+<body class="epilogue">
 
-    <div class="row bg-white bg-light-gray--md pad-t-md--md pos-r">
-  <div id="content_container" class="mar-x-auto disp-bl bg-white" style="max-width:650px;">
-  <h2 class="pad-t-lg pad-x-lg--md type-center type-hsep-header line-tight type-xl">EPILOGUE SEVEN</h2>
-    <div class="pos-r pad-t-sm pad-x-lg--md type-center" style="overflow:visible; height:72px;">
-      <img class="hsep_bullet" alt="Chapter" src="./Epilogue_files/meat_60x60-a20ba4eabbf9e6c7e4778d99648c13802fc7ff42a24bc48bc0535494cdd82195.png">
-      <h3 class="disp-ib type-hsep-header line-tight type-lg pad-t-sm">
-        38
-      </h3>
+
+  <header id="site-header" role="banner">
+    <div id="header-container" class="o_story-page-header row flex pad-t-0 ">
+      <a href="javascript:void(0)" data-nav-open="" class="nav-btn nav-btn--center color-white"
+        style="overflow-wrap:normal;text-decoration:none;"><i class="icon-menu"></i><span>Menu</span></a>
+      <nav id="nav-container" data-nav-state="closed" role="navigation" class="o_nav-container">
+        <a href="javascript:void(0)" data-nav-close="" class="nav-btn color-white pad-y-rg type-rg"
+          style="overflow-wrap:normal;text-decoration:none;"><i class="icon-close"></i><span>Dismiss</span></a>
+        <ul id="primary-nav" class="o_primary-nav style-caps weight-bold disp-ib color-white type-rg">
+          <li class="o_primary-nav-item slide-candycorn pipe"><a class="o_primary-nav-link" style="color:#39d5f6"
+              href="Read.html">READ</a></li>
+          <!--
+     -->
+          <li class="o_primary-nav-item"><a class="o_primary-nav-link" style="color:#39d5f6"
+              href="Credits.html">INFO</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <div class="row bg-white bg-light-gray--md pad-t-md--md pos-r">
+    <div id="content_container" class="mar-x-auto disp-bl bg-white" style="max-width:650px;">
+      <h2 class="pad-t-lg pad-x-lg--md type-center type-hsep-header line-tight type-xl">EPILOGUE SEVEN</h2>
+      <div class="pos-r pad-t-sm pad-x-lg--md type-center" style="overflow:visible; height:72px;">
+        <img class="hsep_bullet" alt="Chapter"
+          src="./Epilogue_files/meat_60x60-a20ba4eabbf9e6c7e4778d99648c13802fc7ff42a24bc48bc0535494cdd82195.png">
+        <h3 class="disp-ib type-hsep-header line-tight type-lg pad-t-sm">
+          38
+        </h3>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="row bg-white bg-light-gray--md pad-b-md pad-b-lg--md pos-r pad-t-md pad-t-0--md">
-  <div class="mar-x-auto disp-bl bg-white pad-t-lg" style="max-width:650px;">
-      <div class="o-story_text o_epilogue type-rg type-sm--md line-caption line-copy--md pad-x-0 pad-x-lg--md pad-b-lg">  <p class="no-indent dirk"><span class="opener type-hs-opener-rg type-hs-opener-sm--md">B</span>ut before we get completely out of dodge, there’s one more trifling matter I’d better take care of.</p>
-  <p class="dirk">It’s a big day, but not one my dear brotherson and his irascible boywife seem to be relishing. Dave and Karkat are both squatting in their shameful bunker of defeat, all the curtains drawn shut so that the sunlight cannot disturb an atmosphere that was carefully cultivated to facilitate their sourpuss moping.</p>
-  <p class="dirk">The only illumination is emanating from their television screen, which broadcasts the bright and sunny scene of Jane’s inauguration. She stands at a podium in front of a crowd of thousands of her adoring fans and subjects, belting out one killer speech. I wrote it, so you know it’s good.</p>
-  <p class="dirk">But the mood in here is heavy. I think they’ve been coasting on denial for a while, but today is the day they have to finally accept that there are no take-backs, no do-overs: Jane is the president, and that’s that. </p>
-  <p class="dirk">Karkat’s all balled up on the couch as he stares hatefully at the televised production. He doesn’t look up when Dave walks back into the room, carrying two massive bottles of liquor. </p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="dave">DAVE: hey</p>
-  
-  <p class="dave">DAVE: want to get drunk</p>
-</div>
-  <p class="no-indent dirk">Huh.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="karkat">KARKAT: HUH?</p>
-  
-  <p class="dave">DAVE: i went and got all this fucking booze</p>
-  
-  <p class="karkat">KARKAT: YOU *GOT* BOOZE?</p>
-  
-  <p class="dave">DAVE: yeah check it</p>
+  <div class="row bg-white bg-light-gray--md pad-b-md pad-b-lg--md pos-r pad-t-md pad-t-0--md">
+    <div class="mar-x-auto disp-bl bg-white pad-t-lg" style="max-width:650px;">
+      <div class="o-story_text o_epilogue type-rg type-sm--md line-caption line-copy--md pad-x-0 pad-x-lg--md pad-b-lg">
+        <p class="no-indent dirk"><span class="opener type-hs-opener-rg type-hs-opener-sm--md">B</span>ut before we get
+          completely out of dodge, there’s one more trifling matter I’d better take care of.</p>
+        <p class="dirk">It’s a big day, but not one my dear brotherson and his irascible boywife seem to be relishing.
+          Dave and Karkat are both squatting in their shameful bunker of defeat, all the curtains drawn shut so that the
+          sunlight cannot disturb an atmosphere that was carefully cultivated to facilitate their sourpuss moping.</p>
+        <p class="dirk">The only illumination is emanating from their television screen, which broadcasts the bright and
+          sunny scene of Jane’s inauguration. She stands at a podium in front of a crowd of thousands of her adoring
+          fans and subjects, belting out one killer speech. I wrote it, so you know it’s good.</p>
+        <p class="dirk">But the mood in here is heavy. I think they’ve been coasting on denial for a while, but today is
+          the day they have to finally accept that there are no take-backs, no do-overs: Jane is the president, and
+          that’s that. </p>
+        <p class="dirk">Karkat’s all balled up on the couch as he stares hatefully at the televised production. He
+          doesn’t look up when Dave walks back into the room, carrying two massive bottles of liquor. </p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="dave">DAVE: hey</p>
 
-  <p class="karkat">KARKAT: YOU ACTUALLY WENT AND *GOT* IT.</p>
+          <p class="dave">DAVE: want to get drunk</p>
+        </div>
+        <p class="no-indent dirk">Huh.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="karkat">KARKAT: HUH?</p>
 
-  <p class="karkat">KARKAT: LIKE, YOU LITERALLY LEFT THE HOUSE AND EXCHANGED CURRENCY WITH A REAL, LIVE PERSON TO OBTAIN ALCOHOL.</p>
+          <p class="dave">DAVE: i went and got all this fucking booze</p>
 
-  <p class="dave">DAVE: yeah i walked into the boozery all pigeon toed and embarrassed </p>
-  
-  <p class="dave">DAVE: like some fuckin hooch noob</p>
-  
-  <p class="dave">DAVE: was all like yo whats the most pathetic thing you got to drink yourself to death with</p>
+          <p class="karkat">KARKAT: YOU *GOT* BOOZE?</p>
 
-  <p class="karkat">KARKAT: THE BOOZERY???</p>
+          <p class="dave">DAVE: yeah check it</p>
 
-  <p class="dave">DAVE: passed right by the box wine</p>
+          <p class="karkat">KARKAT: YOU ACTUALLY WENT AND *GOT* IT.</p>
 
-  <p class="dave">DAVE: the bagged wine</p>
+          <p class="karkat">KARKAT: LIKE, YOU LITERALLY LEFT THE HOUSE AND EXCHANGED CURRENCY WITH A REAL, LIVE PERSON
+            TO OBTAIN ALCOHOL.</p>
 
-  <p class="dave">DAVE: the shots they put in those little blister packs by the register</p>
+          <p class="dave">DAVE: yeah i walked into the boozery all pigeon toed and embarrassed </p>
 
-  <p class="dave">DAVE: the wine in the little sippy cups with the disposable plastic straws like juice for fucking babies</p>
+          <p class="dave">DAVE: like some fuckin hooch noob</p>
 
-  <p class="dave">DAVE: i made that last one up i dont actually know anything about alcohol</p>
+          <p class="dave">DAVE: was all like yo whats the most pathetic thing you got to drink yourself to death with
+          </p>
 
-  <p class="dave">DAVE: anyway two plastic soda bottles of vodka cooler seems to be about where were at right now</p>
+          <p class="karkat">KARKAT: THE BOOZERY???</p>
 
-  <p class="dave">DAVE: i think thats what this is anyway</p>
+          <p class="dave">DAVE: passed right by the box wine</p>
 
-  <p class="dave">DAVE: i dont really care long as it gets the job done</p>
-  
-  <p class="dave">DAVE: i decided that im an alcoholic now </p>
-</div>
-  <p class="no-indent dirk">I’ve always found inebriation to be distasteful, really. Never understood the personal appeal of it, and after seeing how indelicately its effects have touched the other members of our family, I can’t help but feel like it’s a waste of everybody’s fucking time. I’d have half a mind to tell him to dump it all in the sink, if I weren’t cutting it down to the wire as it is.</p>
-  <p class="dirk">But you know what? Go the fuck ahead, bro. Might help him ease those ridiculous inhibitions for once in his life. Slide the stick out of his ass. Maybe slide something else up there instead, if you catch my drift. But I don’t want to get ahead of myself here. At this stage, anything could happen.</p>
-  <p class="dirk">Dave sits beside Karkat on the couch, and sets the alcohol down on the table in front of him. He sinks heavily into the cushioning with a sigh.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="karkat">KARKAT: HAVE YOU NOW.</p>
-  
-  <p class="dave">DAVE: yeah</p>
-  
-  <p class="dave">DAVE: its never too late to develop a substance abuse problem</p>
-  
-  <p class="dave">DAVE: ive been thinking about it for a while and it seems like its time for me to finally get on the wagon of not being on the wagon</p>
-  
-  <p class="karkat">KARKAT: THAT’S REALLY GREAT, DAVE.</p>
-  
-  <p class="dave">DAVE: thanks</p>
-  
-  <p class="dave">DAVE: anyway hows the inauguration </p>
-  
-  <p class="dave">DAVE: you having a good time dwelling on every tiny little factor that cumulatively led to our electoral defeat</p>
-  
-  <p class="dave">DAVE: and how if just one thing had been different it would have been us up there</p>
-  
-  <p class="karkat">KARKAT: UGH.</p>
-  
-  <p class="karkat">KARKAT: YOU AND I BOTH KNOW NOTHING MATTERED IN THAT CAMPAIGN BUT JAKE’S FUCKING SPEECH.</p>
-  
-  <p class="dave">DAVE: yeah</p>
-  
-  <p class="dave">DAVE: i mean, like</p>
-  
-  <p class="dave">DAVE: i just keep imagining what wouldve happened if that absurd rube goldberg machine of life ruining humiliation had been stopped at any point </p>
-  
-  <p class="dave">DAVE: maybe just being backstabbed by his endorsement alone was something we couldve recovered from with some rigorous counter campaigning</p>
-  
-  <p class="dave">DAVE: but what if i had been fast enough to cut him off before hed even said anything</p>
-  
-  <p class="dave">DAVE: what if i hadnt accidentally fallen on him on the stage when i was rushing over there to stop him</p>
-  
-  <p class="dave">DAVE: what if he hadnt freaked out like i set off fireworks next to a nam vet and started trying to fucking scrum me </p>
-  
-  <p class="dave">DAVE: what if id just backed away from his punch with my legs like a normal person instead of warping the flow of time to escape causing him to become so startled he shit his pants</p>
-  
-  <p class="dave">DAVE: what if i hadnt gotten so visibly grossed out by the smell that even the people watching it on tv could tell what had happened</p>
-  
-  <p class="dave">DAVE: what if he hadnt started sobbing when the audience in the front rows started throwing up</p>
-  
-  <p class="dave">DAVE: what if wed had better security and stopped that lady from running onstage during the fracas and announcing that jake has been dodging paying child support for their 3 kids</p>
-  
-  <p class="dave">DAVE: like what was the LINE</p>
-  
-  <p class="karkat">KARKAT: IT WASN’T... *THAT* BAD.</p>
-  
-  <p class="dave">DAVE: you think</p>
-</div>
-  <p class="no-indent dirk">Karkat falls into a vacant, thousand-yard stare.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="dave">DAVE: yeah see thats why im an alcoholic now</p>
-  
-  <p class="dave">DAVE: want a drink</p>
-</div>
-  <p class="no-indent dirk">I have sympathy, I really do. It’s tough to devote so much time and effort to something, come so close to tasting victory, just to have it snatched out of your grasp at the final instant. I might even feel bad about it in any other circumstance.</p>
-  <p class="dirk">But this was how things had to be. It’s better this way. They know that. At least, Karkat certainly does.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="karkat">KARKAT: IF I’M BEING PERFECTLY FUCKING HONEST</p>
-  
-  <p class="karkat">KARKAT: I’M GLAD I LOST. I NEVER WANTED TO FUCKING WIN IN THE FIRST PLACE.</p>
-  
-  <p class="dave">DAVE: dude come on</p>
-  
-  <p class="karkat">KARKAT: NO, I’M BEING SERIOUS.</p>
-  
-  <p class="karkat">KARKAT: I’M NOT EVEN DOING SOME SOUR GRAPES “I NEVER WANTED IT IN THE FIRST PLACE BECAUSE I’M A SORE LOSER TRYING TO DELUDE MYSELF INTO THINKING I DON’T CARE” SORT OF THING.</p>
-  
-  <p class="karkat">KARKAT: OBVIOUSLY I FUCKING CARE SINCE NOW THE PLANET IS GOING TO BE COMPLETELY RUINED BY THIS JUMPED-UP FASCIST DICTATOR WHO HAS EVERY INTENTION OF GRADUALLY GENOCIDING MY SPECIES INTO NONEXISTENCE BEFORE MY VERY EYES.</p>
-  
-  <p class="karkat">KARKAT: BUT I CANNOT FUCKING THINK OF A SINGLE THING IN THE UNIVERSE I WANTED TO DO LESS THAN BE THE STUPID FUCKING PRESIDENT.</p>
-  
-  <p class="karkat">KARKAT: THANK HUMAN OBAMA.</p>
-  
-  <p class="dave">DAVE: wait was there a troll obama</p>
-  
-  <p class="karkat">KARKAT: I’M THE FUCKING TROLL OBAMA, REMEMBER?</p>
-  
-  <p class="dave">DAVE: karkat</p>
-  
-  <p class="dave">DAVE: you wouldve been so much more than obama</p>
-</div>
-  <p class="no-indent dirk">God damn if that isn’t the most romantic fucking thing I’ve ever heard.</p>
-  <p class="dirk">If Karkat had anything resembling a spine, he’d turn to Dave with those big, sparkling shoujo eyes and finally open his tsundere heart to consummating their painfully obvious and mutually reciprocated passion. But he doesn’t, so he gives a noncommittal little sniff and turns back to the inauguration instead. </p>
-  <p class="dirk">Obviously, I’ve got an agenda here. It’s pretty clear to me what these guys want out of this relationship, despite the fact that both of them being bottoms evidently makes it impossible for them to pass whatever last ludicrous psychological obstacle stands between them and nonstop, animalistic fucking. I’ve let it go on like this for long enough. These stooges clearly need some help. </p>
-  <p class="dirk">I could insist that they just fucking go for it already, using the methods available to me. I’d rather not. There are certain boundaries I’m not inclined to cross, primarily in service to the emotional integrity of my friends’ respective personal arcs. The little moments like these don’t mean anything if they’re coming from me, do they?</p>
-  <p class="dirk">As such, insistence isn’t the tool I’d prefer. Persuasion is the one I reach for. And in a case like this, I can’t imagine it’s going to take that much.</p>
-  <p class="dirk">They fall into another silence that’s more comfortable than it has any right to be. The crowd is really going nuts for Jane now, since she’s hit one of the best parts of my speech. She’s just blasting the fuck off about how good the economy’s going to get. I can feel Dave’s teeth grinding all the way down to the narrative fabric of reality.</p>
-  <p class="dirk">Dave reaches out for the booze. It’s past time to get wasted, he thinks.</p>
-  <p class="dirk">But Karkat is starting to realize how much all of Dave’s efforts mean to him. It’s really welling up inside him now. He’s so emotional about it that he can’t help but say something. </p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="karkat">KARKAT: HEY.</p>
-</div>
-  <p class="no-indent dirk">Dave stops with his arm outstretched. His gaze turns to meet Karkat’s, but Karkat can’t bear to hold the eye contact for long. Looking at Dave is like staring straight at the sun. He is awfully handsome, isn’t he? Then again, crawling out of a primo gene pool does have its benefits.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="dave">DAVE: yeah buddy whats up</p>
-  
-  <p class="karkat">KARKAT: I JUST... </p>
-  
-  <p class="dave">DAVE: hey dont worry about it</p>
-  
-  <p class="dave">DAVE: you dont have to explain yourself to me</p>
-  
-  <p class="dave">DAVE: i get it</p>
-  
-  <p class="dave">DAVE: it makes sense. id always felt the same way kind of</p>
-  
-  <p class="dave">DAVE: like about all my shit with sburb and whatever. the reluctant heros journey</p>
-  
-  <p class="dave">DAVE: that feeling where youre being dragged along to being a kind of guy everyone is saying you have to be but youve never felt like theres any way you can really BECOME</p>
-  
-  <p class="dave">DAVE: where every second you feel so sick with your own self doubt and fear that you cant bear to even imagine the future</p>
-  
-  <p class="dave">DAVE: and you think</p>
-  
-  <p class="dave">DAVE: why me</p>
-  
-  <p class="dave">DAVE: even though you know it cant be anyone but you</p>
-  
-  <p class="dave">DAVE: and thats why you do it</p>
-  
-  <p class="karkat">KARKAT: YEAH.</p>
-  
-  <p class="dave">DAVE: lol</p>
-  
-  <p class="karkat">KARKAT: I WASN’T TRYING TO EXPLAIN MYSELF, THOUGH.</p>
-  
-  <p class="karkat">KARKAT: I JUST WANTED TO THANK YOU.</p>
-  
-  <p class="dave">DAVE: huh</p>
-  
-  <p class="dave">DAVE: for what</p>
-</div>
-  <p class="no-indent dirk">Karkat’s eyes drift from the TV to the floor. The slightest of smiles tugs at the corners of his mouth. He feels something warm inside of his chest. It feels right. It’s something he needs to say. </p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="karkat">KARKAT: FOR... EVERYTHING.</p>
-  
-  <p class="karkat">KARKAT: EVEN IF WE DIDN’T WIN, I’M GLAD WE TRIED.</p>
-  
-  <p class="karkat">KARKAT: I’M GLAD WE WENT THROUGH THIS TOGETHER.</p>
-  
-  <p class="dave">DAVE: me too</p>
-  
-  <p class="karkat">KARKAT: MORE THAN ANYTHING, I... YOU... </p>
-  
-  <p class="karkat">KARKAT: YOU BELIEVE IN ME IN A WAY NOBODY EVER HAS BEFORE.</p>
-  
-  <p class="karkat">KARKAT: MORE THAN I’VE EVER BEEN ABLE TO BELIEVE IN MYSELF.</p>
-  
-  <p class="karkat">KARKAT: AND I’VE NEVER REALLY... </p>
-  
-  <p class="karkat">KARKAT: FELT LIKE THIS BEFORE.</p>
-  
-  <p class="dave">DAVE: felt like what </p>
-  
-  <p class="karkat">KARKAT: I MEAN, LIKE</p>
-  
-  <p class="karkat">KARKAT: YOU KNOW.</p>
-  
-  <p class="karkat">KARKAT: IT’S NOT LIKE I’VE NEVER HAD FRIENDS BEFORE. PEOPLE I CARE ABOUT.</p>
-  
-  <p class="karkat">KARKAT: BUT WHEN PEOPLE TELL ME THEY CARE ABOUT ME, ON SOME LEVEL IT’S HARD FOR ME TO REALLY BUY IT.</p>
-  
-  <p class="karkat">KARKAT: THEY CAN LIST WHATEVER JUSTIFICATIONS THEY HAVE FOR LIKING ME AND IT ALL FEELS LIKE BULLSHIT. </p>
-  
-  <p class="karkat">KARKAT: IT’S LIKE, ARE YOU FUCKING KIDDING ME? YOU CAN’T REALLY EXPECT ME TO BELIEVE YOU SERIOUSLY THINK THIS ABOUT ME.</p>
-  
-  <p class="karkat">KARKAT: THERE’S NO WAY YOU ACTUALLY SEE ME THAT WAY. </p>
-  
-  <p class="karkat">KARKAT: YOU JUST FEEL BAD FOR ME. YOU’RE TALKING DOWN TO ME LIKE I’M SOME SORT OF PATHETIC WIGGLER WHO NEEDS TO BE CODDLED.</p>
-  
-  <p class="karkat">KARKAT: OR YOU’RE JUST IMAGINING I’M WHATEVER WAY YOU WISH I WOULD BE, SOME PERSON WHO’S BETTER AND SMARTER AND STRONGER AND KINDER AND MORE VALUABLE THAN THE PERSON I REALLY AM.</p>
-  
-  <p class="karkat">KARKAT: I CAN NEVER UNDERSTAND WHY ANYONE I CARE ABOUT WOULD EVER WASTE THEIR FUCKING TIME ON ME.</p>
-  
-  <p class="karkat">KARKAT: BUT WITH YOU...  </p>
-</div>
-  <p class="no-indent dirk">Karkat draws a breath and curls up on himself. His instinct is to pull back, but he’s fighting it now. He needs to see this one through to the end.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="karkat">KARKAT: BUT WITH YOU, IT MAKES SENSE. I GUESS.</p>
-  
-  <p class="karkat">KARKAT: WHEN YOU SAY SOMETHING NICE TO ME, I’M LIKE... YEAH? OK?</p>
-  
-  <p class="karkat">KARKAT: THAT’S COMPREHENSIBLE? I SEE HOW YOU GOT FROM POINT A TO POINT B.</p>
-  
-  <p class="karkat">KARKAT: I CAN KNOW YOU THE WAY I DO AND THINK ABOUT WHO YOU ARE AND I CAN UNDERSTAND WHY YOU’D WANT SOMEONE LIKE ME BESIDE YOU.</p>
-  
-  <p class="karkat">KARKAT: I DON’T HAVE TO WONDER WHAT’S MISSING. </p>
-  
-  <p class="karkat">KARKAT: YOU’RE ON MY LEVEL. AND I’M ON YOURS. </p>
-  
-  <p class="karkat">KARKAT: I BELIEVE THAT YOU SEE ME IN FRONT OF YOU THE WAY I ACTUALLY AM, FOR BETTER OR WORSE, AND STILL LIKE ME ANYWAY. </p>
-  
-  <p class="karkat">KARKAT: SO EVEN THOUGH IT’S STILL HARD FOR ME TO BELIEVE IN MYSELF A LOT OF THE TIME,</p>
-  
-  <p class="karkat">KARKAT: I BELIEVE IN YOU, SO I DON’T NEED TO.</p>
-  
-  <p class="dave">DAVE: so what youre saying is you believe in me who believes in you </p>
-</div>
-  <p class="no-indent dirk">Dave. Please.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="karkat">KARKAT: YEAH, KIND OF?</p>
-  
-  <p class="karkat">KARKAT: FUCK, MAN. THAT’S KIND OF DEEP.</p>
-  
-  <p class="dave">DAVE: i know</p>
-  
-  <p class="karkat">KARKAT: SO, YEAH.</p>
-  
-  <p class="karkat">KARKAT: THAT’S WHAT I’VE NEVER REALLY FELT BEFORE.</p>
-  
-  <p class="karkat">KARKAT: AND I’M GLAD YOU’RE... </p>
-  
-  <p class="karkat">KARKAT: THAT WE’RE... </p>
-</div>
-  <p class="no-indent dirk">Come on. You’re so close.</p>
-<div class="chat type-rg type-hs-small--md"> 
-  <p class="karkat">KARKAT: I’M GLAD YOU’RE MY FRIEND, DAVE. </p>
-</div>
-  <p class="no-indent dirk">Oh, for the love of god. </p>
-  <p class="dirk">This is practically slapstick at this point. “My friend”????? That was the most excruciatingly overblown and socially maladapted love confession I’ve ever had the displeasure of witnessing, including my own, and he still managed to fumble it into obscurity at the last moment. The guy was barreling in for an unimpeded touchdown and took a hard left straight into the friend zone.</p>
-  <p class="dirk">It’s not like Dave is stupid. He’s picking up on the subtext. It’s just Karkat’s cop-out that’s filling him with doubt. It was a little <em>too </em>obviously sentimental. So obvious that maybe the “friend” thing was a deliberate warning. Maybe relationships aren’t a thing Karkat can really “do.” Maybe if Dave crosses the line he’ll ruin everything. Better this excruciating liminal space, something more than friendship but not quite love, than nothing at all.</p>
-  <p class="dirk">I look Dave right in his mind’s eye and tell him to cut it the fuck out. He wants it, you want it, so just go for it, my man. It’s now or never. </p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="dave">DAVE: oh</p>
-  
-  <p class="dave">DAVE: same</p>
-</div>
-  <p class="no-indent dirk">I feel every brain cell in my immortal body begin to perish in real time. Dave, you cannot actually be that bad at this. How the hell are you walking around with my genes and still acting like this? </p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="dave">DAVE: so...</p>
-</div>
-  <p class="no-indent dirk">Look. Even you can manage to top this guy. You’ve got it easy, dude. He’s gonna open up for you like you just rolled up on a Denny’s at 3 a.m. with all the boys and a Groupon. You can do it right here on the couch if you want. </p>
-  <p class="dirk">Dave scrunches up his face a little like he’s constipated. Okay, maybe I’m getting a bit worked up. I need to dial it back. </p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="karkat">KARKAT: IS SOMETHING WRONG?</p>
-  
-  <p class="dave">DAVE: huh</p>
-  
-  <p class="dave">DAVE: no</p>
-  
-  <p class="dave">DAVE: sorry i just had an absolutely insane train of thought that kind of sent me for a loop</p>
-  
-  <p class="karkat">KARKAT: UHH... WHAT?</p>
-  
-  <p class="dave">DAVE: no its extremely better that i dont tell you</p>
-  
-  <p class="dave">DAVE: i kind of forgot what we were talking about because it was so awful</p>
-  
-  <p class="karkat">KARKAT: ... </p>
-</div>
-  <p class="no-indent dirk">You were talking about Karkat’s feelings? He just dropped some touching-ass bomb about believing in you believing in him or whatever. You should really get to the root of where this is all coming from.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="dave">DAVE: oh right</p>
-  
-  <p class="dave">DAVE: yeah</p>
-  
-  <p class="dave">DAVE: all that shit you said about us being friends and on the same level or whatever</p>
-  
-  <p class="dave">DAVE: yeah i feel the same way basically</p>
-  
-  <p class="dave">DAVE: or like</p>
-  
-  <p class="dave">DAVE: well</p>
-  
-  <p class="karkat">KARKAT: WHAT?</p>
-  
-  <p class="dave">DAVE: im not sure that i like... </p>
-  
-  <p class="dave">DAVE: hm.</p>
-</div>
-  <p class="no-indent dirk">Go on.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="dave">DAVE: im kind of getting the feeling that... maybe... </p>
-  
-  <p class="dave">DAVE: theres a level to what were thinking that isnt entirely coming across in words</p>
-  
-  <p class="dave">DAVE: and since we dont have the right words we arent getting to the right actions either</p>
-  
-  <p class="karkat">KARKAT: WHAT ARE YOU TALKING ABOUT.</p>
-  
-  <p class="dave">DAVE: like maybe we feel the same way about certain things</p>
-  
-  <p class="dave">DAVE: but what were saying and what were feeling</p>
-  
-  <p class="dave">DAVE: maybe those arent exactly the same thing </p>
-  
-  <p class="dave">DAVE: and maybe... we should... </p>
-  
-  <p class="karkat">KARKAT: WE SHOULD WHAT?</p>
-  
-  <p class="dave">DAVE: maybe its time to</p>
-  
-  <p class="dave">DAVE: talk</p>
-  
-  <p class="dave">DAVE: about... that</p>
-</div>
-  <p class="no-indent dirk">Well, I guess this is progress?</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="karkat">KARKAT: THAT???</p>
-  
-  <p class="dave">DAVE: yeah, like</p>
-  
-  <p class="dave">DAVE: how... when you say were friends</p>
-  
-  <p class="dave">DAVE: what... does that mean</p>
-  
-  <p class="karkat">KARKAT: THAT WE’RE FRIENDS?</p>
-  
-  <p class="dave">DAVE: yeah but</p>
-  
-  <p class="dave">DAVE: is that it?</p>
-  
-  <p class="dave">DAVE: just friends</p>
-</div>
-  <p class="no-indent dirk">Karkat looks like a deer caught in the headlights. </p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="karkat">KARKAT: OF COURSE NOT.</p>
-  
-  <p class="karkat">KARKAT: YOU’RE MY...........</p>
-  
-  <p class="karkat">KARKAT: B...... </p>
-  
-  <p class="karkat">KARKAT: ......EST FRIEND.</p>
-  
-  <p class="dave">DAVE: oh</p>
-  
-  <p class="dave">DAVE: i see</p>
-</div>
-  <p class="no-indent dirk">I’ve literally been decapitated and that was less unbearable than this. I don’t understand it. I just want you to be happy, man. Why can’t you make anything easy for yourself?</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="dave">DAVE: well</p>
-  
-  <p class="dave">DAVE: ok then</p>
-</div>
-  <p class="no-indent dirk">Whatever. I kind of don’t have time for this shit. The gloves are coming off. The anime ninja training weights are history. It’s time to get down to business. </p>
-  <p class="dirk">You look into Karkat’s eyes. You see that twinkle? That’s devotion, you unbelievably dense neutron star of a dumbshit. It’s sparkling like a visit from your fairy fuckin’ godmother. That shit is pure and true. A supernova of all your hopes and dreams swirling together like a radially effervescing kaleidoscope of more hot boy peckers than you could ever imagine.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="karkat">KARKAT: D... DAVE?</p>
-</div>
-  <p class="no-indent dirk">But you aren’t imagining any peckers other than the one right in front of you. Karkat’s probably quite modest and feminine alien penis is the only one you’ve thought about in years. Suddenly, you can’t even comprehend how it is you’ve gone so long without kissing him. You want to so badly. It would be so easy, and you know he wouldn’t turn you away.</p>
-  
-<div class="chat type-rg type-hs-small--md">  <p class="dave">DAVE: karkat</p>
-  
-  <p class="dave">DAVE: i</p>
-</div>
-  <p class="no-indent dirk">You lift a trembling hand and slowly close the scant distance between you to brush your thumb against Karkat’s cheek. He freezes in place, terrified. </p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="dave">DAVE: i think i</p>
-</div>
-  <p class="no-indent dirk">Karkat’s lips part, his breath held. His eyes are wide with anticipation. He looks beautiful like this, you think. All you have to do is press your mouth to his, and he’ll finally know he’s yours.</p>
-  <p class="dirk">You start to lean in. Karkat closes his eyes and relaxes into your hand. He’s ready. It’s happening. It’s FUCKING happening!!!</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="dave">DAVE: wait</p>
-  
-  <p class="dave">DAVE: fuck</p>
-</div>
-  <p class="no-indent dirk">What? What are you doing? Oh my god. I’m throwing my hands up in the air in the middle of the other shit I’m doing because this sucks just that much.</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="karkat">KARKAT: WHAT’S WRONG?</p>
-  
-  <p class="karkat">KARKAT: DID I DO SOMETH—</p>
-  
-  <p class="dave">DAVE: no</p>
-  
-  <p class="dave">DAVE: i just cant</p>
-  
-  <p class="dave">DAVE: shit</p>
-  
-  <p class="dave">DAVE: it just feels like</p>
-</div>
-  <p class="no-indent dirk">It feels like nothing, Dave. Don’t worry about it. </p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="dave">DAVE: what the fuck is going on</p>
-  
-  <p class="dave">DAVE: this feels really off</p>
-  
-  <p class="karkat">KARKAT: ????</p>
-  
-  <p class="dave">DAVE: idk</p>
-  
-  <p class="dave">DAVE: i just keep having thoughts i know id never think</p>
-</div>
-  <p class="no-indent dirk">Oh, come the fuck on.</p>
-  <p class="dirk">I’m going to have an aneurysm. He’s hearing me but not listening to me. This dude has such a titanium grasp on his own born-again virginity that not even the literal hand of God can compel him to kiss his own goddamn boyfriend. </p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="karkat">KARKAT: WHAT IS THAT SUPPOSED TO MEAN?</p>
-  
-  <p class="dave">DAVE: i have no idea</p>
-  
-  <p class="dave">DAVE: im sorry</p>
-</div>
-  <p class="no-indent dirk">Dave pulls away. Karkat looks like he’s about to throw up.<em> I’m</em> about to throw up, if I’m being perfectly honest.</p>
-  <p class="dirk">I don’t know what to do at this point. He doesn’t know it’s me, but he’s fighting my influence with every ounce of strength he’s got. If I push any further, things could get messy, epistemologically speaking. I could try more of a backdoor approach and nudge them towards the sauce, but I don’t know if even that would help at this stage. And my timetable for direct physical intervention is fairly limited. </p>
-  <p class="dirk">I take a deep breath and get myself under control. My light psychological intrusions may have only made things worse. Invested as I am in the outcome of this encounter, I know forcing their hand would be a mistake.</p>
-  <p class="dirk">If Dave passes that threshold not of his own will, it’d be a hollow victory anyway. There’s nothing I can do but settle down, step it back, and trust my boy to bring it home.</p>
-  <p class="dirk">The gears are turning in Dave’s head. He knows he stands at a precipice, and what he decides here could mean everything. Maybe that forced kiss seemed wrong, but he knows what he feels doesn’t. He can’t deny that. And he can’t just forget the fact that when he went for it, Karkat wasn’t pulling away.</p>
-  <p class="dirk">At the end of the day, he knows what the truth is. Really, he always has.</p>
-  <p class="dirk">So what are you going to do about it, Dave? This time, it’s really up to you. </p>
-  <p class="dirk">Dave meets Karkat’s eyes in a rare moment of clarity. It’s then, I think, that they both finally realize what’s been obvious to everyone else all along. With a measured motion, Dave pulls his shades off of his face. </p>
-  <p class="dirk">If Karkat was stunned before, he’s even more stunned now. The privilege of a Strider Eye Moment is about the most earth-shattering experience a young man will ever have in his life. For once, neither of them have anything stupid to say. All they have is an electric connection that is no longer possible to ignore. </p>
-  <p class="dirk">Dave brings his hand back up to Karkat’s cheek in a gesture much more confident than the last. He’s not rushing anything this time. He’s only doing what feels right, taking it each second at a time.</p>
-  <p class="dirk">Karkat’s tension begins to dissipate from his body in stages. His stiff shoulders drop. His guarded expression relaxes. And when he covers Dave’s hand with his own, he’s not shaking at all.</p>
-  <p class="dirk">Karkat helps Dave slip his hand from the side of his face around to cup the nape of his neck. It’s a tender, steadying touch. Dave applies only the slightest of pressure to draw him forward, and Karkat follows his lead. </p>
-  <p class="dirk">They’re so close that Dave can feel Karkat’s shallow breath ghosting over his skin. Karkat’s eyes are shimmering and wet as they flutter closed, moisture beading in his thick eyelashes. His tongue darts out to wet his lips. All that’s left is just one more step. Just one final inch, and it’s over. </p>
-  <p class="dirk">They both move to close the distance at the same time.</p>
-  <p class="dirk">There’s a second where both of them freeze like that, still in the intimate contact. Nothing but the warmth of each other’s bodies and the dawning realization of a significant boundary crossed. Dave draws in a sharp breath, lets his lips part and... just... a little more. That’s it. Yes! Wait. Dave, don’t linger. Some lines of stress appear on his face. He’s struggling with something. No. Dave, don’t fucking do this. He’s grinding his teeth, and putting both hands up to his temples. Beads of sweat dot his brow. This is so fucking unreal. Holy shit, Dave, if you so much as—</p>
-<div class="chat type-rg type-hs-small--md">  
-  <p class="dave">DAVE: GET THE FUCK OUT OF MY HEAD AND JUST LET ME DO THIS MYSELF!!!</p>
-  
-  <p class="karkat">KARKAT: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</p>
-  
-  <p class="dave">DAVE: dude</p>
-  
-  <p class="dave">DAVE: come here...</p>
-</div>
-  <p class="no-indent dirk">He... oh my god. He.</p>
-  <p class="dirk">He fucking just... wow. Dave lunges forward and kisses Karkat directly on the mouth. It’s like a dam has burst. Neither of them could hold anything back now even if they wanted to. It’s like... </p>
-  <p class="dirk">God damn. I’m sorry. I’m blowing the description here, and missing a lot of good shit. It just caught me so off guard. Dave, my dude. I’m so proud of you. Okay, I can do this. I fucking NEED to do this justice. *Cracks the mother <em>fucking</em> knuckles of a yaoi poet and gets down to business.*</p>
-  <p class="dirk">...</p>
-  <p class="dirk">...</p>
-  <p class="dirk">Eh...</p>
-  <p class="dirk">You know what? Nah.</p>
-  <p class="dirk">I’m not going to intercede with a single word further, and I won’t let you, either. I won’t cheapen this beautiful moment with my base editorialization just to satisfy your voyeuristic curiousity. Frankly, I’m offended you’d even expect me to. What they’re getting up to here is nobody’s business but theirs. </p>
-  <p class="dirk">Davekat is canon, and that’s really all there is to say on the matter. Let’s give these crazy lovebirds some privacy and move on.</p></div>
+          <p class="dave">DAVE: the bagged wine</p>
+
+          <p class="dave">DAVE: the shots they put in those little blister packs by the register</p>
+
+          <p class="dave">DAVE: the wine in the little sippy cups with the disposable plastic straws like juice for
+            fucking babies</p>
+
+          <p class="dave">DAVE: i made that last one up i dont actually know anything about alcohol</p>
+
+          <p class="dave">DAVE: anyway two plastic soda bottles of vodka cooler seems to be about where were at right
+            now</p>
+
+          <p class="dave">DAVE: i think thats what this is anyway</p>
+
+          <p class="dave">DAVE: i dont really care long as it gets the job done</p>
+
+          <p class="dave">DAVE: i decided that im an alcoholic now </p>
+        </div>
+        <p class="no-indent dirk">I’ve always found inebriation to be distasteful, really. Never understood the personal
+          appeal of it, and after seeing how indelicately its effects have touched the other members of our family, I
+          can’t help but feel like it’s a waste of everybody’s fucking time. I’d have half a mind to tell him to dump it
+          all in the sink, if I weren’t cutting it down to the wire as it is.</p>
+        <p class="dirk">But you know what? Go the fuck ahead, bro. Might help him ease those ridiculous inhibitions for
+          once in his life. Slide the stick out of his ass. Maybe slide something else up there instead, if you catch my
+          drift. But I don’t want to get ahead of myself here. At this stage, anything could happen.</p>
+        <p class="dirk">Dave sits beside Karkat on the couch, and sets the alcohol down on the table in front of him. He
+          sinks heavily into the cushioning with a sigh.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="karkat">KARKAT: HAVE YOU NOW.</p>
+
+          <p class="dave">DAVE: yeah</p>
+
+          <p class="dave">DAVE: its never too late to develop a substance abuse problem</p>
+
+          <p class="dave">DAVE: ive been thinking about it for a while and it seems like its time for me to finally get
+            on the wagon of not being on the wagon</p>
+
+          <p class="karkat">KARKAT: THAT’S REALLY GREAT, DAVE.</p>
+
+          <p class="dave">DAVE: thanks</p>
+
+          <p class="dave">DAVE: anyway hows the inauguration </p>
+
+          <p class="dave">DAVE: you having a good time dwelling on every tiny little factor that cumulatively led to our
+            electoral defeat</p>
+
+          <p class="dave">DAVE: and how if just one thing had been different it would have been us up there</p>
+
+          <p class="karkat">KARKAT: UGH.</p>
+
+          <p class="karkat">KARKAT: YOU AND I BOTH KNOW NOTHING MATTERED IN THAT CAMPAIGN BUT JAKE’S FUCKING SPEECH.</p>
+
+          <p class="dave">DAVE: yeah</p>
+
+          <p class="dave">DAVE: i mean, like</p>
+
+          <p class="dave">DAVE: i just keep imagining what wouldve happened if that absurd rube goldberg machine of life
+            ruining humiliation had been stopped at any point </p>
+
+          <p class="dave">DAVE: maybe just being backstabbed by his endorsement alone was something we couldve recovered
+            from with some rigorous counter campaigning</p>
+
+          <p class="dave">DAVE: but what if i had been fast enough to cut him off before hed even said anything</p>
+
+          <p class="dave">DAVE: what if i hadnt accidentally fallen on him on the stage when i was rushing over there to
+            stop him</p>
+
+          <p class="dave">DAVE: what if he hadnt freaked out like i set off fireworks next to a nam vet and started
+            trying to fucking scrum me </p>
+
+          <p class="dave">DAVE: what if id just backed away from his punch with my legs like a normal person instead of
+            warping the flow of time to escape causing him to become so startled he shit his pants</p>
+
+          <p class="dave">DAVE: what if i hadnt gotten so visibly grossed out by the smell that even the people watching
+            it on tv could tell what had happened</p>
+
+          <p class="dave">DAVE: what if he hadnt started sobbing when the audience in the front rows started throwing up
+          </p>
+
+          <p class="dave">DAVE: what if wed had better security and stopped that lady from running onstage during the
+            fracas and announcing that jake has been dodging paying child support for their 3 kids</p>
+
+          <p class="dave">DAVE: like what was the LINE</p>
+
+          <p class="karkat">KARKAT: IT WASN’T... *THAT* BAD.</p>
+
+          <p class="dave">DAVE: you think</p>
+        </div>
+        <p class="no-indent dirk">Karkat falls into a vacant, thousand-yard stare.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="dave">DAVE: yeah see thats why im an alcoholic now</p>
+
+          <p class="dave">DAVE: want a drink</p>
+        </div>
+        <p class="no-indent dirk">I have sympathy, I really do. It’s tough to devote so much time and effort to
+          something, come so close to tasting victory, just to have it snatched out of your grasp at the final instant.
+          I might even feel bad about it in any other circumstance.</p>
+        <p class="dirk">But this was how things had to be. It’s better this way. They know that. At least, Karkat
+          certainly does.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="karkat">KARKAT: IF I’M BEING PERFECTLY FUCKING HONEST</p>
+
+          <p class="karkat">KARKAT: I’M GLAD I LOST. I NEVER WANTED TO FUCKING WIN IN THE FIRST PLACE.</p>
+
+          <p class="dave">DAVE: dude come on</p>
+
+          <p class="karkat">KARKAT: NO, I’M BEING SERIOUS.</p>
+
+          <p class="karkat">KARKAT: I’M NOT EVEN DOING SOME SOUR GRAPES “I NEVER WANTED IT IN THE FIRST PLACE BECAUSE
+            I’M A SORE LOSER TRYING TO DELUDE MYSELF INTO THINKING I DON’T CARE” SORT OF THING.</p>
+
+          <p class="karkat">KARKAT: OBVIOUSLY I FUCKING CARE SINCE NOW THE PLANET IS GOING TO BE COMPLETELY RUINED BY
+            THIS JUMPED-UP FASCIST DICTATOR WHO HAS EVERY INTENTION OF GRADUALLY GENOCIDING MY SPECIES INTO NONEXISTENCE
+            BEFORE MY VERY EYES.</p>
+
+          <p class="karkat">KARKAT: BUT I CANNOT FUCKING THINK OF A SINGLE THING IN THE UNIVERSE I WANTED TO DO LESS
+            THAN BE THE STUPID FUCKING PRESIDENT.</p>
+
+          <p class="karkat">KARKAT: THANK HUMAN OBAMA.</p>
+
+          <p class="dave">DAVE: wait was there a troll obama</p>
+
+          <p class="karkat">KARKAT: I’M THE FUCKING TROLL OBAMA, REMEMBER?</p>
+
+          <p class="dave">DAVE: karkat</p>
+
+          <p class="dave">DAVE: you wouldve been so much more than obama</p>
+        </div>
+        <p class="no-indent dirk">God damn if that isn’t the most romantic fucking thing I’ve ever heard.</p>
+        <p class="dirk">If Karkat had anything resembling a spine, he’d turn to Dave with those big, sparkling shoujo
+          eyes and finally open his tsundere heart to consummating their painfully obvious and mutually reciprocated
+          passion. But he doesn’t, so he gives a noncommittal little sniff and turns back to the inauguration instead.
+        </p>
+        <p class="dirk">Obviously, I’ve got an agenda here. It’s pretty clear to me what these guys want out of this
+          relationship, despite the fact that both of them being bottoms evidently makes it impossible for them to pass
+          whatever last ludicrous psychological obstacle stands between them and nonstop, animalistic fucking. I’ve let
+          it go on like this for long enough. These stooges clearly need some help. </p>
+        <p class="dirk">I could insist that they just fucking go for it already, using the methods available to me. I’d
+          rather not. There are certain boundaries I’m not inclined to cross, primarily in service to the emotional
+          integrity of my friends’ respective personal arcs. The little moments like these don’t mean anything if
+          they’re coming from me, do they?</p>
+        <p class="dirk">As such, insistence isn’t the tool I’d prefer. Persuasion is the one I reach for. And in a case
+          like this, I can’t imagine it’s going to take that much.</p>
+        <p class="dirk">They fall into another silence that’s more comfortable than it has any right to be. The crowd is
+          really going nuts for Jane now, since she’s hit one of the best parts of my speech. She’s just blasting the
+          fuck off about how good the economy’s going to get. I can feel Dave’s teeth grinding all the way down to the
+          narrative fabric of reality.</p>
+        <p class="dirk">Dave reaches out for the booze. It’s past time to get wasted, he thinks.</p>
+        <p class="dirk">But Karkat is starting to realize how much all of Dave’s efforts mean to him. It’s really
+          welling up inside him now. He’s so emotional about it that he can’t help but say something. </p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="karkat">KARKAT: HEY.</p>
+        </div>
+        <p class="no-indent dirk">Dave stops with his arm outstretched. His gaze turns to meet Karkat’s, but Karkat
+          can’t bear to hold the eye contact for long. Looking at Dave is like staring straight at the sun. He is
+          awfully handsome, isn’t he? Then again, crawling out of a primo gene pool does have its benefits.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="dave">DAVE: yeah buddy whats up</p>
+
+          <p class="karkat">KARKAT: I JUST... </p>
+
+          <p class="dave">DAVE: hey dont worry about it</p>
+
+          <p class="dave">DAVE: you dont have to explain yourself to me</p>
+
+          <p class="dave">DAVE: i get it</p>
+
+          <p class="dave">DAVE: it makes sense. id always felt the same way kind of</p>
+
+          <p class="dave">DAVE: like about all my shit with sburb and whatever. the reluctant heros journey</p>
+
+          <p class="dave">DAVE: that feeling where youre being dragged along to being a kind of guy everyone is saying
+            you have to be but youve never felt like theres any way you can really BECOME</p>
+
+          <p class="dave">DAVE: where every second you feel so sick with your own self doubt and fear that you cant bear
+            to even imagine the future</p>
+
+          <p class="dave">DAVE: and you think</p>
+
+          <p class="dave">DAVE: why me</p>
+
+          <p class="dave">DAVE: even though you know it cant be anyone but you</p>
+
+          <p class="dave">DAVE: and thats why you do it</p>
+
+          <p class="karkat">KARKAT: YEAH.</p>
+
+          <p class="dave">DAVE: lol</p>
+
+          <p class="karkat">KARKAT: I WASN’T TRYING TO EXPLAIN MYSELF, THOUGH.</p>
+
+          <p class="karkat">KARKAT: I JUST WANTED TO THANK YOU.</p>
+
+          <p class="dave">DAVE: huh</p>
+
+          <p class="dave">DAVE: for what</p>
+        </div>
+        <p class="no-indent dirk">Karkat’s eyes drift from the TV to the floor. The slightest of smiles tugs at the
+          corners of his mouth. He feels something warm inside of his chest. It feels right. It’s something he needs to
+          say. </p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="karkat">KARKAT: FOR... EVERYTHING.</p>
+
+          <p class="karkat">KARKAT: EVEN IF WE DIDN’T WIN, I’M GLAD WE TRIED.</p>
+
+          <p class="karkat">KARKAT: I’M GLAD WE WENT THROUGH THIS TOGETHER.</p>
+
+          <p class="dave">DAVE: me too</p>
+
+          <p class="karkat">KARKAT: MORE THAN ANYTHING, I... YOU... </p>
+
+          <p class="karkat">KARKAT: YOU BELIEVE IN ME IN A WAY NOBODY EVER HAS BEFORE.</p>
+
+          <p class="karkat">KARKAT: MORE THAN I’VE EVER BEEN ABLE TO BELIEVE IN MYSELF.</p>
+
+          <p class="karkat">KARKAT: AND I’VE NEVER REALLY... </p>
+
+          <p class="karkat">KARKAT: FELT LIKE THIS BEFORE.</p>
+
+          <p class="dave">DAVE: felt like what </p>
+
+          <p class="karkat">KARKAT: I MEAN, LIKE</p>
+
+          <p class="karkat">KARKAT: YOU KNOW.</p>
+
+          <p class="karkat">KARKAT: IT’S NOT LIKE I’VE NEVER HAD FRIENDS BEFORE. PEOPLE I CARE ABOUT.</p>
+
+          <p class="karkat">KARKAT: BUT WHEN PEOPLE TELL ME THEY CARE ABOUT ME, ON SOME LEVEL IT’S HARD FOR ME TO REALLY
+            BUY IT.</p>
+
+          <p class="karkat">KARKAT: THEY CAN LIST WHATEVER JUSTIFICATIONS THEY HAVE FOR LIKING ME AND IT ALL FEELS LIKE
+            BULLSHIT. </p>
+
+          <p class="karkat">KARKAT: IT’S LIKE, ARE YOU FUCKING KIDDING ME? YOU CAN’T REALLY EXPECT ME TO BELIEVE YOU
+            SERIOUSLY THINK THIS ABOUT ME.</p>
+
+          <p class="karkat">KARKAT: THERE’S NO WAY YOU ACTUALLY SEE ME THAT WAY. </p>
+
+          <p class="karkat">KARKAT: YOU JUST FEEL BAD FOR ME. YOU’RE TALKING DOWN TO ME LIKE I’M SOME SORT OF PATHETIC
+            WIGGLER WHO NEEDS TO BE CODDLED.</p>
+
+          <p class="karkat">KARKAT: OR YOU’RE JUST IMAGINING I’M WHATEVER WAY YOU WISH I WOULD BE, SOME PERSON WHO’S
+            BETTER AND SMARTER AND STRONGER AND KINDER AND MORE VALUABLE THAN THE PERSON I REALLY AM.</p>
+
+          <p class="karkat">KARKAT: I CAN NEVER UNDERSTAND WHY ANYONE I CARE ABOUT WOULD EVER WASTE THEIR FUCKING TIME
+            ON ME.</p>
+
+          <p class="karkat">KARKAT: BUT WITH YOU... </p>
+        </div>
+        <p class="no-indent dirk">Karkat draws a breath and curls up on himself. His instinct is to pull back, but he’s
+          fighting it now. He needs to see this one through to the end.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="karkat">KARKAT: BUT WITH YOU, IT MAKES SENSE. I GUESS.</p>
+
+          <p class="karkat">KARKAT: WHEN YOU SAY SOMETHING NICE TO ME, I’M LIKE... YEAH? OK?</p>
+
+          <p class="karkat">KARKAT: THAT’S COMPREHENSIBLE? I SEE HOW YOU GOT FROM POINT A TO POINT B.</p>
+
+          <p class="karkat">KARKAT: I CAN KNOW YOU THE WAY I DO AND THINK ABOUT WHO YOU ARE AND I CAN UNDERSTAND WHY
+            YOU’D WANT SOMEONE LIKE ME BESIDE YOU.</p>
+
+          <p class="karkat">KARKAT: I DON’T HAVE TO WONDER WHAT’S MISSING. </p>
+
+          <p class="karkat">KARKAT: YOU’RE ON MY LEVEL. AND I’M ON YOURS. </p>
+
+          <p class="karkat">KARKAT: I BELIEVE THAT YOU SEE ME IN FRONT OF YOU THE WAY I ACTUALLY AM, FOR BETTER OR
+            WORSE, AND STILL LIKE ME ANYWAY. </p>
+
+          <p class="karkat">KARKAT: SO EVEN THOUGH IT’S STILL HARD FOR ME TO BELIEVE IN MYSELF A LOT OF THE TIME,</p>
+
+          <p class="karkat">KARKAT: I BELIEVE IN YOU, SO I DON’T NEED TO.</p>
+
+          <p class="dave">DAVE: so what youre saying is you believe in me who believes in you </p>
+        </div>
+        <p class="no-indent dirk">Dave. Please.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="karkat">KARKAT: YEAH, KIND OF?</p>
+
+          <p class="karkat">KARKAT: FUCK, MAN. THAT’S KIND OF DEEP.</p>
+
+          <p class="dave">DAVE: i know</p>
+
+          <p class="karkat">KARKAT: SO, YEAH.</p>
+
+          <p class="karkat">KARKAT: THAT’S WHAT I’VE NEVER REALLY FELT BEFORE.</p>
+
+          <p class="karkat">KARKAT: AND I’M GLAD YOU’RE... </p>
+
+          <p class="karkat">KARKAT: THAT WE’RE... </p>
+        </div>
+        <p class="no-indent dirk">Come on. You’re so close.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="karkat">KARKAT: I’M GLAD YOU’RE MY FRIEND, DAVE. </p>
+        </div>
+        <p class="no-indent dirk">Oh, for the love of god. </p>
+        <p class="dirk">This is practically slapstick at this point. “My friend”????? That was the most excruciatingly
+          overblown and socially maladapted love confession I’ve ever had the displeasure of witnessing, including my
+          own, and he still managed to fumble it into obscurity at the last moment. The guy was barreling in for an
+          unimpeded touchdown and took a hard left straight into the friend zone.</p>
+        <p class="dirk">It’s not like Dave is stupid. He’s picking up on the subtext. It’s just Karkat’s cop-out that’s
+          filling him with doubt. It was a little <em>too </em>obviously sentimental. So obvious that maybe the “friend”
+          thing was a deliberate warning. Maybe relationships aren’t a thing Karkat can really “do.” Maybe if Dave
+          crosses the line he’ll ruin everything. Better this excruciating liminal space, something more than friendship
+          but not quite love, than nothing at all.</p>
+        <p class="dirk">I look Dave right in his mind’s eye and tell him to cut it the fuck out. He wants it, you want
+          it, so just go for it, my man. It’s now or never. </p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="dave">DAVE: oh</p>
+
+          <p class="dave">DAVE: same</p>
+        </div>
+        <p class="no-indent dirk">I feel every brain cell in my immortal body begin to perish in real time. Dave, you
+          cannot actually be that bad at this. How the hell are you walking around with my genes and still acting like
+          this? </p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="dave">DAVE: so...</p>
+        </div>
+        <p class="no-indent dirk">Look. Even you can manage to top this guy. You’ve got it easy, dude. He’s gonna open
+          up for you like you just rolled up on a Denny’s at 3 a.m. with all the boys and a Groupon. You can do it right
+          here on the couch if you want. </p>
+        <p class="dirk">Dave scrunches up his face a little like he’s constipated. Okay, maybe I’m getting a bit worked
+          up. I need to dial it back. </p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="karkat">KARKAT: IS SOMETHING WRONG?</p>
+
+          <p class="dave">DAVE: huh</p>
+
+          <p class="dave">DAVE: no</p>
+
+          <p class="dave">DAVE: sorry i just had an absolutely insane train of thought that kind of sent me for a loop
+          </p>
+
+          <p class="karkat">KARKAT: UHH... WHAT?</p>
+
+          <p class="dave">DAVE: no its extremely better that i dont tell you</p>
+
+          <p class="dave">DAVE: i kind of forgot what we were talking about because it was so awful</p>
+
+          <p class="karkat">KARKAT: ... </p>
+        </div>
+        <p class="no-indent dirk">You were talking about Karkat’s feelings? He just dropped some touching-ass bomb about
+          believing in you believing in him or whatever. You should really get to the root of where this is all coming
+          from.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="dave">DAVE: oh right</p>
+
+          <p class="dave">DAVE: yeah</p>
+
+          <p class="dave">DAVE: all that shit you said about us being friends and on the same level or whatever</p>
+
+          <p class="dave">DAVE: yeah i feel the same way basically</p>
+
+          <p class="dave">DAVE: or like</p>
+
+          <p class="dave">DAVE: well</p>
+
+          <p class="karkat">KARKAT: WHAT?</p>
+
+          <p class="dave">DAVE: im not sure that i like... </p>
+
+          <p class="dave">DAVE: hm.</p>
+        </div>
+        <p class="no-indent dirk">Go on.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="dave">DAVE: im kind of getting the feeling that... maybe... </p>
+
+          <p class="dave">DAVE: theres a level to what were thinking that isnt entirely coming across in words</p>
+
+          <p class="dave">DAVE: and since we dont have the right words we arent getting to the right actions either</p>
+
+          <p class="karkat">KARKAT: WHAT ARE YOU TALKING ABOUT.</p>
+
+          <p class="dave">DAVE: like maybe we feel the same way about certain things</p>
+
+          <p class="dave">DAVE: but what were saying and what were feeling</p>
+
+          <p class="dave">DAVE: maybe those arent exactly the same thing </p>
+
+          <p class="dave">DAVE: and maybe... we should... </p>
+
+          <p class="karkat">KARKAT: WE SHOULD WHAT?</p>
+
+          <p class="dave">DAVE: maybe its time to</p>
+
+          <p class="dave">DAVE: talk</p>
+
+          <p class="dave">DAVE: about... that</p>
+        </div>
+        <p class="no-indent dirk">Well, I guess this is progress?</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="karkat">KARKAT: THAT???</p>
+
+          <p class="dave">DAVE: yeah, like</p>
+
+          <p class="dave">DAVE: how... when you say were friends</p>
+
+          <p class="dave">DAVE: what... does that mean</p>
+
+          <p class="karkat">KARKAT: THAT WE’RE FRIENDS?</p>
+
+          <p class="dave">DAVE: yeah but</p>
+
+          <p class="dave">DAVE: is that it?</p>
+
+          <p class="dave">DAVE: just friends</p>
+        </div>
+        <p class="no-indent dirk">Karkat looks like a deer caught in the headlights. </p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="karkat">KARKAT: OF COURSE NOT.</p>
+
+          <p class="karkat">KARKAT: YOU’RE MY...........</p>
+
+          <p class="karkat">KARKAT: B...... </p>
+
+          <p class="karkat">KARKAT: ......EST FRIEND.</p>
+
+          <p class="dave">DAVE: oh</p>
+
+          <p class="dave">DAVE: i see</p>
+        </div>
+        <p class="no-indent dirk">I’ve literally been decapitated and that was less unbearable than this. I don’t
+          understand it. I just want you to be happy, man. Why can’t you make anything easy for yourself?</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="dave">DAVE: well</p>
+
+          <p class="dave">DAVE: ok then</p>
+        </div>
+        <p class="no-indent dirk">Whatever. I kind of don’t have time for this shit. The gloves are coming off. The
+          anime ninja training weights are history. It’s time to get down to business. </p>
+        <p class="dirk">You look into Karkat’s eyes. You see that twinkle? That’s devotion, you unbelievably dense
+          neutron star of a dumbshit. It’s sparkling like a visit from your fairy fuckin’ godmother. That shit is pure
+          and true. A supernova of all your hopes and dreams swirling together like a radially effervescing kaleidoscope
+          of more hot boy peckers than you could ever imagine.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="karkat">KARKAT: D... DAVE?</p>
+        </div>
+        <p class="no-indent dirk">But you aren’t imagining any peckers other than the one right in front of you.
+          Karkat’s probably quite modest and feminine alien penis is the only one you’ve thought about in years.
+          Suddenly, you can’t even comprehend how it is you’ve gone so long without kissing him. You want to so badly.
+          It would be so easy, and you know he wouldn’t turn you away.</p>
+
+        <div class="chat type-rg type-hs-small--md">
+          <p class="dave">DAVE: karkat</p>
+
+          <p class="dave">DAVE: i</p>
+        </div>
+        <p class="no-indent dirk">You lift a trembling hand and slowly close the scant distance between you to brush
+          your thumb against Karkat’s cheek. He freezes in place, terrified. </p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="dave">DAVE: i think i</p>
+        </div>
+        <p class="no-indent dirk">Karkat’s lips part, his breath held. His eyes are wide with anticipation. He looks
+          beautiful like this, you think. All you have to do is press your mouth to his, and he’ll finally know he’s
+          yours.</p>
+        <p class="dirk">You start to lean in. Karkat closes his eyes and relaxes into your hand. He’s ready. It’s
+          happening. It’s FUCKING happening!!!</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="dave">DAVE: wait</p>
+
+          <p class="dave">DAVE: fuck</p>
+        </div>
+        <p class="no-indent dirk">What? What are you doing? Oh my god. I’m throwing my hands up in the air in the middle
+          of the other shit I’m doing because this sucks just that much.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="karkat">KARKAT: WHAT’S WRONG?</p>
+
+          <p class="karkat">KARKAT: DID I DO SOMETH—</p>
+
+          <p class="dave">DAVE: no</p>
+
+          <p class="dave">DAVE: i just cant</p>
+
+          <p class="dave">DAVE: shit</p>
+
+          <p class="dave">DAVE: it just feels like</p>
+        </div>
+        <p class="no-indent dirk">It feels like nothing, Dave. Don’t worry about it. </p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="dave">DAVE: what the fuck is going on</p>
+
+          <p class="dave">DAVE: this feels really off</p>
+
+          <p class="karkat">KARKAT: ????</p>
+
+          <p class="dave">DAVE: idk</p>
+
+          <p class="dave">DAVE: i just keep having thoughts i know id never think</p>
+        </div>
+        <p class="no-indent dirk">Oh, come the fuck on.</p>
+        <p class="dirk">I’m going to have an aneurysm. He’s hearing me but not listening to me. This dude has such a
+          titanium grasp on his own born-again virginity that not even the literal hand of God can compel him to kiss
+          his own goddamn boyfriend. </p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="karkat">KARKAT: WHAT IS THAT SUPPOSED TO MEAN?</p>
+
+          <p class="dave">DAVE: i have no idea</p>
+
+          <p class="dave">DAVE: im sorry</p>
+        </div>
+        <p class="no-indent dirk">Dave pulls away. Karkat looks like he’s about to throw up.<em> I’m</em> about to throw
+          up, if I’m being perfectly honest.</p>
+        <p class="dirk">I don’t know what to do at this point. He doesn’t know it’s me, but he’s fighting my influence
+          with every ounce of strength he’s got. If I push any further, things could get messy, epistemologically
+          speaking. I could try more of a backdoor approach and nudge them towards the sauce, but I don’t know if even
+          that would help at this stage. And my timetable for direct physical intervention is fairly limited. </p>
+        <p class="dirk">I take a deep breath and get myself under control. My light psychological intrusions may have
+          only made things worse. Invested as I am in the outcome of this encounter, I know forcing their hand would be
+          a mistake.</p>
+        <p class="dirk">If Dave passes that threshold not of his own will, it’d be a hollow victory anyway. There’s
+          nothing I can do but settle down, step it back, and trust my boy to bring it home.</p>
+        <p class="dirk">The gears are turning in Dave’s head. He knows he stands at a precipice, and what he decides
+          here could mean everything. Maybe that forced kiss seemed wrong, but he knows what he feels doesn’t. He can’t
+          deny that. And he can’t just forget the fact that when he went for it, Karkat wasn’t pulling away.</p>
+        <p class="dirk">At the end of the day, he knows what the truth is. Really, he always has.</p>
+        <p class="dirk">So what are you going to do about it, Dave? This time, it’s really up to you. </p>
+        <p class="dirk">Dave meets Karkat’s eyes in a rare moment of clarity. It’s then, I think, that they both finally
+          realize what’s been obvious to everyone else all along. With a measured motion, Dave pulls his shades off of
+          his face. </p>
+        <p class="dirk">If Karkat was stunned before, he’s even more stunned now. The privilege of a Strider Eye Moment
+          is about the most earth-shattering experience a young man will ever have in his life. For once, neither of
+          them have anything stupid to say. All they have is an electric connection that is no longer possible to
+          ignore. </p>
+        <p class="dirk">Dave brings his hand back up to Karkat’s cheek in a gesture much more confident than the last.
+          He’s not rushing anything this time. He’s only doing what feels right, taking it each second at a time.</p>
+        <p class="dirk">Karkat’s tension begins to dissipate from his body in stages. His stiff shoulders drop. His
+          guarded expression relaxes. And when he covers Dave’s hand with his own, he’s not shaking at all.</p>
+        <p class="dirk">Karkat helps Dave slip his hand from the side of his face around to cup the nape of his neck.
+          It’s a tender, steadying touch. Dave applies only the slightest of pressure to draw him forward, and Karkat
+          follows his lead. </p>
+        <p class="dirk">They’re so close that Dave can feel Karkat’s shallow breath ghosting over his skin. Karkat’s
+          eyes are shimmering and wet as they flutter closed, moisture beading in his thick eyelashes. His tongue darts
+          out to wet his lips. All that’s left is just one more step. Just one final inch, and it’s over. </p>
+        <p class="dirk">They both move to close the distance at the same time.</p>
+        <p class="dirk">There’s a second where both of them freeze like that, still in the intimate contact. Nothing but
+          the warmth of each other’s bodies and the dawning realization of a significant boundary crossed. Dave draws in
+          a sharp breath, lets his lips part and... just... a little more. That’s it. Yes! Wait. Dave, don’t linger.
+          Some lines of stress appear on his face. He’s struggling with something. No. Dave, don’t fucking do this. He’s
+          grinding his teeth, and putting both hands up to his temples. Beads of sweat dot his brow. This is so fucking
+          unreal. Holy shit, Dave, if you so much as—</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="dave">DAVE: GET THE FUCK OUT OF MY HEAD AND JUST LET ME DO THIS MYSELF!!!</p>
+
+          <p class="karkat">KARKAT: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</p>
+
+          <p class="dave">DAVE: dude</p>
+
+          <p class="dave">DAVE: come here...</p>
+        </div>
+        <p class="no-indent dirk">He... oh my god. He.</p>
+        <p class="dirk">He fucking just... wow. Dave lunges forward and kisses Karkat directly on the mouth. It’s like a
+          dam has burst. Neither of them could hold anything back now even if they wanted to. It’s like... </p>
+        <p class="dirk">God damn. I’m sorry. I’m blowing the description here, and missing a lot of good shit. It just
+          caught me so off guard. Dave, my dude. I’m so proud of you. Okay, I can do this. I fucking NEED to do this
+          justice. *Cracks the mother <em>fucking</em> knuckles of a yaoi poet and gets down to business.*</p>
+        <p class="dirk">...</p>
+        <p class="dirk">...</p>
+        <p class="dirk">Eh...</p>
+        <p class="dirk">You know what? Nah.</p>
+        <p class="dirk">I’m not going to intercede with a single word further, and I won’t let you, either. I won’t
+          cheapen this beautiful moment with my base editorialization just to satisfy your voyeuristic curiousity.
+          Frankly, I’m offended you’d even expect me to. What they’re getting up to here is nobody’s business but
+          theirs. </p>
+        <p class="dirk">Davekat is canon, and that’s really all there is to say on the matter. Let’s give these crazy
+          lovebirds some privacy and move on.</p>
+      </div>
       <div class="o_story-nav type-hs-copy line-tight pad-x-0 pad-x-lg--md pad-b-lg">
         <div>
           <span>&gt;</span>
           <a href="Meat 39.html">==&gt; </a><br>
         </div>
       </div>
-  
-<footer id="story-footer" role="banner">
-  <div id="story_footer_container" class="o_story-page-footer flex pad-t-0 pad-x-0
+
+      <footer id="story-footer" role="banner">
+        <div id="story_footer_container" class="o_story-page-footer flex pad-t-0 pad-x-0
      flex-justify 
     ">
-      <div class="pad-l-lg--md mar-b-md type-hs-small type-hs-bottom--md type-center type-left--md">
-        <ul class="o_game-nav">
-          <li class="o_game-nav-item">
-            <a id="o_start-over" href="The Homestuck Epilogues.html">Start Over</a>
-          </li>
-            <li class="o_game-nav-item">
-              <a href="Meat 37.html">Go Back</a>
-            </li>
-        </ul>
-      </div>
-      <script>
-//<![CDATA[
-$(document).ready(function() { Gamenav.checkAutosave(); });
+          <div class="pad-l-lg--md mar-b-md type-hs-small type-hs-bottom--md type-center type-left--md">
+            <ul class="o_game-nav">
+              <li class="o_game-nav-item">
+                <a id="o_start-over" href="Choice Page.html">Start Over</a>
+              </li>
+              <li class="o_game-nav-item">
+                <a href="Meat 37.html">Go Back</a>
+              </li>
+            </ul>
+          </div>
+          <script>
+            //<![CDATA[
+            $(document).ready(function () { Gamenav.checkAutosave(); });
 //]]>
-</script>
+          </script>
 
-    <a href="javascript:void(0)" data-gamenav-open="" class="nav-btn nav-btn--center type-hs-small mar-b-md" style="text-decoration:none; text-transform: none; font-size:14px; line-height:14px;"><span>Options</span> <i class="icon-menu" style="margin:0;"></i></a>
+          <a href="javascript:void(0)" data-gamenav-open="" class="nav-btn nav-btn--center type-hs-small mar-b-md"
+            style="text-decoration:none; text-transform: none; font-size:14px; line-height:14px;"><span>Options</span>
+            <i class="icon-menu" style="margin:0;"></i></a>
+        </div>
+      </footer>
+
+
+    </div>
+  </div><iframe name="__tcfapiLocator" src="./Epilogue_files/saved_resource(2).html"
+    style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe>
+
+
+
+  <div class="o_site-footer row pos-r pad-t-rg pad-b-xl pad-b-0--md bg-dark-gray">
+    <div class="float-l"><img
+        src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif"
+        alt="Footer logo"><br></div>
+    <div class="float-r disp-n disp-bl--sm"><img
+        src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif"
+        alt="Footer logo"><br></div>
+    <div class="type-center pad-t-md--md">
+      <ul>
+        <li><a href="https://www.homestuck.com/contacts">Contacts</a></li>
+        <li><a href="https://www.homestuck.com/privacy">Privacy Policy</a></li>
+      </ul>
+      <div><span style="white-space:nowrap;">© 2018 Homestuck</span> <span style="white-space:nowrap;">and VIZ
+          Media</span></div>
+    </div>
   </div>
-</footer>
-
-
-  </div>
-</div><iframe name="__tcfapiLocator" src="./Epilogue_files/saved_resource(2).html" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe>
-
-
-    
-<div class="o_site-footer row pos-r pad-t-rg pad-b-xl pad-b-0--md bg-dark-gray">
-  <div class="float-l"><img src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif" alt="Footer logo"><br></div>
-  <div class="float-r disp-n disp-bl--sm"><img src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif" alt="Footer logo"><br></div>
-  <div class="type-center pad-t-md--md">
-    <ul>
-      <li><a href="https://www.homestuck.com/contacts">Contacts</a></li>
-      <li><a href="https://www.homestuck.com/privacy">Privacy Policy</a></li>
-    </ul>
-    <div><span style="white-space:nowrap;">© 2018 Homestuck</span> <span style="white-space:nowrap;">and VIZ Media</span></div>
-  </div>
-</div>
 
 
 
-    <div id="overlay" data-overlay-state="off" class="o_overlay"></div>
-    <div id="game_overlay" data-game-overlay-state="off" class="o_game-overlay"></div>
-    <div id="overlay_wait" data-overlay-state="off" class="o_overlay-wait"></div>
+  <div id="overlay" data-overlay-state="off" class="o_overlay"></div>
+  <div id="game_overlay" data-game-overlay-state="off" class="o_game-overlay"></div>
+  <div id="overlay_wait" data-overlay-state="off" class="o_overlay-wait"></div>
 
 
 
-  
 
-<iframe name="googlefcPresent" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;" src="./Epilogue_files/saved_resource(6).html" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe></body></html>
+
+  <iframe name="googlefcPresent"
+    style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"
+    src="./Epilogue_files/saved_resource(6).html"
+    style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe>
+</body>
+
+</html>

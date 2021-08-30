@@ -1,292 +1,412 @@
 <!DOCTYPE html>
 
-<html dir="ltr" lang="en-US"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html dir="ltr" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <!-- application -->
-    <script src="./Epilogue_files/jquery-1.11.3.min.js.download"></script>
-    
-<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"1b930da09b","applicationID":"65900267","transactionName":"cFkNREpaWA9dF0pBVlRTEB9LQVsRQQ==","queueTime":0,"applicationTime":5,"agent":""}</script>
-<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"1b930da09b",applicationID:"65900267"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="format-detection" content="telephone=no">
-    <title>The Homestuck Epilogues</title>
-    <meta name="description" content="Tales of dubious authenticity.">
-    <script>
-//<![CDATA[
-var getGAEventLabel = function(){ return "The Homestuck Epilogues"; };
+  <script src="./Epilogue_files/jquery-1.11.3.min.js.download"></script>
+
+  <script>window.NREUM || (NREUM = {}); NREUM.info = { "beacon": "bam-cell.nr-data.net", "errorBeacon": "bam-cell.nr-data.net", "licenseKey": "1b930da09b", "applicationID": "65900267", "transactionName": "cFkNREpaWA9dF0pBVlRTEB9LQVsRQQ==", "queueTime": 0, "applicationTime": 5, "agent": "" }</script>
+  <script>(window.NREUM || (NREUM = {})).loader_config = { licenseKey: "1b930da09b", applicationID: "65900267" }; window.NREUM || (NREUM = {}), __nr_require = function (t, e, n) { function r(n) { if (!e[ n ]) { var i = e[ n ] = { exports: {} }; t[ n ][ 0 ].call(i.exports, function (e) { var i = t[ n ][ 1 ][ e ]; return r(i || e) }, i, i.exports) } return e[ n ].exports } if ("function" == typeof __nr_require) return __nr_require; for (var i = 0; i < n.length; i++)r(n[ i ]); return r }({ 1: [ function (t, e, n) { function r() { } function i(t, e, n) { return function () { return o(t, [ u.now() ].concat(f(arguments)), e ? null : this, n), e ? void 0 : this } } var o = t("handle"), a = t(8), f = t(9), c = t("ee").get("tracer"), u = t("loader"), s = NREUM; "undefined" == typeof window.newrelic && (newrelic = s); var d = [ "setPageViewName", "setCustomAttribute", "setErrorHandler", "finished", "addToTrace", "inlineHit", "addRelease" ], p = "api-", l = p + "ixn-"; a(d, function (t, e) { s[ e ] = i(p + e, !0, "api") }), s.addPageAction = i(p + "addPageAction", !0), s.setCurrentRouteName = i(p + "routeName", !0), e.exports = newrelic, s.interaction = function () { return (new r).get() }; var m = r.prototype = { createTracer: function (t, e) { var n = {}, r = this, i = "function" == typeof e; return o(l + "tracer", [ u.now(), t, n ], r), function () { if (c.emit((i ? "" : "no-") + "fn-start", [ u.now(), r, i ], n), i) try { return e.apply(this, arguments) } catch (t) { throw c.emit("fn-err", [ arguments, this, t ], n), t } finally { c.emit("fn-end", [ u.now() ], n) } } } }; a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","), function (t, e) { m[ e ] = i(l + e) }), newrelic.noticeError = function (t, e) { "string" == typeof t && (t = new Error(t)), o("err", [ t, u.now(), !1, e ]) } }, {} ], 2: [ function (t, e, n) { function r(t) { if (NREUM.init) { for (var e = NREUM.init, n = t.split("."), r = 0; r < n.length - 1; r++)if (e = e[ n[ r ] ], "object" != typeof e) return; return e = e[ n[ n.length - 1 ] ] } } e.exports = { getConfiguration: r } }, {} ], 3: [ function (t, e, n) { function r() { return f.exists && performance.now ? Math.round(performance.now()) : (o = Math.max((new Date).getTime(), o)) - a } function i() { return o } var o = (new Date).getTime(), a = o, f = t(10); e.exports = r, e.exports.offset = a, e.exports.getLastTimestamp = i }, {} ], 4: [ function (t, e, n) { function r(t) { return !(!t || !t.protocol || "file:" === t.protocol) } e.exports = r }, {} ], 5: [ function (t, e, n) { function r(t, e) { var n = t.getEntries(); n.forEach(function (t) { "first-paint" === t.name ? d("timing", [ "fp", Math.floor(t.startTime) ]) : "first-contentful-paint" === t.name && d("timing", [ "fcp", Math.floor(t.startTime) ]) }) } function i(t, e) { var n = t.getEntries(); n.length > 0 && d("lcp", [ n[ n.length - 1 ] ]) } function o(t) { t.getEntries().forEach(function (t) { t.hadRecentInput || d("cls", [ t ]) }) } function a(t) { if (t instanceof m && !g) { var e = Math.round(t.timeStamp), n = { type: t.type }; e <= p.now() ? n.fid = p.now() - e : e > p.offset && e <= Date.now() ? (e -= p.offset, n.fid = p.now() - e) : e = p.now(), g = !0, d("timing", [ "fi", e, n ]) } } function f(t) { "hidden" === t && d("pageHide", [ p.now() ]) } if (!("init" in NREUM && "page_view_timing" in NREUM.init && "enabled" in NREUM.init.page_view_timing && NREUM.init.page_view_timing.enabled === !1)) { var c, u, s, d = t("handle"), p = t("loader"), l = t(7), m = NREUM.o.EV; if ("PerformanceObserver" in window && "function" == typeof window.PerformanceObserver) { c = new PerformanceObserver(r); try { c.observe({ entryTypes: [ "paint" ] }) } catch (v) { } u = new PerformanceObserver(i); try { u.observe({ entryTypes: [ "largest-contentful-paint" ] }) } catch (v) { } s = new PerformanceObserver(o); try { s.observe({ type: "layout-shift", buffered: !0 }) } catch (v) { } } if ("addEventListener" in document) { var g = !1, h = [ "click", "keydown", "mousedown", "pointerdown", "touchstart" ]; h.forEach(function (t) { document.addEventListener(t, a, !1) }) } l(f) } }, {} ], 6: [ function (t, e, n) { function r(t, e) { if (!i) return !1; if (t !== i) return !1; if (!e) return !0; if (!o) return !1; for (var n = o.split("."), r = e.split("."), a = 0; a < r.length; a++)if (r[ a ] !== n[ a ]) return !1; return !0 } var i = null, o = null, a = /Version\/(\S+)\s+Safari/; if (navigator.userAgent) { var f = navigator.userAgent, c = f.match(a); c && f.indexOf("Chrome") === -1 && f.indexOf("Chromium") === -1 && (i = "Safari", o = c[ 1 ]) } e.exports = { agent: i, version: o, match: r } }, {} ], 7: [ function (t, e, n) { function r(t) { function e() { t(a && document[ a ] ? document[ a ] : document[ i ] ? "hidden" : "visible") } "addEventListener" in document && o && document.addEventListener(o, e, !1) } e.exports = r; var i, o, a; "undefined" != typeof document.hidden ? (i = "hidden", o = "visibilitychange", a = "visibilityState") : "undefined" != typeof document.msHidden ? (i = "msHidden", o = "msvisibilitychange") : "undefined" != typeof document.webkitHidden && (i = "webkitHidden", o = "webkitvisibilitychange", a = "webkitVisibilityState") }, {} ], 8: [ function (t, e, n) { function r(t, e) { var n = [], r = "", o = 0; for (r in t) i.call(t, r) && (n[ o ] = e(r, t[ r ]), o += 1); return n } var i = Object.prototype.hasOwnProperty; e.exports = r }, {} ], 9: [ function (t, e, n) { function r(t, e, n) { e || (e = 0), "undefined" == typeof n && (n = t ? t.length : 0); for (var r = -1, i = n - e || 0, o = Array(i < 0 ? 0 : i); ++r < i;)o[ r ] = t[ e + r ]; return o } e.exports = r }, {} ], 10: [ function (t, e, n) { e.exports = { exists: "undefined" != typeof window.performance && window.performance.timing && "undefined" != typeof window.performance.timing.navigationStart } }, {} ], ee: [ function (t, e, n) { function r() { } function i(t) { function e(t) { return t && t instanceof r ? t : t ? u(t, c, a) : a() } function n(n, r, i, o, a) { if (a !== !1 && (a = !0), !l.aborted || o) { t && a && t(n, r, i); for (var f = e(i), c = v(n), u = c.length, s = 0; s < u; s++)c[ s ].apply(f, r); var p = d[ w[ n ] ]; return p && p.push([ b, n, r, f ]), f } } function o(t, e) { y[ t ] = v(t).concat(e) } function m(t, e) { var n = y[ t ]; if (n) for (var r = 0; r < n.length; r++)n[ r ] === e && n.splice(r, 1) } function v(t) { return y[ t ] || [] } function g(t) { return p[ t ] = p[ t ] || i(n) } function h(t, e) { l.aborted || s(t, function (t, n) { e = e || "feature", w[ n ] = e, e in d || (d[ e ] = []) }) } var y = {}, w = {}, b = { on: o, addEventListener: o, removeEventListener: m, emit: n, get: g, listeners: v, context: e, buffer: h, abort: f, aborted: !1 }; return b } function o(t) { return u(t, c, a) } function a() { return new r } function f() { (d.api || d.feature) && (l.aborted = !0, d = l.backlog = {}) } var c = "nr@context", u = t("gos"), s = t(8), d = {}, p = {}, l = e.exports = i(); e.exports.getOrSetContext = o, l.backlog = d }, {} ], gos: [ function (t, e, n) { function r(t, e, n) { if (i.call(t, e)) return t[ e ]; var r = n(); if (Object.defineProperty && Object.keys) try { return Object.defineProperty(t, e, { value: r, writable: !0, enumerable: !1 }), r } catch (o) { } return t[ e ] = r, r } var i = Object.prototype.hasOwnProperty; e.exports = r }, {} ], handle: [ function (t, e, n) { function r(t, e, n, r) { i.buffer([ t ], r), i.emit(t, e, n) } var i = t("ee").get("handle"); e.exports = r, r.ee = i }, {} ], id: [ function (t, e, n) { function r(t) { var e = typeof t; return !t || "object" !== e && "function" !== e ? -1 : t === window ? 0 : a(t, o, function () { return i++ }) } var i = 1, o = "nr@id", a = t("gos"); e.exports = r }, {} ], loader: [ function (t, e, n) { function r() { if (!R++) { var t = M.info = NREUM.info, e = v.getElementsByTagName("script")[ 0 ]; if (setTimeout(u.abort, 3e4), !(t && t.licenseKey && t.applicationID && e)) return u.abort(); c(E, function (e, n) { t[ e ] || (t[ e ] = n) }); var n = a(); f("mark", [ "onload", n + M.offset ], null, "api"), f("timing", [ "load", n ]); var r = v.createElement("script"); 0 === t.agent.indexOf("http://") || 0 === t.agent.indexOf("https://") ? r.src = t.agent : r.src = l + "://" + t.agent, e.parentNode.insertBefore(r, e) } } function i() { "complete" === v.readyState && o() } function o() { f("mark", [ "domContent", a() + M.offset ], null, "api") } var a = t(3), f = t("handle"), c = t(8), u = t("ee"), s = t(6), d = t(4), p = t(2), l = p.getConfiguration("ssl") === !1 ? "http" : "https", m = window, v = m.document, g = "addEventListener", h = "attachEvent", y = m.XMLHttpRequest, w = y && y.prototype, b = !d(m.location); NREUM.o = { ST: setTimeout, SI: m.setImmediate, CT: clearTimeout, XHR: y, REQ: m.Request, EV: m.Event, PR: m.Promise, MO: m.MutationObserver }; var x = "" + location, E = { beacon: "bam.nr-data.net", errorBeacon: "bam.nr-data.net", agent: "js-agent.newrelic.com/nr-1210.min.js" }, O = y && w && w[ g ] && !/CriOS/.test(navigator.userAgent), M = e.exports = { offset: a.getLastTimestamp(), now: a, origin: x, features: {}, xhrWrappable: O, userAgent: s, disabled: b }; if (!b) { t(1), t(5), v[ g ] ? (v[ g ]("DOMContentLoaded", o, !1), m[ g ]("load", r, !1)) : (v[ h ]("onreadystatechange", i), m[ h ]("onload", r)), f("mark", [ "firstbyte", a.getLastTimestamp() ], null, "api"); var R = 0 } }, {} ], "wrap-function": [ function (t, e, n) { function r(t, e) { function n(e, n, r, c, u) { function nrWrapper() { var o, a, s, p; try { a = this, o = d(arguments), s = "function" == typeof r ? r(o, a) : r || {} } catch (l) { i([ l, "", [ o, a, c ], s ], t) } f(n + "start", [ o, a, c ], s, u); try { return p = e.apply(a, o) } catch (m) { throw f(n + "err", [ o, a, m ], s, u), m } finally { f(n + "end", [ o, a, p ], s, u) } } return a(e) ? e : (n || (n = ""), nrWrapper[ p ] = e, o(e, nrWrapper, t), nrWrapper) } function r(t, e, r, i, o) { r || (r = ""); var f, c, u, s = "-" === r.charAt(0); for (u = 0; u < e.length; u++)c = e[ u ], f = t[ c ], a(f) || (t[ c ] = n(f, s ? c + r : r, i, c, o)) } function f(n, r, o, a) { if (!m || e) { var f = m; m = !0; try { t.emit(n, r, o, e, a) } catch (c) { i([ c, n, r, o ], t) } m = f } } return t || (t = s), n.inPlace = r, n.flag = p, n } function i(t, e) { e || (e = s); try { e.emit("internal-error", t) } catch (n) { } } function o(t, e, n) { if (Object.defineProperty && Object.keys) try { var r = Object.keys(t); return r.forEach(function (n) { Object.defineProperty(e, n, { get: function () { return t[ n ] }, set: function (e) { return t[ n ] = e, e } }) }), e } catch (o) { i([ o ], n) } for (var a in t) l.call(t, a) && (e[ a ] = t[ a ]); return e } function a(t) { return !(t && t instanceof Function && t.apply && !t[ p ]) } function f(t, e) { var n = e(t); return n[ p ] = t, o(t, n, s), n } function c(t, e, n) { var r = t[ e ]; t[ e ] = f(r, n) } function u() { for (var t = arguments.length, e = new Array(t), n = 0; n < t; ++n)e[ n ] = arguments[ n ]; return e } var s = t("ee"), d = t(9), p = "nr@original", l = Object.prototype.hasOwnProperty, m = !1; e.exports = r, e.exports.wrapFunction = f, e.exports.wrapInPlace = c, e.exports.argsToArray = u }, {} ] }, {}, [ "loader" ]);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <title>The Homestuck Epilogues</title>
+  <meta name="description" content="Tales of dubious authenticity.">
+  <script>
+    //<![CDATA[
+    var getGAEventLabel = function () { return "The Homestuck Epilogues"; };
 //]]>
-</script>
-      <link rel="canonical" href=prologue/3">
+  </script>
+  <link rel="canonical" href=prologue/3">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="https://www.homestuck.com/favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://www.homestuck.com/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://www.homestuck.com/favicon/favicon-16x16.png">
-<link rel="manifest" href="https://www.homestuck.com/favicon/manifest.json">
-<link rel="mask-icon" href="https://www.homestuck.com/favicon/safari-pinned-tab.svg" color="#6bbe4a">
-<meta name="theme-color" content="#ffffff">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www.homestuck.com/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://www.homestuck.com/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://www.homestuck.com/favicon/favicon-16x16.png">
+  <link rel="manifest" href="https://www.homestuck.com/favicon/manifest.json">
+  <link rel="mask-icon" href="https://www.homestuck.com/favicon/safari-pinned-tab.svg" color="#6bbe4a">
+  <meta name="theme-color" content="#ffffff">
 
-        <link rel="stylesheet" media="all" href="./Epilogue_files/manifest-epilogue-1694f2c1abc80cf72e84324f6d6486e6f04b02358ed667dee36c88974eef388f.css">
-      <link rel="stylesheet" href="./Epilogue_files/kek1uwn.css">
-    <link rel="stylesheet" media="all" href="./Epilogue_files/manifest-ui-e03365bbb17dde0f1fd5463dd7b56d096a27cae55aa131b72684e36c1f0c80f6.css">
-    <script src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE="></script>
-    <script src="./Epilogue_files/manifest-ads-story-1885683d55d6f631dc202ac5db87250ca938be96a613e85bb93739ecc057540e.js.download"></script>
+  <link rel="stylesheet" media="all"
+    href="./Epilogue_files/manifest-epilogue-1694f2c1abc80cf72e84324f6d6486e6f04b02358ed667dee36c88974eef388f.css">
+  <link rel="stylesheet" href="./Epilogue_files/kek1uwn.css">
+  <link rel="stylesheet" media="all"
+    href="./Epilogue_files/manifest-ui-e03365bbb17dde0f1fd5463dd7b56d096a27cae55aa131b72684e36c1f0c80f6.css">
+  <script
+    src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE="></script>
+  <script
+    src="./Epilogue_files/manifest-ads-story-1885683d55d6f631dc202ac5db87250ca938be96a613e85bb93739ecc057540e.js.download"></script>
 
 
-    <!-- //Connect Container: Homestuck-->
-<script src="./Epilogue_files/tag.min.js.download" async="" defer=""></script>
-  <script async="" src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE="></script><style type="text/css">* {
- text-shadow: transparent 0px 0px 0px, rgba(0,0,0,0.68) 0px 0px 0px !important; 
-}</style><script async="" src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE="></script></head>
-  
-  <body class="epilogue">
+  <!-- //Connect Container: Homestuck-->
+  <script src="./Epilogue_files/tag.min.js.download" async="" defer=""></script>
+  <script async=""
+    src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE="></script>
+  <style type="text/css">
+    * {
+      text-shadow: transparent 0px 0px 0px, rgba(0, 0, 0, 0.68) 0px 0px 0px !important;
+    }
+  </style>
+  <script async=""
+    src="./Epilogue_files/AGSKWxUWJi3p-BbijPYvmofvx5yI0CkIVBCDb0EmguTnh8yk-TD3rTHY_oaEwyaELJPUpBK5YWwB3El1RUw1vGfb1VE="></script>
+</head>
 
-    
-    <header id="site-header" role="banner">
-  <div id="header-container" class="o_story-page-header row flex pad-t-0 ">
-    <a href="javascript:void(0)" data-nav-open="" class="nav-btn nav-btn--center color-white" style="overflow-wrap:normal;text-decoration:none;"><i class="icon-menu"></i><span>Menu</span></a>
-    <nav id="nav-container" data-nav-state="closed" role="navigation" class="o_nav-container">
-      <a href="javascript:void(0)" data-nav-close="" class="nav-btn color-white pad-y-rg type-rg" style="overflow-wrap:normal;text-decoration:none;"><i class="icon-close"></i><span>Dismiss</span></a>
-      <ul id="primary-nav" class="o_primary-nav style-caps weight-bold disp-ib color-white type-rg">
-     <li class="o_primary-nav-item slide-candycorn pipe"><a class="o_primary-nav-link" style="color:#39d5f6" href="Read.html">READ</a></li><!--
-     --><li class="o_primary-nav-item"><a class="o_primary-nav-link" style="color:#39d5f6" href="Credits.html">INFO</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-    
+<body class="epilogue">
 
-    <div class="row bg-white bg-light-gray--md pad-t-md--md pos-r">
-  <div id="content_container" class="mar-x-auto disp-bl bg-white" style="max-width:650px;">
-    <div class="pos-r pad-t-sm pad-x-lg--md type-center" style="overflow:visible; height:72px;">
-      <h3 class="disp-ib type-hsep-header line-tight type-lg pad-t-md">
-        3
-      </h3>
+
+  <header id="site-header" role="banner">
+    <div id="header-container" class="o_story-page-header row flex pad-t-0 ">
+      <a href="javascript:void(0)" data-nav-open="" class="nav-btn nav-btn--center color-white"
+        style="overflow-wrap:normal;text-decoration:none;"><i class="icon-menu"></i><span>Menu</span></a>
+      <nav id="nav-container" data-nav-state="closed" role="navigation" class="o_nav-container">
+        <a href="javascript:void(0)" data-nav-close="" class="nav-btn color-white pad-y-rg type-rg"
+          style="overflow-wrap:normal;text-decoration:none;"><i class="icon-close"></i><span>Dismiss</span></a>
+        <ul id="primary-nav" class="o_primary-nav style-caps weight-bold disp-ib color-white type-rg">
+          <li class="o_primary-nav-item slide-candycorn pipe"><a class="o_primary-nav-link" style="color:#39d5f6"
+              href="Read.html">READ</a></li>
+          <!--
+     -->
+          <li class="o_primary-nav-item"><a class="o_primary-nav-link" style="color:#39d5f6"
+              href="Credits.html">INFO</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <div class="row bg-white bg-light-gray--md pad-t-md--md pos-r">
+    <div id="content_container" class="mar-x-auto disp-bl bg-white" style="max-width:650px;">
+      <div class="pos-r pad-t-sm pad-x-lg--md type-center" style="overflow:visible; height:72px;">
+        <h3 class="disp-ib type-hsep-header line-tight type-lg pad-t-md">
+          3
+        </h3>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="row bg-white bg-light-gray--md pad-b-md pad-b-lg--md pos-r pad-t-md pad-t-0--md">
-  <div class="mar-x-auto disp-bl bg-white pad-t-lg" style="max-width:650px;">
-      <div class="o-story_text o_epilogue type-rg type-sm--md line-caption line-copy--md pad-x-0 pad-x-lg--md pad-b-lg"><p class="no-indent"><span class="opener type-hs-opener-rg type-hs-opener-sm--md">I</span>t’s a beautiful day in the Carapace Kingdom, just like it was in the Human Kingdom and just like it was in Salamander Village. For whatever faults this paradise you created might have, you sure don’t hear many complaints about the weather. You’re sitting with Roxy and Calliope on a giant, chessboard-pattern tablecloth. It’s a nice touch, you think. But if you spent any time shopping in the Carapace Kingdom, you’d know most things you can buy are chess themed. </p>
-<p>Friendly carapacians go about their day around you, passing through the park with their eyes politely averted as they pretend not to notice that three celebrities are having lunch in the grass nearby. It’s extra polite of them, because you and Roxy are having a very personal conversation. </p>
-<div class="chat type-rg type-hs-small--md">
-  <p class="john">JOHN: she looked alright. mostly just tired. </p>
-  <p class="john">JOHN: at least she seemed to have enough energy to babble at length about philosophical gibberish, and things about canon and such.</p>
-  <p class="roxy">ROXY: lmao</p>
-  <p class="roxy">ROXY: guess she filled you in on all the ultimate self junk then</p>
-  <p class="john">JOHN: the what?</p>
-  <p class="roxy">ROXY: the shit where she starts knowing everything and feelin bad</p>
-  <p class="john">JOHN: oh. that’s not the term she used. she just kept describing it as a condition.</p>
-  <p class="john">JOHN: you haven’t been feeling anything like that, right?</p>
-  <p class="roxy">ROXY: what getting to know my ultimate self?</p>
-  <p class="john">JOHN: yeah.</p>
-  <p class="roxy">ROXY: man ive barely got a hold of my basic ass self</p>
-  <p class="john">JOHN: heh.</p>
-  <p class="john">JOHN: yeah, she said she was the only one going through this, that she knew of.</p>
-  <p class="john">JOHN: poor rose.</p>
-  <p class="john">JOHN: at least all that medication seems to be keeping her sort of functional.</p>
-</div>
-<p class="no-indent">Roxy gives you a serious, sidelong glance. </p>
-<p class="Command">&gt; Remember that whole totally unprovoked spiel Rose gave you about substance abuse.</p>
-<div class="chat type-rg type-hs-small--md">
-  <p class="john">JOHN: she said it wasn’t like that! </p>
-  <p class="john">JOHN: i mean... she said it was under control. </p>
-  <p class="john">JOHN: well, what the fuck do i know. the only illicit substance i’ve ever done is lick that STUPID trickster lollipop.</p>
-  <p class="john">JOHN: NEVER AGAIN.</p>
-  <p class="roxy">ROXY: yeah w/e</p>
-  <p class="roxy">ROXY: cant say its much my business anymore</p>
-  <p class="roxy">ROXY: rose and i arent as close as we used to be</p>
-</div>
-  <p class="no-indent">You nod, sort of knowingly, because you’re thinking about how you hadn’t talked to Rose in ages either. Roxy gives you a quizzical look, but you turn away before she can draw meaning from it.</p>
-<div class="chat type-rg type-hs-small--md">
-  <p class="roxy">ROXY: maryams been keeping her real busy since they got hitched</p>
-  <p class="roxy">ROXY: they both vanished down the brooding caverns and that was p much that</p>
-  <p class="roxy">ROXY: only since she got sick and spent more time at home did we start talkin more again</p>
-  <p class="roxy">ROXY: its been great but our conversations have been a lil bit upsetting </p>
-</div>
-<p class="no-indent">And, here it comes. The thing you were trying to avoid thinking about the moment Roxy texted you, about how you haven’t talked to Roxy in ages either. You were having such a nice time ignoring that fact, too.</p>
-<p class="Command">&gt; Change the subject.</p>
-<div class="chat type-rg type-hs-small--md">
-  <p class="john">JOHN: so, are you and callie still living at the same place i last saw? the one near the tower?</p>
-</div>
-<p class="no-indent">You look towards the bell tower in the distance. It’s a gothic building so tall that it cuts a shadow through the midday sun. It’s an important landmark in the kingdom—the tallest structure for miles around—and the only way you can ever navigate your way here flying. Carapace architecture is otherwise identic, a reflection of their functional, collectivist society.</p>
-<div class="chat type-rg type-hs-small--md">
-  <p class="roxy">ROXY: yup</p>
-  <p class="john">JOHN: that’s cool.</p>
-  <p class="john">JOHN: it’s a nice place.</p>
-  <p class="roxy">ROXY: yeah i like it here</p>
-  <p class="roxy">ROXY: ive thought about it but ill probably never wanna live in a different kingdom</p>
-  <p class="roxy">ROXY: still feel most at home around the chess guys</p>
-  <p class="john">JOHN: makes sense.</p>
-  <p class="john">JOHN: that’s about how i feel about the salamanders.</p>
-  <p class="john">JOHN: which... i realize actually makes no fucking sense.</p>
-  <p class="roxy">ROXY: haha</p>
-  <p class="john">JOHN: they lead simple lives. </p>
-  <p class="john">JOHN: i don’t really care for the chaos of human or troll cities.</p>
-  <p class="roxy">ROXY: neither do we</p>
-</div>
-<p class="no-indent">You watch Roxy smile and reach for Calliope’s hand.</p>
-<p class="Command">&gt; Look away before you start dwelling on it.</p>
-<p class="no-indent">You start dwelling on it immediately, looking probably quite conspicuous with how quickly you whipped your gaze away. But seriously, what <em>is</em> up with their relationship? Is it romantic? Platonic? Can cherubs even have a romantic relationship? Are they even <em>interested</em> in it, like, on a fundamental level? Do their brains and hearts even work that way? Questions like this used to keep you awake at night.</p>
-<p>You look at them, at where Roxy’s fingers are entwined with Calliope’s green claws. Calliope is still wearing the Ring of Life. The same one you obtained in a ludicrous adventure through the afterlife, and then re-obtained in a ludicrous adventure through canon when it was stolen from you. It’s the same one that allowed Calliope to stop being dead in the first place, and to come live with your friends here on your beautifully renovated home planet. And it’s the same one you gave Roxy all those years ago, to fulfill a promise made to a very special new friend.</p>
-<p>At the time, the gesture felt so important. It felt more meaningful than any gift you’d ever given. Like there was some grand emotional gravitas about it that signified something deeper than... than what it turned out to be. </p>
-<p>You have since concluded you were just imagining things. Ascribing symbolic meaning to gestures that they simply didn’t carry, like the dumb kid you were.</p>
-<p class="Command">&gt; Tactfully avoid saying anything at all about Roxy and Calliope’s weird, ambiguous relationship.</p>
-<div class="chat type-rg type-hs-small--md">
-  <p class="john">JOHN: uh, so...  </p>
-</div>
-<p class="no-indent">But you can’t stop thinking about it. What goes on in Roxy’s head. What she thinks about you. </p>
-<p>You and all your friends have dispositions affected by your classes and aspects. You think you know what that means in your case. But what about her? You can only speculate. Void is a place where things sink and disappear. Where they linger forever, but cease to exist. You aren’t actually sure if your feelings for Roxy ever really faded, or if they just grew numb with time and distance. Is it the same for her?</p>
-<p>You search your soul for the answer, but come up empty. The truth is, you suspect her mental interior is unfathomable. In fact, you feel sure of it. </p>
-<p>You wonder suddenly, watching her. This version of her, that is. The one with whom you share all these bittersweet memories—will you ever see her again?</p>
-<div class="chat type-rg type-hs-small--md">
-  <p class="calliope">CALLIOPE: ahem.</p>
-  <p class="calliope">CALLIOPE: john!</p>
-  <p class="john">JOHN: what?</p>
-  <p class="calliope">CALLIOPE: please forgive me if i come across as impatient. bUt if we are finished with the pleasantries, i believe yoU have a choice to make.</p>
-  <p class="john">JOHN: huh?</p>
-  <p class="calliope">CALLIOPE: the choice as to whether yoU will go defeat my brother, or stay here.</p>
-  <p class="calliope">CALLIOPE: have yoU decided yet?</p>
-  <p class="john">JOHN: there’s a choice??</p>
-</div>
-<p class="no-indent">Calliope is smiling brightly, but Roxy’s face has no expression at all.</p>
-<div class="chat type-rg type-hs-small--md">
-  <p class="john">JOHN: i was just assuming i had to go.</p>
-  <p class="john">JOHN: because if i don’t, then...  </p>
-  <p class="john">JOHN: a lot of stuff will stop being real. or i mean, stop being canon?</p>
-  <p class="john">JOHN: to tell you the truth, i’m a little confused about what will happen if i don’t go.</p>
-  <p class="john">JOHN: but it sounds like it will probably be bad!</p>
-  <p class="calliope">CALLIOPE: that may be so. </p>
-  <p class="calliope">CALLIOPE: we are not here to caUtion yoU aboUt the conseqUences of yoUr decision either way.</p>
-  <p class="calliope">CALLIOPE: bUt there is always a choice!</p>
-  <p class="calliope">CALLIOPE: roxy and i merely wished to invite yoU here for a nice hUman picnic, and show oUr sUpport for whichever decision yoU make.</p>
-  <p class="roxy">ROXY: tbh its a relief to finally be doin this</p>
-  <p class="john">JOHN: it is?</p>
-  <p class="roxy">ROXY: mm hm</p>
-  <p class="john">JOHN: how much have you actually... talked about this? i mean, how many people knew this was going to be a thing?</p>
-  <p class="roxy">ROXY: just us and rose. well dirk too i think</p>
-  <p class="roxy">ROXY: shes been talkin to me about it a bunch</p>
-  <p class="roxy">ROXY: and him too but i dunno how much</p>
-  <p class="roxy">ROXY: hes got like</p>
-  <p class="roxy">ROXY: “thoughts” about all this shit</p>
-  <p class="roxy">ROXY: but whatever thats not important or even remotely surprising</p>
-  <p class="roxy">ROXY: bottom line, rose has been tormenting herself about having to tell you</p>
-  <p class="roxy">ROXY: im just glad she finally said it so she can rest</p>
-  <p class="roxy">ROXY: now its up to you</p>
-  <p class="calliope">CALLIOPE: yes. take all the time yoU need.</p>
-  <p class="calliope">CALLIOPE: again, we aren’t here to inflUence yoU. it’s very important that the decision come from yoUr desire to go throUgh with it, one way or another.</p>
-  <p class="calliope">CALLIOPE: any tampering coUld taint the resUlts.</p>
-  <p class="john">JOHN: taint the...  </p>
-  <p class="john">JOHN: wait, what?</p>
-  <p class="roxy">ROXY: so whatll it be john</p>
-</div>
-<p class="no-indent">A chill runs through you and stays there.</p>
-<p class="Command">&gt; Consider the gravitas of this choice.</p>
-<p class="no-indent">You try, but you can’t, because you weren’t really prepared for it. You didn’t think it was a choice at all until this very second. You think back to the way Rose looked at you before she went to bed. What has she told Roxy that she didn’t tell you? The chill tightens around your throat and turns into fear. </p>
-<p>No, not fear. The feeling is worse than that. It’s <em>regret</em>. </p>
-<p>You wasted your time here on this idyllic restoration of Earth. Why did you spend so much time alone? Moping around the house mourning your dead father, who probably would have wanted you to get more enjoyment out of your teen years, as well as your unusually early retirement. There’s so much you could have done. You could have even reached out to Roxy again; maybe she was waiting for you to do that. Maybe your withdrawal hurt her. Maybe she was heartbroken, just like you kind of feel right now. You study her perfectly stoic face and conclude nothing from it. Her expression reminds you of how Dave used to look, when you first met for real, before years of living with Karkat softened him up. Impenetrable cool. </p>
-<p>It’s too late to figure any of this out now. You fucked it up already.</p>
-<p>Unless, of course, you choose to stay.</p>
-<p>Upon further examination, you realize that Roxy’s stoicism isn’t cold. There’s concern there. She is displaying restraint, keeping quiet while you make up your mind. You’re sweating, you realize. Cold sweat. Even worse than the anime nightmare sweat you woke up soaked in this morning.</p>
-<div class="chat type-rg type-hs-small--md">
-  <p class="roxy">ROXY: john u ok?</p>
-  <p class="john">JOHN: ... </p>
-  <p class="roxy">ROXY: looked like you were gonna pass out there for a second</p>
-</div>
-<p class="no-indent">Suddenly, Calliope bolts upright.</p>
-<div class="chat type-rg type-hs-small--md">
-  <p class="calliope">CALLIOPE: of coUrse! what was i thinking.</p>
-  <p class="calliope">CALLIOPE: this decision is far too important to be made on an empty stomach.</p>
-</div>
-<p class="no-indent">She fetches the picnic basket, which naturally has been sitting there on the tablecloth since the moment you arrived.</p>
-<div class="chat type-rg type-hs-small--md">
-  <p class="calliope">CALLIOPE: here, before yoU choose which path yoU’re going to take, yoU shoUld decide what yoU’d like to eat!</p>
-  <p class="calliope">CALLIOPE: i have packed a wide variety of provisions. easily enoUgh to satisfy even the most ravenoUs picnic-goer’s appetite.</p>
-  <p class="calliope">CALLIOPE: behold, an array of savory delights for the carnally inclined. </p>
-  <p class="calliope">CALLIOPE: or perhaps something for yoUr sweet tooth, if a lUst for treats is what stokes yoUr desire?</p>
-</div>
-<p class="no-indent">Calliope produces two dishes from the basket and begins gingerly unwrapping them. The unwrapping is so ginger, in fact, that there’s something almost dramatic about it. Like the opening theme to that boring sci-fi movie with the monolith and the bone-throwing monkeys should be playing as she peels away the cheesecloth. </p>
-<p>On one plate is a pile of meat: rare, almost bleeding cuts from animals you can’t identify. The other plate holds a generous heap of colorful, exotic-looking candy. You scoot to the side and peek into the basket to see if there’s anything else. There’s a book in there, but no more food. This is all there is.</p>
-<p class="Command">&gt; Contemplate your lunch.</p>
-<p class="no-indent">You put a finger to your lips and focus on the food with great intensity. You stop fretting about choices, and heartbreak, and eternity, and Lord English. Your entire world narrows to a single point of light as you are utterly consumed by the overbearing decision about which of these absurd meals to have for lunch.</p>
-<p class="Command">&gt; MEAT or CANDY?</p>
-<p class="no-indent">Meat or candy. The two possibilities pinball around your skull. Meat or candy. It’s a tough choice. On any other day you might be inclined to simply follow the whims of your cravings, but no clear victor surges to the forefront of your mind.</p>
-<p>Either option offers a tempting means of sustenance. You know the meat will be rich and filling, and if you’re being honest with yourself, you haven’t had the most robust diet as of late. You didn’t even have breakfast. It’s probably a good idea to eat something resembling a real meal for once.</p>
-<p>But you’re no stranger to Calliope’s tastes, as far as carnivorous comestibles are concerned. You know every cut on that plate is rare to the core. It’ll fill your mouth to bursting with juice, lie heavy on your stomach for hours to come as your body works to break down all the nutritious protein and fat.</p>
-<p>It might be tough to chew. It might be even tougher to swallow.</p>
-<p>Maybe the candy is the better choice for a picnic like this. Something that’ll go down easy and fill you with bright energy as you pass the time with your friends. You know you need to just let go sometimes, and stop worrying so much about what other people expect of you. Or even what <em>you</em> expect of you. It’s not a bad thing to enjoy yourself just for the sake of pleasure.</p>
-<p>But eat too much and all that sweetness could make you sick.</p>
-<p>Roxy and Calliope glance at each other in confusion as you deliberate over what to eat. You suppose it’s taking you a while to choose, but each dish is appealing enough in certain ways. Each has its potential dietary drawbacks. You don’t want to make a decision you can’t stomach.</p>
-<p>Meat or candy, John. Meat or candy?</p>
-<p>You release your breath when you realize you’ve been holding it. You’re being ridiculous. What’s the sense of fussing over lunch? In the end, it really doesn’t matter. Whatever you choose, it’ll all be flushed down the toilet tomorrow.</p>
-<p>Just go with your gut. Don’t sweat the small stuff. There are much more important things out there to fuck yourself up over.</p></div>
+  <div class="row bg-white bg-light-gray--md pad-b-md pad-b-lg--md pos-r pad-t-md pad-t-0--md">
+    <div class="mar-x-auto disp-bl bg-white pad-t-lg" style="max-width:650px;">
+      <div class="o-story_text o_epilogue type-rg type-sm--md line-caption line-copy--md pad-x-0 pad-x-lg--md pad-b-lg">
+        <p class="no-indent"><span class="opener type-hs-opener-rg type-hs-opener-sm--md">I</span>t’s a beautiful day in
+          the Carapace Kingdom, just like it was in the Human Kingdom and just like it was in Salamander Village. For
+          whatever faults this paradise you created might have, you sure don’t hear many complaints about the weather.
+          You’re sitting with Roxy and Calliope on a giant, chessboard-pattern tablecloth. It’s a nice touch, you think.
+          But if you spent any time shopping in the Carapace Kingdom, you’d know most things you can buy are chess
+          themed. </p>
+        <p>Friendly carapacians go about their day around you, passing through the park with their eyes politely averted
+          as they pretend not to notice that three celebrities are having lunch in the grass nearby. It’s extra polite
+          of them, because you and Roxy are having a very personal conversation. </p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="john">JOHN: she looked alright. mostly just tired. </p>
+          <p class="john">JOHN: at least she seemed to have enough energy to babble at length about philosophical
+            gibberish, and things about canon and such.</p>
+          <p class="roxy">ROXY: lmao</p>
+          <p class="roxy">ROXY: guess she filled you in on all the ultimate self junk then</p>
+          <p class="john">JOHN: the what?</p>
+          <p class="roxy">ROXY: the shit where she starts knowing everything and feelin bad</p>
+          <p class="john">JOHN: oh. that’s not the term she used. she just kept describing it as a condition.</p>
+          <p class="john">JOHN: you haven’t been feeling anything like that, right?</p>
+          <p class="roxy">ROXY: what getting to know my ultimate self?</p>
+          <p class="john">JOHN: yeah.</p>
+          <p class="roxy">ROXY: man ive barely got a hold of my basic ass self</p>
+          <p class="john">JOHN: heh.</p>
+          <p class="john">JOHN: yeah, she said she was the only one going through this, that she knew of.</p>
+          <p class="john">JOHN: poor rose.</p>
+          <p class="john">JOHN: at least all that medication seems to be keeping her sort of functional.</p>
+        </div>
+        <p class="no-indent">Roxy gives you a serious, sidelong glance. </p>
+        <p class="Command">&gt; Remember that whole totally unprovoked spiel Rose gave you about substance abuse.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="john">JOHN: she said it wasn’t like that! </p>
+          <p class="john">JOHN: i mean... she said it was under control. </p>
+          <p class="john">JOHN: well, what the fuck do i know. the only illicit substance i’ve ever done is lick that
+            STUPID trickster lollipop.</p>
+          <p class="john">JOHN: NEVER AGAIN.</p>
+          <p class="roxy">ROXY: yeah w/e</p>
+          <p class="roxy">ROXY: cant say its much my business anymore</p>
+          <p class="roxy">ROXY: rose and i arent as close as we used to be</p>
+        </div>
+        <p class="no-indent">You nod, sort of knowingly, because you’re thinking about how you hadn’t talked to Rose in
+          ages either. Roxy gives you a quizzical look, but you turn away before she can draw meaning from it.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="roxy">ROXY: maryams been keeping her real busy since they got hitched</p>
+          <p class="roxy">ROXY: they both vanished down the brooding caverns and that was p much that</p>
+          <p class="roxy">ROXY: only since she got sick and spent more time at home did we start talkin more again</p>
+          <p class="roxy">ROXY: its been great but our conversations have been a lil bit upsetting </p>
+        </div>
+        <p class="no-indent">And, here it comes. The thing you were trying to avoid thinking about the moment Roxy
+          texted you, about how you haven’t talked to Roxy in ages either. You were having such a nice time ignoring
+          that fact, too.</p>
+        <p class="Command">&gt; Change the subject.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="john">JOHN: so, are you and callie still living at the same place i last saw? the one near the
+            tower?</p>
+        </div>
+        <p class="no-indent">You look towards the bell tower in the distance. It’s a gothic building so tall that it
+          cuts a shadow through the midday sun. It’s an important landmark in the kingdom—the tallest structure for
+          miles around—and the only way you can ever navigate your way here flying. Carapace architecture is otherwise
+          identic, a reflection of their functional, collectivist society.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="roxy">ROXY: yup</p>
+          <p class="john">JOHN: that’s cool.</p>
+          <p class="john">JOHN: it’s a nice place.</p>
+          <p class="roxy">ROXY: yeah i like it here</p>
+          <p class="roxy">ROXY: ive thought about it but ill probably never wanna live in a different kingdom</p>
+          <p class="roxy">ROXY: still feel most at home around the chess guys</p>
+          <p class="john">JOHN: makes sense.</p>
+          <p class="john">JOHN: that’s about how i feel about the salamanders.</p>
+          <p class="john">JOHN: which... i realize actually makes no fucking sense.</p>
+          <p class="roxy">ROXY: haha</p>
+          <p class="john">JOHN: they lead simple lives. </p>
+          <p class="john">JOHN: i don’t really care for the chaos of human or troll cities.</p>
+          <p class="roxy">ROXY: neither do we</p>
+        </div>
+        <p class="no-indent">You watch Roxy smile and reach for Calliope’s hand.</p>
+        <p class="Command">&gt; Look away before you start dwelling on it.</p>
+        <p class="no-indent">You start dwelling on it immediately, looking probably quite conspicuous with how quickly
+          you whipped your gaze away. But seriously, what <em>is</em> up with their relationship? Is it romantic?
+          Platonic? Can cherubs even have a romantic relationship? Are they even <em>interested</em> in it, like, on a
+          fundamental level? Do their brains and hearts even work that way? Questions like this used to keep you awake
+          at night.</p>
+        <p>You look at them, at where Roxy’s fingers are entwined with Calliope’s green claws. Calliope is still wearing
+          the Ring of Life. The same one you obtained in a ludicrous adventure through the afterlife, and then
+          re-obtained in a ludicrous adventure through canon when it was stolen from you. It’s the same one that allowed
+          Calliope to stop being dead in the first place, and to come live with your friends here on your beautifully
+          renovated home planet. And it’s the same one you gave Roxy all those years ago, to fulfill a promise made to a
+          very special new friend.</p>
+        <p>At the time, the gesture felt so important. It felt more meaningful than any gift you’d ever given. Like
+          there was some grand emotional gravitas about it that signified something deeper than... than what it turned
+          out to be. </p>
+        <p>You have since concluded you were just imagining things. Ascribing symbolic meaning to gestures that they
+          simply didn’t carry, like the dumb kid you were.</p>
+        <p class="Command">&gt; Tactfully avoid saying anything at all about Roxy and Calliope’s weird, ambiguous
+          relationship.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="john">JOHN: uh, so... </p>
+        </div>
+        <p class="no-indent">But you can’t stop thinking about it. What goes on in Roxy’s head. What she thinks about
+          you. </p>
+        <p>You and all your friends have dispositions affected by your classes and aspects. You think you know what that
+          means in your case. But what about her? You can only speculate. Void is a place where things sink and
+          disappear. Where they linger forever, but cease to exist. You aren’t actually sure if your feelings for Roxy
+          ever really faded, or if they just grew numb with time and distance. Is it the same for her?</p>
+        <p>You search your soul for the answer, but come up empty. The truth is, you suspect her mental interior is
+          unfathomable. In fact, you feel sure of it. </p>
+        <p>You wonder suddenly, watching her. This version of her, that is. The one with whom you share all these
+          bittersweet memories—will you ever see her again?</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="calliope">CALLIOPE: ahem.</p>
+          <p class="calliope">CALLIOPE: john!</p>
+          <p class="john">JOHN: what?</p>
+          <p class="calliope">CALLIOPE: please forgive me if i come across as impatient. bUt if we are finished with the
+            pleasantries, i believe yoU have a choice to make.</p>
+          <p class="john">JOHN: huh?</p>
+          <p class="calliope">CALLIOPE: the choice as to whether yoU will go defeat my brother, or stay here.</p>
+          <p class="calliope">CALLIOPE: have yoU decided yet?</p>
+          <p class="john">JOHN: there’s a choice??</p>
+        </div>
+        <p class="no-indent">Calliope is smiling brightly, but Roxy’s face has no expression at all.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="john">JOHN: i was just assuming i had to go.</p>
+          <p class="john">JOHN: because if i don’t, then... </p>
+          <p class="john">JOHN: a lot of stuff will stop being real. or i mean, stop being canon?</p>
+          <p class="john">JOHN: to tell you the truth, i’m a little confused about what will happen if i don’t go.</p>
+          <p class="john">JOHN: but it sounds like it will probably be bad!</p>
+          <p class="calliope">CALLIOPE: that may be so. </p>
+          <p class="calliope">CALLIOPE: we are not here to caUtion yoU aboUt the conseqUences of yoUr decision either
+            way.</p>
+          <p class="calliope">CALLIOPE: bUt there is always a choice!</p>
+          <p class="calliope">CALLIOPE: roxy and i merely wished to invite yoU here for a nice hUman picnic, and show
+            oUr sUpport for whichever decision yoU make.</p>
+          <p class="roxy">ROXY: tbh its a relief to finally be doin this</p>
+          <p class="john">JOHN: it is?</p>
+          <p class="roxy">ROXY: mm hm</p>
+          <p class="john">JOHN: how much have you actually... talked about this? i mean, how many people knew this was
+            going to be a thing?</p>
+          <p class="roxy">ROXY: just us and rose. well dirk too i think</p>
+          <p class="roxy">ROXY: shes been talkin to me about it a bunch</p>
+          <p class="roxy">ROXY: and him too but i dunno how much</p>
+          <p class="roxy">ROXY: hes got like</p>
+          <p class="roxy">ROXY: “thoughts” about all this shit</p>
+          <p class="roxy">ROXY: but whatever thats not important or even remotely surprising</p>
+          <p class="roxy">ROXY: bottom line, rose has been tormenting herself about having to tell you</p>
+          <p class="roxy">ROXY: im just glad she finally said it so she can rest</p>
+          <p class="roxy">ROXY: now its up to you</p>
+          <p class="calliope">CALLIOPE: yes. take all the time yoU need.</p>
+          <p class="calliope">CALLIOPE: again, we aren’t here to inflUence yoU. it’s very important that the decision
+            come from yoUr desire to go throUgh with it, one way or another.</p>
+          <p class="calliope">CALLIOPE: any tampering coUld taint the resUlts.</p>
+          <p class="john">JOHN: taint the... </p>
+          <p class="john">JOHN: wait, what?</p>
+          <p class="roxy">ROXY: so whatll it be john</p>
+        </div>
+        <p class="no-indent">A chill runs through you and stays there.</p>
+        <p class="Command">&gt; Consider the gravitas of this choice.</p>
+        <p class="no-indent">You try, but you can’t, because you weren’t really prepared for it. You didn’t think it was
+          a choice at all until this very second. You think back to the way Rose looked at you before she went to bed.
+          What has she told Roxy that she didn’t tell you? The chill tightens around your throat and turns into fear.
+        </p>
+        <p>No, not fear. The feeling is worse than that. It’s <em>regret</em>. </p>
+        <p>You wasted your time here on this idyllic restoration of Earth. Why did you spend so much time alone? Moping
+          around the house mourning your dead father, who probably would have wanted you to get more enjoyment out of
+          your teen years, as well as your unusually early retirement. There’s so much you could have done. You could
+          have even reached out to Roxy again; maybe she was waiting for you to do that. Maybe your withdrawal hurt her.
+          Maybe she was heartbroken, just like you kind of feel right now. You study her perfectly stoic face and
+          conclude nothing from it. Her expression reminds you of how Dave used to look, when you first met for real,
+          before years of living with Karkat softened him up. Impenetrable cool. </p>
+        <p>It’s too late to figure any of this out now. You fucked it up already.</p>
+        <p>Unless, of course, you choose to stay.</p>
+        <p>Upon further examination, you realize that Roxy’s stoicism isn’t cold. There’s concern there. She is
+          displaying restraint, keeping quiet while you make up your mind. You’re sweating, you realize. Cold sweat.
+          Even worse than the anime nightmare sweat you woke up soaked in this morning.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="roxy">ROXY: john u ok?</p>
+          <p class="john">JOHN: ... </p>
+          <p class="roxy">ROXY: looked like you were gonna pass out there for a second</p>
+        </div>
+        <p class="no-indent">Suddenly, Calliope bolts upright.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="calliope">CALLIOPE: of coUrse! what was i thinking.</p>
+          <p class="calliope">CALLIOPE: this decision is far too important to be made on an empty stomach.</p>
+        </div>
+        <p class="no-indent">She fetches the picnic basket, which naturally has been sitting there on the tablecloth
+          since the moment you arrived.</p>
+        <div class="chat type-rg type-hs-small--md">
+          <p class="calliope">CALLIOPE: here, before yoU choose which path yoU’re going to take, yoU shoUld decide what
+            yoU’d like to eat!</p>
+          <p class="calliope">CALLIOPE: i have packed a wide variety of provisions. easily enoUgh to satisfy even the
+            most ravenoUs picnic-goer’s appetite.</p>
+          <p class="calliope">CALLIOPE: behold, an array of savory delights for the carnally inclined. </p>
+          <p class="calliope">CALLIOPE: or perhaps something for yoUr sweet tooth, if a lUst for treats is what stokes
+            yoUr desire?</p>
+        </div>
+        <p class="no-indent">Calliope produces two dishes from the basket and begins gingerly unwrapping them. The
+          unwrapping is so ginger, in fact, that there’s something almost dramatic about it. Like the opening theme to
+          that boring sci-fi movie with the monolith and the bone-throwing monkeys should be playing as she peels away
+          the cheesecloth. </p>
+        <p>On one plate is a pile of meat: rare, almost bleeding cuts from animals you can’t identify. The other plate
+          holds a generous heap of colorful, exotic-looking candy. You scoot to the side and peek into the basket to see
+          if there’s anything else. There’s a book in there, but no more food. This is all there is.</p>
+        <p class="Command">&gt; Contemplate your lunch.</p>
+        <p class="no-indent">You put a finger to your lips and focus on the food with great intensity. You stop fretting
+          about choices, and heartbreak, and eternity, and Lord English. Your entire world narrows to a single point of
+          light as you are utterly consumed by the overbearing decision about which of these absurd meals to have for
+          lunch.</p>
+        <p class="Command">&gt; MEAT or CANDY?</p>
+        <p class="no-indent">Meat or candy. The two possibilities pinball around your skull. Meat or candy. It’s a tough
+          choice. On any other day you might be inclined to simply follow the whims of your cravings, but no clear
+          victor surges to the forefront of your mind.</p>
+        <p>Either option offers a tempting means of sustenance. You know the meat will be rich and filling, and if
+          you’re being honest with yourself, you haven’t had the most robust diet as of late. You didn’t even have
+          breakfast. It’s probably a good idea to eat something resembling a real meal for once.</p>
+        <p>But you’re no stranger to Calliope’s tastes, as far as carnivorous comestibles are concerned. You know every
+          cut on that plate is rare to the core. It’ll fill your mouth to bursting with juice, lie heavy on your stomach
+          for hours to come as your body works to break down all the nutritious protein and fat.</p>
+        <p>It might be tough to chew. It might be even tougher to swallow.</p>
+        <p>Maybe the candy is the better choice for a picnic like this. Something that’ll go down easy and fill you with
+          bright energy as you pass the time with your friends. You know you need to just let go sometimes, and stop
+          worrying so much about what other people expect of you. Or even what <em>you</em> expect of you. It’s not a
+          bad thing to enjoy yourself just for the sake of pleasure.</p>
+        <p>But eat too much and all that sweetness could make you sick.</p>
+        <p>Roxy and Calliope glance at each other in confusion as you deliberate over what to eat. You suppose it’s
+          taking you a while to choose, but each dish is appealing enough in certain ways. Each has its potential
+          dietary drawbacks. You don’t want to make a decision you can’t stomach.</p>
+        <p>Meat or candy, John. Meat or candy?</p>
+        <p>You release your breath when you realize you’ve been holding it. You’re being ridiculous. What’s the sense of
+          fussing over lunch? In the end, it really doesn’t matter. Whatever you choose, it’ll all be flushed down the
+          toilet tomorrow.</p>
+        <p>Just go with your gut. Don’t sweat the small stuff. There are much more important things out there to fuck
+          yourself up over.</p>
+      </div>
       <div class="flex flex-wrap pad-b-lg type-rg type-sm--md ">
         <div class="o_epilogue g-6 g-12--md g-omega type-left pad-t-md pad-b-0 pad-x-0 pad-x-lg--md">
           <p class="Command">&gt; Choose:</p>
         </div>
         <div class="g-3 g-6--md type-right pad-r-md pad-r-lg--md">
           <div class="type-center" style="width:140px; margin-left:auto;">
-            <a href="Meat 1.html"><img src="./Epilogue_files/meat_140x140-cb5871de85aac6aaf2afdbe67fb1f7620d1dcb25382d9415cba968d5f851ae5c.png" alt="Meat 140x140"></a><br>
-            <a href="Meat 1.html"><h3 class="pad-t-0 type-center type-hsep-header line-solid type-lg">MEAT</h3></a>
+            <a href="Meat 1.html"><img
+                src="./Epilogue_files/meat_140x140-cb5871de85aac6aaf2afdbe67fb1f7620d1dcb25382d9415cba968d5f851ae5c.png"
+                alt="Meat 140x140"></a><br>
+            <a href="Meat 1.html">
+              <h3 class="pad-t-0 type-center type-hsep-header line-solid type-lg">MEAT</h3>
+            </a>
           </div>
         </div>
         <div class="g-3 g-6--md g-omega type-left pad-l-md pad-l-lg--md">
           <div class="type-center" style="width:140px;">
-            <a href="Candy 1.html"><img src="./Epilogue_files/candy_140x140-854708a29f9d181adbf7582985295fa3c337b3793cd0db3bc6dc3b6741fd683e.png" alt="Candy 140x140"></a><br>
-            <a href="Candy 1.html"><h3 class="pad-t-0 type-center type-hsep-header line-solid type-lg">CANDY</h3></a>
+            <a href="Candy 1.html"><img
+                src="./Epilogue_files/candy_140x140-854708a29f9d181adbf7582985295fa3c337b3793cd0db3bc6dc3b6741fd683e.png"
+                alt="Candy 140x140"></a><br>
+            <a href="Candy 1.html">
+              <h3 class="pad-t-0 type-center type-hsep-header line-solid type-lg">CANDY</h3>
+            </a>
           </div>
         </div>
       </div>
-  
-<footer id="story-footer" role="banner">
-  <div id="story_footer_container" class="o_story-page-footer flex pad-t-0 pad-x-0
+
+      <footer id="story-footer" role="banner">
+        <div id="story_footer_container" class="o_story-page-footer flex pad-t-0 pad-x-0
      flex-justify 
     ">
-      <div class="pad-l-lg--md mar-b-md type-hs-small type-hs-bottom--md type-center type-left--md">
-        <ul class="o_game-nav">
-          <li class="o_game-nav-item">
-            <a id="o_start-over" href="The Homestuck Epilogues.html">Start Over</a>
-          </li>
-            <li class="o_game-nav-item">
-              <a href="Prologue 2.html">Go Back</a>
-            </li>
-        </ul>
-      </div>
-      <script>
-//<![CDATA[
-$(document).ready(function() { Gamenav.checkAutosave(); });
+          <div class="pad-l-lg--md mar-b-md type-hs-small type-hs-bottom--md type-center type-left--md">
+            <ul class="o_game-nav">
+              <li class="o_game-nav-item">
+                <a id="o_start-over" href="Choice Page.html">Start Over</a>
+              </li>
+              <li class="o_game-nav-item">
+                <a href="Prologue 2.html">Go Back</a>
+              </li>
+            </ul>
+          </div>
+          <script>
+            //<![CDATA[
+            $(document).ready(function () { Gamenav.checkAutosave(); });
 //]]>
-</script>
+          </script>
 
-    <a href="javascript:void(0)" data-gamenav-open="" class="nav-btn nav-btn--center type-hs-small mar-b-md" style="text-decoration:none; text-transform: none; font-size:14px; line-height:14px;"><span>Options</span> <i class="icon-menu" style="margin:0;"></i></a>
+          <a href="javascript:void(0)" data-gamenav-open="" class="nav-btn nav-btn--center type-hs-small mar-b-md"
+            style="text-decoration:none; text-transform: none; font-size:14px; line-height:14px;"><span>Options</span>
+            <i class="icon-menu" style="margin:0;"></i></a>
+        </div>
+      </footer>
+
+
+    </div>
   </div>
-</footer>
 
 
+
+  <div class="o_site-footer row pos-r pad-t-rg pad-b-xl pad-b-0--md bg-dark-gray">
+    <div class="float-l"><img
+        src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif"
+        alt="Footer logo"><br></div>
+    <div class="float-r disp-n disp-bl--sm"><img
+        src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif"
+        alt="Footer logo"><br></div>
+    <div class="type-center pad-t-md--md">
+      <ul>
+        <li><a href="https://www.homestuck.com/contacts">Contacts</a></li>
+        <li><a href="https://www.homestuck.com/privacy">Privacy Policy</a></li>
+      </ul>
+      <div><span style="white-space:nowrap;">© 2018 Homestuck</span> <span style="white-space:nowrap;">and VIZ
+          Media</span></div>
+    </div>
   </div>
-</div>
-
-
-    
-<div class="o_site-footer row pos-r pad-t-rg pad-b-xl pad-b-0--md bg-dark-gray">
-  <div class="float-l"><img src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif" alt="Footer logo"><br></div>
-  <div class="float-r disp-n disp-bl--sm"><img src="./Epilogue_files/footer_logo-a913b68f0efbaed8da48bc0a4f22b35d369f40d0e4db132013acbe6f26b3e37f.gif" alt="Footer logo"><br></div>
-  <div class="type-center pad-t-md--md">
-    <ul>
-      <li><a href="https://www.homestuck.com/contacts">Contacts</a></li>
-      <li><a href="https://www.homestuck.com/privacy">Privacy Policy</a></li>
-    </ul>
-    <div><span style="white-space:nowrap;">© 2018 Homestuck</span> <span style="white-space:nowrap;">and VIZ Media</span></div>
-  </div>
-</div>
 
 
 
-    <div id="overlay" data-overlay-state="off" class="o_overlay"></div>
-    <div id="game_overlay" data-game-overlay-state="off" class="o_game-overlay"></div>
-    <div id="overlay_wait" data-overlay-state="off" class="o_overlay-wait"></div>
+  <div id="overlay" data-overlay-state="off" class="o_overlay"></div>
+  <div id="game_overlay" data-game-overlay-state="off" class="o_game-overlay"></div>
+  <div id="overlay_wait" data-overlay-state="off" class="o_overlay-wait"></div>
 
 
 
-  
 
-<iframe name="googlefcPresent" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;" src="./Epilogue_files/saved_resource.html"></iframe></body></html>
+
+  <iframe name="googlefcPresent"
+    style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"
+    src="./Epilogue_files/saved_resource.html"></iframe>
+</body>
+
+</html>
